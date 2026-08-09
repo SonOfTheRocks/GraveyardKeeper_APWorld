@@ -1,0 +1,74 @@
+{
+  "ITEM_GREEN_JELLY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GREEN_SLIME"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_BLUE_JELLY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BLUE_SLIME"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_BLACK_JELLY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BLACK_SLIME"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_ORANGE_JELLY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORANGE_SLIME"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_BAT_WING": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BAT"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_BLOODY_NAILS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_IRON_MAIDEN"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_SPIDER_WEB": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SPIDER"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_ELECTRIC_POWDER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_LIGHTNING_BALL"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ]
+}

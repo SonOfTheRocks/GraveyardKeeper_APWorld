@@ -1,0 +1,17 @@
+{
+  "ITEM_RED_RESEARCH_POINTS": {
+    "label": "Red Research Points",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_GREEN_RESEARCH_POINTS": {
+    "label": "Green Research Points",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_BLUE_RESEARCH_POINTS": {
+    "label": "Blue Research Points",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  }
+}

@@ -1,0 +1,3226 @@
+{
+  "ITEM_BERRY_JUICE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_RED_APPLE",
+        "ITEM_BERRY"
+      ]
+    }
+  ],
+  "ITEM_BUTTER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BUTTER",
+      "materials_required": [
+        "ITEM_JUG_OF_MILK"
+      ]
+    }
+  ],
+  "ITEM_CHEESE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHEESE",
+      "materials_required": [
+        "ITEM_JUG_OF_MILK"
+      ]
+    }
+  ],
+  "ITEM_DOUGH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_DOUGH",
+      "materials_required": [
+        "ITEM_FLOUR",
+        "ITEM_WATER"
+      ]
+    }
+  ],
+  "ITEM_FLOUR": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_WHEAT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_MILL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_WHEAT"
+      ]
+    }
+  ],
+  "ITEM_JUG_OF_MILK": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_BUCKET_OF_MILK"
+      ]
+    }
+  ],
+  "ITEM_PACKAGE_OF_MEAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_FLESH",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_STAMP"
+      ]
+    }
+  ],
+  "ITEM_PASTRY_DOUGH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PASTRY_DOUGH",
+      "materials_required": [
+        "ITEM_FLOUR",
+        "ITEM_JUG_OF_MILK",
+        "ITEM_CHICKEN_EGG"
+      ]
+    }
+  ],
+  "ITEM_RAW_SLICED_MEAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PACKAGE_OF_MEAT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_FROG"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_FLESH"
+      ]
+    }
+  ],
+  "ITEM_BLUE_FISH_FILLET_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_STURGEON_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SALMON_SILVER"
+      ]
+    }
+  ],
+  "ITEM_BLUE_FISH_FILLET_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STURGEON_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_SALMON_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_STURGEON_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SALMON_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CARP_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_GOLD_CRUCIAN_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+       "ITEM_GOLDFISH"
+      ]
+    }
+  ],
+  "ITEM_QUALITY_FISH_FILLET_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BREAM_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_TUNA_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SARDINE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PIKE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SILVER_CRUCIAN_COPPER"
+      ]
+    }
+  ],
+  "ITEM_QUALITY_FISH_FILLET_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BREAM_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_TUNA_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_SARDINE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PIKE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_SILVER_CRUCIAN_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BREAM_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_TUNA_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SARDINE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PIKE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SILVER_CRUCIAN_SILVER"
+      ]
+    }
+  ],
+  "ITEM_QUALITY_FISH_FILLET_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BREAM_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_TUNA_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_SARDINE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PIKE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_SILVER_CRUCIAN_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BREAM_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_TUNA_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SARDINE_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PIKE_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_SILVER_CRUCIAN_GOLD"
+      ]
+    }
+  ],
+  "ITEM_WHITE_FISH_FILLET": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_TILAPIA"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PERCH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EEL"
+      ]
+    }
+  ],
+
+  "ITEM_A_BOWL_OF_SAUERKRAUT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_SAUERKRAUT",
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_SALT"
+      ]
+    }
+  ],
+  "ITEM_BAKED_APPLE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_APPLE",
+      "materials_required": [
+        "ITEM_RED_APPLE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_MUSHROOMS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN",
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_MUSHROOMS",
+      "materials_required": [
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BOILED_EGG": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOILED_EGG",
+      "materials_required": [
+        "ITEM_CHICKEN_EGG",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BREAD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BREAD",
+      "materials_required": [
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_FRIED_EGG": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FRIED_EGG",
+      "materials_required": [
+        "ITEM_CHICKEN_EGG",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_ONION_RINGS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ONION_RINGS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_ONION_COPPER",
+        "ITEM_OIL",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_ONION_RINGS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ONION_RINGS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_ONION_COPPER",
+        "ITEM_OIL",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ONION_RINGS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_ONION_SILVER",
+        "ITEM_OIL",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_ONION_RINGS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ONION_RINGS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_ONION_SILVER",
+        "ITEM_OIL",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ONION_RINGS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_ONION_GOLD",
+        "ITEM_OIL",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_PANCAKES": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PANCAKES",
+      "materials_required": [
+        "ITEM_BUTTER",
+        "ITEM_JUG_OF_MILK",
+        "ITEM_PASTRY_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_SANDWICH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_SANDWICH",
+      "materials_required": [
+        "ITEM_BREAD",
+        "ITEM_BAKED_MEAT",
+        "ITEM_CABBAGE"
+      ]
+    }
+  ],
+  "ITEM_TOASTS_WITH_ONIONS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_ONION_COPPER",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_TOASTS_WITH_ONIONS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_ONION_COPPER",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_ONION_SILVER",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_TOASTS_WITH_ONIONS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_ONION_SILVER",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_ONION_GOLD",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+
+  "ITEM_A_BOWL_OF_LENTILS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_LENTILS_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_A_BOWL_OF_LENTILS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_LENTILS_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_LENTILS_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_A_BOWL_OF_LENTILS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_LENTILS_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_LENTILS_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_A_BOWL_OF_PUMPKIN_SOUP_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_JUG_OF_MILK",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_A_BOWL_OF_PUMPKIN_SOUP_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_JUG_OF_MILK",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_JUG_OF_MILK",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_A_BOWL_OF_PUMPKIN_SOUP_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_JUG_OF_MILK",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_JUG_OF_MILK",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_FISH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_FISH",
+      "materials_required": [
+        "ITEM_WHITE_FISH_FILLET",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_PUMPKIN_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_PUMPKIN_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_PUMPKIN_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_ONIONS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_ONIONS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_ONIONS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_MUSHROOMS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_MUSHROOMS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_KEBAB_MUSHROOMS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BONFIRE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_EDIBLE_MUSHROOM",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_MEAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_MEAT",
+      "materials_required": [
+        "ITEM_RAW_SLICED_MEAT",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_PUMPKIN_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_PUMPKIN_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_PUMPKIN_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_PUMPKIN",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_SALMON_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_SALMON",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_SALMON_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_SALMON",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_SALMON",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BAKED_SALMON_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_SALMON",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BAKED_SALMON",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_QUALITY_FISH_FILLET_GOLD",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BEET_SLICES": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BEET_SLICES",
+      "materials_required": [
+        "ITEM_BEET",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BURGER_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BURGER",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BAKED_MEAT",
+        "ITEM_BREAD",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BURGER_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BURGER",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BAKED_MEAT",
+        "ITEM_BREAD",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BURGER",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BAKED_MEAT",
+        "ITEM_BREAD",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_BURGER_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BURGER",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BAKED_MEAT",
+        "ITEM_BREAD",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BURGER",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BAKED_MEAT",
+        "ITEM_BREAD",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CABBAGE_SOUP_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CABBAGE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_BEET",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CABBAGE_SOUP_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CABBAGE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_BEET",
+        "ITEM_ONION_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CABBAGE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_BEET",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CABBAGE_SOUP_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CABBAGE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_BEET",
+        "ITEM_ONION_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CABBAGE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_BEET",
+        "ITEM_ONION_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CARROT_CUTLET": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CARROT_CUTLET",
+      "materials_required": [
+        "ITEM_CARROT",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CHEESE_PATTY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHEESE_PATTY",
+      "materials_required": [
+        "ITEM_CHEESE",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CHEESE_PIE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHEESE_PIE",
+      "materials_required": [
+        "ITEM_CHEESE",
+        "ITEM_PASTRY_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CREAM_OF_MUSHROOM_SOUP": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CREAM_OF_MUSHROOM_SOUP",
+      "materials_required": [
+        "ITEM_EDIBLE_MUSHROOM",
+        "ITEM_JUG_OF_MILK",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CREAMY_VEGETABLE_SOUP_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_CARROT",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CREAMY_VEGETABLE_SOUP_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_CARROT",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_CARROT",
+        "ITEM_LENTILS_SILVER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CREAMY_VEGETABLE_SOUP_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_CARROT",
+        "ITEM_LENTILS_SILVER",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_CARROT",
+        "ITEM_LENTILS_GOLD",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_FANCY_LENTIL_SOUP_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_ONION_COPPER",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_FANCY_LENTIL_SOUP_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_ONION_COPPER",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_ONION_SILVER",
+        "ITEM_LENTILS_SILVER",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_FANCY_LENTIL_SOUP_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_ONION_SILVER",
+        "ITEM_LENTILS_SILVER",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_ONION_GOLD",
+        "ITEM_LENTILS_GOLD",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_FISH_NUGGETS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FISH_NUGGETS",
+      "materials_required": [
+        "ITEM_WHITE_FISH_FILLET",
+        "ITEM_OIL",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_FISH_SOUP": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FISH_SOUP",
+      "materials_required": [
+        "ITEM_WHITE_FISH_FILLET",
+        "ITEM_CARROT",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LASAGNA_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LASAGNA",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LASAGNA_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LASAGNA",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LASAGNA",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_LENTILS_SILVER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LASAGNA_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LASAGNA",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_LENTILS_SILVER",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LASAGNA",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_LENTILS_GOLD",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LENTIL_CUTLETS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LENTIL_CUTLETS",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_LENTILS_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LENTIL_CUTLETS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LENTIL_CUTLETS",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_LENTILS_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LENTIL_CUTLETS",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_LENTILS_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LENTIL_CUTLETS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LENTIL_CUTLETS",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_LENTILS_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LENTIL_CUTLETS",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_LENTILS_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_MUSHROOM_PATTY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MUSHROOM_PATTY",
+      "materials_required": [
+        "ITEM_EDIBLE_MUSHROOM",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_OMELETTE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_OMELETTE",
+      "materials_required": [
+        "ITEM_CHICKEN_EGG",
+        "ITEM_JUG_OF_MILK",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_PASTA": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PASTA",
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_CHEESE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_SOUP_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_BEET",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_SOUP_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_BEET",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_BEET",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_SOUP_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_BEET",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PUMPKIN_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_BEET",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_ROYAL_FISH_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ROYAL_FISH",
+      "crafting_group": "food",
+      "base_modifier": 1.3,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_HONEY",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_ROYAL_FISH_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ROYAL_FISH",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_SILVER",
+        "ITEM_HONEY",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ROYAL_FISH",
+      "crafting_group": "food",
+      "base_modifier": 1.3,
+      "materials_required": [
+        "ITEM_BLUE_FISH_FILLET_GOLD",
+        "ITEM_HONEY",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_PATTY_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_PATTY",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_COPPER",
+        "ITEM_CARROT",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_PATTY_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_PATTY",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_COPPER",
+        "ITEM_CARROT",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_PATTY",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_SILVER",
+        "ITEM_CARROT",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_PATTY_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_PATTY",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_SILVER",
+        "ITEM_CARROT",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_PATTY",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_GOLD",
+        "ITEM_CARROT",
+        "ITEM_DOUGH",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_SOUP_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_SOUP_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_SOUP_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_SOUP",
+      "crafting_group": "food",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_PUMPKIN_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_STEW_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_STEW",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_COPPER",
+        "ITEM_BEET",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_STEW_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_STEW",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_COPPER",
+        "ITEM_BEET",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_STEW",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_SILVER",
+        "ITEM_BEET",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_VEGETABLE_STEW_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_STEW",
+      "crafting_group": "food",
+      "base_modifier": 0.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_SILVER",
+        "ITEM_BEET",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_VEGETABLE_STEW",
+      "crafting_group": "food",
+      "base_modifier": 1.1,
+      "materials_required": [
+        "ITEM_PUMPKIN_GOLD",
+        "ITEM_BEET",
+        "ITEM_CABBAGE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+
+  "ITEM_BERRY_PIE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BERRY_PIE",
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_BERRY_JUICE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CAKE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CAKE",
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_HONEY",
+        "ITEM_BERRY",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CROISSANT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CROISSANT",
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_HONEY",
+        "ITEM_CHICKEN_EGG",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_GRAPE_PIE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPE_PIE",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_GRAPES_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_GRAPE_PIE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPE_PIE",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_GRAPES_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPE_PIE",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_GRAPES_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_GRAPE_PIE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPE_PIE",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_GRAPES_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPE_PIE",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PASTRY_DOUGH",
+        "ITEM_GRAPES_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_GREEN_JELLY_FOOD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GREEN_JELLY",
+      "materials_required": [
+        "ITEM_GREEN_JELLY",
+        "ITEM_HONEY"
+      ]
+    }
+  ],
+  "ITEM_MUFFIN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_OVEN"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MUFFIN",
+      "materials_required": [
+        "ITEM_DOUGH",
+        "ITEM_HONEY",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_RED_JELLY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_RED_JELLY",
+      "materials_required": [
+        "ITEM_GREEN_JELLY",
+        "ITEM_BERRY_JUICE"
+      ]
+    }
+  ],
+
+  "ITEM_A_MUG_OF_BEER_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_BEER",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_COPPER",
+        "ITEM_WHEAT"
+      ]
+    }
+  ],
+  "ITEM_A_MUG_OF_BEER_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_BEER",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_COPPER",
+        "ITEM_WHEAT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_BEER",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_SILVER",
+        "ITEM_WHEAT"
+      ]
+    }
+  ],
+  "ITEM_A_MUG_OF_BEER_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_BEER",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_SILVER",
+        "ITEM_WHEAT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_BEER",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_GOLD",
+        "ITEM_WHEAT"
+      ]
+    }
+  ],
+  "ITEM_A_MUG_OF_MEAD_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_MEAD",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_COPPER",
+        "ITEM_HONEY"
+      ]
+    }
+  ],
+  "ITEM_A_MUG_OF_MEAD_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_MEAD",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_COPPER",
+        "ITEM_HONEY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_MEAD",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_SILVER",
+        "ITEM_HONEY"
+      ]
+    }
+  ],
+  "ITEM_A_MUG_OF_MEAD_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_MEAD",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_SILVER",
+        "ITEM_HONEY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_MUG_OF_MEAD",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_WATER",
+        "ITEM_HOPS_GOLD",
+        "ITEM_HONEY"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_APPLE_FERMENT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FERMENTATION_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOTTLE_OF_APPLE_FERMENT",
+      "materials_required": [
+        "ITEM_PAIL_OF_APPLE_JUICE"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_APPLE_JUICE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PAIL_OF_APPLE_JUICE"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_BERRY_FERMENT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FERMENTATION_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOTTLE_OF_BERRY_FERMENT",
+      "materials_required": [
+        "ITEM_PAIL_OF_BERRY_JUICE"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_BERRY_JUICE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PAIL_OF_BERRY_JUICE"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_GRAPE_JUICE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_COPPER"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_GRAPE_JUICE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_SILVER"
+      ]
+    }
+  ],
+  "ITEM_BOTTLE_OF_GRAPE_JUICE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_GOLD"
+      ]
+    }
+  ],
+  "ITEM_BOOZE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCOHOL_DISTILLER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOZE",
+      "materials_required": [
+        "ITEM_BOTTLE_OF_APPLE_FERMENT",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCOHOL_DISTILLER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOZE",
+      "materials_required": [
+        "ITEM_BOTTLE_OF_BERRY_FERMENT",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCOHOL_DISTILLER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOZE",
+      "materials_required": [
+        "ITEM_RED_WINE_COPPER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCOHOL_DISTILLER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOZE",
+      "materials_required": [
+        "ITEM_RED_WINE_SILVER",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCOHOL_DISTILLER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOZE",
+      "materials_required": [
+        "ITEM_RED_WINE_GOLD",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_INFUSION": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCOHOL_DISTILLER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_BOOZE",
+        "ITEM_RED_MUSHROOM"
+      ]
+    }
+  ],
+  "ITEM_RED_WINE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WINE_MAKING_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_RED_WINE",
+      "crafting_group": "wine",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_COPPER"
+      ]
+    }
+  ],
+  "ITEM_RED_WINE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WINE_MAKING_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_RED_WINE",
+      "crafting_group": "wine",
+      "base_modifier": -0.5,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WINE_MAKING_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_RED_WINE",
+      "crafting_group": "wine",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_SILVER"
+      ]
+    }
+  ],
+  "ITEM_RED_WINE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WINE_MAKING_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_RED_WINE",
+      "crafting_group": "wine",
+      "base_modifier": -0.5,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WINE_MAKING_BARREL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_RED_WINE",
+      "crafting_group": "wine",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_PAIL_OF_GRAPE_JUICE_GOLD"
+      ]
+    }
+  ]
+}

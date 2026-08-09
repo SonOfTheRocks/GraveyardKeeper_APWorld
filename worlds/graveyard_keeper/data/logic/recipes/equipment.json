@@ -1,0 +1,248 @@
+{
+  "ITEM_IRON_ARMOR": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_IRON_ARMOR",
+      "materials_required": [
+        "ITEM_SKIN",
+        "ITEM_SIMPLE_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STEEL_ARMOR": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_ARMOR",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+
+  "ITEM_SWORD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_SWORD",
+      "materials_required": [
+        "ITEM_IRON_INGOT",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_HEMP_ROPE"
+      ]
+    }
+  ],
+  "ITEM_STEEL_SWORD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_SWORD",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_STEEL_INGOT",
+        "ITEM_STEEL_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STEEL_SWORD_WITH_GEM": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_JEWELRY_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_SWORD_WITH_GEM",
+      "materials_required": [
+        "ITEM_STEEL_SWORD",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+  "ITEM_DAMASK_SWORD_WITH_GEM": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_JEWELRY_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_DAMASK_SWORD_WITH_GEM",
+      "materials_required": [
+        "ITEM_STEEL_SWORD",
+        "ITEM_FACETED_DIAMOND",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+
+  "ITEM_AXE_1": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WOODEN_ANVIL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_AXE_1",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_SIMPLE_IRON_PARTS",
+        "ITEM_IRON_INGOT"
+      ]
+    }
+  ],
+  "ITEM_AXE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_AXE_2",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_STEEL_INGOT"
+      ]
+    }
+  ],
+  "ITEM_PICKAXE_1": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WOODEN_ANVIL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PICKAXE_1",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_SIMPLE_IRON_PARTS",
+        "ITEM_IRON_INGOT"
+      ]
+    }
+  ],
+  "ITEM_PICKAXE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PICKAXE_2",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_STEEL_INGOT"
+      ]
+    }
+  ],
+  "ITEM_SHOVEL_1": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WOODEN_ANVIL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_SHOVEL_1",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_SIMPLE_IRON_PARTS",
+        "ITEM_IRON_INGOT"
+      ]
+    }
+  ],
+  "ITEM_SHOVEL_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_SHOVEL_2",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_STEEL_INGOT"
+      ]
+    }
+  ],
+  "ITEM_RUSTY_HAMMER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WOODEN_ANVIL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_IRON_INGOT"
+      ]
+    }
+  ],
+  "ITEM_IRON_HAMMER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_IRON_HAMMER",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_STEEL_INGOT"
+      ]
+    }
+  ],
+  "ITEM_IRON_CHISEL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_IRON_CHISEL",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_SIMPLE_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STEEL_CHISEL_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_CHISEL",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_STEEL_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STEEL_CHISEL_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_CHISEL",
+      "materials_required": [
+        "ITEM_WOODEN_STICK",
+        "ITEM_STEEL_PARTS",
+        "ITEM_LENS"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_CHISEL",
+      "crafting_group": "chisel",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_COPPER",
+        "ITEM_STEEL_PARTS",
+        "ITEM_LENS"
+      ]
+    }
+  ],
+  "ITEM_STEEL_CHISEL_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_CHISEL",
+      "crafting_group": "chisel",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_SILVER",
+        "ITEM_STEEL_PARTS",
+        "ITEM_LENS"
+      ]
+    }
+  ]
+}

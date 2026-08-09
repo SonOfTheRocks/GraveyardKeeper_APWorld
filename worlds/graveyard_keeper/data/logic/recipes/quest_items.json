@@ -1,0 +1,240 @@
+{
+  "ITEM_ACTIVE_KEY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STUDY_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_KEEPERS_KEY",
+        "ITEM_INSTRUCTIONS_FOR_KEY",
+        "ITEM_FAITH",
+        "ITEM_SCIENCE"
+      ]
+    }
+  ],
+  "ITEM_BUCKET_OF_BLOOD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_FLITCH",
+        "ITEM_BLOOD"
+      ]
+    }
+  ],
+  "ITEM_FLYER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK",
+        "CRAFTING_STATION_DESK_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FLYER",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_PEN_AND_INK"
+      ]
+    },
+    {
+      "crafting_stations":[
+        "CRAFTING_STATION_PRINTING_PRESS",
+        "CRAFTING_STATION_PRINTING_PRESS_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FLYER",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_INK"
+      ]
+    }
+  ],
+
+  "ITEM_BARMAN_DOLL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_WOODEN_PLANK",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_WOODEN_BEAM"
+      ]
+    }
+  ],
+
+  "ITEM_APHORISMS_ABOUT_THE_EVILS_OF_MONEY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_STORY_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_STORY_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_STORY_GOLD"
+      ]
+    }
+  ],
+  "ITEM_COOKBOOK": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_RED_WINE_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_RED_WINE_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_RED_WINE_GOLD"
+      ]
+    }
+  ],
+  "ITEM_EMULSION_OF_DEATH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BREWING_STAND"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_DEATH_SOLUTION",
+        "ITEM_WATER"
+      ]
+    }
+  ],
+  "ITEM_JELLY_OF_INCREDIBLE_POWER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GREEN_JELLY",
+        "ITEM_FLOUR"
+      ]
+    }
+  ],
+  "ITEM_MEMORY_TINCTURE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ALCHEMY_WORKBENCH_2"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_MEMORY_POWDER",
+        "ITEM_SILVER_POWDER",
+        "ITEM_GOLD_POWDER"
+      ]
+    }
+  ],
+  "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_INTESTINE",
+        "ITEM_BEESWAX",
+        "ITEM_PIECE_OF_DONKEY_HAIR"
+      ]
+    }
+  ],
+  "ITEM_REVOLUTIONARY_DONKEY_BANNER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SILK",
+        "ITEM_WHITE_PAINT"
+      ]
+    }
+  ],
+
+  "ITEM_PORTAL_EMITTER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_MARBLE_PEDESTAL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SALTY_FORK",
+        "ITEM_MIRROR_OF_PRIDE",
+        "ITEM_ETERNAL_BURNING_COAL"
+      ]
+    }
+  ],
+  "ITEM_PORTAL_BARREL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_MARBLE_PEDESTAL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOLDEN_ANGLE",
+        "ITEM_ENDLESS_NOTEBOOK",
+        "ITEM_NECKLACE"
+      ]
+    }
+  ],
+
+  "ITEM_MYSTERIOUS_FOOD_SAUCE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MYSTERIOUS_FOOD_SAUCE",
+      "materials_required": [
+        "ITEM_SEED_OIL",
+        "ITEM_CHICKEN_EGG",
+        "ITEM_SALT"
+      ]
+    }
+  ]
+}

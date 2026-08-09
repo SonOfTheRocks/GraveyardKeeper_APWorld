@@ -1,0 +1,32 @@
+{
+  "ITEM_BP_BURNING_WITCH": {
+    "label": "Blueprint: Burning Witch",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_BP_BISHOPS_CHOICE": {
+    "label": "Blueprint: Bishop's Choice",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_BP_INQUISITORS_JOY": {
+    "label": "Blueprint: Inquisitors' Joy",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_BP_MS_CHARM_MONROE": {
+    "label": "Ms. Charm Monroe",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_BP_DONKEYS_OF_THE_WORLD_UNITE": {
+    "label": "Blueprint: Donkeys of the world, unite!",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_BP_CRATE_FACTORY": {
+    "label": "Blueprint: Crate factory",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "VENDOR_ADAM": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_CERAMIC_BOWLS"
+      ],
+      "level_2": [
+        "ITEM_CERAMIC_JUG"
+      ],
+      "level_3": [
+        "ITEM_PORCELAIN_PITCHER"
+      ]
+    }
+  },
+  "VENDOR_ASTROLOGER": {
+    "region": "REGION_LIGHTHOUSE",
+    "selling": {
+      "level_1": [
+        "ITEM_SOFTCOVER",
+        "ITEM_PEN_AND_INK",
+        "ITEM_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_FEATHER"
+      ],
+      "level_2": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_TECHBOOK_1_RED",
+        "ITEM_TECHBOOK_1_GREEN",
+        "ITEM_TECHBOOK_1_BLUE",
+        "ITEM_CHAPTER_COPPER"
+      ],
+      "level_3": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_TECHBOOK_2_RED",
+        "ITEM_TECHBOOK_2_GREEN",
+        "ITEM_TECHBOOK_2_BLUE"
+      ]
+    }
+  },
+  "VENDOR_BEEKEEPER": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_BEESWAX",
+        "ITEM_HONEY",
+        "ITEM_BEE"
+      ]
+    }
+  },
+  "VENDOR_BISHOP": {
+    "region": "REGION_CHURCH",
+    "selling": {
+      "level_1": [
+        "ITEM_CANDLE_1",
+        "ITEM_COMMUNION_COOKIE",
+        "ITEM_CASUAL_PRAYER"
+      ],
+      "level_2": [
+        "ITEM_CANDLE_3",
+        "ITEM_INCENSE"
+      ],
+      "level_3": [
+        "ITEM_CANDLE_4",
+        "ITEM_CANDLE_6",
+        "ITEM_INCENSE_2"
+      ]
+    }
+  },
+  "VENDOR_CLOTHO": {
+    "region": "REGION_SWAMP",
+    "selling": {
+      "level_1": [
+        "ITEM_GOLDEN_APPLE",
+        "ITEM_ACID",
+        "ITEM_GLUE",
+        "ITEM_ALCHEMY_RECIPE",
+        "ITEM_APPLE_TREE_SEEDLING",
+        "ITEM_BERRY_BUSH_SEEDLING",
+        "ITEM_SLOWING_POWDER",
+        "ITEM_ACCELERATION_POWDER",
+        "ITEM_HEALTH_POWDER",
+        "ITEM_DEATH_POWDER",
+        "ITEM_ORDER_POWDER",
+        "ITEM_TOXIC_POWDER",
+        "ITEM_CHAOS_POWDER",
+        "ITEM_LIFE_POWDER",
+        "ITEM_ELECTRIC_POWDER",
+        "ITEM_ALCOHOL",
+        "ITEM_HEAL_POTION",
+        "ITEM_ENERGY_POTION",
+        "ITEM_FROG",
+        "ITEM_OIL"
+      ],
+      "level_2": [
+        "ITEM_ALKALI",
+        "ITEM_DARK_ELIXIR",
+        "ITEM_BALSAMIC_SOLUTION",
+        "ITEM_GOLDEN_ELIXIR",
+        "ITEM_PRESERVATIVE",
+        "ITEM_SILVER_ELIXIR",
+        "ITEM_TANNING_AGENT",
+        "ITEM_DIGESTION_POTION",
+        "ITEM_RAGE_POTION",
+        "ITEM_SPEED_POTION",
+        "ITEM_SLOWING_SOLUTION",
+        "ITEM_ACCELERATION_SOLUTION",
+        "ITEM_HEALTH_SOLUTION",
+        "ITEM_DEATH_SOLUTION",
+        "ITEM_ORDER_SOLUTION",
+        "ITEM_TOXIC_SOLUTION",
+        "ITEM_CHAOS_SOLUTION",
+        "ITEM_LIFE_SOLUTION"
+      ],
+      "level_3": [
+        "ITEM_PROTECTION_POTION",
+        "ITEM_BERSERK_POTION",
+        "ITEM_RESTORING_POTION",
+        "ITEM_SLOWING_EXTRACT",
+        "ITEM_ACCELERATION_EXTRACT",
+        "ITEM_HEALTH_EXTRACT",
+        "ITEM_DEATH_EXTRACT",
+        "ITEM_ORDER_EXTRACT",
+        "ITEM_TOXIC_EXTRACT",
+        "ITEM_CHAOS_EXTRACT",
+        "ITEM_LIFE_EXTRACT"
+      ]
+    }
+  },
+  "VENDOR_CORY": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_FIREWOOD"
+      ],
+      "level_2": [
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_PIECE_OF_MARBLE"
+      ],
+      "level_3": [
+        "ITEM_STEEL_CHISEL_GOLD",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_COPPER",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_PICKAXE_2"
+      ]
+    }
+  },
+  "VENDOR_DIG": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_SEED_OIL",
+        "ITEM_HEMP_ROPE",
+        "ITEM_HEMP_SEED",
+        "ITEM_FIREWOOD"
+      ],
+      "level_2": [
+        "ITEM_HEMP"
+      ]
+    }
+  },
+  "VENDOR_FARMER": {
+    "region": "REGION_WHEAT_FARM",
+    "selling": {
+      "level_1": [
+        "ITEM_BEET",
+        "ITEM_CABBAGE",
+        "ITEM_CARROT",
+        "ITEM_CROP_WASTE",
+        "ITEM_BEET_SEED",
+        "ITEM_FLOUR",
+        "ITEM_CABBAGE_SEED",
+        "ITEM_CARROT_SEED",
+        "ITEM_WHEAT_SEED",
+        "ITEM_FIREWOOD"
+      ],
+      "level_2": [
+        "ITEM_LENTILS_SILVER",
+        "ITEM_PUMPKIN_COPPER",
+        "ITEM_LENTILS_COPPER",
+        "ITEM_ONION_SILVER",
+        "ITEM_LENTIL_SEED_SILVER",
+        "ITEM_ONION_SEED_SILVER",
+        "ITEM_ONION_COPPER",
+        "ITEM_PUMPKIN_SEED_COPPER",
+        "ITEM_LENTIL_SEED_COPPER",
+        "ITEM_ONION_SEED_COPPER",
+        "ITEM_WHEAT"
+      ],
+      "level_3": [
+        "ITEM_PUMPKIN_SILVER",
+        "ITEM_PUMPKIN_SEED_SILVER"
+      ]
+    }
+  },
+  "VENDOR_FRESH_EGG_BASKET": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_FEATHER",
+        "ITEM_CHICKEN_EGG"
+      ]
+    }
+  },
+  "VENDOR_HORADRIC": {
+    "region": "REGION_THE_DEAD_HORSE",
+    "selling": {
+      "level_1": [
+        "ITEM_TELEPORTSTONE",
+        "ITEM_PACKAGE_OF_MEAT",
+        "ITEM_GRAPE_PIE_COPPER",
+        "ITEM_A_MUG_OF_BEER_SILVER",
+        "ITEM_A_MUG_OF_BEER_COPPER",
+        "ITEM_BAKED_SALMON_COPPER",
+        "ITEM_FISH_NUGGETS_COPPER",
+        "ITEM_A_BOWL_OF_SAUERKRAUT_COPPER",
+        "ITEM_A_BOWL_OF_LENTILS_COPPER",
+        "ITEM_A_BOWL_OF_PUMPKIN_SOUP_COPPER",
+        "ITEM_OMELETTE_COPPER",
+        "ITEM_FISH_SOUP_COPPER",
+        "ITEM_BEET_SLICES",
+        "ITEM_CARROT_CUTLET",
+        "ITEM_BREAD",
+        "ITEM_ONION_RINGS_COPPER",
+        "ITEM_FIREWOOD"
+      ],
+      "level_2": [
+        "ITEM_RED_WINE_SILVER",
+        "ITEM_RED_WINE_COPPER",
+        "ITEM_GRAPE_PIE_SILVER",
+        "ITEM_BAKED_SALMON_SILVER",
+        "ITEM_CROISSANT",
+        "ITEM_MUFFIN",
+        "ITEM_ONION_RINGS_SILVER",
+        "ITEM_TOASTS_WITH_ONIONS_SILVER"
+      ],
+      "level_3": [
+        "ITEM_ONION_RINGS_GOLD"
+      ]
+    }
+  },
+  "VENDOR_KOUKOL": {
+    "region": "REGION_MOUNTAIN_FORT",
+    "selling": {
+      "level_1": [
+        "ITEM_RUSTY_SWORD",
+        "ITEM_SWORD",
+        "IRON_IRON_ARMOR"
+      ],
+      "level_2": [
+        "ITEM_STEEL_SWORD"
+      ],
+      "level_3": [
+        "ITEM_DAMASK_SWORD_WITH_GEM",
+        "ITEM_STEEL_SWORD_WITH_GEM",
+        "ITEM_STEEL_ARMOR"
+      ]
+    }
+  },
+  "VENDOR_KREZVOLD": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_WHETSTONE",
+        "ITEM_IRON_INGOT",
+        "ITEM_SIMPLE_IRON_PARTS",
+        "ITEM_NAILS",
+        "ITEM_COAL",
+        "ITEM_IRON_ORE",
+        "ITEM_FIREWOOD",
+        "ITEM_RUSTY_AXE",
+        "ITEM_RUSTY_PICKAXE",
+        "ITEM_RUSTY_SHOVEL",
+        "ITEM_RUSTY_SWORD",
+        "ITEM_RUSTY_HAMMER"
+      ],
+      "level_2": [
+        "ITEM_CAULDRON",
+        "ITEM_IRON_CHISEL",
+        "ITEM_STEEL_INGOT",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_GRAPHITE",
+        "ITEM_AXE_1",
+        "ITEM_PICKAXE_1",
+        "ITEM_SHOVEL_1",
+        "ITEM_STEEL_SWORD",
+        "ITEM_IRON_HAMMER"
+      ],
+      "level_3": [
+        "ITEM_STEEL_CHISEL_SILVER",
+        "ITEM_STEEL_CHISEL_COPPER",
+        "ITEM_STEEL_PARTS",
+        "ITEM_SHOVEL_2"
+      ]
+    }
+  },
+  "VENDOR_LIGHTHOUSE_KEEPER": {
+    "region": "REGION_LIGHTHOUSE",
+    "selling": {
+      "level_1": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_WHITE_FISH_FILLET",
+        "ITEM_QUALITY_FISH_FILLET_COPPER",
+        "ITEM_FIREWOOD",
+        "ITEM_FROG",
+        "ITEM_GUDGEON",
+        "ITEM_ANCHOVY",
+        "ITEM_TILAPIA",
+        "ITEM_PERCH",
+        "ITEM_EEL"
+      ],
+      "level_2": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE",
+        "ITEM_QUALITY_FISH_FILLET_SILVER",
+        "ITEM_BREAM_COPPER",
+        "ITEM_BREAM_SILVER",
+        "ITEM_SARDINE_COPPER",
+        "ITEM_SARDINE_SILVER",
+        "ITEM_TUNA_COPPER",
+        "ITEM_TUNA_SILVER",
+        "ITEM_PIKE_COPPER",
+        "ITEM_PIKE_SILVER",
+        "ITEM_SILVER_CRUCIAN_COPPER",
+        "ITEM_SILVER_CRUCIAN_SILVER",
+        "ITEM_SALMON_SILVER",
+        "ITEM_STURGEON_SILVER"
+      ],
+      "level_3": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM",
+        "ITEM_BLUE_FISH_FILLET",
+        "ITEM_SALMON_GOLD",
+        "ITEM_STURGEON_GOLD",
+        "ITEM_CARP_GOLD",
+        "ITEM_GOLD_CRUCIAN_GOLD"
+      ]
+    }
+  },
+  "VENDOR_MERCHANT": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_GOLD_JEWELRY_DETAILS",
+        "ITEM_SILVER_INGOT"
+      ],
+      "level_2": [
+        "ITEM_SILK",
+        "ITEM_GRAPE_SEED_SILVER",
+        "ITEM_ROYAL_FISH_SILVER",
+        "ITEM_GRAPE_SEED_COPPER"
+      ],
+      "level_3": [
+        "ITEM_FACETED_DIAMOND",
+        "ITEM_RED_WINE_GOLD",
+        "ITEM_GRAPE_PIE_GOLD",
+        "ITEM_CAKE_GOLD",
+        "ITEM_GRAPE_SEED_GOLD",
+        "ITEM_ROYAL_FISH_GOLD",
+        "ITEM_PUMPKIN_SOUP_GOLD",
+        "ITEM_VEGETABLE_SOUP_GOLD",
+        "ITEM_BAKED_KEBAB_PUMPKIN_GOLD",
+        "ITEM_BURGER_GOLD",
+        "ITEM_CABBAGE_SOUP_GOLD",
+        "ITEM_A_BOWL_OF_LENTILS_GOLD",
+        "ITEM_ONION_RINGS_GOLD",
+        "ITEM_TOASTS_WITH_ONIONS_GOLD"
+      ]
+    }
+  },
+  "VENDOR_MILLER": {
+    "region": "REGION_WHEAT_FARM",
+    "selling": {
+      "level_1": [
+        "ITEM_FLOUR"
+      ],
+      "level_2": [
+        "ITEM_HOPS_COPPER",
+        "ITEM_HOPS_SEED_COPPER",
+        "ITEM_WHEAT"
+      ],
+      "level_3": [
+        "ITEM_HOPS_GOLD",
+        "ITEM_HOPS_SEED_GOLD",
+        "ITEM_HOPS_SILVER",
+        "ITEM_HOPS_SEED_SILVER"
+      ]
+    }
+  },
+  "VENDOR_MONEY_LENDER": {
+    "region": "REGION_REFUGEE_CAMP",
+    "selling": {
+      "level_1": [
+        "ITEM_JEWELRY",
+        "ITEM_GOLD_INGOT",
+        "ITEM_GOLD_JEWELRY_DETAILS",
+        "ITEM_GOLD_NUGGET",
+        "ITEM_SILVER_INGOT",
+        "ITEM_GOLD_POWDER",
+        "ITEM_SILVER_NUGGET",
+        "ITEM_SILVER_POWDER"
+      ]
+    }
+  },
+  "VENDOR_ROSA": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_BUTTER",
+        "ITEM_CHEESE",
+        "ITEM_BUCKET_OF_MILK",
+        "ITEM_JUG_OF_MILK"
+      ]
+    }
+  },
+  "VENDOR_SHEPHERD": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_PEAT"
+      ]
+    }
+  },
+  "VENDOR_TRESS": {
+    "region": "REGION_THE_VILLAGE",
+    "selling": {
+      "level_1": [
+        "ITEM_WOOD_REPAIR_KIT",
+        "ITEM_WOOD_BILLET",
+        "ITEM_FIREWOOD",
+        "ITEM_FLITCH",
+        "ITEM_WOOD_WEDGE",
+        "ITEM_WOODEN_STICK"
+      ],
+      "level_2": [
+        "ITEM_WOODEN_BEAM",
+        "ITEM_WOODEN_PLANK"
+      ],
+      "level_3": [
+        "ITEM_STEEL_CHISEL_GOLD",
+        "ITEM_JOINTING",
+        "ITEM_CARVED_WOOD_COPPER",
+        "ITEM_AXE_2"
+      ]
+    }
+  },
+  "VENDOR_UNDERTAKER": {
+    "region": "REGION_REFUGEE_CAMP",
+    "selling": {
+      "level_1": [
+        "TODO"
+      ]
+    }
+  }
+}

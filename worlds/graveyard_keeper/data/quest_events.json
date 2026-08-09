@@ -1,0 +1,790 @@
+{
+  "EVENT_TUTORIAL_FINISH": {
+    "location_label": "Finish tutorial",
+    "item_label": "Finished tutorial",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_PLAYER_KNOWS_PORTAL": {
+    "comment": "player knows about portal know, can build it",
+    "location_label": "Player learns about the portal",
+    "item_label": "Player learnt about the portal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_GET_ASTROLGER_KEEPERS_JOURNAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_GERRY_GET_GERRY_BEER": {
+    "location_label": "Get Gerry Beer",
+    "item_label": "Got Gerry Beer",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_A_MUG_OF_BEER_COPPER"],
+    "rewards": ["LOCATION_GERRY_REWARD_GET_GERRY_BEER"]
+  },
+  "EVENT_GERRY_GET_GERRY_WINE": {
+    "location_label": "Get Gerry Wine",
+    "item_label": "Got Gerry Wine",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_GET_BERRY_BEER"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_RED_WINE_SILVER"],
+    "rewards": ["LOCATION_GERRY_REWARD_GET_BERRY_WINE"]
+  },
+  "EVENT_GERRY_TALK_ABOUT_GUNTER": {
+    "location_label": "Gerry: Talk about Gunter",
+    "item_label": "Gerry: Talked about Gunter",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": ["GERRY_20"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_ASTROLOGER_GET_ASTROLOGER_SKULL": {
+    "comment": "Get skull for 10 relation",
+    "location_label": "Get Astrologer a skull",
+    "item_label": "Got Astrologer a skull",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_SKULL"],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_SKULL"]
+  },
+  "EVENT_ASTROLOGER_ASK_ABOUT_PORTAL": {
+    "comment": "get told about journal, get keepers key",
+    "location_label": "Ask Astrologer about the portal",
+    "item_label": "Asked Astrologer about the portal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_GET_ASTROLOGER_SKULL"],
+    "required_happiness": ["ASTROLOGER_10"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_PORTAL"]
+  },
+  "EVENT_ASTROLOGER_GET_ASTROLOGER_KEEPERS_JOURNAL": {
+    "comment": "give journal, get 10 relation",
+    "location_label": "Get Astrologer the Keepers Journal",
+    "item_label": "Got Astrologer the Keepers Journal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_KEEPERS_JOURNAL"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_KEEPERS_JOURNAL"]
+  },
+  "EVENT_ASTROLOGER_GET_ASTROLOGER_ACID": {
+    "comment": "give acid, get 10 relation",
+    "location_label": "Get Astrologer acid",
+    "item_label": "Got Astrologer acid",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_ACID"],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_ACID"]
+  },
+  "EVENT_ASTROLOGER_GET_RESTORATION_TOOLS": {
+    "comment": "give restoration tools, get 10 relation",
+    "location_label": "Get Astrologer restoration tools",
+    "item_label": "Got Astrologer restoration tools",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_RESTORATION_TOOLS"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_RESTORATION_TOOLS"]
+  },
+  "EVENT_ASTROLOGER_ASK_ABOUT_NECRONOMICON": {
+    "comment": "needs phrase astrologer_necronamicon",
+    "location_label": "Ask Astrologer about the Necronomicon",
+    "item_label": "Asked Astrologer about the Necronomicon",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_HELP_WITH_THE_RITUAL"],
+    "required_happiness": ["ASTROLOGER_40"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA": {
+    "comment": "gave acid and rest. tools -> unlock phrases snake_magic_item",
+    "location_label": "Learn about Esmeralda",
+    "item_label": "Learned about Esmeralda",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_ASTROLOGER_GET_ASTROLOGER_ACID",
+      "EVENT_ASTROLOGER_GET_RESTORATION_TOOLS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_ASTROLOGER_TELL_ESMERALDAS_FATE": {
+    "comment": "tell about esmeralda, get 10 relation",
+    "location_label": "Tell Astrologer about Esmeralda's fate",
+    "item_label": "Told Astrologer about Esmeralda's fate",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_GYPSY_BARN_ASK_ABOUT_ESMERALDA"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_TELL_ESMERALDAS_FATE"]
+  },
+  "EVENT_ASTROLOGER_TELL_ABOUT_MS_CHARM": {
+    "comment": "tell about ms. charm, get 10 relation",
+    "location_label": "Tell Astrologer about Ms. Charm",
+    "item_label": "Told Astrologer about Ms. Charm",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_ASK_ABOUT_FATHER"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_TELL_ABOUT_MS_CHARM"]
+  },
+  "EVENT_ASTROLOGER_ASK_ABOUT_MILL_FIX": {
+    "comment": "get paper with calculations",
+    "location_label": "Ask Astrologer about mill fix",
+    "item_label": "Asked Astrologer about mill fix",
+    "dlc": "BASE_GAME",
+    "required_quests": ["TODO"],
+    "required_happiness": ["ASTROLOGER_60"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_MILL_FIX"]
+  },
+  "EVENT_ASTROLOGER_ASK_ABOUT_PORTAL_ITEMS": {
+    "comment": "Possibly unnecessary",
+    "location_label": "Ask Astrologer about the portal items",
+    "item_label": "Asked Astrologer about the portal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA"],
+    "required_happiness": ["ASTROLOGER_60"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_ASTROLOGER_TALK_ABOUT_EXPEDITION": {
+    "comment": "expedition to get into the fort",
+    "location_label": "Talk about the expedition",
+    "item_label": "Talked about the expedition",
+    "dlc": "BASE_GAME",
+    "required_quests": ["TODO"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_ASTROLOGER_RESTORE_REPUTATION_1": {
+    "comment": "Give silver book -> get 5 relation",
+    "location_label": "Restore Astrologer's reputation (1)",
+    "item_label": "Restored Astrologer's reputation (1)",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_TALK_ABOUT_EXPEDITION"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BOOK_SILVER"],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_1"]
+  },
+  "EVENT_ASTROLOGER_RESTORE_REPUTATION_2": {
+    "comment": "Give gold book -> get 5 relation",
+    "location_label": "Restore Astrologer's reputation (2)",
+    "item_label": "Restored Astrologer's reputation (2)",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_RESTORE_REPUTATION_1"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BOOK_GOLD"],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_2"]
+  },
+  "EVENT_ASTROLOGER_SHOW_ARISTOCRAT_PAPERS": {
+    "comment": "astrologer_title, Bring aristocrat paper, get 10 relation -> astrologer_last0",
+    "location_label": "Show Astrologer aristocrat papers",
+    "item_label": "Showed Astrologer aristocrat papers",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_RESTORE_REPUTATION_2"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_ARISTOCRAT_PAPERS"],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS"]
+  },
+
+  "EVENT_MS_CHARM_PROVE_YOUR_WORTH": {
+    "comment": "give 5 faith, get 10 relation",
+    "location_label": "Prove your worth to Ms. Charm",
+    "item_label": "Proved your worth to Ms. Charm",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FAITH"],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_PROVE_YOUR_WORTH"]
+  },
+  "EVENT_MS_CHARM_GIVE_SNAKE_FAKE_COINS": {
+    "comment": "give snake fake coins, get 10 relation",
+    "location_label": "Give Snake fake coins",
+    "item_label": "Gave Snake fake coins",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_MS_CHARM_PROVE_YOUR_WORTH",
+      "EVENT_SNAKE_MET",
+      "TODO(You must speak to Horadric and start the Return with Royal Stamp quest for this dialog with Ms. Charm to be available.)"
+    ],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_FAKE_COINS"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_SNAKE_FAKE_COINS"]
+  },
+  "EVENT_MS_CHARM_ASK_SNAKE_ABOUT_NECKLACE": {
+    "comment": "get information about necklace, get 10 relation",
+    "location_label": "Ask Snake about necklace",
+    "item_label": "Asked Snake about necklace",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_GIVE_SNAKE_FAKE_COINS"],
+    "required_happiness": ["SNAKE_30"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_ASK_SNAKE_ABOUT_NECKLACE"]
+  },
+  "EVENT_MS_CHARM_GIVE_PERFUME": {
+    "comment": "get perfume, get 10 relation",
+    "location_label": "Give Ms. Charm perfume",
+    "item_label": "Gave Ms. Charm perfume",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PERFUME"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_ASK_SNAKE_ABOUT_NECKLACE"]
+  },
+  "EVENT_MS_CHARM_PROMOTE_BUSINESS": {
+    "location_label": "Promote your business via Ms. Charm",
+    "item_label": "Promoted your business via Ms. Charm",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": ["MS_CHARM_40"],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_JEWELRY"],
+    "rewards": []
+  },
+  "EVENT_MS_CHARM_GIVE_GOLD_STORY": {
+    "comment": "give gold story, get 10 relation",
+    "location_label": "Give Ms. Charm gold story",
+    "item_label": "Gave Ms. Charm gold story",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_GIVE_PERFUME"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_STORY_GOLD"],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_GOLD_STORY"]
+  },
+
+  "EVENT_TAVERN_EVENT_COMEDY_STANDUP": {
+    "location_label": "Hold a comedy standup event",
+    "item_label": "Held a comedy standup event",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_FLYER",
+      "ITEM_FAITH",
+      "MATERIAL_TAVERN_REPUTATION"
+    ],
+    "rewards": []
+  },
+  "EVENT_TAVERN_EVENT_RAT_RACE": {
+    "location_label": "Hold a rat race event",
+    "item_label": "Held a rat race event",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_FLYER",
+      "ITEM_FAITH",
+      "MATERIAL_TAVERN_REPUTATION",
+      "BUILDABLE_RAT_RACE_TABLE"
+    ],
+    "rewards": []
+  },
+  "EVENT_TAVERN_OPEN": {
+    "location_label": "Open tavern",
+    "item_label": "Tavern opened",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GERRY_GET_GERRY_WINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_TAVERN_ADD_BARMAN": {
+    "location_label": "Add Barman to tavern",
+    "item_label": "Barman added to tavern",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_OPEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BARMAN_DOLL"],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_1": {
+    "comment": "Statuette",
+    "location_label": "Get time machine item 1",
+    "item_label": "Got time machine item 1",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_ADD_BARMAN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_1"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_1": {
+    "location_label": "Watch time machine cutscene 1",
+    "item_label": "Watched time machine cutscene 1",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_1"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_STATUETTE"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_2": {
+    "comment": "Flask",
+    "location_label": "Get time machine item 2",
+    "item_label": "Got time machine item 2",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_1"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": [
+      "LOCATION_REWARD_TIME_MACHINE_ITEM_2",
+      "LOCATION_REWARD_TIME_MACHINE_ITEM_2_2"
+    ]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_2": {
+    "location_label": "Watch time machine cutscene 2",
+    "item_label": "Watched time machine cutscene 2",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_2"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_FLASK"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_3": {
+    "comment": "Door Hinge",
+    "location_label": "Get time machine item 3",
+    "item_label": "Got time machine item 3",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_2"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_3"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_3": {
+    "location_label": "Watch time machine cutscene 3",
+    "item_label": "Watched time machine cutscene 3",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_3"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_DOOR_HINGE"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_ENLARGE_CARROT": {
+    "location_label": "Enlarge your carrot",
+    "item_label": "Enlarged your carrot",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_3"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_4": {
+    "comment": "Legionary Helm",
+    "location_label": "Get time machine item 4",
+    "item_label": "Got time machine item 4",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_ENLARGE_CARROT"],
+    "required_happiness": ["FARMER_40"],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CARROT"],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_4"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4": {
+    "location_label": "Watch time machine cutscene 4",
+    "item_label": "Watched time machine cutscene 4",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_4"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_LEGIONARY_HELM"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_5": {
+    "comment": "Ancient Lockpicks",
+    "location_label": "Get time machine item 5",
+    "item_label": "Got time machine item 5",
+    "dlc": "STRANGER_SINS",
+    "required_quests": [
+      "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4",
+      "EVENT_TAVERN_EVENT_COMEDY_STANDUP"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_5"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5": {
+    "location_label": "Watch time machine cutscene 5",
+    "item_label": "Watched time machine cutscene 5",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_5"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ANCIENT_LOCKPICKS"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_6": {
+    "comment": "Priests Medallion",
+    "location_label": "Get time machine item 6",
+    "item_label": "Got time machine item 6",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BOOZE"],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_6"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_6": {
+    "location_label": "Watch time machine cutscene 6",
+    "item_label": "Watched time machine cutscene 6",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_6"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PRIESTS_MEDALLION"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_7": {
+    "comment": "The Legionary Dagger",
+    "location_label": "Get time machine item 7",
+    "item_label": "Got time machine item 7",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_6"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_7"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_7": {
+    "location_label": "Watch time machine cutscene 7",
+    "item_label": "Watched time machine cutscene 7",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_7"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_THE_LEGIONARY_DAGGER"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_8": {
+    "comment": "Belt Buckle",
+    "location_label": "Get time machine item 8",
+    "item_label": "Got time machine item 8",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_7"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_8"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8": {
+    "location_label": "Watch time machine cutscene 8",
+    "item_label": "Watched time machine cutscene 8",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_8"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_BELT_BUCKLE"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_TAVERN_UPGRADE_TAVERN": {
+    "location_label": "Upgrade the tavern",
+    "item_label": "Upgraded the tavern",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_9": {
+    "comment": "Clay Shards",
+    "location_label": "Get time machine item 9",
+    "item_label": "Got time machine item 9",
+    "dlc": "STRANGER_SINS",
+    "required_quests": [
+      "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8",
+      "EVENT_TAVERN_UPGRADE_TAVERN"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_9"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9": {
+    "location_label": "Watch time machine cutscene 9",
+    "item_label": "Watched time machine cutscene 9",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_9"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_CLAY_SHARDS"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_10": {
+    "comment": "Amulet of The Ancient God",
+    "location_label": "Get time machine item 10",
+    "item_label": "Got time machine item 10",
+    "dlc": "STRANGER_SINS",
+    "required_quests": [
+      "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9",
+      "EVENT_TAVERN_EVENT_RAT_RACE"
+    ],
+    "required_happiness": ["SNAKE_90"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_10"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_10": {
+    "location_label": "Watch time machine cutscene 10",
+    "item_label": "Watched time machine cutscene 10",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_10"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_AMULET_OF_THE_ANCIENT_GOD"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_11": {
+    "comment": "Ancient Shackles",
+    "location_label": "Get time machine item 11",
+    "item_label": "Got time machine item 11",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_10"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_11"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_11": {
+    "location_label": "Watch time machine cutscene 11",
+    "item_label": "Watched time machine cutscene 11",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_11"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ANCIENT_SHACKLES"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_12": {
+    "comment": "Ancient Pickaxe",
+    "location_label": "Get time machine item 12",
+    "item_label": "Got time machine item 12",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_11"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_DARK_ORGAN",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS",
+      "ITEM_WOODEN_BEAM",
+      "ITEM_SILK"
+    ],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_12"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_12": {
+    "location_label": "Watch time machine cutscene 12",
+    "item_label": "Watched time machine cutscene 12",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_12"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ANCIENT_PICKAXE"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_13": {
+    "comment": "Ancient Keys",
+    "location_label": "Get time machine item 13",
+    "item_label": "Got time machine item 13",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_12"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PIE_WITH_POISON"],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_13"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_13": {
+    "location_label": "Watch time machine cutscene 13",
+    "item_label": "Watched time machine cutscene 13",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_13"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ANCIENT_KEYS"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_14": {
+    "comment": "Clay Pot of Tar",
+    "location_label": "Get time machine item 14",
+    "item_label": "Got time machine item 14",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_13"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": [
+      "LOCATION_REWARD_TIME_MACHINE_ITEM_14",
+      "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2"
+    ]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_14": {
+    "location_label": "Watch time machine cutscene 14",
+    "item_label": "Watched time machine cutscene 14",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_14"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_CLAY_POT_OF_TAR"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_15": {
+    "comment": "Priestess Ring",
+    "location_label": "Get time machine item 15",
+    "item_label": "Got time machine item 15",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_14"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_15"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_15": {
+    "location_label": "Watch time machine cutscene 15",
+    "item_label": "Watched time machine cutscene 15",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_15"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PRIESTS_SIGNET"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_16": {
+    "comment": "Priests Signet",
+    "location_label": "Get time machine item 16",
+    "item_label": "Got time machine item 16",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_15"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_16"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_16": {
+    "location_label": "Watch time machine cutscene 16",
+    "item_label": "Watched time machine cutscene 16",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_16"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PRIESTESS_RING"],
+    "required_craft_items": [],
+    "reward": []
+  },
+  "EVENT_GET_TIME_MACHINE_ITEM_17": {
+    "comment": "A Brick from the Church",
+    "location_label": "Get time machine item 17",
+    "item_label": "Got time machine item 17",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_16"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_17"]
+  },
+  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_17": {
+    "location_label": "Watch time machine cutscene 17",
+    "item_label": "Watched time machine cutscene 17",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_17"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_A_BRICK_FROM_THE_CHURCH"],
+    "required_craft_items": [],
+    "reward": []
+  },
+
+  "EVENT_STAINED_GLASS_WINDOW_INSTALLED": {
+    "location_label": "Install the Stained Glass Window",
+    "item_label": "Stained Glass Window installed"
+  },
+  "EVENT_ENTER_PORTAL": {
+    "location_label": "Enter Portal",
+    "item_label": "Portal Entered"
+  },
+  "EVENT_CHURCH_OPEN": {
+    "location_label": "Open church",
+    "item_label": "Church opened"
+  },
+  "EVENT_CORPSE_HATCH_REPAIRED": {
+    "location_label": "Repair Corpse hatch",
+    "item_label": "Corpse hatch repaired"
+  },
+  "EVENT_EURIC_ARRIVE": {
+    "location_label": "Euric arrives",
+    "item_label": "Euric arrived"
+  },
+  "EVENT_SOULS_ROOM_OPEN": {
+    "location_label": "Give the old rustic key to Euric",
+    "item_label": "Souls room opened"
+  },
+  "EVENT_GERRY_ASK_ABOUT_THE_TOOTH": {
+    "location_label": "Ask about the tooth",
+    "item_label": "Asked about the tooth"
+  },
+  "EVENT_HATCH_REPAIRED": {
+    "location_label": "Repair Hatch to Euric's Room",
+    "item_label": "Hatch to Euric's Room repaired"
+  },
+  "EVENT_SMILER_APPEARS": {
+    "location_label": "Smiler appears",
+    "item_label": "Smiler appeared"
+  },
+  "EVENT_EURIC_HEALED": {
+    "location_label": "Heal Euric",
+    "item_label": "Euric healed"
+  },
+  "EVENT_REPAIR_VILLAGE": {
+    "location_label": "Repair the village",
+    "item_label": "Village repaired"
+  }
+}

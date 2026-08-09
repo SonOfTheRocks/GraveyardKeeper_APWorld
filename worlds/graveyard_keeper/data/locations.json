@@ -1,0 +1,377 @@
+{
+  "LOCATION_TUTORIAL_ENTER_MORGUE_WITH_CORPSE": {
+    "label": "Tutorial - Enter Morgue with Corpse",
+    "parent_region": "REGION_MORGUE"
+  },
+  "LOCATION_TUTORIAL_GET_FIRST_FLESH": {
+    "label": "Tutorial - Get First Flesh",
+    "parent_region": "REGION_MORGUE"
+  },
+  "LOCATION_TUTORIAL_TALK_TO_BISHOP_1": {
+    "label": "Tutorial - Talk to Bishop (1)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_TUTORIAL_TALK_TO_BISHOP_2": {
+    "label": "Tutorial - Talk to Bishop (2)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+
+
+  "LOCATION_TUTORIAL_TALK_TO_BISHOP_3": {
+    "label": "Tutorial - Talk to Bishop (3)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_SKULL": {
+    "label": "Astrologer Reward - Bring him a Skull",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_PORTAL": {
+    "label": "Astrologer - Ask about the Portal (10 Happiness)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_KEEPERS_JOURNAL": {
+    "label": "Astrologer - Give him the Diary",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_HIS_DAY": {
+    "label": "Astrologer - Ask him about his Day",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+
+
+  "LOCATION_DONKEY_MEET": {
+    "label": "Donkey - Meet the Donkey",
+    "parent_region": "REGION_PLAINS"
+  },
+
+
+  "LOCATION_BISHOP_MEET": {
+    "label": "Bishop - Meet the Bishop",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_1": {
+    "label": "Bishop Reward - Fix the Graveyard (1)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_2": {
+    "label": "Bishop Reward - Fix the Graveyard (2)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_BISHOP_ACCEPT_QUEST_BOWLS_FOR_THE_SOUP_KITCHEN": {
+    "label": "Bishop - Accept Quest - Bowls for the Soup Kitchen",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_BISHOP_REWARD_BOWLS_FOR_THE_SOUP_KITCHEN_1": {
+    "label": "Bishop Reward - Bowls for the Soup Kitchen (1)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_BISHOP_REWARD_BOWLS_FOR_THE_SOUP_KITCHEN_2": {
+    "label": "Bishop Reward - Bowls for the Soup Kitchen (2)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_BISHOP_REWARD_RECITE_ODE": {
+    "label": "Bishop Reward - Recite the ode for Bishop",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+
+
+  "LOCATION_INQUISITOR_MEET": {
+    "label": "Inquisitor - Meet the Inquisitor",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FIREWOOD": {
+    "label": "Inquisitor Reward - Burn the Witch (Bring Firewood)",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FLYERS": {
+    "label": "Inquisitor Reward - Burn the Witch (Bring Flyers)",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_I_THINK_I_CAN_BE_TRUSTED": {
+    "label": "Inquisitor - I think I can be trusted (20 Happiness)",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_SHOW_ASH": {
+    "label": "Inquisitor - Show him the unusual ash",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+
+
+  "LOCATION_MERCHANT_REWARD_REPAY_LOAN": {
+    "label": "Merchant Reward - Repay Loan",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_GIVE_HIM_VEGETABLES": {
+    "label": "Merchant Reward - Give him vegetables",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_HICCUP_CURE": {
+    "label": "Merchant Reward - Hiccup Cure",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_GIVE_MYSTERIOUS_FOOD_SAUCE": {
+    "label": "Merchant Reward - Let him taste the mysterious food sauce",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+
+
+  "LOCATION_MS_CHARM_REWARD_PERSUADE_TO_DANCE": {
+    "label": "Ms. Charm Reward - Persuade her to Dance with Euric",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+
+
+  "LOCATION_SNAKE_REWARD_PROVE_YOU_ARE_THE_GRAVEYARD_KEEPER": {
+    "label": "Snake Reward - Prove you are the Graveyard Keeper",
+    "parent_region": "REGION_UNDERGROUND_TUNNEL"
+  },
+  "LOCATION_SNAKE_GIVE_ACTIVE_KEY": {
+    "label": "Snake - Give active key",
+    "parent_region": "REGION_UNDERGROUND_TUNNEL"
+  },
+  "LOCATION_SNAKE_GIVE_RUMOR": {
+    "label": "Snake Reward - Show him the rumor",
+    "parent_region": "REGION_UNDERGROUND_TUNNEL"
+  },
+
+
+  "LOCATION_FARMER_ASK_ABOUT_FARMING": {
+    "label": "Farmer - Ask about farming",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+
+
+  "LOCATION_HORADRIC_ASK_ABOUT_KITCHEN_GARDEN": {
+    "label": "Horadric - Ask about kitchen garden",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+
+
+  "LOCATION_KREZVOLD_GIVE_LETTER": {
+    "label": "Krezvold - Give him the letter",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KREZVOLD_ASK_ABOUT_METAL_ORE": {
+    "label": "Krezvold - Ask about metal ore (10 Happiness)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KREZVOLD_REWARD_KILL_SLIMES": {
+    "label": "Krezvold Reward - Kill Slimes",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+
+
+  "LOCATION_LIGHTHOUSE_KEEPER_ASK_ABOUT_FISH_DISHES": {
+    "label": "Lighthouse Keeper - Ask about fish dishes",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+
+  "LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE": {
+    "label": "Tress Reward - For repairing the Village",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+
+
+  "LOCATION_GERRY_REWARD_COME_BACK_FROM_THE_VILLAGE_1": {
+    "label": "Gerry Reward - Come back from the village (1)",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_GERRY_REWARD_COME_BACK_FROM_THE_VILLAGE_2": {
+    "label": "Gerry Reward - Come back from the village (2)",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_GERRY_REWARD_GET_GERRY_BEER": {
+    "label": "Gerry Reward - Get Gerry Beer",
+    "parent_region": "REGION_MORGUE"
+  },
+  "LOCATION_GERRY_REWARD_GET_BERRY_WINE": {
+    "label": "Gerry Reward - Get Berry Wine",
+    "parent_region": "REGION_MORGUE"
+  },
+  "LOCATION_GERRY_REWARD_GIVE_BEER_AND_SAND": {
+    "label": "Gerry Reward - Wash him with Beer and Sand",
+    "parent_region": "REGION_MORGUE"
+  },
+
+
+  "LOCATION_CLOTHO_MEET": {
+    "label": "Clotho - Meet Clotho",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_CLOTHO_ACCEPT_QUEST_LOST_MEMORIES": {
+    "label": "Clotho - Accept Quest - Lost Memories",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_CLOTHO_REWARD_GIVE_HONEY": {
+    "label": "Clotho Reward - Give her Honey",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_CLOTHO_ASK_ABOUT_SAUCE": {
+    "label": "Clotho - Ask her about a food-enhancing sauce",
+    "parent_region": "REGION_SWAMP"
+  },
+
+
+  "LOCATION_USE_SCROLL_FROM_CELLAR_TRUNK": {
+    "label": "Use Scroll - Found in Cellar Trunk",
+    "parent_region": "REGION_CELLAR"
+  },
+  "LOCATION_USE_SCROLL_FROM_MISS_CHAIN_1": {
+    "label": "Use Scroll - Bought from Miss Chain (1)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_USE_SCROLL_FROM_MISS_CHAIN_2": {
+    "label": "Use Scroll - Bought from Miss Chain (2)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_USE_SCROLL_FROM_MISS_CHAIN_3": {
+    "label": "Use Scroll - Bought from Miss Chain (3)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_USE_SCROLL_FROM_MISS_CHAIN_4": {
+    "label": "Use Scroll - Bought from Miss Chain (4)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+
+
+  "LOCATION_THE_VILLAGE_LOOK_AT_EGGS": {
+    "label": "The Village - Look at Eggs",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_ROYAL_SERVICES_CITIZEN_PAY":{
+    "label": "Royal Services - Citizen/Pay 10 Bronze",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_CITIZEN_ROYAL_STAMP":{
+    "label": "Royal Services - Citizen/Royal Stamp (30 Happiness)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_CITIZEN_BUILDING_PERMISSION":{
+    "label": "Royal Services - Citizen/Building Permission (30 Happiness)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_RIGHTFUL_CITIZEN_PAY":{
+    "label": "Royal Services - Rightful Citizen/Pay 3 Silver (30 Happiness)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_WRITE_A_LETTER_TO_VAGNER": {
+    "label": "Royal Services - Write a Letter to Vagner regarding an Ode to Bishop",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+
+
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_1": {
+    "label": "Quest Reward - Time Machine Item 1",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_2": {
+    "label": "Quest Reward - Time Machine Item 2 #1",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_2_2": {
+    "label": "Quest Reward - Time Machine Item 2 #2",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_3": {
+    "label": "Quest Reward - Time Machine Item 3",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_4": {
+    "label": "Quest Reward - Time Machine Item 4",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_5": {
+    "label": "Quest Reward - Time Machine Item 5",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_6": {
+    "label": "Quest Reward - Time Machine Item 6",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_7": {
+    "label": "Quest Reward - Time Machine Item 7",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_8": {
+    "label": "Quest Reward - Time Machine Item 8",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_9": {
+    "label": "Quest Reward - Time Machine Item 9",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_10": {
+    "label": "Quest Reward - Time Machine Item 10",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_11": {
+    "label": "Quest Reward - Time Machine Item 11",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_12": {
+    "label": "Quest Reward - Time Machine Item 12",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_13": {
+    "label": "Quest Reward - Time Machine Item 13",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_14": {
+    "label": "Quest Reward - Time Machine Item 14",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_15": {
+    "label": "Quest Reward - Time Machine Item 15",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_16": {
+    "label": "Quest Reward - Time Machine Item 16",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_17": {
+    "label": "Quest Reward - Time Machine Item 17",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+
+
+  "LOCATION_EURIC_FIND_OUT_MORE_ABOUT_EURIC":  {
+    "label": "Euric - Find out more about him",
+    "parent_region": "REGION_SOULS_ROOM"
+  },
+  "LOCATION_ASK_SMILER_ABOUT_HUMAN_HEALING": {
+    "label": "Smiler - Ask him about human healing",
+    "parent_region": "REGION_SOULS_ROOM"
+  },
+
+
+  "LOCATION_REPAIR_BED": {
+    "label": "Repair the bed in Euric's room",
+    "parent_region": "REGION_EURICS_ROOM"
+  },
+  "LOCATION_EURIC_REPAIR_FURNITURE": {
+    "label": "Euric Reward - Repair all the furniture",
+    "parent_region": "REGION_EURICS_ROOM"
+  },
+  "LOCATION_EURIC_HEAL_SINS_1": {
+    "label": "Euric Reward - Heal his sins (1)",
+    "parent_region": "REGION_EURICS_ROOM"
+  },
+  "LOCATION_EURIC_HEAL_SINS_2": {
+    "label": "Euric Reward - Heal his sins (2)",
+    "parent_region": "REGION_EURICS_ROOM"
+  },
+  "LOCATION_EURIC_HEAL_SINS_3": {
+    "label": "Euric Reward - Heal his sins (3)",
+    "parent_region": "REGION_EURICS_ROOM"
+  },
+
+
+  "LOCATION_SACRIFICE_ZONE_EXAMINE_BROKEN_CABINET": {
+    "label": "Sacrifice Zone - Examine Broken Cabinet (Next to Gunter)",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_APIARY_DIG_UP_ZOMBIE": {
+    "label": "Plains - Dig up Zombie",
+    "parent_region": "REGION_APIARY"
+  }
+}

@@ -1,0 +1,1821 @@
+{
+  "ITEM_TECHBOOK_1_RED": [
+    {
+        "crafting_stations": [
+          "CRAFTING_STATION_RANDOM_TEXT_GENERATOR"
+        ],
+        "recipe_required": "",
+        "materials_required": [
+          "ITEM_CLEAN_PAPER"
+        ]
+    }
+  ],
+  "ITEM_TECHBOOK_1_GREEN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_RANDOM_TEXT_GENERATOR"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER"
+      ]
+    }
+  ],
+  "ITEM_TECHBOOK_1_BLUE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_RANDOM_TEXT_GENERATOR"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER"
+      ]
+    }
+  ],
+  "ITEM_BOOK_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_SOFTCOVER",
+        "ITEM_CHAPTER_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.7,
+      "materials_required": [
+        "ITEM_SOFTCOVER",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.7,
+      "materials_required": [
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_CHAPTER_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_CHAPTER_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_COPPER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_COPPER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_BOOK_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": -0.3,
+      "materials_required": [
+        "ITEM_SOFTCOVER",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_SOFTCOVER",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.7,
+      "materials_required": [
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_CHAPTER_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.7,
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_GOLD",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": -0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_COPPER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_COPPER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_BOOK_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": -0.8,
+      "materials_required": [
+        "ITEM_SOFTCOVER",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": -0.3,
+      "materials_required": [
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": -0.3,
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_HARDCOVER_GOLD",
+        "ITEM_CHAPTER_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK",
+      "crafting_group": "book",
+      "base_modifier": 0.7,
+      "materials_required": [
+        "ITEM_HARDCOVER_GOLD",
+        "ITEM_CHAPTER_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": -0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": -0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_STORY_SILVER",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH",
+      "crafting_group": "book",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_STORY_GOLD",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_STORY_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STORY",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_RANDOM_TEXT_GENERATOR"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER"
+      ]
+    }
+  ],
+  "ITEM_STORY_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STORY",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_RANDOM_TEXT_GENERATOR"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STORY_ORGAN_WORKBENCH",
+      "crafting_group": "writer_only",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_STORY_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STORY",
+      "crafting_group": "writing",
+      "base_modifier": -1.0,
+      "materials_required": [
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_RANDOM_TEXT_GENERATOR"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CLEAN_PAPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STORY_ORGAN_WORKBENCH",
+      "crafting_group": "writer_only",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_CHAPTER_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_NOTES_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_NOTES_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_STORY_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_STORY_SILVER"
+      ]
+    }
+  ],
+  "ITEM_CHAPTER_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_NOTES_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_NOTES_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_STORY_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_STORY_GOLD"
+      ]
+    }
+  ],
+  "ITEM_CHAPTER_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_NOTES_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CLEAN_PAPER",
+        "ITEM_SIN_SHARD",
+        "ITEM_STORY_GOLD"
+      ]
+    }
+  ],
+  "ITEM_NOTES_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NOTES",
+      "crafting_group": "writing",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "ITEM_STORY_COPPER",
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NOTES",
+      "crafting_group": "writing",
+      "base_modifier": 1.3,
+      "materials_required": [
+        "ITEM_STORY_SILVER",
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER"
+      ]
+    }
+  ],
+  "ITEM_NOTES_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NOTES",
+      "crafting_group": "writing",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "ITEM_STORY_SILVER",
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NOTES",
+      "crafting_group": "writing",
+      "base_modifier": 1.3,
+      "materials_required": [
+        "ITEM_STORY_GOLD",
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER"
+      ]
+    }
+  ],
+  "ITEM_NOTES_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NOTES",
+      "crafting_group": "writing",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "ITEM_STORY_GOLD",
+        "ITEM_PEN_AND_INK",
+        "ITEM_CLEAN_PAPER"
+      ]
+    }
+  ],
+
+  "ITEM_CLEAN_PAPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CLEAN_PAPER",
+      "materials_required": [
+        "ITEM_PIGSKIN_PAPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_RUINED_BOOK",
+        "ITEM_RIVER_SAND"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PAPER_PRESS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CLEAN_PAPER",
+      "materials_required": [
+        "ITEM_PAPER_GLOP",
+        "ITEM_WHITE_PAINT"
+      ]
+    }
+  ],
+  "ITEM_HARDCOVER_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HARD_COVER",
+      "materials_required": [
+        "ITEM_SOFTCOVER",
+        "ITEM_TANNING_AGENT",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_HARDCOVER_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HARD_COVER",
+      "materials_required": [
+        "ITEM_HARDCOVER_COPPER",
+        "ITEM_STEEL_PARTS",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_HARDCOVER_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HARD_COVER",
+      "materials_required": [
+        "ITEM_HARDCOVER_SILVER",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+  "ITEM_INK": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_INK",
+      "materials_required": [
+        "ITEM_BLACK_PAINT",
+        "ITEM_CONICAL_FLASKS",
+        "ITEM_WATER"
+      ]
+    }
+  ],
+  "ITEM_PAPER_GLOP": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PAPER_GLOP",
+      "materials_required": [
+        "ITEM_BUCKET_OF_CLEAR_WATER",
+        "ITEM_WHEAT"
+      ]
+    }
+  ],
+  "ITEM_PEN_AND_INK": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PEN_AND_INK",
+      "materials_required": [
+        "ITEM_INK",
+        "ITEM_FEATHER"
+      ]
+    }
+  ],
+  "ITEM_PIGSKIN_PAPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PIGSKIN_PAPER",
+      "materials_required": [
+        "ITEM_SKIN"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PIGSKIN_PAPER",
+      "materials_required": [
+        "ITEM_BAT_WING"
+      ]
+    }
+  ],
+  "ITEM_SOFTCOVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_SOFT_COVER",
+      "materials_required": [
+        "ITEM_PIGSKIN_PAPER"
+      ]
+    }
+  ],
+
+  "ITEM_COMBO_PRAYER_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_COMBO_PRAYER",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_COMBO_PRAYER",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_COMBO_PRAYER_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_COMBO_PRAYER",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_COMBO_PRAYER",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_COMBO_PRAYER_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_COMBO_PRAYER",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_DONATIONS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_DONATIONS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_DONATIONS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_EXCELLENCE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_EXCELLENCE",
+      "materials_required": [
+        "ITEM_BOOK_COPPER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_EXCELLENCE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_EXCELLENCE",
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_EXCELLENCE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_EXCELLENCE",
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_FAITH_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_PEN_AND_INK"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_PEN_AND_INK"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_FAITH_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_PEN_AND_INK"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH",
+        "ITEM_PEN_AND_INK"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_FAITH_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH",
+        "ITEM_PEN_AND_INK"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_IMAGINATION_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_IMAGINATION",
+      "materials_required": [
+        "ITEM_BOOK_COPPER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_IMAGINATION_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_IMAGINATION",
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_IMAGINATION_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_IMAGINATION",
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_PROSPERITY_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_PROSPERITY_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_PROSPERITY_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_PROTECTION_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_PROTECTION_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_PROTECTION_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_REPENTANCE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_REPENTANCE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_REPENTANCE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_REPOSE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_REPOSE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_REPOSE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_RETRIBUTION_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_RETRIBUTION_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION",
+      "crafting_group": "writing",
+      "base_modifier": 1.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_RETRIBUTION_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION",
+      "crafting_group": "writing",
+      "base_modifier": 0.2,
+      "materials_required": [
+        "ITEM_BOOK_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_SHOOTS_AND_ROOTS_COPPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_SHOOTS_AND_ROOTS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS",
+      "crafting_group": "writing",
+      "base_modifier": 1.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAYER_FOR_SHOOTS_AND_ROOTS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_DESK"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS",
+      "crafting_group": "writing",
+      "base_modifier": 0.5,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_REPOSE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_REPOSE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_REPOSE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_CONTENTMENT_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_CONTENTMENT_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_CONTENTMENT_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSIN_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSIN_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_COPPER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSIN_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING",
+      "crafting_group": "writing",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_CHAPTER_SILVER",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING",
+      "crafting_group": "writing",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_CHAPTER_GOLD",
+        "ITEM_FAITH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ]
+}

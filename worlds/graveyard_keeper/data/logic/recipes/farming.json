@@ -1,0 +1,969 @@
+{
+  "ITEM_BEET": [
+    {
+      "crafting_stations":[
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_BEET_SEED"
+      ]
+    }
+  ],
+  "ITEM_CABBAGE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CABBAGE_SEED"
+      ]
+    }
+  ],
+  "ITEM_CARROT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CARROT_SEED"
+      ]
+    }
+  ],
+  "ITEM_GRAPES_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_COPPER"
+      ]
+    }
+  ],
+  "ITEM_GRAPES_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_GRAPES_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD_3"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPES",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_HEMP": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HEMP_SEED"
+      ]
+    }
+  ],
+  "ITEM_HOPS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_COPPER"
+      ]
+    }
+  ],
+  "ITEM_HOPS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_HOPS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD_3"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HOPS",
+      "materials_required": [
+        "ITEM_HOPS_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_LENTILS_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_COPPER"
+      ]
+    }
+  ],
+  "ITEM_LENTILS_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
+        "CRAFTING_STATION_ZOMBIE_FARM_2"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_LENTILS_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
+        "CRAFTING_STATION_ZOMBIE_FARM_3"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_ONION_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_COPPER"
+      ]
+    }
+  ],
+  "ITEM_ONION_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM_2"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_ONION_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM_3"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_COPPER"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM_2"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM_3"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_WHEAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_WHEAT_SEED"
+      ]
+    }
+  ],
+
+  "ITEM_GRAPE_SEED_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+ ],
+  "ITEM_GRAPE_SEED_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_HOPS_SEED_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_HOPS_SEED_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_LENTIL_SEED_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_LENTIL_SEED_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_ONION_SEED_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_ONION_SEED_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_SEED_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_COPPER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+  "ITEM_PUMPKIN_SEED_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_1"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_SILVER",
+        "ITEM_QUALITY_FERTILIZER_2"
+      ]
+    }
+  ],
+
+  "ITEM_CROP_WASTE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_BEET_SEED"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CABBAGE_SEED"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CARROT_SEED"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GRAPE_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HEMP_SEED"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_VINE_TRELLIS",
+        "CRAFTING_STATION_ZOMBIE_VINEYARD"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HOPS_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_LENTIL_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_COPPER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_SILVER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_PUMPKIN_SEED_GOLD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_EMPTY_GARDEN_BED",
+        "CRAFTING_STATION_ZOMBIE_FARM"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_WHEAT_SEED"
+      ]
+    }
+  ],
+  "ITEM_PEAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COMPOST_HEAP"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_PEAT",
+      "materials_required": [
+        "ITEM_CROP_WASTE"
+      ]
+    }
+  ],
+  "ITEM_BOOST_FERTILIZER_1": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOST_FERTILIZER_1",
+      "materials_required": [
+        "ITEM_PEAT",
+        "ITEM_ENERGY_ELIXIR"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOST_FERTILIZER_1_ORGAN_WORKBENCH",
+      "materials_required": [
+        "ITEM_PEAT",
+        "ITEM_HEMP",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_BOOST_FERTILIZER_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOST_FERTILIZER_2",
+      "materials_required": [
+        "ITEM_BOOST_FERTILIZER_1",
+        "ITEM_ENERGY_ELIXIR"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_BOOST_FERTILIZER_2_ORGAN_WORKBENCH",
+      "materials_required": [
+        "ITEM_BOOST_FERTILIZER_1",
+        "ITEM_HEMP",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_QUALITY_FERTILIZER_1": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_1",
+      "materials_required": [
+        "ITEM_PEAT",
+        "ITEM_GROWTH_ENHANCER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_1_ORGAN_WORKBENCH",
+      "materials_required": [
+        "ITEM_PEAT",
+        "ITEM_ASH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_QUALITY_FERTILIZER_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHURCH_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_2",
+      "materials_required": [
+        "ITEM_QUALITY_FERTILIZER_1",
+        "ITEM_FLAVOR_ENHANCER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_2_ORGAN_WORKBENCH",
+      "materials_required": [
+        "ITEM_QUALITY_FERTILIZER_1",
+        "ITEM_ASH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ]
+}

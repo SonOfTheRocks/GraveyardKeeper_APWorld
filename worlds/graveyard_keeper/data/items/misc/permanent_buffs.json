@@ -1,0 +1,107 @@
+{
+  "ITEM_PBUFF_BEER_THIRST": {
+    "label": "Permanent Buff: Beer Thirst",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_BERSERK_DMG": {
+    "label": "Permanent Buff: Berserk (Damage)",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_BERSERK_POISON": {
+    "label": "Permanent Buff: Berserk (Poison)",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_DEEP_SLEEP": {
+    "label": "Permanent Buff: Deep Sleep",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_DIFFICULT_CORPSES": {
+    "label": "Permanent Buff: Difficult Corpses",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_DIGESTION": {
+    "label": "Permanent Buff: Digestion",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_FAST_REFLEXES": {
+    "label": "Permanent Buff: Fast Reflexes",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_FERTILITY": {
+    "label": "Permanent Buff: Fertility",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_GOOD_FISHERMAN": {
+    "label": "Permanent Buff: Good Fisherman",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_HANDYMAN_MOOD": {
+    "label": "Permanent Buff: Handyman Mood",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_HARD_WORKER": {
+    "label": "Permanent Buff: Hard Worker",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_INSPIRATION": {
+    "label": "Permanent Buff: Inspiration",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_RAGE": {
+    "label": "Permanent Buff: Rage",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_REPENTANCE": {
+    "label": "Permanent Buff: Repentance",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_RESTORING": {
+    "label": "Permanent Buff: Restoring",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_SlOW_METABOLISM": {
+    "label": "Permanent Buff: Slow Metabolism",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_SPEED": {
+    "label": "Permanent Buff: Speed",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_SPIRITUAL_BLESSING": {
+    "label": "Permanent Buff: Spiritual Blessing",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_SPIRITUAL_MAGNETISM": {
+    "label": "Permanent Buff: Spiritual Magnetism",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_STEADY_HAND": {
+    "label": "Permanent Buff: Steady Hand",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PBUFF_TOUGH_MOOD": {
+    "label": "Permanent Buff: Tough Mood",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  }
+}

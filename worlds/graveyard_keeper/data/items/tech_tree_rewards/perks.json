@@ -1,0 +1,137 @@
+{
+  "ITEM_PERK_BUTCHER": {
+    "label": "Perk: Butcher",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_SURGEON": {
+    "label": "Perk: Surgeon",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_SCIENTIST": {
+    "label": "Perk: Scientist",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_CULTIST": {
+    "label": "Perk: Cultist",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_PREACHER": {
+    "label": "Perk: Preacher",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_CARDINAL": {
+    "label": "Perk: Cardinal",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_CURIOUS_MIND": {
+    "label": "Perk: Curious mind",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_JOURNALIST": {
+    "label": "Perk: Journalist",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_WRITER": {
+    "label": "Perk: Writer",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_PLAYWRIGHT": {
+    "label": "Perk: Playwright",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_MASTER_GATHERER": {
+    "label": "Perk: Master gatherer",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_FARMER": {
+    "label": "Perk: Farmer",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_BEEKEEPER": {
+    "label": "Perk: Beekeeper",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_WINE_MASTER": {
+    "label": "Perk: Wine master",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_BLACKSMITH": {
+    "label": "Perk: Blacksmith",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_BIG_GUY": {
+    "label": "Perk: Big guy",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_FIREMAN": {
+    "label": "Perk: Fireman",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_ENGINEER": {
+    "label": "Perk: Engineer",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_SWORD_MASTER": {
+    "label": "Perk: Sword master",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_AXEMAN": {
+    "label": "Perk: Axeman",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_MINER": {
+    "label": "Perk: Miner",
+    "dlc": "BASE_GAME",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_CARPENTER": {
+    "label": "Perk: Carpenter",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_MASON": {
+    "label": "Perk: Mason",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_JEWELER": {
+    "label": "Perk: Jeweler",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_ELOQUENCE": {
+    "label": "Perk: Eloquence",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "USEFUL"
+  },
+  "ITEM_PERK_INDUSTRIOUSNESS": {
+    "label": "Perk: Industriousness",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERK_PERSISTENCE": {
+    "label": "Perk: Persistence",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "USEFUL"
+  }
+}

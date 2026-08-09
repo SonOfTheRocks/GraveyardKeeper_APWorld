@@ -1,0 +1,288 @@
+{
+  "ITEM_FLESH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_FLESH",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_BLOOD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_BLOOD",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_FAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_FAT",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_SKIN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_SKIN",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_BONE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_BONE",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_SKULL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_SKULL",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_INTESTINE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_INTESTINES",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_HEART": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_HEART",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_BRAIN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_BRAIN",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_DARK_INTESTINE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_DARK_INTESTINES",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_DARK_HEART": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_DARK_HEART",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_DARK_BRAIN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_PREPARATION_PLACE"
+      ],
+      "recipe_required": "ITEM_LEARN_EXTRACT_DARK_BRAIN",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+
+  "ITEM_DARK_ORGAN": [
+    {
+      "crafting_stations": [],
+      "recipe_required": [],
+      "materials_required": [
+        "ITEM_DARK_INTESTINE"
+      ]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": [],
+      "materials_required": [
+        "ITEM_DARK_HEART"
+      ]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": [],
+      "materials_required": [
+        "ITEM_DARK_BRAIN"
+      ]
+    }
+  ],
+
+  "ITEM_HARMED_SOUL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SOUL_EXTRACTOR"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_CORPSE"
+      ]
+    }
+  ],
+  "ITEM_HEALED_SOUL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SOUL_HEALER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HARMED_SOUL"
+      ]
+    }
+  ],
+  "ITEM_SOUL_GRATITUDE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SOUL_PORTAL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HARMED_SOUL"
+      ]
+    }
+  ],
+  "ITEM_SIN_SHARD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_INVENTORY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HARMED_SOUL"
+      ]
+    }
+  ],
+
+  "ITEM_MODIFIED_FLESH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_FLESH",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_MODIFIED_SKIN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SKIN",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_MODIFIED_BLOOD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_BLOOD",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_MODIFIED_FAT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_FAT",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_MODIFIED_BRAIN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_BRAIN",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_MODIFIED_INTESTINE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_INTESTINE",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ],
+  "ITEM_MODIFIED_HEART": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ORGAN_WORKBENCH"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_HEART",
+        "ITEM_SIN_SHARD"
+      ]
+    }
+  ]
+}

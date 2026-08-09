@@ -1,0 +1,1145 @@
+{
+  "CRAFTING_STATION_INVENTORY": {
+    "regions": [
+      "REGION_SWEET_HOME"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_COOKING_TABLE": {
+    "regions": [
+      "REGION_SWEET_HOME"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_OVEN": {
+    "regions": [
+      "REGION_SWEET_HOME"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+
+  "CRAFTING_STATION_BONFIRE": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_FORAGING": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_CLAY_PIT": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_SAND_MOUND": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_COAL_DEPOSIT": {
+    "regions": [
+      "REGION_QUARRY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+
+  "CRAFTING_STATION_GREEN_SLIME": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_BLUE_SLIME": {
+    "regions": [
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_ORANGE_SLIME": {
+    "regions": [
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_BLACK_SLIME": {
+    "regions": [
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_BAT": {
+    "regions": [
+      "REGION_PLAINS",
+      "REGION_SWAMP",
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_SPIDER": {
+    "regions": [
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_LIGHTNING_BALL": {
+    "regions": [
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_IRON_MAIDEN": {
+    "regions": [
+      "REGION_DUNGEON"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+
+  "CRAFTING_STATION_FISHING_SPOT_VILLAGE": {
+    "regions": [
+      "REGION_THE_VILLAGE"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_FISHING_SPOT_SEA": {
+    "regions": [
+      "REGION_BEACH"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_FISHING_SPOT_WATERFALL": {
+    "regions": [
+      "REGION_SWAMP"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_FISHING_SPOT_SWAMP": {
+    "regions": [
+      "REGION_SWAMP"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_FISHING_SPOT_RIVER": {
+    "regions": [
+      "REGION_FOREST_NEAR_RIVER"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+
+  "CRAFTING_STATION_STONE_CUTTER": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_STONE_CUTTER",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_STONE_CUTTER_2": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_STONE_CUTTER_2",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_FLITCH",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_FURNACE": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_FURNACE",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_FURNACE_2": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_FURNACE_2",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_PIGSKIN_PAPER"
+    ]
+  },
+  "CRAFTING_STATION_FURNACE_3": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_FURNACE_3",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_PIGSKIN_PAPER"
+    ]
+  },
+  "CRAFTING_STATION_WOODEN_ANVIL": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_WOODEN_ANVIL",
+    "materials_required": [
+      "ITEM_WOOD_BILLET",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_ANVIL": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ANVIL",
+    "materials_required": [
+      "ITEM_IRON_INGOT"
+    ]
+  },
+  "CRAFTING_STATION_ANVIL_2": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ANVIL_2",
+    "materials_required": [
+      "ITEM_IRON_INGOT",
+      "ITEM_STEEL_INGOT"
+    ]
+  },
+  "CRAFTING_STATION_CARPENTERS_WORKBENCH": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CARPENTERS_WORKBENCH",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_CARPENTERS_WORKBENCH_2": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CARPENTERS_WORKBENCH_2",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_WOODEN_BEAM"
+    ]
+  },
+  "CRAFTING_STATION_VINE_PRESS": {
+    "regions": [
+      "REGION_WORKYARD",
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_VINE_PRESS",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_A_PIECE_OF_STONE"
+    ]
+  },
+  "CRAFTING_STATION_SAWHORSE": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_SAWHORSE",
+    "materials_required": [
+      "ITEM_WOODEN_STICK"
+    ]
+  },
+  "CRAFTING_STATION_CIRCULAR_SAW": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CIRCULAR_SAW",
+    "materials_required": [
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_CHOPPING_SPOT": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CHOPPING_SPOT",
+    "materials_required": [
+      "ITEM_WOOD_BILLET"
+    ]
+  },
+  "CRAFTING_STATION_POTTERS_WHEEL": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_POTTERS_WHEEL",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_PAPER_PRESS": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PAPER_PRESS",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_JEWELRY_TABLE": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_JEWELRY_TABLE",
+    "materials_required": [
+      "ITEM_JOINTING",
+      "ITEM_STEEL_PARTS",
+      "ITEM_LENS"
+    ]
+  },
+  "CRAFTING_STATION_WELL": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_CRATE_FACTORY": {
+    "regions": [
+      "REGION_WORKYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CRATE_FACTORY",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_A_PIECE_OF_STONE"
+    ]
+  },
+
+  "CRAFTING_STATION_PREPARATION_PLACE": {
+    "regions": [
+      "REGION_MORTUARY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_PREPARATION_PLACE_2": {
+    "regions": [
+      "REGION_MORTUARY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PREPARATION_PLACE_2",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_STEEL_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_EMBALMING_TABLE": {
+    "regions": [
+      "REGION_MORTUARY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_EMBALMING_TABLE",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_EMBALMING_TABLE_2": {
+    "regions": [
+      "REGION_MORTUARY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_EMBALMING_TABLE_2",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_STEEL_PARTS",
+      "ITEM_ADVANCED_CONICAL_FLASKS"
+    ]
+  },
+  "CRAFTING_STATION_RESURRECTION_TABLE": {
+    "regions": [
+      "REGION_MORTUARY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_RESURRECTION_TABLE",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+
+  "CRAFTING_STATION_ORGAN_WORKBENCH": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ORGAN_WORKBENCH",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_WALL_CREMATORIUM": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_WALL_CREMATORIUM",
+    "materials_required": [
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_IRON_CHISEL",
+      "ITEM_A_POLISHED_BRICK_OF_STONE"
+    ]
+  },
+  "CRAFTING_STATION_SOUL_EXTRACTOR": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS",
+      "ITEM_FLITCH"
+    ]
+  },
+  "CRAFTING_STATION_SOUL_EXTRACTOR_2": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_EXTRACTOR"
+    ],
+    "recipe_required": "ITEM_BP_SOUL_EXTRACTOR_2",
+    "materials_required": [
+      "ITEM_HEMP_ROPE",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_SKIN"
+    ]
+  },
+  "CRAFTING_STATION_SOUL_EXTRACTOR_3": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_EXTRACTOR_2"
+    ],
+    "recipe_required": "ITEM_BP_SOUL_EXTRACTOR_3",
+    "materials_required": [
+      "ITEM_STEEL_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_SOUL_HEALER": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_GLASS",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_SKIN"
+    ]
+  },
+  "CRAFTING_STATION_SOUL_PORTAL": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS",
+      "ITEM_POLISHING_PASTE"
+    ]
+  },
+  "CRAFTING_STATION_EXTENSION_HEALING_FROM_PRIDE": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_EXTENSION_HEALING_FROM_PRIDE",
+    "materials_required": [
+      "ITEM_CONICAL_FLASKS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_EXTENSION_HEALING_FROM_WRATH": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_EXTENSION_HEALING_FROM_WRATH",
+    "materials_required": [
+      "ITEM_CONICAL_FLASKS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_EXTENSION_HEALING_FROM_GLUTTONY": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_EXTENSION_HEALING_FROM_GLUTTONY",
+    "materials_required": [
+      "ITEM_CONICAL_FLASKS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_EXTENSION_HEALING_FROM_SLOTH": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_EXTENSION_HEALING_FROM_SLOTH",
+    "materials_required": [
+      "ITEM_CONICAL_FLASKS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_EXTENSION_HEALING_FROM_LUST": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_EXTENSION_HEALING_FROM_LUST",
+    "materials_required": [
+      "ITEM_CONICAL_FLASKS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_EXTENSION_HEALING_FROM_ENVY": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_EXTENSION_HEALING_FROM_ENVY",
+    "materials_required": [
+      "ITEM_CONICAL_FLASKS",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_HUMAN_SOUL_HEALING": {
+    "regions": [
+      "REGION_SOULS_ROOM"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_SOUL_HEALER"
+    ],
+    "recipe_required": "ITEM_BP_HUMAN_SOUL_HEALING",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+
+  "CRAFTING_STATION_DONKEY": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+
+  "CRAFTING_STATION_STUDY_TABLE": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_ALCHEMY_WORKBENCH": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ALCHEMY_WORKBENCH",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_ADVANCED_CONICAL_FLASKS"
+    ]
+  },
+  "CRAFTING_STATION_ALCHEMY_WORKBENCH_2": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ALCHEMY_WORKBENCH_2",
+    "materials_required": [
+      "ITEM_JOINTING",
+      "ITEM_STEEL_PARTS",
+      "ITEM_ADVANCED_CONICAL_FLASKS"
+    ]
+  },
+  "CRAFTING_STATION_HAND_MIXER": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_HAND_MIXER",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_ALCHEMY_MILL": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ALCHEMY_MILL",
+    "materials_required": [
+      "ITEM_A_POLISHED_BRICK_OF_STONE",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_DISTILLATION_CUBE": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_DISTILLATION_CUBE",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_DISTILLATION_CUBE_2": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_DISTILLATION_CUBE_2",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_STEEL_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_CHURCH_WORKBENCH": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CHURCH_WORKBENCH",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_DESK": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_DESK",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_DESK_2": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_DESK_2",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS",
+      "ITEM_LENS"
+    ]
+  },
+  "CRAFTING_STATION_PRINTING_PRESS": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PRINTING_PRESS",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_PRINTING_PRESS_2": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PRINTING_PRESS_2",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_RANDOM_TEXT_GENERATOR": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_RANDOM_TEXT_GENERATOR",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_PEN_AND_INK"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_ALCHEMY_DECOMPOSER": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_ALCHEMY_DECOMPOSER",
+    "materials_required": [
+      "ITEM_A_POLISHED_BRICK_OF_STONE",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_ALCHEMY_WORKBENCH": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_ALCHEMY_WORKBENCH",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_CONICAL_FLASKS"
+    ]
+  },
+
+  "CRAFTING_STATION_PLACE_FOR_THE_BERRY_BUSH": {
+    "regions": [
+      "REGION_ORCHARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PLACE_FOR_THE_BERRY_BUSH",
+    "materials_required": [
+      "ITEM_BERRY_BUSH_SEEDLING",
+      "ITEM_PEAT",
+      "ITEM_WOODEN_STICK"
+    ]
+  },
+  "CRAFTING_STATION_PLACE_FOR_THE_APPLE_TREE": {
+    "regions": [
+      "REGION_ORCHARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PLACE_FOR_THE_APPLE_TREE",
+    "materials_required": [
+      "ITEM_APPLE_TREE_SEEDLING",
+      "ITEM_PEAT",
+      "ITEM_WOODEN_STICK"
+    ]
+  },
+
+  "CRAFTING_STATION_EMPTY_GARDEN_BED": {
+    "regions": [
+      "REGION_KITCHEN_GARDEN"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_EMPTY_GARDEN_BED",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_GARDEN_BED_WITH_STICKS": {
+    "regions": [
+      "REGION_KITCHEN_GARDEN"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_GARDEN_BED_WITH_STICKS",
+    "materials_required": [
+      "ITEM_WOODEN_STICK"
+    ]
+  },
+  "CRAFTING_STATION_COMPOST_HEAP": {
+    "regions": [
+      "REGION_KITCHEN_GARDEN"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_COMPOST_HEAP",
+    "materials_required": [
+      "ITEM_WOODEN_STICK"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_FARM": {
+    "regions": [
+      "REGION_KITCHEN_GARDEN"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_FARM",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_FARM_2": {
+    "regions": [
+      "REGION_KITCHEN_GARDEN"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_ZOMBIE_FARM"
+    ],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_QUALITY_FERTILIZER_1"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_FARM_3": {
+    "regions": [
+      "REGION_KITCHEN_GARDEN"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_ZOMBIE_FARM_2"
+    ],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_QUALITY_FERTILIZER_2"
+    ]
+  },
+
+  "CRAFTING_STATION_VINE_TRELLIS": {
+    "regions": [
+      "REGION_VINEYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_VINE_TRELLIS",
+    "materials_required": [
+      "ITEM_WOODEN_STICK"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_VINEYARD": {
+    "regions": [
+      "REGION_VINEYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_VINEYARD",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_VINEYARD_2": {
+    "regions": [
+      "REGION_VINEYARD"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_ZOMBIE_VINEYARD"
+    ],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_QUALITY_FERTILIZER_1"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_VINEYARD_3": {
+    "regions": [
+      "REGION_VINEYARD"
+    ],
+    "crafting_stations": [
+      "CRAFTING_STATION_ZOMBIE_VINEYARD_2"
+    ],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_QUALITY_FERTILIZER_2"
+    ]
+  },
+
+  "CRAFTING_STATION_BEE_HIVE": {
+    "regions": [
+      "REGION_APIARY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_BEEHIVE",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_BEE"
+    ]
+  },
+  "CRAFTING_STATION_BREWING_STAND": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_BREWING_STAND",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_WINE_MAKING_BARREL": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_WINE_MAKING_BARREL",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_ALCOHOL_DISTILLER": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ALCOHOL_DISTILLER",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_FLITCH"
+    ]
+  },
+  "CRAFTING_STATION_FERMENTATION_BARREL": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_FERMENTATION_BARREL",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_BREWERY": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_BREWERY",
+    "materials_required": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_WINERY": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_WINERY",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+
+  "CRAFTING_STATION_LECTERN": {
+    "regions": [
+      "REGION_CHURCH"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  },
+  "CRAFTING_STATION_CONFESSIONAL": {
+    "regions": [
+      "REGION_CHURCH"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_CONFESSIONAL",
+    "materials_required": [
+      "ITEM_WOODEN_PLANK",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+
+  "CRAFTING_STATION_PLACE_FOR_BURNING_CORPSES": {
+    "regions": [
+      "REGION_CREMATORIUM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_PLACE_FOR_BURNING_CORPSES",
+    "materials_required": [
+      "ITEM_WOOD_BILLET"
+    ]
+  },
+
+  "CRAFTING_STATION_MARBLE_QUARRY": {
+    "regions": [
+      "REGION_QUARRY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_NAILS"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_STONE_QUARRY": {
+    "regions": [
+      "REGION_QUARRY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_STONE_QUARRY",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_PICKAXE_1"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_MARBLE_QUARRY": {
+    "regions": [
+      "REGION_QUARRY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_MARBLE_QUARRY",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_PICKAXE_1"
+    ]
+  },
+  "CRAFTING_STATION_ZOMBIE_ORE_MINE": {
+    "regions": [
+      "REGION_QUARRY"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_ORE_MINE",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_PICKAXE_1"
+    ]
+  },
+
+  "CRAFTING_STATION_MILL": {
+    "regions": [
+      "REGION_WHEAT_FARM"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_PAPER_WITH_CALCULATIONS"
+    ]
+  },
+
+  "CRAFTING_STATION_ZOMBIE_SAWMILL": {
+    "regions": [
+      "REGION_FELLING_SITE"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "ITEM_BP_ZOMBIE_SAWMILL",
+    "materials_required": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_AXE_1"
+    ]
+  },
+
+  "CRAFTING_STATION_MARBLE_PEDESTAL": {
+    "regions": [
+      "REGION_WITCH_HILL"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": []
+  }
+}

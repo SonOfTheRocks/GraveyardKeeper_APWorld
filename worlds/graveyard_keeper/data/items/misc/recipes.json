@@ -1,0 +1,12 @@
+{
+  "ITEM_LEARN_CREATE_ROOF_TILE": {
+    "label": "Create: Roof tile",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_MYSTERIOUS_FOOD_SAUCE": {
+    "label": "Create: Mysterious food sauce",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  }
+}

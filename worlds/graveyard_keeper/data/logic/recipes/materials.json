@@ -1,0 +1,750 @@
+{
+  "ITEM_LOG": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_SMALL_TREE_FELLING",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_BIG_TREE_FELLING",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_SAWMILL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ],
+  "ITEM_CARVED_WOOD_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CARVED_WOOD",
+      "crafting_group": "wood",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_COPPER",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CARVED_WOOD",
+      "crafting_group": "wood",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_SILVER",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_CARVED_WOOD_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CARVED_WOOD",
+      "crafting_group": "wood",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_SILVER",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CARVED_WOOD",
+      "crafting_group": "wood",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_GOLD",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_CARVED_WOOD_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CARVED_WOOD",
+      "crafting_group": "wood",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_GOLD",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_FIREWOOD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHOPPING_SPOT"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
+      "materials_required": [
+        "ITEM_WOOD_BILLET"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHOPPING_SPOT"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
+      "materials_required": [
+        "ITEM_WOODEN_CROSS"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHOPPING_SPOT"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
+      "materials_required": [
+        "ITEM_WOODEN_MARKER"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHOPPING_SPOT"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
+      "materials_required": [
+        "ITEM_WOODEN_GRAVE_FENCE"
+      ]
+    }
+  ],
+  "ITEM_FLITCH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SAWHORSE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_FLITCH",
+      "materials_required": [
+        "ITEM_LOG"
+      ]
+    }
+  ],
+  "ITEM_WOOD_BILLET": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SAWHORSE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOOD_BILLET",
+      "materials_required": [
+        "ITEM_LOG"
+      ]
+    }
+  ],
+  "ITEM_WOOD_REPAIR_KIT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOOD_REPAIR_KIT",
+      "materials_required": [
+        "ITEM_FLITCH",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_NAILS"
+      ]
+    }
+  ],
+  "ITEM_WOODEN_BEAM": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CIRCULAR_SAW"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOODEN_BEAM",
+      "materials_required": [
+        "ITEM_LOG",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_JOINTING": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_JOINTING",
+      "materials_required": [
+        "ITEM_WOODEN_BEAM",
+        "ITEM_NAILS",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_WOODEN_PLANK": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOODEN_PLANK",
+      "materials_required": [
+        "ITEM_FLITCH"
+      ]
+    }
+  ],
+  "ITEM_WOODEN_STICK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_STICK",
+      "materials_required": []
+    }
+  ],
+  "ITEM_WOOD_WEDGE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CHOPPING_SPOT"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOOD_WEDGE",
+      "materials_required": [
+        "ITEM_WOOD_BILLET"
+      ]
+    }
+  ],
+
+
+  "ITEM_STONE_BLOCK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_STONE_ROCK",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_STONE_QUARRY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ],
+  "ITEM_A_PIECE_OF_STONE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_PIECE_OF_STONE",
+      "materials_required": [
+        "ITEM_STONE_BLOCK"
+      ]
+    }
+  ],
+  "ITEM_A_POLISHED_BRICK_OF_STONE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_STONE",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_POLISHING_PASTE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_STONE",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_IRON_CHISEL"
+      ]
+    }
+  ],
+  "ITEM_A_CARVED_PIECE_OF_STONE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_STONE",
+      "materials_required": [
+        "ITEM_IRON_CHISEL",
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_BLOCK": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_MARBLE_QUARRY"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_BIG_MARBLE_ROCK",
+      "materials_required": [
+        "ITEM_WOOD_WEDGE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_MARBLE_QUARRY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ],
+  "ITEM_A_PIECE_OF_MARBLE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_PIECE_OF_MARBLE",
+      "materials_required": [
+        "ITEM_MARBLE_BLOCK",
+        "ITEM_WOOD_WEDGE"
+      ]
+    }
+  ],
+  "ITEM_A_POLISHED_BRICK_OF_MARBLE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_MARBLE",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_IRON_CHISEL"
+      ]
+    }
+  ],
+  "ITEM_A_CARVED_PIECE_OF_MARBLE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE",
+      "crafting_group": "marble",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_COPPER",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE",
+      "crafting_group": "marble",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_SILVER",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_A_CARVED_PIECE_OF_MARBLE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE",
+      "crafting_group": "marble",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_SILVER",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_FAITH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE",
+      "crafting_group": "marble",
+      "base_modifier": 1.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_GOLD",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE",
+      "crafting_group": "marble",
+      "base_modifier": 0.0,
+      "materials_required": [
+        "ITEM_STEEL_CHISEL_GOLD",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_REPAIR_KIT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_REPAIR_KIT",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_CLAY"
+      ]
+    }
+  ],
+
+
+  "ITEM_IRON_ORE_BLOCK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_IRON_ORE",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_ORE_MINE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ],
+  "ITEM_IRON_ORE": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_SWAMP_IRON",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_IRON_ORE_BLOCK"
+      ]
+    }
+  ],
+  "ITEM_IRON_INGOT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE",
+        "CRAFTING_STATION_FURNACE_2",
+        "CRAFTING_STATION_FURNACE_3"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_IRON_INGOT",
+      "materials_required": [
+        "ITEM_IRON_ORE",
+        "MATERIAL_FUEL"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_IRON_INGOT",
+      "materials_required": [
+        "ITEM_METAL_SCRAP",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_NAILS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WOODEN_ANVIL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NAILS",
+      "materials_required": [
+        "ITEM_IRON_INGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_NAILS",
+      "materials_required": [
+        "ITEM_BLOODY_NAILS",
+        "ITEM_RIVER_SAND",
+        "ITEM_WATER"
+      ]
+    }
+  ],
+  "ITEM_SIMPLE_IRON_PARTS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_WOODEN_ANVIL"
+      ],
+      "materials_required": [
+        "ITEM_IRON_INGOT"
+      ]
+    }
+  ],
+  "ITEM_COMPLEX_IRON_PARTS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ANVIL"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_COMPLEX_IRON_PARTS",
+      "materials_required": [
+        "ITEM_IRON_INGOT",
+        "ITEM_SIMPLE_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STEEL_INGOT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_INGOT",
+      "materials_required": [
+        "ITEM_IRON_INGOT",
+        "ITEM_GRAPHITE",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_STEEL_PARTS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_3"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STEEL_PARTS",
+      "materials_required": [
+        "ITEM_STEEL_INGOT",
+        "ITEM_CERAMIC_BOWLS",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+
+  "ITEM_SILVER_INGOT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_SILVER_INGOT",
+      "materials_required": [
+        "ITEM_SILVER_NUGGET",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_GOLD_INGOT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GOLD_INGOT",
+      "materials_required": [
+        "ITEM_GOLD_NUGGET",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_GOLD_JEWELRY_DETAILS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_JEWELRY_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GOLD_JEWELRY_DETAILS",
+      "materials_required": [
+        "ITEM_GOLD_INGOT",
+        "ITEM_STEEL_PARTS",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_JEWELRY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_JEWELRY_TABLE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_JEWELRY",
+      "materials_required": [
+        "ITEM_GOLD_JEWELRY_DETAILS",
+        "ITEM_FACETED_DIAMOND",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+
+
+  "ITEM_GLASS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GLASS",
+      "materials_required": [
+        "ITEM_RIVER_SAND",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_CONICAL_FLASKS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_CONICAL_FLASKS",
+      "materials_required": [
+        "ITEM_GLASS",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_ADVANCED_CONICAL_FLASKS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_ADVANCED_CONICAL_FLASKS",
+      "materials_required": [
+        "ITEM_CONICAL_FLASKS",
+        "ITEM_WATER",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LENS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_LENS",
+      "materials_required": [
+        "ITEM_GLASS",
+        "ITEM_POLISHING_PASTE",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+
+
+  "ITEM_CLAY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CLAY_PIT"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_CLAY",
+      "materials_required": []
+    }
+  ],
+  "ITEM_COAL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COAL_DEPOSIT"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_COAL",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_ORE_MINE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ],
+  "ITEM_RIVER_SAND": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SAND_MOUND"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_SAND",
+      "materials_required": []
+    }
+  ],
+
+  "ITEM_GOLD_NUGGET": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOLD_CRUCIAN"
+      ]
+    }
+  ],
+  "ITEM_GRAPHITE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FURNACE_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAPHITE",
+      "materials_required": [
+        "ITEM_COAL",
+        "MATERIAL_FUEL"
+      ]
+    }
+  ],
+  "ITEM_LIMESTONE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COAL_DEPOSIT"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_LIMESTONE",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_ORE_MINE"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_LIMESTONE",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ],
+  "ITEM_SILVER_NUGGET": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "ITEM_LEARN_GATHERING_SILVER_ORE",
+      "materials_required": []
+    }
+  ],
+  "ITEM_SULFUR": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COAL_DEPOSIT"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_SULFUR",
+      "materials_required": []
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_ZOMBIE_ORE_MINE"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_SULFUR",
+      "materials_required": [
+        "ITEM_ZOMBIE"
+      ]
+    }
+  ]
+}

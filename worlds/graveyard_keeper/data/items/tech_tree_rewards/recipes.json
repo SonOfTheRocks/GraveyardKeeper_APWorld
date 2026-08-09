@@ -1,0 +1,945 @@
+{
+  "ITEM_LEARN_EXTRACT_FLESH": {
+    "label": "Extract: Flesh",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_SKULL": {
+    "label": "Extract: Skull",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_BONE": {
+    "label": "Extract: Bone",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_SKIN": {
+    "label": "Extract: Skin",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_BLOOD": {
+    "label": "Extract: Blood",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_FAT": {
+    "label": "Extract: Fat",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_BRAIN": {
+    "label": "Extract: Brain",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_HEART": {
+    "label": "Extract: Heart",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_INTESTINES": {
+    "label": "Extract: Intestines",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_DARK_BRAIN": {
+    "label": "Extract: Dark brain",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_DARK_HEART": {
+    "label": "Extract: Dark heart",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_EXTRACT_DARK_INTESTINES": {
+    "label": "Extract: Dark intestines",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+
+
+  "ITEM_LEARN_CREATE_BAKED_MUSHROOMS": {
+    "label": "Create: Baked mushrooms",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BAKED_APPLE": {
+    "label": "Create: Baked apple",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CARROT_CUTLET": {
+    "label": "Create: Carrot cutlet",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_A_BOWL_OF_SAUERKRAUT": {
+    "label": "Create: A bowl of sauerkraut",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BEET_SLICES": {
+    "label": "Create: Beet slices",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_GREEN_JELLY": {
+    "label": "Create: Green jelly",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_RED_JELLY": {
+    "label": "Create: Red jelly",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_DOUGH": {
+    "label": "Create: Dough",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PASTRY_DOUGH": {
+    "label": "Create: Pastry dough",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BREAD": {
+    "label": "Create: Bread",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BAKED_FISH": {
+    "label": "Create: Baked fish",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_FISH_SOUP": {
+    "label": "Create: Fish soup",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_FISH_NUGGETS": {
+    "label": "Create: Fish nuggets",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PANCAKES": {
+    "label": "Create: Pancakes",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CROISSANT": {
+    "label": "Create: Croissant",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_MUFFIN": {
+    "label": "Create: Muffin",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CABBAGE_SOUP": {
+    "label": "Create: Cabbage soup",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PUMPKIN_SOUP": {
+    "label": "Create: Pumpkin soup",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_SOUP": {
+    "label": "Create: Vegetable soup",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_OMELETTE": {
+    "label": "Create: Omelette",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_FRIED_EGG": {
+    "label": "Create: Fried egg",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_LASAGNA": {
+    "label": "Create: Lasagna",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PASTA": {
+    "label": "Create: Pasta",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN": {
+    "label": "Create: Baked kebab (Pumpkin)",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS": {
+    "label": "Create: Baked kebab (Onions)",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS": {
+    "label": "Create: Baked kebab (Mushrooms)",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BERRY_PIE": {
+    "label": "Create: Berry pie",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_GRAPE_PIE": {
+    "label": "Create: Grape pie",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP": {
+    "label": "Create: A bowl of pumpkin soup",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BAKED_PUMPKIN": {
+    "label": "Create: Baked pumpkin",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS": {
+    "label": "Create: A bowl of lentils",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BURGER": {
+    "label": "Create: Burger",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_SANDWICH": {
+    "label": "Create: Sandwich",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BAKED_MEAT": {
+    "label": "Create: Baked meat",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_ONION_RINGS": {
+    "label": "Create: Onion rings",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS": {
+    "label": "Create: Toasts with onions",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BAKED_SALMON": {
+    "label": "Create: Baked salmon",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_ROYAL_FISH": {
+    "label": "Create: Royal fish",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CAKE": {
+    "label": "Create: Cake",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_GRATED_CARROT": {
+    "label": "Create: Grated carrot",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_GRATED_BEETS": {
+    "label": "Create: Grated beets",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BOILED_EGG": {
+    "label": "Create: Boiled egg",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_MUG_OF_MEAD": {
+    "label": "Create: A mug of mead",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_SALAD": {
+    "label": "Create: Vegetable salad",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_STEW": {
+    "label": "Create: Vegetable stew",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP": {
+    "label": "Create: Creamy vegetable soup",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CHEESE": {
+    "label": "Create: Cheese",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BUTTER": {
+    "label": "Create: Butter",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CREAM_OF_MUSHROOM_SOUP": {
+    "label": "Create: Cream of mushroom soup",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_LENTIL_PORRIDGE": {
+    "label": "Create: Lentil porridge",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP": {
+    "label": "Create: Fancy lentil soup",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_LENTIL_CUTLETS": {
+    "label": "Create: Lentil cutlets",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_PATTY": {
+    "label": "Create: Vegetable patty",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_MUSHROOM_PATTY": {
+    "label": "Create: Mushroom patty",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CHEESE_PATTY": {
+    "label": "Create: Cheese patty",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CHEESE_PIE": {
+    "label": "Create: Cheese pie",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CHEESECAKE": {
+    "label": "Create: Cheesecake",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PANNA_COTTA": {
+    "label": "Create: Panna cotta",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_HONEY_PUDDING": {
+    "label": "Create: Honey pudding",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_BERRY_PUDDING": {
+    "label": "Create: Berry pudding",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_HONEY_CAKE": {
+    "label": "Create: Honey cake",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+
+
+  "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE": {
+    "label": "Create: Prayer for repose",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH": {
+    "label": "Create: Prayer for faith",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY": {
+    "label": "Create: Prayer for prosperity",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE": {
+    "label": "Create: Prayer for repentance",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS": {
+    "label": "Create: Prayer for donations",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_COMBO_PRAYER": {
+    "label": "Create: Combo prayer",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_IMAGINATION": {
+    "label": "Create: Prayer for imagination",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS": {
+    "label": "Create: Prayer for shoots and roots",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION": {
+    "label": "Create: Prayer for retribution",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION": {
+    "label": "Create: Prayer for protection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_EXCELLENCE": {
+    "label": "Create: Prayer for excellence",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE": {
+    "label": "Create: Pray for souls' repose",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT": {
+    "label": "Create: Pray for souls' contentment",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING": {
+    "label": "Create: Pray for souls' thorough cleansing",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "FILLER"
+  },
+
+
+  "ITEM_LEARN_CREATE_PROGRESSIVE_SHOVEL": {
+    "label": "Create: Progressive Shovel",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_PICKAXE": {
+    "label": "Create: Progressive Pickaxe",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_AXE": {
+    "label": "Create: Progressive Axe",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_HAMMER": {
+    "label": "Create: Progressive Hammer",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_CHISEL": {
+    "label": "Create: Progressive Chisel",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_SWORD": {
+    "label": "Create: Progressive Sword",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_ARMOR": {
+    "label": "Create: Progressive Armor",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+
+
+  "ITEM_LEARN_CREATE_ACID_INJECTION": {
+    "label": "Create: Acid injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_LYE_INJECTION": {
+    "label": "Create: Lye injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_GLUE_INJECTION": {
+    "label": "Create: Glue injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PRESERVATIVE_INJECTION": {
+    "label": "Create: Preservative injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_RESTORE_INJECTION": {
+    "label": "Create: Restore injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_ALCHEMISTS_BAG": {
+    "label": "Create: Alchemist's bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_CREATE_DARK_INJECTION": {
+    "label": "Create: Dark injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_SILVER_INJECTION": {
+    "label": "Create: Silver injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_GOLD_INJECTION": {
+    "label": "Create: Gold injection",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_FARMERS_BAG": {
+    "label": "Create: Farmer's bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_FISHERMANS_BAG": {
+    "label": "Create: Fisherman's bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_TOOL_BAG": {
+    "label": "Create: Tool bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_UNIVERSAL_BAG": {
+    "label": "Create: Universal bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_POTION_BAG": {
+    "label": "Create: Potion bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_BUILDERS_BAG": {
+    "label": "Create: Builder's bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_FOOD_BAG": {
+    "label": "Create: Food bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_BIG_UNIVERSAL_BAG": {
+    "label": "Create: Big universal bag",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "USEFUL"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_WOODEN_GRAVE_MARKER": {
+    "label": "Create: Progressive Wooden Grave Marker",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_MARKER": {
+    "label": "Create: Progressive Stone Grave Marker",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_MARKER": {
+    "label": "Create: Progressive Marble Grave Marker",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE": {
+    "label": "Create: Wooden grave fence",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE": {
+    "label": "Create: Progressive Stone Grave Fence",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_FENCE": {
+    "label": "Create: Progressive Marble Grave Fence",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CERAMIC_FUNERAL_URN": {
+    "label": "Create: Ceramic funeral urn",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PORCELAIN_FUNERAL_URN": {
+    "label": "Create: Porcelain funeral urn",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CANDLE_1": {
+    "label": "Create: Candle (1)",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CANDLE_3": {
+    "label": "Create: Candle (3)",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CANDLE_4": {
+    "label": "Create: Candle (4)",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_FLYER": {
+    "label": "Create: Flyer",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_INCENSE": {
+    "label": "Create: Incense",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_INCENSE_2": {
+    "label": "Create: Incense II",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_NOTES": {
+    "label": "Create: Notes",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CHAPTER": {
+    "label": "Create: Chapter",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PIGSKIN_PAPER": {
+    "label": "Create: Pigskin paper",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CLEAN_PAPER": {
+    "label": "Create: Clean paper",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_STORY": {
+    "label": "Create: Story",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_INK": {
+    "label": "Create: Ink",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PEN_AND_INK": {
+    "label": "Create: Pen and ink",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_SOFT_COVER": {
+    "label": "Create: Soft cover",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_HARD_COVER": {
+    "label": "Create: Hard cover",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOK": {
+    "label": "Create: Book",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PAPER_GLOP": {
+    "label": "Create: Paper glop",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_HONEY": {
+    "label": "Create: Honey",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PEAT": {
+    "label": "Create: Peat",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_GRAPES": {
+    "label": "Create: Grapes",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_HOPS": {
+    "label": "Create: Hops",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_1": {
+    "label": "Create: Boost fertilizer I",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_2": {
+    "label": "Create: Boost fertilizer II",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_1": {
+    "label": "Create: Quality fertilizer I",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_2": {
+    "label": "Create: Quality fertilizer II",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_MUG_OF_BEER": {
+    "label": "Create: A mug of beer",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOTTLE_OF_APPLE_FERMENT": {
+    "label": "Create: Bottle of apple ferment",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOTTLE_OF_BERRY_FERMENT": {
+    "label": "Create: Bottle of berry ferment",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_RED_WINE": {
+    "label": "Create: Red wine",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOZE": {
+    "label": "Create: Booze",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_INGOT": {
+    "label": "Create: Progressive Ingot",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_NAILS": {
+    "label": "Create: Nails",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_METAL_PARTS": {
+    "label": "Create: Progressive Iron parts",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_GLASS": {
+    "label": "Create: Progressive Glass",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_LENS": {
+    "label": "Create: Lens",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_SILVER_INGOT": {
+    "label": "Create: Silver ingot",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_GOLD_INGOT": {
+    "label": "Create: Gold ingot",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_JEWELRY": {
+    "label": "Create: Progressive Jewelry",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_FLITCH": {
+    "label": "Create: Flitch",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_WOOD_BILLET": {
+    "label": "Create: Wood billet",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CERAMIC_BOWLS": {
+    "label": "Create: Ceramic bowls",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_POLISHING_PASTE": {
+    "label": "Create: Polishing paste",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_FIREWOOD": {
+    "label": "Create: Firewood",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_WOOD_WEDGE": {
+    "label": "Create: Wood wedge",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_PIECE_OF_STONE": {
+    "label": "Create: A piece of stone",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_STONE_REPAIR_KIT": {
+    "label": "Create: Stone repair kit",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CERAMIC_JUG": {
+    "label": "Create: Ceramic jug",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_PORCELAIN_PITCHER": {
+    "label": "Create: Porcelain pitcher",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_GRAPHITE": {
+    "label": "Create: Graphite",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_WOODEN_PLANK": {
+    "label": "Create: Wooden plank",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_WOOD_REPAIR_KIT": {
+    "label": "Create: Wood repair kit",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_JOINTING": {
+    "label": "Create: Jointing",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_WOODEN_BEAM": {
+    "label": "Create: Wooden beam",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_STONE": {
+    "label": "Create: A polished brick of stone",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_STONE": {
+    "label": "Create: A carved piece of stone",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_CARVED_WOOD": {
+    "label": "Create: Carved wood",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_A_PIECE_OF_MARBLE": {
+    "label": "Create: A piece of marble",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_MARBLE_REPAIR_KIT": {
+    "label": "Create: Crate of marble repair kit",
+    "dlc": "BASE_GAME",
+    "classification": "FILLER"
+  },
+  "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_MARBLE": {
+    "label": "Create: A polished brick of marble",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE": {
+    "label": "Create: A carved piece of marble",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_REMOTE_CRAFT_CONTROL": {
+    "label": "Create: Remote craft control",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_STORY_ORGAN_WORKBENCH": {
+    "label": "Create: Story (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH": {
+    "label": "Create: Chapter (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH": {
+    "label": "Create: Book (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_1_ORGAN_WORKBENCH": {
+    "label": "Create: Boost fertilizer I (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_2_ORGAN_WORKBENCH": {
+    "label": "Create: Boost fertilizer II (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_1_ORGAN_WORKBENCH": {
+    "label": "Create: Quality fertilizer I (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_2_ORGAN_WORKBENCH": {
+    "label": "Create: Quality fertilizer II (Organ workbench)",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  }
+}

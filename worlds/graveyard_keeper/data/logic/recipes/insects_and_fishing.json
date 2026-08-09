@@ -1,0 +1,1884 @@
+{
+  "ITEM_BERRY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_BERRY",
+      "materials_required": []
+    }
+  ],
+  "ITEM_EDIBLE_MUSHROOM": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_EDIBLE_MUSHROOM",
+      "materials_required": []
+    }
+  ],
+  "ITEM_GREEN_APPLE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_APPLE",
+      "materials_required": []
+    }
+  ],
+  "ITEM_HICCUP_GRASS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_RED_APPLE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_APPLE",
+      "materials_required": []
+    }
+  ],
+  "ITEM_RED_FLOWER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_RED_MUSHROOM": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_EDIBLE_MUSHROOM",
+      "materials_required": []
+    }
+  ],
+  "ITEM_WHITE_FLOWER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+  "ITEM_YELLOW_FLOWER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "",
+      "materials_required": []
+    }
+  ],
+
+  "ITEM_BEE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_BEE",
+      "materials_required": []
+    }
+  ],
+  "ITEM_BUTTERFLY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_BUTTERFLY",
+      "materials_required": []
+    }
+  ],
+  "ITEM_MAGGOT": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COMPOST_HEAP"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_MAGGOT",
+      "materials_required": [
+        "ITEM_CROP_WASTE"
+      ]
+    }
+  ],
+  "ITEM_MOTH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FORAGING"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_MOTH",
+      "materials_required": []
+    }
+  ],
+
+  "ITEM_BEESWAX": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BEE_HIVE"
+      ],
+      "recipe_required": "ITEM_LEARN_GATHERING_BEESWAX",
+      "materials_required": []
+    }
+  ],
+  "ITEM_HONEY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_BEE_HIVE"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_HONEY",
+      "materials_required": []
+    }
+  ],
+
+
+  "ITEM_ANCHOVY": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_TILAPIA": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_PERCH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    }
+  ],
+  "ITEM_EEL": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_FROG": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE",
+        "CRAFTING_STATION_FISHING_SPOT_SWAMP"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    }
+  ],
+  "ITEM_BREAM_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_BREAM_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_BREAM_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_SIMPLE_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_SARDINE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_SARDINE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_SARDINE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_TUNA_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_TUNA_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_TUNA_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_PIKE_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    }
+  ],
+  "ITEM_PIKE_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    }
+  ],
+  "ITEM_PIKE_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    }
+  ],
+  "ITEM_SILVER_CRUCIAN_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    }
+  ],
+  "ITEM_SILVER_CRUCIAN_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    }
+  ],
+  "ITEM_SILVER_CRUCIAN_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_VILLAGE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    }
+  ],
+  "ITEM_CARP": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD"
+      ]
+    }
+  ],
+  "ITEM_STURGEON_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    }
+  ],
+  "ITEM_STURGEON_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    }
+  ],
+  "ITEM_STURGEON_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MOTH"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL",
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_BUTTERFLY"
+      ]
+    }
+  ],
+  "ITEM_SALMON_COPPER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    }
+  ],
+  "ITEM_SALMON_SILVER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    }
+  ],
+  "ITEM_SALMON_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_STEEL_LURE"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA",
+        "CRAFTING_STATION_FISHING_SPOT_WATERFALL"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_MAGGOT"
+      ]
+    }
+  ],
+  "ITEM_GOLD_CRUCIAN": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_GUDGEON"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_GOOD_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    },
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_RIVER"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_ANCHOVY"
+      ]
+    }
+  ],
+  "ITEM_GOLDFISH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_FISHING_SPOT_SEA"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_EXCELLENT_FISHING_ROD",
+        "ITEM_LURE_WITH_A_GEM"
+      ]
+    }
+  ]
+}

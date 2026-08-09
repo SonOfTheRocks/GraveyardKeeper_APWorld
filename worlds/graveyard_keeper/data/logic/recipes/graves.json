@@ -1,0 +1,510 @@
+{
+  "ITEM_GRAVESTONE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAVESTONE",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_GRAVESTONE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAVESTONE_2",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_GRAVESTONE_3": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_GRAVESTONE_3",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_CROSS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_CROSS",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_CROSS_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_CROSS_2",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_SILVER",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVESTONE_3": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVESTONE_3",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_SILVER",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_PLINTH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_PLINTH",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_SILVER",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_SCULPTURE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_SCULPTURE",
+      "materials_required": [
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_SILVER",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_SCULPTURE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_SCULPTURE_2",
+      "materials_required": [
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_SILVER",
+        "ITEM_COMPLEX_IRON_PARTS",
+        "ITEM_FAITH"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_SCULPTURE_3": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_SCULPTURE_3",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_SCULPTURE_4": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_SCULPTURE_4",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_SCULPTURE_5": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_SCULPTURE_5",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_SCULPTURE_6": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_SCULPTURE_6",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_CROSS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_CROSS",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_CROSS_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_CROSS_2",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_PLINTH": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_PLINTH",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_SCULPTURE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_SCULPTURE",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_SCULPTURE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_SCULPTURE_2",
+      "materials_required": [
+        "ITEM_A_CARVED_PIECE_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_SCULPTURE_3": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_SCULPTURE_3",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_SCULPTURE_4": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_SCULPTURE_4",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_SCULPTURE_5": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_SCULPTURE_5",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_SCULPTURE_6": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_SCULPTURE_6",
+      "materials_required": [
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_A_CARVED_PIECE_OF_STONE",
+        "ITEM_COMPLEX_IRON_PARTS"
+      ]
+    }
+  ],
+  "ITEM_WOODEN_CROSS": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOODEN_CROSS",
+      "materials_required": [
+        "ITEM_WOODEN_PLANK",
+        "ITEM_NAILS"
+      ]
+    }
+  ],
+  "ITEM_WOODEN_MARKER": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_SAWHORSE",
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOODEN_MARKER",
+      "materials_required": [
+        "ITEM_FLITCH",
+        "ITEM_NAILS"
+      ]
+    }
+  ],
+
+  "ITEM_MARBLE_GRAVE_FENCE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_2",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_3": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_3",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_4": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_4",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_5": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_5",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_6": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_6",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_7": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_7",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_STEEL_PARTS"
+      ]
+    }
+  ],
+  "ITEM_MARBLE_GRAVE_FENCE_8": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_MARBLE_GRAVE_FENCE_8",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_MARBLE",
+        "ITEM_A_POLISHED_BRICK_OF_MARBLE",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_2": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_2",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_3": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_3",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_4": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_4",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_5": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_5",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_6": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_6",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_7": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_7",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_STEEL_PARTS"
+      ]
+    }
+  ],
+  "ITEM_STONE_GRAVE_FENCE_8": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_STONE_CUTTER_2"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_GRAVE_FENCE_8",
+      "materials_required": [
+        "ITEM_A_PIECE_OF_STONE",
+        "ITEM_A_POLISHED_BRICK_OF_STONE",
+        "ITEM_GOLD_JEWELRY_DETAILS"
+      ]
+    }
+  ],
+  "ITEM_WOODEN_GRAVE_FENCE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CARPENTERS_WORKBENCH"
+      ],
+      "recipe_required": "ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE",
+      "materials_required": [
+        "ITEM_WOODEN_PLANK"
+      ]
+    }
+  ]
+}

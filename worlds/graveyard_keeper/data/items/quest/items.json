@@ -1,0 +1,385 @@
+{
+  "ITEM_SALTY_FORK": {
+    "label": "Salty Fork",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_MIRROR_OF_PRIDE": {
+    "label": "Mirror of Pride",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ETERNAL_BURNING_COAL": {
+    "label": "Eternal burning coal",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_GOLDEN_ANGLE": {
+    "label": "Golden angle",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ENDLESS_NOTEBOOK": {
+    "label": "Endless notebook",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_NECKLACE": {
+    "label": "Necklace",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+
+
+  "ITEM_ACCEPTED_INVITATION": {
+    "label": "Accepted invitation",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ACTIVE_KEY": {
+    "label": "Active key",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ARISTOCRAT_PAPERS": {
+    "label": "Aristocrat papers",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_BASKET_OF_FOOD": {
+    "label": "Basket of food",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_CAULDRON": {
+    "label": "Cauldron",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_COINS": {
+    "label": "Coins",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_GARDEN_CERTIFICATE": {
+    "label": "Active key",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_GRAVEYARD_SCROLL": {
+    "label": "Graveyard scroll",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_INFUSION_OF_FLY_AGARIC": {
+    "label": "Infusion of fly agaric",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_INSTRUCTIONS_FOR_KEY": {
+    "label": "Instructions for Key",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_KEEPERS_JOURNAL": {
+    "label": "Keepers journal",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_KEEPERS_KEY": {
+    "label": "Keepers key",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LETTER_TO_THE_BLACKSMITH": {
+    "label": "Letter to the blacksmith",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_NECRONOMICON": {
+    "label": "Necronomicon",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PAPER_WITH_CALCULATIONS": {
+    "label": "Paper with calculations",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PERFUME": {
+    "label": "Perfume",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_RESTORATION_TOOLS": {
+    "label": "Restoration tools",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_STAMP": {
+    "label": "Stamp",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_TOWN_PASS": {
+    "label": "Town pass",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_CASUAL_PRAYER": {
+    "label": "Casual prayer",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+
+
+  "ITEM_A_BRICK_FROM_THE_CHURCH": {
+    "label": "A Brick from The Church",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_AMULET_OF_THE_ANCIENT_GOD": {
+    "label": "Amulet of The Ancient God",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ANCIENT_KEYS": {
+    "label": "Ancient Keys",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ANCIENT_LOCKPICKS": {
+    "label": "Ancient Lockpicks",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ANCIENT_PICKAXE": {
+    "label": "Ancient Pickaxe",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ANCIENT_SHACKLES": {
+    "label": "Ancient Shackles",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_BELT_BUCKLE": {
+    "label": "Belt Buckle",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_CLAY_POT_OF_TAR": {
+    "label": "Clay Pot of Tar",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_CLAY_SHARDS": {
+    "label": "Clay Shards",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_DOOR_HINGE": {
+    "label": "Door Hinge",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_FLASK": {
+    "label": "Flask",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LEGIONARY_HELM": {
+    "label": "Legionary Helm",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PRIESTESS_RING": {
+    "label": "Priestess Ring",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PRIESTS_SIGNET": {
+    "label": "Priests Signet",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PRIESTS_MEDALLION": {
+    "label": "Priests Medallion",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_STATUETTE": {
+    "label": "Statuette",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_THE_LEGIONARY_DAGGER": {
+    "label": "The Legionary Dagger",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PIE_WITH_POISON": {
+    "label": "Pie with Poison",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+
+
+  "ITEM_BANK_CHECKS": {
+    "label": "Memory powder",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_BATTLE_HORSESHOES": {
+    "label": "Battle horseshoes",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_BLACK_AND_GOLD_CLOAK": {
+    "label": "Black and gold cloak",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_CHARRED_VAMPIRE_SHOE": {
+    "label": "Charred vampire shoe",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_COOKBOOK": {
+    "label": "Cookbook",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_EMULSION_OF_DEATH": {
+    "label": "Emulsion of death",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_IRON_UNICORN_HORNS": {
+    "label": "Iron unicorn horns",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_JELLY_OF_INCREDIBLE_POWER": {
+    "label": "Jelly of incredible power",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_MEMORY_POWDER": {
+    "label": "Memory powder",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_MEMORY_TINCTURE": {
+    "label": "Memory powder",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING": {
+    "label": "Pagan amulet of spirit summoning",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PIECE_OF_DONKEY_HAIR": {
+    "label": "Piece of donkey hair",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_REVOLUTIONARY_DONKEY_BANNER": {
+    "label": "Revolutionary donkey banner",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_REVOLUTIONARY_MESSAGE_1": {
+    "label": "Revolutionary message 1",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_REVOLUTIONARY_MESSAGE_2": {
+    "label": "Revolutionary message 2",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_REVOLUTIONARY_MESSAGE_3": {
+    "label": "Revolutionary message 3",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_SCROLL_OF_TELEPORTATION": {
+    "label": "Scroll of Teleportation",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_VAMPIRES_JAW": {
+    "label": "Vampires jaw",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_WITCHERS_EYE": {
+    "label": "Witchers eye",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+
+
+  "ITEM_OLD_RUSTY_KEY": {
+    "label": "Old rusty key",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LOST_TOOTH": {
+    "label": "Lost tooth",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PRIDE_CHARGED_SHARD": {
+    "label": "Pride charged shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_WRATH_CHARGED_SHARD": {
+    "label": "Wrath charged shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_GLUTTONY_CHARGED_SHARD": {
+    "label": "Gluttony charged shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_SLOTH_CHARGED_SHARD": {
+    "label": "Sloth charged shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_LUST_CHARGED_SHARD": {
+    "label": "Lust charged shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_ENVY_CHARGED_SHARD": {
+    "label": "Envy charged shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_REMOTE_CRAFTING": {
+    "label": "Remote crafting",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "USEFUL"
+  },
+  "ITEM_ODE_FOR_BISHOP": {
+    "label": "Ode for Bishop",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_UNUSUAL_ASH": {
+    "label": "Unusual ash",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_NOTE_WITH_RUMOR": {
+    "label": "Note with rumor",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
+  }
+}
