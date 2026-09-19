@@ -1,0 +1,64 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "qwen3.5-9b": {
+          "name": "Qwen 3.5 9B (local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "nemotron-3-nano-4b": {
+          "name": "Nemotron 3 Nano 4B (local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "gemma4-e4b": {
+          "name": "Gemma 4 E4B (local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "gemma4-e2b": {
+          "name": "Gemma 4 E2B (local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "unsloth/gemma-4-E4B-it-gguf": {
+          "name": "Gemma 4 E4B (unsloth, local)",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "unsloth/qwen3.6-35B-A3B-gguf": {
+          "name": "Gemma 4 E4B (unsloth, local)",
+          "limit": {
+            "context": 262144,
+            "output": 8192
+          },
+          "options": {
+            "temperature": 0.6,
+            "top_p": 0.95,
+            "top_k": 20,
+            "min_p": 0.0,
+            "presence_penalty": 0.0,
+            "repeat penalty": 1.0
+          }
+        }
+      }
+    }
+  }
+}

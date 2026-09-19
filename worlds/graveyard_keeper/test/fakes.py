@@ -1,5 +1,7 @@
 class FakeState:
-    def __init__(self, items, counts=None):
+    def __init__(self, items=None, counts=None):
+        if items is None:
+            items = []
         self.items = items
         self.counts = counts or {}
 
@@ -15,6 +17,9 @@ class FakeState:
     def count(self, item, player):
         return self.counts.get(item, 0)
 
+    def can_reach_region(self, player):
+        return True
+
 class FakeWorld:
     def __init__(self, options = None):
         if options is None:
@@ -26,6 +31,7 @@ class FakeWorld:
         # emulate attribute access (world.options.game_of_crone)
         self.options = type("Opts", (), options)
         self.player = 1
+        self.state = FakeState()
 
 class FakeItem:
     def __init__(self, label):

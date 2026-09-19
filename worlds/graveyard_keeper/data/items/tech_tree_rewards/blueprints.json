@@ -102,12 +102,12 @@
   "ITEM_BP_STONE_COLUMBARIUM": {
     "label": "Blueprint: Stone columbarium",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_MARBLE_COLUMBARIUM": {
     "label": "Blueprint: Marble columbarium",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_STAINED_GLASS_WINDOW": {
     "label": "Blueprint: Stained glass window",
@@ -122,22 +122,22 @@
   "ITEM_BP_PROGRESSIVE_PRAYER_STATION": {
     "label": "Blueprint: Progressive Prayer Station",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_LAWN": {
     "label": "Blueprint: Lawn",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_MARBLE_FLAGSTONES": {
     "label": "Blueprint: Marble flagstones",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_LANTERN": {
     "label": "Blueprint: Lantern",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_STUDY_TABLE": {
     "label": "Blueprint: Study table",
@@ -277,7 +277,7 @@
   "ITEM_BP_PLACE_FOR_LANTERN": {
     "label": "Blueprint: Place for lantern",
     "dlc": "BASE_GAME",
-    "classification": "USEFUL"
+    "classification": "PROGRESSION"
   },
   "ITEM_BP_WATER_PUMP": {
     "label": "Blueprint: Water pump",

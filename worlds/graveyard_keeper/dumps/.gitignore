@@ -1,0 +1,6 @@
+# Generated from copyrighted Graveyard Keeper game data.
+# Keep these files local; only the extraction/transformation scripts are versioned.
+/raw/
+/dicts/
+/objs_data/
+/objs_data.json

@@ -38,10 +38,13 @@ def create_item_with_correct_classification(world: GraveyardKeeperWorld, name: s
 
 def create_all_items(world: GraveyardKeeperWorld) -> None:
     # create non-progressive items
-    itempool: list[Item] = [
-        world.create_item(item.label) for (item_key, item) in data.items.items() \
-        if item_key not in data.progressive_items_reverse.keys()
-    ]
+    itempool = []
+    for (item_key, item) in data.items.items():
+        if item_key in data.progressive_items_reverse.keys():
+            continue
+        for _ in range(item.amount):
+            itempool.append(world.create_item(data.items[item_key].label))
+
     for (item, value) in data.progressive_items.items():
         count: int = len(value)
         for _ in range(count):

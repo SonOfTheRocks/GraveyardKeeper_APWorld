@@ -12,17 +12,52 @@ class DLCType(enum.Enum):
     GAME_OF_CRONE = enum.auto()
     BETTER_SAVE_SOUL = enum.auto()
 
+    @classmethod
+    def from_string(cls, string: str):
+        match string:
+            case "BASE_GAME":
+                return DLCType.BASE_GAME
+            case "STRANGER_SINS":
+                return DLCType.STRANGER_SINS
+            case "GAME_OF_CRONE":
+                return DLCType.GAME_OF_CRONE
+            case "BETTER_SAVE_SOUL":
+                return DLCType.BETTER_SAVE_SOUL
+            case _:
+                raise ValueError(f"Unknown DLC type '{string}'")
+
 class ChurchLevel(enum.Enum):
     CLOSED = enum.auto()
     OPEN = enum.auto()
     BIG = enum.auto()
     CATHEDRAL = enum.auto()
 
+@dataclass(frozen=True)
+class HappinessData:
+    npc: str
+    value: int
+
+    @classmethod
+    def from_string(cls, string: str):
+        npc, value = string.rsplit("_", 1)
+        return cls(npc, int(value))
+
+
 @dataclass
 class EventData:
     location_label: str
     item_label: str
-    #parent_region: str
+
+
+@dataclass
+class QuestEventData(EventData):
+    dlc: DLCType
+    required_quests: FrozenSet[str]
+    required_happiness: FrozenSet[HappinessData]
+    required_quest_items: FrozenSet[str]
+    required_craft_items: FrozenSet[str]
+    rewards: FrozenSet[str]
+
 
 
 @dataclass
@@ -44,6 +79,7 @@ class LocationData:
 class ItemData:
     label: str
     classification: ItemClassification
+    amount: int
 
 @dataclass
 class ReverseItemData:
@@ -80,6 +116,7 @@ class CraftingGroup(enum.Enum):
 @dataclass
 class RecipeData(ABC):
     name: str
+    index: int
     workstations: FrozenSet[str]
     required_recipe_item: str
     ingredients: FrozenSet[str]
@@ -95,6 +132,7 @@ class SimpleRecipeData(RecipeData):
     def __init__(
             self,
             name: str,
+            index: int,
             workstations: FrozenSet[str],
             required_recipe_item: str,
             ingredients: FrozenSet[str],
@@ -102,6 +140,7 @@ class SimpleRecipeData(RecipeData):
     ) -> None:
         super().__init__(
             name,
+            index,
             workstations,
             required_recipe_item,
             ingredients,
@@ -119,6 +158,7 @@ class QualityRecipeData(RecipeData):
     def __init__(
             self,
             name: str,
+            index: int,
             workstations: FrozenSet[str],
             required_recipe_item: str,
             ingredients: FrozenSet[str],
@@ -128,6 +168,7 @@ class QualityRecipeData(RecipeData):
     ) -> None:
         super().__init__(
             name,
+            index,
             workstations,
             required_recipe_item,
             ingredients,
@@ -173,7 +214,7 @@ class UnlockData:
 class GraveyardKeeperData:
     regions: Dict[str, RegionData]
     locations: Dict[str, LocationData]
-    events: Dict[str, EventData]
+    events: Dict[str, QuestEventData]
     items: Dict[str, ItemData]
     vendors: Dict[str, VendorData]
     recipes: Dict[str, List[RecipeData]]
@@ -195,80 +236,3 @@ class GraveyardKeeperData:
         self.progressive_items_reverse = {}
         self.accessible_items = set()
         self.last_synchronized_player_state = None
-
-@dataclass(frozen=True)
-class Requirement:
-    label: str
-    count: int = 1
-
-
-@dataclass(frozen=True)
-class QualityRequirement:
-    label: str
-    additional_modifier: float
-
-
-class RecipeDependencies(ABC):
-    workstations: frozenset[str]
-    requirements: frozenset[Requirement]
-
-    def __init__(self, workstations: List[str], requirements: list[Requirement]):
-        self.workstations = frozenset(workstations)
-        self.requirements = frozenset(requirements)
-
-    @property
-    @abstractmethod
-    def is_quality(self):
-        pass
-
-    def are_fulfilled(self, state: CollectionState, player: int) -> bool:
-        has_workstation = not self.workstations or state.has_any(self.workstations, player)
-        has_requirements = [
-            (req.label, req.count, state.has(req.label, player, req.count))
-            for req in self.requirements
-        ]
-
-        #print("Workstations: ", rule.workstations, "=>", has_workstation)
-        #print("Requirements: ", has_requirements)
-
-        return has_workstation and all(ok for _, _, ok in has_requirements)
-
-
-class SimpleRecipeDependencies(RecipeDependencies):
-    def __init__(self, workstations: List[str], requirements: list[Requirement]):
-        super().__init__(workstations, requirements)
-
-    @property
-    def is_quality(self):
-        return False
-
-
-class QualityRecipeDependencies(RecipeDependencies):
-    base_modifier: float
-    perk_requirements: frozenset[QualityRequirement]
-
-    def __init__(
-            self,
-            workstations: List[str],
-            requirements: list[Requirement],
-            base_modifier: float,
-            quality_requirements: list[QualityRequirement]
-    ):
-        super().__init__(workstations, requirements)
-        self.base_modifier = base_modifier
-        self.quality_requirements = frozenset(quality_requirements)
-
-    def is_quality(self):
-        return True
-
-    @override
-    def are_fulfilled(self, state: CollectionState, player: int) -> bool:
-        has_basic_reqs = super(QualityRecipeDependencies, self).are_fulfilled(state, player)
-        if not has_basic_reqs:
-            return False
-
-        chance = self.base_modifier
-        for q_req in self.quality_requirements:
-            chance += state.has(q_req.label, q_req.additional_modifier)
-
-        return 0.5 <= chance <= 1.5

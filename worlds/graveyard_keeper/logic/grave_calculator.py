@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from BaseClasses import CollectionState
+from rule_builder.rules import Has
+from .custom_rules import CanCraft
 from ..data import data, CRAFTING_EVENT_PREFIX
 
 
@@ -187,6 +189,7 @@ class GravePointCalculator:
 
     def _has(self, item_key: str) -> bool:
         return self.state.has(data.items[item_key].label, self.player)
+        return Has(data.items[item_key].label, self.world).resolve(self.world)
 
     def _can_craft(self, item_key: str) -> bool:
-        return self.state.has(data.events[CRAFTING_EVENT_PREFIX + item_key].item_label, self.player)
+        return CanCraft(item_key).resolve(self.world)

@@ -2,7 +2,7 @@
   "ITEM_ASTROLOGER_HAPPINESS_10": {
     "label": "Astrologer - Happiness +10",
     "dlc": "BASE_GAME",
-    "classification": "FILLER",
+    "classification": "PROGRESSION",
     "amount": 10
   },
   "ITEM_BISHOP_HAPPINESS_10": {
@@ -23,10 +23,22 @@
     "classification": "FILLER",
     "amount": 10
   },
+  "ITEM_MS_CHARM_HAPPINESS_10": {
+    "label": "Ms. Charm - Happiness +10",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION",
+    "amount": 10
+  },
   "ITEM_SNAKE_HAPPINESS_10": {
     "label": "Snake - Happiness +10",
     "dlc": "BASE_GAME",
     "classification": "FILLER",
+    "amount": 10
+  },
+  "ITEM_FARMER_HAPPINESS_10": {
+    "label": "Farmer - Happiness +10",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION",
     "amount": 10
   },
   "ITEM_KREZVOLD_HAPPINESS_10": {

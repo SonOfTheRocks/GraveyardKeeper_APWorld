@@ -1747,7 +1747,7 @@
       ]
     }
   ],
-  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSIN_COPPER": [
+  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSING_COPPER": [
     {
       "crafting_stations": [
         "CRAFTING_STATION_ORGAN_WORKBENCH"
@@ -1762,7 +1762,7 @@
       ]
     }
   ],
-  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSIN_SILVER": [
+  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSING_SILVER": [
     {
       "crafting_stations": [
         "CRAFTING_STATION_ORGAN_WORKBENCH"
@@ -1790,7 +1790,7 @@
       ]
     }
   ],
-  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSIN_GOLD": [
+  "ITEM_PRAY_FOR_SOULS_THOROUGH_CLEANSING_GOLD": [
     {
       "crafting_stations": [
         "CRAFTING_STATION_ORGAN_WORKBENCH"

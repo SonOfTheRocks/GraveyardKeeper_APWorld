@@ -15,12 +15,12 @@
     "label": "Tutorial - Talk to Bishop (2)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
-
-
   "LOCATION_TUTORIAL_TALK_TO_BISHOP_3": {
     "label": "Tutorial - Talk to Bishop (3)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
+
+
   "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_SKULL": {
     "label": "Astrologer Reward - Bring him a Skull",
     "parent_region": "REGION_LIGHTHOUSE"
@@ -31,6 +31,38 @@
   },
   "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_KEEPERS_JOURNAL": {
     "label": "Astrologer - Give him the Diary",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_ACID": {
+    "label": "Astrologer - Bring him Acid",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_RESTORATION_TOOLS": {
+    "label": "Astrologer - Give him the Restoration Tools",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_1": {
+    "label": "Astrologer - Restore his reputation (1)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_2": {
+    "label": "Astrologer - Restore his reputation (2)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS": {
+    "label": "Astrologer - Show him the Aristocrat papers",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_TELL_ABOUT_MS_CHARM": {
+    "label": "Astrologer - Tell him about Ms. Charm",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_TELL_ESMERALDAS_FATE": {
+    "label": "Astrologer - Tell him about Esmeraldas fate",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_MILL_FIX": {
+    "label": "Astrologer - Ask for Paper with calculations",
     "parent_region": "REGION_LIGHTHOUSE"
   },
   "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_HIS_DAY": {
@@ -115,6 +147,26 @@
   },
 
 
+  "LOCATION_MS_CHARM_REWARD_PROVE_YOUR_WORTH": {
+    "label": "Ms. Charm Reward - Prove your worth",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_GIVE_SNAKE_FAKE_COINS": {
+    "label": "Ms. Charm Reward - Give Snake the fake coins",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_ASK_SNAKE_ABOUT_NECKLACE": {
+    "label": "Ms. Charm Reward - Ask Snake about the necklace",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_GIVE_GOLD_STORY": {
+    "label": "Ms. Charm Reward - Give her a gold story",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_GIVE_PERFUME": {
+    "label": "Ms. Charm Reward - Give her perfume",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
   "LOCATION_MS_CHARM_REWARD_PERSUADE_TO_DANCE": {
     "label": "Ms. Charm Reward - Persuade her to Dance with Euric",
     "parent_region": "REGION_THE_DEAD_HORSE"
@@ -184,7 +236,7 @@
     "label": "Gerry Reward - Get Gerry Beer",
     "parent_region": "REGION_MORGUE"
   },
-  "LOCATION_GERRY_REWARD_GET_BERRY_WINE": {
+  "LOCATION_GERRY_REWARD_GET_GERRY_WINE": {
     "label": "Gerry Reward - Get Berry Wine",
     "parent_region": "REGION_MORGUE"
   },
@@ -318,6 +370,10 @@
   },
   "LOCATION_REWARD_TIME_MACHINE_ITEM_14": {
     "label": "Quest Reward - Time Machine Item 14",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2": {
+    "label": "Quest Reward - Time Machine Item 14 #2",
     "parent_region": "REGION_WITCH_HILL"
   },
   "LOCATION_REWARD_TIME_MACHINE_ITEM_15": {

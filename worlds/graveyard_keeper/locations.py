@@ -21,16 +21,16 @@ def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]
 
     location_index: int = 1
     for region_data_name, region_data in data.regions.items():
-        if region_data_name not in regions.keys():
-            continue
+        #if region_data_name not in regions.keys():
+        #    continue
 
         region: Region = regions[region_data_name]
         location_keys: List[str] = region_data.locations
         event_keys: List[str] = region_data.events
 
         for location_key in location_keys:
-            if location_key not in data.locations:
-                continue
+            #if location_key not in data.locations:
+            #    continue
             location_data = data.locations[location_key]
 
             location = GraveyardKeeperLocation(

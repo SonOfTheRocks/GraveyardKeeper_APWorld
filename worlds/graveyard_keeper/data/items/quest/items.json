@@ -61,6 +61,11 @@
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
+  "ITEM_FAKE_COINS": {
+    "label": "Fake coins",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
   "ITEM_GARDEN_CERTIFICATE": {
     "label": "Active key",
     "dlc": "BASE_GAME",

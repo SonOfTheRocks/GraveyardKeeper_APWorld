@@ -1,4 +1,53 @@
 {
+  "BUILDABLE_REMOVE_BLOCKAGE_BASEMENT": {
+    "regions": [
+      "REGION_CELLAR"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_WOOD_WEDGE",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "BUILDABLE_REMOVE_BLOCKAGE_ALCHEMY_LAB": {
+    "regions": [
+      "REGION_ALCHEMY_LAB"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_WOOD_WEDGE",
+      "ITEM_WOODEN_BEAM",
+      "ITEM_SIMPLE_IRON_PARTS"
+    ]
+  },
+  "BUILDABLE_REMOVE_BLOCKAGE_VINEYARD": {
+    "regions": [
+      "REGION_VINEYARD"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+      "ITEM_WOOD_WEDGE",
+      "ITEM_FLITCH",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ]
+  },
+  "BUILDABLE_REMOVE_BLOCKAGE_SWAMP": {
+    "regions": [
+      "REGION_PLAINS"
+    ],
+    "crafting_stations": [],
+    "recipe_required": "",
+    "materials_required": [
+        "ITEM_FLITCH",
+        "ITEM_WOODEN_PLANK",
+        "ITEM_NAILS"
+    ]
+  },
+
   "BUILDABLE_FLOWERBED": {
     "regions": [
       "REGION_OLD_GRAVEYARD"

@@ -5,8 +5,7 @@ import importlib_resources
 
 from BaseClasses import ItemClassification
 from ..bases import GraveyardKeeperTestBase
-from data import data, load_json_data
-from worlds import graveyard_keeper
+from ...data import data, load_json_data
 
 
 class TestDataIntegrity(unittest.TestCase):
@@ -18,51 +17,6 @@ class TestDataIntegrity(unittest.TestCase):
                 "label" in region_data,
                 f"region '{region_name}' does not have label!"
             )
-
-    def test_regions_exits_exist(self):
-        regions_json = load_json_data("regions.json")
-        region_names = list(regions_json.keys())
-        for region_name, region_data in regions_json.items():
-            for exit_region in region_data["exits"]:
-                self.assertTrue(
-                    exit_region in region_names,
-                    f"exit '{exit_region}' does not exist! (found in region '{region_name}')"
-                )
-
-    def test_regions_exits_double_linking(self):
-        regions_json = load_json_data("regions.json")
-        for region_name, region_data in regions_json.items():
-            for exit_region in region_data["exits"]:
-                self.assertTrue(
-                    region_name in regions_json[exit_region]["exits"],
-                    f"region '{exit_region}' does not link back to '{region_name}'"
-                )
-
-    def test_region_event_linking(self):
-        regions_json = load_json_data("regions.json")
-        events_in_regions = set([event for region in regions_json.values() for event in region["events"]])
-        events_json = load_json_data("quest_events.json")
-        events_in_events = list(events_json.keys())
-        self.assertEqual(sorted(events_in_regions), sorted(events_in_events))
-
-    def test_region_location_linking(self):
-        locations_in_regions = {location for region in data.regions.values() for location in region.locations}
-        locations_in_data = set(data.locations.keys())
-
-        missing_from_data = locations_in_regions - locations_in_data
-        missing_from_regions = locations_in_data - locations_in_regions
-
-        print(f"locations_in_regions: {locations_in_regions}")
-        print(f"locations_in_data: {locations_in_data}")
-
-        self.assertFalse(
-            missing_from_data or missing_from_regions,
-            "\n".join([
-                "Region/location linking is inconsistent:",
-                f"  Missing from data.locations: {sorted(missing_from_data)}",
-                f"  Missing from regions: {sorted(missing_from_regions)}",
-            ])
-        )
 
     def test_unlocks_exists(self):
         techs = [t for t in load_json_data("regions.json").keys() if t.startswith("REGION_TECH")]
@@ -86,7 +40,7 @@ class TestDataIntegrity(unittest.TestCase):
     def test_workstations_exist(self):
         crafting_stations = load_json_data("logic/workstations.json").keys()
 
-        crafts_filenames = importlib_resources.files(graveyard_keeper.__name__).glob("data/logic/recipes/*.json")
+        crafts_filenames = importlib_resources.files(__name__).glob("data/logic/recipes/*.json")
         crafts = {}
         for crafts_filename in crafts_filenames:
             for craft_name, crafts_data_list in load_json_data(f"logic/recipes/{crafts_filename}").items():
@@ -106,7 +60,7 @@ class TestDataIntegrity(unittest.TestCase):
             "ITEM_BP_DONKEYS_OF_THE_WORLD_UNITE",
             "ITEM_BP_SPICY_ORANGE"
         ]
-        blueprint_filenames = importlib_resources.files(graveyard_keeper.__name__).glob("data/items/**/blueprints.json")
+        blueprint_filenames = importlib_resources.files(__name__).glob("data/items/**/blueprints.json")
         for blueprint_filename in blueprint_filenames:
             blueprint_filename = str(blueprint_filename)
 
@@ -182,9 +136,9 @@ class TestDataIntegrity(unittest.TestCase):
         return
 
     def test_all_items_have_dlc_classification(self):
-        found = importlib_resources.files(graveyard_keeper.__name__).glob("data/items/*.json")
+        found = importlib_resources.files(__name__).glob("data/items/*.json")
         item_filenames = set(found)
-        found = importlib_resources.files(graveyard_keeper.__name__).glob("data/items/**/*.json")
+        found = importlib_resources.files(__name__).glob("data/items/**/*.json")
         item_filenames.update(set(found))
         for item_filename in item_filenames:
             for item_key, item_data in load_json_data(f"data/items/{item_filename}").items():

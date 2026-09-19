@@ -27,12 +27,12 @@
   "ITEM_LEARN_GATHERING_BUTTERFLY": {
     "label": "Gathering: Butterfly",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_GATHERING_MOTH": {
     "label": "Gathering: Moth",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_GATHERING_BEE": {
     "label": "Gathering: Bee",
@@ -102,7 +102,7 @@
   "ITEM_LEARN_GATHERING_SULFUR": {
     "label": "Gathering: Sulfur",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_GATHERING_LIMESTONE": {
     "label": "Gathering: Limestone",

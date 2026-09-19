@@ -1,12 +1,12 @@
 from typing import Dict
 
 from BaseClasses import Region
-from worlds.AutoWorld import World
-from . import items, locations, regions, rules, web_world
+from rule_builder.cached_world import CachedRuleBuilderWorld
+from . import data, items, locations, regions, rules, web_world
 from . import options as graveyard_keeper_options
 
 
-class GraveyardKeeperWorld(World):
+class GraveyardKeeperWorld(CachedRuleBuilderWorld):
     game = "Graveyard Keeper"
 
     web = web_world.GraveyardKeeperWebWorld()
@@ -17,7 +17,7 @@ class GraveyardKeeperWorld(World):
     location_name_to_id = locations.create_location_name_to_id_dict()
     item_name_to_id = items.ITEM_NAME_TO_ID
 
-    origin_region_name = "REGION_SWEET_HOME"
+    origin_region_name = "Sweet Home"
 
     def create_regions(self):
         all_regions: Dict[str, Region] = regions.create_and_connect_regions(self)

@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Dict, List
 
 from BaseClasses import CollectionState
+from .custom_rules import CanCraft
 from ..data import data, CRAFTING_EVENT_PREFIX
 from ..models import ChurchLevel
 from .grave_calculator import GravePointCalculator
@@ -174,6 +175,7 @@ class GraveyardPointCalculator:
         return 5 if church_level == ChurchLevel.CATHEDRAL else 0
 
     def _can_build(self, item:str) -> bool:
+        return CanCraft("BUILDABLE_" + item).resolve(self.world)
         return self.state.has(
             data.events[CRAFTING_EVENT_PREFIX + "BUILDABLE_" + item].item_label,
             self.player

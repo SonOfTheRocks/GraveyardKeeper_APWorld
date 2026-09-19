@@ -1,0 +1,97 @@
+import re
+import unittest
+
+from rule_builder.rules import Rule, Has
+from test.param import classvar_matrix
+from ..fakes import FakeWorld
+from ...data import data
+from ...logic.custom_rules import CanComplete
+from ...models import QuestEventData
+
+
+class TestAllQuestEvents(unittest.TestCase):
+
+    def test_no_quest_events_require_todo(self):
+        todo_quest_events = [e for e in data.events
+                             if any(req.startswith("TODO") for req in data.events[e].required_quests)]
+
+        self.assertEqual(len(todo_quest_events), 0,
+                         f"No quest event should require 'TODO', but these do: {todo_quest_events}")
+
+
+@classvar_matrix(event_key=data.events.keys())
+class TestEvent(unittest.TestCase):
+    event_key: str
+
+    def test_quest_is_in_regions(self):
+        self.assertTrue(
+            any(self.event_key in region.events for region in data.regions.values()),
+            f"\nquest doesn't exist in regions"
+        )
+
+    def test_required_quests_exist(self):
+        event_data = data.events[self.event_key]
+        quests = event_data.required_quests
+        for quest in quests:
+            if not quest.startswith("TODO"): # left-over TODOs are tested in TestAllQuestEvents
+                self.assertIn(quest, data.events.keys(), f"\nprerequisite quest '{quest}' is not defined")
+
+    def test_required_happiness_npc_exist(self):
+        event_data = data.events[self.event_key]
+        happiness_req = event_data.required_happiness
+        npcs_with_happiness = [re.match(r"ITEM_(\w+)_HAPPINESS_(\d+)", i).group(1) for i in data.items.keys() if "HAPPINESS" in i]
+        for happiness in happiness_req:
+            self.assertTrue(happiness.npc in npcs_with_happiness, f"\nprerequisite happiness NPC '{happiness.npc}' is not defined")
+
+
+    def test_required_happiness_is_valid_value(self):
+        event_data = data.events[self.event_key]
+        happiness_req = event_data.required_happiness
+        for happiness in happiness_req:
+            self.assertTrue(0 <= happiness.value <= 100, f"\nprerequisite happiness value should be between 0 and 100")
+
+    def test_required_quest_items_exist(self):
+        event_data = data.events[self.event_key]
+        quest_items = event_data.required_quest_items
+        for quest_item in quest_items:
+            self.assertIn(quest_item, data.items.keys(), f"\nprerequisite quest item '{quest_item}' is not defined")
+
+    def test_required_craft_items_exist(self):
+        event_data = data.events[self.event_key]
+        craft_items = event_data.required_craft_items
+        all_sold = [i for vendor in data.vendors.values() for i in vendor.sells_all]
+        for craft_item in craft_items:
+            if craft_item not in all_sold and craft_item not in data.items.keys():
+                self.assertIn(craft_item, data.recipes.keys(), f"\nprerequisite craft item '{craft_item}' has no recipe and isn't sold by any vendor")
+
+    def test_reward_locations_exist(self):
+        event_data: QuestEventData = data.events[self.event_key]
+        reward_locations = event_data.rewards
+        for location in reward_locations:
+            self.assertIn(location, data.locations.keys(), f"\nreward location '{location}' is not defined")
+
+    def test_item_dependencies_exist(self):
+        resolved_rule: Rule.Resolved = CanComplete(self.event_key).resolve(FakeWorld())
+        item_dependencies = resolved_rule.item_dependencies()
+        item_labels = [i.label for i in data.items.values()]
+        unexpected_dependencies = [d for d in item_dependencies if d not in item_labels]
+        self.assertFalse(unexpected_dependencies, f"\nnon-valid item requirements: {unexpected_dependencies}")
+
+    def test_region_dependencies_exist(self):
+        resolved_rule: Rule.Resolved = CanComplete(self.event_key).resolve(FakeWorld())
+        region_dependencies = resolved_rule.region_dependencies()
+        region_labels = [i.label for i in data.regions.values()]
+        unexpected_dependencies = [d for d in region_dependencies if d not in region_labels]
+        self.assertFalse(unexpected_dependencies, f"\nnon-valid region requirements: {unexpected_dependencies}")
+
+    def test_location_dependencies_exist(self):
+        resolved_rule: Rule.Resolved = CanComplete(self.event_key).resolve(FakeWorld())
+        location_dependencies = resolved_rule.location_dependencies()
+        location_labels = [l.label for l in data.locations.values()]
+        unexpected_dependencies = [d for d in location_dependencies if d not in location_labels]
+        self.assertFalse(unexpected_dependencies, f"\nnon-valid location requirements: {unexpected_dependencies}")
+
+    def test_entrance_dependencies_exist(self):
+        resolved_rule: Rule.Resolved = CanComplete(self.event_key).resolve(FakeWorld())
+        entrance_dependencies = resolved_rule.entrance_dependencies()
+        self.assertFalse(entrance_dependencies, f"\nno entrance dependencies expected, but found: {entrance_dependencies}")

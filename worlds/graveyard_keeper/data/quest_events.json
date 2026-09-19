@@ -14,9 +14,26 @@
     "location_label": "Player learns about the portal",
     "item_label": "Player learnt about the portal",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_ASTROLOGER_GET_ASTROLGER_KEEPERS_JOURNAL"],
+    "required_quests": ["EVENT_ASTROLOGER_GET_ASTROLOGER_KEEPERS_JOURNAL"],
     "required_happiness": [],
     "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_ENTER_PORTAL": {
+    "location_label": "Player enters portal",
+    "item_label": "Player can enter portal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_PLAYER_KNOWS_PORTAL"],
+    "required_happiness": [],
+    "required_quest_items": [
+      "ITEM_SALTY_FORK",
+      "ITEM_MIRROR_OF_PRIDE",
+      "ITEM_ETERNAL_BURNING_COAL",
+      "ITEM_GOLDEN_ANGLE",
+      "ITEM_ENDLESS_NOTEBOOK",
+      "ITEM_NECKLACE"
+    ],
     "required_craft_items": [],
     "rewards": []
   },
@@ -35,11 +52,11 @@
     "location_label": "Get Gerry Wine",
     "item_label": "Got Gerry Wine",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_GET_BERRY_BEER"],
+    "required_quests": ["EVENT_GERRY_GET_GERRY_BEER"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_RED_WINE_SILVER"],
-    "rewards": ["LOCATION_GERRY_REWARD_GET_BERRY_WINE"]
+    "rewards": ["LOCATION_GERRY_REWARD_GET_GERRY_WINE"]
   },
   "EVENT_GERRY_TALK_ABOUT_GUNTER": {
     "location_label": "Gerry: Talk about Gunter",
@@ -137,7 +154,7 @@
     "location_label": "Tell Astrologer about Esmeralda's fate",
     "item_label": "Told Astrologer about Esmeralda's fate",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_GYPSY_BARN_ASK_ABOUT_ESMERALDA"],
+    "required_quests": ["EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -267,7 +284,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PERFUME"],
     "required_craft_items": [],
-    "rewards": ["LOCATION_MS_CHARM_REWARD_ASK_SNAKE_ABOUT_NECKLACE"]
+    "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_PERFUME"]
   },
   "EVENT_MS_CHARM_PROMOTE_BUSINESS": {
     "location_label": "Promote your business via Ms. Charm",
@@ -289,6 +306,51 @@
     "required_quest_items": [],
     "required_craft_items": ["ITEM_STORY_GOLD"],
     "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_GOLD_STORY"]
+  },
+  "EVENT_MS_CHARM_ASK_ABOUT_FATHER": {
+    "location_label": "Ask Ms. Charm about her father",
+    "item_label": "Asked Ms. Charm about her father",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_TELL_ESMERALDAS_FATE"],
+    "required_happiness": ["MS_CHARM_50"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_SNAKE_MET": {
+    "comment": "DUMMY",
+    "location_label": "Meet Snake",
+    "item_label": "Met Snake",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_HELP_WITH_THE_RITUAL": {
+    "comment": "DUMMY",
+    "location_label": "Help Snake with the ritual",
+    "item_label": "Helped Snake with the ritual",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA": {
+    "comment": "DUMMY",
+    "location_label": "Ask the gypsy baron about Esmeralda",
+    "item_label": "Asked the gypsy baron about Esmeralda",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
 
   "EVENT_TAVERN_EVENT_COMEDY_STANDUP": {
@@ -338,7 +400,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_BARMAN_DOLL"],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_1": {
     "comment": "Statuette",
@@ -349,7 +411,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_1"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_1"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_1": {
     "location_label": "Watch time machine cutscene 1",
@@ -359,7 +421,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_STATUETTE"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_2": {
     "comment": "Flask",
@@ -370,7 +432,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": [
+    "rewards": [
       "LOCATION_REWARD_TIME_MACHINE_ITEM_2",
       "LOCATION_REWARD_TIME_MACHINE_ITEM_2_2"
     ]
@@ -383,7 +445,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_FLASK"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_3": {
     "comment": "Door Hinge",
@@ -394,7 +456,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_3"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_3"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_3": {
     "location_label": "Watch time machine cutscene 3",
@@ -404,7 +466,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_DOOR_HINGE"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_ENLARGE_CARROT": {
     "location_label": "Enlarge your carrot",
@@ -414,7 +476,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_4": {
     "comment": "Legionary Helm",
@@ -425,7 +487,7 @@
     "required_happiness": ["FARMER_40"],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_CARROT"],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_4"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_4"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4": {
     "location_label": "Watch time machine cutscene 4",
@@ -435,7 +497,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_LEGIONARY_HELM"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_5": {
     "comment": "Ancient Lockpicks",
@@ -449,7 +511,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_5"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_5"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5": {
     "location_label": "Watch time machine cutscene 5",
@@ -459,7 +521,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_LOCKPICKS"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_6": {
     "comment": "Priests Medallion",
@@ -470,7 +532,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_BOOZE"],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_6"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_6"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_6": {
     "location_label": "Watch time machine cutscene 6",
@@ -480,7 +542,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTS_MEDALLION"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_7": {
     "comment": "The Legionary Dagger",
@@ -491,7 +553,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_7"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_7"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_7": {
     "location_label": "Watch time machine cutscene 7",
@@ -501,7 +563,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_THE_LEGIONARY_DAGGER"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_8": {
     "comment": "Belt Buckle",
@@ -512,7 +574,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_8"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_8"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8": {
     "location_label": "Watch time machine cutscene 8",
@@ -522,7 +584,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_BELT_BUCKLE"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_TAVERN_UPGRADE_TAVERN": {
     "location_label": "Upgrade the tavern",
@@ -536,7 +598,7 @@
       "ITEM_A_PIECE_OF_STONE",
       "ITEM_SIMPLE_IRON_PARTS"
     ],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_9": {
     "comment": "Clay Shards",
@@ -550,7 +612,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_9"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_9"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9": {
     "location_label": "Watch time machine cutscene 9",
@@ -560,7 +622,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_CLAY_SHARDS"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_10": {
     "comment": "Amulet of The Ancient God",
@@ -574,7 +636,7 @@
     "required_happiness": ["SNAKE_90"],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_10"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_10"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_10": {
     "location_label": "Watch time machine cutscene 10",
@@ -584,7 +646,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_AMULET_OF_THE_ANCIENT_GOD"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_11": {
     "comment": "Ancient Shackles",
@@ -595,7 +657,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_11"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_11"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_11": {
     "location_label": "Watch time machine cutscene 11",
@@ -605,7 +667,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_SHACKLES"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_12": {
     "comment": "Ancient Pickaxe",
@@ -622,7 +684,7 @@
       "ITEM_WOODEN_BEAM",
       "ITEM_SILK"
     ],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_12"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_12"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_12": {
     "location_label": "Watch time machine cutscene 12",
@@ -632,7 +694,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_PICKAXE"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_13": {
     "comment": "Ancient Keys",
@@ -643,7 +705,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PIE_WITH_POISON"],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_13"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_13"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_13": {
     "location_label": "Watch time machine cutscene 13",
@@ -653,7 +715,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_KEYS"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_14": {
     "comment": "Clay Pot of Tar",
@@ -664,7 +726,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": [
+    "rewards": [
       "LOCATION_REWARD_TIME_MACHINE_ITEM_14",
       "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2"
     ]
@@ -677,7 +739,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_CLAY_POT_OF_TAR"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_15": {
     "comment": "Priestess Ring",
@@ -688,7 +750,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_15"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_15"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_15": {
     "location_label": "Watch time machine cutscene 15",
@@ -698,7 +760,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTS_SIGNET"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_16": {
     "comment": "Priests Signet",
@@ -709,7 +771,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_16"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_16"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_16": {
     "location_label": "Watch time machine cutscene 16",
@@ -719,7 +781,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTESS_RING"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
   "EVENT_GET_TIME_MACHINE_ITEM_17": {
     "comment": "A Brick from the Church",
@@ -730,7 +792,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "reward": ["LOCATION_REWARD_TIME_MACHINE_ITEM_17"]
+    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_17"]
   },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_17": {
     "location_label": "Watch time machine cutscene 17",
@@ -740,51 +802,107 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_A_BRICK_FROM_THE_CHURCH"],
     "required_craft_items": [],
-    "reward": []
+    "rewards": []
   },
 
   "EVENT_STAINED_GLASS_WINDOW_INSTALLED": {
     "location_label": "Install the Stained Glass Window",
-    "item_label": "Stained Glass Window installed"
-  },
-  "EVENT_ENTER_PORTAL": {
-    "location_label": "Enter Portal",
-    "item_label": "Portal Entered"
+    "item_label": "Stained Glass Window installed",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_CHURCH_OPEN": {
     "location_label": "Open church",
-    "item_label": "Church opened"
+    "item_label": "Church opened",
+    "dlc": "BASE_GAME",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_CORPSE_HATCH_REPAIRED": {
     "location_label": "Repair Corpse hatch",
-    "item_label": "Corpse hatch repaired"
+    "item_label": "Corpse hatch repaired",
+    "dlc": "BASE_GAME",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_EURIC_ARRIVE": {
     "location_label": "Euric arrives",
-    "item_label": "Euric arrived"
+    "item_label": "Euric arrived",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_SOULS_ROOM_OPEN": {
     "location_label": "Give the old rustic key to Euric",
-    "item_label": "Souls room opened"
+    "item_label": "Souls room opened",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_GERRY_ASK_ABOUT_THE_TOOTH": {
     "location_label": "Ask about the tooth",
-    "item_label": "Asked about the tooth"
+    "item_label": "Asked about the tooth",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_HATCH_REPAIRED": {
     "location_label": "Repair Hatch to Euric's Room",
-    "item_label": "Hatch to Euric's Room repaired"
+    "item_label": "Hatch to Euric's Room repaired",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_SMILER_APPEARS": {
     "location_label": "Smiler appears",
-    "item_label": "Smiler appeared"
+    "item_label": "Smiler appeared",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_EURIC_HEALED": {
     "location_label": "Heal Euric",
-    "item_label": "Euric healed"
+    "item_label": "Euric healed",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   },
   "EVENT_REPAIR_VILLAGE": {
     "location_label": "Repair the village",
-    "item_label": "Village repaired"
+    "item_label": "Village repaired",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
   }
 }

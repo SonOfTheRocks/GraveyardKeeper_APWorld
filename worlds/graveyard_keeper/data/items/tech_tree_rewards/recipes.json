@@ -79,7 +79,7 @@
   "ITEM_LEARN_CREATE_A_BOWL_OF_SAUERKRAUT": {
     "label": "Create: A bowl of sauerkraut",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BEET_SLICES": {
     "label": "Create: Beet slices",
@@ -89,12 +89,12 @@
   "ITEM_LEARN_CREATE_GREEN_JELLY": {
     "label": "Create: Green jelly",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_RED_JELLY": {
     "label": "Create: Red jelly",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_DOUGH": {
     "label": "Create: Dough",
@@ -119,12 +119,12 @@
   "ITEM_LEARN_CREATE_FISH_SOUP": {
     "label": "Create: Fish soup",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_FISH_NUGGETS": {
     "label": "Create: Fish nuggets",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PANCAKES": {
     "label": "Create: Pancakes",
@@ -144,22 +144,22 @@
   "ITEM_LEARN_CREATE_CABBAGE_SOUP": {
     "label": "Create: Cabbage soup",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PUMPKIN_SOUP": {
     "label": "Create: Pumpkin soup",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_VEGETABLE_SOUP": {
     "label": "Create: Vegetable soup",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_OMELETTE": {
     "label": "Create: Omelette",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_FRIED_EGG": {
     "label": "Create: Fried egg",
@@ -169,17 +169,17 @@
   "ITEM_LEARN_CREATE_LASAGNA": {
     "label": "Create: Lasagna",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PASTA": {
     "label": "Create: Pasta",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN": {
     "label": "Create: Baked kebab (Pumpkin)",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS": {
     "label": "Create: Baked kebab (Onions)",
@@ -194,7 +194,7 @@
   "ITEM_LEARN_CREATE_BERRY_PIE": {
     "label": "Create: Berry pie",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_GRAPE_PIE": {
     "label": "Create: Grape pie",
@@ -204,7 +204,7 @@
   "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP": {
     "label": "Create: A bowl of pumpkin soup",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BAKED_PUMPKIN": {
     "label": "Create: Baked pumpkin",
@@ -214,7 +214,7 @@
   "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS": {
     "label": "Create: A bowl of lentils",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BURGER": {
     "label": "Create: Burger",
@@ -239,12 +239,12 @@
   "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS": {
     "label": "Create: Toasts with onions",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BAKED_SALMON": {
     "label": "Create: Baked salmon",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_ROYAL_FISH": {
     "label": "Create: Royal fish",
@@ -254,7 +254,7 @@
   "ITEM_LEARN_CREATE_CAKE": {
     "label": "Create: Cake",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_GRATED_CARROT": {
     "label": "Create: Grated carrot",
@@ -274,7 +274,7 @@
   "ITEM_LEARN_CREATE_A_MUG_OF_MEAD": {
     "label": "Create: A mug of mead",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_VEGETABLE_SALAD": {
     "label": "Create: Vegetable salad",
@@ -284,12 +284,12 @@
   "ITEM_LEARN_CREATE_VEGETABLE_STEW": {
     "label": "Create: Vegetable stew",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP": {
     "label": "Create: Creamy vegetable soup",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CHEESE": {
     "label": "Create: Cheese",
@@ -314,22 +314,22 @@
   "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP": {
     "label": "Create: Fancy lentil soup",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_LENTIL_CUTLETS": {
     "label": "Create: Lentil cutlets",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_VEGETABLE_PATTY": {
     "label": "Create: Vegetable patty",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_MUSHROOM_PATTY": {
     "label": "Create: Mushroom patty",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CHEESE_PATTY": {
     "label": "Create: Cheese patty",
@@ -426,17 +426,17 @@
   "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE": {
     "label": "Create: Pray for souls' repose",
     "dlc": "BETTER_SAVE_SOUL",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT": {
     "label": "Create: Pray for souls' contentment",
     "dlc": "BETTER_SAVE_SOUL",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING": {
     "label": "Create: Pray for souls' thorough cleansing",
     "dlc": "BETTER_SAVE_SOUL",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
 
 
@@ -570,7 +570,7 @@
   "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_MARKER": {
     "label": "Create: Progressive Stone Grave Marker",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_MARKER": {
     "label": "Create: Progressive Marble Grave Marker",
@@ -585,22 +585,22 @@
   "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE": {
     "label": "Create: Progressive Stone Grave Fence",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_FENCE": {
     "label": "Create: Progressive Marble Grave Fence",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CERAMIC_FUNERAL_URN": {
     "label": "Create: Ceramic funeral urn",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PORCELAIN_FUNERAL_URN": {
     "label": "Create: Porcelain funeral urn",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CANDLE_1": {
     "label": "Create: Candle (1)",
@@ -700,7 +700,7 @@
   "ITEM_LEARN_CREATE_GRAPES": {
     "label": "Create: Grapes",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_HOPS": {
     "label": "Create: Hops",
@@ -880,7 +880,7 @@
   "ITEM_LEARN_CREATE_CARVED_WOOD": {
     "label": "Create: Carved wood",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_A_PIECE_OF_MARBLE": {
     "label": "Create: A piece of marble",
@@ -890,7 +890,7 @@
   "ITEM_LEARN_CREATE_MARBLE_REPAIR_KIT": {
     "label": "Create: Crate of marble repair kit",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_MARBLE": {
     "label": "Create: A polished brick of marble",

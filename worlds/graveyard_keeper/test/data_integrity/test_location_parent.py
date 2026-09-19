@@ -16,7 +16,7 @@ class TestLocationParent(unittest.TestCase):
         self.assertIn(
             self.location_key,
             parent_region.locations,
-            f"Location '{loc_data.label}' ({self.location_key}) declares "
+            f"\nLocation '{loc_data.label}' ({self.location_key}) declares "
             f"'{parent_region_key}' as its parent region, but the location "
             f"is not listed in that region."
         )
