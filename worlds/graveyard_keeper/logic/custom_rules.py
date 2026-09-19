@@ -8,6 +8,7 @@ from BaseClasses import CollectionState, ItemClassification
 from rule_builder.options import OptionFilter
 from rule_builder.rules import Rule, Has, And, Or, False_, CanReachRegion, True_, HasAllCounts
 from ..data import data, CRAFTING_EVENT_PREFIX
+from ..options import VendorLogic
 from ..models import (
     RecipeData,
     QualityRecipeData,
@@ -16,6 +17,13 @@ from ..models import (
 
 if TYPE_CHECKING:
     from ..world import GraveyardKeeperWorld
+
+
+# These items have no non-vendor acquisition path and are required by game
+# progression. They remain in logic even when optional vendor use is disabled.
+MANDATORY_VENDOR_ITEMS = frozenset({
+    "ITEM_SILK",
+})
 
 
 @dataclass
@@ -64,7 +72,7 @@ class CanCraftRecipe(GKRule, game="Graveyard Keeper"):
 @dataclass
 class CanCraft(GKRule, game="Graveyard Keeper"):
     """
-    Checks whether an item can be obtained through crafting or purchasing.
+    Checks whether an item can be obtained through crafting or from the AP pool.
     """
 
     item_key: str
@@ -72,26 +80,14 @@ class CanCraft(GKRule, game="Graveyard Keeper"):
     @override
     def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
         resolved_item_key, resolved_required_count = resolve_item_key(self.item_key)
-
-        # In-game item / progressive item
         if resolved_item_key in data.items:
             item = data.items[resolved_item_key]
-
             assert item.classification == ItemClassification.progression, (
                 f"item '{resolved_item_key}' is used in a rule and therefore "
                 f"must have PROGRESSION classification"
             )
-
-            return Has(
-                item.label,
-                count=resolved_required_count,
-            ).resolve(world)
-
-        recipes = data.recipes.get(self.item_key, ())
-
-        return Or(
-            *(CanCraftRecipe(recipe) for recipe in recipes),
-        ).resolve(world)
+            return Has(item.label, count=resolved_required_count).resolve(world)
+        return Or(*(CanCraftRecipe(recipe) for recipe in data.recipes.get(self.item_key, ()))).resolve(world)
 
 @dataclass
 class HasCraftingQuality(GKRule, game="Graveyard Keeper"):
@@ -168,7 +164,7 @@ class HasCraftingQuality(GKRule, game="Graveyard Keeper"):
 @dataclass
 class CanBuy(GKRule, game="Graveyard Keeper"):
     """
-    Checks whether an item can be purchased from any vendor
+    Checks whether buying an item is allowed by vendor logic and a vendor is reachable.
     """
 
     item_key: str
@@ -184,9 +180,25 @@ class CanBuy(GKRule, game="Graveyard Keeper"):
         if not vendor_regions:
             return False_().resolve(world)
 
-        return Or(
+        vendor_access = Or(
             *(CanReachRegion(region) for region in vendor_regions)
-        ).resolve(world)
+        )
+        vendor_and_money_source_access = And(
+            vendor_access,
+            Has(data.events["EVENT_CHURCH_OPEN"].item_label),
+        )
+        vendor_logic = world.options.vendor_logic.value
+
+        if vendor_logic == VendorLogic.option_always_available:
+            return vendor_access.resolve(world)
+
+        if (
+                vendor_logic == VendorLogic.option_require_money_source
+                or self.item_key in MANDATORY_VENDOR_ITEMS
+        ):
+            return vendor_and_money_source_access.resolve(world)
+
+        return False_().resolve(world)
 
 @dataclass
 class CanGet(GKRule, game="Graveyard Keeper"):
@@ -211,19 +223,23 @@ class CanGet(GKRule, game="Graveyard Keeper"):
 
     @override
     def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
-        rules = []
-        all_sold = [ item for vendor in data.vendors.values() for item in vendor.sells_all]
-
+        requirements_for_all_items: list[Rule] = []
         for item_key in self.item_keys:
             resolved_key, resolved_count = resolve_item_key(item_key)
-            if resolved_key in all_sold:
-                rules.append(CanBuy(item_key))
-            elif resolved_key in data.items.keys():
-                rules.append(Has(data.items[resolved_key].label, resolved_count))
-            else:
-                rules.append(CanCraft(item_key))
+            if resolved_key in data.items:
+                requirements_for_all_items.append(
+                    Has(data.items[resolved_key].label, resolved_count)
+                )
+                continue
 
-        return And(*rules).resolve(world)
+            ways_to_get_item: list[Rule] = []
+            if item_key in data.recipes:
+                ways_to_get_item.append(CanCraft(item_key))
+            if any(resolved_key in vendor.sells_all for vendor in data.vendors.values()):
+                ways_to_get_item.append(CanBuy(item_key))
+            requirements_for_all_items.append(Or(*ways_to_get_item))
+
+        return And(*requirements_for_all_items).resolve(world)
 
 @dataclass()
 class HasPerk(GKRule, game="Graveyard Keeper"):
@@ -269,7 +285,7 @@ class CanComplete(GKRule, game="Graveyard Keeper"):
 
         # required craft items
         for craft_item_key in quest_data.required_craft_items:
-            rules.append(CanCraft(craft_item_key))
+            rules.append(CanGet(craft_item_key))
 
         if not rules:
             return True_().resolve(world)

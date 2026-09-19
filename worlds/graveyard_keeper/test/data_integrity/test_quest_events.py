@@ -4,6 +4,7 @@ import unittest
 from rule_builder.rules import Rule, Has
 from test.param import classvar_matrix
 from ..fakes import FakeWorld
+from ..rule_evaluation import QuestRuleEvaluator
 from ...data import data
 from ...logic.custom_rules import CanComplete
 from ...models import QuestEventData
@@ -17,6 +18,21 @@ class TestAllQuestEvents(unittest.TestCase):
 
         self.assertEqual(len(todo_quest_events), 0,
                          f"No quest event should require 'TODO', but these do: {todo_quest_events}")
+
+    def test_all_quests_are_completable_with_all_items(self):
+        evaluator = QuestRuleEvaluator()
+        evaluations = evaluator.evaluate_all()
+        root_failures = evaluator.failure_frontier(evaluations)
+
+        diagnostics = "\n\n".join(
+            evaluation.format_failed_tree()
+            for evaluation in root_failures.values()
+        )
+        self.assertFalse(
+            bool(root_failures),
+            "Quest progression has root failures. Quests depending on these failures "
+            f"are omitted:\n{diagnostics}",
+        )
 
 
 @classvar_matrix(event_key=data.events.keys())

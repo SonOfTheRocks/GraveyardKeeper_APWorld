@@ -32,6 +32,32 @@ class GraveyardGoalRating(Range):
     default = 500
 
 
+class VendorLogic(Choice):
+    """
+    Determines whether buying items from vendors is considered in logic.
+
+    Out of Logic: Buying optional vendor items is never required. If buying a
+    particular vendor item is mandatory for game progression, the purchase is
+    considered in logic once that item's vendor is reachable and the church is
+    open.
+
+    Require Money Source: Buying vendor items is considered in logic once their
+    vendor is reachable and the church is open. The open church is currently
+    used to represent access to a reliable source of money.
+
+    Always Available: Buying vendor items is considered in logic as soon as
+    their vendor is reachable. The player still needs enough money to make the
+    purchase, but access to a money source is not required by logic.
+    """
+    display_name = "Vendor Logic"
+
+    option_out_of_logic = 0
+    option_require_money_source = 1
+    option_always_available = 2
+
+    default = option_out_of_logic
+
+
 class StrangerSins(Toggle):
     """
     Add Stranger Sins' quest rewards to the pool.
@@ -60,12 +86,14 @@ class BetterSaveSoul(Toggle):
 class GraveyardKeeperOptions(PerGameCommonOptions):
     goal: Goal
     graveyard_goal_rating: GraveyardGoalRating
+    vendor_logic: VendorLogic
     stranger_sins: StrangerSins
     game_of_crone: GameOfCrone
     better_save_soul: BetterSaveSoul
 
 option_groups = [
     OptionGroup("Goal Options", [Goal, GraveyardGoalRating]),
+    OptionGroup("Logic Options", [VendorLogic]),
     OptionGroup("DLCs", [StrangerSins, GameOfCrone, BetterSaveSoul])
 ]
 
@@ -73,6 +101,7 @@ option_presets = {
     "default": {
         "goal": Goal.option_graveyard,
         "graveyard_goal_rating": GraveyardGoalRating.default,
+        "vendor_logic": VendorLogic.default,
         "stranger_sins": True,
         "game_of_crone": True,
         "better_save_soul": True,
