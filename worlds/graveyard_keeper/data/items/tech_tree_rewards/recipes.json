@@ -785,12 +785,12 @@
   "ITEM_LEARN_CREATE_GOLD_INGOT": {
     "label": "Create: Gold ingot",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_JEWELRY": {
     "label": "Create: Progressive Jewelry",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_FLITCH": {
     "label": "Create: Flitch",

@@ -4,10 +4,11 @@ from ..data import data
 from ..logic.custom_rules import CanBuy, CanGet
 from ..options import VendorLogic
 from .fakes import FakeState, FakeWorld
+from .rule_evaluation import make_all_items_state
 
 
 class TestVendorLogic(unittest.TestCase):
-    optional_vendor_item = "ITEM_FEATHER"
+    optional_vendor_item = "ITEM_ACID"
     mandatory_vendor_item = "ITEM_SILK"
 
     @staticmethod
@@ -62,3 +63,8 @@ class TestVendorLogic(unittest.TestCase):
         world = self._world(VendorLogic.option_always_available)
 
         self.assertTrue(CanGet(self.optional_vendor_item).resolve(world)(FakeState()))
+
+    def test_cyclic_recipe_alternative_does_not_block_valid_crafting_path(self):
+        world = self._world(VendorLogic.option_out_of_logic)
+
+        self.assertTrue(CanGet("ITEM_ACID").resolve(world)(make_all_items_state()))

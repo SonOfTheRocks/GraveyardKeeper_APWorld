@@ -19,13 +19,6 @@ if TYPE_CHECKING:
     from ..world import GraveyardKeeperWorld
 
 
-# These items have no non-vendor acquisition path and are required by game
-# progression. They remain in logic even when optional vendor use is disabled.
-MANDATORY_VENDOR_ITEMS = frozenset({
-    "ITEM_SILK",
-})
-
-
 @dataclass
 class GKRule(Rule["GraveyardKeeperWorld"], game="Graveyard Keeper"):
     def get_dependencies(self) -> dict[str, int]:
@@ -47,9 +40,12 @@ class CanCraftRecipe(GKRule, game="Graveyard Keeper"):
     def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
         rules: list[Rule] = []
 
-        # Workstations
-        for workstation in self.recipe.workstations:
-            rules.append(CanGet(workstation))
+        # A recipe can be crafted at any one of its listed workstations.
+        if self.recipe.workstations:
+            rules.append(Or(*(
+                CanGet(workstation)
+                for workstation in self.recipe.workstations
+            )))
 
         # Required recipe item
         if self.recipe.required_recipe_item:
@@ -87,7 +83,16 @@ class CanCraft(GKRule, game="Graveyard Keeper"):
                 f"must have PROGRESSION classification"
             )
             return Has(item.label, count=resolved_required_count).resolve(world)
-        return Or(*(CanCraftRecipe(recipe) for recipe in data.recipes.get(self.item_key, ()))).resolve(world)
+
+        return Or(*(
+            CanCraftRecipe(recipe)
+            for recipe in data.recipes.get(self.item_key, ())
+        )).resolve(world)
+
+
+def _is_vendor_only(item_key: str) -> bool:
+    resolved_key, _ = resolve_item_key(item_key)
+    return resolved_key not in data.items and item_key not in data.recipes
 
 @dataclass
 class HasCraftingQuality(GKRule, game="Graveyard Keeper"):
@@ -194,7 +199,7 @@ class CanBuy(GKRule, game="Graveyard Keeper"):
 
         if (
                 vendor_logic == VendorLogic.option_require_money_source
-                or self.item_key in MANDATORY_VENDOR_ITEMS
+                or _is_vendor_only(self.item_key)
         ):
             return vendor_and_money_source_access.resolve(world)
 

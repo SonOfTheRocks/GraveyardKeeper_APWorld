@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Iterable
 
+from BaseClasses import ItemClassification
 from rule_builder.rules import Rule
 
 from ..data import data
@@ -52,10 +53,12 @@ def evaluate_resolved_rule(
 
 
 def make_all_items_state() -> FakeState:
-    """Build the maximum AP-item state without constructing a MultiWorld."""
+    """Build the maximum item and event state without constructing a MultiWorld."""
     counts: dict[str, int] = {}
 
     for item_key, item in data.items.items():
+        if not item.classification & ItemClassification.progression:
+            continue
         # Individual stages are replaced by their progressive item in the pool.
         if item_key in data.progressive_items_reverse:
             continue
@@ -65,11 +68,21 @@ def make_all_items_state() -> FakeState:
             count = len(data.progressive_items[item_key])
         counts[item.label] = count
 
+    for event in data.events.values():
+        counts[event.item_label] = 1
+
     return FakeState(counts=counts)
 
 
-def find_acquisition_cycle(item_key: str, stack: tuple[str, ...] = ()) -> tuple[str, ...] | None:
+def find_acquisition_cycle(
+        item_key: str,
+        stack: tuple[str, ...] = (),
+        visited: set[str] | None = None,
+) -> tuple[str, ...] | None:
     """Find one recursive CanGet/CanCraft dependency path without resolving rules."""
+    if visited is None:
+        visited = set()
+
     if item_key in stack:
         cycle_start = stack.index(item_key)
         return (*stack[cycle_start:], item_key)
@@ -79,6 +92,8 @@ def find_acquisition_cycle(item_key: str, stack: tuple[str, ...] = ()) -> tuple[
         item_key = resolved_key.key
     if item_key in data.items:
         return None
+    if item_key in visited:
+        return None
 
     next_stack = (*stack, item_key)
     for recipe in data.recipes.get(item_key, ()):
@@ -86,9 +101,10 @@ def find_acquisition_cycle(item_key: str, stack: tuple[str, ...] = ()) -> tuple[
         if recipe.required_recipe_item:
             dependencies.append(recipe.required_recipe_item)
         for dependency in dependencies:
-            cycle = find_acquisition_cycle(dependency, next_stack)
+            cycle = find_acquisition_cycle(dependency, next_stack, visited)
             if cycle is not None:
                 return cycle
+    visited.add(item_key)
     return None
 
 
