@@ -48,7 +48,7 @@ class TestCraftingRules(unittest.TestCase):
         world = FakeWorld()
         rule = CanCraftRecipe(recipe)
 
-        all_apitems = (i.label for i in data.items)
+        all_apitems = (item.label for item in data.items.values())
         world.state = FakeState(all_apitems)
 
         self.assertTrue(

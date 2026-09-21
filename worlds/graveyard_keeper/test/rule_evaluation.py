@@ -36,6 +36,201 @@ class RuleEvaluation:
         )
 
 
+@dataclass(frozen=True)
+class AcquisitionEdge:
+    source: str
+    target: str
+    recipe_index: int
+    dependency_kind: str
+
+
+@dataclass(frozen=True)
+class AcquisitionCycleGroup:
+    nodes: frozenset[str]
+    internal_edges: tuple[AcquisitionEdge, ...]
+    example_cycle: tuple[AcquisitionEdge, ...]
+    external_entry_recipes: tuple[str, ...]
+    affected_quest_requirements: tuple[str, ...]
+
+    def format(self) -> str:
+        cycle_lines = ["Representative cycle:"]
+        cycle_lines.extend(
+            f"  {edge.source} --recipe {edge.recipe_index} {edge.dependency_kind}--> {edge.target}"
+            for edge in self.example_cycle
+        )
+        entry_lines = ["Independent entry recipes:"]
+        entry_lines.extend(f"  - {entry}" for entry in self.external_entry_recipes)
+        quest_lines = ["Affected quest requirements:"]
+        quest_lines.extend(f"  - {requirement}" for requirement in self.affected_quest_requirements)
+        return "\n".join([
+            f"Cyclic component ({len(self.nodes)} nodes): {', '.join(sorted(self.nodes))}",
+            *cycle_lines,
+            *entry_lines,
+            *quest_lines,
+        ])
+
+
+def find_all_acquisition_cycle_groups() -> tuple[AcquisitionCycleGroup, ...]:
+    """Return every cyclic component in the complete crafting dependency graph."""
+    graph = _build_acquisition_graph()
+    components = _strongly_connected_components(graph)
+    cyclic_components = [
+        component
+        for component in components
+        if len(component) > 1
+        or any(edge.target == next(iter(component)) for edge in graph.get(next(iter(component)), ()))
+    ]
+
+    quest_requirements = [
+        (event_key, item_key)
+        for event_key, event in data.events.items()
+        for item_key in event.required_craft_items
+    ]
+    groups: list[AcquisitionCycleGroup] = []
+    for component in cyclic_components:
+        internal_edges = tuple(
+            edge
+            for source in sorted(component)
+            for edge in graph.get(source, ())
+            if edge.target in component
+        )
+        groups.append(AcquisitionCycleGroup(
+            frozenset(component),
+            internal_edges,
+            _find_example_cycle(graph, component),
+            _find_external_entry_recipes(component),
+            tuple(
+                f"{event_key} requires {item_key}"
+                for event_key, item_key in quest_requirements
+                if _can_reach_component(item_key, component, graph)
+            ),
+        ))
+    return tuple(sorted(groups, key=lambda group: sorted(group.nodes)))
+
+
+def _build_acquisition_graph() -> dict[str, tuple[AcquisitionEdge, ...]]:
+    graph: dict[str, list[AcquisitionEdge]] = {item_key: [] for item_key in data.recipes}
+    for item_key, recipes in data.recipes.items():
+        for recipe in recipes:
+            dependencies = [
+                *((workstation, "workstation") for workstation in recipe.workstations),
+                *((ingredient, "ingredient") for ingredient in recipe.ingredients),
+            ]
+            if recipe.required_recipe_item:
+                dependencies.append((recipe.required_recipe_item, "recipe unlock"))
+            for dependency, dependency_kind in dependencies:
+                resolved_dependency = data.progressive_items_reverse.get(dependency)
+                if resolved_dependency is not None:
+                    dependency = resolved_dependency.key
+                if dependency in data.recipes:
+                    graph[item_key].append(AcquisitionEdge(
+                        item_key,
+                        dependency,
+                        recipe.index,
+                        dependency_kind,
+                    ))
+    return {item_key: tuple(edges) for item_key, edges in graph.items()}
+
+
+def _strongly_connected_components(
+        graph: dict[str, tuple[AcquisitionEdge, ...]],
+) -> list[set[str]]:
+    index = 0
+    indexes: dict[str, int] = {}
+    lowlinks: dict[str, int] = {}
+    stack: list[str] = []
+    on_stack: set[str] = set()
+    components: list[set[str]] = []
+
+    def visit(node: str) -> None:
+        nonlocal index
+        indexes[node] = index
+        lowlinks[node] = index
+        index += 1
+        stack.append(node)
+        on_stack.add(node)
+
+        for edge in graph.get(node, ()):
+            target = edge.target
+            if target not in indexes:
+                visit(target)
+                lowlinks[node] = min(lowlinks[node], lowlinks[target])
+            elif target in on_stack:
+                lowlinks[node] = min(lowlinks[node], indexes[target])
+
+        if lowlinks[node] != indexes[node]:
+            return
+        component: set[str] = set()
+        while True:
+            member = stack.pop()
+            on_stack.remove(member)
+            component.add(member)
+            if member == node:
+                break
+        components.append(component)
+
+    for node in graph:
+        if node not in indexes:
+            visit(node)
+    return components
+
+
+def _find_example_cycle(
+        graph: dict[str, tuple[AcquisitionEdge, ...]],
+        component: set[str],
+) -> tuple[AcquisitionEdge, ...]:
+    start = min(component)
+
+    def search(node: str, path: tuple[AcquisitionEdge, ...], seen: set[str]) -> tuple[AcquisitionEdge, ...] | None:
+        for edge in graph.get(node, ()):
+            if edge.target not in component:
+                continue
+            if edge.target == start:
+                return (*path, edge)
+            if edge.target in seen:
+                continue
+            result = search(edge.target, (*path, edge), {*seen, edge.target})
+            if result is not None:
+                return result
+        return None
+
+    return search(start, (), {start}) or ()
+
+
+def _find_external_entry_recipes(component: set[str]) -> tuple[str, ...]:
+    entries: list[str] = []
+    for item_key in sorted(component):
+        for recipe in data.recipes[item_key]:
+            mandatory_dependencies = set(recipe.ingredients)
+            if recipe.required_recipe_item:
+                mandatory_dependencies.add(recipe.required_recipe_item)
+            has_external_workstation = (
+                not recipe.workstations
+                or any(workstation not in component for workstation in recipe.workstations)
+            )
+            if mandatory_dependencies.isdisjoint(component) and has_external_workstation:
+                entries.append(f"{item_key} recipe {recipe.index}")
+    return tuple(entries)
+
+
+def _can_reach_component(
+        item_key: str,
+        component: set[str],
+        graph: dict[str, tuple[AcquisitionEdge, ...]],
+) -> bool:
+    pending = [item_key]
+    visited: set[str] = set()
+    while pending:
+        current = pending.pop()
+        if current in component:
+            return True
+        if current in visited:
+            continue
+        visited.add(current)
+        pending.extend(edge.target for edge in graph.get(current, ()))
+    return False
+
+
 def evaluate_resolved_rule(
         label: str,
         rule: Rule.Resolved,
