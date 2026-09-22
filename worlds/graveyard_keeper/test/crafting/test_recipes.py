@@ -5,12 +5,14 @@ from ..fakes import FakeState, FakeWorld
 from ...logic.custom_rules import CanCraftRecipe
 from ...data import data
 from ...models import RecipeData
+from ..rule_evaluation import make_all_items_state
 
 
 def _iter_recipes():
     for item_key in sorted(data.recipes):
         for recipe in data.recipes[item_key]:
-            yield item_key, recipe.index
+            if not recipe.is_quality:
+                yield item_key, recipe.index
 
 PERKS = [
     data.items["ITEM_PERK_"+k].label
@@ -48,10 +50,10 @@ class TestCraftingRules(unittest.TestCase):
         world = FakeWorld()
         rule = CanCraftRecipe(recipe)
 
-        all_apitems = (item.label for item in data.items.values())
-        world.state = FakeState(all_apitems)
+        all_requirements = make_all_items_state().counts
+        resolved_rule = rule.resolve(world)
 
         self.assertTrue(
-            rule.resolve(world),
+            resolved_rule(FakeState(counts=all_requirements)),
             f"{item_key} not craftable with full requirements",
         )

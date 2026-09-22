@@ -4,7 +4,8 @@ from BaseClasses import CollectionState
 from rule_builder.rules import Has, Rule, False_
 from . import logic
 from .locations import *
-from .logic.custom_rules import build_collection_rule, CanGet, HasPerk, CanComplete, CanCraft
+from .logic.custom_rules import build_collection_rule, build_crafting_event_rule, CanGet, HasPerk, CanComplete, CanCraft
+from .models import QuestEventData
 from .logic.graveyard_calculator import GraveyardPointCalculator
 
 if TYPE_CHECKING:
@@ -13,7 +14,7 @@ if TYPE_CHECKING:
 
 def set_all_rules(world: GraveyardKeeperWorld) -> None:
     set_all_entrance_rules(world)
-    #set_all_crafting_event_location_rules(world)
+    set_all_crafting_event_location_rules(world)
     set_all_location_rules(world)
     set_completion_condition(world)
 
@@ -86,7 +87,6 @@ def set_all_entrance_rules(world: GraveyardKeeperWorld) -> None:
                 Has(unlock_item_label),
             )
 
-'''
 def set_all_crafting_event_location_rules(world: GraveyardKeeperWorld) -> None:
     for event_key, event_data in data.events.items():
         if not event_key.startswith(CRAFTING_EVENT_PREFIX):
@@ -96,17 +96,12 @@ def set_all_crafting_event_location_rules(world: GraveyardKeeperWorld) -> None:
             build_crafting_event_rule(event_key.replace(CRAFTING_EVENT_PREFIX, ""))
         )
 
-    # all locations in the crafting region are event locations
-    #for location in world.get_region(CRAFTING_REGION_KEY).locations:
-    #    event_label = location.name
-    #    event_key = [event_key for event_key, event_data in data.events.items() if event_label == event_key][0]
-    #    set_rule(location, create_rule(event_key))
-'''
-
 def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
 
     # quest event rules
     for quest_key, quest_data in data.events.items():
+        if not isinstance(quest_data, QuestEventData):
+            continue
         loc = world.get_location(quest_data.location_label)
         world.set_rule(loc, CanComplete(quest_key))
         # make all quest rewards dependent on completion of their quest

@@ -1,7 +1,7 @@
 import unittest
 
-from ..data import data
-from ..logic.custom_rules import CanBuy, CanGet
+from ..data import CRAFTING_EVENT_PREFIX, data
+from ..logic.custom_rules import CanBuy, CanGet, build_crafting_event_rule
 from ..options import VendorLogic
 from .fakes import FakeState, FakeWorld
 from .rule_evaluation import make_all_items_state
@@ -59,12 +59,18 @@ class TestVendorLogic(unittest.TestCase):
 
         self.assertTrue(rule(FakeState()))
 
-    def test_can_get_uses_the_vendor_acquisition_rule(self):
+    def test_can_get_uses_the_obtainable_event(self):
         world = self._world(VendorLogic.option_always_available)
+        event_label = data.events[
+            CRAFTING_EVENT_PREFIX + self.optional_vendor_item
+        ].item_label
 
-        self.assertTrue(CanGet(self.optional_vendor_item).resolve(world)(FakeState()))
+        rule = CanGet(self.optional_vendor_item).resolve(world)
+        self.assertFalse(rule(FakeState()))
+        self.assertTrue(rule(FakeState([event_label])))
 
-    def test_cyclic_recipe_alternative_does_not_block_valid_crafting_path(self):
+    def test_acquisition_event_rule_accepts_valid_crafting_path(self):
         world = self._world(VendorLogic.option_out_of_logic)
 
-        self.assertTrue(CanGet("ITEM_ACID").resolve(world)(make_all_items_state()))
+        rule = build_crafting_event_rule("ITEM_ACID").resolve(world)
+        self.assertTrue(rule(make_all_items_state()))

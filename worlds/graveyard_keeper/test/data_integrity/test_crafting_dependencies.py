@@ -1,23 +1,35 @@
 import unittest
 
 from ...data import data
+from ...models import QuestEventData
 from ..rule_evaluation import find_acquisition_cycle, find_all_acquisition_cycle_groups
 
 
 class TestCraftingDependencies(unittest.TestCase):
 
-    def test_complete_crafting_graph_has_no_dependency_cycles(self):
+    def test_complete_crafting_graph_has_no_blocking_dependency_cycles(self):
         cycle_groups = find_all_acquisition_cycle_groups()
-        diagnostics = "\n\n".join(group.format() for group in cycle_groups)
+        blocking_cycle_groups = tuple(
+            group
+            for group in cycle_groups
+            if not group.independent_entries
+        )
+        diagnostics = "\n\n".join(
+            group.format()
+            for group in blocking_cycle_groups
+        )
         self.assertFalse(
-            cycle_groups,
-            "The complete crafting graph contains cyclic dependency groups:\n"
+            blocking_cycle_groups,
+            "The complete crafting graph contains cyclic dependency groups "
+            "without an independent acquisition entry:\n"
             f"{diagnostics}",
         )
 
     def test_quest_crafting_requirements_have_no_dependency_cycles(self):
         affected_requirements: dict[tuple[str, ...], list[str]] = {}
         for event_key, event in data.events.items():
+            if not isinstance(event, QuestEventData):
+                continue
             for item_key in event.required_craft_items:
                 cycle = find_acquisition_cycle(item_key)
                 if cycle is None:

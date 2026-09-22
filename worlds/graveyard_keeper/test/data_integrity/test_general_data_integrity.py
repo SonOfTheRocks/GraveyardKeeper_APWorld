@@ -1,14 +1,20 @@
 import unittest
-from typing import FrozenSet, Set
 
 import importlib_resources
 
 from BaseClasses import ItemClassification
-from ..bases import GraveyardKeeperTestBase
 from ...data import data, load_json_data
+from ...items import ITEM_NAME_TO_ID
 
 
 class TestDataIntegrity(unittest.TestCase):
+
+    def test_item_ids_are_unique_and_positive(self):
+        item_ids = tuple(ITEM_NAME_TO_ID.values())
+
+        self.assertEqual(len(item_ids), len(set(item_ids)))
+        self.assertTrue(item_ids)
+        self.assertGreater(min(item_ids), 0)
 
     def test_region_labels(self):
         regions_json = load_json_data("regions.json")
@@ -149,26 +155,29 @@ class TestDataIntegrity(unittest.TestCase):
                         ["BASE_GAME", "GAME_OF_CRONE", "STRANGER_SINS", "BETTER_SAVE_SOUL"]
                     )
 
-    def test_item_classification_for_recipe_requirements(self):
-        # TODO: fill this list with all items necessary for quests
-        items_needed_for_checks = [
-            "ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD",
-            "ITEM_A_MUG_OF_BEER_COPPER",
-        ]
+    def test_ap_items_used_by_recipes_are_progression(self):
+        dependencies: set[str] = set()
+        for recipes in data.recipes.values():
+            for recipe in recipes:
+                dependencies.update(recipe.workstations)
+                dependencies.update(recipe.ingredients)
+                if recipe.required_recipe_item:
+                    dependencies.add(recipe.required_recipe_item)
 
-        required_ap_items: FrozenSet[str] = []
-        for item in items_needed_for_checks:
-            required_ap_items += GraveyardKeeperTestBase.get_required_ap_items_for(item)
+        resolved_dependencies = {
+            data.progressive_items_reverse[item_key].key
+            if item_key in data.progressive_items_reverse
+            else item_key
+            for item_key in dependencies
+        }
+        non_progression_items = {
+            item_key: data.items[item_key].classification
+            for item_key in resolved_dependencies & data.items.keys()
+            if data.items[item_key].classification != ItemClassification.progression
+        }
 
-        self.assertNotEqual([], required_ap_items)
-
-        for item_key in required_ap_items:
-            if item_key in data.progressive_items_reverse.keys():
-                (item_key, _) = data.progressive_items_reverse[item_key]
-            expected_classification = ItemClassification.progression
-
-            self.assertEqual(
-                expected_classification,
-                data.items[item_key].classification,
-                f"item '{item_key}' is in necessary crafting rules and therefore must have PROGRESSION classification"
-            )
+        self.assertFalse(
+            non_progression_items,
+            "AP items used by crafting logic must be progression items: "
+            f"{non_progression_items}",
+        )

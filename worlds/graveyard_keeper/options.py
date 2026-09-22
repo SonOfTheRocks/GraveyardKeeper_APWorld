@@ -99,7 +99,7 @@ option_groups = [
 
 option_presets = {
     "default": {
-        "goal": Goal.option_graveyard,
+        "goal": Goal.option_portal,
         "graveyard_goal_rating": GraveyardGoalRating.default,
         "vendor_logic": VendorLogic.default,
         "stranger_sins": True,

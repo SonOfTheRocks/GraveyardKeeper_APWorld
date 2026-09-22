@@ -74,7 +74,7 @@
   "ITEM_LEARN_CREATE_CARROT_CUTLET": {
     "label": "Create: Carrot cutlet",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_A_BOWL_OF_SAUERKRAUT": {
     "label": "Create: A bowl of sauerkraut",
@@ -84,7 +84,7 @@
   "ITEM_LEARN_CREATE_BEET_SLICES": {
     "label": "Create: Beet slices",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_GREEN_JELLY": {
     "label": "Create: Green jelly",
@@ -109,7 +109,7 @@
   "ITEM_LEARN_CREATE_BREAD": {
     "label": "Create: Bread",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BAKED_FISH": {
     "label": "Create: Baked fish",
@@ -134,12 +134,12 @@
   "ITEM_LEARN_CREATE_CROISSANT": {
     "label": "Create: Croissant",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_MUFFIN": {
     "label": "Create: Muffin",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CABBAGE_SOUP": {
     "label": "Create: Cabbage soup",
@@ -199,7 +199,7 @@
   "ITEM_LEARN_CREATE_GRAPE_PIE": {
     "label": "Create: Grape pie",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP": {
     "label": "Create: A bowl of pumpkin soup",
@@ -234,7 +234,7 @@
   "ITEM_LEARN_CREATE_ONION_RINGS": {
     "label": "Create: Onion rings",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS": {
     "label": "Create: Toasts with onions",
@@ -249,7 +249,7 @@
   "ITEM_LEARN_CREATE_ROYAL_FISH": {
     "label": "Create: Royal fish",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CAKE": {
     "label": "Create: Cake",
@@ -294,12 +294,12 @@
   "ITEM_LEARN_CREATE_CHEESE": {
     "label": "Create: Cheese",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_BUTTER": {
     "label": "Create: Butter",
     "dlc": "GAME_OF_CRONE",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CREAM_OF_MUSHROOM_SOUP": {
     "label": "Create: Cream of mushroom soup",
@@ -458,7 +458,7 @@
   "ITEM_LEARN_CREATE_PROGRESSIVE_HAMMER": {
     "label": "Create: Progressive Hammer",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_CHISEL": {
     "label": "Create: Progressive Chisel",
@@ -605,17 +605,17 @@
   "ITEM_LEARN_CREATE_CANDLE_1": {
     "label": "Create: Candle (1)",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CANDLE_3": {
     "label": "Create: Candle (3)",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CANDLE_4": {
     "label": "Create: Candle (4)",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_FLYER": {
     "label": "Create: Flyer",
@@ -625,12 +625,12 @@
   "ITEM_LEARN_CREATE_INCENSE": {
     "label": "Create: Incense",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_INCENSE_2": {
     "label": "Create: Incense II",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_NOTES": {
     "label": "Create: Notes",
@@ -690,7 +690,7 @@
   "ITEM_LEARN_CREATE_HONEY": {
     "label": "Create: Honey",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PEAT": {
     "label": "Create: Peat",
@@ -780,7 +780,7 @@
   "ITEM_LEARN_CREATE_SILVER_INGOT": {
     "label": "Create: Silver ingot",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_GOLD_INGOT": {
     "label": "Create: Gold ingot",
@@ -835,12 +835,12 @@
   "ITEM_LEARN_CREATE_CERAMIC_JUG": {
     "label": "Create: Ceramic jug",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_PORCELAIN_PITCHER": {
     "label": "Create: Porcelain pitcher",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_GRAPHITE": {
     "label": "Create: Graphite",
@@ -855,7 +855,7 @@
   "ITEM_LEARN_CREATE_WOOD_REPAIR_KIT": {
     "label": "Create: Wood repair kit",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_JOINTING": {
     "label": "Create: Jointing",
@@ -875,7 +875,7 @@
   "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_STONE": {
     "label": "Create: A carved piece of stone",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_CREATE_CARVED_WOOD": {
     "label": "Create: Carved wood",

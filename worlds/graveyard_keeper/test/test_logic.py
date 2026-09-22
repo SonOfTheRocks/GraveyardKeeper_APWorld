@@ -1,6 +1,5 @@
 import unittest
 from typing import ClassVar
-from unittest import skip
 from unittest.mock import patch
 
 from test.param import classvar_matrix
@@ -66,7 +65,6 @@ class TestResolveItemLabels(unittest.TestCase):
             resolve_item_labels(event_item_key)
         )
 
-    @skip
     def test_resolves_crafting_event(self):
         crafting_event_item_key = CRAFTING_EVENT_PREFIX + "ITEM_SLOWING_EXTRACT"
         self.assertEqual(
@@ -74,7 +72,6 @@ class TestResolveItemLabels(unittest.TestCase):
             resolve_item_labels(crafting_event_item_key)
         )
 
-    @skip
     def test_multiple_keys(self):
         keys = ["ITEM_LEARN_EXTRACT_BLOOD", "EVENT_CORPSE_HATCH_REPAIRED",
                 "ITEM_BP_ANVIL_2", CRAFTING_EVENT_PREFIX + "ITEM_RAGE_POTION"]
@@ -89,9 +86,18 @@ class TestResolveItemLabels(unittest.TestCase):
 
     def test_invalid_key_raises_exception(self):
         key = "INVALID_KEY"
-        self.assertRaises(AssertionError, resolve_item_labels, key)
+        self.assertRaises(ValueError, resolve_item_labels, key)
 
 class TestCalculateGraveyardPoints(unittest.TestCase):
+    def test_buildable_is_read_from_its_obtainable_event(self):
+        event_label = data.events[
+            CRAFTING_EVENT_PREFIX + "BUILDABLE_LAWN"
+        ].item_label
+        calculator = GraveyardPointCalculator(FakeState([event_label]), FakeWorld())
+
+        self.assertTrue(calculator._can_build("LAWN"))
+        self.assertFalse(calculator._can_build("LANTERN"))
+
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
     @patch.object(GraveyardPointCalculator, "_can_build")

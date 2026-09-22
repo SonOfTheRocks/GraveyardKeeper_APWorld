@@ -87,7 +87,7 @@
   "ITEM_LEARN_GATHERING_SILVER_ORE": {
     "label": "Gathering: Silver ore",
     "dlc": "BASE_GAME",
-    "classification": "FILLER"
+    "classification": "PROGRESSION"
   },
   "ITEM_LEARN_GATHERING_GOLD_ORE": {
     "label": "Gathering: Gold ore",

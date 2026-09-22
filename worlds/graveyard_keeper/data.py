@@ -66,7 +66,6 @@ def load_regions() -> Dict[str, RegionData]:
             region_json["exits"]
         ) for region_key, region_json in regions_json.items()
     }
-    '''
     regions[CRAFTING_REGION_KEY] = RegionData(
         "Crafting",
         DLCType.BASE_GAME,
@@ -74,7 +73,6 @@ def load_regions() -> Dict[str, RegionData]:
         [], # CAN_CRAFT events will be added in generate_crafting_events
         ["REGION_SWEET_HOME"]
     )
-    '''
     regions[UNREACHABLE_REGION_KEY] = RegionData(
         "Unreachable Region",
         DLCType.BASE_GAME,
@@ -83,7 +81,7 @@ def load_regions() -> Dict[str, RegionData]:
         ["REGION_SWEET_HOME"]
     )
     regions["REGION_SWEET_HOME"].connections += [
-        #CRAFTING_REGION_KEY,
+        CRAFTING_REGION_KEY,
         UNREACHABLE_REGION_KEY
     ]
     return regions
@@ -290,6 +288,8 @@ def generate_crafting_events(
 ) -> Dict[str, EventData]:
     crafting_events: Dict[str, EventData] = {}
     for output in recipes.keys():
+        if output in items:
+            continue
         key = CRAFTING_EVENT_PREFIX + output
         label = CRAFTING_EVENT_LABEL_PREFIX + output
         crafting_events[key] = EventData(
@@ -337,7 +337,6 @@ def load_all_data() -> GraveyardKeeperData:
     new_data.recipes = load_recipes()
     new_data.unlocks = load_unlocks()
     (new_data.progressive_items, new_data.progressive_items_reverse) = load_progressive_items()
-    '''
     new_data.events.update(
         generate_crafting_events(
             new_data.regions[CRAFTING_REGION_KEY],
@@ -346,7 +345,6 @@ def load_all_data() -> GraveyardKeeperData:
             new_data.vendors
         )
     )
-    '''
     #new_data.accessible_items = load_initial_accessible_items(new_data.vendors, new_data.recipes)
     return new_data
 

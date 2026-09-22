@@ -7,7 +7,13 @@ from BaseClasses import ItemClassification
 from rule_builder.rules import Rule
 
 from ..data import data
+from ..logic.acquisition import (
+    get_higher_quality_substitutes,
+    get_structurally_acquirable_item_keys,
+    recipe_requirements_are_available,
+)
 from ..logic.custom_rules import CanGet, HasHappiness
+from ..models import QuestEventData
 from .fakes import FakeState, FakeWorld
 
 
@@ -49,17 +55,17 @@ class AcquisitionCycleGroup:
     nodes: frozenset[str]
     internal_edges: tuple[AcquisitionEdge, ...]
     example_cycle: tuple[AcquisitionEdge, ...]
-    external_entry_recipes: tuple[str, ...]
+    independent_entries: tuple[str, ...]
     affected_quest_requirements: tuple[str, ...]
 
     def format(self) -> str:
         cycle_lines = ["Representative cycle:"]
         cycle_lines.extend(
-            f"  {edge.source} --recipe {edge.recipe_index} {edge.dependency_kind}--> {edge.target}"
+            f"  {edge.source} --{_format_edge(edge)}--> {edge.target}"
             for edge in self.example_cycle
         )
-        entry_lines = ["Independent entry recipes:"]
-        entry_lines.extend(f"  - {entry}" for entry in self.external_entry_recipes)
+        entry_lines = ["Independent acquisition entries:"]
+        entry_lines.extend(f"  - {entry}" for entry in self.independent_entries)
         quest_lines = ["Affected quest requirements:"]
         quest_lines.extend(f"  - {requirement}" for requirement in self.affected_quest_requirements)
         return "\n".join([
@@ -68,6 +74,12 @@ class AcquisitionCycleGroup:
             *entry_lines,
             *quest_lines,
         ])
+
+
+def _format_edge(edge: AcquisitionEdge) -> str:
+    if edge.recipe_index < 0:
+        return edge.dependency_kind
+    return f"recipe {edge.recipe_index} {edge.dependency_kind}"
 
 
 def find_all_acquisition_cycle_groups() -> tuple[AcquisitionCycleGroup, ...]:
@@ -84,6 +96,7 @@ def find_all_acquisition_cycle_groups() -> tuple[AcquisitionCycleGroup, ...]:
     quest_requirements = [
         (event_key, item_key)
         for event_key, event in data.events.items()
+        if isinstance(event, QuestEventData)
         for item_key in event.required_craft_items
     ]
     groups: list[AcquisitionCycleGroup] = []
@@ -98,7 +111,7 @@ def find_all_acquisition_cycle_groups() -> tuple[AcquisitionCycleGroup, ...]:
             frozenset(component),
             internal_edges,
             _find_example_cycle(graph, component),
-            _find_external_entry_recipes(component),
+            _find_independent_acquisition_entries(component),
             tuple(
                 f"{event_key} requires {item_key}"
                 for event_key, item_key in quest_requirements
@@ -129,6 +142,13 @@ def _build_acquisition_graph() -> dict[str, tuple[AcquisitionEdge, ...]]:
                         recipe.index,
                         dependency_kind,
                     ))
+        for higher_quality_key in get_higher_quality_substitutes(item_key):
+            graph[item_key].append(AcquisitionEdge(
+                item_key,
+                higher_quality_key,
+                -1,
+                "higher-quality substitute",
+            ))
     return {item_key: tuple(edges) for item_key, edges in graph.items()}
 
 
@@ -197,18 +217,19 @@ def _find_example_cycle(
     return search(start, (), {start}) or ()
 
 
-def _find_external_entry_recipes(component: set[str]) -> tuple[str, ...]:
+def _find_independent_acquisition_entries(component: set[str]) -> tuple[str, ...]:
+    available_item_keys = get_structurally_acquirable_item_keys(
+        frozenset(component)
+    )
     entries: list[str] = []
     for item_key in sorted(component):
+        entries.extend(
+            f"{item_key} sold by {vendor_key}"
+            for vendor_key, vendor in data.vendors.items()
+            if item_key in vendor.sells_all
+        )
         for recipe in data.recipes[item_key]:
-            mandatory_dependencies = set(recipe.ingredients)
-            if recipe.required_recipe_item:
-                mandatory_dependencies.add(recipe.required_recipe_item)
-            has_external_workstation = (
-                not recipe.workstations
-                or any(workstation not in component for workstation in recipe.workstations)
-            )
-            if mandatory_dependencies.isdisjoint(component) and has_external_workstation:
+            if recipe_requirements_are_available(recipe, available_item_keys):
                 entries.append(f"{item_key} recipe {recipe.index}")
     return tuple(entries)
 
@@ -312,7 +333,11 @@ class QuestRuleEvaluator:
         self._cache: dict[str, RuleEvaluation] = {}
 
     def evaluate_all(self) -> dict[str, RuleEvaluation]:
-        return {event_key: self.evaluate(event_key) for event_key in data.events}
+        return {
+            event_key: self.evaluate(event_key)
+            for event_key, event in data.events.items()
+            if isinstance(event, QuestEventData)
+        }
 
     def evaluate(self, event_key: str, stack: tuple[str, ...] = ()) -> RuleEvaluation:
         cached = self._cache.get(event_key)

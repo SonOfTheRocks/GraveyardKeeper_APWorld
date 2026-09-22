@@ -13,8 +13,12 @@ from ...models import QuestEventData
 
 class TestAllQuestEvents(unittest.TestCase):
     def test_no_quest_events_require_todo(self):
-        todo_quest_events = [e for e in data.events
-                             if any(req.startswith("TODO") for req in data.events[e].required_quests)]
+        todo_quest_events = [
+            event_key
+            for event_key, event in data.events.items()
+            if isinstance(event, QuestEventData)
+            and any(req.startswith("TODO") for req in event.required_quests)
+        ]
 
         self.assertEqual(len(todo_quest_events), 0,
                          f"No quest event should require 'TODO', but these do: {todo_quest_events}")
@@ -35,7 +39,13 @@ class TestAllQuestEvents(unittest.TestCase):
         )
 
 
-@classvar_matrix(event_key=data.events.keys())
+@classvar_matrix(
+    event_key=[
+        event_key
+        for event_key, event in data.events.items()
+        if isinstance(event, QuestEventData)
+    ]
+)
 class TestEvent(unittest.TestCase):
     event_key: str
 
