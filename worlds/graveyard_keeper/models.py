@@ -43,6 +43,24 @@ class HappinessData:
         return cls(npc, int(value))
 
 
+@dataclass(frozen=True)
+class AreaPointData:
+    area: str
+    value: int
+
+    @classmethod
+    def from_string(cls, string: str):
+        try:
+            area, raw_value = string.rsplit("_", 1)
+            value = int(raw_value)
+        except (AttributeError, TypeError, ValueError) as error:
+            raise ValueError(f"Invalid area point requirement '{string}'") from error
+
+        if not area or value <= 0:
+            raise ValueError(f"Invalid area point requirement '{string}'")
+        return cls(area, value)
+
+
 @dataclass
 class EventData:
     location_label: str
@@ -56,6 +74,7 @@ class QuestEventData(EventData):
     required_happiness: FrozenSet[HappinessData]
     required_quest_items: FrozenSet[str]
     required_craft_items: FrozenSet[str]
+    required_area_points: FrozenSet[AreaPointData]
     rewards: FrozenSet[str]
 
 

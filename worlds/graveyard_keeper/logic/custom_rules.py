@@ -282,6 +282,9 @@ class CanComplete(GKRule, game="Graveyard Keeper"):
         for craft_item_key in quest_data.required_craft_items:
             requirements.append(CanGet(craft_item_key))
 
+        # Area-point requirements are loaded and validated now, but intentionally
+        # remain unenforced until each upgradeable area has its own point calculator.
+
         if not requirements:
             return True_().resolve(world)
         return And(*requirements).resolve(world)

@@ -400,6 +400,9 @@ class QuestRuleEvaluator:
                     self.state,
                 ))
 
+        # Area-point requirements are data-only until the corresponding area
+        # calculators are implemented in production logic.
+
         evaluation = RuleEvaluation(
             f"quest {event_key}",
             all(child.passed for child in children),

@@ -129,7 +129,7 @@
     "location_label": "Ask Astrologer about the Necronomicon",
     "item_label": "Asked Astrologer about the Necronomicon",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_SNAKE_HELP_WITH_THE_RITUAL"],
+    "required_quests": ["EVENT_SNAKE_WATCH_FIRST_RITUAL_FAIL"],
     "required_happiness": ["ASTROLOGER_40"],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -176,7 +176,7 @@
     "location_label": "Ask Astrologer about mill fix",
     "item_label": "Asked Astrologer about mill fix",
     "dlc": "BASE_GAME",
-    "required_quests": ["TODO"],
+    "required_quests": ["EVENT_MILLER_ASK_TO_FIX_MILL"],
     "required_happiness": ["ASTROLOGER_60"],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -198,7 +198,7 @@
     "location_label": "Talk about the expedition",
     "item_label": "Talked about the expedition",
     "dlc": "BASE_GAME",
-    "required_quests": ["TODO"],
+    "required_quests": ["EVENT_ASTROLOGER_TELL_ABOUT_MS_CHARM"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -249,31 +249,31 @@
     "required_craft_items": ["ITEM_FAITH"],
     "rewards": ["LOCATION_MS_CHARM_REWARD_PROVE_YOUR_WORTH"]
   },
-  "EVENT_MS_CHARM_GIVE_SNAKE_FAKE_COINS": {
-    "comment": "give snake fake coins, get 10 relation",
-    "location_label": "Give Snake fake coins",
-    "item_label": "Gave Snake fake coins",
+  "EVENT_MS_CHARM_ASK_ABOUT_SNAKE": {
+    "comment": "Ask about snake, get fake coins",
+    "location_label": "Ask about Snake",
+    "item_label": "Asked about Snake",
     "dlc": "BASE_GAME",
     "required_quests": [
       "EVENT_MS_CHARM_PROVE_YOUR_WORTH",
-      "EVENT_SNAKE_MET",
-      "TODO(You must speak to Horadric and start the Return with Royal Stamp quest for this dialog with Ms. Charm to be available.)"
+      "EVENT_HORADRIC_ASK_ABOUT_SELLING_FLESH",
+      "EVENT_SNAKE_MEET"
     ],
     "required_happiness": [],
-    "required_quest_items": ["ITEM_FAKE_COINS"],
-    "required_craft_items": [],
-    "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_SNAKE_FAKE_COINS"]
-  },
-  "EVENT_MS_CHARM_ASK_SNAKE_ABOUT_NECKLACE": {
-    "comment": "get information about necklace, get 10 relation",
-    "location_label": "Ask Snake about necklace",
-    "item_label": "Asked Snake about necklace",
-    "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_MS_CHARM_GIVE_SNAKE_FAKE_COINS"],
-    "required_happiness": ["SNAKE_30"],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_MS_CHARM_REWARD_ASK_SNAKE_ABOUT_NECKLACE"]
+    "rewards": ["LOCATION_MS_CHARM_REWARD_ASK_ABOUT_SNAKE"]
+  },
+  "EVENT_MS_CHARM_REPORT_FAKE_COINS": {
+    "comment": "report fake coins to Ms. Charm, get 10 relation",
+    "location_label": "Report back to Ms. Charm about the fake coins",
+    "item_label": "Reported back to Ms. Charm about the fake coins",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_GIVE_FAKE_COINS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_REPORT_FAKE_COINS"]
   },
   "EVENT_MS_CHARM_GIVE_PERFUME": {
     "comment": "get perfume, get 10 relation",
@@ -318,8 +318,8 @@
     "rewards": []
   },
 
-  "EVENT_SNAKE_MET": {
-    "comment": "DUMMY",
+  "EVENT_SNAKE_MEET": {
+    "comment": "Flow: player-state-source:npc_cultist.json:520",
     "location_label": "Meet Snake",
     "item_label": "Met Snake",
     "dlc": "BASE_GAME",
@@ -329,12 +329,480 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_SNAKE_HELP_WITH_THE_RITUAL": {
-    "comment": "DUMMY",
-    "location_label": "Help Snake with the ritual",
-    "item_label": "Helped Snake with the ritual",
+  "EVENT_SNAKE_PROVE_YOU_ARE_GRAVEYARD_KEEPER": {
+    "comment": "Flow: npc_cultist:106:option:0; requires access to Faith; normally grants Instructions for Key",
+    "location_label": "Prove you are the Graveyard Keeper to Snake",
+    "item_label": "Proved you are the Graveyard Keeper to Snake",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FAITH"],
+    "rewards": ["LOCATION_SNAKE_REWARD_PROVE_YOU_ARE_GRAVEYARD_KEEPER"]
+  },
+  "EVENT_SNAKE_GIVE_FAKE_COINS": {
+    "comment": "Flow: npc_cultist:624:option:0 and option:1; Answer.price requires Fake Coins; neither branch grants a reward",
+    "location_label": "Give Snake Ms. Charm's fake coins",
+    "item_label": "Gave Snake Ms. Charm's fake coins",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_ASK_ABOUT_SNAKE", "EVENT_SNAKE_MEET"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_FAKE_COINS"],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_GIVE_ACTIVE_KEY": {
+    "comment": "Flow: npc_cultist:106:option:3; grants 10 Snake happiness",
+    "location_label": "Give Snake the active Keeper's key",
+    "item_label": "Gave Snake the active Keeper's key",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_SNAKE_PROVE_YOU_ARE_GRAVEYARD_KEEPER",
+      "EVENT_ASTROLOGER_ASK_ABOUT_PORTAL"
+    ],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ACTIVE_KEY"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_ACTIVE_KEY"]
+  },
+  "EVENT_SNAKE_RETURN_AFTER_DUNGEON_TRAP": {
+    "comment": "Flow: npc_cultist:359:option:0 and option:1; both answers unlock the same quest steps",
+    "location_label": "Confront Snake after the dungeon trap",
+    "item_label": "Confronted Snake after the dungeon trap",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_GIVE_ACTIVE_KEY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_ASK_ABOUT_BUSINESS": {
+    "comment": "Flow: npc_cultist:106:option:6; unlocks the Town Pass and Royal Stamp conversations",
+    "location_label": "Ask Snake about doing business",
+    "item_label": "Asked Snake about doing business",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_RETURN_AFTER_DUNGEON_TRAP"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_GIVE_BUCKET_OF_BLOOD": {
+    "comment": "Flow: npc_cultist:106:option:4; requires access to Bucket of Blood and immediately grants 10 Snake happiness",
+    "location_label": "Give Snake a bucket of blood",
+    "item_label": "Gave Snake a bucket of blood",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_RETURN_AFTER_DUNGEON_TRAP"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BUCKET_OF_BLOOD"],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_BUCKET_OF_BLOOD"]
+  },
+  "EVENT_SNAKE_GIVE_BLOODY_NAILS": {
+    "comment": "Flow: npc_cultist:106:option:5; requires access to Bloody Nails and immediately grants 10 Snake happiness",
+    "location_label": "Give Snake bloody nails",
+    "item_label": "Gave Snake bloody nails",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_RETURN_AFTER_DUNGEON_TRAP"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BLOODY_NAILS"],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_BLOODY_NAILS"]
+  },
+  "EVENT_SNAKE_WATCH_FIRST_RITUAL_FAIL": {
+    "comment": "Flow: npc_cultist nodes 671 and 691; completing the second of the two independent hand-ins fires snake_all_tasks",
+    "location_label": "Watch Snake's first ritual fail",
+    "item_label": "Watched Snake's first ritual fail",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_SNAKE_GIVE_BUCKET_OF_BLOOD",
+      "EVENT_SNAKE_GIVE_BLOODY_NAILS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_ASK_FOR_TOWN_PASS": {
+    "comment": "Flow: npc_cultist:106:option:8; normally grants Town Pass",
+    "location_label": "Ask Snake for a town pass",
+    "item_label": "Asked Snake for a town pass",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_ASK_ABOUT_BUSINESS"],
+    "required_happiness": ["SNAKE_20"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_ASK_FOR_TOWN_PASS"]
+  },
+  "EVENT_SNAKE_ASK_FOR_ROYAL_STAMP": {
+    "comment": "Flow: npc_cultist:106:option:7; normally grants Royal Stamp",
+    "location_label": "Ask Snake for a Royal Stamp",
+    "item_label": "Asked Snake for a Royal Stamp",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_ASK_ABOUT_BUSINESS"],
+    "required_happiness": ["SNAKE_30"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_ASK_FOR_ROYAL_STAMP"]
+  },
+  "EVENT_SNAKE_ASK_ABOUT_MS_CHARMS_NECKLACE": {
+    "comment": "Flow: npc_cultist:763:option:0",
+    "location_label": "Ask Snake about Ms. Charm's necklace",
+    "item_label": "Asked Snake about Ms. Charm's necklace",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_REPORT_FAKE_COINS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_PRESS_ABOUT_MS_CHARMS_NECKLACE": {
+    "comment": "Flow: npc_cultist:763:option:1",
+    "location_label": "Press Snake about Ms. Charm's necklace",
+    "item_label": "Pressed Snake about Ms. Charm's necklace",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_ASK_ABOUT_MS_CHARMS_NECKLACE"],
+    "required_happiness": ["SNAKE_30"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_LEARN_WHO_HAS_MS_CHARMS_NECKLACE": {
+    "comment": "Flow: npc_cultist:825:option:2; grants 10 Snake happiness",
+    "location_label": "Learn who has Ms. Charm's necklace",
+    "item_label": "Learned who has Ms. Charm's necklace",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_PRESS_ABOUT_MS_CHARMS_NECKLACE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_LEARN_WHO_HAS_MS_CHARMS_NECKLACE"]
+  },
+  "EVENT_SNAKE_ASK_ABOUT_RESTORATION_TOOLS": {
+    "comment": "Flow: npc_cultist:106:option:9; phrase comes from Astrologer's about-tools conversation",
+    "location_label": "Ask Snake about the restoration tools",
+    "item_label": "Asked Snake about the restoration tools",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_GET_ASTROLOGER_KEEPERS_JOURNAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_PRESS_FOR_RESTORATION_TOOLS": {
+    "comment": "Flow: npc_cultist:106:option:10; normally grants Restoration Tools",
+    "location_label": "Press Snake for the restoration tools",
+    "item_label": "Pressed Snake for the restoration tools",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_ASK_ABOUT_RESTORATION_TOOLS"],
+    "required_happiness": ["SNAKE_40"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_PRESS_FOR_RESTORATION_TOOLS"]
+  },
+  "EVENT_SNAKE_GIVE_NECRONOMICON": {
+    "comment": "Flow: npc_cultist:106:option:14; grants 10 Snake happiness",
+    "location_label": "Give Snake the Necronomicon",
+    "item_label": "Gave Snake the Necronomicon",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_WATCH_FIRST_RITUAL_FAIL"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_NECRONOMICON"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_NECRONOMICON"]
+  },
+  "EVENT_SNAKE_OFFER_TO_PREPARE_RITUAL_SITE": {
+    "comment": "Flow: npc_cultist:985:option:0",
+    "location_label": "Offer to prepare Snake's ritual site",
+    "item_label": "Offered to prepare Snake's ritual site",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_GIVE_NECRONOMICON"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_SHOW_PREPARED_RITUAL_SITE": {
+    "comment": "Flow: npc_cultist:985:option:1; Answer.lock requires sacrifice_quality >= 20; grants 10 Snake happiness",
+    "location_label": "Show Snake the prepared ritual site",
+    "item_label": "Showed Snake the prepared ritual site",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_OFFER_TO_PREPARE_RITUAL_SITE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["SACRIFICE_ZONE_20"],
+    "rewards": ["LOCATION_SNAKE_REWARD_SHOW_PREPARED_RITUAL_SITE"]
+  },
+  "EVENT_SNAKE_GIVE_DAMASK_SWORD": {
+    "comment": "Flow: npc_cultist:106:option:13; grants 10 Snake happiness",
+    "location_label": "Give Snake a damask sword with a gem",
+    "item_label": "Gave Snake a damask sword with a gem",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_SHOW_PREPARED_RITUAL_SITE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_DAMASK_SWORD_WITH_GEM"],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_DAMASK_SWORD"]
+  },
+  "EVENT_SNAKE_RETURN_AFTER_SACRIFICE_RITUAL": {
+    "comment": "Flow: player-state-source:npc_cultist.json:1392 and :1394",
+    "location_label": "Return after Snake's sacrifice ritual",
+    "item_label": "Returned after Snake's sacrifice ritual",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_GIVE_DAMASK_SWORD"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_BRING_PLANK_FOR_VAMPIRE_HUNTER": {
+    "comment": "Flow: npc_cultist:1520:option:0; grants 10 Snake happiness",
+    "location_label": "Bring Snake a plank for the vampire-hunter trap",
+    "item_label": "Brought Snake a plank for the vampire-hunter trap",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_RETURN_AFTER_SACRIFICE_RITUAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOODEN_PLANK"],
+    "rewards": ["LOCATION_SNAKE_REWARD_BRING_PLANK_FOR_VAMPIRE_HUNTER"]
+  },
+  "EVENT_SNAKE_COMPLETE_VAMPIRE_HUNTER_AMBUSH": {
+    "comment": "Flow: unlock:npc_cultist.json:1652 and script-call:npc_cultist.json:1691",
+    "location_label": "Complete the vampire-hunter ambush with Snake",
+    "item_label": "Completed the vampire-hunter ambush with Snake",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_BRING_PLANK_FOR_VAMPIRE_HUNTER"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_ASK_ABOUT_FINAL_TASK": {
+    "comment": "Flow: npc_cultist:106:option:15",
+    "location_label": "Ask Snake about his final task",
+    "item_label": "Asked Snake about his final task",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_COMPLETE_VAMPIRE_HUNTER_AMBUSH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_GIVE_GOLDEN_APPLE": {
+    "comment": "Flow: npc_cultist:106:option:16; grants 10 Snake happiness; both following answers continue the quest",
+    "location_label": "Give Snake the golden apple",
+    "item_label": "Gave Snake the golden apple",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_ASK_ABOUT_FINAL_TASK"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_GOLDEN_APPLE"],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_GOLDEN_APPLE"]
+  },
+  "EVENT_SNAKE_FINISH_GOLDEN_APPLE_CONVERSATION": {
+    "comment": "Flow: npc_cultist:1759:option:0 and option:1; semantic OR over lick/refuse; both unlock the Dark Heart task",
+    "location_label": "Answer Snake about licking the golden apple",
+    "item_label": "Answered Snake about licking the golden apple",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_GIVE_GOLDEN_APPLE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_GIVE_DARK_HEART": {
+    "comment": "Flow: npc_cultist:106:option:17; grants 10 Snake happiness and starts the final ritual",
+    "location_label": "Give Snake a dark heart",
+    "item_label": "Gave Snake a dark heart",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_FINISH_GOLDEN_APPLE_CONVERSATION"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_DARK_HEART"],
+    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_DARK_HEART"]
+  },
+  "EVENT_SNAKE_ASK_ABOUT_PORTAL_ARTIFACTS": {
+    "comment": "Flow: npc_cultist:106:option:20",
+    "location_label": "Ask Snake about the portal's missing artifacts",
+    "item_label": "Asked Snake about the portal's missing artifacts",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_PLAYER_KNOWS_PORTAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS": {
+    "comment": "Flow: npc_cultist:106:option:21",
+    "location_label": "Ask Snake who holds the portal artifacts",
+    "item_label": "Asked Snake who holds the portal artifacts",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_ASK_ABOUT_PORTAL_ARTIFACTS"],
+    "required_happiness": ["SNAKE_60"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_ASK_ABOUT_HIS_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_cultist:106:option:18; phrase is unlocked by EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA",
+    "location_label": "Ask Snake about his portal artifact",
+    "item_label": "Asked Snake about his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_ASK_FOR_HIS_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_cultist:106:option:22; normally grants Endless Notebook",
+    "location_label": "Ask Snake to hand over his portal artifact",
+    "item_label": "Asked Snake to hand over his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_SNAKE_ASK_ABOUT_HIS_PORTAL_ARTIFACT",
+      "EVENT_SNAKE_GIVE_DARK_HEART"
+    ],
+    "required_happiness": ["SNAKE_100"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_ASK_FOR_HIS_PORTAL_ARTIFACT"]
+  },
+  "EVENT_SNAKE_CHARGE_ENVY_SHARD": {
+    "comment": "Flow: npc_cultist:106:option:29; normally grants Envy Charged Shard",
+    "location_label": "Ask Snake to charge the Envy shard",
+    "item_label": "Asked Snake to charge the Envy shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_ASK_FOR_ENVY_SHARD", "EVENT_SNAKE_GIVE_ACTIVE_KEY"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_NOTE_WITH_RUMOR"],
+    "required_craft_items": ["ITEM_SIN_SHARD"],
+    "rewards": ["LOCATION_SNAKE_REWARD_CHARGE_ENVY_SHARD"]
+  },
+  "EVENT_SNAKE_ASK_HOW_SMILER_DIED": {
+    "comment": "Flow: npc_cultist:106:option:30",
+    "location_label": "Ask Snake how Smiler died",
+    "item_label": "Asked Snake how Smiler died",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SMILER_ASK_ABOUT_HIS_DEATH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_ASK_TO_BREW_BOOZE_FOR_DIG": {
+    "comment": "Flow: npc_cultist:106:option:23",
+    "location_label": "Ask Snake to brew booze for Dig",
+    "item_label": "Asked Snake to brew booze for Dig",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_DIG_ASK_FOR_BOOZE", "EVENT_SNAKE_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_REMIND_ABOUT_DIGS_BOOZE": {
+    "comment": "Flow: npc_cultist:106:option:25",
+    "location_label": "Remind Snake about Dig's booze",
+    "item_label": "Reminded Snake about Dig's booze",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_SNAKE_ASK_TO_BREW_BOOZE_FOR_DIG"],
+    "required_happiness": ["SNAKE_70"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_RETURN_FOR_DIGS_BOOZE": {
+    "comment": "Flow: npc_cultist:106:option:24; on_came_to_finish unlocks it after the wait; normally grants Booze",
+    "location_label": "Return to Snake after waiting for Dig's booze",
+    "item_label": "Returned to Snake after waiting for Dig's booze",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_SNAKE_REMIND_ABOUT_DIGS_BOOZE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_RETURN_FOR_DIGS_BOOZE"]
+  },
+  "EVENT_SNAKE_ASK_TO_STEAL_ANCIENT_AMULET": {
+    "comment": "Flow: npc_cultist:106:option:26",
+    "location_label": "Ask Snake to steal the ancient amulet",
+    "item_label": "Asked Snake to steal the ancient amulet",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_LIGHTHOUSE_KEEPER_REFUSE_TO_SELL_AMULET", "EVENT_SNAKE_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_PERSUADE_TO_STEAL_ANCIENT_AMULET": {
+    "comment": "Flow: npc_cultist:106:option:27",
+    "location_label": "Persuade Snake to steal the ancient amulet",
+    "item_label": "Persuaded Snake to steal the ancient amulet",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_SNAKE_ASK_TO_STEAL_ANCIENT_AMULET"],
+    "required_happiness": ["SNAKE_90"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SNAKE_REPORT_RAT_RACE": {
+    "comment": "Flow: npc_cultist:106:option:28; normally grants Amulet of the Ancient God",
+    "location_label": "Tell Snake the rat race has been held",
+    "item_label": "Told Snake the rat race has been held",
+    "dlc": "STRANGER_SINS",
+    "required_quests": [
+      "EVENT_SNAKE_PERSUADE_TO_STEAL_ANCIENT_AMULET",
+      "EVENT_TAVERN_EVENT_RAT_RACE"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_REPORT_RAT_RACE"]
+  },
+
+  "EVENT_HORADRIC_ASK_ABOUT_SELLING_FLESH": {
+    "comment": "Ask about buying flesh, learn about stamp",
+    "location_label": "Ask Horadric about selling flesh",
+    "item_label": "Asked Horadric about selling flesh",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_MILLER_ASK_TO_FIX_MILL": {
+    "comment": "Flow: npc_miller:13:option:0 unlocks @astrologer_fix_mill",
+    "location_label": "Ask the Miller about fixing the mill",
+    "item_label": "Asked the Miller about fixing the mill",
     "dlc": "BASE_GAME",
     "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_DIG_ASK_FOR_BOOZE": {
+    "comment": "Flow prerequisite for npc_cultist:106:option:23; Dig asks the player to obtain booze from Snake",
+    "location_label": "Ask Dig about obtaining booze",
+    "item_label": "Asked Dig about obtaining booze",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_LIGHTHOUSE_KEEPER_REFUSE_TO_SELL_AMULET": {
+    "comment": "Flow prerequisite for npc_cultist:106:option:26; the Lighthouse Keeper refuses to sell the ancient amulet",
+    "location_label": "Ask the Lighthouse Keeper for the ancient amulet",
+    "item_label": "Asked the Lighthouse Keeper for the ancient amulet",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -371,7 +839,7 @@
     "location_label": "Hold a rat race event",
     "item_label": "Held a rat race event",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9"],
+    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9", "EVENT_SNAKE_PERSUADE_TO_STEAL_ANCIENT_AMULET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -528,7 +996,7 @@
     "location_label": "Get time machine item 6",
     "item_label": "Got time machine item 6",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5"],
+    "required_quests": ["EVENT_SNAKE_RETURN_FOR_DIGS_BOOZE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_BOOZE"],
@@ -624,25 +1092,11 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_10": {
-    "comment": "Amulet of The Ancient God",
-    "location_label": "Get time machine item 10",
-    "item_label": "Got time machine item 10",
-    "dlc": "STRANGER_SINS",
-    "required_quests": [
-      "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9",
-      "EVENT_TAVERN_EVENT_RAT_RACE"
-    ],
-    "required_happiness": ["SNAKE_90"],
-    "required_quest_items": [],
-    "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_10"]
-  },
   "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_10": {
     "location_label": "Watch time machine cutscene 10",
     "item_label": "Watched time machine cutscene 10",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_10"],
+    "required_quests": ["EVENT_SNAKE_REPORT_RAT_RACE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_AMULET_OF_THE_ANCIENT_GOD"],
     "required_craft_items": [],
@@ -885,6 +1339,17 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_SMILER_ASK_ABOUT_HIS_DEATH": {
+    "comment": "Flow prerequisite that unlocks souls_s_s43_ask for Snake",
+    "location_label": "Ask Smiler about his death",
+    "item_label": "Asked Smiler about his death",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SMILER_APPEARS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
   "EVENT_EURIC_HEALED": {
     "location_label": "Heal Euric",
     "item_label": "Euric healed",
@@ -900,6 +1365,17 @@
     "item_label": "Village repaired",
     "dlc": "BETTER_SAVE_SOUL",
     "required_quests":[],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_EURIC_ASK_FOR_ENVY_SHARD": {
+    "comment": "Flow: npc_euric:28:option:13 unlocks souls_s_s33_ask for Snake",
+    "location_label": "Ask Euric about charging the Envy shard",
+    "item_label": "Asked Euric about charging the Envy shard",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_HEALED"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],

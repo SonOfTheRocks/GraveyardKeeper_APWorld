@@ -7,7 +7,7 @@ from typing import List, Dict, Union, Any, Tuple, Set
 from BaseClasses import ItemClassification
 from worlds.graveyard_keeper.models import DLCType, EventData, RegionData, LocationData, ItemData, VendorData, \
     RecipeData, UnlockData, GraveyardKeeperData, ReverseItemData, QualityRecipeData, SimpleRecipeData, QuestEventData, \
-    HappinessData
+    HappinessData, AreaPointData
 
 UNREACHABLE_REGION_KEY = "REGION_UNREACHABLE"
 CRAFTING_REGION_KEY = "REGION_CRAFTING"
@@ -120,17 +120,26 @@ def load_locations(regions: Dict[str, RegionData]) -> Dict[str, LocationData]:
 
 def load_quest_events() -> Dict[str, EventData]:
     quest_events = {}
+    required_fields = {
+        "location_label",
+        "item_label",
+        "dlc",
+        "required_quests",
+        "required_happiness",
+        "required_quest_items",
+        "required_craft_items",
+        "rewards",
+    }
+    optional_fields = {"comment", "required_area_points"}
     for event_key, event_json in load_json_data("quest_events.json").items():
-        assert all([ l in event_json.keys() for l in [
-            "location_label",
-            "item_label",
-            "dlc",
-            "required_quests",
-            "required_happiness",
-            "required_quest_items",
-            "required_craft_items",
-            "rewards"
-        ]]), f"incomplete data for '{event_key}'"
+        missing_fields = required_fields - event_json.keys()
+        if missing_fields:
+            raise ValueError(f"Incomplete quest event data for '{event_key}': missing {sorted(missing_fields)}")
+
+        unknown_fields = event_json.keys() - required_fields - optional_fields
+        if unknown_fields:
+            raise ValueError(f"Unknown quest event fields for '{event_key}': {sorted(unknown_fields)}")
+
         quest_events[event_key] = QuestEventData(
                 event_json["location_label"],
                 event_json["item_label"],
@@ -139,6 +148,7 @@ def load_quest_events() -> Dict[str, EventData]:
                 [HappinessData.from_string(h) for h in event_json["required_happiness"]],
                 event_json["required_quest_items"],
                 event_json["required_craft_items"],
+                [AreaPointData.from_string(requirement) for requirement in event_json.get("required_area_points", [])],
                 event_json["rewards"]
             )
 

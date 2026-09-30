@@ -151,12 +151,12 @@
     "label": "Ms. Charm Reward - Prove your worth",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
-  "LOCATION_MS_CHARM_REWARD_GIVE_SNAKE_FAKE_COINS": {
-    "label": "Ms. Charm Reward - Give Snake the fake coins",
+  "LOCATION_MS_CHARM_REWARD_ASK_ABOUT_SNAKE": {
+    "label": "Ms. Charm Reward - Ask about Snake",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
-  "LOCATION_MS_CHARM_REWARD_ASK_SNAKE_ABOUT_NECKLACE": {
-    "label": "Ms. Charm Reward - Ask Snake about the necklace",
+  "LOCATION_MS_CHARM_REWARD_REPORT_FAKE_COINS": {
+    "label": "Ms. Charm Reward - Report back about the fake coins",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
   "LOCATION_MS_CHARM_REWARD_GIVE_GOLD_STORY": {
@@ -173,17 +173,77 @@
   },
 
 
-  "LOCATION_SNAKE_REWARD_PROVE_YOU_ARE_THE_GRAVEYARD_KEEPER": {
-    "label": "Snake Reward - Prove you are the Graveyard Keeper",
+  "LOCATION_SNAKE_REWARD_PROVE_YOU_ARE_GRAVEYARD_KEEPER": {
+    "label": "Snake - Prove you are the Graveyard Keeper",
     "parent_region": "REGION_UNDERGROUND_TUNNEL"
   },
-  "LOCATION_SNAKE_GIVE_ACTIVE_KEY": {
-    "label": "Snake - Give active key",
+  "LOCATION_SNAKE_REWARD_GIVE_ACTIVE_KEY": {
+    "label": "Snake - Give him the active Keeper's key",
     "parent_region": "REGION_UNDERGROUND_TUNNEL"
   },
-  "LOCATION_SNAKE_GIVE_RUMOR": {
-    "label": "Snake Reward - Show him the rumor",
-    "parent_region": "REGION_UNDERGROUND_TUNNEL"
+  "LOCATION_SNAKE_REWARD_GIVE_BUCKET_OF_BLOOD": {
+    "label": "Snake - Give him a bucket of blood",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_GIVE_BLOODY_NAILS": {
+    "label": "Snake - Give him bloody nails",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_ASK_FOR_TOWN_PASS": {
+    "label": "Snake - Ask him for a town pass",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_ASK_FOR_ROYAL_STAMP": {
+    "label": "Snake - Ask him for a Royal Stamp",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_LEARN_WHO_HAS_MS_CHARMS_NECKLACE": {
+    "label": "Snake - Learn who has Ms. Charm's necklace",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_PRESS_FOR_RESTORATION_TOOLS": {
+    "label": "Snake - Press him for the restoration tools",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_GIVE_NECRONOMICON": {
+    "label": "Snake - Give him the Necronomicon",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_SHOW_PREPARED_RITUAL_SITE": {
+    "label": "Snake - Show him the prepared ritual site",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_GIVE_DAMASK_SWORD": {
+    "label": "Snake - Give him a damask sword with a gem",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_BRING_PLANK_FOR_VAMPIRE_HUNTER": {
+    "label": "Snake - Bring him a plank for the vampire-hunter trap",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_SNAKE_REWARD_GIVE_GOLDEN_APPLE": {
+    "label": "Snake - Give him the golden apple",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_GIVE_DARK_HEART": {
+    "label": "Snake - Give him a dark heart",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_ASK_FOR_HIS_PORTAL_ARTIFACT": {
+    "label": "Snake - Ask him to hand over his portal artifact",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_CHARGE_ENVY_SHARD": {
+    "label": "Snake - Ask him to charge the Envy shard",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_RETURN_FOR_DIGS_BOOZE": {
+    "label": "Snake - Return after waiting for Dig's booze",
+    "parent_region": "REGION_SACRIFICE_ZONE"
+  },
+  "LOCATION_SNAKE_REWARD_REPORT_RAT_RACE": {
+    "label": "Snake - Tell him the rat race has been held",
+    "parent_region": "REGION_SACRIFICE_ZONE"
   },
 
 
@@ -351,10 +411,6 @@
   "LOCATION_REWARD_TIME_MACHINE_ITEM_9": {
     "label": "Quest Reward - Time Machine Item 9",
     "parent_region": "REGION_THE_VILLAGE"
-  },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_10": {
-    "label": "Quest Reward - Time Machine Item 10",
-    "parent_region": "REGION_LIGHTHOUSE"
   },
   "LOCATION_REWARD_TIME_MACHINE_ITEM_11": {
     "label": "Quest Reward - Time Machine Item 11",

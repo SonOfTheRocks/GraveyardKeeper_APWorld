@@ -6,12 +6,100 @@ from rule_builder.rules import Rule, Has
 from test.param import classvar_matrix
 from ..fakes import FakeWorld
 from ..rule_evaluation import QuestRuleEvaluator
-from ...data import data
+from ...data import data, load_json_data
 from ...logic.custom_rules import CanComplete
-from ...models import QuestEventData
+from ...models import AreaPointData, DLCType, QuestEventData
 
 
 class TestAllQuestEvents(unittest.TestCase):
+    required_fields = {
+        "location_label",
+        "item_label",
+        "dlc",
+        "required_quests",
+        "required_happiness",
+        "required_quest_items",
+        "required_craft_items",
+        "rewards",
+    }
+    optional_fields = {"comment", "required_area_points"}
+    list_fields = {
+        "required_quests",
+        "required_happiness",
+        "required_quest_items",
+        "required_craft_items",
+        "required_area_points",
+        "rewards",
+    }
+
+    def test_raw_quest_event_schema_is_complete_and_has_no_unknown_fields(self):
+        raw_events = load_json_data("quest_events.json")
+        for event_key, event in raw_events.items():
+            with self.subTest(event=event_key):
+                self.assertFalse(
+                    self.required_fields - event.keys(),
+                    f"missing fields: {sorted(self.required_fields - event.keys())}",
+                )
+                self.assertFalse(
+                    event.keys() - self.required_fields - self.optional_fields,
+                    f"unknown fields: {sorted(event.keys() - self.required_fields - self.optional_fields)}",
+                )
+                self.assertIsInstance(event["location_label"], str)
+                self.assertIsInstance(event["item_label"], str)
+                self.assertIn(event["dlc"], DLCType.__members__)
+
+                for field_name in self.list_fields & event.keys():
+                    values = event[field_name]
+                    self.assertIsInstance(values, list, f"{field_name} must be a list")
+                    self.assertTrue(
+                        all(isinstance(value, str) and value for value in values),
+                        f"{field_name} must contain only non-empty strings",
+                    )
+                    self.assertEqual(
+                        len(values),
+                        len(set(values)),
+                        f"{field_name} must not contain duplicates",
+                    )
+
+    def test_every_quest_event_belongs_to_exactly_one_region(self):
+        containing_regions = {
+            event_key: [
+                region_key
+                for region_key, region in data.regions.items()
+                if event_key in region.events
+            ]
+            for event_key, event in data.events.items()
+            if isinstance(event, QuestEventData)
+        }
+        invalid = {
+            event_key: regions
+            for event_key, regions in containing_regions.items()
+            if len(regions) != 1
+        }
+        self.assertFalse(invalid, f"Quest events must belong to exactly one region: {invalid}")
+
+    def test_reward_location_keys_follow_reward_naming_convention(self):
+        invalid = {
+            event_key: sorted(event.rewards)
+            for event_key, event in data.events.items()
+            if isinstance(event, QuestEventData)
+            and any("REWARD" not in reward for reward in event.rewards)
+        }
+        self.assertFalse(invalid, f"Reward location keys must contain 'REWARD': {invalid}")
+
+    def test_snake_sacrifice_zone_requirement_is_loaded(self):
+        event = data.events["EVENT_SNAKE_SHOW_PREPARED_RITUAL_SITE"]
+        self.assertEqual(
+            list(event.required_area_points),
+            [AreaPointData("SACRIFICE_ZONE", 20)],
+        )
+
+    def test_area_point_requirement_parser_rejects_invalid_values(self):
+        for invalid_value in ("SACRIFICE_ZONE", "_20", "SACRIFICE_ZONE_0", "SACRIFICE_ZONE_-1"):
+            with self.subTest(value=invalid_value):
+                with self.assertRaises(ValueError):
+                    AreaPointData.from_string(invalid_value)
+
     def test_no_quest_events_require_todo(self):
         todo_quest_events = [
             event_key
@@ -50,9 +138,15 @@ class TestEvent(unittest.TestCase):
     event_key: str
 
     def test_quest_is_in_regions(self):
-        self.assertTrue(
-            any(self.event_key in region.events for region in data.regions.values()),
-            f"\nquest doesn't exist in regions"
+        regions = [
+            region_key
+            for region_key, region in data.regions.items()
+            if self.event_key in region.events
+        ]
+        self.assertEqual(
+            len(regions),
+            1,
+            f"\nquest must exist in exactly one region, found {regions}",
         )
 
     def test_required_quests_exist(self):
@@ -99,6 +193,16 @@ class TestEvent(unittest.TestCase):
         for craft_item in craft_items:
             if craft_item not in all_sold and craft_item not in data.items.keys():
                 self.assertIn(craft_item, data.recipes.keys(), f"\nprerequisite craft item '{craft_item}' has no recipe and isn't sold by any vendor")
+
+    def test_required_area_points_are_valid(self):
+        event_data = data.events[self.event_key]
+        for requirement in event_data.required_area_points:
+            self.assertGreater(requirement.value, 0, "\nrequired area points must be positive")
+            self.assertIn(
+                f"REGION_{requirement.area}",
+                data.regions,
+                f"\narea point requirement '{requirement.area}' has no matching region",
+            )
 
     def test_reward_locations_exist(self):
         event_data: QuestEventData = data.events[self.event_key]
