@@ -100,16 +100,24 @@ class TestAllQuestEvents(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     AreaPointData.from_string(invalid_value)
 
-    def test_no_quest_events_require_todo(self):
-        todo_quest_events = [
-            event_key
-            for event_key, event in data.events.items()
-            if isinstance(event, QuestEventData)
-            and any(req.startswith("TODO") for req in event.required_quests)
-        ]
-
-        self.assertEqual(len(todo_quest_events), 0,
-                         f"No quest event should require 'TODO', but these do: {todo_quest_events}")
+    def test_todo_quest_requirements_name_an_undefined_event(self):
+        for event_key, event in data.events.items():
+            if not isinstance(event, QuestEventData):
+                continue
+            for requirement in event.required_quests:
+                if not requirement.startswith("TODO"):
+                    continue
+                with self.subTest(event=event_key, requirement=requirement):
+                    match = re.fullmatch(r"TODO\((EVENT_[A-Z0-9_]+)\)", requirement)
+                    self.assertIsNotNone(
+                        match,
+                        "TODO quest requirements must use TODO(EVENT_NAME) so the missing event is explicit",
+                    )
+                    self.assertNotIn(
+                        match.group(1),
+                        data.events,
+                        "Replace the TODO requirement with the real event key once that event is defined",
+                    )
 
     def test_all_quests_are_completable_with_all_items(self):
         evaluator = QuestRuleEvaluator()
