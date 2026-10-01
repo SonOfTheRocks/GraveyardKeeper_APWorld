@@ -101,6 +101,11 @@
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
+  "ITEM_INFUSION_OF_FLY_AGARIC": {
+    "label": "Infusion of fly agaric",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
   "ITEM_INSTRUCTIONS_FOR_KEY": {
     "label": "Instructions for Key",
     "dlc": "BASE_GAME",

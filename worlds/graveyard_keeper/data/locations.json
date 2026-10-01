@@ -250,6 +250,10 @@
     "label": "Merchant Reward - Repay Loan",
     "parent_region": "REGION_THE_VILLAGE"
   },
+  "LOCATION_MERCHANT_REWARD_ACCEPT_LOAN": {
+    "label": "Merchant Reward - Accept his loan",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
   "LOCATION_MERCHANT_REWARD_GIVE_HIM_VEGETABLES": {
     "label": "Merchant Reward - Give him vegetables",
     "parent_region": "REGION_THE_VILLAGE"

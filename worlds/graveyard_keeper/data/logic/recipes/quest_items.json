@@ -224,6 +224,122 @@
     }
   ],
 
+  "MATERIAL_DINNER_GOLD_SNACK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_ONION_RINGS_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_TOASTS_WITH_ONIONS_GOLD"]
+    }
+  ],
+  "MATERIAL_DINNER_GOLD_MEAL": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_LENTILS_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_PUMPKIN_SOUP_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_PUMPKIN_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_ONIONS_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_MUSHROOMS_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_PUMPKIN_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_SALMON_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BURGER_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CABBAGE_SOUP_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CREAMY_VEGETABLE_SOUP_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_FANCY_LENTIL_SOUP_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_LASAGNA_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_LENTIL_CUTLETS_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_PUMPKIN_SOUP_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_ROYAL_FISH_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_PATTY_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_SOUP_GOLD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_STEW_GOLD"]
+    }
+  ],
+  "MATERIAL_DINNER_GOLD_DESSERT": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CAKE"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_GRAPE_PIE_GOLD"]
+    }
+  ],
   "ITEM_DINNER_GOLD": [
     {
       "crafting_stations": [
@@ -231,9 +347,9 @@
       ],
       "recipe_required": "",
       "materials_required": [
-        "ITEM_ONION_RINGS_GOLD",
-        "ITEM_BURGER_GOLD",
-        "ITEM_GRAPE_PIE_GOLD"
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
       ]
     }
   ],

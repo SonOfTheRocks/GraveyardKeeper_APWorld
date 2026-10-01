@@ -143,7 +143,11 @@ class TestAllQuestEvents(unittest.TestCase):
         expedition_event = data.events["EVENT_ASTROLOGER_TALK_ABOUT_EXPEDITION"]
 
         self.assertEqual(["EVENT_MS_CHARM_SHOW_ARISTOCRAT_PAPERS"], list(ask_event.required_quests))
-        self.assertEqual(["ITEM_INFUSION"], list(infusion_event.required_craft_items))
+        self.assertEqual(
+            ["ITEM_INFUSION_OF_FLY_AGARIC"],
+            list(infusion_event.required_quest_items),
+        )
+        self.assertEqual([], list(infusion_event.required_craft_items))
         self.assertEqual(["EVENT_VAGNER_GIVE_INFUSION"], list(note_event.required_quests))
         self.assertEqual(["EVENT_VAGNER_READ_NOTE"], list(cliffs_event.required_quests))
         self.assertEqual(["ITEM_SONG_LYRICS"], list(song_event.required_quest_items))
@@ -273,6 +277,19 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["ITEM_DINNER_GOLD"], list(dinner.required_craft_items))
         self.assertEqual([HappinessData("MERCHANT", 70)], list(strategy.required_happiness))
 
+    def test_merchant_loan_is_an_optional_rewarding_side_chain(self):
+        accept = data.events["EVENT_MERCHANT_ACCEPT_LOAN"]
+        repay = data.events["EVENT_MERCHANT_REPAY_LOAN"]
+
+        self.assertEqual(["EVENT_MERCHANT_ASK_FOR_LOAN"], list(accept.required_quests))
+        self.assertEqual(["LOCATION_MERCHANT_REWARD_ACCEPT_LOAN"], list(accept.rewards))
+        self.assertEqual(["EVENT_MERCHANT_ACCEPT_LOAN"], list(repay.required_quests))
+        self.assertFalse(any(
+            "EVENT_MERCHANT_ACCEPT_LOAN" in event.required_quests
+            for key, event in data.events.items()
+            if isinstance(event, QuestEventData) and key != "EVENT_MERCHANT_REPAY_LOAN"
+        ))
+
     def test_merchant_trade_office_tasks_are_independent_after_showing_license(self):
         discuss = data.events["EVENT_MERCHANT_DISCUSS_TRADE_BUSINESS"]
         license_event = data.events["EVENT_MERCHANT_SHOW_TRADE_LICENSE"]
@@ -301,7 +318,7 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["EVENT_MS_CHARM_GIVE_JEWELRY_FOR_BUSINESS"], list(report.required_quests))
         self.assertEqual(1, len(report.rewards))
 
-    def test_merchant_final_ceremony_and_missable_artifact_match_flow(self):
+    def test_merchant_final_ceremony_guarantees_artifact_if_early_dialogue_is_missed(self):
         invitation = data.events["EVENT_MERCHANT_INVITE_TO_FINAL_CEREMONY"]
         ask_artifact = data.events["EVENT_MERCHANT_ASK_ABOUT_PORTAL_ARTIFACT"]
         artifact = data.events["EVENT_MERCHANT_ASK_FOR_PORTAL_ARTIFACT"]
@@ -317,7 +334,11 @@ class TestAllQuestEvents(unittest.TestCase):
             list(ask_artifact.required_quests),
         )
         self.assertEqual([HappinessData("MERCHANT", 100)], list(artifact.required_happiness))
-        self.assertEqual([], list(artifact.rewards), "The ceremony can permanently hide this action")
+        self.assertEqual(
+            [],
+            list(artifact.rewards),
+            "Only the early dialogue is missable; the ceremony owns the one guaranteed fork check",
+        )
 
     def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
@@ -325,13 +346,30 @@ class TestAllQuestEvents(unittest.TestCase):
 
         self.assertEqual(1, len(dinner))
         self.assertEqual(
-            {"ITEM_ONION_RINGS_GOLD", "ITEM_BURGER_GOLD", "ITEM_GRAPE_PIE_GOLD"},
+            {
+                "MATERIAL_DINNER_GOLD_SNACK",
+                "MATERIAL_DINNER_GOLD_MEAL",
+                "MATERIAL_DINNER_GOLD_DESSERT",
+            },
             set(dinner[0].ingredients),
         )
         self.assertEqual(
             {"CRAFTING_STATION_COOKING_TABLE"},
             set(dinner[0].workstations),
         )
+        self.assertEqual(
+            {"ITEM_ONION_RINGS_GOLD", "ITEM_TOASTS_WITH_ONIONS_GOLD"},
+            {next(iter(recipe.ingredients)) for recipe in data.recipes["MATERIAL_DINNER_GOLD_SNACK"]},
+        )
+        self.assertIn(
+            {"ITEM_CAKE"},
+            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_GOLD_DESSERT"]],
+        )
+        self.assertIn(
+            {"ITEM_GRAPE_PIE_GOLD"},
+            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_GOLD_DESSERT"]],
+        )
+        self.assertGreaterEqual(len(data.recipes["MATERIAL_DINNER_GOLD_MEAL"]), 10)
         self.assertEqual(1, len(crate))
         self.assertEqual({"ITEM_NAILS", "ITEM_FLITCH"}, set(crate[0].ingredients))
         self.assertEqual({"CRAFTING_STATION_CRATE_FACTORY"}, set(crate[0].workstations))

@@ -231,7 +231,7 @@
     "rewards": []
   },
   "EVENT_MERCHANT_ACCEPT_LOAN": {
-    "comment": "Flow: npc_merchant:231:option:0 makes merchant_debt visible, sets loan_taken, and unlocks @merchant_2e_1f",
+    "comment": "Flow: npc_merchant:231:option:0 rewards 5 silver, makes merchant_debt visible, sets loan_taken, and unlocks @merchant_2e_1f; this side quest is optional",
     "location_label": "Accept the Merchant's loan",
     "item_label": "Accepted the Merchant's loan",
     "dlc": "BASE_GAME",
@@ -239,7 +239,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_MERCHANT_REWARD_ACCEPT_LOAN"]
   },
   "EVENT_MERCHANT_REPAY_LOAN": {
     "comment": "Flow: npc_merchant:190:option:5 (@merchant_2e_1f); Answer.price is money x10 and Answer.reward is +10 Merchant happiness",
@@ -411,7 +411,7 @@
     "rewards": []
   },
   "EVENT_MERCHANT_ASK_FOR_PORTAL_ARTIFACT": {
-    "comment": "Flow: npc_merchant:38:option:16 is locked at 100 Merchant happiness and normally rewards fork_salty; final_ceremony blacklists this option, so the missable action intentionally has no AP location",
+    "comment": "Flow: npc_merchant:38:option:16 is locked at 100 Merchant happiness and grants fork_salty early; final_ceremony blacklists only this early dialogue after granting the same fork itself, so the artifact is guaranteed and its single AP check belongs to the ceremony",
     "location_label": "Ask the Merchant to hand over his portal artifact",
     "item_label": "Asked the Merchant to hand over his portal artifact",
     "dlc": "BASE_GAME",
@@ -1051,8 +1051,8 @@
     "dlc": "BASE_GAME",
     "required_quests": ["EVENT_VAGNER_ASK_TO_WRITE_LOVE_SONG"],
     "required_happiness": [],
-    "required_quest_items": [],
-    "required_craft_items": ["ITEM_INFUSION"],
+    "required_quest_items": ["ITEM_INFUSION_OF_FLY_AGARIC"],
+    "required_craft_items": [],
     "rewards": []
   },
   "EVENT_VAGNER_READ_NOTE": {
