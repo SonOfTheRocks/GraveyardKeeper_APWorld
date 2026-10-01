@@ -63,6 +63,7 @@
   "npc_cultist:1759:option:1": "Refuse to lick the golden apple",
   "npc_dig:15:option:2": "Ask Dig about obtaining booze",
   "npc_euric:28:option:13": "Ask Euric about charging the Envy shard",
+  "npc_farmer:15:option:0": "Ask the Farmer about Alisa",
   "npc_light_keeper:13:option:5": "Ask the Lighthouse Keeper for the ancient amulet",
   "npc_miller:13:option:0": "Ask the Miller about fixing the mill",
   "player-state-source:npc_cultist.json:276": "Unlock Snake's questline after the first death",

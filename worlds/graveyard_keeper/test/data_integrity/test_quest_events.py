@@ -94,6 +94,23 @@ class TestAllQuestEvents(unittest.TestCase):
             [AreaPointData("SACRIFICE_ZONE", 20)],
         )
 
+    def test_meeting_snake_is_a_rewardless_region_gated_start_event(self):
+        event = data.events["EVENT_SNAKE_MEET"]
+        self.assertEqual([], list(event.required_quests))
+        self.assertEqual([], list(event.rewards))
+        self.assertIn("EVENT_SNAKE_MEET", data.regions["REGION_UNDERGROUND_TUNNEL"].events)
+
+    def test_mill_fix_conversation_chain_matches_phrase_unlocks(self):
+        farmer_event = data.events["EVENT_FARMER_ASK_ABOUT_ALISA"]
+        miller_event = data.events["EVENT_MILLER_ASK_TO_FIX_MILL"]
+        astrologer_event = data.events["EVENT_ASTROLOGER_ASK_ABOUT_MILL_FIX"]
+
+        self.assertEqual(["EVENT_MS_CHARM_GIVE_GOLD_STORY"], list(farmer_event.required_quests))
+        self.assertEqual(["EVENT_FARMER_ASK_ABOUT_ALISA"], list(miller_event.required_quests))
+        self.assertEqual(["EVENT_MILLER_ASK_TO_FIX_MILL"], list(astrologer_event.required_quests))
+        self.assertEqual([], list(farmer_event.rewards))
+        self.assertEqual([], list(miller_event.rewards))
+
     def test_area_point_requirement_parser_rejects_invalid_values(self):
         for invalid_value in ("SACRIFICE_ZONE", "_20", "SACRIFICE_ZONE_0", "SACRIFICE_ZONE_-1"):
             with self.subTest(value=invalid_value):

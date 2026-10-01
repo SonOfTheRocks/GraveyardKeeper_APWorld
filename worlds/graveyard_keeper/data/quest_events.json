@@ -176,7 +176,7 @@
     "location_label": "Ask Astrologer about mill fix",
     "item_label": "Asked Astrologer about mill fix",
     "dlc": "BASE_GAME",
-    "required_quests": ["TODO(EVENT_MILLER_ASK_TO_FIX_MILL)"],
+    "required_quests": ["EVENT_MILLER_ASK_TO_FIX_MILL"],
     "required_happiness": ["ASTROLOGER_60"],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -257,7 +257,7 @@
     "required_quests": [
       "EVENT_MS_CHARM_PROVE_YOUR_WORTH",
       "EVENT_HORADRIC_ASK_ABOUT_SELLING_FLESH",
-      "TODO(EVENT_SNAKE_MEET)"
+      "EVENT_SNAKE_MEET"
     ],
     "required_happiness": [],
     "required_quest_items": [],
@@ -318,12 +318,46 @@
     "rewards": []
   },
 
+  "EVENT_FARMER_ASK_ABOUT_ALISA": {
+    "comment": "Flow: npc_actress @actress_story_gold unlocks @farmer_alisa; the Farmer conversation unlocks @miller_fix_mill",
+    "location_label": "Ask the Farmer about Alisa",
+    "item_label": "Asked the Farmer about Alisa",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_GIVE_GOLD_STORY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MILLER_ASK_TO_FIX_MILL": {
+    "comment": "Flow: npc_farmer @farmer_alisa unlocks @miller_fix_mill; the Miller conversation unlocks @astrologer_fix_mill",
+    "location_label": "Ask the Miller about fixing the mill",
+    "item_label": "Asked the Miller about fixing the mill",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_FARMER_ASK_ABOUT_ALISA"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
+  "EVENT_SNAKE_MEET": {
+    "comment": "Flow: on_enter_cultist_zone starts npc_cultist intro when met_cultist == 0 and Snake is present; region access already requires removing the cellar blockage",
+    "location_label": "Meet Snake",
+    "item_label": "Met Snake",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
   "EVENT_SNAKE_PROVE_YOU_ARE_GRAVEYARD_KEEPER": {
     "comment": "Flow: npc_cultist:106:option:0; requires access to Faith; normally grants Instructions for Key",
     "location_label": "Prove you are the Graveyard Keeper to Snake",
     "item_label": "Proved you are the Graveyard Keeper to Snake",
     "dlc": "BASE_GAME",
-    "required_quests": ["TODO(EVENT_SNAKE_MEET)"],
+    "required_quests": ["EVENT_SNAKE_MEET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_FAITH"],
@@ -334,7 +368,7 @@
     "location_label": "Give Snake Ms. Charm's fake coins",
     "item_label": "Gave Snake Ms. Charm's fake coins",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_MS_CHARM_ASK_ABOUT_SNAKE", "TODO(EVENT_SNAKE_MEET)"],
+    "required_quests": ["EVENT_MS_CHARM_ASK_ABOUT_SNAKE", "EVENT_SNAKE_MEET"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_FAKE_COINS"],
     "required_craft_items": [],
@@ -685,7 +719,7 @@
     "location_label": "Ask Snake to brew booze for Dig",
     "item_label": "Asked Snake to brew booze for Dig",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_DIG_ASK_FOR_BOOZE", "TODO(EVENT_SNAKE_MEET)"],
+    "required_quests": ["EVENT_DIG_ASK_FOR_BOOZE", "EVENT_SNAKE_MEET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -718,7 +752,7 @@
     "location_label": "Ask Snake to steal the ancient amulet",
     "item_label": "Asked Snake to steal the ancient amulet",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_LIGHTHOUSE_KEEPER_REFUSE_TO_SELL_AMULET", "TODO(EVENT_SNAKE_MEET)"],
+    "required_quests": ["EVENT_LIGHTHOUSE_KEEPER_REFUSE_TO_SELL_AMULET", "EVENT_SNAKE_MEET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
