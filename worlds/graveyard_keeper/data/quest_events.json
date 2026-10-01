@@ -69,6 +69,234 @@
     "rewards": []
   },
 
+  "EVENT_BISHOP_MEET": {
+    "comment": "Flow: npc_bishop intro event sets met_bishop, unlocks the Grave plate technology, and starts bishop_5_qual",
+    "location_label": "Meet the Bishop",
+    "item_label": "Met the Bishop",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_BISHOP_REWARD_MEET"]
+  },
+  "EVENT_BISHOP_ASK_ABOUT_SOUP_KITCHEN": {
+    "comment": "Flow: npc_bishop:75:option:4 (@bishop_4_0) unlocks The idea of the earth and @bishop_5_1",
+    "location_label": "Ask Bishop about the soup kitchen",
+    "item_label": "Asked Bishop about the soup kitchen",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_BISHOP_REWARD_ACCEPT_QUEST_BOWLS_FOR_THE_SOUP_KITCHEN"]
+  },
+  "EVENT_BISHOP_GIVE_CERAMIC_BOWLS": {
+    "comment": "Flow: npc_bishop:75:option:5 (@bishop_5_1); Answer.price ceramic_1, +10 Bishop happiness, and dynamic scroll_blue drop",
+    "location_label": "Give Bishop ceramic bowls for the soup kitchen",
+    "item_label": "Gave Bishop ceramic bowls for the soup kitchen",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_ASK_ABOUT_SOUP_KITCHEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CERAMIC_BOWLS"],
+    "rewards": [
+      "LOCATION_BISHOP_REWARD_BOWLS_FOR_THE_SOUP_KITCHEN_1",
+      "LOCATION_BISHOP_REWARD_BOWLS_FOR_THE_SOUP_KITCHEN_2"
+    ]
+  },
+  "EVENT_BISHOP_IMPROVE_GRAVEYARD": {
+    "comment": "Flow: npc_bishop:679:option:0 (@bishop_6b); Answer.price graveyard_quality 30 and reward +5 Bishop happiness",
+    "location_label": "Show Bishop the improved graveyard",
+    "item_label": "Showed Bishop the improved graveyard",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_GIVE_CERAMIC_BOWLS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["OLD_GRAVEYARD_30"],
+    "rewards": ["LOCATION_BISHOP_REWARD_IMPROVE_GRAVEYARD"]
+  },
+  "EVENT_BISHOP_IMPROVE_CHURCH": {
+    "comment": "Flow: npc_bishop:679:option:1 (@bishop_6c); Answer.price church_quality 20 and reward +5 Bishop happiness",
+    "location_label": "Show Bishop the improved church",
+    "item_label": "Showed Bishop the improved church",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_GIVE_CERAMIC_BOWLS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["CHURCH_20"],
+    "rewards": ["LOCATION_BISHOP_REWARD_IMPROVE_CHURCH"]
+  },
+  "EVENT_BISHOP_GIVE_QUALITY_FISH_FILLET": {
+    "comment": "Flow: @bishop_6a is available from both Bishop menus; Answer.price fillet_fish_red quality 1 and reward +10 Bishop happiness",
+    "location_label": "Give Bishop quality fish fillets",
+    "item_label": "Gave Bishop quality fish fillets",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_GIVE_CERAMIC_BOWLS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_QUALITY_FISH_FILLET_COPPER"],
+    "rewards": ["LOCATION_BISHOP_REWARD_GIVE_QUALITY_FISH_FILLET"]
+  },
+  "EVENT_BISHOP_UPGRADE_TO_BIG_CHURCH": {
+    "comment": "Flow: npc_bishop:679:option:2 (@bishop_6d) is unlocked after the three conditional_par_1 tasks; Answer.price building_permission and reward +10 Bishop happiness",
+    "location_label": "Give Bishop the building permission",
+    "item_label": "Gave Bishop the building permission",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_BISHOP_IMPROVE_GRAVEYARD",
+      "EVENT_BISHOP_IMPROVE_CHURCH",
+      "EVENT_BISHOP_GIVE_QUALITY_FISH_FILLET"
+    ],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_BUILDING_PERMISSION"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_BISHOP_REWARD_UPGRADE_TO_BIG_CHURCH"]
+  },
+  "EVENT_BISHOP_GIVE_RIGHTFUL_CITIZEN_PAPERS": {
+    "comment": "Flow: npc_bishop:1068:option:0 (@bishop_get_citezen); Answer.price rightful_citizen_paper and unlocks the cathedral conversation",
+    "location_label": "Give Bishop the rightful citizen papers",
+    "item_label": "Gave Bishop the rightful citizen papers",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_UPGRADE_TO_BIG_CHURCH"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_RIGHTFUL_CITIZEN_PAPERS"],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_BISHOP_ASK_ABOUT_CATHEDRAL": {
+    "comment": "Flow: npc_bishop:1068:option:1 (@bishop_cathidral) unlocks the church-quality and graveyard-quality cathedral tasks",
+    "location_label": "Ask Bishop about upgrading to a cathedral",
+    "item_label": "Asked Bishop about upgrading to a cathedral",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_GIVE_RIGHTFUL_CITIZEN_PAPERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_BISHOP_IMPROVE_CHURCH_FOR_CATHEDRAL": {
+    "comment": "Flow: npc_bishop:1030:option:1 (@bishop_cathidral_cross); Answer.price church_quality 50 and reward +5 Bishop happiness",
+    "location_label": "Show Bishop the church is ready for a cathedral",
+    "item_label": "Showed Bishop the church is ready for a cathedral",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_ASK_ABOUT_CATHEDRAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["CHURCH_50"],
+    "rewards": ["LOCATION_BISHOP_REWARD_IMPROVE_CHURCH_FOR_CATHEDRAL"]
+  },
+  "EVENT_BISHOP_IMPROVE_GRAVEYARD_FOR_CATHEDRAL": {
+    "comment": "Flow: npc_bishop:1030:option:2 (@bishop_cathidral_skull); Answer.price graveyard_quality 200 and reward +5 Bishop happiness",
+    "location_label": "Show Bishop the graveyard is ready for a cathedral",
+    "item_label": "Showed Bishop the graveyard is ready for a cathedral",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_ASK_ABOUT_CATHEDRAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["OLD_GRAVEYARD_200"],
+    "rewards": ["LOCATION_BISHOP_REWARD_IMPROVE_GRAVEYARD_FOR_CATHEDRAL"]
+  },
+  "EVENT_BISHOP_BUILD_STATUE": {
+    "comment": "Flow: church-quality branch starts the graveyard-zone statue scene; npc_bishop:1068:option:3 requires marble_plate_3:3 and rewards +10 Bishop happiness",
+    "location_label": "Build Bishop's statue",
+    "item_label": "Built Bishop's statue",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_IMPROVE_CHURCH_FOR_CATHEDRAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD"],
+    "rewards": ["LOCATION_BISHOP_REWARD_BUILD_STATUE"]
+  },
+  "EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE": {
+    "comment": "Flow: npc_bishop:1030:option:3 (@bishop_cathidral_80); locked at 70 Bishop happiness and checks church_2lvl_to_3lvl before unlocking both final document turn-ins",
+    "location_label": "Report the cathedral upgrade to Bishop",
+    "item_label": "Reported the cathedral upgrade to Bishop",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_BISHOP_IMPROVE_CHURCH_FOR_CATHEDRAL",
+      "EVENT_BISHOP_IMPROVE_GRAVEYARD_FOR_CATHEDRAL",
+      "EVENT_BISHOP_BUILD_STATUE"
+    ],
+    "required_happiness": ["BISHOP_70"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_BISHOP_SHOW_ARISTOCRAT_PAPERS": {
+    "comment": "Flow: npc_bishop:1030:option:4; Answer.price and returned drop aristocrat_paper plus +10 Bishop happiness",
+    "location_label": "Show Bishop the aristocrat papers",
+    "item_label": "Showed Bishop the aristocrat papers",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ARISTOCRAT_PAPERS"],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_BISHOP_REWARD_SHOW_ARISTOCRAT_PAPERS_1",
+      "LOCATION_BISHOP_REWARD_SHOW_ARISTOCRAT_PAPERS_2"
+    ]
+  },
+  "EVENT_BISHOP_GIVE_ACCEPTED_INVITATION": {
+    "comment": "Flow: npc_bishop:1030:option:5; Answer.price accepted_invitation and reward +10 Bishop happiness",
+    "location_label": "Give Bishop the accepted invitation",
+    "item_label": "Gave Bishop the accepted invitation",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE",
+      "TODO(EVENT_MERCHANT_GIVE_ACCEPTED_INVITATION)"
+    ],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ACCEPTED_INVITATION"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_BISHOP_REWARD_GIVE_ACCEPTED_INVITATION"]
+  },
+  "EVENT_BISHOP_HOLD_FINAL_CEREMONY": {
+    "comment": "Flow: npc_bishop:1030:option:7 runs final_ceremony; its linear ending grants +10 Bishop, Mirror of Pride, +10 Merchant, and Salty Fork",
+    "location_label": "Hold the final ceremony with Bishop and Merchant",
+    "item_label": "Held the final ceremony with Bishop and Merchant",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_BISHOP_SHOW_ARISTOCRAT_PAPERS",
+      "EVENT_BISHOP_GIVE_ACCEPTED_INVITATION"
+    ],
+    "required_happiness": ["BISHOP_90"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_1",
+      "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_2",
+      "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_3",
+      "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_4"
+    ]
+  },
+  "EVENT_BISHOP_ASK_ABOUT_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_cultist unlocks @bishop_magic_item after identifying the artifact holders; Bishop then unlocks @bishop_magic_100",
+    "location_label": "Ask Bishop about his portal artifact",
+    "item_label": "Asked Bishop about his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_BISHOP_HAND_OVER_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_bishop:1030:option:8 (@bishop_magic_100); locked at 100 Bishop happiness and Answer.reward mirror_of_pride",
+    "location_label": "Ask Bishop to hand over his portal artifact",
+    "item_label": "Asked Bishop to hand over his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_ASK_ABOUT_PORTAL_ARTIFACT"],
+    "required_happiness": ["BISHOP_100"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_BISHOP_REWARD_HAND_OVER_PORTAL_ARTIFACT"]
+  },
+
   "EVENT_ASTROLOGER_GET_ASTROLOGER_SKULL": {
     "comment": "Get skull for 10 relation",
     "location_label": "Get Astrologer a skull",
@@ -1419,14 +1647,19 @@
     "rewards": []
   },
   "EVENT_CHURCH_OPEN": {
+    "comment": "Flow: npc_bishop:75:option:2 has graveyard_quality 5 as Answer.price, +10 Bishop happiness as Answer.reward, and opens the church",
     "location_label": "Open church",
     "item_label": "Church opened",
     "dlc": "BASE_GAME",
-    "required_quests":[],
+    "required_quests": ["EVENT_BISHOP_MEET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": []
+    "required_area_points": ["OLD_GRAVEYARD_5"],
+    "rewards": [
+      "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_1",
+      "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_2"
+    ]
   },
   "EVENT_CORPSE_HATCH_REPAIRED": {
     "location_label": "Repair Corpse hatch",

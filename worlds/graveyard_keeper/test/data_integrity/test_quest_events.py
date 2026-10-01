@@ -169,6 +169,94 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(4, len(rescue_event.rewards))
         self.assertIn("EVENT_ASTROLOGER_RESCUE_VAGNER", data.regions["REGION_LIGHTHOUSE"].events)
 
+    def test_bishop_base_game_questline_matches_flow_requirements(self):
+        meet = data.events["EVENT_BISHOP_MEET"]
+        church_open = data.events["EVENT_CHURCH_OPEN"]
+        ask_bowls = data.events["EVENT_BISHOP_ASK_ABOUT_SOUP_KITCHEN"]
+        bowls = data.events["EVENT_BISHOP_GIVE_CERAMIC_BOWLS"]
+        graveyard = data.events["EVENT_BISHOP_IMPROVE_GRAVEYARD"]
+        church = data.events["EVENT_BISHOP_IMPROVE_CHURCH"]
+        fish = data.events["EVENT_BISHOP_GIVE_QUALITY_FISH_FILLET"]
+        big_church = data.events["EVENT_BISHOP_UPGRADE_TO_BIG_CHURCH"]
+        citizen = data.events["EVENT_BISHOP_GIVE_RIGHTFUL_CITIZEN_PAPERS"]
+        ask_cathedral = data.events["EVENT_BISHOP_ASK_ABOUT_CATHEDRAL"]
+        cathedral_church = data.events["EVENT_BISHOP_IMPROVE_CHURCH_FOR_CATHEDRAL"]
+        cathedral_graveyard = data.events["EVENT_BISHOP_IMPROVE_GRAVEYARD_FOR_CATHEDRAL"]
+        statue = data.events["EVENT_BISHOP_BUILD_STATUE"]
+        report_cathedral = data.events["EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE"]
+        aristocrat = data.events["EVENT_BISHOP_SHOW_ARISTOCRAT_PAPERS"]
+        invitation = data.events["EVENT_BISHOP_GIVE_ACCEPTED_INVITATION"]
+        ceremony = data.events["EVENT_BISHOP_HOLD_FINAL_CEREMONY"]
+        ask_artifact = data.events["EVENT_BISHOP_ASK_ABOUT_PORTAL_ARTIFACT"]
+        artifact = data.events["EVENT_BISHOP_HAND_OVER_PORTAL_ARTIFACT"]
+
+        self.assertEqual([], list(meet.required_quests))
+        self.assertEqual(1, len(meet.rewards))
+        self.assertEqual(["EVENT_BISHOP_MEET"], list(church_open.required_quests))
+        self.assertEqual({AreaPointData("OLD_GRAVEYARD", 5)}, set(church_open.required_area_points))
+        self.assertEqual(2, len(church_open.rewards))
+        self.assertEqual(["EVENT_CHURCH_OPEN"], list(ask_bowls.required_quests))
+        self.assertEqual(["ITEM_CERAMIC_BOWLS"], list(bowls.required_craft_items))
+        self.assertEqual(2, len(bowls.rewards))
+
+        for branch in (graveyard, church, fish):
+            self.assertEqual(["EVENT_BISHOP_GIVE_CERAMIC_BOWLS"], list(branch.required_quests))
+            self.assertEqual(1, len(branch.rewards))
+        self.assertEqual({AreaPointData("OLD_GRAVEYARD", 30)}, set(graveyard.required_area_points))
+        self.assertEqual({AreaPointData("CHURCH", 20)}, set(church.required_area_points))
+        self.assertEqual(["ITEM_QUALITY_FISH_FILLET_COPPER"], list(fish.required_craft_items))
+        self.assertEqual(
+            {
+                "EVENT_BISHOP_IMPROVE_GRAVEYARD",
+                "EVENT_BISHOP_IMPROVE_CHURCH",
+                "EVENT_BISHOP_GIVE_QUALITY_FISH_FILLET",
+            },
+            set(big_church.required_quests),
+        )
+        self.assertEqual(["ITEM_BUILDING_PERMISSION"], list(big_church.required_quest_items))
+        self.assertEqual(["ITEM_RIGHTFUL_CITIZEN_PAPERS"], list(citizen.required_quest_items))
+        self.assertEqual(["EVENT_BISHOP_GIVE_RIGHTFUL_CITIZEN_PAPERS"], list(ask_cathedral.required_quests))
+
+        self.assertEqual({AreaPointData("CHURCH", 50)}, set(cathedral_church.required_area_points))
+        self.assertEqual({AreaPointData("OLD_GRAVEYARD", 200)}, set(cathedral_graveyard.required_area_points))
+        self.assertEqual(
+            ["EVENT_BISHOP_IMPROVE_CHURCH_FOR_CATHEDRAL"],
+            list(statue.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_A_CARVED_PIECE_OF_MARBLE_GOLD"],
+            list(statue.required_craft_items),
+        )
+        self.assertEqual(
+            {
+                "EVENT_BISHOP_IMPROVE_CHURCH_FOR_CATHEDRAL",
+                "EVENT_BISHOP_IMPROVE_GRAVEYARD_FOR_CATHEDRAL",
+                "EVENT_BISHOP_BUILD_STATUE",
+            },
+            set(report_cathedral.required_quests),
+        )
+        self.assertEqual(
+            [HappinessData("BISHOP", 70)],
+            list(report_cathedral.required_happiness),
+        )
+
+        self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(aristocrat.required_quest_items))
+        self.assertEqual(2, len(aristocrat.rewards))
+        self.assertIn("TODO(EVENT_MERCHANT_GIVE_ACCEPTED_INVITATION)", invitation.required_quests)
+        self.assertEqual(["ITEM_ACCEPTED_INVITATION"], list(invitation.required_quest_items))
+        self.assertEqual(
+            {"EVENT_BISHOP_SHOW_ARISTOCRAT_PAPERS", "EVENT_BISHOP_GIVE_ACCEPTED_INVITATION"},
+            set(ceremony.required_quests),
+        )
+        self.assertEqual([HappinessData("BISHOP", 90)], list(ceremony.required_happiness))
+        self.assertEqual(4, len(ceremony.rewards))
+        self.assertEqual(
+            ["EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS"],
+            list(ask_artifact.required_quests),
+        )
+        self.assertEqual([HappinessData("BISHOP", 100)], list(artifact.required_happiness))
+        self.assertEqual(1, len(artifact.rewards))
+
     def test_area_point_requirement_parser_rejects_invalid_values(self):
         for invalid_value in ("SACRIFICE_ZONE", "_20", "SACRIFICE_ZONE_0", "SACRIFICE_ZONE_-1"):
             with self.subTest(value=invalid_value):

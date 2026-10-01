@@ -46,6 +46,16 @@
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
+  "ITEM_BUILDING_PERMISSION": {
+    "label": "Building permission",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_RIGHTFUL_CITIZEN_PAPERS": {
+    "label": "Rightful citizen papers",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
   "ITEM_ALISAS_PAPERS": {
     "label": "Alisa's Papers",
     "dlc": "BASE_GAME",
