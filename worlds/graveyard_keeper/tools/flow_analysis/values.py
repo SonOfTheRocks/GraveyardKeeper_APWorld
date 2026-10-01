@@ -44,11 +44,18 @@ class ValueResolver:
         node = self.graph.nodes[node_id]
         source = SourceRef(self.graph.name, node_id, port)
         if node.type_name == "Flow_SmartRes":
+            # Older/exporter-specific wrappers use display labels for two ports
+            # ("Id", "V") while newer dumps use the serialized field names.
+            # Some old nodes contain both "Res type" and "res_type" with
+            # conflicting values, so the canonical lowercase port wins.
             value = SymbolicValue(
                 "smart_res",
-                resource_type=self._literal(node.inputs.get("res_type")),
-                resource_id=self._literal(node.inputs.get("id")),
-                amount=self._literal(node.inputs.get("v")),
+                resource_type=self._literal(node.inputs.get(
+                    "res_type", node.inputs.get("Res type"))),
+                resource_id=self._literal(node.inputs.get(
+                    "id", node.inputs.get("Id"))),
+                amount=self._literal(node.inputs.get(
+                    "v", node.inputs.get("V"))),
                 source=source,
             )
         elif node.type_name == "Flow_CreateItem":

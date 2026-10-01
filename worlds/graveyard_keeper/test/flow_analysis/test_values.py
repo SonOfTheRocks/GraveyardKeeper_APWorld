@@ -11,6 +11,22 @@ def _answer_data(price=None, reward=None, lock=None):
 
 
 class TestFlowGraphValues(FlowAnalysisTestCase):
+    def test_smart_res_resolves_legacy_display_port_names(self) -> None:
+        graph = parse_graph(self.write_graph([
+            wrapper(1, "Flow_SmartRes", {
+                "Res type": stored("GameRes"),
+                "Id": stored("rightful_citizen_paper"),
+                "V": stored(1.0, "System.Single"),
+                "res_type": stored("Item"),
+            }),
+        ], []))
+
+        value = ValueResolver(graph).resolve_output("1", "Value")
+
+        self.assertEqual("Item", value.resource_type)
+        self.assertEqual("rightful_citizen_paper", value.resource_id)
+        self.assertEqual(1.0, value.amount)
+
     def test_inline_item_and_create_item_outputs_resolve_item_ids(self) -> None:
         inline_item = {"$type": "Item", "id": "inline_reward", "value": 1}
         graph = parse_graph(self.write_graph([

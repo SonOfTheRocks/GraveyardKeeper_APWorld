@@ -38,6 +38,14 @@ class ItemDropSummary:
     item: str | None
     amount: Any
     resolution: str | None = None
+    node_id: str | None = field(default=None, repr=False)
+
+
+@dataclass(frozen=True)
+class ItemPayment:
+    item: str
+    amount: Any
+    node_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -86,6 +94,10 @@ class QuestSummary:
     node_ids: set[str] = field(default_factory=set)
     flow_steps: set[tuple[str, str, str]] = field(default_factory=set)
     phrases_unlocked: list[str] = field(default_factory=list)
+    # Kept separately from required_items: possession checks do not consume an
+    # item, while AnswerData.price and Flow_RemoveItemFromInventory can be
+    # followed by a drop which merely returns the paid item.
+    item_payments: list[ItemPayment] = field(default_factory=list, repr=False)
 
     @property
     def add_relations(self) -> list[Any]:
@@ -209,7 +221,8 @@ def _add_reward(summary: QuestSummary, finding: RewardFinding) -> None:
         npc, source = ((finding.npc_id, "explizites npc_id-Feld") if finding.npc_id else _graph_npc(summary.graph))
         summary.relation_rewards.append(RelationRewardSummary(finding.amount, npc, source))
     else:
-        reward = ItemDropSummary(finding.resource_id, finding.amount, finding.resource_detail)
+        reward = ItemDropSummary(
+            finding.resource_id, finding.amount, finding.resource_detail, finding.node_id)
         summary.item_drops.append(reward)
     _append_unique(summary.uncertainties, finding.issues)
 
@@ -243,6 +256,11 @@ def _add_answer_data(summary: QuestSummary, option: DialogueOption) -> None:
             _append_unique(summary.required_items, [
                 f"{answer.price.resource_id or 'dynamic/unresolved'} x{display_value(answer.price.amount)}"
             ])
+            _append_unique(summary.item_payments, [
+                # The answer price is paid before every executable node in the
+                # selected option, including a nested menu inherited below.
+                ItemPayment(answer.price.resource_id, answer.price.amount)
+            ])
         else:
             _append_unique(summary.costs, [answer.price.render()])
     reward = answer.reward
@@ -252,21 +270,22 @@ def _add_answer_data(summary: QuestSummary, option: DialogueOption) -> None:
             summary.relation_rewards.append(RelationRewardSummary(reward.amount, npc, source))
             _append_unique(summary.uncertainties, ["Empfänger des AnswerData-Relationsgewinns ist implizit"])
         elif reward.resource_type == "Item":
-            item = ItemDropSummary(reward.resource_id, reward.amount)
+            item = ItemDropSummary(
+                reward.resource_id, reward.amount, node_id=option.multi_answer_node)
             summary.item_drops.append(item)
 
 
-def _answer_price_requirements(option: DialogueOption) -> tuple[set[str], set[str]]:
+def _answer_price_requirements(option: DialogueOption) -> tuple[set[str], set[str], set[ItemPayment]]:
     """Return the item/currency requirements imposed by one AnswerData.price."""
     answer = option.answer
     if answer is None or not _usable_smart_res(answer.price):
-        return set(), set()
+        return set(), set(), set()
     if answer.price.resource_type == "Item":
         return {
             f"{answer.price.resource_id or 'dynamic/unresolved'} "
             f"x{display_value(answer.price.amount)}"
-        }, set()
-    return set(), {answer.price.render()}
+        }, set(), {ItemPayment(answer.price.resource_id, answer.price.amount)}
+    return set(), {answer.price.render()}, set()
 
 
 def _add_nodes(summary: QuestSummary, graph: Graph, node_ids: list[str], reward_map: dict[str, list[RewardFinding]]) -> None:
@@ -302,9 +321,12 @@ def _add_nodes(summary: QuestSummary, graph: Graph, node_ids: list[str], reward_
         elif node.type_name == "Flow_RemoveItemFromInventory":
             item = _input(node, "Item ID", "Res_id")
             amount = _input(node, "Items Count", "Amount")
+            amount = amount if amount is not None else 1
             _append_unique(summary.required_items, [
-                f"{item or 'dynamic/unresolved'} x{display_value(amount if amount is not None else 1)}"
+                f"{item or 'dynamic/unresolved'} x{display_value(amount)}"
             ])
+            if isinstance(item, str) and item:
+                _append_unique(summary.item_payments, [ItemPayment(item, amount, node.id)])
         elif node.type_name == "CustomFunctionCall":
             call_edges = [
                 edge for edge in graph.outgoing_flow[node.id]
@@ -353,6 +375,76 @@ def _add_common_inventory_requirements(summary: QuestSummary,
     _append_unique(summary.required_items, sorted(common))
 
 
+def _numeric_amount(value: Any) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    return float(value)
+
+
+def _remove_returned_item_drops(summary: QuestSummary) -> None:
+    """Remove the paid portion of item drops which only return a quest item.
+
+    The item remains in required_items: the player must possess it to select the
+    answer or reach the removal node. Only the later return is suppressed as a
+    reward. If a path returns more than it took, the excess remains a reward.
+    """
+    remaining_payments: list[list[Any]] = [
+        [payment.item.casefold(), payment.amount, payment.node_id]
+        for payment in summary.item_payments
+    ]
+    outgoing: dict[str, set[str]] = {}
+    for source, _, target in summary.flow_steps:
+        outgoing.setdefault(source, set()).add(target)
+
+    def precedes(payment_node: str | None, drop_node: str | None) -> bool:
+        if payment_node is None or drop_node is None or payment_node == drop_node:
+            return True
+        pending = [payment_node]
+        visited = {payment_node}
+        while pending:
+            current = pending.pop()
+            for target in outgoing.get(current, set()):
+                if target == drop_node:
+                    return True
+                if target not in visited:
+                    visited.add(target)
+                    pending.append(target)
+        return False
+
+    adjusted_drops: list[ItemDropSummary] = []
+    for drop in summary.item_drops:
+        if not drop.item:
+            adjusted_drops.append(drop)
+            continue
+        drop_amount = drop.amount
+        matched = False
+        for payment in remaining_payments:
+            if payment[0] != drop.item.casefold() or not precedes(payment[2], drop.node_id):
+                continue
+            payment_number = _numeric_amount(payment[1])
+            drop_number = _numeric_amount(drop_amount)
+            if payment_number is not None and drop_number is not None:
+                returned = min(payment_number, drop_number)
+                payment[1] = payment_number - returned
+                drop_amount = drop_number - returned
+                matched = returned > 0
+                if drop_amount <= 0:
+                    break
+                continue
+            if display_value(payment[1]) == display_value(drop_amount):
+                payment[1] = 0
+                drop_amount = 0
+                matched = True
+                break
+        if not matched or (_numeric_amount(drop_amount) is None and drop_amount != 0):
+            adjusted_drops.append(drop)
+        elif _numeric_amount(drop_amount) is not None and float(drop_amount) > 0:
+            amount: Any = int(drop_amount) if float(drop_amount).is_integer() else drop_amount
+            adjusted_drops.append(ItemDropSummary(
+                drop.item, amount, drop.resolution, drop.node_id))
+    summary.item_drops = adjusted_drops
+
+
 def build_quest_summaries(analysis: GraphAnalysis, phrase_unlocks: dict[str, list[str]],
                           limits: AnalysisLimits | None = None, *,
                           include_without_rewards: bool = False) -> list[QuestSummary]:
@@ -363,7 +455,9 @@ def build_quest_summaries(analysis: GraphAnalysis, phrase_unlocks: dict[str, lis
     consumed_reward_nodes: set[str] = set()
 
     option_path_data: dict[tuple[str, int], tuple[list[list[str]], list[str]]] = {}
-    nested_menu_prices: dict[str, dict[tuple[str, int], tuple[set[str], set[str]]]] = {}
+    nested_menu_prices: dict[
+        str, dict[tuple[str, int], tuple[set[str], set[str], set[ItemPayment]]]
+    ] = {}
     for option in analysis.options:
         option_key = option.multi_answer_node, option.index
         paths_and_issues = _option_paths(analysis.graph, option, limits)
@@ -375,12 +469,13 @@ def build_quest_summaries(analysis: GraphAnalysis, phrase_unlocks: dict[str, lis
                     and analysis.graph.nodes[target].type_name == "Flow_MultiAnswer"):
                 nested_menu_prices.setdefault(target, {})[option_key] = price_requirements
 
-    inherited_menu_prices: dict[str, tuple[set[str], set[str]]] = {}
+    inherited_menu_prices: dict[str, tuple[set[str], set[str], set[ItemPayment]]] = {}
     for menu_id, entries in nested_menu_prices.items():
         requirements = list(entries.values())
         inherited_menu_prices[menu_id] = (
-            set.intersection(*(items for items, _ in requirements)),
-            set.intersection(*(costs for _, costs in requirements)),
+            set.intersection(*(items for items, _, _ in requirements)),
+            set.intersection(*(costs for _, costs, _ in requirements)),
+            set.intersection(*(payments for _, _, payments in requirements)),
         )
 
     for option in analysis.options:
@@ -408,10 +503,12 @@ def build_quest_summaries(analysis: GraphAnalysis, phrase_unlocks: dict[str, lis
                     summary.phrase_unlock_sources.append(
                         "Beim neuen Spiel sichtbar (MultiAnswerGUI-Regel: kein @-Präfix)"
                     )
-        inherited_items, inherited_costs = inherited_menu_prices.get(
-            option.multi_answer_node, (set(), set()))
+        inherited_items, inherited_costs, inherited_payments = inherited_menu_prices.get(
+            option.multi_answer_node, (set(), set(), set()))
         _append_unique(summary.required_items, sorted(inherited_items))
         _append_unique(summary.costs, sorted(inherited_costs))
+        _append_unique(summary.item_payments, sorted(
+            inherited_payments, key=lambda payment: (payment.item.casefold(), display_value(payment.amount))))
         _add_answer_data(summary, option)
         _append_unique(summary.uncertainties, option.issues)
         _append_unique(summary.uncertainties, path_issues)
@@ -422,6 +519,7 @@ def build_quest_summaries(analysis: GraphAnalysis, phrase_unlocks: dict[str, lis
                 _inventory_requirements_for_path(analysis.graph, resolver, path))
             summary.evidence.append(" -> ".join(path))
         _add_common_inventory_requirements(summary, inventory_requirements)
+        _remove_returned_item_drops(summary)
         has_script_call = any(
             analysis.graph.nodes[node_id].type_name == "Flow_RunScript"
             for node_id in summary.node_ids
@@ -464,6 +562,7 @@ def build_quest_summaries(analysis: GraphAnalysis, phrase_unlocks: dict[str, lis
             _append_unique(summary.uncertainties, path.incomplete_reasons)
             summary.evidence.append(" -> ".join(path.node_ids))
         _add_common_inventory_requirements(summary, inventory_requirements)
+        _remove_returned_item_drops(summary)
         summaries.append(summary)
 
     summaries.sort(key=lambda entry: (

@@ -25,6 +25,7 @@ CULTIST_DUMP = COMPANION_DUMP.with_name("npc_cultist.json")
 TAVERN_SKULL_DUMP = COMPANION_DUMP.with_name("tavern_skull.json")
 INQUISITOR_DUMP = COMPANION_DUMP.with_name("npc_inquisitor.json")
 GYPSY_DUMP = COMPANION_DUMP.with_name("npc_gypsy.json")
+BISHOP_DUMP = COMPANION_DUMP.with_name("npc_bishop.json")
 
 
 class TestFlowGraphReports(FlowAnalysisTestCase):
@@ -159,6 +160,97 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertEqual(2, len(nested))
         self.assertTrue(all(summary.required_items == ["quest_fake_coins x1"] for summary in nested))
 
+    def test_item_returned_after_answer_price_is_not_a_reward(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "Flow_MultiAnswer", {"#0": {"$type": "AnswerData"}}, answers=["show_papers"]),
+            wrapper(2, "Flow_Answer", {"price": {}, "lock": {}, "reward": {}}),
+            wrapper(3, "Flow_SmartRes", {
+                "res_type": stored("Item"), "id": stored("rightful_citizen_paper"), "v": stored(1.0),
+            }),
+            node(4, "Flow_DropItem", {
+                "Res_id": stored("rightful_citizen_paper"), "Amount": stored(1),
+            }),
+            node(5, "Flow_UnlockPhrase", {"Phrase ID": stored("papers_shown")}),
+        ], [
+            edge(3, "Value", 2, "price", "SmartRes"),
+            edge(2, "Value", 1, "#0", "AnswerData"),
+            edge(1, "out_0", 4, "In"), edge(4, "Out", 5, "In"),
+        ]))
+
+        summary = build_quest_summaries(
+            analyze_graph(graph), {}, include_without_rewards=True,
+        )[0]
+
+        self.assertEqual(["rightful_citizen_paper x1"], summary.required_items)
+        self.assertEqual([], summary.item_drops)
+        self.assertEqual(["papers_shown"], summary.phrases_unlocked)
+
+    def test_item_return_excess_remains_a_reward(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "Flow_MultiAnswer", {"#0": {"$type": "AnswerData"}}, answers=["trade"]),
+            wrapper(2, "Flow_Answer", {"price": {}, "lock": {}, "reward": {}}),
+            wrapper(3, "Flow_SmartRes", {
+                "res_type": stored("Item"), "id": stored("token"), "v": stored(1.0),
+            }),
+            node(4, "Flow_DropItem", {"Res_id": stored("token"), "Amount": stored(3)}),
+        ], [
+            edge(3, "Value", 2, "price", "SmartRes"),
+            edge(2, "Value", 1, "#0", "AnswerData"),
+            edge(1, "out_0", 4, "In"),
+        ]))
+
+        summary = build_quest_summaries(analyze_graph(graph), {})[0]
+
+        self.assertEqual(["token x1"], summary.required_items)
+        self.assertEqual([("token", 2)], [
+            (drop.item, drop.amount) for drop in summary.item_drops
+        ])
+
+    def test_inventory_requirement_does_not_cancel_same_item_reward(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "CustomEvent"),
+            node(2, "Flow_CreateItem", {
+                "item_id": stored("token"), "value": stored(1.0, "System.Single")}),
+            node(3, "Flow_HasItemInInventory", {"Item": None, "Item ID": stored(None)}),
+            node(4, "Flow_DropItem", {"Res_id": stored("token"), "Amount": stored(1)}),
+        ], [
+            edge(1, "Out", 3, "In"), edge(2, "Value", 3, "Item", "Item"),
+            edge(3, "Yes", 4, "In"),
+        ]))
+
+        summary = build_quest_summaries(analyze_graph(graph), {})[0]
+
+        self.assertEqual(["token x1"], summary.required_items)
+        self.assertEqual([("token", 1)], [
+            (drop.item, drop.amount) for drop in summary.item_drops
+        ])
+
+    def test_remove_then_drop_is_a_return_but_drop_then_remove_is_a_reward(self) -> None:
+        def summary_for_order(remove_first: bool):
+            first, second = (2, 3) if remove_first else (3, 2)
+            graph = parse_graph(self.write_graph([
+                node(1, "Flow_MultiAnswer", {"#0": None}, answers=["exchange"]),
+                node(2, "Flow_RemoveItemFromInventory", {
+                    "Item ID": stored("token"), "Items Count": stored(1)}),
+                node(3, "Flow_DropItem", {"Res_id": stored("token"), "Amount": stored(1)}),
+                node(4, "Flow_UnlockPhrase", {"Phrase ID": stored("exchange_complete")}),
+            ], [
+                edge(1, "out_0", first, "In"), edge(first, "Out", second, "In"),
+                edge(second, "Out", 4, "In"),
+            ], name=f"fixture_{remove_first}"))
+            return build_quest_summaries(
+                analyze_graph(graph), {}, include_without_rewards=True,
+            )[0]
+
+        returned = summary_for_order(True)
+        rewarded = summary_for_order(False)
+
+        self.assertEqual(["token x1"], returned.required_items)
+        self.assertEqual([], returned.item_drops)
+        self.assertEqual([("token", 1)], [
+            (drop.item, drop.amount) for drop in rewarded.item_drops
+        ])
+
     def test_nested_choice_only_inherits_prices_common_to_every_entry_option(self) -> None:
         graph = parse_graph(self.write_graph([
             node(1, "Flow_MultiAnswer", {"#0": {"$type": "AnswerData"}, "#1": None},
@@ -195,6 +287,18 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
 
         for reference in ("npc_cultist:624:option:0", "npc_cultist:624:option:1"):
             self.assertEqual(["quest_fake_coins x1"], by_reference[reference].required_items)
+
+    def test_real_bishop_citizen_papers_are_consumed_without_a_return_reward(self) -> None:
+        if not BISHOP_DUMP.exists():
+            self.skipTest("local companion dump is not available")
+
+        analysis = analyze_graph(parse_graph(BISHOP_DUMP))
+        summary = next(value for value in build_quest_summaries(
+            analysis, build_phrase_unlock_index([analysis]), include_without_rewards=True,
+        ) if value.reference == "npc_bishop:1068:option:0")
+
+        self.assertEqual(["rightful_citizen_paper x1"], summary.required_items)
+        self.assertEqual([], summary.item_drops)
 
     def test_unresolved_standalone_reward_remains_visible(self) -> None:
         graph = parse_graph(self.write_graph([
