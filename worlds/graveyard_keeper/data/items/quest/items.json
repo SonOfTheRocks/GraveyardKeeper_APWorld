@@ -81,8 +81,8 @@
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
-  "ITEM_INFUSION_OF_FLY_AGARIC": {
-    "label": "Infusion of fly agaric",
+  "ITEM_SONG_LYRICS": {
+    "label": "Song lyrics",
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },

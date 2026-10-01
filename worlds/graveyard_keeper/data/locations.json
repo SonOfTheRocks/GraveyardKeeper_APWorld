@@ -70,17 +70,41 @@
     "parent_region": "REGION_LIGHTHOUSE"
   },
 
-  "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA": {
-    "label": "Farmer Reward - Get permission for Alisa to leave",
+  "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_1": {
+    "label": "Farmer Reward - Get permission for Alisa to leave (1)",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_2": {
+    "label": "Farmer Reward - Get permission for Alisa to leave (2)",
     "parent_region": "REGION_WHEAT_FARM"
   },
   "LOCATION_MS_CHARM_REWARD_GIVE_ALISAS_PAPERS": {
     "label": "Ms. Charm Reward - Give her Alisa's Papers",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
-  "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS": {
-    "label": "Ms. Charm Reward - Show her aristocrat papers",
+  "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_1": {
+    "label": "Ms. Charm Reward - Show her aristocrat papers (1)",
     "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_2": {
+    "label": "Ms. Charm Reward - Show her aristocrat papers (2)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_VAGNER_REWARD_MEET_AT_CLIFFS": {
+    "label": "Vagner Reward - Meet him at the cliffs",
+    "parent_region": "REGION_CLIFFS"
+  },
+  "LOCATION_MS_CHARM_REWARD_GIVE_SONG_LYRICS_1": {
+    "label": "Ms. Charm Reward - Give her the song lyrics (1)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_GIVE_SONG_LYRICS_2": {
+    "label": "Ms. Charm Reward - Give her the song lyrics (2)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_ASK_TO_HELP_RESCUE_VAGNER": {
+    "label": "Astrologer Reward - Ask him to help rescue Vagner",
+    "parent_region": "REGION_LIGHTHOUSE"
   },
 
 

@@ -161,9 +161,9 @@
     "rewards": ["LOCATION_ASTROLOGER_REWARD_TELL_ESMERALDAS_FATE"]
   },
   "EVENT_ASTROLOGER_TELL_ABOUT_MS_CHARM": {
-    "comment": "tell about ms. charm, get 10 relation",
-    "location_label": "Tell Astrologer about Ms. Charm",
-    "item_label": "Told Astrologer about Ms. Charm",
+    "comment": "Flow: npc_astrologer:44:option:7 (@astrologer_charm_no); grants 10 Astrologer happiness",
+    "location_label": "Tell Astrologer Ms. Charm knows nothing",
+    "item_label": "Told Astrologer Ms. Charm knows nothing",
     "dlc": "BASE_GAME",
     "required_quests": ["EVENT_MS_CHARM_ASK_ABOUT_FATHER"],
     "required_happiness": [],
@@ -198,7 +198,7 @@
     "location_label": "Talk about the expedition",
     "item_label": "Talked about the expedition",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_ASTROLOGER_TELL_ABOUT_MS_CHARM"],
+    "required_quests": ["EVENT_ASTROLOGER_ASK_TO_HELP_RESCUE_VAGNER"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -360,7 +360,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA"]
+    "rewards": [
+      "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_1",
+      "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_2"
+    ]
   },
   "EVENT_MS_CHARM_GIVE_ALISAS_PAPERS": {
     "comment": "Flow: npc_actress:30:option:7 requires alice_paper, grants 10 Ms. Charm happiness, and unlocks @actress_title",
@@ -382,7 +385,79 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ARISTOCRAT_PAPERS"],
     "required_craft_items": [],
-    "rewards": ["LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS"]
+    "rewards": [
+      "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_1",
+      "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_2"
+    ]
+  },
+  "EVENT_VAGNER_ASK_TO_WRITE_LOVE_SONG": {
+    "comment": "Flow: npc_actor:145:option:1 (@actor_song); unlocks the infusion craft and @actor_inspiration",
+    "location_label": "Ask Vagner to write a love song for Ms. Charm",
+    "item_label": "Asked Vagner to write a love song for Ms. Charm",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_SHOW_ARISTOCRAT_PAPERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_VAGNER_GIVE_INFUSION": {
+    "comment": "Flow: npc_actor:145:option:2 (@actor_inspiration); Answer.price requires infusion and sets remove_actor_from_tavern",
+    "location_label": "Give Vagner the infusion",
+    "item_label": "Gave Vagner the infusion",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_VAGNER_ASK_TO_WRITE_LOVE_SONG"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_INFUSION"],
+    "rewards": []
+  },
+  "EVENT_VAGNER_READ_NOTE": {
+    "comment": "Flow: remove_actor_from_tavern spawns actors_fake_object; interacting with it runs disapearing and sets actor_is_waiting_at_the_sea",
+    "location_label": "Read Vagner's note",
+    "item_label": "Read Vagner's note",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_VAGNER_GIVE_INFUSION"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_VAGNER_MEET_AT_CLIFFS": {
+    "comment": "Flow: on_enter_actor_hiding_place requires actor_is_waiting_at_the_sea and Night, then actor_satyr_cutscene drops actors_song",
+    "location_label": "Meet Vagner at the cliffs at night",
+    "item_label": "Met Vagner at the cliffs at night",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_VAGNER_READ_NOTE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_VAGNER_REWARD_MEET_AT_CLIFFS"]
+  },
+  "EVENT_MS_CHARM_GIVE_SONG_LYRICS": {
+    "comment": "Flow: npc_actress:30:option:9 has an Answer reward of 10 and an explicit Flow_AddRelation of 10; unlocks @astrologer_charm_know",
+    "location_label": "Give Ms. Charm the song lyrics",
+    "item_label": "Gave Ms. Charm the song lyrics",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_VAGNER_MEET_AT_CLIFFS"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_SONG_LYRICS"],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_MS_CHARM_REWARD_GIVE_SONG_LYRICS_1",
+      "LOCATION_MS_CHARM_REWARD_GIVE_SONG_LYRICS_2"
+    ]
+  },
+  "EVENT_ASTROLOGER_ASK_TO_HELP_RESCUE_VAGNER": {
+    "comment": "Flow: npc_astrologer:44:option:8 (@astrologer_charm_know); grants 10 Astrologer happiness and unlocks @astrolog_expedition",
+    "location_label": "Ask Astrologer to help rescue Vagner",
+    "item_label": "Asked Astrologer to help rescue Vagner",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_GIVE_SONG_LYRICS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_ASK_TO_HELP_RESCUE_VAGNER"]
   },
 
   "EVENT_SNAKE_MEET": {

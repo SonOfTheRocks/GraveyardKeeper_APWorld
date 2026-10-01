@@ -127,9 +127,29 @@ class TestAllQuestEvents(unittest.TestCase):
             set(repair_event.required_craft_items),
         )
         self.assertEqual(["EVENT_REPAIR_MILL"], list(permission_event.required_quests))
+        self.assertEqual(2, len(permission_event.rewards))
         self.assertEqual(["ITEM_ALISAS_PAPERS"], list(papers_event.required_quest_items))
         self.assertEqual(["EVENT_MS_CHARM_GIVE_ALISAS_PAPERS"], list(aristocrat_event.required_quests))
         self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(aristocrat_event.required_quest_items))
+        self.assertEqual(2, len(aristocrat_event.rewards))
+
+    def test_ms_charm_love_song_chain_matches_flow_requirements(self):
+        ask_event = data.events["EVENT_VAGNER_ASK_TO_WRITE_LOVE_SONG"]
+        infusion_event = data.events["EVENT_VAGNER_GIVE_INFUSION"]
+        note_event = data.events["EVENT_VAGNER_READ_NOTE"]
+        cliffs_event = data.events["EVENT_VAGNER_MEET_AT_CLIFFS"]
+        song_event = data.events["EVENT_MS_CHARM_GIVE_SONG_LYRICS"]
+        rescue_event = data.events["EVENT_ASTROLOGER_ASK_TO_HELP_RESCUE_VAGNER"]
+        expedition_event = data.events["EVENT_ASTROLOGER_TALK_ABOUT_EXPEDITION"]
+
+        self.assertEqual(["EVENT_MS_CHARM_SHOW_ARISTOCRAT_PAPERS"], list(ask_event.required_quests))
+        self.assertEqual(["ITEM_INFUSION"], list(infusion_event.required_craft_items))
+        self.assertEqual(["EVENT_VAGNER_GIVE_INFUSION"], list(note_event.required_quests))
+        self.assertEqual(["EVENT_VAGNER_READ_NOTE"], list(cliffs_event.required_quests))
+        self.assertEqual(["ITEM_SONG_LYRICS"], list(song_event.required_quest_items))
+        self.assertEqual(2, len(song_event.rewards))
+        self.assertEqual(["EVENT_MS_CHARM_GIVE_SONG_LYRICS"], list(rescue_event.required_quests))
+        self.assertEqual(["EVENT_ASTROLOGER_ASK_TO_HELP_RESCUE_VAGNER"], list(expedition_event.required_quests))
 
     def test_area_point_requirement_parser_rejects_invalid_values(self):
         for invalid_value in ("SACRIFICE_ZONE", "_20", "SACRIFICE_ZONE_0", "SACRIFICE_ZONE_-1"):
