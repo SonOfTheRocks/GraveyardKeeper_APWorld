@@ -50,7 +50,11 @@
     "parent_region": "REGION_LIGHTHOUSE"
   },
   "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS": {
-    "label": "Astrologer - Show him the Aristocrat papers",
+    "label": "Astrologer Reward - Show him the Aristocrat papers (1)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS_2": {
+    "label": "Astrologer Reward - Show him the Aristocrat papers (2)",
     "parent_region": "REGION_LIGHTHOUSE"
   },
   "LOCATION_ASTROLOGER_REWARD_TELL_ABOUT_MS_CHARM": {
@@ -104,6 +108,22 @@
   },
   "LOCATION_ASTROLOGER_REWARD_ASK_TO_HELP_RESCUE_VAGNER": {
     "label": "Astrologer Reward - Ask him to help rescue Vagner",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_1": {
+    "label": "Astrologer Reward - Rescue Vagner (1)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_2": {
+    "label": "Astrologer Reward - Rescue Vagner (2)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_3": {
+    "label": "Astrologer Reward - Rescue Vagner (3)",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_4": {
+    "label": "Astrologer Reward - Rescue Vagner (4)",
     "parent_region": "REGION_LIGHTHOUSE"
   },
 

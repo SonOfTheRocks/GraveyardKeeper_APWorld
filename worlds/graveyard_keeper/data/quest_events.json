@@ -227,15 +227,34 @@
     "rewards": ["LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_2"]
   },
   "EVENT_ASTROLOGER_SHOW_ARISTOCRAT_PAPERS": {
-    "comment": "astrologer_title, Bring aristocrat paper, get 10 relation -> astrologer_last0",
+    "comment": "Flow: npc_astrologer:44:option:12; requires and returns aristocrat_paper, grants 10 Astrologer happiness, and unlocks @astrologer_last_0",
     "location_label": "Show Astrologer aristocrat papers",
     "item_label": "Showed Astrologer aristocrat papers",
     "dlc": "BASE_GAME",
     "required_quests": ["EVENT_ASTROLOGER_RESTORE_REPUTATION_2"],
     "required_happiness": [],
+    "required_quest_items": ["ITEM_ARISTOCRAT_PAPERS"],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS",
+      "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS_2"
+    ]
+  },
+  "EVENT_ASTROLOGER_RESCUE_VAGNER": {
+    "comment": "Flow: npc_astrologer:44:option:15 runs archaeological_excavations; its linear ending grants 10 Ms. Charm happiness, necklace, 10 Astrologer happiness, and sextant (Golden angle)",
+    "location_label": "Rescue Vagner with Astrologer and Ms. Charm",
+    "item_label": "Rescued Vagner with Astrologer and Ms. Charm",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_SHOW_ARISTOCRAT_PAPERS"],
+    "required_happiness": ["ASTROLOGER_90"],
     "required_quest_items": [],
-    "required_craft_items": ["ITEM_ARISTOCRAT_PAPERS"],
-    "rewards": ["LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS"]
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_1",
+      "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_2",
+      "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_3",
+      "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_4"
+    ]
   },
 
   "EVENT_MS_CHARM_PROVE_YOUR_WORTH": {

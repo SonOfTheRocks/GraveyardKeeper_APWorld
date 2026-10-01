@@ -8,7 +8,7 @@ from ..fakes import FakeWorld
 from ..rule_evaluation import QuestRuleEvaluator
 from ...data import data, load_json_data
 from ...logic.custom_rules import CanComplete
-from ...models import AreaPointData, DLCType, QuestEventData
+from ...models import AreaPointData, DLCType, HappinessData, QuestEventData
 
 
 class TestAllQuestEvents(unittest.TestCase):
@@ -150,6 +150,24 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(2, len(song_event.rewards))
         self.assertEqual(["EVENT_MS_CHARM_GIVE_SONG_LYRICS"], list(rescue_event.required_quests))
         self.assertEqual(["EVENT_ASTROLOGER_ASK_TO_HELP_RESCUE_VAGNER"], list(expedition_event.required_quests))
+
+    def test_astrologer_rescue_expedition_matches_linear_flow_rewards(self):
+        papers_event = data.events["EVENT_ASTROLOGER_SHOW_ARISTOCRAT_PAPERS"]
+        rescue_event = data.events["EVENT_ASTROLOGER_RESCUE_VAGNER"]
+
+        self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(papers_event.required_quest_items))
+        self.assertEqual([], list(papers_event.required_craft_items))
+        self.assertEqual(2, len(papers_event.rewards))
+        self.assertEqual(
+            ["EVENT_ASTROLOGER_SHOW_ARISTOCRAT_PAPERS"],
+            list(rescue_event.required_quests),
+        )
+        self.assertEqual(
+            [HappinessData("ASTROLOGER", 90)],
+            list(rescue_event.required_happiness),
+        )
+        self.assertEqual(4, len(rescue_event.rewards))
+        self.assertIn("EVENT_ASTROLOGER_RESCUE_VAGNER", data.regions["REGION_LIGHTHOUSE"].events)
 
     def test_area_point_requirement_parser_rejects_invalid_values(self):
         for invalid_value in ("SACRIFICE_ZONE", "_20", "SACRIFICE_ZONE_0", "SACRIFICE_ZONE_-1"):

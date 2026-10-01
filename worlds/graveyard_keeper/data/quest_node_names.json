@@ -24,6 +24,8 @@
   "npc_astrologer:44:option:11": "Restore Astrologer's reputation (gold book)",
   "npc_astrologer:44:option:12": "Show Astrologer aristocrat papers",
   "npc_astrologer:44:option:14": "Ask Astrologer about the mill fix",
+  "npc_astrologer:44:option:15": "Rescue Vagner with Astrologer and Ms. Charm",
+  "script-call:npc_astrologer.json:1170": "Rescue Vagner with Astrologer and Ms. Charm",
   "npc_actor:145:option:1": "Ask Vagner to write a love song for Ms. Charm",
   "npc_actor:145:option:2": "Give Vagner the infusion",
   "npc_cultist:106:option:0": "Prove you are the Graveyard Keeper to Snake",
