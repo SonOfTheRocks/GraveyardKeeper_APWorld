@@ -340,6 +340,50 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_REPAIR_MILL": {
+    "comment": "Flow: repair_mill checks fixed_mill, then attaches miller_after_fix; craft data requires Paper with calculations, Wooden planks, and Complex iron parts",
+    "location_label": "Repair the mill",
+    "item_label": "Repaired the mill",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_ASK_ABOUT_MILL_FIX"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PAPER_WITH_CALCULATIONS"],
+    "required_craft_items": ["ITEM_WOODEN_PLANK", "ITEM_COMPLEX_IRON_PARTS"],
+    "rewards": []
+  },
+  "EVENT_FARMER_GET_PERMISSION_FOR_ALISA": {
+    "comment": "Flow: npc_miller miller_after_fix adds farmer_alisa_done to the Farmer; that interaction grants 10 Farmer happiness and Alisa's Papers",
+    "location_label": "Get the Farmer's permission for Alisa to leave",
+    "item_label": "Got the Farmer's permission for Alisa to leave",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_REPAIR_MILL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA"]
+  },
+  "EVENT_MS_CHARM_GIVE_ALISAS_PAPERS": {
+    "comment": "Flow: npc_actress:30:option:7 requires alice_paper, grants 10 Ms. Charm happiness, and unlocks @actress_title",
+    "location_label": "Give Ms. Charm Alisa's Papers",
+    "item_label": "Gave Ms. Charm Alisa's Papers",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_FARMER_GET_PERMISSION_FOR_ALISA"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ALISAS_PAPERS"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_ALISAS_PAPERS"]
+  },
+  "EVENT_MS_CHARM_SHOW_ARISTOCRAT_PAPERS": {
+    "comment": "Flow: npc_actress:30:option:8 requires aristocrat_paper, grants 10 Ms. Charm happiness, and unlocks @actor_song",
+    "location_label": "Show Ms. Charm aristocrat papers",
+    "item_label": "Showed Ms. Charm aristocrat papers",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_GIVE_ALISAS_PAPERS"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ARISTOCRAT_PAPERS"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS"]
+  },
 
   "EVENT_SNAKE_MEET": {
     "comment": "Flow: on_enter_cultist_zone starts npc_cultist intro when met_cultist == 0 and Snake is present; region access already requires removing the cellar blockage",

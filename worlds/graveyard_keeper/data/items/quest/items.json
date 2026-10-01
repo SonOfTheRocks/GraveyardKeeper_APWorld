@@ -46,6 +46,11 @@
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
+  "ITEM_ALISAS_PAPERS": {
+    "label": "Alisa's Papers",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
   "ITEM_BASKET_OF_FOOD": {
     "label": "Basket of food",
     "dlc": "BASE_GAME",

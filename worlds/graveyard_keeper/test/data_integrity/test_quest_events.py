@@ -111,6 +111,26 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(farmer_event.rewards))
         self.assertEqual([], list(miller_event.rewards))
 
+    def test_fixing_the_mill_and_alisa_chain_matches_flow_requirements(self):
+        repair_event = data.events["EVENT_REPAIR_MILL"]
+        permission_event = data.events["EVENT_FARMER_GET_PERMISSION_FOR_ALISA"]
+        papers_event = data.events["EVENT_MS_CHARM_GIVE_ALISAS_PAPERS"]
+        aristocrat_event = data.events["EVENT_MS_CHARM_SHOW_ARISTOCRAT_PAPERS"]
+
+        self.assertEqual(
+            ["EVENT_ASTROLOGER_ASK_ABOUT_MILL_FIX"],
+            list(repair_event.required_quests),
+        )
+        self.assertEqual(["ITEM_PAPER_WITH_CALCULATIONS"], list(repair_event.required_quest_items))
+        self.assertEqual(
+            {"ITEM_WOODEN_PLANK", "ITEM_COMPLEX_IRON_PARTS"},
+            set(repair_event.required_craft_items),
+        )
+        self.assertEqual(["EVENT_REPAIR_MILL"], list(permission_event.required_quests))
+        self.assertEqual(["ITEM_ALISAS_PAPERS"], list(papers_event.required_quest_items))
+        self.assertEqual(["EVENT_MS_CHARM_GIVE_ALISAS_PAPERS"], list(aristocrat_event.required_quests))
+        self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(aristocrat_event.required_quest_items))
+
     def test_area_point_requirement_parser_rejects_invalid_values(self):
         for invalid_value in ("SACRIFICE_ZONE", "_20", "SACRIFICE_ZONE_0", "SACRIFICE_ZONE_-1"):
             with self.subTest(value=invalid_value):

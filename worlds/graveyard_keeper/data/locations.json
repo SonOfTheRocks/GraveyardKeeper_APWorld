@@ -70,6 +70,19 @@
     "parent_region": "REGION_LIGHTHOUSE"
   },
 
+  "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA": {
+    "label": "Farmer Reward - Get permission for Alisa to leave",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_MS_CHARM_REWARD_GIVE_ALISAS_PAPERS": {
+    "label": "Ms. Charm Reward - Give her Alisa's Papers",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS": {
+    "label": "Ms. Charm Reward - Show her aristocrat papers",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+
 
   "LOCATION_DONKEY_MEET": {
     "label": "Donkey - Meet the Donkey",
