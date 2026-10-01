@@ -38,6 +38,106 @@
     "rewards": []
   },
 
+  "EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP": {
+    "comment": "Flow: npc_royal_box:40:option:0 (mailbox_1a_1_al); the initial citizen-status payment rewards +30 Royal Services happiness",
+    "location_label": "Buy citizen status from Royal Services",
+    "item_label": "Bought citizen status from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_BUY_CITIZENSHIP"]
+  },
+  "EVENT_ROYAL_SERVICES_BUY_ROYAL_STAMP": {
+    "comment": "Flow: npc_royal_box:52:option:0; available in the citizen-status menu and locked at 30 Royal Services happiness",
+    "location_label": "Buy the royal stamp from Royal Services",
+    "item_label": "Bought the royal stamp from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_30"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_BUY_ROYAL_STAMP"]
+  },
+  "EVENT_ROYAL_SERVICES_BUY_BUILDING_PERMISSION": {
+    "comment": "Flow: npc_royal_box:45:option:0; available in the citizen-status menu and locked at 30 Royal Services happiness",
+    "location_label": "Buy the building permission from Royal Services",
+    "item_label": "Bought the building permission from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_30"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_BUY_BUILDING_PERMISSION"]
+  },
+  "EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP": {
+    "comment": "Flow: npc_royal_box:83:option:0 (mailbox_1a_2_al); the status payment is locked at 30 Royal Services happiness and rewards +35",
+    "location_label": "Buy rightful citizen status from Royal Services",
+    "item_label": "Bought rightful citizen status from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_30"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_BUY_RIGHTFUL_CITIZENSHIP"]
+  },
+  "EVENT_ROYAL_SERVICES_CLAIM_RIGHTFUL_CITIZEN_PAPERS": {
+    "comment": "Flow: npc_royal_box:63:option:1 (mailbox_citizen_paper); locked at 65 Royal Services happiness and drops rightful_citizen_paper",
+    "location_label": "Claim the rightful citizen papers from Royal Services",
+    "item_label": "Claimed the rightful citizen papers from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_65"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_CLAIM_RIGHTFUL_CITIZEN_PAPERS"]
+  },
+  "EVENT_ROYAL_SERVICES_CLAIM_TOWN_PASS": {
+    "comment": "Flow: npc_royal_box:63:option:2 (mailbox_townpass); locked at 65 Royal Services happiness and drops town_pass",
+    "location_label": "Claim the town pass from Royal Services",
+    "item_label": "Claimed the town pass from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_65"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_CLAIM_TOWN_PASS"]
+  },
+  "EVENT_ROYAL_SERVICES_BUY_TRADE_LICENSE": {
+    "comment": "Flow: npc_royal_box:68:option:0 (mailbox_merchant_traide_license); locked at 65 Royal Services happiness and drops merchant_traide_license",
+    "location_label": "Buy the trade license from Royal Services",
+    "item_label": "Bought the trade license from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_65"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_BUY_TRADE_LICENSE"]
+  },
+  "EVENT_ROYAL_SERVICES_BUY_ARISTOCRAT_STATUS": {
+    "comment": "Flow: npc_royal_box:95:option:0 (mailbox_1a_3_al); the status payment is locked at 65 Royal Services happiness and rewards +35",
+    "location_label": "Buy aristocrat status from Royal Services",
+    "item_label": "Bought aristocrat status from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP"],
+    "required_happiness": ["ROYAL_SERVICES_65"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_BUY_ARISTOCRAT_STATUS"]
+  },
+  "EVENT_ROYAL_SERVICES_CLAIM_ARISTOCRAT_PAPERS": {
+    "comment": "Flow: npc_royal_box:90:option:1 (mailbox_aristocrat_paper); locked at 100 Royal Services happiness and drops aristocrat_paper",
+    "location_label": "Claim the aristocrat papers from Royal Services",
+    "item_label": "Claimed the aristocrat papers from Royal Services",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ROYAL_SERVICES_BUY_ARISTOCRAT_STATUS"],
+    "required_happiness": ["ROYAL_SERVICES_100"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_CLAIM_ARISTOCRAT_PAPERS"]
+  },
+
   "EVENT_GERRY_GET_GERRY_BEER": {
     "location_label": "Get Gerry Beer",
     "item_label": "Got Gerry Beer",

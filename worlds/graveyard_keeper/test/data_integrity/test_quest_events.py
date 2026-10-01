@@ -169,6 +169,64 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(4, len(rescue_event.rewards))
         self.assertIn("EVENT_ASTROLOGER_RESCUE_VAGNER", data.regions["REGION_LIGHTHOUSE"].events)
 
+    def test_royal_services_status_and_document_chain_matches_flow_requirements(self):
+        citizen = data.events["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"]
+        stamp = data.events["EVENT_ROYAL_SERVICES_BUY_ROYAL_STAMP"]
+        building = data.events["EVENT_ROYAL_SERVICES_BUY_BUILDING_PERMISSION"]
+        rightful = data.events["EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP"]
+        rightful_papers = data.events["EVENT_ROYAL_SERVICES_CLAIM_RIGHTFUL_CITIZEN_PAPERS"]
+        town_pass = data.events["EVENT_ROYAL_SERVICES_CLAIM_TOWN_PASS"]
+        trade_license = data.events["EVENT_ROYAL_SERVICES_BUY_TRADE_LICENSE"]
+        aristocrat = data.events["EVENT_ROYAL_SERVICES_BUY_ARISTOCRAT_STATUS"]
+        aristocrat_papers = data.events["EVENT_ROYAL_SERVICES_CLAIM_ARISTOCRAT_PAPERS"]
+
+        self.assertEqual([], list(citizen.required_quests))
+        self.assertEqual(1, len(citizen.rewards))
+        for citizen_purchase in (stamp, building, rightful):
+            self.assertEqual(
+                ["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"],
+                list(citizen_purchase.required_quests),
+            )
+            self.assertEqual(
+                [HappinessData("ROYAL_SERVICES", 30)],
+                list(citizen_purchase.required_happiness),
+            )
+            self.assertEqual(1, len(citizen_purchase.rewards))
+
+        for rightful_purchase in (rightful_papers, town_pass, trade_license, aristocrat):
+            self.assertEqual(
+                ["EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP"],
+                list(rightful_purchase.required_quests),
+            )
+            self.assertEqual(
+                [HappinessData("ROYAL_SERVICES", 65)],
+                list(rightful_purchase.required_happiness),
+            )
+            self.assertEqual(1, len(rightful_purchase.rewards))
+
+        self.assertEqual(
+            ["EVENT_ROYAL_SERVICES_BUY_ARISTOCRAT_STATUS"],
+            list(aristocrat_papers.required_quests),
+        )
+        self.assertEqual(
+            [HappinessData("ROYAL_SERVICES", 100)],
+            list(aristocrat_papers.required_happiness),
+        )
+        self.assertEqual(1, len(aristocrat_papers.rewards))
+        self.assertIn("ITEM_TRADE_LICENSE", data.items)
+        for event_key in (
+            "EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP",
+            "EVENT_ROYAL_SERVICES_BUY_ROYAL_STAMP",
+            "EVENT_ROYAL_SERVICES_BUY_BUILDING_PERMISSION",
+            "EVENT_ROYAL_SERVICES_BUY_RIGHTFUL_CITIZENSHIP",
+            "EVENT_ROYAL_SERVICES_CLAIM_RIGHTFUL_CITIZEN_PAPERS",
+            "EVENT_ROYAL_SERVICES_CLAIM_TOWN_PASS",
+            "EVENT_ROYAL_SERVICES_BUY_TRADE_LICENSE",
+            "EVENT_ROYAL_SERVICES_BUY_ARISTOCRAT_STATUS",
+            "EVENT_ROYAL_SERVICES_CLAIM_ARISTOCRAT_PAPERS",
+        ):
+            self.assertIn(event_key, data.regions["REGION_OLD_GRAVEYARD"].events)
+
     def test_bishop_base_game_questline_matches_flow_requirements(self):
         meet = data.events["EVENT_BISHOP_MEET"]
         church_open = data.events["EVENT_CHURCH_OPEN"]

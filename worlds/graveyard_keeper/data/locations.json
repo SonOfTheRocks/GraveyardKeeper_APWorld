@@ -467,20 +467,40 @@
     "label": "The Village - Look at Eggs",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_ROYAL_SERVICES_CITIZEN_PAY":{
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_CITIZENSHIP":{
     "label": "Royal Services - Citizen/Pay 10 Bronze",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
-  "LOCATION_ROYAL_SERVICES_CITIZEN_ROYAL_STAMP":{
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_ROYAL_STAMP":{
     "label": "Royal Services - Citizen/Royal Stamp (30 Happiness)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
-  "LOCATION_ROYAL_SERVICES_CITIZEN_BUILDING_PERMISSION":{
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_BUILDING_PERMISSION":{
     "label": "Royal Services - Citizen/Building Permission (30 Happiness)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
-  "LOCATION_ROYAL_SERVICES_RIGHTFUL_CITIZEN_PAY":{
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_RIGHTFUL_CITIZENSHIP":{
     "label": "Royal Services - Rightful Citizen/Pay 3 Silver (30 Happiness)",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_REWARD_CLAIM_RIGHTFUL_CITIZEN_PAPERS": {
+    "label": "Royal Services Reward - Claim rightful citizen papers",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_REWARD_CLAIM_TOWN_PASS": {
+    "label": "Royal Services Reward - Claim town pass",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_TRADE_LICENSE": {
+    "label": "Royal Services Reward - Buy trade license",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_ARISTOCRAT_STATUS": {
+    "label": "Royal Services Reward - Buy aristocrat status",
+    "parent_region": "REGION_OLD_GRAVEYARD"
+  },
+  "LOCATION_ROYAL_SERVICES_REWARD_CLAIM_ARISTOCRAT_PAPERS": {
+    "label": "Royal Services Reward - Claim aristocrat papers",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
   "LOCATION_ROYAL_SERVICES_WRITE_A_LETTER_TO_VAGNER": {

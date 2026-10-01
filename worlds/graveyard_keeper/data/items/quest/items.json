@@ -56,6 +56,11 @@
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
+  "ITEM_TRADE_LICENSE": {
+    "label": "Trade license",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION"
+  },
   "ITEM_ALISAS_PAPERS": {
     "label": "Alisa's Papers",
     "dlc": "BASE_GAME",
