@@ -20,7 +20,7 @@
   "ITEM_MERCHANT_HAPPINESS_10": {
     "label": "Merchant - Happiness +10",
     "dlc": "BASE_GAME",
-    "classification": "FILLER",
+    "classification": "PROGRESSION",
     "amount": 10
   },
   "ITEM_MS_CHARM_HAPPINESS_10": {

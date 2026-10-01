@@ -262,6 +262,38 @@
     "label": "Merchant Reward - Let him taste the mysterious food sauce",
     "parent_region": "REGION_THE_VILLAGE"
   },
+  "LOCATION_MERCHANT_REWARD_GIVE_SPICES": {
+    "label": "Merchant Reward - Give him spices",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_GIVE_DINNER": {
+    "label": "Merchant Reward - Give him a gold-star dinner",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_SHOW_TRADE_LICENSE": {
+    "label": "Merchant Reward - Show him the trade license",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_COMPLETE_MARKETING": {
+    "label": "Merchant Reward - Complete the marketing campaign",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_COMPLETE_SALES": {
+    "label": "Merchant Reward - Sell crates through the trade office",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_DISCUSS_STRATEGY": {
+    "label": "Merchant Reward - Discuss the royal dinner strategy",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_REPORT_MS_CHARM_SUPPORT": {
+    "label": "Merchant Reward - Report Ms. Charm's support",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_MERCHANT_REWARD_INVITE_TO_FINAL_CEREMONY": {
+    "label": "Merchant Reward - Invite him to the final ceremony",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
 
 
   "LOCATION_MS_CHARM_REWARD_PROVE_YOUR_WORTH": {
@@ -370,7 +402,7 @@
   },
 
 
-  "LOCATION_HORADRIC_ASK_ABOUT_KITCHEN_GARDEN": {
+  "LOCATION_HORADRIC_REWARD_ASK_ABOUT_KITCHEN_GARDEN": {
     "label": "Horadric - Ask about kitchen garden",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },

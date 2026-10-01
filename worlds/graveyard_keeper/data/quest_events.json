@@ -138,6 +138,290 @@
     "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_CLAIM_ARISTOCRAT_PAPERS"]
   },
 
+  "EVENT_INSPECT_KITCHEN_GARDEN": {
+    "comment": "Flow: garden_builddesk_broken:2 broken_info unlocks @horadric_2_1d and records saw_garden",
+    "location_label": "Inspect the abandoned kitchen garden",
+    "item_label": "Inspected the abandoned kitchen garden",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_HORADRIC_ASK_ABOUT_KITCHEN_GARDEN": {
+    "comment": "Flow: npc_tavern owner:13:option:2; normally drops scroll_garden_prop and unlocks @merchant_2b",
+    "location_label": "Ask Horadric about the kitchen garden",
+    "item_label": "Asked Horadric about the kitchen garden",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INSPECT_KITCHEN_GARDEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_HORADRIC_REWARD_ASK_ABOUT_KITCHEN_GARDEN"]
+  },
+  "EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL": {
+    "comment": "Flow: npc_merchant:127:option:0; the barter path makes merchant_garden visible and unlocks both @merchant_favore and @merchant_2e",
+    "location_label": "Accept the Merchant's vegetable deal",
+    "item_label": "Accepted the Merchant's vegetable deal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_HORADRIC_ASK_ABOUT_KITCHEN_GARDEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_GIVE_CARROTS": {
+    "comment": "Flow: npc_merchant:190:option:0; the price is carrot_crop x12 and the path increments garden_deal",
+    "location_label": "Give the Merchant carrots for the vegetable deal",
+    "item_label": "Gave the Merchant carrots for the vegetable deal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CARROT"],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_GIVE_CABBAGES": {
+    "comment": "Flow: npc_merchant:190:option:1; the price is cabbage_crop x12 and the path increments garden_deal",
+    "location_label": "Give the Merchant cabbages for the vegetable deal",
+    "item_label": "Gave the Merchant cabbages for the vegetable deal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CABBAGE"],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_GIVE_BEETS": {
+    "comment": "Flow: npc_merchant:190:option:2; the price is beet_crop x12 and the path increments garden_deal",
+    "location_label": "Give the Merchant beets for the vegetable deal",
+    "item_label": "Gave the Merchant beets for the vegetable deal",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BEET"],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_COMPLETE_VEGETABLE_DEAL": {
+    "comment": "Flow: npc_merchant nodes 266/268 call deal_compleat only when garden_deal reaches 3; node 525 grants the single +10 reward",
+    "location_label": "Complete the Merchant's vegetable deal",
+    "item_label": "Completed the Merchant's vegetable deal",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_MERCHANT_GIVE_CARROTS",
+      "EVENT_MERCHANT_GIVE_CABBAGES",
+      "EVENT_MERCHANT_GIVE_BEETS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MERCHANT_REWARD_GIVE_HIM_VEGETABLES"]
+  },
+  "EVENT_MERCHANT_ASK_FOR_LOAN": {
+    "comment": "Flow: npc_merchant:190:option:3 opens the loan choice after the vegetable deal has been accepted",
+    "location_label": "Ask the Merchant about a loan",
+    "item_label": "Asked the Merchant about a loan",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_ACCEPT_LOAN": {
+    "comment": "Flow: npc_merchant:231:option:0 makes merchant_debt visible, sets loan_taken, and unlocks @merchant_2e_1f",
+    "location_label": "Accept the Merchant's loan",
+    "item_label": "Accepted the Merchant's loan",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ASK_FOR_LOAN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_REPAY_LOAN": {
+    "comment": "Flow: npc_merchant:190:option:5 (@merchant_2e_1f); Answer.price is money x10 and Answer.reward is +10 Merchant happiness",
+    "location_label": "Repay the Merchant's loan",
+    "item_label": "Repaid the Merchant's loan",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ACCEPT_LOAN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MERCHANT_REWARD_REPAY_LOAN"]
+  },
+  "EVENT_MERCHANT_ASK_FOR_HICCUP_CURE": {
+    "comment": "Flow: npc_merchant:38:option:5 (@merchant_favore); the phrase is unlocked as soon as the vegetable barter is accepted",
+    "location_label": "Ask the Merchant about his hiccups",
+    "item_label": "Asked the Merchant about his hiccups",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_GIVE_HICCUP_GRASS": {
+    "comment": "Flow: npc_merchant:38:option:6; Answer.price is hiccup_grass and the path grants +10 Merchant happiness",
+    "location_label": "Give the Merchant hiccup grass",
+    "item_label": "Gave the Merchant hiccup grass",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ASK_FOR_HICCUP_CURE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_HICCUP_GRASS"],
+    "rewards": ["LOCATION_MERCHANT_REWARD_HICCUP_CURE"]
+  },
+  "EVENT_CLOTHO_ASK_ABOUT_MERCHANT_CURSE": {
+    "comment": "Flow: npc_witch:107:option:0 (@сlotho_merch); unlocks the spices recipe and @merchant_on_cure",
+    "location_label": "Ask Clotho about the Merchant's curse",
+    "item_label": "Asked Clotho about the Merchant's curse",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_GIVE_HICCUP_GRASS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_GIVE_SPICES": {
+    "comment": "Flow: npc_merchant:38:option:7; Answer.price is taste_booster:alchemy_1_spice, grants +10, and unlocks the dinner craft and phrase",
+    "location_label": "Give the Merchant spices",
+    "item_label": "Gave the Merchant spices",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CLOTHO_ASK_ABOUT_MERCHANT_CURSE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_SPICES"],
+    "rewards": ["LOCATION_MERCHANT_REWARD_GIVE_SPICES"]
+  },
+  "EVENT_MERCHANT_GIVE_GOLD_DINNER": {
+    "comment": "Flow: npc_merchant:38:option:8; Answer.price is dinner:3 x5 and Answer.reward is +10 Merchant happiness; quantities are intentionally not modeled",
+    "location_label": "Give the Merchant a gold-star dinner",
+    "item_label": "Gave the Merchant a gold-star dinner",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_GIVE_SPICES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_DINNER_GOLD"],
+    "rewards": ["LOCATION_MERCHANT_REWARD_GIVE_DINNER"]
+  },
+  "EVENT_MERCHANT_DISCUSS_TRADE_BUSINESS": {
+    "comment": "Flow: npc_merchant:938:option:0 (@merchant_on_deal_done_4a); follows deal_compleat and leads to the trade-license request",
+    "location_label": "Discuss selling vegetables in town with the Merchant",
+    "item_label": "Discussed selling vegetables in town with the Merchant",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_COMPLETE_VEGETABLE_DEAL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_SHOW_TRADE_LICENSE": {
+    "comment": "Flow: npc_merchant:38:option:9; Answer.price is merchant_traide_license, grants +10, opens the trade office, and starts marketing and sales",
+    "location_label": "Show the Merchant the trade license",
+    "item_label": "Showed the Merchant the trade license",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_DISCUSS_TRADE_BUSINESS"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_TRADE_LICENSE"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MERCHANT_REWARD_SHOW_TRADE_LICENSE"]
+  },
+  "EVENT_MERCHANT_COMPLETE_MARKETING": {
+    "comment": "Flow: npc_merchant:938:option:2; Answer.lock is GameRes storage_quality x3 and the path grants +10 Merchant happiness",
+    "location_label": "Complete the Merchant's marketing campaign",
+    "item_label": "Completed the Merchant's marketing campaign",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_SHOW_TRADE_LICENSE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["TRADE_OFFICE_3"],
+    "rewards": ["LOCATION_MERCHANT_REWARD_COMPLETE_MARKETING"]
+  },
+  "EVENT_MERCHANT_COMPLETE_SALES": {
+    "comment": "Flow: npc_merchant:938:option:3; Answer.lock is GameRes crates_sold_total x7 and the path grants +10; quantity is intentionally represented as access to a trade crate",
+    "location_label": "Complete the Merchant's crate sales",
+    "item_label": "Completed the Merchant's crate sales",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_SHOW_TRADE_LICENSE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_TRADE_CRATE"],
+    "rewards": ["LOCATION_MERCHANT_REWARD_COMPLETE_SALES"]
+  },
+  "EVENT_MERCHANT_DISCUSS_ROYAL_DINNER": {
+    "comment": "Flow: unlock_merchant_strategy fires after the dinner; npc_merchant:38:option:10 is locked at 70 Merchant happiness and grants +10",
+    "location_label": "Discuss the royal dinner with the Merchant",
+    "item_label": "Discussed the royal dinner with the Merchant",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_GIVE_GOLD_DINNER"],
+    "required_happiness": ["MERCHANT_70"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MERCHANT_REWARD_DISCUSS_STRATEGY"]
+  },
+  "EVENT_MERCHANT_ASK_FOR_MS_CHARM_SUPPORT": {
+    "comment": "Flow: npc_merchant:38:option:12 (@merchant_70); locked at 70 Merchant happiness and unlocks @actress_marketing",
+    "location_label": "Ask the Merchant how to gain council support",
+    "item_label": "Asked the Merchant how to gain council support",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_DISCUSS_ROYAL_DINNER"],
+    "required_happiness": ["MERCHANT_70"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_REPORT_MS_CHARM_SUPPORT": {
+    "comment": "Flow: npc_actress node 908 unlocks @merchant_actress; npc_merchant:38:option:14 grants +10 Merchant happiness",
+    "location_label": "Report Ms. Charm's support to the Merchant",
+    "item_label": "Reported Ms. Charm's support to the Merchant",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_GIVE_JEWELRY_FOR_BUSINESS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MERCHANT_REWARD_REPORT_MS_CHARM_SUPPORT"]
+  },
+  "EVENT_MERCHANT_INVITE_TO_FINAL_CEREMONY": {
+    "comment": "Flow: @merchant_ceremony becomes available only after merchant_on_cure has set player_knows_about_dream and the Inquisitor path has set need_merchant_in_sermon; option 13 is locked at 90 Merchant happiness and normally grants accepted_invitation",
+    "location_label": "Invite the Merchant to the final ceremony",
+    "item_label": "Invited the Merchant to the final ceremony",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_MERCHANT_GIVE_SPICES",
+      "TODO(EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY)"
+    ],
+    "required_happiness": ["MERCHANT_90"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MERCHANT_REWARD_INVITE_TO_FINAL_CEREMONY"]
+  },
+  "EVENT_MERCHANT_ASK_ABOUT_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_cultist node 2015 unlocks @merchant_magic_item after identifying the artifact holders; the Merchant then unlocks @merchant_magic_100",
+    "location_label": "Ask the Merchant about his portal artifact",
+    "item_label": "Asked the Merchant about his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_ASK_FOR_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_merchant:38:option:16 is locked at 100 Merchant happiness and normally rewards fork_salty; final_ceremony blacklists this option, so the missable action intentionally has no AP location",
+    "location_label": "Ask the Merchant to hand over his portal artifact",
+    "item_label": "Asked the Merchant to hand over his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MERCHANT_ASK_ABOUT_PORTAL_ARTIFACT"],
+    "required_happiness": ["MERCHANT_100"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+
   "EVENT_GERRY_GET_GERRY_BEER": {
     "location_label": "Get Gerry Beer",
     "item_label": "Got Gerry Beer",
@@ -348,7 +632,7 @@
     "dlc": "BASE_GAME",
     "required_quests": [
       "EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE",
-      "TODO(EVENT_MERCHANT_GIVE_ACCEPTED_INVITATION)"
+      "EVENT_MERCHANT_INVITE_TO_FINAL_CEREMONY"
     ],
     "required_happiness": [],
     "required_quest_items": ["ITEM_ACCEPTED_INVITATION"],
@@ -634,11 +918,23 @@
     "rewards": ["LOCATION_MS_CHARM_REWARD_GIVE_PERFUME"]
   },
   "EVENT_MS_CHARM_PROMOTE_BUSINESS": {
-    "location_label": "Promote your business via Ms. Charm",
-    "item_label": "Promoted your business via Ms. Charm",
+    "comment": "Flow: npc_actress:30:option:10 (@actress_marketing); the answer is locked at 40 Ms. Charm happiness and only unlocks the separate jewelry hand-in",
+    "location_label": "Ask Ms. Charm to promote the Merchant's business",
+    "item_label": "Asked Ms. Charm to promote the Merchant's business",
     "dlc": "BASE_GAME",
-    "required_quests": [],
+    "required_quests": ["EVENT_MERCHANT_ASK_FOR_MS_CHARM_SUPPORT"],
     "required_happiness": ["MS_CHARM_40"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MS_CHARM_GIVE_JEWELRY_FOR_BUSINESS": {
+    "comment": "Flow: npc_actress:30:option:11 (@actress_ jewelry); Answer.price is bijouterie_gold, give_marketing_point adds one trade-office fame, and node 908 unlocks @merchant_actress",
+    "location_label": "Give Ms. Charm jewelry for the Merchant's business",
+    "item_label": "Gave Ms. Charm jewelry for the Merchant's business",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_PROMOTE_BUSINESS"],
+    "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_JEWELRY"],
     "rewards": []

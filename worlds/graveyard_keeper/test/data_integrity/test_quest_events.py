@@ -227,6 +227,115 @@ class TestAllQuestEvents(unittest.TestCase):
         ):
             self.assertIn(event_key, data.regions["REGION_OLD_GRAVEYARD"].events)
 
+    def test_merchant_garden_route_requires_all_three_independent_vegetable_turn_ins(self):
+        inspect = data.events["EVENT_INSPECT_KITCHEN_GARDEN"]
+        horadric = data.events["EVENT_HORADRIC_ASK_ABOUT_KITCHEN_GARDEN"]
+        deal = data.events["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"]
+        carrots = data.events["EVENT_MERCHANT_GIVE_CARROTS"]
+        cabbages = data.events["EVENT_MERCHANT_GIVE_CABBAGES"]
+        beets = data.events["EVENT_MERCHANT_GIVE_BEETS"]
+        complete = data.events["EVENT_MERCHANT_COMPLETE_VEGETABLE_DEAL"]
+
+        self.assertEqual([], list(inspect.required_quests))
+        self.assertEqual(["EVENT_INSPECT_KITCHEN_GARDEN"], list(horadric.required_quests))
+        self.assertEqual(["EVENT_HORADRIC_ASK_ABOUT_KITCHEN_GARDEN"], list(deal.required_quests))
+        for turn_in, item_key in (
+            (carrots, "ITEM_CARROT"),
+            (cabbages, "ITEM_CABBAGE"),
+            (beets, "ITEM_BEET"),
+        ):
+            self.assertEqual(["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"], list(turn_in.required_quests))
+            self.assertEqual([item_key], list(turn_in.required_craft_items))
+            self.assertEqual([], list(turn_in.rewards))
+        self.assertEqual(
+            {
+                "EVENT_MERCHANT_GIVE_CARROTS",
+                "EVENT_MERCHANT_GIVE_CABBAGES",
+                "EVENT_MERCHANT_GIVE_BEETS",
+            },
+            set(complete.required_quests),
+        )
+        self.assertEqual(["LOCATION_MERCHANT_REWARD_GIVE_HIM_VEGETABLES"], list(complete.rewards))
+
+    def test_merchant_cure_and_dinner_route_matches_flow_requirements(self):
+        ask = data.events["EVENT_MERCHANT_ASK_FOR_HICCUP_CURE"]
+        grass = data.events["EVENT_MERCHANT_GIVE_HICCUP_GRASS"]
+        clotho = data.events["EVENT_CLOTHO_ASK_ABOUT_MERCHANT_CURSE"]
+        spices = data.events["EVENT_MERCHANT_GIVE_SPICES"]
+        dinner = data.events["EVENT_MERCHANT_GIVE_GOLD_DINNER"]
+        strategy = data.events["EVENT_MERCHANT_DISCUSS_ROYAL_DINNER"]
+
+        self.assertEqual(["EVENT_MERCHANT_ACCEPT_VEGETABLE_DEAL"], list(ask.required_quests))
+        self.assertEqual(["ITEM_HICCUP_GRASS"], list(grass.required_craft_items))
+        self.assertEqual(["EVENT_MERCHANT_GIVE_HICCUP_GRASS"], list(clotho.required_quests))
+        self.assertEqual(["ITEM_SPICES"], list(spices.required_craft_items))
+        self.assertEqual(["EVENT_MERCHANT_GIVE_SPICES"], list(dinner.required_quests))
+        self.assertEqual(["ITEM_DINNER_GOLD"], list(dinner.required_craft_items))
+        self.assertEqual([HappinessData("MERCHANT", 70)], list(strategy.required_happiness))
+
+    def test_merchant_trade_office_tasks_are_independent_after_showing_license(self):
+        discuss = data.events["EVENT_MERCHANT_DISCUSS_TRADE_BUSINESS"]
+        license_event = data.events["EVENT_MERCHANT_SHOW_TRADE_LICENSE"]
+        marketing = data.events["EVENT_MERCHANT_COMPLETE_MARKETING"]
+        sales = data.events["EVENT_MERCHANT_COMPLETE_SALES"]
+
+        self.assertEqual(["EVENT_MERCHANT_COMPLETE_VEGETABLE_DEAL"], list(discuss.required_quests))
+        self.assertEqual(["ITEM_TRADE_LICENSE"], list(license_event.required_quest_items))
+        for task in (marketing, sales):
+            self.assertEqual(["EVENT_MERCHANT_SHOW_TRADE_LICENSE"], list(task.required_quests))
+            self.assertEqual(1, len(task.rewards))
+        self.assertEqual([AreaPointData("TRADE_OFFICE", 3)], list(marketing.required_area_points))
+        self.assertEqual(["ITEM_TRADE_CRATE"], list(sales.required_craft_items))
+
+    def test_ms_charm_business_request_and_jewelry_hand_in_are_separate(self):
+        request = data.events["EVENT_MS_CHARM_PROMOTE_BUSINESS"]
+        jewelry = data.events["EVENT_MS_CHARM_GIVE_JEWELRY_FOR_BUSINESS"]
+        report = data.events["EVENT_MERCHANT_REPORT_MS_CHARM_SUPPORT"]
+
+        self.assertEqual(["EVENT_MERCHANT_ASK_FOR_MS_CHARM_SUPPORT"], list(request.required_quests))
+        self.assertEqual([HappinessData("MS_CHARM", 40)], list(request.required_happiness))
+        self.assertEqual([], list(request.required_craft_items))
+        self.assertEqual(["EVENT_MS_CHARM_PROMOTE_BUSINESS"], list(jewelry.required_quests))
+        self.assertEqual(["ITEM_JEWELRY"], list(jewelry.required_craft_items))
+        self.assertEqual([], list(jewelry.rewards))
+        self.assertEqual(["EVENT_MS_CHARM_GIVE_JEWELRY_FOR_BUSINESS"], list(report.required_quests))
+        self.assertEqual(1, len(report.rewards))
+
+    def test_merchant_final_ceremony_and_missable_artifact_match_flow(self):
+        invitation = data.events["EVENT_MERCHANT_INVITE_TO_FINAL_CEREMONY"]
+        ask_artifact = data.events["EVENT_MERCHANT_ASK_ABOUT_PORTAL_ARTIFACT"]
+        artifact = data.events["EVENT_MERCHANT_ASK_FOR_PORTAL_ARTIFACT"]
+
+        self.assertEqual(
+            {"EVENT_MERCHANT_GIVE_SPICES", "TODO(EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY)"},
+            set(invitation.required_quests),
+        )
+        self.assertEqual([HappinessData("MERCHANT", 90)], list(invitation.required_happiness))
+        self.assertEqual(1, len(invitation.rewards))
+        self.assertEqual(
+            ["EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS"],
+            list(ask_artifact.required_quests),
+        )
+        self.assertEqual([HappinessData("MERCHANT", 100)], list(artifact.required_happiness))
+        self.assertEqual([], list(artifact.rewards), "The ceremony can permanently hide this action")
+
+    def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
+        dinner = data.recipes["ITEM_DINNER_GOLD"]
+        crate = data.recipes["ITEM_TRADE_CRATE"]
+
+        self.assertEqual(1, len(dinner))
+        self.assertEqual(
+            {"ITEM_ONION_RINGS_GOLD", "ITEM_BURGER_GOLD", "ITEM_GRAPE_PIE_GOLD"},
+            set(dinner[0].ingredients),
+        )
+        self.assertEqual(
+            {"CRAFTING_STATION_COOKING_TABLE"},
+            set(dinner[0].workstations),
+        )
+        self.assertEqual(1, len(crate))
+        self.assertEqual({"ITEM_NAILS", "ITEM_FLITCH"}, set(crate[0].ingredients))
+        self.assertEqual({"CRAFTING_STATION_CRATE_FACTORY"}, set(crate[0].workstations))
+
     def test_bishop_base_game_questline_matches_flow_requirements(self):
         meet = data.events["EVENT_BISHOP_MEET"]
         church_open = data.events["EVENT_CHURCH_OPEN"]
@@ -300,7 +409,7 @@ class TestAllQuestEvents(unittest.TestCase):
 
         self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(aristocrat.required_quest_items))
         self.assertEqual(2, len(aristocrat.rewards))
-        self.assertIn("TODO(EVENT_MERCHANT_GIVE_ACCEPTED_INVITATION)", invitation.required_quests)
+        self.assertIn("EVENT_MERCHANT_INVITE_TO_FINAL_CEREMONY", invitation.required_quests)
         self.assertEqual(["ITEM_ACCEPTED_INVITATION"], list(invitation.required_quest_items))
         self.assertEqual(
             {"EVENT_BISHOP_SHOW_ARISTOCRAT_PAPERS", "EVENT_BISHOP_GIVE_ACCEPTED_INVITATION"},

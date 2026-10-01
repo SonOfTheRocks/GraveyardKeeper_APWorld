@@ -224,6 +224,32 @@
     }
   ],
 
+  "ITEM_DINNER_GOLD": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_COOKING_TABLE"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_ONION_RINGS_GOLD",
+        "ITEM_BURGER_GOLD",
+        "ITEM_GRAPE_PIE_GOLD"
+      ]
+    }
+  ],
+  "ITEM_TRADE_CRATE": [
+    {
+      "crafting_stations": [
+        "CRAFTING_STATION_CRATE_FACTORY"
+      ],
+      "recipe_required": "",
+      "materials_required": [
+        "ITEM_NAILS",
+        "ITEM_FLITCH"
+      ]
+    }
+  ],
+
   "ITEM_MYSTERIOUS_FOOD_SAUCE": [
     {
       "crafting_stations": [
