@@ -224,9 +224,9 @@
   },
 
 
-  "LOCATION_INQUISITOR_MEET": {
-    "label": "Inquisitor - Meet the Inquisitor",
-    "parent_region": "REGION_PLAINS"
+  "LOCATION_INQUISITOR_REWARD_ATTEND_FIRST_BURNING": {
+    "label": "Inquisitor Reward - Attend the First Witch Burning",
+    "parent_region": "REGION_WITCH_HILL"
   },
   "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FIREWOOD": {
     "label": "Inquisitor Reward - Burn the Witch (Bring Firewood)",
@@ -236,8 +236,48 @@
     "label": "Inquisitor Reward - Burn the Witch (Bring Flyers)",
     "parent_region": "REGION_WITCH_HILL"
   },
-  "LOCATION_INQUISITOR_I_THINK_I_CAN_BE_TRUSTED": {
-    "label": "Inquisitor - I think I can be trusted (20 Happiness)",
+  "LOCATION_INQUISITOR_REWARD_GET_GRAVEYARD_EXPANSION_PERMISSION": {
+    "label": "Inquisitor Reward - Get Graveyard Expansion Permission",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_ATTEND_SECOND_BURNING": {
+    "label": "Inquisitor Reward - Attend the Second Witch Burning",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_GIVE_RED_WINE": {
+    "label": "Inquisitor Reward - Give Silver-star Red Wine",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_ASK_TO_BUILD_BUFFET_TENT": {
+    "label": "Inquisitor Reward - Ask to Build the Buffet Tent",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_REPORT_BUFFET_TENT_READY": {
+    "label": "Inquisitor Reward - Report the Buffet Tent Ready",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING": {
+    "label": "Inquisitor Reward - Host the First Buffet Burning",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_GIVE_DARK_HEART": {
+    "label": "Inquisitor Reward - Give a Dark Heart",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_GIVE_DARK_BRAIN": {
+    "label": "Inquisitor Reward - Give a Dark Brain",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_GIVE_DARK_INTESTINE": {
+    "label": "Inquisitor Reward - Give a Dark Intestine",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_REPORT_PORTAL_GUARDS_REMOVED": {
+    "label": "Inquisitor Reward - Report the Portal Guards Removed",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_HAND_OVER_PORTAL_ARTIFACT": {
+    "label": "Inquisitor Reward - Hand over his Portal Artifact",
     "parent_region": "REGION_WITCH_HILL"
   },
   "LOCATION_INQUISITOR_SHOW_ASH": {

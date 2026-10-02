@@ -138,6 +138,260 @@
     "rewards": ["LOCATION_ROYAL_SERVICES_REWARD_CLAIM_ARISTOCRAT_PAPERS"]
   },
 
+  "EVENT_INQUISITOR_MEET": {
+    "comment": "Flow: npc_inquisitor first_meet_under_mountains sets met_inquisitor before the unavoidable first witch-burning sequence",
+    "location_label": "Meet the Inquisitor",
+    "item_label": "Met the Inquisitor",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_ATTEND_FIRST_BURNING": {
+    "comment": "Flow: npc_inquisitor on_came_to_mountain_for_witch_burning reaches node 440 and grants +10 Inquisitor happiness",
+    "location_label": "Attend the Inquisitor's first witch burning",
+    "item_label": "Attended the Inquisitor's first witch burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_ATTEND_FIRST_BURNING"]
+  },
+  "EVENT_INQUISITOR_PREPARE_SECOND_BURNING": {
+    "comment": "Flow: npc_inquisitor:704; both friendship answers expose equivalent firewood and flyer turn-ins, differing only in vanilla relation versus money rewards",
+    "location_label": "Agree to prepare the Inquisitor's second witch burning",
+    "item_label": "Agreed to prepare the Inquisitor's second witch burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ATTEND_FIRST_BURNING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_GIVE_FIREWOOD": {
+    "comment": "Flow: npc_inquisitor:736 options 3/5; Answer.price is firewood x20 and either branch advances the same burning task",
+    "location_label": "Give the Inquisitor firewood for the witch burning",
+    "item_label": "Gave the Inquisitor firewood for the witch burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_PREPARE_SECOND_BURNING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FIREWOOD"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FIREWOOD"]
+  },
+  "EVENT_INQUISITOR_GIVE_FLYERS": {
+    "comment": "Flow: npc_inquisitor:736 options 4/6; Answer.price is flyer:flyer_bad x10 and either branch advances the same burning task",
+    "location_label": "Give the Inquisitor flyers for the witch burning",
+    "item_label": "Gave the Inquisitor flyers for the witch burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_PREPARE_SECOND_BURNING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FLYER"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FLYERS"]
+  },
+  "EVENT_INQUISITOR_ATTEND_SECOND_BURNING": {
+    "comment": "Flow: npc_inquisitor second_witch_burning reaches node 1061, grants +10 happiness, and unlocks the wine and buffet-tent requests",
+    "location_label": "Attend the Inquisitor's second witch burning",
+    "item_label": "Attended the Inquisitor's second witch burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_GIVE_FIREWOOD", "EVENT_INQUISITOR_GIVE_FLYERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_ATTEND_SECOND_BURNING"]
+  },
+  "EVENT_INQUISITOR_GIVE_RED_WINE": {
+    "comment": "Flow: npc_inquisitor:843:option:3; Answer.price bottle_red_vine:2 x10 grants +10 happiness",
+    "location_label": "Give the Inquisitor silver-star red wine",
+    "item_label": "Gave the Inquisitor silver-star red wine",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ATTEND_SECOND_BURNING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_RED_WINE_SILVER"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_GIVE_RED_WINE"]
+  },
+  "EVENT_INQUISITOR_ASK_TO_BUILD_BUFFET_TENT": {
+    "comment": "Flow: npc_inquisitor:843:option:4 is locked at 50 happiness and grants +5 happiness",
+    "location_label": "Ask the Inquisitor about building a buffet tent",
+    "item_label": "Asked the Inquisitor about building a buffet tent",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ATTEND_SECOND_BURNING"],
+    "required_happiness": ["INQUISITOR_50"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_ASK_TO_BUILD_BUFFET_TENT"]
+  },
+  "EVENT_INQUISITOR_BUILD_BUFFET_TENT": {
+    "comment": "GameData craft place_tent_and_stall requires rope_hemp, wooden_plank, and nails; end_script g:place_tent_n_stall unlocks @inquisitor_tent_ready",
+    "location_label": "Build the buffet tent on Witch Hill",
+    "item_label": "Built the buffet tent on Witch Hill",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ASK_TO_BUILD_BUFFET_TENT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_HEMP_ROPE", "ITEM_WOODEN_PLANK", "ITEM_NAILS"],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_REPORT_BUFFET_TENT_READY": {
+    "comment": "Flow: npc_inquisitor:843:option:5 completes inquisitor_tent and grants +10 happiness",
+    "location_label": "Show the Inquisitor the completed buffet tent",
+    "item_label": "Showed the Inquisitor the completed buffet tent",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_BUILD_BUFFET_TENT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_REPORT_BUFFET_TENT_READY"]
+  },
+  "EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING": {
+    "comment": "GameData crafts beer_barrels_place and burgers_place require gold beer and burgers; witch_tasty_burning starts the persistent weekly counter and grants the first buffet-burning payout",
+    "location_label": "Host the first buffet witch burning",
+    "item_label": "Hosted the first buffet witch burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_REPORT_BUFFET_TENT_READY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_A_MUG_OF_BEER_GOLD", "ITEM_BURGER_GOLD"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING"]
+  },
+  "EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST": {
+    "comment": "Flow: on_came_to_finish increments do_count_weeks_after_first_tasty; at value >=4 it schedules inquisitor_black_event, which unlocks @inquisitor_dark",
+    "location_label": "Return to the Inquisitor four weeks after the first buffet burning",
+    "item_label": "Returned to the Inquisitor four weeks after the first buffet burning",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_GIVE_DARK_HEART": {
+    "comment": "Flow: npc_inquisitor:1556:option:0 independently accepts heart_dark and grants +5 happiness",
+    "location_label": "Give the Inquisitor a dark heart",
+    "item_label": "Gave the Inquisitor a dark heart",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_DARK_HEART"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_GIVE_DARK_HEART"]
+  },
+  "EVENT_INQUISITOR_GIVE_DARK_BRAIN": {
+    "comment": "Flow: npc_inquisitor:1556:option:1 independently accepts brain_dark and grants +5 happiness",
+    "location_label": "Give the Inquisitor a dark brain",
+    "item_label": "Gave the Inquisitor a dark brain",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_DARK_BRAIN"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_GIVE_DARK_BRAIN"]
+  },
+  "EVENT_INQUISITOR_GIVE_DARK_INTESTINE": {
+    "comment": "Flow: npc_inquisitor:1556:option:2 independently accepts intestine_dark and grants +5 happiness",
+    "location_label": "Give the Inquisitor a dark intestine",
+    "item_label": "Gave the Inquisitor a dark intestine",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_DARK_INTESTINE"],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_GIVE_DARK_INTESTINE"]
+  },
+  "EVENT_INQUISITOR_RESPOND_TO_FAILED_DARK_ORGAN_EVIDENCE": {
+    "comment": "Flow: the third organ sets inquisitor_after_dark_event; on the next visit the Inquisitor reports the king rejected the evidence and presents the one-time evidence choice",
+    "location_label": "Respond after the king rejects the dark-organ evidence",
+    "item_label": "Responded after the king rejected the dark-organ evidence",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_GIVE_DARK_HEART", "EVENT_INQUISITOR_GIVE_DARK_BRAIN", "EVENT_INQUISITOR_GIVE_DARK_INTESTINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_ASK_TO_EXPAND_GRAVEYARD": {
+    "comment": "Flow: graveyard_zone_lvlup2 unlocks @inquisitor_grave_1_1; npc_inquisitor option 0 exposes the trust and paid permission choices",
+    "location_label": "Ask the Inquisitor for permission to expand the graveyard",
+    "item_label": "Asked the Inquisitor for permission to expand the graveyard",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_GET_GRAVEYARD_EXPANSION_PERMISSION": {
+    "comment": "Flow: npc_inquisitor options 1/2 both grant scroll_graveyard_prop; AP models the 20-happiness trust route and treats the 10-silver alternative as out of logic",
+    "location_label": "Convince the Inquisitor to permit the graveyard expansion",
+    "item_label": "Convinced the Inquisitor to permit the graveyard expansion",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ASK_TO_EXPAND_GRAVEYARD"],
+    "required_happiness": ["INQUISITOR_20"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_GET_GRAVEYARD_EXPANSION_PERMISSION"]
+  },
+  "EVENT_INQUISITOR_ASK_TO_REMOVE_PORTAL_GUARDS": {
+    "comment": "Flow: in_front_of_portal unlocks @inquisitor_portal_guard; the Inquisitor conversation removes the guards and unlocks @inquisitor_portal_done",
+    "location_label": "Ask the Inquisitor to remove the portal guards",
+    "item_label": "Asked the Inquisitor to remove the portal guards",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_REPORT_PORTAL_GUARDS_REMOVED": {
+    "comment": "Flow: npc_inquisitor:843:option:7 is locked at 60 happiness and grants +10 happiness",
+    "location_label": "Report that the portal guards have left",
+    "item_label": "Reported that the portal guards had left",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ASK_TO_REMOVE_PORTAL_GUARDS"],
+    "required_happiness": ["INQUISITOR_60"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_REPORT_PORTAL_GUARDS_REMOVED"]
+  },
+  "EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY": {
+    "comment": "Flow: npc_bishop node 1514 unlocks @inquisitor_ceremony; npc_inquisitor:843:option:9 is locked at 60 happiness and unlocks @merchant_ceremony after the refusal",
+    "location_label": "Ask the Inquisitor to attend the final ceremony",
+    "item_label": "Asked the Inquisitor to attend the final ceremony",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE"],
+    "required_happiness": ["INQUISITOR_60"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_ASK_ABOUT_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_cultist node 2017 unlocks @inquisitor_magic_item after identifying the artifact holders; the conversation unlocks @inquisitor_magic_100",
+    "location_label": "Ask the Inquisitor about his portal artifact",
+    "item_label": "Asked the Inquisitor about his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_HAND_OVER_PORTAL_ARTIFACT": {
+    "comment": "Flow: npc_inquisitor:843:option:12 is locked at 100 happiness and normally grants eternal_burning_coil",
+    "location_label": "Ask the Inquisitor to hand over his portal artifact",
+    "item_label": "Asked the Inquisitor to hand over his portal artifact",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_ASK_ABOUT_PORTAL_ARTIFACT"],
+    "required_happiness": ["INQUISITOR_100"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_INQUISITOR_REWARD_HAND_OVER_PORTAL_ARTIFACT"]
+  },
+
   "EVENT_INSPECT_KITCHEN_GARDEN": {
     "comment": "Flow: garden_builddesk_broken:2 broken_info unlocks @horadric_2_1d and records saw_garden",
     "location_label": "Inspect the abandoned kitchen garden",
@@ -392,7 +646,7 @@
     "dlc": "BASE_GAME",
     "required_quests": [
       "EVENT_MERCHANT_GIVE_SPICES",
-      "TODO(EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY)"
+      "EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY"
     ],
     "required_happiness": ["MERCHANT_90"],
     "required_quest_items": [],

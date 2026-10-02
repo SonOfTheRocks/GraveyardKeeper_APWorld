@@ -324,7 +324,7 @@ class TestAllQuestEvents(unittest.TestCase):
         artifact = data.events["EVENT_MERCHANT_ASK_FOR_PORTAL_ARTIFACT"]
 
         self.assertEqual(
-            {"EVENT_MERCHANT_GIVE_SPICES", "TODO(EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY)"},
+            {"EVENT_MERCHANT_GIVE_SPICES", "EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY"},
             set(invitation.required_quests),
         )
         self.assertEqual([HappinessData("MERCHANT", 90)], list(invitation.required_happiness))
@@ -339,6 +339,96 @@ class TestAllQuestEvents(unittest.TestCase):
             list(artifact.rewards),
             "Only the early dialogue is missable; the ceremony owns the one guaranteed fork check",
         )
+
+    def test_inquisitor_base_game_questline_matches_flow_requirements(self):
+        meet = data.events["EVENT_INQUISITOR_MEET"]
+        first_burning = data.events["EVENT_INQUISITOR_ATTEND_FIRST_BURNING"]
+        prepare = data.events["EVENT_INQUISITOR_PREPARE_SECOND_BURNING"]
+        firewood = data.events["EVENT_INQUISITOR_GIVE_FIREWOOD"]
+        flyers = data.events["EVENT_INQUISITOR_GIVE_FLYERS"]
+        second_burning = data.events["EVENT_INQUISITOR_ATTEND_SECOND_BURNING"]
+        wine = data.events["EVENT_INQUISITOR_GIVE_RED_WINE"]
+        ask_tent = data.events["EVENT_INQUISITOR_ASK_TO_BUILD_BUFFET_TENT"]
+        build_tent = data.events["EVENT_INQUISITOR_BUILD_BUFFET_TENT"]
+        report_tent = data.events["EVENT_INQUISITOR_REPORT_BUFFET_TENT_READY"]
+        buffet = data.events["EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING"]
+        wait_for_organs = data.events["EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST"]
+        dark_heart = data.events["EVENT_INQUISITOR_GIVE_DARK_HEART"]
+        dark_brain = data.events["EVENT_INQUISITOR_GIVE_DARK_BRAIN"]
+        dark_intestine = data.events["EVENT_INQUISITOR_GIVE_DARK_INTESTINE"]
+        evidence = data.events["EVENT_INQUISITOR_RESPOND_TO_FAILED_DARK_ORGAN_EVIDENCE"]
+
+        self.assertEqual([], list(meet.required_quests))
+        self.assertEqual([], list(meet.rewards))
+        self.assertEqual(["EVENT_INQUISITOR_MEET"], list(first_burning.required_quests))
+        self.assertEqual(1, len(first_burning.rewards))
+        self.assertEqual(["EVENT_INQUISITOR_ATTEND_FIRST_BURNING"], list(prepare.required_quests))
+
+        for turn_in, item_key in ((firewood, "ITEM_FIREWOOD"), (flyers, "ITEM_FLYER")):
+            self.assertEqual(["EVENT_INQUISITOR_PREPARE_SECOND_BURNING"], list(turn_in.required_quests))
+            self.assertEqual([item_key], list(turn_in.required_craft_items))
+            self.assertEqual(1, len(turn_in.rewards))
+        self.assertEqual(
+            {"EVENT_INQUISITOR_GIVE_FIREWOOD", "EVENT_INQUISITOR_GIVE_FLYERS"},
+            set(second_burning.required_quests),
+        )
+        self.assertEqual(1, len(second_burning.rewards))
+
+        self.assertEqual(["ITEM_RED_WINE_SILVER"], list(wine.required_craft_items))
+        self.assertEqual([HappinessData("INQUISITOR", 50)], list(ask_tent.required_happiness))
+        self.assertEqual(
+            {"ITEM_HEMP_ROPE", "ITEM_WOODEN_PLANK", "ITEM_NAILS"},
+            set(build_tent.required_craft_items),
+        )
+        self.assertEqual(["EVENT_INQUISITOR_BUILD_BUFFET_TENT"], list(report_tent.required_quests))
+        self.assertEqual(
+            {"ITEM_A_MUG_OF_BEER_GOLD", "ITEM_BURGER_GOLD"},
+            set(buffet.required_craft_items),
+        )
+        self.assertEqual(["EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING"], list(wait_for_organs.required_quests))
+        self.assertEqual([], list(wait_for_organs.rewards))
+
+        for turn_in, item_key in (
+            (dark_heart, "ITEM_DARK_HEART"),
+            (dark_brain, "ITEM_DARK_BRAIN"),
+            (dark_intestine, "ITEM_DARK_INTESTINE"),
+        ):
+            self.assertEqual(["EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST"], list(turn_in.required_quests))
+            self.assertEqual([item_key], list(turn_in.required_craft_items))
+            self.assertEqual(1, len(turn_in.rewards))
+        self.assertEqual(
+            {
+                "EVENT_INQUISITOR_GIVE_DARK_HEART",
+                "EVENT_INQUISITOR_GIVE_DARK_BRAIN",
+                "EVENT_INQUISITOR_GIVE_DARK_INTESTINE",
+            },
+            set(evidence.required_quests),
+        )
+
+    def test_inquisitor_side_routes_match_phrase_and_happiness_gates(self):
+        ask_graveyard = data.events["EVENT_INQUISITOR_ASK_TO_EXPAND_GRAVEYARD"]
+        graveyard = data.events["EVENT_INQUISITOR_GET_GRAVEYARD_EXPANSION_PERMISSION"]
+        ask_guards = data.events["EVENT_INQUISITOR_ASK_TO_REMOVE_PORTAL_GUARDS"]
+        guards = data.events["EVENT_INQUISITOR_REPORT_PORTAL_GUARDS_REMOVED"]
+        ceremony = data.events["EVENT_INQUISITOR_REFUSE_FINAL_CEREMONY"]
+        ask_artifact = data.events["EVENT_INQUISITOR_ASK_ABOUT_PORTAL_ARTIFACT"]
+        artifact = data.events["EVENT_INQUISITOR_HAND_OVER_PORTAL_ARTIFACT"]
+
+        self.assertEqual(["EVENT_INQUISITOR_MEET"], list(ask_graveyard.required_quests))
+        self.assertEqual([HappinessData("INQUISITOR", 20)], list(graveyard.required_happiness))
+        self.assertEqual(1, len(graveyard.rewards))
+        self.assertEqual(["EVENT_INQUISITOR_MEET"], list(ask_guards.required_quests))
+        self.assertEqual([HappinessData("INQUISITOR", 60)], list(guards.required_happiness))
+        self.assertEqual(1, len(guards.rewards))
+        self.assertEqual(["EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE"], list(ceremony.required_quests))
+        self.assertEqual([HappinessData("INQUISITOR", 60)], list(ceremony.required_happiness))
+        self.assertEqual([], list(ceremony.rewards))
+        self.assertEqual(
+            ["EVENT_SNAKE_IDENTIFY_PORTAL_ARTIFACT_HOLDERS"],
+            list(ask_artifact.required_quests),
+        )
+        self.assertEqual([HappinessData("INQUISITOR", 100)], list(artifact.required_happiness))
+        self.assertEqual(1, len(artifact.rewards))
 
     def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
