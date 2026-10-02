@@ -44,7 +44,7 @@
   "ITEM_KREZVOLD_HAPPINESS_10": {
     "label": "Krezvold - Happiness +10",
     "dlc": "BASE_GAME",
-    "classification": "FILLER",
+    "classification": "PROGRESSION",
     "amount": 10
   },
   "ITEM_GERRY_HAPPINESS_10": {

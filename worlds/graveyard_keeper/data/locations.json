@@ -454,14 +454,30 @@
     "label": "Horadric - Ask about kitchen garden",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
+  "LOCATION_HORADRIC_REWARD_GET_BLACKSMITH_LETTER": {
+    "label": "Horadric Reward - Talk to him about the blacksmith",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
 
 
-  "LOCATION_KREZVOLD_GIVE_LETTER": {
-    "label": "Krezvold - Give him the letter",
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_1": {
+    "label": "Krezvold Reward - Give him Horadric's letter (1)",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_KREZVOLD_ASK_ABOUT_METAL_ORE": {
-    "label": "Krezvold - Ask about metal ore (10 Happiness)",
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_2": {
+    "label": "Krezvold Reward - Give him Horadric's letter (2)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_3": {
+    "label": "Krezvold Reward - Give him Horadric's letter (3)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_4": {
+    "label": "Krezvold Reward - Give him Horadric's letter (4)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KREZVOLD_REWARD_ASK_ABOUT_METAL_ORE": {
+    "label": "Krezvold Reward - Ask about metal ore",
     "parent_region": "REGION_THE_VILLAGE"
   },
   "LOCATION_KREZVOLD_REWARD_KILL_SLIMES": {

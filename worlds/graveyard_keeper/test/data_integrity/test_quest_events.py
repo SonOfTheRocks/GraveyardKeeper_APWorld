@@ -480,6 +480,43 @@ class TestAllQuestEvents(unittest.TestCase):
         ):
             self.assertIn(event_key, data.regions["REGION_CAMP"].events)
 
+    def test_krezvold_tutorial_questline_matches_flow_requirements(self):
+        get_letter = data.events["EVENT_HORADRIC_GET_BLACKSMITH_LETTER"]
+        give_letter = data.events["EVENT_KREZVOLD_GIVE_BLACKSMITH_LETTER"]
+        ask_ore = data.events["EVENT_KREZVOLD_ASK_ABOUT_METAL_ORE"]
+        slimes = data.events["EVENT_KREZVOLD_COMPLETE_SLIME_QUEST"]
+
+        self.assertEqual(["EVENT_TUTORIAL_FINISH"], list(get_letter.required_quests))
+        self.assertEqual(
+            ["LOCATION_HORADRIC_REWARD_GET_BLACKSMITH_LETTER"],
+            list(get_letter.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_HORADRIC_GET_BLACKSMITH_LETTER"],
+            list(give_letter.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_LETTER_TO_THE_BLACKSMITH"],
+            list(give_letter.required_quest_items),
+        )
+        self.assertEqual(4, len(give_letter.rewards))
+
+        for branch in (ask_ore, slimes):
+            self.assertEqual(
+                ["EVENT_KREZVOLD_GIVE_BLACKSMITH_LETTER"],
+                list(branch.required_quests),
+            )
+            self.assertEqual(1, len(branch.rewards))
+        self.assertEqual(
+            [HappinessData("KREZVOLD", 10)],
+            list(ask_ore.required_happiness),
+        )
+        self.assertEqual(["ITEM_GREEN_JELLY"], list(slimes.required_craft_items))
+        self.assertEqual(
+            ItemClassification.progression,
+            data.items["ITEM_KREZVOLD_HAPPINESS_10"].classification,
+        )
+
     def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
         crate = data.recipes["ITEM_TRADE_CRATE"]

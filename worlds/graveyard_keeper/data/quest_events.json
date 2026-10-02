@@ -1811,6 +1811,55 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_HORADRIC_GET_BLACKSMITH_LETTER": {
+    "comment": "Flow: npc_tavern owner:377 drops bs_letter and node 381 unlocks @blacksmith_2_1a during the first Horadric conversation",
+    "location_label": "Talk to Horadric about the blacksmith",
+    "item_label": "Talked to Horadric about the blacksmith",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_HORADRIC_REWARD_GET_BLACKSMITH_LETTER"]
+  },
+  "EVENT_KREZVOLD_GIVE_BLACKSMITH_LETTER": {
+    "comment": "Flow: npc_blacksmith:11:option:0 (@blacksmith_2_1a); Answer.price is bs_letter, Answer.reward grants 10 Krezvold happiness, and the path drops a broken sword, two energy potions, and a whetstone",
+    "location_label": "Give Krezvold Horadric's letter",
+    "item_label": "Gave Krezvold Horadric's letter",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_HORADRIC_GET_BLACKSMITH_LETTER"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_LETTER_TO_THE_BLACKSMITH"],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_1",
+      "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_2",
+      "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_3",
+      "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_4"
+    ]
+  },
+  "EVENT_KREZVOLD_ASK_ABOUT_METAL_ORE": {
+    "comment": "Flow: npc_blacksmith:11:option:1 (blacksmith_2_1b); Answer.lock requires 10 Krezvold happiness and the conversation unlocks the hidden Iron technology",
+    "location_label": "Ask Krezvold where to find metal ore",
+    "item_label": "Asked Krezvold where to find metal ore",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_KREZVOLD_GIVE_BLACKSMITH_LETTER"],
+    "required_happiness": ["KREZVOLD_10"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_KREZVOLD_REWARD_ASK_ABOUT_METAL_ORE"]
+  },
+  "EVENT_KREZVOLD_COMPLETE_SLIME_QUEST": {
+    "comment": "Flow: npc_blacksmith:11:option:12 (@blacksmith_2_1e); Answer.price is green jelly and Answer.reward is five simple iron parts; the path unlocks the hidden Jelly technology",
+    "location_label": "Give Krezvold green jelly after killing the slimes",
+    "item_label": "Gave Krezvold green jelly after killing the slimes",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_KREZVOLD_GIVE_BLACKSMITH_LETTER"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_GREEN_JELLY"],
+    "rewards": ["LOCATION_KREZVOLD_REWARD_KILL_SLIMES"]
+  },
 
   "EVENT_DIG_ASK_FOR_BOOZE": {
     "comment": "Flow prerequisite for npc_cultist:106:option:23; Dig asks the player to obtain booze from Snake",
