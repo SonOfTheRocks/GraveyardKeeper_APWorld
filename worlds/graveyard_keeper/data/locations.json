@@ -126,6 +126,10 @@
     "label": "Astrologer Reward - Rescue Vagner (4)",
     "parent_region": "REGION_LIGHTHOUSE"
   },
+  "LOCATION_GYPSY_BARON_REWARD_REPORT_FRIEND_RELEASED": {
+    "label": "Gypsy Baron Reward - Tell him his friend is free",
+    "parent_region": "REGION_CAMP"
+  },
 
 
   "LOCATION_DONKEY_MEET": {

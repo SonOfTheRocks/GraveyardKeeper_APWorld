@@ -1016,11 +1016,11 @@
     "rewards": []
   },
   "EVENT_ASTROLOGER_TELL_ESMERALDAS_FATE": {
-    "comment": "tell about esmeralda, get 10 relation",
+    "comment": "Flow: npc_astrologer:44:option:6 (@astrologer_charm); recount Esmeralda's fate and gain 10 Astrologer happiness",
     "location_label": "Tell Astrologer about Esmeralda's fate",
     "item_label": "Told Astrologer about Esmeralda's fate",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA"],
+    "required_quests": ["EVENT_GYPSY_BARON_LEARN_ESMERALDAS_FATE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -1837,12 +1837,45 @@
   },
 
   "EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA": {
-    "comment": "DUMMY",
+    "comment": "Flow: npc_gypsy:11:option:0 (@gypsy_esmeralda); unlocked while the Astrologer reads the restored second diary and unlocks @inquisitor_gypsy",
     "location_label": "Ask the gypsy baron about Esmeralda",
     "item_label": "Asked the gypsy baron about Esmeralda",
     "dlc": "BASE_GAME",
-    "required_quests": [],
+    "required_quests": ["EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA"],
     "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_INQUISITOR_RELEASE_GYPSY_BARONS_FRIEND": {
+    "comment": "Flow: npc_inquisitor:843:option:13 (@inquisitor_gypsy); Answer.lock requires 60 Inquisitor happiness and unlocks @gypsy_inquisitor",
+    "location_label": "Ask the Inquisitor to release the Gypsy Baron's friend",
+    "item_label": "Asked the Inquisitor to release the Gypsy Baron's friend",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA"],
+    "required_happiness": ["INQUISITOR_60"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_GYPSY_BARON_REPORT_FRIEND_RELEASED": {
+    "comment": "Flow: npc_gypsy:11:option:1 (@gypsy_inquisitor); Answer.reward grants 10 Gypsy Baron happiness",
+    "location_label": "Tell the Gypsy Baron his friend is free",
+    "item_label": "Told the Gypsy Baron his friend is free",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_RELEASE_GYPSY_BARONS_FRIEND"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_GYPSY_BARON_REWARD_REPORT_FRIEND_RELEASED"]
+  },
+  "EVENT_GYPSY_BARON_LEARN_ESMERALDAS_FATE": {
+    "comment": "Flow: npc_gypsy:11:option:2 (@gypsy_esmeralda_again); Answer.lock requires 10 Gypsy Baron happiness and unlocks @astrologer_charm",
+    "location_label": "Ask the Gypsy Baron what happened to Esmeralda",
+    "item_label": "Learned what happened to Esmeralda",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_GYPSY_BARON_REPORT_FRIEND_RELEASED"],
+    "required_happiness": ["GYPSY_BARON_10"],
     "required_quest_items": [],
     "required_craft_items": [],
     "rewards": []

@@ -430,6 +430,56 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([HappinessData("INQUISITOR", 100)], list(artifact.required_happiness))
         self.assertEqual(1, len(artifact.rewards))
 
+    def test_gypsy_baron_esmeralda_chain_matches_phrase_and_happiness_gates(self):
+        ask_gypsy = data.events["EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA"]
+        release_friend = data.events["EVENT_INQUISITOR_RELEASE_GYPSY_BARONS_FRIEND"]
+        report_release = data.events["EVENT_GYPSY_BARON_REPORT_FRIEND_RELEASED"]
+        learn_fate = data.events["EVENT_GYPSY_BARON_LEARN_ESMERALDAS_FATE"]
+        tell_astrologer = data.events["EVENT_ASTROLOGER_TELL_ESMERALDAS_FATE"]
+
+        self.assertEqual(
+            ["EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA"],
+            list(ask_gypsy.required_quests),
+        )
+        self.assertEqual(
+            ["EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA"],
+            list(release_friend.required_quests),
+        )
+        self.assertEqual(
+            [HappinessData("INQUISITOR", 60)],
+            list(release_friend.required_happiness),
+        )
+        self.assertEqual(
+            ["EVENT_INQUISITOR_RELEASE_GYPSY_BARONS_FRIEND"],
+            list(report_release.required_quests),
+        )
+        self.assertEqual(
+            ["LOCATION_GYPSY_BARON_REWARD_REPORT_FRIEND_RELEASED"],
+            list(report_release.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_GYPSY_BARON_REPORT_FRIEND_RELEASED"],
+            list(learn_fate.required_quests),
+        )
+        self.assertEqual(
+            [HappinessData("GYPSY_BARON", 10)],
+            list(learn_fate.required_happiness),
+        )
+        self.assertEqual(
+            ["EVENT_GYPSY_BARON_LEARN_ESMERALDAS_FATE"],
+            list(tell_astrologer.required_quests),
+        )
+        self.assertEqual(
+            ItemClassification.progression,
+            data.items["ITEM_GYPSY_BARON_HAPPINESS_10"].classification,
+        )
+        for event_key in (
+            "EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA",
+            "EVENT_GYPSY_BARON_REPORT_FRIEND_RELEASED",
+            "EVENT_GYPSY_BARON_LEARN_ESMERALDAS_FATE",
+        ):
+            self.assertIn(event_key, data.regions["REGION_CAMP"].events)
+
     def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
         crate = data.recipes["ITEM_TRADE_CRATE"]
