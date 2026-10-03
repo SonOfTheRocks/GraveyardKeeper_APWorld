@@ -236,6 +236,82 @@
       "materials_required": ["ITEM_TOASTS_WITH_ONIONS_GOLD"]
     }
   ],
+  "MATERIAL_DINNER_SILVER_SNACK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_ONION_RINGS_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_TOASTS_WITH_ONIONS_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_PANCAKES"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_GOLD_SNACK"]
+    }
+  ],
+  "MATERIAL_DINNER_COPPER_SNACK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_ONION_RINGS_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_TOASTS_WITH_ONIONS_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_SAUERKRAUT"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_SANDWICH"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_SILVER_SNACK"]
+    }
+  ],
+  "MATERIAL_DINNER_ANY_SNACK": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_FRIED_EGG"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BREAD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_APPLE"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_MUSHROOMS"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_COPPER_SNACK"]
+    }
+  ],
   "MATERIAL_DINNER_GOLD_MEAL": [
     {
       "crafting_stations": [],
@@ -328,6 +404,242 @@
       "materials_required": ["ITEM_VEGETABLE_STEW_GOLD"]
     }
   ],
+  "MATERIAL_DINNER_SILVER_MEAL": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_LENTILS_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_PUMPKIN_SOUP_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_PUMPKIN_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_ONIONS_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_MUSHROOMS_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_PUMPKIN_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_SALMON_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BURGER_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CABBAGE_SOUP_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CREAMY_VEGETABLE_SOUP_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_FANCY_LENTIL_SOUP_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_LASAGNA_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_LENTIL_CUTLETS_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_PUMPKIN_SOUP_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_ROYAL_FISH_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_PATTY_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_SOUP_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_STEW_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_GOLD_MEAL"]
+    }
+  ],
+  "MATERIAL_DINNER_COPPER_MEAL": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_LENTILS_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_A_BOWL_OF_PUMPKIN_SOUP_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_PUMPKIN_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_ONIONS_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_KEBAB_MUSHROOMS_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_PUMPKIN_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_SALMON_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BURGER_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CABBAGE_SOUP_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CREAMY_VEGETABLE_SOUP_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_FANCY_LENTIL_SOUP_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_LASAGNA_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_LENTIL_CUTLETS_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_PUMPKIN_SOUP_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_PATTY_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_SOUP_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_VEGETABLE_STEW_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_OMELETTE"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_FISH_SOUP"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_PASTA"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_SILVER_MEAL"]
+    }
+  ],
+  "MATERIAL_DINNER_ANY_MEAL": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_FISH_NUGGETS"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BEET_SLICES"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CARROT_CUTLET"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_FISH"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BAKED_MEAT"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_COPPER_MEAL"]
+    }
+  ],
   "MATERIAL_DINNER_GOLD_DESSERT": [
     {
       "crafting_stations": [],
@@ -340,16 +652,239 @@
       "materials_required": ["ITEM_GRAPE_PIE_GOLD"]
     }
   ],
+  "MATERIAL_DINNER_SILVER_DESSERT": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_GRAPE_PIE_SILVER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_GOLD_DESSERT"]
+    }
+  ],
+  "MATERIAL_DINNER_COPPER_DESSERT": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_BERRY_PIE"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_GRAPE_PIE_COPPER"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_SILVER_DESSERT"]
+    }
+  ],
+  "MATERIAL_DINNER_ANY_DESSERT": [
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_GREEN_JELLY_FOOD"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_RED_JELLY"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_MUFFIN"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["ITEM_CROISSANT"]
+    },
+    {
+      "crafting_stations": [],
+      "recipe_required": "",
+      "materials_required": ["MATERIAL_DINNER_COPPER_DESSERT"]
+    }
+  ],
   "ITEM_DINNER_GOLD": [
     {
       "crafting_stations": [
         "CRAFTING_STATION_COOKING_TABLE"
       ],
       "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.31,
+      "materials_required": [
+        "MATERIAL_DINNER_SILVER_SNACK",
+        "MATERIAL_DINNER_SILVER_MEAL",
+        "MATERIAL_DINNER_SILVER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_SILVER_MEAL",
+        "MATERIAL_DINNER_COPPER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_COPPER_MEAL",
+        "MATERIAL_DINNER_SILVER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_SILVER_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_COPPER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_COPPER_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_SILVER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_SILVER_SNACK",
+        "MATERIAL_DINNER_COPPER_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_COPPER_SNACK",
+        "MATERIAL_DINNER_SILVER_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
       "materials_required": [
         "MATERIAL_DINNER_GOLD_SNACK",
         "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_ANY_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_ANY_MEAL",
         "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.3,
+      "materials_required": [
+        "MATERIAL_DINNER_ANY_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.64,
+      "materials_required": [
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_SILVER_MEAL",
+        "MATERIAL_DINNER_SILVER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.64,
+      "materials_required": [
+        "MATERIAL_DINNER_SILVER_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_SILVER_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.64,
+      "materials_required": [
+        "MATERIAL_DINNER_SILVER_SNACK",
+        "MATERIAL_DINNER_SILVER_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.63,
+      "materials_required": [
+        "MATERIAL_DINNER_COPPER_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.63,
+      "materials_required": [
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_COPPER_MEAL",
+        "MATERIAL_DINNER_GOLD_DESSERT"
+      ]
+    },
+    {
+      "crafting_stations": ["CRAFTING_STATION_COOKING_TABLE"],
+      "recipe_required": "",
+      "crafting_group": "food",
+      "base_modifier": 0.63,
+      "materials_required": [
+        "MATERIAL_DINNER_GOLD_SNACK",
+        "MATERIAL_DINNER_GOLD_MEAL",
+        "MATERIAL_DINNER_COPPER_DESSERT"
       ]
     }
   ],

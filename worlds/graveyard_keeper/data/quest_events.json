@@ -485,7 +485,7 @@
     "rewards": []
   },
   "EVENT_MERCHANT_ACCEPT_LOAN": {
-    "comment": "Flow: npc_merchant:231:option:0 rewards 5 silver, makes merchant_debt visible, sets loan_taken, and unlocks @merchant_2e_1f; this side quest is optional",
+    "comment": "Flow: npc_merchant:231:option:0 rewards 5 silver, makes merchant_debt visible, sets loan_taken, and unlocks @merchant_2e_1f. The side quest is optional but not missable: option 1 unlocks @merchant_2e_1e again, so the player can return and accept later",
     "location_label": "Accept the Merchant's loan",
     "item_label": "Accepted the Merchant's loan",
     "dlc": "BASE_GAME",

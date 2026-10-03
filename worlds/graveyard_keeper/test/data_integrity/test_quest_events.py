@@ -1,5 +1,6 @@
 import re
 import unittest
+from itertools import permutations
 
 from BaseClasses import ItemClassification
 from rule_builder.rules import Rule, Has
@@ -8,7 +9,7 @@ from ..fakes import FakeWorld
 from ..rule_evaluation import QuestRuleEvaluator
 from ...data import data, load_json_data
 from ...logic.custom_rules import CanComplete
-from ...models import AreaPointData, DLCType, HappinessData, QuestEventData
+from ...models import AreaPointData, CraftingGroup, DLCType, HappinessData, QualityRecipeData, QuestEventData
 
 
 class TestAllQuestEvents(unittest.TestCase):
@@ -277,7 +278,7 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["ITEM_DINNER_GOLD"], list(dinner.required_craft_items))
         self.assertEqual([HappinessData("MERCHANT", 70)], list(strategy.required_happiness))
 
-    def test_merchant_loan_is_an_optional_rewarding_side_chain(self):
+    def test_merchant_loan_is_a_non_missable_rewarding_side_chain(self):
         accept = data.events["EVENT_MERCHANT_ACCEPT_LOAN"]
         repay = data.events["EVENT_MERCHANT_REPAY_LOAN"]
 
@@ -521,22 +522,75 @@ class TestAllQuestEvents(unittest.TestCase):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
         crate = data.recipes["ITEM_TRADE_CRATE"]
 
-        self.assertEqual(1, len(dinner))
+        self.assertEqual(16, len(dinner))
+        self.assertTrue(all(isinstance(recipe, QualityRecipeData) for recipe in dinner))
+        self.assertTrue(all(recipe.crafting_group is CraftingGroup.Food for recipe in dinner))
+        self.assertTrue(all(
+            set(recipe.workstations) == {"CRAFTING_STATION_COOKING_TABLE"}
+            for recipe in dinner
+        ))
+        categories = ("SNACK", "MEAL", "DESSERT")
+
+        def ingredients_for(qualities):
+            return frozenset(
+                f"MATERIAL_DINNER_{quality}_{category}"
+                for quality, category in zip(qualities, categories)
+            )
+
+        expected_dinner_paths = {
+            ingredients_for(("SILVER", "SILVER", "SILVER")): 0.31,
+        }
+        expected_dinner_paths.update({
+            ingredients_for(qualities): 0.3
+            for qualities in permutations(("GOLD", "SILVER", "COPPER"))
+        })
+        expected_dinner_paths.update({
+            ingredients_for(qualities): 0.3
+            for qualities in {
+                ("ANY", "GOLD", "GOLD"),
+                ("GOLD", "ANY", "GOLD"),
+                ("GOLD", "GOLD", "ANY"),
+            }
+        })
+        expected_dinner_paths.update({
+            ingredients_for(qualities): 0.64
+            for qualities in {
+                ("GOLD", "SILVER", "SILVER"),
+                ("SILVER", "GOLD", "SILVER"),
+                ("SILVER", "SILVER", "GOLD"),
+            }
+        })
+        expected_dinner_paths.update({
+            ingredients_for(qualities): 0.63
+            for qualities in {
+                ("COPPER", "GOLD", "GOLD"),
+                ("GOLD", "COPPER", "GOLD"),
+                ("GOLD", "GOLD", "COPPER"),
+            }
+        })
         self.assertEqual(
-            {
-                "MATERIAL_DINNER_GOLD_SNACK",
-                "MATERIAL_DINNER_GOLD_MEAL",
-                "MATERIAL_DINNER_GOLD_DESSERT",
-            },
-            set(dinner[0].ingredients),
+            expected_dinner_paths,
+            {frozenset(recipe.ingredients): recipe.base_modifier for recipe in dinner},
         )
-        self.assertEqual(
-            {"CRAFTING_STATION_COOKING_TABLE"},
-            set(dinner[0].workstations),
+        self.assertIn(
+            {
+                "MATERIAL_DINNER_SILVER_SNACK",
+                "MATERIAL_DINNER_GOLD_MEAL",
+                "MATERIAL_DINNER_SILVER_DESSERT",
+            },
+            [set(recipe.ingredients) for recipe in dinner],
         )
         self.assertEqual(
             {"ITEM_ONION_RINGS_GOLD", "ITEM_TOASTS_WITH_ONIONS_GOLD"},
             {next(iter(recipe.ingredients)) for recipe in data.recipes["MATERIAL_DINNER_GOLD_SNACK"]},
+        )
+        self.assertIn(
+            {"ITEM_PANCAKES"},
+            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_SILVER_SNACK"]],
+        )
+        self.assertIn(
+            {"MATERIAL_DINNER_GOLD_SNACK"},
+            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_SILVER_SNACK"]],
         )
         self.assertIn(
             {"ITEM_CAKE"},
@@ -547,6 +601,14 @@ class TestAllQuestEvents(unittest.TestCase):
             [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_GOLD_DESSERT"]],
         )
         self.assertGreaterEqual(len(data.recipes["MATERIAL_DINNER_GOLD_MEAL"]), 10)
+        self.assertIn(
+            {"MATERIAL_DINNER_GOLD_MEAL"},
+            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_SILVER_MEAL"]],
+        )
+        self.assertIn(
+            {"MATERIAL_DINNER_COPPER_DESSERT"},
+            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_ANY_DESSERT"]],
+        )
         self.assertEqual(1, len(crate))
         self.assertEqual({"ITEM_NAILS", "ITEM_FLITCH"}, set(crate[0].ingredients))
         self.assertEqual({"CRAFTING_STATION_CRATE_FACTORY"}, set(crate[0].workstations))
