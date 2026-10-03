@@ -203,6 +203,16 @@
     "dlc": "STRANGER_SINS",
     "classification": "PROGRESSION"
   },
+  "ITEM_HONEY_BARREL": {
+    "label": "Honey barrel",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_HONEY_PLASTER": {
+    "label": "Honey plaster",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
   "ITEM_CLAY_POT_OF_TAR": {
     "label": "Clay Pot of Tar",
     "dlc": "STRANGER_SINS",

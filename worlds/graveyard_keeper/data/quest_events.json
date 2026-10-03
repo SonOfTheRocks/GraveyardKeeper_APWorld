@@ -2275,14 +2275,50 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_TAVERN_REWARD_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE"]
   },
+  "EVENT_WOODCUTTER_ASK_ABOUT_BELT_BUCKLE": {
+    "comment": "Flow: npc_wood_cutter:11:option:2; starts tr_quest_10_beekeeper_1 and reveals the Beekeeper's buried honey barrel",
+    "location_label": "Ask the Woodcutter about the Belt Buckle",
+    "item_label": "Asked the Woodcutter about the Belt Buckle",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_DIG_UP_BEEKEEPERS_HONEY_BARREL": {
+    "comment": "Flow: npc_beekeeper tr_quest_10_beekeeper_1 cutscene spawns a pile containing honey_barrel near Tress's home",
+    "location_label": "Dig up the Beekeeper's honey barrel",
+    "item_label": "Dug up the Beekeeper's honey barrel",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_WOODCUTTER_ASK_ABOUT_BELT_BUCKLE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_VILLAGE_REWARD_DIG_UP_BEEKEEPERS_HONEY_BARREL"]
+  },
+  "EVENT_BEEKEEPER_ACCEPT_HONEY_BARREL": {
+    "comment": "Flow: npc_beekeeper:13:option:0; normally grants 20 Beekeeper happiness and honey plaster",
+    "location_label": "Return the honey barrel to the Beekeeper",
+    "item_label": "Returned the honey barrel to the Beekeeper",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_DIG_UP_BEEKEEPERS_HONEY_BARREL"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_HONEY_BARREL"],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_1",
+      "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_2"
+    ]
+  },
   "EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER": {
     "comment": "Flow: npc_wood_cutter:11:option:3; normally grants 20 Woodcutter happiness and the Belt Buckle",
     "location_label": "Give the honey plaster to the Woodcutter",
     "item_label": "Gave the honey plaster to the Woodcutter",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE"],
+    "required_quests": ["EVENT_BEEKEEPER_ACCEPT_HONEY_BARREL"],
     "required_happiness": [],
-    "required_quest_items": [],
+    "required_quest_items": ["ITEM_HONEY_PLASTER"],
     "required_craft_items": [],
     "rewards": [
       "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_1",

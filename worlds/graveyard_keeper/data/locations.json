@@ -669,6 +669,18 @@
     "label": "Woodcutter Reward - Give him the honey plaster (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
+  "LOCATION_VILLAGE_REWARD_DIG_UP_BEEKEEPERS_HONEY_BARREL": {
+    "label": "Village Reward - Dig up the Beekeeper's honey barrel",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_1": {
+    "label": "Beekeeper Reward - Return the honey barrel (1)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_2": {
+    "label": "Beekeeper Reward - Return the honey barrel (2)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
   "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_1": {
     "label": "Adam Reward - Help with his ghostly pottery problem (1)",
     "parent_region": "REGION_THE_VILLAGE"

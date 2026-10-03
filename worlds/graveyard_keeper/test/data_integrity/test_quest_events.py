@@ -866,6 +866,10 @@ class TestAllQuestEvents(unittest.TestCase):
                 "ITEM_MILLERS_INVITATION",
                 "LOCATION_TAVERN_REWARD_HOLD_FIRST_COMEDY_STANDUP",
             ),
+            "EVENT_DIG_UP_BEEKEEPERS_HONEY_BARREL": (
+                "ITEM_HONEY_BARREL",
+                "LOCATION_VILLAGE_REWARD_DIG_UP_BEEKEEPERS_HONEY_BARREL",
+            ),
         }
         for event_key, (item_key, location_key) in item_rewards.items():
             with self.subTest(event=event_key):
@@ -875,6 +879,11 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             ["ITEM_RAT_FOR_DIG"],
             list(data.events["EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT"].required_quest_items),
+        )
+        self.assertIn("ITEM_HONEY_PLASTER", data.items)
+        self.assertIn(
+            "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_2",
+            data.events["EVENT_BEEKEEPER_ACCEPT_HONEY_BARREL"].rewards,
         )
 
     def test_stranger_sins_ancient_lockpicks_chain_is_explicit(self):
@@ -933,11 +942,34 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(persuasion.required_quest_items))
         self.assertEqual([], list(persuasion.required_craft_items))
 
+    def test_stranger_sins_belt_buckle_chain_is_explicit(self):
+        chain = [
+            "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE",
+            "EVENT_WOODCUTTER_ASK_ABOUT_BELT_BUCKLE",
+            "EVENT_DIG_UP_BEEKEEPERS_HONEY_BARREL",
+            "EVENT_BEEKEEPER_ACCEPT_HONEY_BARREL",
+            "EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER",
+            "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+
+        self.assertEqual(
+            ["ITEM_HONEY_BARREL"],
+            list(data.events["EVENT_BEEKEEPER_ACCEPT_HONEY_BARREL"].required_quest_items),
+        )
+        self.assertEqual(
+            ["ITEM_HONEY_PLASTER"],
+            list(data.events["EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER"].required_quest_items),
+        )
+
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):
         combined_reward_events = {
             "EVENT_MILLER_ACCEPT_COMEDY_INVITATION",
             "EVENT_DIG_ACCEPT_SNAKES_BOOZE",
             "EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING",
+            "EVENT_BEEKEEPER_ACCEPT_HONEY_BARREL",
             "EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER",
             "EVENT_ADAM_EXPLAIN_GHOSTLY_POTTERY",
             "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE",
