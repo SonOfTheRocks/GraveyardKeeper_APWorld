@@ -2056,9 +2056,10 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_ENLARGE_CARROT": {
-    "location_label": "Enlarge your carrot",
-    "item_label": "Enlarged your carrot",
+  "EVENT_FARMER_ASK_ABOUT_GIANT_CARROT": {
+    "comment": "Flow: npc_farmer:15:option:4; the Farmer asks for a carrot as large as a log and points the player toward magical help",
+    "location_label": "Ask the Farmer how to enter his house",
+    "item_label": "Asked the Farmer how to enter his house",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE"],
     "required_happiness": [],
@@ -2066,15 +2067,59 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_CLOTHO_ASK_TO_ENLARGE_CARROT": {
+    "comment": "Flow: npc_witch:9:option:7; Clotho agrees to help after the player arranges a date with Cory",
+    "location_label": "Ask Clotho to enlarge a carrot",
+    "item_label": "Asked Clotho to enlarge a carrot",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_FARMER_ASK_ABOUT_GIANT_CARROT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_CORY_ASK_TO_DATE_CLOTHO": {
+    "comment": "Flow: npc_engineer:50:option:6; Cory refuses the date and points the player to his brother Tress",
+    "location_label": "Ask Cory to go on a date with Clotho",
+    "item_label": "Asked Cory to go on a date with Clotho",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_CLOTHO_ASK_TO_ENLARGE_CARROT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_TRESS_ASK_HOW_TO_CONVINCE_CORY": {
+    "comment": "Flow: npc_carpenter:13:option:0 and choice menu 152; paying for Tress's advice and refusing it both eventually unlock Clotho's carrot hand-in, so the optional payment is out of logic",
+    "location_label": "Ask Tress how to convince Cory",
+    "item_label": "Asked Tress how to convince Cory",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_CORY_ASK_TO_DATE_CLOTHO"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_CLOTHO_ENLARGE_CARROT": {
+    "comment": "Flow: npc_witch:9:option:9; both the paid business-deal route and the free refusal route converge here, and the action normally drops huge_carrot",
+    "location_label": "Bring Clotho a carrot to enlarge",
+    "item_label": "Brought Clotho a carrot to enlarge",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TRESS_ASK_HOW_TO_CONVINCE_CORY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CARROT"],
+    "rewards": ["LOCATION_CLOTHO_REWARD_ENLARGE_CARROT"]
+  },
   "EVENT_FARMER_ACCEPT_GIANT_CARROT": {
     "comment": "Flow: npc_farmer:540:option:0; grants access to the Farmer's house, where the Legionary Helm is found",
     "location_label": "Bring the giant carrot to the Farmer",
     "item_label": "Brought the giant carrot to the Farmer",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_ENLARGE_CARROT"],
+    "required_quests": ["EVENT_CLOTHO_ENLARGE_CARROT"],
     "required_happiness": [],
-    "required_quest_items": [],
-    "required_craft_items": ["ITEM_CARROT"],
+    "required_quest_items": ["ITEM_GIANT_CARROT"],
+    "required_craft_items": [],
     "rewards": ["LOCATION_FARMER_REWARD_ACCEPT_GIANT_CARROT"]
   },
   "EVENT_FARMER_SEARCH_HOUSE_FOR_LEGIONARY_HELM": {

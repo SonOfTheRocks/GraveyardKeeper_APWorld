@@ -218,6 +218,11 @@
     "dlc": "STRANGER_SINS",
     "classification": "PROGRESSION"
   },
+  "ITEM_GIANT_CARROT": {
+    "label": "Giant carrot",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
   "ITEM_LEGIONARY_HELM": {
     "label": "Legionary Helm",
     "dlc": "STRANGER_SINS",

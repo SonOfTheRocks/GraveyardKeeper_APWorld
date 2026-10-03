@@ -819,8 +819,37 @@ class TestAllQuestEvents(unittest.TestCase):
             list(data.events["EVENT_ADAM_ACCEPT_POISONED_VASES"].required_quest_items),
         )
 
+    def test_stranger_sins_giant_carrot_chain_is_explicit(self):
+        chain = [
+            "EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE",
+            "EVENT_FARMER_ASK_ABOUT_GIANT_CARROT",
+            "EVENT_CLOTHO_ASK_TO_ENLARGE_CARROT",
+            "EVENT_CORY_ASK_TO_DATE_CLOTHO",
+            "EVENT_TRESS_ASK_HOW_TO_CONVINCE_CORY",
+            "EVENT_CLOTHO_ENLARGE_CARROT",
+            "EVENT_FARMER_ACCEPT_GIANT_CARROT",
+            "EVENT_FARMER_SEARCH_HOUSE_FOR_LEGIONARY_HELM",
+            "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+
+        enlarge = data.events["EVENT_CLOTHO_ENLARGE_CARROT"]
+        self.assertEqual(["ITEM_CARROT"], list(enlarge.required_craft_items))
+        self.assertEqual(["LOCATION_CLOTHO_REWARD_ENLARGE_CARROT"], list(enlarge.rewards))
+        self.assertEqual(
+            ["ITEM_GIANT_CARROT"],
+            list(data.events["EVENT_FARMER_ACCEPT_GIANT_CARROT"].required_quest_items),
+        )
+        self.assertNotIn("EVENT_ENLARGE_CARROT", data.events)
+
     def test_stranger_sins_intermediate_quest_items_are_randomized(self):
         item_rewards = {
+            "EVENT_CLOTHO_ENLARGE_CARROT": (
+                "ITEM_GIANT_CARROT",
+                "LOCATION_CLOTHO_REWARD_ENLARGE_CARROT",
+            ),
             "EVENT_DIG_SOLVE_POISON_RIDDLE": (
                 "ITEM_PIE_WITH_POISON",
                 "LOCATION_DIG_REWARD_SOLVE_POISON_RIDDLE",

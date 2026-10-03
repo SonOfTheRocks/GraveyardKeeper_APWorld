@@ -625,6 +625,10 @@
     "label": "Farmer Reward - Bring the giant carrot",
     "parent_region": "REGION_WHEAT_FARM"
   },
+  "LOCATION_CLOTHO_REWARD_ENLARGE_CARROT": {
+    "label": "Clotho Reward - Bring her a carrot to enlarge",
+    "parent_region": "REGION_SWAMP"
+  },
   "LOCATION_FARMER_REWARD_SEARCH_HOUSE_FOR_LEGIONARY_HELM": {
     "label": "Farmer Reward - Search his house for the Legionary Helm",
     "parent_region": "REGION_WHEAT_FARM"
