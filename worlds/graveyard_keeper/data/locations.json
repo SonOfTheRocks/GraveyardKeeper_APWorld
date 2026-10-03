@@ -678,6 +678,63 @@
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
 
+  "LOCATION_TAVERN_REWARD_USE_STATUETTE_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Statuette in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_FLASK_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Flask in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_LEGIONARY_HELM_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Legionary Helm in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Ancient Lockpicks in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Priest's Medallion in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Legionary Dagger in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_BELT_BUCKLE_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Belt Buckle in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_CLAY_SHARDS_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Clay Shards in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Amulet of the Ancient God in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Ancient Pickaxe in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_KEYS_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Ancient Keys in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Priest's Signet in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_PRIESTESS_RING_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the Priestess Ring in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+  "LOCATION_TAVERN_REWARD_USE_CHURCH_BRICK_IN_TIME_MACHINE": {
+    "label": "Talking Skull Reward - Use the brick from the church in the time machine",
+    "parent_region": "REGION_TAVERN_CELLAR"
+  },
+
 
   "LOCATION_EURIC_FIND_OUT_MORE_ABOUT_EURIC":  {
     "label": "Euric - Find out more about him",

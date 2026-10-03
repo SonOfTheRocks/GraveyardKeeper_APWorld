@@ -735,6 +735,20 @@ class TestAllQuestEvents(unittest.TestCase):
             with self.subTest(event=event_key):
                 self.assertEqual([artifact_key], list(data.events[event_key].required_quest_items))
 
+        visions_without_rewards = {
+            "EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE",
+            "EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE",
+            "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE",
+        }
+        for event_key in artifact_events:
+            with self.subTest(event=event_key):
+                expected_rewards = [] if event_key in visions_without_rewards else [
+                    event_key.replace("EVENT_", "LOCATION_").replace(
+                        "TAVERN_USE_", "TAVERN_REWARD_USE_"
+                    )
+                ]
+                self.assertEqual(expected_rewards, list(data.events[event_key].rewards))
+
     def test_farmer_flask_reaction_is_separate_from_farmers_son_reward(self):
         son_event = data.events["EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING"]
         farmer_event = data.events["EVENT_FARMER_REACT_TO_SONS_SECRET_DRINKING"]

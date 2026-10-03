@@ -1991,6 +1991,7 @@
     "rewards": ["LOCATION_MISS_CHAIN_REWARD_REVEAL_HORADRICS_BIRTHDAY_SURPRISE"]
   },
   "EVENT_TAVERN_USE_STATUETTE_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:1; normally grants a random alchemy recipe",
     "location_label": "Use the Statuette in the time machine",
     "item_label": "Used the Statuette in the time machine",
     "dlc": "STRANGER_SINS",
@@ -1998,7 +1999,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_STATUETTE"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_STATUETTE_IN_TIME_MACHINE"]
   },
   "EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING": {
     "comment": "Flow: npc_farmers son:15:option:0; normally grants the Flask",
@@ -2023,6 +2024,7 @@
     "rewards": ["LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"]
   },
   "EVENT_TAVERN_USE_FLASK_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:2; normally grants a random alchemy recipe",
     "location_label": "Use the Flask in the time machine",
     "item_label": "Used the Flask in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2030,7 +2032,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_FLASK"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_FLASK_IN_TIME_MACHINE"]
   },
   "EVENT_DIG_UP_DOOR_HINGE": {
     "comment": "The Door Hinge is buried between the Village and Dig's camp",
@@ -2044,6 +2046,7 @@
     "rewards": ["LOCATION_VILLAGE_REWARD_DIG_UP_DOOR_HINGE"]
   },
   "EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:3; this vision has no item or relation reward",
     "location_label": "Use the Door Hinge in the time machine",
     "item_label": "Used the Door Hinge in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2075,6 +2078,7 @@
     "rewards": ["LOCATION_FARMER_REWARD_ACCEPT_GIANT_CARROT"]
   },
   "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:4; normally grants a random alchemy recipe",
     "location_label": "Use the Legionary Helm in the time machine",
     "item_label": "Used the Legionary Helm in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2082,7 +2086,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_LEGIONARY_HELM"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_LEGIONARY_HELM_IN_TIME_MACHINE"]
   },
   "EVENT_MILLER_ACCEPT_COMEDY_INVITATION": {
     "comment": "Flow: npc_miller:13:option:4; normally grants 10 Miller happiness and the Ancient Lockpicks",
@@ -2099,6 +2103,7 @@
     "rewards": ["LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION"]
   },
   "EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:6; normally grants a random alchemy recipe",
     "location_label": "Use the Ancient Lockpicks in the time machine",
     "item_label": "Used the Ancient Lockpicks in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2106,7 +2111,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_LOCKPICKS"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE"]
   },
   "EVENT_DIG_ACCEPT_SNAKES_BOOZE": {
     "comment": "Flow: npc_dig:15:option:3; normally grants 10 Dig happiness and the Priest's Medallion",
@@ -2120,6 +2125,7 @@
     "rewards": ["LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE"]
   },
   "EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:7; normally grants a random alchemy recipe",
     "location_label": "Use the Priest's Medallion in the time machine",
     "item_label": "Used the Priest's Medallion in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2127,7 +2133,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTS_MEDALLION"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE"]
   },
   "EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING": {
     "comment": "Flow: npc_blacksmith:11:option:5; normally grants 10 Krezvold happiness and the Legionary Dagger",
@@ -2141,6 +2147,7 @@
     "rewards": ["LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING"]
   },
   "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:9; normally grants a random alchemy recipe",
     "location_label": "Use the Legionary Dagger in the time machine",
     "item_label": "Used the Legionary Dagger in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2148,7 +2155,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_THE_LEGIONARY_DAGGER"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE"]
   },
   "EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER": {
     "comment": "Flow: npc_wood_cutter:11:option:3; normally grants 20 Woodcutter happiness and the Belt Buckle",
@@ -2162,6 +2169,7 @@
     "rewards": ["LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER"]
   },
   "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:11; normally grants a random alchemy recipe",
     "location_label": "Use the Belt Buckle in the time machine",
     "item_label": "Used the Belt Buckle in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2169,7 +2177,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_BELT_BUCKLE"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_BELT_BUCKLE_IN_TIME_MACHINE"]
   },
   "EVENT_TAVERN_UPGRADE_TAVERN": {
     "location_label": "Upgrade the tavern",
@@ -2200,6 +2208,7 @@
     "rewards": ["LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY"]
   },
   "EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:12; normally grants a random alchemy recipe",
     "location_label": "Use the Clay Shards in the time machine",
     "item_label": "Used the Clay Shards in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2207,9 +2216,10 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_CLAY_SHARDS"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_CLAY_SHARDS_IN_TIME_MACHINE"]
   },
   "EVENT_TAVERN_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:14; normally grants a random alchemy recipe",
     "location_label": "Use the Amulet of the Ancient God in the time machine",
     "item_label": "Used the Amulet of the Ancient God in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2217,7 +2227,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_AMULET_OF_THE_ANCIENT_GOD"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE"]
   },
   "EVENT_DIG_UP_ANCIENT_SHACKLES": {
     "comment": "The Ancient Shackles are buried on the path to the Swamp",
@@ -2231,6 +2241,7 @@
     "rewards": ["LOCATION_SWAMP_REWARD_DIG_UP_ANCIENT_SHACKLES"]
   },
   "EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:15; this vision has no item or relation reward",
     "location_label": "Use the Ancient Shackles in the time machine",
     "item_label": "Used the Ancient Shackles in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2258,6 +2269,7 @@
     "rewards": ["LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE"]
   },
   "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:17; normally grants a random alchemy recipe",
     "location_label": "Use the Ancient Pickaxe in the time machine",
     "item_label": "Used the Ancient Pickaxe in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2265,7 +2277,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_PICKAXE"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE"]
   },
   "EVENT_ADAM_ACCEPT_POISONED_VASES": {
     "comment": "The poisoned-vase quest grants access to Adam's house, where the Ancient Keys are found",
@@ -2279,6 +2291,7 @@
     "rewards": ["LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES"]
   },
   "EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:18; normally grants a random alchemy recipe",
     "location_label": "Use the Ancient Keys in the time machine",
     "item_label": "Used the Ancient Keys in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2286,7 +2299,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_KEYS"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_KEYS_IN_TIME_MACHINE"]
   },
   "EVENT_DIG_UP_CLAY_POT_OF_TAR": {
     "comment": "The Clay Pot of Tar is buried on Witch Hill; the purpose of the second legacy reward location is still unresolved",
@@ -2303,6 +2316,7 @@
     ]
   },
   "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:20; this vision has no item or relation reward",
     "location_label": "Use the Clay Pot of Tar in the time machine",
     "item_label": "Used the Clay Pot of Tar in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2327,6 +2341,7 @@
     "rewards": ["LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT"]
   },
   "EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:25; normally grants a random alchemy recipe",
     "location_label": "Use the Priest's Signet in the time machine",
     "item_label": "Used the Priest's Signet in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2334,7 +2349,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTS_SIGNET"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_PRIESTS_SIGNET_IN_TIME_MACHINE"]
   },
   "EVENT_FARMER_RESOLVE_BELLAS_STORY": {
     "comment": "The Farmer's Stranger Sins quest line reveals Bella's story and makes the Priestess Ring available",
@@ -2348,6 +2363,7 @@
     "rewards": ["LOCATION_FARMER_REWARD_RESOLVE_BELLAS_STORY"]
   },
   "EVENT_TAVERN_USE_PRIESTESS_RING_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:24; normally grants a random alchemy recipe",
     "location_label": "Use the Priestess Ring in the time machine",
     "item_label": "Used the Priestess Ring in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2355,7 +2371,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTESS_RING"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_PRIESTESS_RING_IN_TIME_MACHINE"]
   },
   "EVENT_DIG_UP_CHURCH_BRICK": {
     "comment": "Flow: tr_quest_19_empty_obj; the brick is dug up in the Old Graveyard",
@@ -2369,6 +2385,7 @@
     "rewards": ["LOCATION_OLD_GRAVEYARD_REWARD_DIG_UP_CHURCH_BRICK"]
   },
   "EVENT_TAVERN_USE_CHURCH_BRICK_IN_TIME_MACHINE": {
+    "comment": "Flow: tavern_skull:15:option:27; normally grants a random alchemy recipe",
     "location_label": "Use the brick from the church in the time machine",
     "item_label": "Used the brick from the church in the time machine",
     "dlc": "STRANGER_SINS",
@@ -2376,7 +2393,7 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_A_BRICK_FROM_THE_CHURCH"],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_USE_CHURCH_BRICK_IN_TIME_MACHINE"]
   },
 
   "EVENT_STAINED_GLASS_WINDOW_INSTALLED": {
