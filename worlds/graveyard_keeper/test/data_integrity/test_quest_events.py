@@ -1,6 +1,6 @@
 import re
 import unittest
-from itertools import permutations
+from itertools import product
 
 from BaseClasses import ItemClassification
 from rule_builder.rules import Rule, Has
@@ -522,7 +522,7 @@ class TestAllQuestEvents(unittest.TestCase):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
         crate = data.recipes["ITEM_TRADE_CRATE"]
 
-        self.assertEqual(16, len(dinner))
+        self.assertEqual(20, len(dinner))
         self.assertTrue(all(isinstance(recipe, QualityRecipeData) for recipe in dinner))
         self.assertTrue(all(recipe.crafting_group is CraftingGroup.Food for recipe in dinner))
         self.assertTrue(all(
@@ -537,37 +537,18 @@ class TestAllQuestEvents(unittest.TestCase):
                 for quality, category in zip(qualities, categories)
             )
 
-        expected_dinner_paths = {
-            ingredients_for(("SILVER", "SILVER", "SILVER")): 0.31,
+        quality_values = {"ZERO": 0, "COPPER": 1, "SILVER": 2, "GOLD": 3}
+        base_modifiers = {
+            6: 0.3,
+            7: 0.6333333333333333,
+            8: 0.9666666666666667,
+            9: 1.3,
         }
-        expected_dinner_paths.update({
-            ingredients_for(qualities): 0.3
-            for qualities in permutations(("GOLD", "SILVER", "COPPER"))
-        })
-        expected_dinner_paths.update({
-            ingredients_for(qualities): 0.3
-            for qualities in {
-                ("ANY", "GOLD", "GOLD"),
-                ("GOLD", "ANY", "GOLD"),
-                ("GOLD", "GOLD", "ANY"),
-            }
-        })
-        expected_dinner_paths.update({
-            ingredients_for(qualities): 0.64
-            for qualities in {
-                ("GOLD", "SILVER", "SILVER"),
-                ("SILVER", "GOLD", "SILVER"),
-                ("SILVER", "SILVER", "GOLD"),
-            }
-        })
-        expected_dinner_paths.update({
-            ingredients_for(qualities): 0.63
-            for qualities in {
-                ("COPPER", "GOLD", "GOLD"),
-                ("GOLD", "COPPER", "GOLD"),
-                ("GOLD", "GOLD", "COPPER"),
-            }
-        })
+        expected_dinner_paths = {
+            ingredients_for(qualities): base_modifiers[quality_sum]
+            for qualities in product(quality_values, repeat=3)
+            if (quality_sum := sum(quality_values[quality] for quality in qualities)) >= 6
+        }
         self.assertEqual(
             expected_dinner_paths,
             {frozenset(recipe.ingredients): recipe.base_modifier for recipe in dinner},
@@ -589,10 +570,6 @@ class TestAllQuestEvents(unittest.TestCase):
             [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_SILVER_SNACK"]],
         )
         self.assertIn(
-            {"MATERIAL_DINNER_GOLD_SNACK"},
-            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_SILVER_SNACK"]],
-        )
-        self.assertIn(
             {"ITEM_CAKE"},
             [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_GOLD_DESSERT"]],
         )
@@ -601,14 +578,13 @@ class TestAllQuestEvents(unittest.TestCase):
             [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_GOLD_DESSERT"]],
         )
         self.assertGreaterEqual(len(data.recipes["MATERIAL_DINNER_GOLD_MEAL"]), 10)
-        self.assertIn(
-            {"MATERIAL_DINNER_GOLD_MEAL"},
-            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_SILVER_MEAL"]],
-        )
-        self.assertIn(
-            {"MATERIAL_DINNER_COPPER_DESSERT"},
-            [set(recipe.ingredients) for recipe in data.recipes["MATERIAL_DINNER_ANY_DESSERT"]],
-        )
+        for quality in quality_values:
+            for category in categories:
+                component_key = f"MATERIAL_DINNER_{quality}_{category}"
+                self.assertTrue(all(
+                    all(not ingredient.startswith("MATERIAL_DINNER_") for ingredient in recipe.ingredients)
+                    for recipe in data.recipes[component_key]
+                ), component_key)
         self.assertEqual(1, len(crate))
         self.assertEqual({"ITEM_NAILS", "ITEM_FLITCH"}, set(crate[0].ingredients))
         self.assertEqual({"CRAFTING_STATION_CRATE_FACTORY"}, set(crate[0].workstations))
