@@ -778,6 +778,53 @@ class TestAllQuestEvents(unittest.TestCase):
             list(data.events["EVENT_DIG_UP_CHURCH_BRICK"].required_quests),
         )
 
+    def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):
+        combined_reward_events = {
+            "EVENT_MILLER_ACCEPT_COMEDY_INVITATION",
+            "EVENT_DIG_ACCEPT_SNAKES_BOOZE",
+            "EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING",
+            "EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER",
+            "EVENT_ADAM_EXPLAIN_GHOSTLY_POTTERY",
+            "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE",
+            "EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT",
+        }
+        for event_key in combined_reward_events:
+            with self.subTest(event=event_key):
+                self.assertEqual(2, len(data.events[event_key].rewards))
+
+    def test_house_artifacts_are_separate_from_the_dialogue_that_grants_access(self):
+        helm_search = data.events["EVENT_FARMER_SEARCH_HOUSE_FOR_LEGIONARY_HELM"]
+        self.assertEqual(["EVENT_FARMER_ACCEPT_GIANT_CARROT"], list(helm_search.required_quests))
+        self.assertEqual([HappinessData("FARMER", 40)], list(helm_search.required_happiness))
+        self.assertEqual(
+            ["EVENT_FARMER_SEARCH_HOUSE_FOR_LEGIONARY_HELM"],
+            list(data.events["EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE"].required_quests),
+        )
+
+        key_search = data.events["EVENT_ADAM_SEARCH_HOUSE_FOR_ANCIENT_KEYS"]
+        self.assertEqual(["EVENT_ADAM_ACCEPT_POISONED_VASES"], list(key_search.required_quests))
+        self.assertEqual(
+            ["EVENT_ADAM_SEARCH_HOUSE_FOR_ANCIENT_KEYS"],
+            list(data.events["EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE"].required_quests),
+        )
+
+    def test_bellas_ring_research_chain_is_explicit(self):
+        chain = [
+            "EVENT_FARMER_RESOLVE_BELLAS_STORY",
+            "EVENT_FARMERS_SON_DISCUSS_MOTHER",
+            "EVENT_MILLER_DISCUSS_BELLA",
+            "EVENT_CLOTHO_DISCUSS_BELLA",
+            "EVENT_FARMER_RECALL_BELLAS_RING",
+            "EVENT_FARMER_RECOVER_BELLAS_RING",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+        self.assertEqual(
+            ["EVENT_FARMER_RECOVER_BELLAS_RING"],
+            list(data.events["EVENT_TAVERN_USE_PRIESTESS_RING_IN_TIME_MACHINE"].required_quests),
+        )
+
     def test_all_quests_are_completable_with_all_items(self):
         evaluator = QuestRuleEvaluator()
         evaluations = evaluator.evaluate_all()

@@ -625,36 +625,68 @@
     "label": "Farmer Reward - Bring the giant carrot",
     "parent_region": "REGION_WHEAT_FARM"
   },
-  "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION": {
-    "label": "Miller Reward - Give the comedy show invitation",
+  "LOCATION_FARMER_REWARD_SEARCH_HOUSE_FOR_LEGIONARY_HELM": {
+    "label": "Farmer Reward - Search his house for the Legionary Helm",
     "parent_region": "REGION_WHEAT_FARM"
   },
-  "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE": {
-    "label": "Dig Reward - Give him Snake's booze",
+  "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_1": {
+    "label": "Miller Reward - Give the comedy show invitation (1)",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_2": {
+    "label": "Miller Reward - Give the comedy show invitation (2)",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE_1": {
+    "label": "Dig Reward - Give him Snake's booze (1)",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING": {
-    "label": "Krezvold Reward - Tell him Ms. Charm will sing",
+  "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE_2": {
+    "label": "Dig Reward - Give him Snake's booze (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER": {
-    "label": "Woodcutter Reward - Give him the honey plaster",
+  "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_1": {
+    "label": "Krezvold Reward - Tell him Ms. Charm will sing (1)",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY": {
-    "label": "Adam Reward - Help with his ghostly pottery problem",
+  "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_2": {
+    "label": "Krezvold Reward - Tell him Ms. Charm will sing (2)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_1": {
+    "label": "Woodcutter Reward - Give him the honey plaster (1)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_2": {
+    "label": "Woodcutter Reward - Give him the honey plaster (2)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_1": {
+    "label": "Adam Reward - Help with his ghostly pottery problem (1)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_2": {
+    "label": "Adam Reward - Help with his ghostly pottery problem (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
   "LOCATION_SWAMP_REWARD_DIG_UP_ANCIENT_SHACKLES": {
     "label": "Swamp Reward - Dig up the Ancient Shackles",
     "parent_region": "REGION_SWAMP"
   },
-  "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE": {
-    "label": "Koukol Reward - Show him the upgraded tavern",
+  "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_1": {
+    "label": "Koukol Reward - Show him the upgraded tavern (1)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_2": {
+    "label": "Koukol Reward - Show him the upgraded tavern (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
   "LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES": {
     "label": "Adam Reward - Bring the poisoned vases",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_ADAM_REWARD_SEARCH_HOUSE_FOR_ANCIENT_KEYS": {
+    "label": "Adam Reward - Search his house for the Ancient Keys",
     "parent_region": "REGION_THE_VILLAGE"
   },
   "LOCATION_WITCH_HILL_REWARD_DIG_UP_CLAY_POT_OF_TAR": {
@@ -665,13 +697,21 @@
     "label": "Quest Reward - Time Machine Item 14 #2",
     "parent_region": "REGION_WITCH_HILL"
   },
-  "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT": {
-    "label": "Dig Reward - Give him the Gypsy Baron's rat",
+  "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_1": {
+    "label": "Dig Reward - Give him the Gypsy Baron's rat (1)",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_2": {
+    "label": "Dig Reward - Give him the Gypsy Baron's rat (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
   "LOCATION_FARMER_REWARD_RESOLVE_BELLAS_STORY": {
-    "label": "Farmer Reward - Help him remember Bella",
-    "parent_region": "REGION_THE_VILLAGE"
+    "label": "Farmer Reward - Ask him about his wife",
+    "parent_region": "REGION_WHEAT_FARM"
+  },
+  "LOCATION_FARMER_REWARD_RECOVER_BELLAS_RING": {
+    "label": "Farmer Reward - Recover Bella's ring",
+    "parent_region": "REGION_WHEAT_FARM"
   },
   "LOCATION_OLD_GRAVEYARD_REWARD_DIG_UP_CHURCH_BRICK": {
     "label": "Old Graveyard Reward - Dig up the brick from the church",

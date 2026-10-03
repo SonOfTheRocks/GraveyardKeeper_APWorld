@@ -2072,17 +2072,28 @@
     "item_label": "Brought the giant carrot to the Farmer",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_ENLARGE_CARROT"],
-    "required_happiness": ["FARMER_40"],
+    "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_CARROT"],
     "rewards": ["LOCATION_FARMER_REWARD_ACCEPT_GIANT_CARROT"]
+  },
+  "EVENT_FARMER_SEARCH_HOUSE_FOR_LEGIONARY_HELM": {
+    "comment": "The Legionary Helm is found in the Farmer's bedroom chest after he grants access to his house",
+    "location_label": "Search the Farmer's house for the Legionary Helm",
+    "item_label": "Searched the Farmer's house for the Legionary Helm",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_FARMER_ACCEPT_GIANT_CARROT"],
+    "required_happiness": ["FARMER_40"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_FARMER_REWARD_SEARCH_HOUSE_FOR_LEGIONARY_HELM"]
   },
   "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:4; normally grants a random alchemy recipe",
     "location_label": "Use the Legionary Helm in the time machine",
     "item_label": "Used the Legionary Helm in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_FARMER_ACCEPT_GIANT_CARROT"],
+    "required_quests": ["EVENT_FARMER_SEARCH_HOUSE_FOR_LEGIONARY_HELM"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_LEGIONARY_HELM"],
     "required_craft_items": [],
@@ -2100,7 +2111,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION"]
+    "rewards": [
+      "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_1",
+      "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_2"
+    ]
   },
   "EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:6; normally grants a random alchemy recipe",
@@ -2122,7 +2136,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_BOOZE"],
-    "rewards": ["LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE"]
+    "rewards": [
+      "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE_1",
+      "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE_2"
+    ]
   },
   "EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:7; normally grants a random alchemy recipe",
@@ -2144,7 +2161,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING"]
+    "rewards": [
+      "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_1",
+      "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_2"
+    ]
   },
   "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:9; normally grants a random alchemy recipe",
@@ -2166,7 +2186,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER"]
+    "rewards": [
+      "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_1",
+      "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_2"
+    ]
   },
   "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:11; normally grants a random alchemy recipe",
@@ -2205,7 +2228,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY"]
+    "rewards": [
+      "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_1",
+      "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_2"
+    ]
   },
   "EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:12; normally grants a random alchemy recipe",
@@ -2266,7 +2292,10 @@
       "ITEM_WOODEN_BEAM",
       "ITEM_SILK"
     ],
-    "rewards": ["LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE"]
+    "rewards": [
+      "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_1",
+      "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_2"
+    ]
   },
   "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:17; normally grants a random alchemy recipe",
@@ -2280,22 +2309,36 @@
     "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE"]
   },
   "EVENT_ADAM_ACCEPT_POISONED_VASES": {
-    "comment": "The poisoned-vase quest grants access to Adam's house, where the Ancient Keys are found",
+    "comment": "Flow: npc_potter:13:option:6; normally grants 20 Adam happiness and access to his house",
     "location_label": "Bring the poisoned vases to Adam",
     "item_label": "Brought the poisoned vases to Adam",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE"],
+    "required_quests": [
+      "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE",
+      "TODO(EVENT_BEEKEEPER_POISON_VASES)"
+    ],
     "required_happiness": [],
-    "required_quest_items": ["ITEM_PIE_WITH_POISON"],
+    "required_quest_items": [],
     "required_craft_items": [],
     "rewards": ["LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES"]
+  },
+  "EVENT_ADAM_SEARCH_HOUSE_FOR_ANCIENT_KEYS": {
+    "comment": "The Ancient Keys are found inside Adam's house after completing his poisoned-vase quest",
+    "location_label": "Search Adam's house for the Ancient Keys",
+    "item_label": "Searched Adam's house for the Ancient Keys",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_ADAM_ACCEPT_POISONED_VASES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ADAM_REWARD_SEARCH_HOUSE_FOR_ANCIENT_KEYS"]
   },
   "EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:18; normally grants a random alchemy recipe",
     "location_label": "Use the Ancient Keys in the time machine",
     "item_label": "Used the Ancient Keys in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_ADAM_ACCEPT_POISONED_VASES"],
+    "required_quests": ["EVENT_ADAM_SEARCH_HOUSE_FOR_ANCIENT_KEYS"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_KEYS"],
     "required_craft_items": [],
@@ -2338,7 +2381,10 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT"]
+    "rewards": [
+      "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_1",
+      "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_2"
+    ]
   },
   "EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:25; normally grants a random alchemy recipe",
@@ -2352,9 +2398,9 @@
     "rewards": ["LOCATION_TAVERN_REWARD_USE_PRIESTS_SIGNET_IN_TIME_MACHINE"]
   },
   "EVENT_FARMER_RESOLVE_BELLAS_STORY": {
-    "comment": "The Farmer's Stranger Sins quest line reveals Bella's story and makes the Priestess Ring available",
-    "location_label": "Help the Farmer remember Bella",
-    "item_label": "Helped the Farmer remember Bella",
+    "comment": "Flow: npc_farmer:15:option:5; normally grants 20 Farmer happiness and starts the search for Bella's ring",
+    "location_label": "Ask the Farmer about his wife",
+    "item_label": "Asked the Farmer about his wife",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE"],
     "required_happiness": [],
@@ -2362,12 +2408,67 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_FARMER_REWARD_RESOLVE_BELLAS_STORY"]
   },
+  "EVENT_FARMERS_SON_DISCUSS_MOTHER": {
+    "comment": "Flow: npc_farmers son:15:option:1",
+    "location_label": "Ask the Farmer's Son about his mother",
+    "item_label": "Asked the Farmer's Son about his mother",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_FARMER_RESOLVE_BELLAS_STORY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MILLER_DISCUSS_BELLA": {
+    "comment": "Flow: npc_miller:13:option:5",
+    "location_label": "Ask the Miller about Bella",
+    "item_label": "Asked the Miller about Bella",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_FARMERS_SON_DISCUSS_MOTHER"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_CLOTHO_DISCUSS_BELLA": {
+    "comment": "Flow: npc_witch:9:option:13",
+    "location_label": "Ask Clotho about Bella",
+    "item_label": "Asked Clotho about Bella",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_MILLER_DISCUSS_BELLA"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_FARMER_RECALL_BELLAS_RING": {
+    "comment": "Flow: npc_farmer:15:option:6",
+    "location_label": "Tell the Farmer what happened to Bella",
+    "item_label": "Told the Farmer what happened to Bella",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_CLOTHO_DISCUSS_BELLA"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_FARMER_RECOVER_BELLAS_RING": {
+    "comment": "Flow: npc_farmer:15:option:7 or npc_farmer:641; both branches make the Priestess Ring available",
+    "location_label": "Recover Bella's ring from the Farmer",
+    "item_label": "Recovered Bella's ring from the Farmer",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_FARMER_RECALL_BELLAS_RING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_FARMER_REWARD_RECOVER_BELLAS_RING"]
+  },
   "EVENT_TAVERN_USE_PRIESTESS_RING_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:24; normally grants a random alchemy recipe",
     "location_label": "Use the Priestess Ring in the time machine",
     "item_label": "Used the Priestess Ring in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_FARMER_RESOLVE_BELLAS_STORY"],
+    "required_quests": ["EVENT_FARMER_RECOVER_BELLAS_RING"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTESS_RING"],
     "required_craft_items": [],
