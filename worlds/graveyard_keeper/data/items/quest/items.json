@@ -213,6 +213,11 @@
     "dlc": "STRANGER_SINS",
     "classification": "PROGRESSION"
   },
+  "ITEM_MAGIC_SCROLL_FOR_KOUKOL": {
+    "label": "Magic scroll for Koukol",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
   "ITEM_CLAY_POT_OF_TAR": {
     "label": "Clay Pot of Tar",
     "dlc": "STRANGER_SINS",

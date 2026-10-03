@@ -870,6 +870,10 @@ class TestAllQuestEvents(unittest.TestCase):
                 "ITEM_HONEY_BARREL",
                 "LOCATION_VILLAGE_REWARD_DIG_UP_BEEKEEPERS_HONEY_BARREL",
             ),
+            "EVENT_CLOTHO_GIVE_MAGIC_SCROLL_FOR_KOUKOL": (
+                "ITEM_MAGIC_SCROLL_FOR_KOUKOL",
+                "LOCATION_CLOTHO_REWARD_GIVE_MAGIC_SCROLL_FOR_KOUKOL",
+            ),
         }
         for event_key, (item_key, location_key) in item_rewards.items():
             with self.subTest(event=event_key):
@@ -962,6 +966,46 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             ["ITEM_HONEY_PLASTER"],
             list(data.events["EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER"].required_quest_items),
+        )
+
+    def test_stranger_sins_ancient_pickaxe_chain_is_explicit(self):
+        chain = [
+            "EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE",
+            "EVENT_KOUKOL_ASK_FOR_HELP_WITH_NIGHTMARES",
+            "EVENT_CLOTHO_GIVE_MAGIC_SCROLL_FOR_KOUKOL",
+            "EVENT_KOUKOL_ACCEPT_MAGIC_SCROLL",
+            "EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN",
+            "EVENT_TAVERN_UPGRADE_TO_40_QUALITY",
+            "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE",
+            "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertIn(predecessor, data.events[event_key].required_quests)
+
+        clotho = data.events["EVENT_CLOTHO_GIVE_MAGIC_SCROLL_FOR_KOUKOL"]
+        self.assertEqual(
+            {
+                "EVENT_KOUKOL_ASK_FOR_HELP_WITH_NIGHTMARES",
+                "EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST",
+            },
+            set(clotho.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_MAGIC_SCROLL_FOR_KOUKOL"],
+            list(data.events["EVENT_KOUKOL_ACCEPT_MAGIC_SCROLL"].required_quest_items),
+        )
+
+        dark_organ = data.events["EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"]
+        self.assertEqual(1, len(dark_organ.rewards))
+        self.assertEqual([], list(dark_organ.required_craft_items))
+
+        tavern_upgrade = data.events["EVENT_TAVERN_UPGRADE_TO_40_QUALITY"]
+        self.assertEqual({AreaPointData("TAVERN", 40)}, set(tavern_upgrade.required_area_points))
+        self.assertEqual([], list(tavern_upgrade.required_craft_items))
+        self.assertEqual(
+            [],
+            list(data.events["EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE"].required_craft_items),
         )
 
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):

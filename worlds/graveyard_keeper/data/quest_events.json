@@ -2411,21 +2411,74 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_KOUKOL_ASK_FOR_HELP_WITH_NIGHTMARES": {
+    "comment": "Flow: npc_hunchback:90:option:1; Koukol asks the player to seek magical help from Clotho",
+    "location_label": "Ask Koukol how to obtain the Ancient Pickaxe",
+    "item_label": "Asked Koukol how to obtain the Ancient Pickaxe",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_CLOTHO_GIVE_MAGIC_SCROLL_FOR_KOUKOL": {
+    "comment": "Flow: npc_witch:9:option:12; requires player_knows_about_dark_organs and normally grants scroll_for_hunchback",
+    "location_label": "Ask Clotho to help Koukol",
+    "item_label": "Asked Clotho to help Koukol",
+    "dlc": "STRANGER_SINS",
+    "required_quests": [
+      "EVENT_KOUKOL_ASK_FOR_HELP_WITH_NIGHTMARES",
+      "EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_CLOTHO_REWARD_GIVE_MAGIC_SCROLL_FOR_KOUKOL"]
+  },
+  "EVENT_KOUKOL_ACCEPT_MAGIC_SCROLL": {
+    "comment": "Flow: npc_hunchback:90:option:2; requires scroll_for_hunchback and schedules Koukol's return",
+    "location_label": "Give Clotho's magic scroll to Koukol",
+    "item_label": "Gave Clotho's magic scroll to Koukol",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_CLOTHO_GIVE_MAGIC_SCROLL_FOR_KOUKOL"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_MAGIC_SCROLL_FOR_KOUKOL"],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN": {
+    "comment": "Flow: npc_hunchback:90:option:3; after the wait, the chosen dialogue branch normally grants exactly one of heart_dark, brain_dark, or intestine_dark",
+    "location_label": "Return to Koukol for the chosen dark organ",
+    "item_label": "Returned to Koukol for the chosen dark organ",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_KOUKOL_ACCEPT_MAGIC_SCROLL"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_KOUKOL_REWARD_RETURN_WITH_DARK_ORGAN"]
+  },
+  "EVENT_TAVERN_UPGRADE_TO_40_QUALITY": {
+    "comment": "Flow: on_tavern_table_built unlocks tr_quest_14_after_tavern_improve_1 once the tavern reaches the required quality",
+    "location_label": "Upgrade the tavern to 40 quality",
+    "item_label": "Upgraded the tavern to 40 quality",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["TAVERN_40"],
+    "rewards": []
+  },
   "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE": {
     "comment": "Flow: npc_hunchback:90:option:4; normally grants 20 Koukol happiness and the Ancient Pickaxe",
     "location_label": "Show Koukol the upgraded tavern",
     "item_label": "Showed Koukol the upgraded tavern",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE"],
+    "required_quests": ["EVENT_TAVERN_UPGRADE_TO_40_QUALITY"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": [
-      "ITEM_DARK_ORGAN",
-      "ITEM_WOODEN_PLANK",
-      "ITEM_NAILS",
-      "ITEM_WOODEN_BEAM",
-      "ITEM_SILK"
-    ],
+    "required_craft_items": [],
     "rewards": [
       "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_1",
       "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_2"

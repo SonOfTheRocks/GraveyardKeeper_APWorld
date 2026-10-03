@@ -701,6 +701,14 @@
     "label": "Koukol Reward - Show him the upgraded tavern (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
+  "LOCATION_CLOTHO_REWARD_GIVE_MAGIC_SCROLL_FOR_KOUKOL": {
+    "label": "Clotho Reward - Ask her to help Koukol",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_KOUKOL_REWARD_RETURN_WITH_DARK_ORGAN": {
+    "label": "Koukol Reward - Return for the chosen dark organ",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
   "LOCATION_DIG_REWARD_SOLVE_POISON_RIDDLE": {
     "label": "Dig Reward - Solve his poison riddle",
     "parent_region": "REGION_THE_VILLAGE"
