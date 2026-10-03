@@ -862,6 +862,10 @@ class TestAllQuestEvents(unittest.TestCase):
                 "ITEM_RAT_FOR_DIG",
                 "LOCATION_GYPSY_BARON_REWARD_BUY_RACING_RAT",
             ),
+            "EVENT_TAVERN_EVENT_COMEDY_STANDUP": (
+                "ITEM_MILLERS_INVITATION",
+                "LOCATION_TAVERN_REWARD_HOLD_FIRST_COMEDY_STANDUP",
+            ),
         }
         for event_key, (item_key, location_key) in item_rewards.items():
             with self.subTest(event=event_key):
@@ -871,6 +875,29 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             ["ITEM_RAT_FOR_DIG"],
             list(data.events["EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT"].required_quest_items),
+        )
+
+    def test_stranger_sins_ancient_lockpicks_chain_is_explicit(self):
+        chain = [
+            "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE",
+            "EVENT_MILLER_ASK_ABOUT_ANCIENT_LOCKPICKS",
+            "EVENT_MILLER_SEARCH_FOR_STOLEN_INVITATION_CLUES",
+            "EVENT_LIGHTHOUSE_KEEPER_CONFRONT_ABOUT_STOLEN_INVITATION",
+            "EVENT_TAVERN_EVENT_COMEDY_STANDUP",
+            "EVENT_MILLER_ACCEPT_COMEDY_INVITATION",
+            "EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+
+        self.assertEqual(
+            ["ITEM_MILLERS_INVITATION"],
+            list(data.events["EVENT_MILLER_ACCEPT_COMEDY_INVITATION"].required_quest_items),
+        )
+        self.assertEqual(
+            ["ITEM_FLYER", "ITEM_FAITH", "MATERIAL_TAVERN_REPUTATION"],
+            list(data.events["EVENT_TAVERN_EVENT_COMEDY_STANDUP"].required_craft_items),
         )
 
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):

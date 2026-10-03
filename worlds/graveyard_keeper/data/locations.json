@@ -633,6 +633,10 @@
     "label": "Farmer Reward - Search his house for the Legionary Helm",
     "parent_region": "REGION_WHEAT_FARM"
   },
+  "LOCATION_TAVERN_REWARD_HOLD_FIRST_COMEDY_STANDUP": {
+    "label": "Talking Skull Reward - Hold the first comedy standup for the Lighthouse Keeper",
+    "parent_region": "REGION_TAVERN"
+  },
   "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_1": {
     "label": "Miller Reward - Give the comedy show invitation (1)",
     "parent_region": "REGION_WHEAT_FARM"

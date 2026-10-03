@@ -183,6 +183,11 @@
     "dlc": "STRANGER_SINS",
     "classification": "PROGRESSION"
   },
+  "ITEM_MILLERS_INVITATION": {
+    "label": "Miller's invitation",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
   "ITEM_ANCIENT_PICKAXE": {
     "label": "Ancient Pickaxe",
     "dlc": "STRANGER_SINS",

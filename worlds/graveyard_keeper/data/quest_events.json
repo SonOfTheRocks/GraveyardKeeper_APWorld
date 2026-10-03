@@ -1931,10 +1931,11 @@
   },
 
   "EVENT_TAVERN_EVENT_COMEDY_STANDUP": {
-    "location_label": "Hold a comedy standup event",
-    "item_label": "Held a comedy standup event",
+    "comment": "Flow: npc_light_keeper goto_search_hook_cutscene unlocks players_tavern_builddesk::tavern_stand_up; the first stand-up drops millers_invitation directly, while lighthouse_keeper_after_1st_standup is a fallback path for the same item",
+    "location_label": "Hold the first comedy standup for the Lighthouse Keeper",
+    "item_label": "Held the first comedy standup for the Lighthouse Keeper",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE"],
+    "required_quests": ["EVENT_LIGHTHOUSE_KEEPER_CONFRONT_ABOUT_STOLEN_INVITATION"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -1942,7 +1943,7 @@
       "ITEM_FAITH",
       "MATERIAL_TAVERN_REPUTATION"
     ],
-    "rewards": []
+    "rewards": ["LOCATION_TAVERN_REWARD_HOLD_FIRST_COMEDY_STANDUP"]
   },
   "EVENT_TAVERN_EVENT_RAT_RACE": {
     "location_label": "Hold a rat race event",
@@ -2144,17 +2145,47 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_TAVERN_REWARD_USE_LEGIONARY_HELM_IN_TIME_MACHINE"]
   },
+  "EVENT_MILLER_ASK_ABOUT_ANCIENT_LOCKPICKS": {
+    "comment": "Flow: npc_miller:13:option:3; the Miller refuses to surrender the lockpicks until the player recovers his stolen comedy-show invitation and spawns three clue interactions around the mill",
+    "location_label": "Ask the Miller about the Ancient Lockpicks",
+    "item_label": "Asked the Miller about the Ancient Lockpicks",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MILLER_SEARCH_FOR_STOLEN_INVITATION_CLUES": {
+    "comment": "Flow: npc_miller spawns three tr_quest_6_empty_obj interactions; the decisive third clue starts the Beekeeper cutscene and sends the Lighthouse Keeper to the fish-hook site. The incidental rope_hemp and money finds are not quest requirements.",
+    "location_label": "Search the Miller's grounds for the stolen invitation",
+    "item_label": "Searched the Miller's grounds for the stolen invitation",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_MILLER_ASK_ABOUT_ANCIENT_LOCKPICKS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_LIGHTHOUSE_KEEPER_CONFRONT_ABOUT_STOLEN_INVITATION": {
+    "comment": "Flow: npc_light_keeper goto_search_hook_cutscene completes dlc_stories_lighthouse_keeper and unlocks the comedy standup craft after the player confronts him at the fish-hook site",
+    "location_label": "Confront the Lighthouse Keeper about the stolen invitation",
+    "item_label": "Confronted the Lighthouse Keeper about the stolen invitation",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_MILLER_SEARCH_FOR_STOLEN_INVITATION_CLUES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
   "EVENT_MILLER_ACCEPT_COMEDY_INVITATION": {
     "comment": "Flow: npc_miller:13:option:4; normally grants 10 Miller happiness and the Ancient Lockpicks",
     "location_label": "Give the Miller an invitation to the comedy show",
     "item_label": "Gave the Miller an invitation to the comedy show",
     "dlc": "STRANGER_SINS",
-    "required_quests": [
-      "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE",
-      "EVENT_TAVERN_EVENT_COMEDY_STANDUP"
-    ],
+    "required_quests": ["EVENT_TAVERN_EVENT_COMEDY_STANDUP"],
     "required_happiness": [],
-    "required_quest_items": [],
+    "required_quest_items": ["ITEM_MILLERS_INVITATION"],
     "required_craft_items": [],
     "rewards": [
       "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_1",
