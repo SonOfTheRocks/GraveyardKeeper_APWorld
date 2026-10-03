@@ -917,6 +917,22 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertNotIn("EVENT_SNAKE_REMIND_ABOUT_DIGS_BOOZE", data.events)
 
+    def test_stranger_sins_legionary_dagger_chain_is_explicit(self):
+        chain = [
+            "EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE",
+            "EVENT_KREZVOLD_ASK_TO_PERSUADE_MS_CHARM",
+            "EVENT_MS_CHARM_AGREE_TO_SING_FOR_KREZVOLD",
+            "EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING",
+            "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+
+        persuasion = data.events["EVENT_MS_CHARM_AGREE_TO_SING_FOR_KREZVOLD"]
+        self.assertEqual([], list(persuasion.required_quest_items))
+        self.assertEqual([], list(persuasion.required_craft_items))
+
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):
         combined_reward_events = {
             "EVENT_MILLER_ACCEPT_COMEDY_INVITATION",

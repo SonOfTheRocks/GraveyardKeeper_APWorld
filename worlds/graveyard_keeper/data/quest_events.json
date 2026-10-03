@@ -2228,12 +2228,34 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_TAVERN_REWARD_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE"]
   },
+  "EVENT_KREZVOLD_ASK_TO_PERSUADE_MS_CHARM": {
+    "comment": "Flow: npc_blacksmith:11:option:4; Krezvold will part with the Legionary Dagger if Ms. Charm agrees to sing for him and unlocks @tr_quest_8_singing_charm_1",
+    "location_label": "Ask Krezvold for the Legionary Dagger",
+    "item_label": "Asked Krezvold for the Legionary Dagger",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MS_CHARM_AGREE_TO_SING_FOR_KREZVOLD": {
+    "comment": "Flow: npc_actress:30:option:12 continues to choice menu 968; all three dialogue answers complete dlc_stories_persuade_charm and unlock @tr_quest_8_krez_after_charm_1. Their alternative money prices are intentionally out of logic.",
+    "location_label": "Convince Ms. Charm to sing for Krezvold",
+    "item_label": "Convinced Ms. Charm to sing for Krezvold",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_KREZVOLD_ASK_TO_PERSUADE_MS_CHARM"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
   "EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING": {
     "comment": "Flow: npc_blacksmith:11:option:5; normally grants 10 Krezvold happiness and the Legionary Dagger",
     "location_label": "Tell Krezvold that Ms. Charm will sing",
     "item_label": "Told Krezvold that Ms. Charm will sing",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE"],
+    "required_quests": ["EVENT_MS_CHARM_AGREE_TO_SING_FOR_KREZVOLD"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
