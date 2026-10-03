@@ -768,14 +768,80 @@ class TestAllQuestEvents(unittest.TestCase):
 
     def test_priests_signet_and_priestess_ring_branches_are_parallel(self):
         pot_event = "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE"
-        signet_event = data.events["EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT"]
         ring_event = data.events["EVENT_FARMER_RESOLVE_BELLAS_STORY"]
 
-        self.assertIn(pot_event, signet_event.required_quests)
+        signet_chain = [
+            "EVENT_DIG_ASK_ABOUT_PRIESTS_SIGNET",
+            "EVENT_LIGHTHOUSE_KEEPER_ASK_FOR_RACING_RAT",
+            "EVENT_KOUKOL_ASK_FOR_RACING_RAT",
+            "EVENT_GYPSY_BARON_ASK_FOR_RACING_RAT",
+            "EVENT_GYPSY_BARON_BUY_RACING_RAT",
+            "EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT",
+        ]
+        self.assertEqual([pot_event], list(data.events[signet_chain[0]].required_quests))
+        for predecessor, event_key in zip(signet_chain, signet_chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+
         self.assertEqual([pot_event], list(ring_event.required_quests))
         self.assertEqual(
             ["EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE"],
             list(data.events["EVENT_DIG_UP_CHURCH_BRICK"].required_quests),
+        )
+
+    def test_stranger_sins_poisoned_vase_chain_is_explicit(self):
+        chain = [
+            "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE",
+            "EVENT_ADAM_ASK_ABOUT_ANCIENT_KEYS",
+            "EVENT_ADAM_SHOW_PORCELAIN_PITCHERS",
+            "EVENT_MERCHANT_ASK_ABOUT_RARE_VASES",
+            "EVENT_BEEKEEPER_ASK_ABOUT_RARE_VASES",
+            "EVENT_DIG_SOLVE_POISON_RIDDLE",
+            "EVENT_BEEKEEPER_TRADE_POISONED_PIE_FOR_VASES",
+            "EVENT_ADAM_ACCEPT_POISONED_VASES",
+            "EVENT_ADAM_SEARCH_HOUSE_FOR_ANCIENT_KEYS",
+            "EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE",
+        ]
+        for predecessor, event_key in zip(chain, chain[1:]):
+            with self.subTest(event=event_key):
+                self.assertEqual([predecessor], list(data.events[event_key].required_quests))
+
+        self.assertEqual(
+            ["ITEM_PORCELAIN_PITCHER"],
+            list(data.events["EVENT_ADAM_SHOW_PORCELAIN_PITCHERS"].required_craft_items),
+        )
+        self.assertEqual(
+            ["ITEM_PIE_WITH_POISON"],
+            list(data.events["EVENT_BEEKEEPER_TRADE_POISONED_PIE_FOR_VASES"].required_quest_items),
+        )
+        self.assertEqual(
+            ["ITEM_VASES_WITH_POISON"],
+            list(data.events["EVENT_ADAM_ACCEPT_POISONED_VASES"].required_quest_items),
+        )
+
+    def test_stranger_sins_intermediate_quest_items_are_randomized(self):
+        item_rewards = {
+            "EVENT_DIG_SOLVE_POISON_RIDDLE": (
+                "ITEM_PIE_WITH_POISON",
+                "LOCATION_DIG_REWARD_SOLVE_POISON_RIDDLE",
+            ),
+            "EVENT_BEEKEEPER_TRADE_POISONED_PIE_FOR_VASES": (
+                "ITEM_VASES_WITH_POISON",
+                "LOCATION_BEEKEEPER_REWARD_TRADE_POISONED_PIE_FOR_VASES",
+            ),
+            "EVENT_GYPSY_BARON_BUY_RACING_RAT": (
+                "ITEM_RAT_FOR_DIG",
+                "LOCATION_GYPSY_BARON_REWARD_BUY_RACING_RAT",
+            ),
+        }
+        for event_key, (item_key, location_key) in item_rewards.items():
+            with self.subTest(event=event_key):
+                self.assertIn(item_key, data.items)
+                self.assertEqual([location_key], list(data.events[event_key].rewards))
+
+        self.assertEqual(
+            ["ITEM_RAT_FOR_DIG"],
+            list(data.events["EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT"].required_quest_items),
         )
 
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):

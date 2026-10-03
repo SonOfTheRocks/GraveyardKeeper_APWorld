@@ -681,6 +681,14 @@
     "label": "Koukol Reward - Show him the upgraded tavern (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
+  "LOCATION_DIG_REWARD_SOLVE_POISON_RIDDLE": {
+    "label": "Dig Reward - Solve his poison riddle",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_BEEKEEPER_REWARD_TRADE_POISONED_PIE_FOR_VASES": {
+    "label": "Beekeeper Reward - Give him the poisoned pie",
+    "parent_region": "REGION_APIARY"
+  },
   "LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES": {
     "label": "Adam Reward - Bring the poisoned vases",
     "parent_region": "REGION_THE_VILLAGE"
@@ -696,6 +704,10 @@
   "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2": {
     "label": "Quest Reward - Time Machine Item 14 #2",
     "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_GYPSY_BARON_REWARD_BUY_RACING_RAT": {
+    "label": "Gypsy Baron Reward - Buy his racing rat",
+    "parent_region": "REGION_CAMP"
   },
   "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_1": {
     "label": "Dig Reward - Give him the Gypsy Baron's rat (1)",

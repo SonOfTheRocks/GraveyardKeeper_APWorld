@@ -2308,17 +2308,80 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE"]
   },
+  "EVENT_ADAM_ASK_ABOUT_ANCIENT_KEYS": {
+    "comment": "Flow: npc_potter:13:option:4; the thirteenth time-machine vision unlocks this conversation",
+    "location_label": "Ask Adam about the Ancient Keys",
+    "item_label": "Asked Adam about the Ancient Keys",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_ADAM_SHOW_PORCELAIN_PITCHERS": {
+    "comment": "Flow: npc_potter:13:option:5 and choice menu 465; either answer continues the quest, while accepting Adam's money is optional",
+    "location_label": "Show Adam the porcelain pitchers",
+    "item_label": "Showed Adam the porcelain pitchers",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_ADAM_ASK_ABOUT_ANCIENT_KEYS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_PORCELAIN_PITCHER"],
+    "rewards": []
+  },
+  "EVENT_MERCHANT_ASK_ABOUT_RARE_VASES": {
+    "comment": "Flow: npc_merchant:38:option:17; the Merchant says that he already sold the rare vases to the Beekeeper",
+    "location_label": "Ask the Merchant about the rare vases",
+    "item_label": "Asked the Merchant about the rare vases",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_ADAM_SHOW_PORCELAIN_PITCHERS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_BEEKEEPER_ASK_ABOUT_RARE_VASES": {
+    "comment": "Flow: npc_beekeeper:13:option:1; the Beekeeper asks the player to recover his stolen bee poison from Dig",
+    "location_label": "Ask the Beekeeper about the rare vases",
+    "item_label": "Asked the Beekeeper about the rare vases",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_MERCHANT_ASK_ABOUT_RARE_VASES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_DIG_SOLVE_POISON_RIDDLE": {
+    "comment": "Flow: tr_15_dig_and_cake:35:option:3; any riddle answer reaches the same path and normally grants the Pie with Poison",
+    "location_label": "Solve Dig's poison riddle",
+    "item_label": "Solved Dig's poison riddle",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_BEEKEEPER_ASK_ABOUT_RARE_VASES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_DIG_REWARD_SOLVE_POISON_RIDDLE"]
+  },
+  "EVENT_BEEKEEPER_TRADE_POISONED_PIE_FOR_VASES": {
+    "comment": "Flow: npc_beekeeper:13:option:2; normally exchanges the Pie with Poison for the poisoned vases",
+    "location_label": "Give the poisoned pie to the Beekeeper",
+    "item_label": "Gave the poisoned pie to the Beekeeper",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_DIG_SOLVE_POISON_RIDDLE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PIE_WITH_POISON"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_BEEKEEPER_REWARD_TRADE_POISONED_PIE_FOR_VASES"]
+  },
   "EVENT_ADAM_ACCEPT_POISONED_VASES": {
     "comment": "Flow: npc_potter:13:option:6; normally grants 20 Adam happiness and access to his house",
     "location_label": "Bring the poisoned vases to Adam",
     "item_label": "Brought the poisoned vases to Adam",
     "dlc": "STRANGER_SINS",
-    "required_quests": [
-      "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE",
-      "TODO(EVENT_BEEKEEPER_POISON_VASES)"
-    ],
+    "required_quests": ["EVENT_BEEKEEPER_TRADE_POISONED_PIE_FOR_VASES"],
     "required_happiness": [],
-    "required_quest_items": [],
+    "required_quest_items": ["ITEM_VASES_WITH_POISON"],
     "required_craft_items": [],
     "rewards": ["LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES"]
   },
@@ -2369,17 +2432,69 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_DIG_ASK_ABOUT_PRIESTS_SIGNET": {
+    "comment": "Flow: npc_dig:15:option:4; Dig asks for a racing rat and points the player to the Lighthouse Keeper",
+    "location_label": "Ask Dig about the Priest's Signet",
+    "item_label": "Asked Dig about the Priest's Signet",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_LIGHTHOUSE_KEEPER_ASK_FOR_RACING_RAT": {
+    "comment": "Flow: npc_light_keeper:13:option:6; the Lighthouse Keeper says his rats were stolen and points the player to Koukol",
+    "location_label": "Ask the Lighthouse Keeper for a racing rat",
+    "item_label": "Asked the Lighthouse Keeper for a racing rat",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_DIG_ASK_ABOUT_PRIESTS_SIGNET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_KOUKOL_ASK_FOR_RACING_RAT": {
+    "comment": "Flow: npc_hunchback:90:option:5; Koukol says that he sold his best rat to the Gypsy Baron",
+    "location_label": "Ask Koukol for a racing rat",
+    "item_label": "Asked Koukol for a racing rat",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_LIGHTHOUSE_KEEPER_ASK_FOR_RACING_RAT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_GYPSY_BARON_ASK_FOR_RACING_RAT": {
+    "comment": "Flow: npc_gypsy:11:option:5; continues to the purchase choice",
+    "location_label": "Ask the Gypsy Baron for a racing rat",
+    "item_label": "Asked the Gypsy Baron for a racing rat",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_KOUKOL_ASK_FOR_RACING_RAT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_GYPSY_BARON_BUY_RACING_RAT": {
+    "comment": "Flow: npc_gypsy:312:option:0; both dialogue alternatives cost one gold and normally grant rat_for_dig; money quantity is intentionally out of logic",
+    "location_label": "Buy the Gypsy Baron's racing rat",
+    "item_label": "Bought the Gypsy Baron's racing rat",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GYPSY_BARON_ASK_FOR_RACING_RAT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_GYPSY_BARON_REWARD_BUY_RACING_RAT"]
+  },
   "EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT": {
     "comment": "Flow: npc_dig:15:option:5; normally grants 20 Dig happiness and the Priest's Signet",
     "location_label": "Give the Gypsy Baron's rat to Dig",
     "item_label": "Gave the Gypsy Baron's rat to Dig",
     "dlc": "STRANGER_SINS",
-    "required_quests": [
-      "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE",
-      "TODO(EVENT_GYPSY_BARON_SELL_RAT)"
-    ],
+    "required_quests": ["EVENT_GYPSY_BARON_BUY_RACING_RAT"],
     "required_happiness": [],
-    "required_quest_items": [],
+    "required_quest_items": ["ITEM_RAT_FOR_DIG"],
     "required_craft_items": [],
     "rewards": [
       "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_1",

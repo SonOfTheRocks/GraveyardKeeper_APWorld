@@ -253,6 +253,16 @@
     "dlc": "STRANGER_SINS",
     "classification": "PROGRESSION"
   },
+  "ITEM_RAT_FOR_DIG": {
+    "label": "Rat for Dig",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_VASES_WITH_POISON": {
+    "label": "Vases with Poison",
+    "dlc": "STRANGER_SINS",
+    "classification": "PROGRESSION"
+  },
 
 
   "ITEM_BANK_CHECKS": {
