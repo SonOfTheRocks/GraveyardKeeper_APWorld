@@ -900,6 +900,23 @@ class TestAllQuestEvents(unittest.TestCase):
             list(data.events["EVENT_TAVERN_EVENT_COMEDY_STANDUP"].required_craft_items),
         )
 
+    def test_stranger_sins_snake_booze_branches_share_the_happiness_gate(self):
+        ask = data.events["EVENT_SNAKE_ASK_TO_BREW_BOOZE_FOR_DIG"]
+        convince = data.events["EVENT_SNAKE_CONVINCE_TO_BREW_BOOZE_FOR_DIG"]
+        collect = data.events["EVENT_SNAKE_RETURN_FOR_DIGS_BOOZE"]
+
+        self.assertIn("EVENT_DIG_ASK_FOR_BOOZE", ask.required_quests)
+        self.assertEqual(
+            ["EVENT_SNAKE_ASK_TO_BREW_BOOZE_FOR_DIG"],
+            list(convince.required_quests),
+        )
+        self.assertEqual([HappinessData("SNAKE", 70)], list(convince.required_happiness))
+        self.assertEqual(
+            ["EVENT_SNAKE_CONVINCE_TO_BREW_BOOZE_FOR_DIG"],
+            list(collect.required_quests),
+        )
+        self.assertNotIn("EVENT_SNAKE_REMIND_ABOUT_DIGS_BOOZE", data.events)
+
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):
         combined_reward_events = {
             "EVENT_MILLER_ACCEPT_COMEDY_INVITATION",

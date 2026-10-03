@@ -1741,10 +1741,10 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_SNAKE_REMIND_ABOUT_DIGS_BOOZE": {
-    "comment": "Flow: npc_cultist:106:option:25",
-    "location_label": "Remind Snake about Dig's booze",
-    "item_label": "Reminded Snake about Dig's booze",
+  "EVENT_SNAKE_CONVINCE_TO_BREW_BOOZE_FOR_DIG": {
+    "comment": "Flow: npc_cultist:106:option:23 starts brewing immediately when Snake relation is at least 70; below 70 it unlocks option 25, which starts the same one-week wait after the player reaches 70. This event represents the shared outcome rather than requiring the optional reminder route.",
+    "location_label": "Convince Snake to brew booze for Dig",
+    "item_label": "Convinced Snake to brew booze for Dig",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_SNAKE_ASK_TO_BREW_BOOZE_FOR_DIG"],
     "required_happiness": ["SNAKE_70"],
@@ -1757,7 +1757,7 @@
     "location_label": "Return to Snake after waiting for Dig's booze",
     "item_label": "Returned to Snake after waiting for Dig's booze",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_SNAKE_REMIND_ABOUT_DIGS_BOOZE"],
+    "required_quests": ["EVENT_SNAKE_CONVINCE_TO_BREW_BOOZE_FOR_DIG"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
