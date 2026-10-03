@@ -702,6 +702,68 @@ class TestAllQuestEvents(unittest.TestCase):
                         "Replace the TODO requirement with the real event key once that event is defined",
                     )
 
+    def test_stranger_sins_time_machine_chain_uses_named_player_actions(self):
+        self.assertFalse(
+            [key for key in data.events if key.startswith("EVENT_GET_TIME_MACHINE_ITEM_")],
+            "Artifact acquisition events must describe the player's action, not an artifact number",
+        )
+        self.assertFalse(
+            [key for key in data.events if key.startswith("EVENT_TAVERN_TIME_MACHINE_CUTSCENE_")],
+            "Time-machine events must identify the artifact the player uses",
+        )
+
+        artifact_events = {
+            "EVENT_TAVERN_USE_STATUETTE_IN_TIME_MACHINE": "ITEM_STATUETTE",
+            "EVENT_TAVERN_USE_FLASK_IN_TIME_MACHINE": "ITEM_FLASK",
+            "EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE": "ITEM_DOOR_HINGE",
+            "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE": "ITEM_LEGIONARY_HELM",
+            "EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": "ITEM_ANCIENT_LOCKPICKS",
+            "EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": "ITEM_PRIESTS_MEDALLION",
+            "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": "ITEM_THE_LEGIONARY_DAGGER",
+            "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE": "ITEM_BELT_BUCKLE",
+            "EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE": "ITEM_CLAY_SHARDS",
+            "EVENT_TAVERN_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE": "ITEM_AMULET_OF_THE_ANCIENT_GOD",
+            "EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE": "ITEM_ANCIENT_SHACKLES",
+            "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": "ITEM_ANCIENT_PICKAXE",
+            "EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE": "ITEM_ANCIENT_KEYS",
+            "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE": "ITEM_CLAY_POT_OF_TAR",
+            "EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": "ITEM_PRIESTS_SIGNET",
+            "EVENT_TAVERN_USE_PRIESTESS_RING_IN_TIME_MACHINE": "ITEM_PRIESTESS_RING",
+            "EVENT_TAVERN_USE_CHURCH_BRICK_IN_TIME_MACHINE": "ITEM_A_BRICK_FROM_THE_CHURCH",
+        }
+        for event_key, artifact_key in artifact_events.items():
+            with self.subTest(event=event_key):
+                self.assertEqual([artifact_key], list(data.events[event_key].required_quest_items))
+
+    def test_farmer_flask_reaction_is_separate_from_farmers_son_reward(self):
+        son_event = data.events["EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING"]
+        farmer_event = data.events["EVENT_FARMER_REACT_TO_SONS_SECRET_DRINKING"]
+
+        self.assertEqual(
+            ["LOCATION_FARMERS_SON_REWARD_CONFESS_SECRET_DRINKING"],
+            list(son_event.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING"],
+            list(farmer_event.required_quests),
+        )
+        self.assertEqual(
+            ["LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"],
+            list(farmer_event.rewards),
+        )
+
+    def test_priests_signet_and_priestess_ring_branches_are_parallel(self):
+        pot_event = "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE"
+        signet_event = data.events["EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT"]
+        ring_event = data.events["EVENT_FARMER_RESOLVE_BELLAS_STORY"]
+
+        self.assertIn(pot_event, signet_event.required_quests)
+        self.assertEqual([pot_event], list(ring_event.required_quests))
+        self.assertEqual(
+            ["EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE"],
+            list(data.events["EVENT_DIG_UP_CHURCH_BRICK"].required_quests),
+        )
+
     def test_all_quests_are_completable_with_all_items(self):
         evaluator = QuestRuleEvaluator()
         evaluations = evaluator.evaluate_all()

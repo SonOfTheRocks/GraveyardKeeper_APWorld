@@ -605,76 +605,76 @@
   },
 
 
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_1": {
-    "label": "Quest Reward - Time Machine Item 1",
+  "LOCATION_MISS_CHAIN_REWARD_REVEAL_HORADRICS_BIRTHDAY_SURPRISE": {
+    "label": "Miss Chain Reward - Reveal Horadric's birthday surprise",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_2": {
-    "label": "Quest Reward - Time Machine Item 2 #1",
+  "LOCATION_FARMERS_SON_REWARD_CONFESS_SECRET_DRINKING": {
+    "label": "Farmer's Son Reward - Ask about his secret drinking",
     "parent_region": "REGION_WHEAT_FARM"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_2_2": {
-    "label": "Quest Reward - Time Machine Item 2 #2",
+  "LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING": {
+    "label": "Farmer Reward - Resolve the ancient flask dispute",
     "parent_region": "REGION_WHEAT_FARM"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_3": {
-    "label": "Quest Reward - Time Machine Item 3",
+  "LOCATION_VILLAGE_REWARD_DIG_UP_DOOR_HINGE": {
+    "label": "Village Reward - Dig up the Door Hinge",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_4": {
-    "label": "Quest Reward - Time Machine Item 4",
+  "LOCATION_FARMER_REWARD_ACCEPT_GIANT_CARROT": {
+    "label": "Farmer Reward - Bring the giant carrot",
     "parent_region": "REGION_WHEAT_FARM"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_5": {
-    "label": "Quest Reward - Time Machine Item 5",
+  "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION": {
+    "label": "Miller Reward - Give the comedy show invitation",
     "parent_region": "REGION_WHEAT_FARM"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_6": {
-    "label": "Quest Reward - Time Machine Item 6",
+  "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE": {
+    "label": "Dig Reward - Give him Snake's booze",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_7": {
-    "label": "Quest Reward - Time Machine Item 7",
+  "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING": {
+    "label": "Krezvold Reward - Tell him Ms. Charm will sing",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_8": {
-    "label": "Quest Reward - Time Machine Item 8",
+  "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER": {
+    "label": "Woodcutter Reward - Give him the honey plaster",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_9": {
-    "label": "Quest Reward - Time Machine Item 9",
+  "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY": {
+    "label": "Adam Reward - Help with his ghostly pottery problem",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_11": {
-    "label": "Quest Reward - Time Machine Item 11",
+  "LOCATION_SWAMP_REWARD_DIG_UP_ANCIENT_SHACKLES": {
+    "label": "Swamp Reward - Dig up the Ancient Shackles",
     "parent_region": "REGION_SWAMP"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_12": {
-    "label": "Quest Reward - Time Machine Item 12",
+  "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE": {
+    "label": "Koukol Reward - Show him the upgraded tavern",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_13": {
-    "label": "Quest Reward - Time Machine Item 13",
+  "LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES": {
+    "label": "Adam Reward - Bring the poisoned vases",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_14": {
-    "label": "Quest Reward - Time Machine Item 14",
+  "LOCATION_WITCH_HILL_REWARD_DIG_UP_CLAY_POT_OF_TAR": {
+    "label": "Witch Hill Reward - Dig up the Clay Pot of Tar",
     "parent_region": "REGION_WITCH_HILL"
   },
   "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2": {
     "label": "Quest Reward - Time Machine Item 14 #2",
     "parent_region": "REGION_WITCH_HILL"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_15": {
-    "label": "Quest Reward - Time Machine Item 15",
+  "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT": {
+    "label": "Dig Reward - Give him the Gypsy Baron's rat",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_16": {
-    "label": "Quest Reward - Time Machine Item 16",
+  "LOCATION_FARMER_REWARD_RESOLVE_BELLAS_STORY": {
+    "label": "Farmer Reward - Help him remember Bella",
     "parent_region": "REGION_THE_VILLAGE"
   },
-  "LOCATION_REWARD_TIME_MACHINE_ITEM_17": {
-    "label": "Quest Reward - Time Machine Item 17",
+  "LOCATION_OLD_GRAVEYARD_REWARD_DIG_UP_CHURCH_BRICK": {
+    "label": "Old Graveyard Reward - Dig up the brick from the church",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
 

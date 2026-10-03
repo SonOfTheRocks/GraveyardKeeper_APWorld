@@ -1866,7 +1866,7 @@
     "location_label": "Ask Dig about obtaining booze",
     "item_label": "Asked Dig about obtaining booze",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5"],
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -1878,7 +1878,7 @@
     "location_label": "Ask the Lighthouse Keeper for the ancient amulet",
     "item_label": "Asked the Lighthouse Keeper for the ancient amulet",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9"],
+    "required_quests": ["EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -1934,7 +1934,7 @@
     "location_label": "Hold a comedy standup event",
     "item_label": "Held a comedy standup event",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4"],
+    "required_quests": ["EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -1948,7 +1948,7 @@
     "location_label": "Hold a rat race event",
     "item_label": "Held a rat race event",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9", "EVENT_SNAKE_PERSUADE_TO_STEAL_ANCIENT_AMULET"],
+    "required_quests": ["EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE", "EVENT_SNAKE_PERSUADE_TO_STEAL_ANCIENT_AMULET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -1979,67 +1979,75 @@
     "required_craft_items": ["ITEM_BARMAN_DOLL"],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_1": {
-    "comment": "Statuette",
-    "location_label": "Get time machine item 1",
-    "item_label": "Got time machine item 1",
+  "EVENT_MISS_CHAIN_REVEAL_HORADRICS_BIRTHDAY_SURPRISE": {
+    "comment": "Flow: npc_mrs chain:13:option:5; normally grants the Statuette of the Ancient God",
+    "location_label": "Tell Miss Chain about Horadric's birthday surprise",
+    "item_label": "Told Miss Chain about Horadric's birthday surprise",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_TAVERN_ADD_BARMAN"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_1"]
+    "rewards": ["LOCATION_MISS_CHAIN_REWARD_REVEAL_HORADRICS_BIRTHDAY_SURPRISE"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_1": {
-    "location_label": "Watch time machine cutscene 1",
-    "item_label": "Watched time machine cutscene 1",
+  "EVENT_TAVERN_USE_STATUETTE_IN_TIME_MACHINE": {
+    "location_label": "Use the Statuette in the time machine",
+    "item_label": "Used the Statuette in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_1"],
+    "required_quests": ["EVENT_MISS_CHAIN_REVEAL_HORADRICS_BIRTHDAY_SURPRISE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_STATUETTE"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_2": {
-    "comment": "Flask",
-    "location_label": "Get time machine item 2",
-    "item_label": "Got time machine item 2",
+  "EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING": {
+    "comment": "Flow: npc_farmers son:15:option:0; normally grants the Flask",
+    "location_label": "Ask the Farmer's Son about his secret drinking",
+    "item_label": "Asked the Farmer's Son about his secret drinking",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_1"],
+    "required_quests": ["EVENT_TAVERN_USE_STATUETTE_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": [
-      "LOCATION_REWARD_TIME_MACHINE_ITEM_2",
-      "LOCATION_REWARD_TIME_MACHINE_ITEM_2_2"
-    ]
+    "rewards": ["LOCATION_FARMERS_SON_REWARD_CONFESS_SECRET_DRINKING"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_2": {
-    "location_label": "Watch time machine cutscene 2",
-    "item_label": "Watched time machine cutscene 2",
+  "EVENT_FARMER_REACT_TO_SONS_SECRET_DRINKING": {
+    "comment": "Flow: farmer_comes_to_pl_house:21 or npc_farmer:15:option:3; both branches grant 20 Farmer happiness",
+    "location_label": "Resolve the Farmer's concerns about the ancient flask",
+    "item_label": "Resolved the Farmer's concerns about the ancient flask",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_2"],
+    "required_quests": ["EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"]
+  },
+  "EVENT_TAVERN_USE_FLASK_IN_TIME_MACHINE": {
+    "location_label": "Use the Flask in the time machine",
+    "item_label": "Used the Flask in the time machine",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_FARMERS_SON_CONFESS_SECRET_DRINKING"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_FLASK"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_3": {
-    "comment": "Door Hinge",
-    "location_label": "Get time machine item 3",
-    "item_label": "Got time machine item 3",
+  "EVENT_DIG_UP_DOOR_HINGE": {
+    "comment": "The Door Hinge is buried between the Village and Dig's camp",
+    "location_label": "Dig up the Door Hinge",
+    "item_label": "Dug up the Door Hinge",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_2"],
+    "required_quests": ["EVENT_TAVERN_USE_FLASK_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_3"]
+    "rewards": ["LOCATION_VILLAGE_REWARD_DIG_UP_DOOR_HINGE"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_3": {
-    "location_label": "Watch time machine cutscene 3",
-    "item_label": "Watched time machine cutscene 3",
+  "EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE": {
+    "location_label": "Use the Door Hinge in the time machine",
+    "item_label": "Used the Door Hinge in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_3"],
+    "required_quests": ["EVENT_DIG_UP_DOOR_HINGE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_DOOR_HINGE"],
     "required_craft_items": [],
@@ -2049,115 +2057,115 @@
     "location_label": "Enlarge your carrot",
     "item_label": "Enlarged your carrot",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_3"],
+    "required_quests": ["EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_4": {
-    "comment": "Legionary Helm",
-    "location_label": "Get time machine item 4",
-    "item_label": "Got time machine item 4",
+  "EVENT_FARMER_ACCEPT_GIANT_CARROT": {
+    "comment": "Flow: npc_farmer:540:option:0; grants access to the Farmer's house, where the Legionary Helm is found",
+    "location_label": "Bring the giant carrot to the Farmer",
+    "item_label": "Brought the giant carrot to the Farmer",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_ENLARGE_CARROT"],
     "required_happiness": ["FARMER_40"],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_CARROT"],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_4"]
+    "rewards": ["LOCATION_FARMER_REWARD_ACCEPT_GIANT_CARROT"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4": {
-    "location_label": "Watch time machine cutscene 4",
-    "item_label": "Watched time machine cutscene 4",
+  "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE": {
+    "location_label": "Use the Legionary Helm in the time machine",
+    "item_label": "Used the Legionary Helm in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_4"],
+    "required_quests": ["EVENT_FARMER_ACCEPT_GIANT_CARROT"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_LEGIONARY_HELM"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_5": {
-    "comment": "Ancient Lockpicks",
-    "location_label": "Get time machine item 5",
-    "item_label": "Got time machine item 5",
+  "EVENT_MILLER_ACCEPT_COMEDY_INVITATION": {
+    "comment": "Flow: npc_miller:13:option:4; normally grants 10 Miller happiness and the Ancient Lockpicks",
+    "location_label": "Give the Miller an invitation to the comedy show",
+    "item_label": "Gave the Miller an invitation to the comedy show",
     "dlc": "STRANGER_SINS",
     "required_quests": [
-      "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_4",
+      "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE",
       "EVENT_TAVERN_EVENT_COMEDY_STANDUP"
     ],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_5"]
+    "rewards": ["LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_5": {
-    "location_label": "Watch time machine cutscene 5",
-    "item_label": "Watched time machine cutscene 5",
+  "EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": {
+    "location_label": "Use the Ancient Lockpicks in the time machine",
+    "item_label": "Used the Ancient Lockpicks in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_5"],
+    "required_quests": ["EVENT_MILLER_ACCEPT_COMEDY_INVITATION"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_LOCKPICKS"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_6": {
-    "comment": "Priests Medallion",
-    "location_label": "Get time machine item 6",
-    "item_label": "Got time machine item 6",
+  "EVENT_DIG_ACCEPT_SNAKES_BOOZE": {
+    "comment": "Flow: npc_dig:15:option:3; normally grants 10 Dig happiness and the Priest's Medallion",
+    "location_label": "Give Snake's booze to Dig",
+    "item_label": "Gave Snake's booze to Dig",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_SNAKE_RETURN_FOR_DIGS_BOOZE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_BOOZE"],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_6"]
+    "rewards": ["LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_6": {
-    "location_label": "Watch time machine cutscene 6",
-    "item_label": "Watched time machine cutscene 6",
+  "EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": {
+    "location_label": "Use the Priest's Medallion in the time machine",
+    "item_label": "Used the Priest's Medallion in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_6"],
+    "required_quests": ["EVENT_DIG_ACCEPT_SNAKES_BOOZE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTS_MEDALLION"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_7": {
-    "comment": "The Legionary Dagger",
-    "location_label": "Get time machine item 7",
-    "item_label": "Got time machine item 7",
+  "EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING": {
+    "comment": "Flow: npc_blacksmith:11:option:5; normally grants 10 Krezvold happiness and the Legionary Dagger",
+    "location_label": "Tell Krezvold that Ms. Charm will sing",
+    "item_label": "Told Krezvold that Ms. Charm will sing",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_6"],
+    "required_quests": ["EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_7"]
+    "rewards": ["LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_7": {
-    "location_label": "Watch time machine cutscene 7",
-    "item_label": "Watched time machine cutscene 7",
+  "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": {
+    "location_label": "Use the Legionary Dagger in the time machine",
+    "item_label": "Used the Legionary Dagger in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_7"],
+    "required_quests": ["EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_THE_LEGIONARY_DAGGER"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_8": {
-    "comment": "Belt Buckle",
-    "location_label": "Get time machine item 8",
-    "item_label": "Got time machine item 8",
+  "EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER": {
+    "comment": "Flow: npc_wood_cutter:11:option:3; normally grants 20 Woodcutter happiness and the Belt Buckle",
+    "location_label": "Give the honey plaster to the Woodcutter",
+    "item_label": "Gave the honey plaster to the Woodcutter",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_7"],
+    "required_quests": ["EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_8"]
+    "rewards": ["LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8": {
-    "location_label": "Watch time machine cutscene 8",
-    "item_label": "Watched time machine cutscene 8",
+  "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE": {
+    "location_label": "Use the Belt Buckle in the time machine",
+    "item_label": "Used the Belt Buckle in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_8"],
+    "required_quests": ["EVENT_WOODCUTTER_ACCEPT_HONEY_PLASTER"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_BELT_BUCKLE"],
     "required_craft_items": [],
@@ -2167,7 +2175,7 @@
     "location_label": "Upgrade the tavern",
     "item_label": "Upgraded the tavern",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8"],
+    "required_quests": ["EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -2177,33 +2185,33 @@
     ],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_9": {
-    "comment": "Clay Shards",
-    "location_label": "Get time machine item 9",
-    "item_label": "Got time machine item 9",
+  "EVENT_ADAM_EXPLAIN_GHOSTLY_POTTERY": {
+    "comment": "Flow: npc_potter:13:option:3; normally grants 20 Adam happiness and the Clay Shards",
+    "location_label": "Help Adam with his ghostly pottery problem",
+    "item_label": "Helped Adam with his ghostly pottery problem",
     "dlc": "STRANGER_SINS",
     "required_quests": [
-      "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_8",
+      "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE",
       "EVENT_TAVERN_UPGRADE_TAVERN"
     ],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_9"]
+    "rewards": ["LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_9": {
-    "location_label": "Watch time machine cutscene 9",
-    "item_label": "Watched time machine cutscene 9",
+  "EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE": {
+    "location_label": "Use the Clay Shards in the time machine",
+    "item_label": "Used the Clay Shards in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_9"],
+    "required_quests": ["EVENT_ADAM_EXPLAIN_GHOSTLY_POTTERY"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_CLAY_SHARDS"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_10": {
-    "location_label": "Watch time machine cutscene 10",
-    "item_label": "Watched time machine cutscene 10",
+  "EVENT_TAVERN_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE": {
+    "location_label": "Use the Amulet of the Ancient God in the time machine",
+    "item_label": "Used the Amulet of the Ancient God in the time machine",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_SNAKE_REPORT_RAT_RACE"],
     "required_happiness": [],
@@ -2211,33 +2219,33 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_11": {
-    "comment": "Ancient Shackles",
-    "location_label": "Get time machine item 11",
-    "item_label": "Got time machine item 11",
+  "EVENT_DIG_UP_ANCIENT_SHACKLES": {
+    "comment": "The Ancient Shackles are buried on the path to the Swamp",
+    "location_label": "Dig up the Ancient Shackles",
+    "item_label": "Dug up the Ancient Shackles",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_10"],
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_11"]
+    "rewards": ["LOCATION_SWAMP_REWARD_DIG_UP_ANCIENT_SHACKLES"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_11": {
-    "location_label": "Watch time machine cutscene 11",
-    "item_label": "Watched time machine cutscene 11",
+  "EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE": {
+    "location_label": "Use the Ancient Shackles in the time machine",
+    "item_label": "Used the Ancient Shackles in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_11"],
+    "required_quests": ["EVENT_DIG_UP_ANCIENT_SHACKLES"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_SHACKLES"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_12": {
-    "comment": "Ancient Pickaxe",
-    "location_label": "Get time machine item 12",
-    "item_label": "Got time machine item 12",
+  "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE": {
+    "comment": "Flow: npc_hunchback:90:option:4; normally grants 20 Koukol happiness and the Ancient Pickaxe",
+    "location_label": "Show Koukol the upgraded tavern",
+    "item_label": "Showed Koukol the upgraded tavern",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_11"],
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -2247,121 +2255,124 @@
       "ITEM_WOODEN_BEAM",
       "ITEM_SILK"
     ],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_12"]
+    "rewards": ["LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_12": {
-    "location_label": "Watch time machine cutscene 12",
-    "item_label": "Watched time machine cutscene 12",
+  "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": {
+    "location_label": "Use the Ancient Pickaxe in the time machine",
+    "item_label": "Used the Ancient Pickaxe in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_12"],
+    "required_quests": ["EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_PICKAXE"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_13": {
-    "comment": "Ancient Keys",
-    "location_label": "Get time machine item 13",
-    "item_label": "Got time machine item 13",
+  "EVENT_ADAM_ACCEPT_POISONED_VASES": {
+    "comment": "The poisoned-vase quest grants access to Adam's house, where the Ancient Keys are found",
+    "location_label": "Bring the poisoned vases to Adam",
+    "item_label": "Brought the poisoned vases to Adam",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_12"],
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PIE_WITH_POISON"],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_13"]
+    "rewards": ["LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_13": {
-    "location_label": "Watch time machine cutscene 13",
-    "item_label": "Watched time machine cutscene 13",
+  "EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE": {
+    "location_label": "Use the Ancient Keys in the time machine",
+    "item_label": "Used the Ancient Keys in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_13"],
+    "required_quests": ["EVENT_ADAM_ACCEPT_POISONED_VASES"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_ANCIENT_KEYS"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_14": {
-    "comment": "Clay Pot of Tar",
-    "location_label": "Get time machine item 14",
-    "item_label": "Got time machine item 14",
+  "EVENT_DIG_UP_CLAY_POT_OF_TAR": {
+    "comment": "The Clay Pot of Tar is buried on Witch Hill; the purpose of the second legacy reward location is still unresolved",
+    "location_label": "Dig up the Clay Pot of Tar",
+    "item_label": "Dug up the Clay Pot of Tar",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_13"],
+    "required_quests": ["EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
     "rewards": [
-      "LOCATION_REWARD_TIME_MACHINE_ITEM_14",
+      "LOCATION_WITCH_HILL_REWARD_DIG_UP_CLAY_POT_OF_TAR",
       "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2"
     ]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_14": {
-    "location_label": "Watch time machine cutscene 14",
-    "item_label": "Watched time machine cutscene 14",
+  "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE": {
+    "location_label": "Use the Clay Pot of Tar in the time machine",
+    "item_label": "Used the Clay Pot of Tar in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_14"],
+    "required_quests": ["EVENT_DIG_UP_CLAY_POT_OF_TAR"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_CLAY_POT_OF_TAR"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_15": {
-    "comment": "Priestess Ring",
-    "location_label": "Get time machine item 15",
-    "item_label": "Got time machine item 15",
+  "EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT": {
+    "comment": "Flow: npc_dig:15:option:5; normally grants 20 Dig happiness and the Priest's Signet",
+    "location_label": "Give the Gypsy Baron's rat to Dig",
+    "item_label": "Gave the Gypsy Baron's rat to Dig",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_14"],
+    "required_quests": [
+      "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE",
+      "TODO(EVENT_GYPSY_BARON_SELL_RAT)"
+    ],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_15"]
+    "rewards": ["LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_15": {
-    "location_label": "Watch time machine cutscene 15",
-    "item_label": "Watched time machine cutscene 15",
+  "EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": {
+    "location_label": "Use the Priest's Signet in the time machine",
+    "item_label": "Used the Priest's Signet in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_15"],
+    "required_quests": ["EVENT_DIG_ACCEPT_GYPSY_BARONS_RAT"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTS_SIGNET"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_16": {
-    "comment": "Priests Signet",
-    "location_label": "Get time machine item 16",
-    "item_label": "Got time machine item 16",
+  "EVENT_FARMER_RESOLVE_BELLAS_STORY": {
+    "comment": "The Farmer's Stranger Sins quest line reveals Bella's story and makes the Priestess Ring available",
+    "location_label": "Help the Farmer remember Bella",
+    "item_label": "Helped the Farmer remember Bella",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_15"],
+    "required_quests": ["EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_16"]
+    "rewards": ["LOCATION_FARMER_REWARD_RESOLVE_BELLAS_STORY"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_16": {
-    "location_label": "Watch time machine cutscene 16",
-    "item_label": "Watched time machine cutscene 16",
+  "EVENT_TAVERN_USE_PRIESTESS_RING_IN_TIME_MACHINE": {
+    "location_label": "Use the Priestess Ring in the time machine",
+    "item_label": "Used the Priestess Ring in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_16"],
+    "required_quests": ["EVENT_FARMER_RESOLVE_BELLAS_STORY"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PRIESTESS_RING"],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_GET_TIME_MACHINE_ITEM_17": {
-    "comment": "A Brick from the Church",
-    "location_label": "Get time machine item 17",
-    "item_label": "Got time machine item 17",
+  "EVENT_DIG_UP_CHURCH_BRICK": {
+    "comment": "Flow: tr_quest_19_empty_obj; the brick is dug up in the Old Graveyard",
+    "location_label": "Dig up the brick from the church",
+    "item_label": "Dug up the brick from the church",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_TIME_MACHINE_CUTSCENE_16"],
+    "required_quests": ["EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_REWARD_TIME_MACHINE_ITEM_17"]
+    "rewards": ["LOCATION_OLD_GRAVEYARD_REWARD_DIG_UP_CHURCH_BRICK"]
   },
-  "EVENT_TAVERN_TIME_MACHINE_CUTSCENE_17": {
-    "location_label": "Watch time machine cutscene 17",
-    "item_label": "Watched time machine cutscene 17",
+  "EVENT_TAVERN_USE_CHURCH_BRICK_IN_TIME_MACHINE": {
+    "location_label": "Use the brick from the church in the time machine",
+    "item_label": "Used the brick from the church in the time machine",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GET_TIME_MACHINE_ITEM_17"],
+    "required_quests": ["EVENT_DIG_UP_CHURCH_BRICK"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_A_BRICK_FROM_THE_CHURCH"],
     "required_craft_items": [],
