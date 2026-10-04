@@ -2275,17 +2275,6 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_WOODCUTTER_DISCUSS_RARE_DAGGER": {
-    "comment": "Flow: npc_wood_cutter:11:option:1; this optional witness conversation only blacklists its own phrase. Cory can be questioned first and then blacklists both witness phrases, so this event is not required for progression and has no AP location.",
-    "location_label": "Ask the Woodcutter about the Rare Dagger",
-    "item_label": "Asked the Woodcutter about the Rare Dagger",
-    "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
-    "required_happiness": [],
-    "required_quest_items": [],
-    "required_craft_items": [],
-    "rewards": []
-  },
   "EVENT_CORY_DISCUSS_RARE_DAGGER": {
     "comment": "Flow: npc_engineer:50:option:8; Cory can be questioned directly after gypsy_talk_2nd_dagger, blacklists both witness phrases, and unlocks @tr_quest_8_tress_dagger_1",
     "location_label": "Ask Cory about the Rare Dagger",
@@ -2502,27 +2491,16 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_KOUKOL_REWARD_RETURN_WITH_DARK_ORGAN"]
   },
-  "EVENT_TAVERN_UPGRADE_TO_40_QUALITY": {
-    "comment": "Flow: on_tavern_table_built unlocks tr_quest_14_after_tavern_improve_1 once the tavern reaches the required quality",
-    "location_label": "Upgrade the tavern to 40 quality",
-    "item_label": "Upgraded the tavern to 40 quality",
+  "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE": {
+    "comment": "Flow: npc_hunchback:90:option:4; available after on_tavern_table_built unlocks tr_quest_14_after_tavern_improve_1 at 40 tavern quality; normally grants 20 Koukol happiness and the Ancient Pickaxe",
+    "location_label": "Show Koukol the upgraded tavern",
+    "item_label": "Showed Koukol the upgraded tavern",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
     "required_area_points": ["TAVERN_40"],
-    "rewards": []
-  },
-  "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE": {
-    "comment": "Flow: npc_hunchback:90:option:4; normally grants 20 Koukol happiness and the Ancient Pickaxe",
-    "location_label": "Show Koukol the upgraded tavern",
-    "item_label": "Showed Koukol the upgraded tavern",
-    "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_TAVERN_UPGRADE_TO_40_QUALITY"],
-    "required_happiness": [],
-    "required_quest_items": [],
-    "required_craft_items": [],
     "rewards": [
       "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_1",
       "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_2"

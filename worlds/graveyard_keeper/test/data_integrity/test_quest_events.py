@@ -970,9 +970,8 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(persuasion.required_quest_items))
         self.assertEqual([], list(persuasion.required_craft_items))
 
-    def test_stranger_sins_rare_dagger_chain_keeps_woodcutter_optional(self):
+    def test_stranger_sins_rare_dagger_chain_omits_optional_woodcutter_event(self):
         gypsy = data.events["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"]
-        woodcutter = data.events["EVENT_WOODCUTTER_DISCUSS_RARE_DAGGER"]
         cory = data.events["EVENT_CORY_DISCUSS_RARE_DAGGER"]
         tress = data.events["EVENT_TRESS_GIVE_RARE_DAGGER"]
 
@@ -980,11 +979,7 @@ class TestAllQuestEvents(unittest.TestCase):
             ["EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING"],
             list(gypsy.required_quests),
         )
-        self.assertEqual(
-            ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
-            list(woodcutter.required_quests),
-        )
-        self.assertEqual([], list(woodcutter.rewards))
+        self.assertNotIn("EVENT_WOODCUTTER_DISCUSS_RARE_DAGGER", data.events)
         self.assertEqual(
             ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
             list(cory.required_quests),
@@ -1024,7 +1019,6 @@ class TestAllQuestEvents(unittest.TestCase):
             "EVENT_CLOTHO_GIVE_MAGIC_SCROLL_FOR_KOUKOL",
             "EVENT_KOUKOL_ACCEPT_MAGIC_SCROLL",
             "EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN",
-            "EVENT_TAVERN_UPGRADE_TO_40_QUALITY",
             "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE",
             "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE",
         ]
@@ -1049,12 +1043,16 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(1, len(dark_organ.rewards))
         self.assertEqual([], list(dark_organ.required_craft_items))
 
-        tavern_upgrade = data.events["EVENT_TAVERN_UPGRADE_TO_40_QUALITY"]
-        self.assertEqual({AreaPointData("TAVERN", 40)}, set(tavern_upgrade.required_area_points))
-        self.assertEqual([], list(tavern_upgrade.required_craft_items))
+        self.assertNotIn("EVENT_TAVERN_UPGRADE_TO_40_QUALITY", data.events)
+        tavern_approval = data.events["EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE"]
+        self.assertEqual(
+            ["EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"],
+            list(tavern_approval.required_quests),
+        )
+        self.assertEqual({AreaPointData("TAVERN", 40)}, set(tavern_approval.required_area_points))
         self.assertEqual(
             [],
-            list(data.events["EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE"].required_craft_items),
+            list(tavern_approval.required_craft_items),
         )
 
     def test_stranger_sins_combined_relation_and_artifact_rewards_have_two_checks(self):
