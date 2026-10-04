@@ -239,53 +239,57 @@ def _usable_smart_res(value: SymbolicValue | None) -> bool:
 
 
 def _add_answer_data(summary: QuestSummary, option: DialogueOption) -> None:
-    answer = option.answer
-    if answer is None:
-        return
-    if _usable_smart_res(answer.lock):
-        lock = answer.lock
-        if lock.resource_type == "GameRes" and lock.resource_id == "_rel":
-            npc, source = _graph_npc(summary.graph)
-            _append_unique(summary.required_happiness, [HappinessRequirement(lock.amount, npc, source)])
-        elif lock.resource_type == "Item":
-            _append_unique(summary.required_items, [f"{lock.resource_id or '?'} x{display_value(lock.amount)}"])
-        else:
-            _append_unique(summary.other_requirements, [f"answer lock: {lock.render()}"])
-    if _usable_smart_res(answer.price):
-        if answer.price.resource_type == "Item":
-            _append_unique(summary.required_items, [
-                f"{answer.price.resource_id or 'dynamic/unresolved'} x{display_value(answer.price.amount)}"
-            ])
-            _append_unique(summary.item_payments, [
-                # The answer price is paid before every executable node in the
-                # selected option, including a nested menu inherited below.
-                ItemPayment(answer.price.resource_id, answer.price.amount)
-            ])
-        else:
-            _append_unique(summary.costs, [answer.price.render()])
-    reward = answer.reward
-    if _usable_smart_res(reward):
-        if reward.resource_type == "GameRes" and reward.resource_id == "_rel":
-            npc, source = _graph_npc(summary.graph)
-            summary.relation_rewards.append(RelationRewardSummary(reward.amount, npc, source))
-            _append_unique(summary.uncertainties, ["Empfänger des AnswerData-Relationsgewinns ist implizit"])
-        elif reward.resource_type == "Item":
-            item = ItemDropSummary(
-                reward.resource_id, reward.amount, node_id=option.multi_answer_node)
-            summary.item_drops.append(item)
+    for answer in option.answers:
+        if _usable_smart_res(answer.lock):
+            lock = answer.lock
+            if lock.resource_type == "GameRes" and lock.resource_id == "_rel":
+                npc, source = _graph_npc(summary.graph)
+                _append_unique(summary.required_happiness, [HappinessRequirement(lock.amount, npc, source)])
+            elif lock.resource_type == "Item":
+                _append_unique(summary.required_items, [f"{lock.resource_id or '?'} x{display_value(lock.amount)}"])
+            else:
+                _append_unique(summary.other_requirements, [f"answer lock: {lock.render()}"])
+        if _usable_smart_res(answer.price):
+            if answer.price.resource_type == "Item":
+                _append_unique(summary.required_items, [
+                    f"{answer.price.resource_id or 'dynamic/unresolved'} x{display_value(answer.price.amount)}"
+                ])
+                _append_unique(summary.item_payments, [
+                    # The answer price is paid before every executable node in the
+                    # selected option, including a nested menu inherited below.
+                    ItemPayment(answer.price.resource_id, answer.price.amount)
+                ])
+            else:
+                _append_unique(summary.costs, [answer.price.render()])
+        reward = answer.reward
+        if _usable_smart_res(reward):
+            if reward.resource_type == "GameRes" and reward.resource_id == "_rel":
+                npc, source = _graph_npc(summary.graph)
+                summary.relation_rewards.append(RelationRewardSummary(reward.amount, npc, source))
+                _append_unique(summary.uncertainties, ["Empfänger des AnswerData-Relationsgewinns ist implizit"])
+            elif reward.resource_type == "Item":
+                item = ItemDropSummary(
+                    reward.resource_id, reward.amount, node_id=option.multi_answer_node)
+                summary.item_drops.append(item)
 
 
 def _answer_price_requirements(option: DialogueOption) -> tuple[set[str], set[str], set[ItemPayment]]:
-    """Return the item/currency requirements imposed by one AnswerData.price."""
-    answer = option.answer
-    if answer is None or not _usable_smart_res(answer.price):
-        return set(), set(), set()
-    if answer.price.resource_type == "Item":
-        return {
-            f"{answer.price.resource_id or 'dynamic/unresolved'} "
-            f"x{display_value(answer.price.amount)}"
-        }, set(), {ItemPayment(answer.price.resource_id, answer.price.amount)}
-    return set(), {answer.price.render()}, set()
+    """Return all item/currency requirements imposed by AnswerData.price values."""
+    items: set[str] = set()
+    costs: set[str] = set()
+    payments: set[ItemPayment] = set()
+    for answer in option.answers:
+        if not _usable_smart_res(answer.price):
+            continue
+        if answer.price.resource_type == "Item":
+            items.add(
+                f"{answer.price.resource_id or 'dynamic/unresolved'} "
+                f"x{display_value(answer.price.amount)}"
+            )
+            payments.add(ItemPayment(answer.price.resource_id, answer.price.amount))
+        else:
+            costs.add(answer.price.render())
+    return items, costs, payments
 
 
 def _add_nodes(summary: QuestSummary, graph: Graph, node_ids: list[str], reward_map: dict[str, list[RewardFinding]]) -> None:

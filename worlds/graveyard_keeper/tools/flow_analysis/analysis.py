@@ -324,33 +324,34 @@ def _backward_paths(graph: Graph, target: str, limits: AnalysisLimits,
                         "lokaler Funktionsaufruf per UID verbunden; Rückkehr und Parameter sind nicht interpretiert"
                     )
                 option = (options_by_edge or {}).get((edge.source, edge.source_port))
-                if option and option.answer:
-                    if _usable_smart_res(option.answer.lock):
-                        alternative.conditions.append(Condition(
-                            f"Optionssperre: {option.answer.lock.render()}",
-                            option.answer.lock.source or option.answer.source,
-                        ))
-                    if _usable_smart_res(option.answer.price):
-                        if option.answer.price.resource_type == "Item":
+                if option:
+                    for answer in option.answers:
+                        if _usable_smart_res(answer.lock):
                             alternative.conditions.append(Condition(
-                                f"Item {option.answer.price.resource_id} "
-                                f"x{display_value(option.answer.price.amount)} erforderlich",
-                                option.answer.price.source or option.answer.source,
+                                f"Optionssperre: {answer.lock.render()}",
+                                answer.lock.source or answer.source,
                             ))
-                        else:
-                            alternative.costs.append(
-                                f"{option.answer.price.render()} (Optionskosten)"
-                            )
-                    option_reward = option.answer.reward
-                    if _usable_smart_res(option_reward):
-                        alternative.effects.append(Effect(
-                            f"Optionsbelohnung: {option_reward.render()}",
-                            option_reward.source or option.answer.source,
-                        ))
-                        if option_reward.resource_id == "_rel":
-                            alternative.incomplete_reasons.append(
-                                f"Empfänger der Relationsbelohnung für Option {option.index} ist implizit"
-                            )
+                        if _usable_smart_res(answer.price):
+                            if answer.price.resource_type == "Item":
+                                alternative.conditions.append(Condition(
+                                    f"Item {answer.price.resource_id} "
+                                    f"x{display_value(answer.price.amount)} erforderlich",
+                                    answer.price.source or answer.source,
+                                ))
+                            else:
+                                alternative.costs.append(
+                                    f"{answer.price.render()} (Optionskosten)"
+                                )
+                        option_reward = answer.reward
+                        if _usable_smart_res(option_reward):
+                            alternative.effects.append(Effect(
+                                f"Optionsbelohnung: {option_reward.render()}",
+                                option_reward.source or answer.source,
+                            ))
+                            if option_reward.resource_id == "_rel":
+                                alternative.incomplete_reasons.append(
+                                    f"Empfänger der Relationsbelohnung für Option {option.index} ist implizit"
+                                )
             if impossible:
                 continue
             results.append(alternative)
@@ -389,11 +390,13 @@ def _direct_findings(graph: Graph, resolver: ValueResolver) -> list[RewardFindin
     for node in graph.nodes.values():
         if node.type_name == "Flow_DropItem":
             item = resolver.resolve_input(node.id, "Item")
-            if isinstance(item, SymbolicValue) and item.kind == "item":
+            if isinstance(item, SymbolicValue) and item.kind == "item" and item.resource_id is not None:
                 resource, amount = item, item.amount
             else:
                 resource = _resolved_scalar(resolver, node.id, ("Res_id", "res_id"))
                 amount = _resolved_scalar(resolver, node.id, ("Amount", "amount", "Value"))
+                if resource is None and isinstance(item, SymbolicValue) and item.kind == "item":
+                    resource, amount = item, item.amount
             resource_id = resource.resource_id if isinstance(resource, SymbolicValue) else resource
             resource_detail = (resource.reason if isinstance(resource, SymbolicValue) else None)
             if resource_id is None and resource_detail is None:
@@ -425,14 +428,15 @@ def _direct_findings(graph: Graph, resolver: ValueResolver) -> list[RewardFindin
 def _answer_findings(graph: Graph, options: list[DialogueOption]) -> list[RewardFinding]:
     findings: list[RewardFinding] = []
     for option in options:
-        reward = option.answer.reward if option.answer else None
-        if not reward or reward.kind != "smart_res" or reward.resource_id != "_rel" or not _is_positive(reward):
-            continue
-        node_id = option.answer.source.node_id
-        issues = list(option.issues)
-        issues.append("Empfänger von GameRes _rel ist aus AnswerData allein nicht belegt")
-        findings.append(RewardFinding(graph.name, node_id, "relation", reward.resource_id, reward.amount,
-                                      option=option, issues=issues))
+        for answer in option.answers:
+            reward = answer.reward
+            if not reward or reward.kind != "smart_res" or reward.resource_id != "_rel" or not _is_positive(reward):
+                continue
+            node_id = answer.source.node_id
+            issues = list(option.issues)
+            issues.append("Empfänger von GameRes _rel ist aus AnswerData allein nicht belegt")
+            findings.append(RewardFinding(graph.name, node_id, "relation", reward.resource_id, reward.amount,
+                                          option=option, issues=issues))
     return findings
 
 

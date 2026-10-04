@@ -77,6 +77,23 @@ class ValueResolver:
             reward = self._as_smart_res(self.resolve_input(node_id, "reward", stack), node_id, "reward")
             complete = all(part is None or part.complete for part in (lock, price, reward))
             value = AnswerValue(lock, price, reward, source, complete)
+        elif node.type_name == "Flow_AnswersArray":
+            values: list[AnswerValue] = []
+            ports = sorted(node.inputs, key=lambda name: option_index(name) if option_index(name) is not None else 10**9)
+            for input_port in ports:
+                resolved = self.resolve_input(node_id, input_port, stack)
+                if isinstance(resolved, AnswerValue):
+                    values.append(resolved)
+            value = tuple(values)
+        elif node.type_name == "Flow_MultipleAnswer":
+            resolved = self.resolve_input(node_id, "datas", stack)
+            if resolved is None:
+                resolved = self.resolve_input(node_id, "datasArray", stack)
+            values = list(resolved) if isinstance(resolved, tuple) else []
+            reward = self._as_smart_res(self.resolve_input(node_id, "reward", stack), node_id, "reward")
+            if reward is not None:
+                values.append(AnswerValue(None, None, reward, source, reward.complete))
+            value = tuple(values)
         elif len(node.inputs) == 1:
             input_name = next(iter(node.inputs))
             value = self.resolve_input(node_id, input_name, stack)
@@ -174,7 +191,13 @@ def extract_options(graph: Graph, resolver: ValueResolver) -> list[DialogueOptio
         for index in sorted(set(range(len(answers))) | set(ports) | set(outgoing)):
             issues: list[str] = []
             port = ports.get(index)
-            answer = resolver.resolve_input(node.id, port) if port else None
+            resolved_answer = resolver.resolve_input(node.id, port) if port else None
+            additional_answers: tuple[AnswerValue, ...] = ()
+            if isinstance(resolved_answer, tuple) and all(isinstance(value, AnswerValue) for value in resolved_answer):
+                answer = resolved_answer[0] if resolved_answer else None
+                additional_answers = tuple(resolved_answer[1:])
+            else:
+                answer = resolved_answer
             if answer is not None and not isinstance(answer, AnswerValue):
                 issues.append("option input did not resolve to AnswerData")
                 answer = None
@@ -183,5 +206,6 @@ def extract_options(graph: Graph, resolver: ValueResolver) -> list[DialogueOptio
             if not outgoing.get(index):
                 issues.append("option has no connected control-flow output")
             options.append(DialogueOption(node.id, index, answers[index] if index < len(answers) else None,
-                                          port, f"out_{index}", answer, tuple(outgoing.get(index, [])), tuple(issues)))
+                                          port, f"out_{index}", answer, tuple(outgoing.get(index, [])), tuple(issues),
+                                          additional_answers))
     return options

@@ -26,6 +26,7 @@ TAVERN_SKULL_DUMP = COMPANION_DUMP.with_name("tavern_skull.json")
 INQUISITOR_DUMP = COMPANION_DUMP.with_name("npc_inquisitor.json")
 GYPSY_DUMP = COMPANION_DUMP.with_name("npc_gypsy.json")
 BISHOP_DUMP = COMPANION_DUMP.with_name("npc_bishop.json")
+CRAFTING_SKULL_DUMP = COMPANION_DUMP.with_name("crafting_skull_3.json")
 
 
 class TestFlowGraphReports(FlowAnalysisTestCase):
@@ -982,6 +983,17 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertEqual(1.0, option.answer.price.amount)
         self.assertEqual("_rel", option.answer.reward.resource_id)
         self.assertEqual(10.0, option.answer.reward.amount)
+
+    def test_gerry_rusty_key_option_requires_beer_and_sand_when_available(self) -> None:
+        if not CRAFTING_SKULL_DUMP.exists():
+            self.skipTest("local companion dumps are not available")
+        analysis = analyze_graph(parse_graph(CRAFTING_SKULL_DUMP))
+        summary = next(
+            entry for entry in build_quest_summaries(analysis, {})
+            if entry.multi_answer == "@souls_s_s2_1_ask"
+        )
+
+        self.assertEqual(["cup_beer:1 x1", "sand_river x1"], sorted(summary.required_items))
 
     def test_astrologer_inventory_keeps_key_drop_and_relation_rewards_when_available(self) -> None:
         if not COMPANION_DUMP.exists():

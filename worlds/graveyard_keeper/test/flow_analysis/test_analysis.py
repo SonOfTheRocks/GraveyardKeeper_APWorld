@@ -29,6 +29,21 @@ class TestFlowGraphAnalysis(FlowAnalysisTestCase):
         self.assertEqual(1, finding.amount)
         self.assertNotIn("Menge konnte nicht aufgelöst werden", finding.issues)
 
+    def test_drop_item_falls_back_to_res_id_when_serialized_item_has_no_id(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "CustomEvent"),
+            node(2, "Flow_DropItem", {
+                "Item": {"$type": "Item", "value": 1},
+                "Res_id": stored("souls_zone_key"),
+                "Amount": stored(1),
+            }),
+        ], [edge(1, "Out", 2, "In")]))
+
+        finding = analyze_graph(graph).findings[0]
+
+        self.assertEqual("souls_zone_key", finding.resource_id)
+        self.assertFalse(finding.issues)
+
     def test_flag_branches_remain_or_alternatives_and_setter_is_an_effect(self) -> None:
         nodes = [node(1, "CustomEvent", eventName={"_value": "a"}),
                  node(2, "CustomEvent", eventName={"_value": "b"}),

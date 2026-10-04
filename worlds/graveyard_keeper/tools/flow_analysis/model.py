@@ -104,6 +104,11 @@ class DialogueOption:
     answer: AnswerValue | None
     target_nodes: tuple[str, ...]
     issues: tuple[str, ...] = ()
+    additional_answers: tuple[AnswerValue, ...] = ()
+
+    @property
+    def answers(self) -> tuple[AnswerValue, ...]:
+        return ((self.answer,) if self.answer is not None else ()) + self.additional_answers
 
 
 @dataclass(frozen=True)

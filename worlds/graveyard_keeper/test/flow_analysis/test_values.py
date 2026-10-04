@@ -65,6 +65,35 @@ class TestFlowGraphValues(FlowAnalysisTestCase):
         self.assertEqual("acid", option.answer.price.resource_id)
         self.assertEqual(1.0, option.answer.price.amount)
 
+    def test_nested_multiple_answer_preserves_every_price_requirement(self) -> None:
+        multi = node(20, "Flow_MultiAnswer", {"#0": None}, answers=["@combined_price"])
+        prices = [
+            wrapper(1, "Flow_SmartRes", {
+                "res_type": stored("Item"), "id": stored("cup_beer:1"), "v": stored(1.0)}),
+            wrapper(2, "Flow_SmartRes", {
+                "res_type": stored("Item"), "id": stored("sand_river"), "v": stored(1.0)}),
+        ]
+        answers = [
+            wrapper(3, "Flow_Answer", {"price": {}, "lock": {}, "reward": {}}),
+            wrapper(4, "Flow_Answer", {"price": {}, "lock": {}, "reward": {}}),
+        ]
+        answer_array = node(5, "Flow_AnswersArray", {"#0": {}, "#1": {}})
+        multiple = wrapper(6, "Flow_MultipleAnswer", {"datas": None, "datasArray": stored([]), "reward": {}})
+        graph = parse_graph(self.write_graph([multi, *prices, *answers, answer_array, multiple], [
+            edge(1, "Value", 3, "price", "SmartRes"),
+            edge(2, "Value", 4, "price", "SmartRes"),
+            edge(3, "Value", 5, "#0", "AnswerData"),
+            edge(4, "Value", 5, "#1", "AnswerData"),
+            edge(5, "Datas", 6, "datas", "AnswerData[]"),
+            edge(6, "Value", 20, "#0", "AnswerData"),
+        ]))
+
+        option = extract_options(graph, ValueResolver(graph))[0]
+
+        self.assertEqual(["cup_beer:1", "sand_river"], [
+            answer.price.resource_id for answer in option.answers
+        ])
+
     def test_inline_answer_fields_remain_distinct(self) -> None:
         def smart(resource_id):
             return {"$type": "SmartRes", "res_type": stored("Item"), "id": stored(resource_id), "v": stored(1)}
