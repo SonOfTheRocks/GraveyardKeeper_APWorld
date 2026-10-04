@@ -2900,6 +2900,17 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_SMILER_GIVE_BERRY_PIE": {
+    "comment": "Flow: npc_smiler:9:option:1 (@souls_s_s4_4_ask_2) requires dessert:pie_1, completes dlc_souls_s4_4, and continues Smiler's Souls Room tutorial",
+    "location_label": "Give Smiler a Berry Pie",
+    "item_label": "Gave Smiler a Berry Pie",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SMILER_APPEARS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BERRY_PIE"],
+    "rewards": []
+  },
   "EVENT_GERRY_ASK_ABOUT_THE_TOOTH": {
     "location_label": "Ask about the tooth",
     "item_label": "Asked about the tooth",
@@ -2911,20 +2922,22 @@
     "rewards": []
   },
   "EVENT_HATCH_REPAIRED": {
-    "location_label": "Repair Hatch to Euric's Room",
-    "item_label": "Hatch to Euric's Room repaired",
+    "comment": "Flow: npc_euric:13:option:2 (@souls_s_s6_a_ask) requires seed_oil, opens the hatch to Euric's Room, and starts the room-repair task",
+    "location_label": "Open the hatch to Euric's Room with Seed Oil",
+    "item_label": "Opened the hatch to Euric's Room with Seed Oil",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
+    "required_quests": ["EVENT_SMILER_APPEARS"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": [],
+    "required_craft_items": ["ITEM_SEED_OIL"],
     "rewards": []
   },
   "EVENT_SMILER_APPEARS": {
+    "comment": "Flow: the souls_s_s4 conversation in npc_euric, unlocked by ev_s_s3 after opening the Souls Room, unlocks @souls_s_s4_4_ask for Smiler and Euric's Seed Oil request",
     "location_label": "Smiler appears",
     "item_label": "Smiler appeared",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
+    "required_quests": ["EVENT_SOULS_ROOM_OPEN"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],

@@ -707,6 +707,19 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["EVENT_GERRY_WASH_WITH_BEER_AND_SAND"], list(open_room.required_quests))
         self.assertEqual(["ITEM_OLD_RUSTY_KEY"], list(open_room.required_quest_items))
 
+    def test_better_call_soul_room_tutorial_has_parallel_seed_oil_and_pie_branches(self):
+        smiler_appears = data.events["EVENT_SMILER_APPEARS"]
+        open_hatch = data.events["EVENT_HATCH_REPAIRED"]
+        give_pie = data.events["EVENT_SMILER_GIVE_BERRY_PIE"]
+
+        self.assertEqual(["EVENT_SOULS_ROOM_OPEN"], list(smiler_appears.required_quests))
+        self.assertEqual(["EVENT_SMILER_APPEARS"], list(open_hatch.required_quests))
+        self.assertEqual(["ITEM_SEED_OIL"], list(open_hatch.required_craft_items))
+        self.assertEqual(["EVENT_SMILER_APPEARS"], list(give_pie.required_quests))
+        self.assertEqual(["ITEM_BERRY_PIE"], list(give_pie.required_craft_items))
+        self.assertEqual([], list(open_hatch.rewards))
+        self.assertEqual([], list(give_pie.rewards))
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):
