@@ -683,6 +683,30 @@ class TestAllQuestEvents(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     AreaPointData.from_string(invalid_value)
 
+    def test_better_call_soul_opening_chain_matches_flow_requirements(self):
+        arrival = data.events["EVENT_EURIC_ARRIVE"]
+        ask_key = data.events["EVENT_GERRY_ASK_ABOUT_OLD_RUSTY_KEY"]
+        wash_gerry = data.events["EVENT_GERRY_WASH_WITH_BEER_AND_SAND"]
+        open_room = data.events["EVENT_SOULS_ROOM_OPEN"]
+
+        self.assertEqual(
+            {"EVENT_BISHOP_GIVE_CERAMIC_BOWLS", "EVENT_CORPSE_HATCH_REPAIRED"},
+            set(arrival.required_quests),
+        )
+        self.assertEqual(["ITEM_CORPSE"], list(arrival.required_craft_items))
+        self.assertEqual(["EVENT_EURIC_ARRIVE"], list(ask_key.required_quests))
+        self.assertEqual(["EVENT_GERRY_ASK_ABOUT_OLD_RUSTY_KEY"], list(wash_gerry.required_quests))
+        self.assertEqual(
+            {"ITEM_A_MUG_OF_BEER_COPPER", "ITEM_RIVER_SAND"},
+            set(wash_gerry.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_GERRY_REWARD_GIVE_BEER_AND_SAND"],
+            list(wash_gerry.rewards),
+        )
+        self.assertEqual(["EVENT_GERRY_WASH_WITH_BEER_AND_SAND"], list(open_room.required_quests))
+        self.assertEqual(["ITEM_OLD_RUSTY_KEY"], list(open_room.required_quest_items))
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

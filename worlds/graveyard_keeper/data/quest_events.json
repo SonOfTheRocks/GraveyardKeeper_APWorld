@@ -2879,22 +2879,46 @@
     "rewards": []
   },
   "EVENT_EURIC_ARRIVE": {
+    "comment": "Flow: npc_donkey DLC Souls Start requires fixed_morgue_throw and cup_20_reached before delivering Euric; cup_20_reached is set by the Bishop's ceramic-bowl hand-in, then ev_s_s1 unlocks @souls_s_s2_ask",
     "location_label": "Euric arrives",
     "item_label": "Euric arrived",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
+    "required_quests": ["EVENT_BISHOP_GIVE_CERAMIC_BOWLS", "EVENT_CORPSE_HATCH_REPAIRED"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CORPSE"],
+    "rewards": []
+  },
+  "EVENT_GERRY_ASK_ABOUT_OLD_RUSTY_KEY": {
+    "comment": "Flow: crafting_skull_3:134:option:10 (@souls_s_s2_ask) unlocks Gerrys beer-and-sand hand-in",
+    "location_label": "Ask Gerry about the old rusty key",
+    "item_label": "Asked Gerry about the old rusty key",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_ARRIVE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_SOULS_ROOM_OPEN": {
-    "location_label": "Give the old rustic key to Euric",
-    "item_label": "Souls room opened",
+  "EVENT_GERRY_WASH_WITH_BEER_AND_SAND": {
+    "comment": "Flow: crafting_skull_3:134:option:11 uses a nested Flow_MultipleAnswer whose two Answer.price values are cup_beer:1 and sand_river; it normally drops souls_zone_key",
+    "location_label": "Wash Gerry with beer and river sand",
+    "item_label": "Washed Gerry with beer and river sand",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
+    "required_quests": ["EVENT_GERRY_ASK_ABOUT_OLD_RUSTY_KEY"],
     "required_happiness": [],
     "required_quest_items": [],
+    "required_craft_items": ["ITEM_A_MUG_OF_BEER_COPPER", "ITEM_RIVER_SAND"],
+    "rewards": ["LOCATION_GERRY_REWARD_GIVE_BEER_AND_SAND"]
+  },
+  "EVENT_SOULS_ROOM_OPEN": {
+    "comment": "Flow: ev_s_s3 removes souls_zone_key, opens the Souls Room, and unlocks @souls_s_s4_ask_1",
+    "location_label": "Give the old rusty key to Euric",
+    "item_label": "Souls room opened",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_GERRY_WASH_WITH_BEER_AND_SAND"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_OLD_RUSTY_KEY"],
     "required_craft_items": [],
     "rewards": []
   },
