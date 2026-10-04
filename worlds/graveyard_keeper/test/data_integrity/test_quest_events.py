@@ -750,6 +750,23 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["ITEM_LOST_TOOTH"], list(return_tooth.required_quest_items))
         self.assertEqual([], list(return_tooth.rewards))
 
+    def test_better_call_soul_human_soul_healing_blueprint_is_a_reward(self):
+        unlock_healing = data.events["EVENT_SMILER_UNLOCK_HUMAN_SOUL_HEALING"]
+
+        self.assertEqual(
+            ["EVENT_SMILER_GIVE_BERRY_PIE"],
+            list(unlock_healing.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_UNLOCK_SPIRITUALISM"],
+            list(unlock_healing.required_quest_items),
+        )
+        self.assertEqual([], list(unlock_healing.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING"],
+            list(unlock_healing.rewards),
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

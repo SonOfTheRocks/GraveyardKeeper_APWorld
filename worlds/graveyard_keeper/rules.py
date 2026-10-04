@@ -175,7 +175,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule("ITEM_LOST_TOOTH")
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_ASK_SMILER_ABOUT_HUMAN_HEALING"].label),
+        world.get_location(data.locations["LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING"].label),
         build_collection_rule("ITEM_LEARN_CREATE_REMOTE_CRAFT_CONTROL")
     )
     world.set_rule(

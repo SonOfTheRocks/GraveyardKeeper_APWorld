@@ -824,7 +824,7 @@
     "label": "Euric - Find out more about him",
     "parent_region": "REGION_SOULS_ROOM"
   },
-  "LOCATION_ASK_SMILER_ABOUT_HUMAN_HEALING": {
+  "LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING": {
     "label": "Smiler - Ask him about human healing",
     "parent_region": "REGION_SOULS_ROOM"
   },

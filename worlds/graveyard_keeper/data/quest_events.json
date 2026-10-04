@@ -2911,6 +2911,17 @@
     "required_craft_items": ["ITEM_BERRY_PIE"],
     "rewards": []
   },
+  "EVENT_SMILER_UNLOCK_HUMAN_SOUL_HEALING": {
+    "comment": "Flow: researching Healer Enthusiast runs tech_soul_sins_2 and unlocks @souls_s_s8_ask; the ensuing Smiler-Euric-Smiler conversations end at npc_smiler:9:option:5, which unlocks souls_builddesk::soul_healing_for_human",
+    "location_label": "Ask Smiler how to heal Euric's soul",
+    "item_label": "Learned how to heal Euric's soul",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SMILER_GIVE_BERRY_PIE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_UNLOCK_SPIRITUALISM"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING"]
+  },
   "EVENT_GERRY_ASK_ABOUT_THE_TOOTH": {
     "comment": "Flow: crafting_skull_3:134:option:12 (@souls_s_s6_b_1_ask) requires gerry_tooth and completes dlc_souls_s6_a_2; no vanilla reward follows",
     "location_label": "Return Gerry's lost tooth",
