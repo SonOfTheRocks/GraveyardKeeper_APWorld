@@ -830,11 +830,11 @@
   },
 
 
-  "LOCATION_REPAIR_BED": {
+  "LOCATION_EURIC_REWARD_REPAIR_BED": {
     "label": "Repair the bed in Euric's room",
     "parent_region": "REGION_EURICS_ROOM"
   },
-  "LOCATION_EURIC_REPAIR_FURNITURE": {
+  "LOCATION_EURIC_REWARD_REPAIR_FURNITURE": {
     "label": "Euric Reward - Repair all the furniture",
     "parent_region": "REGION_EURICS_ROOM"
   },

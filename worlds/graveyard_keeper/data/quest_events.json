@@ -2912,12 +2912,13 @@
     "rewards": []
   },
   "EVENT_GERRY_ASK_ABOUT_THE_TOOTH": {
-    "location_label": "Ask about the tooth",
-    "item_label": "Asked about the tooth",
+    "comment": "Flow: crafting_skull_3:134:option:12 (@souls_s_s6_b_1_ask) requires gerry_tooth and completes dlc_souls_s6_a_2; no vanilla reward follows",
+    "location_label": "Return Gerry's lost tooth",
+    "item_label": "Returned Gerry's lost tooth",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
+    "required_quests": ["EVENT_EURIC_REPAIR_BED"],
     "required_happiness": [],
-    "required_quest_items": [],
+    "required_quest_items": ["ITEM_LOST_TOOTH"],
     "required_craft_items": [],
     "rewards": []
   },
@@ -2931,6 +2932,35 @@
     "required_quest_items": [],
     "required_craft_items": ["ITEM_SEED_OIL"],
     "rewards": []
+  },
+  "EVENT_EURIC_REPAIR_BED": {
+    "comment": "GameData craft fix_eurics_room_old_bed requires flitch and nails; on_fix_euric_bed drops gerry_tooth and contributes fixed_euric_bed to the room-completion macro",
+    "location_label": "Repair the bed in Euric's Room",
+    "item_label": "Repaired the bed in Euric's Room",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_HATCH_REPAIRED"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FLITCH", "ITEM_NAILS"],
+    "rewards": ["LOCATION_EURIC_REWARD_REPAIR_BED"]
+  },
+  "EVENT_EURIC_REPAIR_FURNITURE": {
+    "comment": "GameData requires all five Euric-room repairs; macro__check_euric_room_complete unlocks npc_euric:28:option:3, which grants 10 Euric happiness",
+    "location_label": "Repair all the furniture in Euric's Room",
+    "item_label": "Repaired all the furniture in Euric's Room",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_REPAIR_BED"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_WOODEN_STICK",
+      "ITEM_WOODEN_BEAM",
+      "ITEM_SKIN"
+    ],
+    "rewards": ["LOCATION_EURIC_REWARD_REPAIR_FURNITURE"]
   },
   "EVENT_SMILER_APPEARS": {
     "comment": "Flow: the souls_s_s4 conversation in npc_euric, unlocked by ev_s_s3 after opening the Souls Room, unlocks @souls_s_s4_4_ask for Smiler and Euric's Seed Oil request",

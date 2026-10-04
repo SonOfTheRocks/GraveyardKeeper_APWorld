@@ -147,7 +147,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule("ITEM_SEED_OIL")
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_EURIC_REPAIR_FURNITURE"].label),
+        world.get_location(data.locations["LOCATION_EURIC_REWARD_REPAIR_FURNITURE"].label),
         build_collection_rule([
             "EVENT_HATCH_REPAIRED",
             "ITEM_FLITCH",

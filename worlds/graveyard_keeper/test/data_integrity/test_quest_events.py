@@ -720,6 +720,36 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(open_hatch.rewards))
         self.assertEqual([], list(give_pie.rewards))
 
+    def test_better_call_soul_euric_room_repairs_preserve_both_rewards(self):
+        repair_bed = data.events["EVENT_EURIC_REPAIR_BED"]
+        repair_furniture = data.events["EVENT_EURIC_REPAIR_FURNITURE"]
+        return_tooth = data.events["EVENT_GERRY_ASK_ABOUT_THE_TOOTH"]
+
+        self.assertEqual(["EVENT_HATCH_REPAIRED"], list(repair_bed.required_quests))
+        self.assertEqual({"ITEM_FLITCH", "ITEM_NAILS"}, set(repair_bed.required_craft_items))
+        self.assertEqual(["LOCATION_EURIC_REWARD_REPAIR_BED"], list(repair_bed.rewards))
+
+        self.assertEqual(["EVENT_EURIC_REPAIR_BED"], list(repair_furniture.required_quests))
+        self.assertEqual(
+            {
+                "ITEM_FLITCH",
+                "ITEM_NAILS",
+                "ITEM_WOODEN_PLANK",
+                "ITEM_WOODEN_STICK",
+                "ITEM_WOODEN_BEAM",
+                "ITEM_SKIN",
+            },
+            set(repair_furniture.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_EURIC_REWARD_REPAIR_FURNITURE"],
+            list(repair_furniture.rewards),
+        )
+
+        self.assertEqual(["EVENT_EURIC_REPAIR_BED"], list(return_tooth.required_quests))
+        self.assertEqual(["ITEM_LOST_TOOTH"], list(return_tooth.required_quest_items))
+        self.assertEqual([], list(return_tooth.rewards))
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

@@ -907,13 +907,16 @@
     "label": "Eurics Room",
     "dlc": "BETTER_SAVE_SOUL",
     "locations": [
-      "LOCATION_REPAIR_BED",
-      "LOCATION_EURIC_REPAIR_FURNITURE",
+      "LOCATION_EURIC_REWARD_REPAIR_BED",
+      "LOCATION_EURIC_REWARD_REPAIR_FURNITURE",
       "LOCATION_EURIC_HEAL_SINS_1",
       "LOCATION_EURIC_HEAL_SINS_2",
       "LOCATION_EURIC_HEAL_SINS_3"
     ],
-    "events": [],
+    "events": [
+      "EVENT_EURIC_REPAIR_BED",
+      "EVENT_EURIC_REPAIR_FURNITURE"
+    ],
     "exits": [
       "REGION_SOULS_ROOM"
     ]
