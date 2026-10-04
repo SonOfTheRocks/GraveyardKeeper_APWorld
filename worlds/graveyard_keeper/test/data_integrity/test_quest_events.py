@@ -946,6 +946,31 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(persuasion.required_quest_items))
         self.assertEqual([], list(persuasion.required_craft_items))
 
+    def test_stranger_sins_rare_dagger_chain_keeps_woodcutter_optional(self):
+        gypsy = data.events["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"]
+        woodcutter = data.events["EVENT_WOODCUTTER_DISCUSS_RARE_DAGGER"]
+        cory = data.events["EVENT_CORY_DISCUSS_RARE_DAGGER"]
+        tress = data.events["EVENT_TRESS_GIVE_RARE_DAGGER"]
+
+        self.assertEqual(
+            ["EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING"],
+            list(gypsy.required_quests),
+        )
+        self.assertEqual(
+            ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
+            list(woodcutter.required_quests),
+        )
+        self.assertEqual([], list(woodcutter.rewards))
+        self.assertEqual(
+            ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
+            list(cory.required_quests),
+        )
+        self.assertNotIn("EVENT_WOODCUTTER_DISCUSS_RARE_DAGGER", cory.required_quests)
+        self.assertEqual(["EVENT_CORY_DISCUSS_RARE_DAGGER"], list(tress.required_quests))
+        self.assertEqual([], list(tress.required_quest_items))
+        self.assertEqual([], list(tress.required_craft_items))
+        self.assertEqual(["LOCATION_TRESS_REWARD_GIVE_RARE_DAGGER"], list(tress.rewards))
+
     def test_stranger_sins_belt_buckle_chain_is_explicit(self):
         chain = [
             "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE",

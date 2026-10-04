@@ -2264,6 +2264,50 @@
       "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_2"
     ]
   },
+  "EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING": {
+    "comment": "Flow: npc_blacksmith fires teleport_near_stump after option 5, then on_enter_gypsy_stump_dg_zone runs gypsy_talk_2nd_dagger; the cutscene unlocks both the Woodcutter and Cory dialogue options",
+    "location_label": "Meet the Gypsy Baron at the empty dagger stump",
+    "item_label": "Met the Gypsy Baron at the empty dagger stump",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_KREZVOLD_HEAR_MS_CHARM_WILL_SING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_WOODCUTTER_DISCUSS_RARE_DAGGER": {
+    "comment": "Flow: npc_wood_cutter:11:option:1; this optional witness conversation only blacklists its own phrase. Cory can be questioned first and then blacklists both witness phrases, so this event is not required for progression and has no AP location.",
+    "location_label": "Ask the Woodcutter about the Rare Dagger",
+    "item_label": "Asked the Woodcutter about the Rare Dagger",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_CORY_DISCUSS_RARE_DAGGER": {
+    "comment": "Flow: npc_engineer:50:option:8; Cory can be questioned directly after gypsy_talk_2nd_dagger, blacklists both witness phrases, and unlocks @tr_quest_8_tress_dagger_1",
+    "location_label": "Ask Cory about the Rare Dagger",
+    "item_label": "Asked Cory about the Rare Dagger",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_GYPSY_BARON_REPORT_RARE_DAGGER_MISSING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_TRESS_GIVE_RARE_DAGGER": {
+    "comment": "Flow: npc_carpenter:13:option:1; normally drops dagger_baron (the Rare Dagger), which has no later quest consumer and can be sold to Koukol",
+    "location_label": "Ask Tress for the Rare Dagger",
+    "item_label": "Asked Tress for the Rare Dagger",
+    "dlc": "STRANGER_SINS",
+    "required_quests": ["EVENT_CORY_DISCUSS_RARE_DAGGER"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_TRESS_REWARD_GIVE_RARE_DAGGER"]
+  },
   "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:9; normally grants a random alchemy recipe",
     "location_label": "Use the Legionary Dagger in the time machine",

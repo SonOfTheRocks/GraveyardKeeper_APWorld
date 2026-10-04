@@ -661,6 +661,10 @@
     "label": "Krezvold Reward - Tell him Ms. Charm will sing (2)",
     "parent_region": "REGION_THE_VILLAGE"
   },
+  "LOCATION_TRESS_REWARD_GIVE_RARE_DAGGER": {
+    "label": "Tress Reward - Ask him for the Rare Dagger",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
   "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_1": {
     "label": "Woodcutter Reward - Give him the honey plaster (1)",
     "parent_region": "REGION_THE_VILLAGE"
