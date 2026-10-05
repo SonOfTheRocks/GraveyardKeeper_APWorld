@@ -829,6 +829,77 @@ class TestAllQuestEvents(unittest.TestCase):
             set(heal_pride.rewards),
         )
 
+    def test_better_call_soul_second_healing_keeps_both_shard_branches_independent(self):
+        give_honey = data.events["EVENT_CLOTHO_GIVE_HONEY_FOR_UNUSUAL_ASH"]
+        charge_wrath = data.events["EVENT_INQUISITOR_CHARGE_WRATH_SHARD"]
+        learn_sauce = data.events["EVENT_CLOTHO_TEACH_MYSTERIOUS_FOOD_SAUCE"]
+        charge_gluttony = data.events["EVENT_MERCHANT_CHARGE_GLUTTONY_SHARD"]
+        second_healing = data.events["EVENT_EURIC_HEAL_WRATH_AND_GLUTTONY"]
+
+        self.assertEqual(["EVENT_EURIC_HEAL_PRIDE"], list(give_honey.required_quests))
+        self.assertEqual(["ITEM_HONEY"], list(give_honey.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_CLOTHO_REWARD_GIVE_HONEY"],
+            list(give_honey.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_CLOTHO_GIVE_HONEY_FOR_UNUSUAL_ASH"],
+            list(charge_wrath.required_quests),
+        )
+        self.assertEqual(["ITEM_UNUSUAL_ASH"], list(charge_wrath.required_quest_items))
+        self.assertEqual(["ITEM_SIN_SHARD"], list(charge_wrath.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_INQUISITOR_REWARD_SHOW_UNUSUAL_ASH"],
+            list(charge_wrath.rewards),
+        )
+
+        self.assertEqual(["EVENT_EURIC_HEAL_PRIDE"], list(learn_sauce.required_quests))
+        self.assertEqual([], list(learn_sauce.required_quest_items))
+        self.assertEqual([], list(learn_sauce.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_CLOTHO_REWARD_ASK_ABOUT_SAUCE"],
+            list(learn_sauce.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_CLOTHO_TEACH_MYSTERIOUS_FOOD_SAUCE"],
+            list(charge_gluttony.required_quests),
+        )
+        self.assertEqual([], list(charge_gluttony.required_quest_items))
+        self.assertEqual(
+            {"ITEM_MYSTERIOUS_FOOD_SAUCE", "ITEM_SIN_SHARD"},
+            set(charge_gluttony.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_MERCHANT_REWARD_GIVE_MYSTERIOUS_FOOD_SAUCE"],
+            list(charge_gluttony.rewards),
+        )
+
+        self.assertEqual(
+            {
+                "EVENT_INQUISITOR_CHARGE_WRATH_SHARD",
+                "EVENT_MERCHANT_CHARGE_GLUTTONY_SHARD",
+            },
+            set(second_healing.required_quests),
+        )
+        self.assertEqual([], list(second_healing.required_happiness))
+        self.assertEqual(
+            {
+                "ITEM_WRATH_CHARGED_SHARD",
+                "ITEM_GLUTTONY_CHARGED_SHARD",
+                "ITEM_BP_EXTENSION_HEALING_FROM_WRATH",
+                "ITEM_BP_EXTENSION_HEALING_FROM_GLUTTONY",
+            },
+            set(second_healing.required_quest_items),
+        )
+        self.assertEqual(
+            {"ITEM_CONICAL_FLASKS", "ITEM_SIMPLE_IRON_PARTS"},
+            set(second_healing.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_EURIC_REWARD_SECOND_HEALING"],
+            list(second_healing.rewards),
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

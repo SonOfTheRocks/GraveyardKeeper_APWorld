@@ -284,7 +284,7 @@
     "label": "Inquisitor Reward - Hand over his Portal Artifact",
     "parent_region": "REGION_WITCH_HILL"
   },
-  "LOCATION_INQUISITOR_SHOW_ASH": {
+  "LOCATION_INQUISITOR_REWARD_SHOW_UNUSUAL_ASH": {
     "label": "Inquisitor - Show him the unusual ash",
     "parent_region": "REGION_WITCH_HILL"
   },
@@ -531,7 +531,7 @@
     "label": "Clotho Reward - Give her Honey",
     "parent_region": "REGION_SWAMP"
   },
-  "LOCATION_CLOTHO_ASK_ABOUT_SAUCE": {
+  "LOCATION_CLOTHO_REWARD_ASK_ABOUT_SAUCE": {
     "label": "Clotho - Ask her about a food-enhancing sauce",
     "parent_region": "REGION_SWAMP"
   },
