@@ -846,6 +846,10 @@
     "label": "Euric Reward - Complete the second healing",
     "parent_region": "REGION_SOULS_ROOM"
   },
+  "LOCATION_EURIC_REWARD_ASK_FOR_ENVY_SHARD": {
+    "label": "Euric Reward - Ask about charging the Envy shard",
+    "parent_region": "REGION_SOULS_ROOM"
+  },
   "LOCATION_EURIC_REWARD_THIRD_HEALING": {
     "label": "Euric Reward - Complete the third healing",
     "parent_region": "REGION_SOULS_ROOM"

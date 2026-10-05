@@ -3106,14 +3106,58 @@
     "rewards": ["LOCATION_EURIC_REWARD_SECOND_HEALING"]
   },
   "EVENT_EURIC_ASK_FOR_ENVY_SHARD": {
-    "comment": "Flow: npc_euric:28:option:13 unlocks souls_s_s33_ask for Snake",
+    "comment": "Flow: after the second healing and the Master of Alchemy conversation, npc_euric:28:option:13 drops note_with_rumors and unlocks souls_s_s33_ask for Snake",
     "location_label": "Ask Euric about charging the Envy shard",
     "item_label": "Asked Euric about charging the Envy shard",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests": ["TODO(EVENT_EURIC_COMPLETE_THIRD_HEALING)"],
+    "required_quests": ["EVENT_EURIC_HEAL_WRATH_AND_GLUTTONY"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": []
+    "rewards": ["LOCATION_EURIC_REWARD_ASK_FOR_ENVY_SHARD"]
+  },
+  "EVENT_ASTROLOGER_CHARGE_SLOTH_SHARD": {
+    "comment": "Flow: npc_astrologer @souls_s_s30_ask removes sin_shard and drops sloth_charged_shard; no happiness or other item requirement is present",
+    "location_label": "Ask the Astrologer about his day",
+    "item_label": "Asked the Astrologer about his day",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_HEAL_WRATH_AND_GLUTTONY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_SIN_SHARD"],
+    "rewards": ["LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_HIS_DAY"]
+  },
+  "EVENT_MS_CHARM_CHARGE_LUST_SHARD": {
+    "comment": "Flow: npc_actress @souls_s_s31_ask removes sin_shard, has Euric dance with Ms. Charm, and drops lust_charged_shard; stock-state branches only vary the dialogue",
+    "location_label": "Persuade Ms. Charm to dance with Euric",
+    "item_label": "Persuaded Ms. Charm to dance with Euric",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_HEAL_WRATH_AND_GLUTTONY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_SIN_SHARD"],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_PERSUADE_TO_DANCE"]
+  },
+  "EVENT_EURIC_HEAL_SLOTH_LUST_AND_ENVY": {
+    "comment": "Flow: on_enter_ev_s_s34_gd_zone requires the Sloth, Lust, and Envy charged shards, performs the third healing, and grants 50 Euric happiness; all three matching Soul Healer extensions are required for the session",
+    "location_label": "Heal Euric's Sloth, Lust, and Envy",
+    "item_label": "Healed Euric's Sloth, Lust, and Envy",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": [
+      "EVENT_ASTROLOGER_CHARGE_SLOTH_SHARD",
+      "EVENT_MS_CHARM_CHARGE_LUST_SHARD",
+      "EVENT_SNAKE_CHARGE_ENVY_SHARD"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [
+      "ITEM_SLOTH_CHARGED_SHARD",
+      "ITEM_LUST_CHARGED_SHARD",
+      "ITEM_ENVY_CHARGED_SHARD",
+      "ITEM_BP_EXTENSION_HEALING_FROM_SLOTH",
+      "ITEM_BP_EXTENSION_HEALING_FROM_LUST",
+      "ITEM_BP_EXTENSION_HEALING_FROM_ENVY"
+    ],
+    "required_craft_items": ["ITEM_CONICAL_FLASKS", "ITEM_SIMPLE_IRON_PARTS"],
+    "rewards": ["LOCATION_EURIC_REWARD_THIRD_HEALING"]
   }
 }

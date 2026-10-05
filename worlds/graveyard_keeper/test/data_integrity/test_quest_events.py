@@ -900,6 +900,77 @@ class TestAllQuestEvents(unittest.TestCase):
             list(second_healing.rewards),
         )
 
+    def test_better_call_soul_third_healing_keeps_all_shard_branches_independent(self):
+        charge_sloth = data.events["EVENT_ASTROLOGER_CHARGE_SLOTH_SHARD"]
+        charge_lust = data.events["EVENT_MS_CHARM_CHARGE_LUST_SHARD"]
+        ask_for_envy = data.events["EVENT_EURIC_ASK_FOR_ENVY_SHARD"]
+        charge_envy = data.events["EVENT_SNAKE_CHARGE_ENVY_SHARD"]
+        third_healing = data.events["EVENT_EURIC_HEAL_SLOTH_LUST_AND_ENVY"]
+
+        for event in (charge_sloth, charge_lust, ask_for_envy):
+            with self.subTest(event=event.location_label):
+                self.assertEqual(
+                    ["EVENT_EURIC_HEAL_WRATH_AND_GLUTTONY"],
+                    list(event.required_quests),
+                )
+
+        self.assertEqual(["ITEM_SIN_SHARD"], list(charge_sloth.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_HIS_DAY"],
+            list(charge_sloth.rewards),
+        )
+        self.assertEqual(["ITEM_SIN_SHARD"], list(charge_lust.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_MS_CHARM_REWARD_PERSUADE_TO_DANCE"],
+            list(charge_lust.rewards),
+        )
+        self.assertEqual([], list(ask_for_envy.required_quest_items))
+        self.assertEqual([], list(ask_for_envy.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_EURIC_REWARD_ASK_FOR_ENVY_SHARD"],
+            list(ask_for_envy.rewards),
+        )
+
+        self.assertEqual(
+            {"EVENT_EURIC_ASK_FOR_ENVY_SHARD", "EVENT_SNAKE_GIVE_ACTIVE_KEY"},
+            set(charge_envy.required_quests),
+        )
+        self.assertEqual(["ITEM_NOTE_WITH_RUMOR"], list(charge_envy.required_quest_items))
+        self.assertEqual(["ITEM_SIN_SHARD"], list(charge_envy.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_SNAKE_REWARD_CHARGE_ENVY_SHARD"],
+            list(charge_envy.rewards),
+        )
+
+        self.assertEqual(
+            {
+                "EVENT_ASTROLOGER_CHARGE_SLOTH_SHARD",
+                "EVENT_MS_CHARM_CHARGE_LUST_SHARD",
+                "EVENT_SNAKE_CHARGE_ENVY_SHARD",
+            },
+            set(third_healing.required_quests),
+        )
+        self.assertEqual([], list(third_healing.required_happiness))
+        self.assertEqual(
+            {
+                "ITEM_SLOTH_CHARGED_SHARD",
+                "ITEM_LUST_CHARGED_SHARD",
+                "ITEM_ENVY_CHARGED_SHARD",
+                "ITEM_BP_EXTENSION_HEALING_FROM_SLOTH",
+                "ITEM_BP_EXTENSION_HEALING_FROM_LUST",
+                "ITEM_BP_EXTENSION_HEALING_FROM_ENVY",
+            },
+            set(third_healing.required_quest_items),
+        )
+        self.assertEqual(
+            {"ITEM_CONICAL_FLASKS", "ITEM_SIMPLE_IRON_PARTS"},
+            set(third_healing.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_EURIC_REWARD_THIRD_HEALING"],
+            list(third_healing.rewards),
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):
