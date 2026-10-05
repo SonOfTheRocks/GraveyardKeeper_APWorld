@@ -2821,16 +2821,6 @@
     "rewards": ["LOCATION_TAVERN_REWARD_USE_CHURCH_BRICK_IN_TIME_MACHINE"]
   },
 
-  "EVENT_STAINED_GLASS_WINDOW_INSTALLED": {
-    "location_label": "Install the Stained Glass Window",
-    "item_label": "Stained Glass Window installed",
-    "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
-    "required_happiness": [],
-    "required_quest_items": [],
-    "required_craft_items": [],
-    "rewards": []
-  },
   "EVENT_CHURCH_OPEN": {
     "comment": "Flow: npc_bishop:75:option:2 has graveyard_quality 5 as Answer.price, +10 Bishop happiness as Answer.reward, and opens the church",
     "location_label": "Open church",

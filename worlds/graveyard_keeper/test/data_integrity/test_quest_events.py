@@ -1038,6 +1038,13 @@ class TestAllQuestEvents(unittest.TestCase):
             list(collect_gift.rewards),
         )
 
+    def test_stained_glass_window_is_not_a_better_call_soul_quest_event(self):
+        self.assertNotIn("EVENT_STAINED_GLASS_WINDOW_INSTALLED", data.events)
+        self.assertNotIn(
+            "EVENT_STAINED_GLASS_WINDOW_INSTALLED",
+            data.regions["REGION_CHURCH"].events,
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

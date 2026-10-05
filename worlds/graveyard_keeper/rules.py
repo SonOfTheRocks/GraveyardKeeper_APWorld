@@ -159,18 +159,6 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         ])
     )
     world.set_rule(
-        world.get_location(data.events["EVENT_STAINED_GLASS_WINDOW_INSTALLED"].location_label),
-        build_collection_rule([
-            "EVENT_HATCH_REPAIRED",
-            "ITEM_FLITCH",
-            "ITEM_NAILS",
-            "ITEM_WOODEN_PLANK",
-            "ITEM_WOODEN_STICK",
-            "ITEM_WOODEN_BEAM",
-            "ITEM_SKIN"
-        ])
-    )
-    world.set_rule(
         world.get_location(data.events["EVENT_GERRY_ASK_ABOUT_THE_TOOTH"].location_label),
         build_collection_rule("ITEM_LOST_TOOTH")
     )

@@ -217,9 +217,7 @@
     "label": "Church",
     "dlc": "BASE_GAME",
     "locations": [],
-    "events": [
-      "EVENT_STAINED_GLASS_WINDOW_INSTALLED"
-    ],
+    "events": [],
     "exits": [
       "REGION_ALCHEMY_LAB",
       "REGION_OLD_GRAVEYARD"
