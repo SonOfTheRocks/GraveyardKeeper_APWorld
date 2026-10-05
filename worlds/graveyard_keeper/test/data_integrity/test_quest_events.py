@@ -971,6 +971,43 @@ class TestAllQuestEvents(unittest.TestCase):
             list(third_healing.rewards),
         )
 
+    def test_better_call_soul_smiler_finale_preserves_journal_page_gate(self):
+        ask_smiler = data.events["EVENT_SMILER_ASK_ABOUT_HIS_DEATH"]
+        ask_snake = data.events["EVENT_SNAKE_ASK_HOW_SMILER_DIED"]
+        ask_gerry = data.events["EVENT_GERRY_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL"]
+        reveal_death = data.events["EVENT_SMILER_LEARN_HOW_HE_DIED"]
+        pass_on = data.events["EVENT_SMILER_PASS_ON"]
+
+        self.assertEqual(
+            ["EVENT_EURIC_HEAL_SLOTH_LUST_AND_ENVY"],
+            list(ask_smiler.required_quests),
+        )
+        self.assertEqual(
+            ["EVENT_SMILER_ASK_ABOUT_HIS_DEATH"],
+            list(ask_snake.required_quests),
+        )
+        self.assertEqual(
+            ["EVENT_SNAKE_ASK_HOW_SMILER_DIED"],
+            list(ask_gerry.required_quests),
+        )
+        self.assertEqual(
+            ["LOCATION_GERRY_REWARD_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL"],
+            list(ask_gerry.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_GERRY_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL"],
+            list(reveal_death.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_PREVIOUS_KEEPERS_JOURNAL_PAGE"],
+            list(reveal_death.required_quest_items),
+        )
+        self.assertEqual(
+            ["EVENT_SMILER_LEARN_HOW_HE_DIED"],
+            list(pass_on.required_quests),
+        )
+        self.assertEqual([], list(pass_on.rewards))
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

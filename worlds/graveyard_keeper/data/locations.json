@@ -517,6 +517,10 @@
     "label": "Gerry Reward - Wash him with Beer and Sand",
     "parent_region": "REGION_MORGUE"
   },
+  "LOCATION_GERRY_REWARD_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL": {
+    "label": "Gerry Reward - Ask about the previous Keeper's journal",
+    "parent_region": "REGION_MORGUE"
+  },
 
 
   "LOCATION_CLOTHO_MEET": {

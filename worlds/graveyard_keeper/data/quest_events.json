@@ -3015,11 +3015,44 @@
     "rewards": []
   },
   "EVENT_SMILER_ASK_ABOUT_HIS_DEATH": {
-    "comment": "Flow prerequisite that unlocks souls_s_s43_ask for Snake",
+    "comment": "Flow: after the third healing, ev_s_s35 enables Smiler's ev_s_42_talk interaction; npc_smiler:9:option:7 unlocks souls_s_s43_ask for Snake",
     "location_label": "Ask Smiler about his death",
     "item_label": "Asked Smiler about his death",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests": ["EVENT_SMILER_APPEARS"],
+    "required_quests": ["EVENT_EURIC_HEAL_SLOTH_LUST_AND_ENVY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_GERRY_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL": {
+    "comment": "Flow: crafting_skull_3:134:option:13 (@souls_s_s44_ask) is unlocked by Snake's account of Smiler's death and drops lost_book_part, the second part of the previous Keeper's journal",
+    "location_label": "Ask Gerry about the previous Keeper's journal",
+    "item_label": "Asked Gerry about the previous Keeper's journal",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SNAKE_ASK_HOW_SMILER_DIED"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_GERRY_REWARD_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL"]
+  },
+  "EVENT_SMILER_LEARN_HOW_HE_DIED": {
+    "comment": "Flow: on_enter_ev_s_s45_gd_zone starts only while lost_book_part is in the inventory, removes it, reveals how the previous Keeper trapped Smiler's soul, and unlocks @souls_s_s46_ask",
+    "location_label": "Show the previous Keeper's journal page to Smiler",
+    "item_label": "Showed the previous Keeper's journal page to Smiler",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_GERRY_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_PREVIOUS_KEEPERS_JOURNAL_PAGE"],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_SMILER_PASS_ON": {
+    "comment": "Flow: npc_smiler:9:option:8 (@souls_s_s46_ask) completes Smiler's final task and sends him through the Soul Portal",
+    "location_label": "Send Smiler through the Soul Portal",
+    "item_label": "Sent Smiler through the Soul Portal",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SMILER_LEARN_HOW_HE_DIED"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],

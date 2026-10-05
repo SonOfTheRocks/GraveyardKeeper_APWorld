@@ -446,5 +446,10 @@
     "label": "Note with rumor",
     "dlc": "BETTER_SAVE_SOUL",
     "classification": "PROGRESSION"
+  },
+  "ITEM_PREVIOUS_KEEPERS_JOURNAL_PAGE": {
+    "label": "Previous Keeper's journal page",
+    "dlc": "BETTER_SAVE_SOUL",
+    "classification": "PROGRESSION"
   }
 }
