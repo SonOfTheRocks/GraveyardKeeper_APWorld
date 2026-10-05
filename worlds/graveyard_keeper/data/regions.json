@@ -889,8 +889,16 @@
   "REGION_REFUGEE_CAMP": {
     "label": "Refugee Camp",
     "dlc": "GAME_OF_CRONE",
-    "locations": [],
-    "events": [],
+    "locations": [
+      "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN",
+      "LOCATION_REFUGEE_COOK_REWARD_UPGRADE_KITCHEN",
+      "LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES"
+    ],
+    "events": [
+      "EVENT_REFUGEE_COOK_BUILD_KITCHEN",
+      "EVENT_REFUGEE_COOK_UPGRADE_KITCHEN",
+      "EVENT_REFUGEE_COOK_BUILD_BEEHIVES"
+    ],
     "exits": [
       "REGION_FOREST_NEAR_RIVER"
     ]

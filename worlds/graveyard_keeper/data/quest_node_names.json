@@ -336,5 +336,9 @@
   "unlock:on_fix_drying_rack_broken.json:24": "Repair the village drying rack",
   "unlock:fix_krezvold_toilet_door.json:22": "Restore Krezvold's toilet door",
   "npc_tavern owner:13:option:25": "Tell Horadric the village repairs are complete",
-  "npc_carpenter:13:option:2": "Collect Tress's gift for repairing the village"
+  "npc_carpenter:13:option:2": "Collect Tress's gift for repairing the village",
+  "npc_refugee_cook:282": "Build the Refugee Cook's kitchen",
+  "npc_refugee_cook:15:option:0": "Build the Refugee Cook's kitchen",
+  "npc_refugee_cook:15:option:1": "Upgrade the Refugee Cook's kitchen",
+  "npc_refugee_cook:15:option:2": "Build two beehives for the Refugee Cook"
 }

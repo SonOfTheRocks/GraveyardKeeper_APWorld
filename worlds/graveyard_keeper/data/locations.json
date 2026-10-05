@@ -864,6 +864,18 @@
     "label": "Sacrifice Zone - Examine Broken Cabinet (Next to Gunter)",
     "parent_region": "REGION_SACRIFICE_ZONE"
   },
+  "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN": {
+    "label": "Refugee Cook Reward - Build the kitchen",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_REFUGEE_COOK_REWARD_UPGRADE_KITCHEN": {
+    "label": "Refugee Cook Reward - Upgrade the kitchen",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES": {
+    "label": "Refugee Cook Reward - Build two beehives",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_APIARY_DIG_UP_ZOMBIE": {
     "label": "Plains - Dig up Zombie",
     "parent_region": "REGION_APIARY"

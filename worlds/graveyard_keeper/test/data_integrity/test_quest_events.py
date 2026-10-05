@@ -1045,6 +1045,57 @@ class TestAllQuestEvents(unittest.TestCase):
             data.regions["REGION_CHURCH"].events,
         )
 
+    def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
+        kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
+        upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]
+        beehives = data.events["EVENT_REFUGEE_COOK_BUILD_BEEHIVES"]
+
+        self.assertEqual(
+            ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COOK)"],
+            list(kitchen.required_quests),
+        )
+        self.assertEqual({"ITEM_FLITCH", "ITEM_NAILS"}, set(kitchen.required_craft_items))
+        self.assertEqual({AreaPointData("REFUGEE_CAMP", 6)}, set(kitchen.required_area_points))
+        self.assertEqual(
+            ["LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN"],
+            list(kitchen.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_REFUGEE_COOK_BUILD_KITCHEN"],
+            list(upgraded_kitchen.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_WOODEN_PLANK", "ITEM_NAILS"},
+            set(upgraded_kitchen.required_craft_items),
+        )
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 8)},
+            set(upgraded_kitchen.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_REFUGEE_COOK_REWARD_UPGRADE_KITCHEN"],
+            list(upgraded_kitchen.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"],
+            list(beehives.required_quests),
+        )
+        self.assertEqual({"ITEM_FLITCH", "ITEM_BEE"}, set(beehives.required_craft_items))
+        self.assertEqual({AreaPointData("REFUGEE_CAMP", 2)}, set(beehives.required_area_points))
+        self.assertEqual(
+            ["LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES"],
+            list(beehives.rewards),
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            node_names["npc_refugee_cook:282"],
+            node_names["npc_refugee_cook:15:option:0"],
+            "The prebuilt-kitchen and post-build dialogue paths are one reward",
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

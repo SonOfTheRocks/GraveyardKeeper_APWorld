@@ -3205,5 +3205,41 @@
       "ITEM_HEMP_ROPE"
     ],
     "rewards": ["LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE"]
+  },
+  "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
+    "comment": "Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. GameData craft refugee_builddesk::refugee_camp_cooking_table requires flitch, nails, and 6 current Refugee Camp happiness; renewable quantities are intentionally not modeled.",
+    "location_label": "Build the Refugee Cook's kitchen",
+    "item_label": "Built the Refugee Cook's kitchen",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COOK)"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FLITCH", "ITEM_NAILS"],
+    "required_area_points": ["REFUGEE_CAMP_6"],
+    "rewards": ["LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN"]
+  },
+  "EVENT_REFUGEE_COOK_UPGRADE_KITCHEN": {
+    "comment": "Flow: place_refugee_cooking_table_2 unlocks npc_refugee_cook:15:option:1 (@refugee_cook_3), which grants +40 Cook relation and starts the beehive task. GameData craft refugee_builddesk::refugee_camp_cooking_table_2 requires wooden planks, nails, and 8 current Refugee Camp happiness.",
+    "location_label": "Upgrade the Refugee Cook's kitchen",
+    "item_label": "Upgraded the Refugee Cook's kitchen",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_REFUGEE_COOK_BUILD_KITCHEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOODEN_PLANK", "ITEM_NAILS"],
+    "required_area_points": ["REFUGEE_CAMP_8"],
+    "rewards": ["LOCATION_REFUGEE_COOK_REWARD_UPGRADE_KITCHEN"]
+  },
+  "EVENT_REFUGEE_COOK_BUILD_BEEHIVES": {
+    "comment": "Flow: place_refugee_hive increments hives_build_count and unlocks npc_refugee_cook:15:option:2 (@refugee_cook_4) at 2, granting +30 Cook relation and the final recipes. Each GameData beehive craft requires flitch, bees, and 2 current Refugee Camp happiness; quantities of renewable inputs and repeated builds are intentionally not modeled.",
+    "location_label": "Build two beehives for the Refugee Cook",
+    "item_label": "Built two beehives for the Refugee Cook",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FLITCH", "ITEM_BEE"],
+    "required_area_points": ["REFUGEE_CAMP_2"],
+    "rewards": ["LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES"]
   }
 }
