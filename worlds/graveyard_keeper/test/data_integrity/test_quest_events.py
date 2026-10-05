@@ -1008,6 +1008,36 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual([], list(pass_on.rewards))
 
+    def test_better_call_soul_village_repairs_require_every_material_type(self):
+        collect_gift = data.events["EVENT_TRESS_COLLECT_VILLAGE_REPAIR_GIFT"]
+
+        self.assertEqual(
+            ["EVENT_EURIC_HEAL_SLOTH_LUST_AND_ENVY"],
+            list(collect_gift.required_quests),
+        )
+        self.assertEqual([], list(collect_gift.required_happiness))
+        self.assertEqual([], list(collect_gift.required_quest_items))
+        self.assertEqual(
+            {
+                "ITEM_FLITCH",
+                "ITEM_NAILS",
+                "ITEM_COMPLEX_IRON_PARTS",
+                "ITEM_WOODEN_PLANK",
+                "ITEM_WOOD_REPAIR_KIT",
+                "ITEM_WOODEN_STICK",
+                "ITEM_A_PIECE_OF_STONE",
+                "ITEM_BEE",
+                "ITEM_SIMPLE_IRON_PARTS",
+                "ITEM_GLASS",
+                "ITEM_HEMP_ROPE",
+            },
+            set(collect_gift.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE"],
+            list(collect_gift.rewards),
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

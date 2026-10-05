@@ -3192,5 +3192,28 @@
     ],
     "required_craft_items": ["ITEM_CONICAL_FLASKS", "ITEM_SIMPLE_IRON_PARTS"],
     "rewards": ["LOCATION_EURIC_REWARD_THIRD_HEALING"]
+  },
+  "EVENT_TRESS_COLLECT_VILLAGE_REPAIR_GIFT": {
+    "comment": "Flow: ev_s_s35 starts the mandatory s36-s41 village-repair chain after Euric's third healing. The chain requires the Tavern table, Krezvold's toilet, Egg Seller's stall, Potter's wheel, Beekeeper's hives, village lantern, Tavern bottles, warehouse barrels, drying rack, and Krezvold's toilet door to be restored before npc_carpenter:13:option:2 runs tress_giht_after_repair_village. Quantities of renewable materials and the material-free interactions are intentionally not modeled.",
+    "location_label": "Collect Tress's gift for repairing the village",
+    "item_label": "Collected Tress's gift for repairing the village",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_EURIC_HEAL_SLOTH_LUST_AND_ENVY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_FLITCH",
+      "ITEM_NAILS",
+      "ITEM_COMPLEX_IRON_PARTS",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_WOOD_REPAIR_KIT",
+      "ITEM_WOODEN_STICK",
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_BEE",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_GLASS",
+      "ITEM_HEMP_ROPE"
+    ],
+    "rewards": ["LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE"]
   }
 }
