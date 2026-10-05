@@ -2922,6 +2922,36 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING"]
   },
+  "EVENT_VAGNER_WRITE_ODE_FOR_BISHOP": {
+    "comment": "Flow: after building souls_builddesk::soul_healing_for_human, Smiler, Horadric, and Euric unlock @souls_s_s12_1_ask; npc_actor drops ode_for_bishop directly, while npc_royal_box provides the same Ode as a fallback if Vagner has already left",
+    "location_label": "Obtain an Ode for Bishop from Vagner",
+    "item_label": "Obtained an Ode for Bishop from Vagner",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_SMILER_UNLOCK_HUMAN_SOUL_HEALING"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_BP_HUMAN_SOUL_HEALING"],
+    "required_craft_items": [
+      "ITEM_FLITCH",
+      "ITEM_GLASS",
+      "ITEM_SIMPLE_IRON_PARTS",
+      "ITEM_SKIN",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS",
+      "ITEM_COMPLEX_IRON_PARTS"
+    ],
+    "rewards": ["LOCATION_REWARD_OBTAIN_ODE_FOR_BISHOP"]
+  },
+  "EVENT_BISHOP_CHARGE_PRIDE_SHARD": {
+    "comment": "Flow: npc_bishop @souls_s_s15_ask requires ode_for_bishop and sin_shard, drops pride_charged_shard, and unlocks Euric's first healing; the repeated analyzer nodes are the same option exposed by different Bishop menus",
+    "location_label": "Recite Vagner's Ode to Bishop",
+    "item_label": "Recited Vagner's Ode to Bishop",
+    "dlc": "BETTER_SAVE_SOUL",
+    "required_quests": ["EVENT_VAGNER_WRITE_ODE_FOR_BISHOP"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_ODE_FOR_BISHOP"],
+    "required_craft_items": ["ITEM_SIN_SHARD"],
+    "rewards": ["LOCATION_BISHOP_REWARD_RECITE_ODE"]
+  },
   "EVENT_GERRY_ASK_ABOUT_THE_TOOTH": {
     "comment": "Flow: crafting_skull_3:134:option:12 (@souls_s_s6_b_1_ask) requires gerry_tooth and completes dlc_souls_s6_a_2; no vanilla reward follows",
     "location_label": "Return Gerry's lost tooth",
@@ -2995,15 +3025,22 @@
     "required_craft_items": [],
     "rewards": []
   },
-  "EVENT_EURIC_HEALED": {
-    "location_label": "Heal Euric",
-    "item_label": "Euric healed",
+  "EVENT_EURIC_HEAL_PRIDE": {
+    "comment": "Flow: npc_euric:28:option:6 requires 10 Euric happiness and pride_charged_shard, grants +10 Euric happiness and drops global_control; the Pride extension is the required Soul Healer upgrade for this session",
+    "location_label": "Heal Euric's Pride",
+    "item_label": "Healed Euric's Pride",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests":[],
-    "required_happiness": [],
-    "required_quest_items": [],
-    "required_craft_items": [],
-    "rewards": []
+    "required_quests": ["EVENT_BISHOP_CHARGE_PRIDE_SHARD"],
+    "required_happiness": ["EURIC_10"],
+    "required_quest_items": [
+      "ITEM_PRIDE_CHARGED_SHARD",
+      "ITEM_BP_EXTENSION_HEALING_FROM_PRIDE"
+    ],
+    "required_craft_items": ["ITEM_CONICAL_FLASKS", "ITEM_SIMPLE_IRON_PARTS"],
+    "rewards": [
+      "LOCATION_EURIC_REWARD_FIRST_HEALING_1",
+      "LOCATION_EURIC_REWARD_FIRST_HEALING_2"
+    ]
   },
   "EVENT_REPAIR_VILLAGE": {
     "location_label": "Repair the village",
@@ -3020,7 +3057,7 @@
     "location_label": "Ask Euric about charging the Envy shard",
     "item_label": "Asked Euric about charging the Envy shard",
     "dlc": "BETTER_SAVE_SOUL",
-    "required_quests": ["EVENT_EURIC_HEALED"],
+    "required_quests": ["TODO(EVENT_EURIC_COMPLETE_THIRD_HEALING)"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],

@@ -135,7 +135,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule(["EVENT_EURIC_ARRIVE", "ITEM_OLD_RUSTY_KEY"])
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_EURIC_FIND_OUT_MORE_ABOUT_EURIC"].label),
+        world.get_location(data.locations["LOCATION_EURIC_REWARD_FIRST_HEALING_1"].label),
         build_collection_rule("EVENT_SOULS_ROOM_OPEN")
     )
     world.set_rule(
@@ -179,7 +179,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule("ITEM_LEARN_CREATE_REMOTE_CRAFT_CONTROL")
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_ROYAL_SERVICES_WRITE_A_LETTER_TO_VAGNER"].label),
+        world.get_location(data.locations["LOCATION_REWARD_OBTAIN_ODE_FOR_BISHOP"].label),
         build_collection_rule("ITEM_PEN_AND_INK")
     )
     world.set_rule(
@@ -187,7 +187,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule(["ITEM_ODE_FOR_BISHOP", "ITEM_SIN_SHARD"])
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_EURIC_HEAL_SINS_1"].label),
+        world.get_location(data.locations["LOCATION_EURIC_REWARD_FIRST_HEALING_2"].label),
         lambda state: all(
             state.has(label, world.player, count ) for (label, count) in
                 resolve_item_labels(["CRAFTING_STATION_EXTENSION_HEALING_FROM_PRIDE",
@@ -216,7 +216,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule(["ITEM_MYSTERIOUS_FOOD_SAUCE", "ITEM_SIN_SHARD"])
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_EURIC_HEAL_SINS_2"].label),
+        world.get_location(data.locations["LOCATION_EURIC_REWARD_SECOND_HEALING"].label),
         build_collection_rule([
             "CRAFTING_STATION_EXTENSION_HEALING_FROM_WRATH",
             "CRAFTING_STATION_EXTENSION_HEALING_FROM_GLUTTONY",
@@ -237,7 +237,7 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule(["ITEM_NOTE_WITH_RUMOR", "ITEM_SIN_SHARD"])
     )
     world.set_rule(
-        world.get_location(data.locations["LOCATION_EURIC_HEAL_SINS_3"].label),
+        world.get_location(data.locations["LOCATION_EURIC_REWARD_THIRD_HEALING"].label),
         build_collection_rule([
             "CRAFTING_STATION_EXTENSION_HEALING_FROM_SLOTH",
             "CRAFTING_STATION_EXTENSION_HEALING_FROM_LUST",
@@ -248,17 +248,17 @@ def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
         ])
     )
     world.set_rule(
-        world.get_location(data.events["EVENT_EURIC_HEALED"].location_label),
+        world.get_location(data.events["EVENT_EURIC_HEAL_PRIDE"].location_label),
         build_collection_rule([
-            #"LOCATION_EURIC_HEAL_SINS_1",
-            #"LOCATION_EURIC_HEAL_SINS_2",
-            #"LOCATION_EURIC_HEAL_SINS_3",
+            #"LOCATION_EURIC_REWARD_FIRST_HEALING_2",
+            #"LOCATION_EURIC_REWARD_SECOND_HEALING",
+            #"LOCATION_EURIC_REWARD_THIRD_HEALING",
         ])
     )
     world.set_rule(
         world.get_location(data.events["EVENT_REPAIR_VILLAGE"].location_label),
         build_collection_rule([
-            "EVENT_EURIC_HEALED",
+            "EVENT_EURIC_HEAL_PRIDE",
             "ITEM_WOODEN_PLANK",
             "ITEM_NAILS",
             "ITEM_FLITCH",

@@ -767,6 +767,68 @@ class TestAllQuestEvents(unittest.TestCase):
             list(unlock_healing.rewards),
         )
 
+    def test_better_call_soul_first_healing_models_each_vanilla_reward(self):
+        obtain_ode = data.events["EVENT_VAGNER_WRITE_ODE_FOR_BISHOP"]
+        charge_shard = data.events["EVENT_BISHOP_CHARGE_PRIDE_SHARD"]
+        heal_pride = data.events["EVENT_EURIC_HEAL_PRIDE"]
+
+        self.assertEqual(
+            ["EVENT_SMILER_UNLOCK_HUMAN_SOUL_HEALING"],
+            list(obtain_ode.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_BP_HUMAN_SOUL_HEALING"],
+            list(obtain_ode.required_quest_items),
+        )
+        self.assertEqual(
+            {
+                "ITEM_FLITCH",
+                "ITEM_GLASS",
+                "ITEM_SIMPLE_IRON_PARTS",
+                "ITEM_SKIN",
+                "ITEM_WOODEN_PLANK",
+                "ITEM_NAILS",
+                "ITEM_COMPLEX_IRON_PARTS",
+            },
+            set(obtain_ode.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_REWARD_OBTAIN_ODE_FOR_BISHOP"],
+            list(obtain_ode.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_VAGNER_WRITE_ODE_FOR_BISHOP"],
+            list(charge_shard.required_quests),
+        )
+        self.assertEqual(["ITEM_ODE_FOR_BISHOP"], list(charge_shard.required_quest_items))
+        self.assertEqual(["ITEM_SIN_SHARD"], list(charge_shard.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_BISHOP_REWARD_RECITE_ODE"],
+            list(charge_shard.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_BISHOP_CHARGE_PRIDE_SHARD"],
+            list(heal_pride.required_quests),
+        )
+        self.assertEqual([HappinessData("EURIC", 10)], list(heal_pride.required_happiness))
+        self.assertEqual(
+            {"ITEM_PRIDE_CHARGED_SHARD", "ITEM_BP_EXTENSION_HEALING_FROM_PRIDE"},
+            set(heal_pride.required_quest_items),
+        )
+        self.assertEqual(
+            {"ITEM_CONICAL_FLASKS", "ITEM_SIMPLE_IRON_PARTS"},
+            set(heal_pride.required_craft_items),
+        )
+        self.assertEqual(
+            {
+                "LOCATION_EURIC_REWARD_FIRST_HEALING_1",
+                "LOCATION_EURIC_REWARD_FIRST_HEALING_2",
+            },
+            set(heal_pride.rewards),
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):
