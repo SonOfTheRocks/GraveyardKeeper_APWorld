@@ -1161,6 +1161,82 @@ class TestAllQuestEvents(unittest.TestCase):
             node_names["unlock:macro__check_and_set_refugee_tanner_4_1_start.json:8"],
         )
 
+    def test_refugee_coffin_maker_rewards_require_both_supply_requests(self):
+        iron_chisels = data.events["EVENT_REFUGEE_COFFIN_MAKER_GIVE_IRON_CHISELS"]
+        wood_wedges = data.events["EVENT_REFUGEE_COFFIN_MAKER_GIVE_WOOD_WEDGES"]
+        workplace = data.events["EVENT_REFUGEE_COFFIN_MAKER_BUILD_WORKPLACE"]
+        gold_chisels = data.events[
+            "EVENT_REFUGEE_COFFIN_MAKER_GIVE_GOLD_STEEL_CHISELS"
+        ]
+
+        for request, craft_item, reward in (
+            (
+                iron_chisels,
+                "ITEM_IRON_CHISEL",
+                "LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_IRON_CHISELS",
+            ),
+            (
+                wood_wedges,
+                "ITEM_WOOD_WEDGE",
+                "LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_WOOD_WEDGES",
+            ),
+        ):
+            with self.subTest(event=request.item_label):
+                self.assertEqual(
+                    ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COFFIN_MAKER)"],
+                    list(request.required_quests),
+                )
+                self.assertEqual([craft_item], list(request.required_craft_items))
+                self.assertEqual([reward], list(request.rewards))
+
+        self.assertEqual(
+            {
+                "EVENT_REFUGEE_COFFIN_MAKER_GIVE_IRON_CHISELS",
+                "EVENT_REFUGEE_COFFIN_MAKER_GIVE_WOOD_WEDGES",
+            },
+            set(workplace.required_quests),
+            "The workplace craft unlocks only after both supply requests increment the counter",
+        )
+        self.assertEqual(
+            {"ITEM_WOODEN_PLANK", "ITEM_NAILS"},
+            set(workplace.required_craft_items),
+        )
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 10)},
+            set(workplace.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_BUILD_WORKPLACE"],
+            list(workplace.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_REFUGEE_COFFIN_MAKER_BUILD_WORKPLACE"],
+            list(gold_chisels.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_STEEL_CHISEL_GOLD"],
+            list(gold_chisels.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_GOLD_STEEL_CHISELS"],
+            list(gold_chisels.rewards),
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            "Give iron chisels to the Refugee Coffin Maker",
+            node_names["npc_refugee_coffin_maker:15:option:0"],
+        )
+        self.assertEqual(
+            "Give wood wedges to the Refugee Coffin Maker",
+            node_names["npc_refugee_coffin_maker:15:option:1"],
+        )
+        self.assertEqual(
+            "Build the Refugee Coffin Maker's workplace",
+            node_names["unlock:place_coffin_workplace.json:6"],
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

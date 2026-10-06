@@ -3267,7 +3267,7 @@
     "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_BUILD_FARM_FENCE"]
   },
   "EVENT_REFUGEE_TANNER_ARRANGE_LIVESTOCK": {
-    "comment": "Flow: paying the Egg Seller for chickens and the Shepherd's Wife for cows each increments refugee_tanner_4_1_start_count; macro__check_and_set_refugee_tanner_4_1_start unlocks @refugee_tanner_4_1 only after both, and npc_refugee_tanner:15:option:2 grants +30 Tanner relation and the three bag technologies. Money is intentionally outside AP logic.",
+    "comment": "Flow: paying the Egg Seller for chickens and the Shepherd's Wife for cows each increments refugee_tanner_4_1_start_count; macro__check_and_set_refugee_tanner_4_1_start unlocks @refugee_tanner_4_1 only after both, and npc_refugee_tanner:15:option:2 grants +30 Tanner relation and the three bag technologies. Both purchases are mandatory quest actions and are modeled by this event; only their monetary prices are intentionally not AP item requirements.",
     "location_label": "Arrange cows and chickens for the Refugee Tanner",
     "item_label": "Arranged cows and chickens for the Refugee Tanner",
     "dlc": "GAME_OF_CRONE",
@@ -3276,5 +3276,53 @@
     "required_quest_items": [],
     "required_craft_items": [],
     "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK"]
+  },
+  "EVENT_REFUGEE_COFFIN_MAKER_GIVE_IRON_CHISELS": {
+    "comment": "Flow: the Coffin Maker's first conversation unlocks @refugee_undertaker_2_1; giving him five chisel:chisel_1 at npc_refugee_coffin_maker:15:option:0 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
+    "location_label": "Give iron chisels to the Refugee Coffin Maker",
+    "item_label": "Gave iron chisels to the Refugee Coffin Maker",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COFFIN_MAKER)"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_IRON_CHISEL"],
+    "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_IRON_CHISELS"]
+  },
+  "EVENT_REFUGEE_COFFIN_MAKER_GIVE_WOOD_WEDGES": {
+    "comment": "Flow: the Coffin Maker's first conversation unlocks @refugee_undertaker_2_2; giving him ten spike_1 wood wedges at npc_refugee_coffin_maker:15:option:1 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
+    "location_label": "Give wood wedges to the Refugee Coffin Maker",
+    "item_label": "Gave wood wedges to the Refugee Coffin Maker",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COFFIN_MAKER)"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOOD_WEDGE"],
+    "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_WOOD_WEDGES"]
+  },
+  "EVENT_REFUGEE_COFFIN_MAKER_BUILD_WORKPLACE": {
+    "comment": "Flow: completing both supply requests raises undertaker_event_1_count to 2 and unlocks refugee_builddesk:p:refugee_coffin_workplace_place; place_coffin_workplace unlocks npc_refugee_coffin_maker:15:option:2 (@refugee_undertaker_3), which grants +40 relation. GameData requires wooden planks, nails, and 10 current Refugee Camp happiness.",
+    "location_label": "Build the Refugee Coffin Maker's workplace",
+    "item_label": "Built the Refugee Coffin Maker's workplace",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_REFUGEE_COFFIN_MAKER_GIVE_IRON_CHISELS",
+      "EVENT_REFUGEE_COFFIN_MAKER_GIVE_WOOD_WEDGES"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOODEN_PLANK", "ITEM_NAILS"],
+    "required_area_points": ["REFUGEE_CAMP_10"],
+    "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_BUILD_WORKPLACE"]
+  },
+  "EVENT_REFUGEE_COFFIN_MAKER_GIVE_GOLD_STEEL_CHISELS": {
+    "comment": "Flow: building the workplace unlocks @refugee_undertaker_4; giving five gold-quality steel chisels (chisel:chisel_2:3) at npc_refugee_coffin_maker:15:option:3 grants +30 relation and unlocks the advanced gravestone inventories. Quantities of craftable items are intentionally not modeled.",
+    "location_label": "Give gold-quality steel chisels to the Refugee Coffin Maker",
+    "item_label": "Gave gold-quality steel chisels to the Refugee Coffin Maker",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_REFUGEE_COFFIN_MAKER_BUILD_WORKPLACE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_STEEL_CHISEL_GOLD"],
+    "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_GOLD_STEEL_CHISELS"]
   }
 }
