@@ -3241,5 +3241,40 @@
     "required_craft_items": ["ITEM_FLITCH", "ITEM_BEE"],
     "required_area_points": ["REFUGEE_CAMP_2"],
     "rewards": ["LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES"]
+  },
+  "EVENT_REFUGEE_TANNER_BUILD_WORKPLACE": {
+    "comment": "Flow: place_tanner_workplace unlocks npc_refugee_tanner:15:option:0 (@refugee_tanner_2), which grants +30 Tanner relation and unlocks the first vendor inventory. GameData craft refugee_builddesk:p:refugee_tanner_workplace_place requires wooden planks, nails, and 12 current Refugee Camp happiness; renewable quantities are intentionally not modeled.",
+    "location_label": "Build the Refugee Tanner's workplace",
+    "item_label": "Built the Refugee Tanner's workplace",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_TANNER)"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOODEN_PLANK", "ITEM_NAILS"],
+    "required_area_points": ["REFUGEE_CAMP_12"],
+    "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_BUILD_WORKPLACE"]
+  },
+  "EVENT_REFUGEE_TANNER_BUILD_FARM_FENCE": {
+    "comment": "Flow: on_refugee_camp_farm_fence_build unlocks npc_refugee_tanner:15:option:1 (@refugee_tanner_3), which grants +40 Tanner relation and starts the cow and chicken tasks. GameData craft refugee_builddesk::refugee_camp_farm_fence_place requires flitch, wood billets, and 12 current Refugee Camp happiness; renewable quantities are intentionally not modeled.",
+    "location_label": "Build the Refugee Tanner's farm fence",
+    "item_label": "Built the Refugee Tanner's farm fence",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_REFUGEE_TANNER_BUILD_WORKPLACE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FLITCH", "ITEM_WOOD_BILLET"],
+    "required_area_points": ["REFUGEE_CAMP_12"],
+    "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_BUILD_FARM_FENCE"]
+  },
+  "EVENT_REFUGEE_TANNER_ARRANGE_LIVESTOCK": {
+    "comment": "Flow: paying the Egg Seller for chickens and the Shepherd's Wife for cows each increments refugee_tanner_4_1_start_count; macro__check_and_set_refugee_tanner_4_1_start unlocks @refugee_tanner_4_1 only after both, and npc_refugee_tanner:15:option:2 grants +30 Tanner relation and the three bag technologies. Money is intentionally outside AP logic.",
+    "location_label": "Arrange cows and chickens for the Refugee Tanner",
+    "item_label": "Arranged cows and chickens for the Refugee Tanner",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_REFUGEE_TANNER_BUILD_FARM_FENCE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK"]
   }
 }

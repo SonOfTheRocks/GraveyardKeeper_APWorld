@@ -1096,6 +1096,71 @@ class TestAllQuestEvents(unittest.TestCase):
             "The prebuilt-kitchen and post-build dialogue paths are one reward",
         )
 
+    def test_refugee_tanner_rewards_model_workplace_fence_and_livestock(self):
+        workplace = data.events["EVENT_REFUGEE_TANNER_BUILD_WORKPLACE"]
+        fence = data.events["EVENT_REFUGEE_TANNER_BUILD_FARM_FENCE"]
+        livestock = data.events["EVENT_REFUGEE_TANNER_ARRANGE_LIVESTOCK"]
+
+        self.assertEqual(
+            ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_TANNER)"],
+            list(workplace.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_WOODEN_PLANK", "ITEM_NAILS"},
+            set(workplace.required_craft_items),
+        )
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 12)},
+            set(workplace.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_REFUGEE_TANNER_REWARD_BUILD_WORKPLACE"],
+            list(workplace.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_REFUGEE_TANNER_BUILD_WORKPLACE"],
+            list(fence.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_FLITCH", "ITEM_WOOD_BILLET"},
+            set(fence.required_craft_items),
+        )
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 12)},
+            set(fence.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_REFUGEE_TANNER_REWARD_BUILD_FARM_FENCE"],
+            list(fence.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_REFUGEE_TANNER_BUILD_FARM_FENCE"],
+            list(livestock.required_quests),
+        )
+        self.assertEqual([], list(livestock.required_quest_items))
+        self.assertEqual([], list(livestock.required_craft_items))
+        self.assertEqual([], list(livestock.required_area_points))
+        self.assertEqual(
+            ["LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK"],
+            list(livestock.rewards),
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            "Arrange chickens for the Refugee Tanner",
+            node_names["egg_seller:13:option:0"],
+        )
+        self.assertEqual(
+            "Arrange cows for the Refugee Tanner",
+            node_names["npc_shepherds_wife:13:option:1"],
+        )
+        self.assertEqual(
+            "Finish arranging livestock for the Refugee Tanner",
+            node_names["unlock:macro__check_and_set_refugee_tanner_4_1_start.json:8"],
+        )
+
     def test_todo_quest_requirements_name_an_undefined_event(self):
         for event_key, event in data.events.items():
             if not isinstance(event, QuestEventData):

@@ -340,5 +340,13 @@
   "npc_refugee_cook:282": "Build the Refugee Cook's kitchen",
   "npc_refugee_cook:15:option:0": "Build the Refugee Cook's kitchen",
   "npc_refugee_cook:15:option:1": "Upgrade the Refugee Cook's kitchen",
-  "npc_refugee_cook:15:option:2": "Build two beehives for the Refugee Cook"
+  "npc_refugee_cook:15:option:2": "Build two beehives for the Refugee Cook",
+  "unlock:place_tanner_workplace.json:6": "Build the Refugee Tanner's workplace",
+  "npc_refugee_tanner:15:option:0": "Build the Refugee Tanner's workplace",
+  "unlock:on_refugee_camp_farm_fence_build.json:25": "Build the Refugee Tanner's farm fence",
+  "npc_refugee_tanner:15:option:1": "Build the Refugee Tanner's farm fence",
+  "egg_seller:13:option:0": "Arrange chickens for the Refugee Tanner",
+  "npc_shepherds_wife:13:option:1": "Arrange cows for the Refugee Tanner",
+  "unlock:macro__check_and_set_refugee_tanner_4_1_start.json:8": "Finish arranging livestock for the Refugee Tanner",
+  "npc_refugee_tanner:15:option:2": "Tell the Refugee Tanner the livestock is ready"
 }
