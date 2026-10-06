@@ -3207,14 +3207,20 @@
     "rewards": ["LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE"]
   },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
-    "comment": "Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. GameData craft refugee_builddesk::refugee_camp_cooking_table requires flitch, nails, and 6 current Refugee Camp happiness; renewable quantities are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. Reaching her requires the first additional tent and one New refugee craft; the mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. Craft requirements from all mandatory steps are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",
     "item_label": "Built the Refugee Cook's kitchen",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COOK)"],
+    "required_quests": ["EVENT_CHURCH_OPEN"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": ["ITEM_FLITCH", "ITEM_NAILS"],
+    "required_craft_items": [
+      "ITEM_WOODEN_STICK",
+      "ITEM_SILK",
+      "ITEM_FLITCH",
+      "ITEM_WOOD_BILLET",
+      "ITEM_NAILS"
+    ],
     "required_area_points": ["REFUGEE_CAMP_6"],
     "rewards": ["LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN"]
   },
@@ -3243,14 +3249,19 @@
     "rewards": ["LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES"]
   },
   "EVENT_REFUGEE_TANNER_BUILD_WORKPLACE": {
-    "comment": "Flow: place_tanner_workplace unlocks npc_refugee_tanner:15:option:0 (@refugee_tanner_2), which grants +30 Tanner relation and unlocks the first vendor inventory. GameData craft refugee_builddesk:p:refugee_tanner_workplace_place requires wooden planks, nails, and 12 current Refugee Camp happiness; renewable quantities are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Tanner the eleventh and final camp resident. The four additional tents hold 2, 2, 2, and 1 residents, so reaching her requires building the fourth additional tent and repeatedly using the New refugee craft; those rewardless steps are folded into this first rewarded event. Flow: place_tanner_workplace unlocks npc_refugee_tanner:15:option:0 (@refugee_tanner_2), which grants +30 Tanner relation and unlocks the first vendor inventory. Renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Tanner's workplace",
     "item_label": "Built the Refugee Tanner's workplace",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_TANNER)"],
+    "required_quests": ["EVENT_CHURCH_OPEN"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": ["ITEM_WOODEN_PLANK", "ITEM_NAILS"],
+    "required_craft_items": [
+      "ITEM_WOODEN_STICK",
+      "ITEM_SILK",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS"
+    ],
     "required_area_points": ["REFUGEE_CAMP_12"],
     "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_BUILD_WORKPLACE"]
   },
@@ -3278,25 +3289,27 @@
     "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK"]
   },
   "EVENT_REFUGEE_COFFIN_MAKER_GIVE_IRON_CHISELS": {
-    "comment": "Flow: the Coffin Maker's first conversation unlocks @refugee_undertaker_2_1; giving him five chisel:chisel_1 at npc_refugee_coffin_maker:15:option:0 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Coffin Maker the ninth camp resident. The initial four residents plus two residents in each of the first two additional tents mean reaching her requires building the third additional tent and repeatedly using the New refugee craft; those shared rewardless steps are folded into both first rewarded supply events. Flow: giving five chisel:chisel_1 at npc_refugee_coffin_maker:15:option:0 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
     "location_label": "Give iron chisels to the Refugee Coffin Maker",
     "item_label": "Gave iron chisels to the Refugee Coffin Maker",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COFFIN_MAKER)"],
+    "required_quests": ["EVENT_CHURCH_OPEN"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": ["ITEM_IRON_CHISEL"],
+    "required_craft_items": ["ITEM_WOODEN_STICK", "ITEM_SILK", "ITEM_IRON_CHISEL"],
+    "required_area_points": ["REFUGEE_CAMP_8"],
     "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_IRON_CHISELS"]
   },
   "EVENT_REFUGEE_COFFIN_MAKER_GIVE_WOOD_WEDGES": {
-    "comment": "Flow: the Coffin Maker's first conversation unlocks @refugee_undertaker_2_2; giving him ten spike_1 wood wedges at npc_refugee_coffin_maker:15:option:1 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Coffin Maker the ninth camp resident. The initial four residents plus two residents in each of the first two additional tents mean reaching her requires building the third additional tent and repeatedly using the New refugee craft; those shared rewardless steps are folded into both first rewarded supply events. Flow: giving ten spike_1 wood wedges at npc_refugee_coffin_maker:15:option:1 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
     "location_label": "Give wood wedges to the Refugee Coffin Maker",
     "item_label": "Gave wood wedges to the Refugee Coffin Maker",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COFFIN_MAKER)"],
+    "required_quests": ["EVENT_CHURCH_OPEN"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": ["ITEM_WOOD_WEDGE"],
+    "required_craft_items": ["ITEM_WOODEN_STICK", "ITEM_SILK", "ITEM_WOOD_WEDGE"],
+    "required_area_points": ["REFUGEE_CAMP_8"],
     "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_WOOD_WEDGES"]
   },
   "EVENT_REFUGEE_COFFIN_MAKER_BUILD_WORKPLACE": {

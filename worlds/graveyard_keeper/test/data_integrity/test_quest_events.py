@@ -1051,10 +1051,19 @@ class TestAllQuestEvents(unittest.TestCase):
         beehives = data.events["EVENT_REFUGEE_COOK_BUILD_BEEHIVES"]
 
         self.assertEqual(
-            ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COOK)"],
+            ["EVENT_CHURCH_OPEN"],
             list(kitchen.required_quests),
         )
-        self.assertEqual({"ITEM_FLITCH", "ITEM_NAILS"}, set(kitchen.required_craft_items))
+        self.assertEqual(
+            {
+                "ITEM_WOODEN_STICK",
+                "ITEM_SILK",
+                "ITEM_FLITCH",
+                "ITEM_WOOD_BILLET",
+                "ITEM_NAILS",
+            },
+            set(kitchen.required_craft_items),
+        )
         self.assertEqual({AreaPointData("REFUGEE_CAMP", 6)}, set(kitchen.required_area_points))
         self.assertEqual(
             ["LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN"],
@@ -1102,11 +1111,11 @@ class TestAllQuestEvents(unittest.TestCase):
         livestock = data.events["EVENT_REFUGEE_TANNER_ARRANGE_LIVESTOCK"]
 
         self.assertEqual(
-            ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_TANNER)"],
+            ["EVENT_CHURCH_OPEN"],
             list(workplace.required_quests),
         )
         self.assertEqual(
-            {"ITEM_WOODEN_PLANK", "ITEM_NAILS"},
+            {"ITEM_WOODEN_STICK", "ITEM_SILK", "ITEM_WOODEN_PLANK", "ITEM_NAILS"},
             set(workplace.required_craft_items),
         )
         self.assertEqual(
@@ -1183,10 +1192,17 @@ class TestAllQuestEvents(unittest.TestCase):
         ):
             with self.subTest(event=request.item_label):
                 self.assertEqual(
-                    ["TODO(EVENT_REFUGEE_CAMP_RECRUIT_COFFIN_MAKER)"],
+                    ["EVENT_CHURCH_OPEN"],
                     list(request.required_quests),
                 )
-                self.assertEqual([craft_item], list(request.required_craft_items))
+                self.assertEqual(
+                    {"ITEM_WOODEN_STICK", "ITEM_SILK", craft_item},
+                    set(request.required_craft_items),
+                )
+                self.assertEqual(
+                    {AreaPointData("REFUGEE_CAMP", 8)},
+                    set(request.required_area_points),
+                )
                 self.assertEqual([reward], list(request.rewards))
 
         self.assertEqual(
