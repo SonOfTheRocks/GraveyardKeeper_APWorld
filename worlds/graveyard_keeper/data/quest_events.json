@@ -3332,6 +3332,102 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW"]
   },
+  "EVENT_DONKEY_SEND_COOKBOOK": {
+    "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the Cookbook completes dlc_refugees_s_ev_d1_cookbook; check_contraband_box removes it and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",
+    "location_label": "Send the Cookbook to Donkey's comrades",
+    "item_label": "Sent the Cookbook to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_SEED_OIL", "ITEM_CARROT", "ITEM_COOKBOOK"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_COOKBOOK"]
+  },
+  "EVENT_DONKEY_SEND_RED_APPLES": {
+    "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the red apples completes dlc_refugees_s_ev_d1_5_apples; check_contraband_box removes them and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",
+    "location_label": "Send red apples to Donkey's comrades",
+    "item_label": "Sent red apples to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_SEED_OIL", "ITEM_CARROT", "ITEM_RED_APPLE"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_RED_APPLES"]
+  },
+  "EVENT_DONKEY_COLLECT_FIRST_REVOLUTIONARY_SHIPMENT": {
+    "comment": "Flow: on_event_d1_items_sent and on_event_d2_items_sent each call macro__check_ev_d3_start. Only after both deliveries does Donkey bring the first revolutionary message; check_contraband_box fires event_first_letter_delivered on the Contraband Box, whose single interaction drops first_letter, gold jewelry, and bank checks. These are three distinct reward nodes reached by the same non-missable collection action.",
+    "location_label": "Collect Donkey's first revolutionary shipment",
+    "item_label": "Collected Donkey's first revolutionary shipment",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_DONKEY_SEND_COOKBOOK",
+      "EVENT_DONKEY_SEND_RED_APPLES"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_DONKEY_REWARD_COLLECT_FIRST_REVOLUTIONARY_MESSAGE",
+      "LOCATION_DONKEY_REWARD_COLLECT_GOLD_JEWELRY",
+      "LOCATION_DONKEY_REWARD_COLLECT_BANK_CHECKS"
+    ]
+  },
+  "EVENT_DONKEY_SEND_APHORISMS": {
+    "comment": "Flow: collecting first_letter runs refugee_ev_d3, which unlocks the Aphorisms and Faith deliveries in parallel. Sending aphorisms through the Contraband Box completes dlc_refugees_s_ev_d3_aphorisms; check_contraband_box removes them and grants +10 Donkey relation. The randomized Revolutionary Message 1 is required because it is the in-game trigger for this phase.",
+    "location_label": "Send aphorisms to Donkey's comrades",
+    "item_label": "Sent aphorisms to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_FIRST_REVOLUTIONARY_SHIPMENT"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_REVOLUTIONARY_MESSAGE_1"],
+    "required_craft_items": ["ITEM_APHORISMS_ABOUT_THE_EVILS_OF_MONEY"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_APHORISMS"]
+  },
+  "EVENT_DONKEY_SEND_FAITH": {
+    "comment": "Flow: collecting first_letter runs refugee_ev_d3, which unlocks the Aphorisms and Faith deliveries in parallel. Sending Faith through the Contraband Box completes dlc_refugees_s_ev_d3_faith; check_contraband_box removes it and grants +10 Donkey relation. The randomized Revolutionary Message 1 is required because it is the in-game trigger for this phase. Quantities of renewable items are intentionally not modeled.",
+    "location_label": "Send Faith to Donkey's comrades",
+    "item_label": "Sent Faith to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_FIRST_REVOLUTIONARY_SHIPMENT"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_REVOLUTIONARY_MESSAGE_1"],
+    "required_craft_items": ["ITEM_FAITH"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_FAITH"]
+  },
+  "EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT": {
+    "comment": "Flow: on_event_d5_1_items_sent and on_event_d5_2_items_sent each call macro__check_ev_d6_start. Only after both deliveries does refugee_ev_d6 set is_ev_d6_completed and Donkey bring the second revolutionary shipment; check_contraband_box fires event_second_letter_delivered, whose Contraband Box interaction drops second_letter and two details_pile items. The component quantity is intentionally represented by one reward node.",
+    "location_label": "Collect Donkey's second revolutionary shipment",
+    "item_label": "Collected Donkey's second revolutionary shipment",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_DONKEY_SEND_APHORISMS",
+      "EVENT_DONKEY_SEND_FAITH"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_DONKEY_REWARD_COLLECT_SECOND_REVOLUTIONARY_MESSAGE",
+      "LOCATION_DONKEY_REWARD_COLLECT_COMPONENTS"
+    ]
+  },
+  "EVENT_DONKEY_TAKE_HAIR": {
+    "comment": "Flow: after Clotho examines the vampire's jaw, using Memory Tincture on it three times unlocks the mandatory Shepherd and Alarich conversations; their shared s_ev_19_dialogues_count then unlocks Gerry. Gerry's first conversation schedules @refugees_s21, whose second conversation enables refugee_ev_s22. The hair reward is an order-independent join with Donkey's revolution: refugee_ev_s22 drops donkey_lock_wool immediately when is_ev_d6_completed is set, otherwise it records is_waiting_amulet_from_s22 and refugee_ev_d6 drops the same item later. The randomized Revolutionary Message 2 is required because collecting it starts refugee_ev_d6.",
+    "location_label": "Take a piece of Donkey's hair",
+    "item_label": "Took a piece of Donkey's hair",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_CLOTHO_EXAMINE_VAMPIRES_JAW",
+      "EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [
+      "ITEM_VAMPIRES_JAW",
+      "ITEM_REVOLUTIONARY_MESSAGE_2"
+    ],
+    "required_craft_items": ["ITEM_MEMORY_TINCTURE"],
+    "rewards": ["LOCATION_DONKEY_REWARD_TAKE_HAIR"]
+  },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
     "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",

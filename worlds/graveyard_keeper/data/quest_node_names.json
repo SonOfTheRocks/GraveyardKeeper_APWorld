@@ -374,5 +374,16 @@
   "npc_teodoro:1390": "Grow Teodoro's camp to eleven residents",
   "npc_teodoro:1406": "Grow Teodoro's camp to eleven residents",
   "npc_teodoro:1435": "Grow Teodoro's camp to eleven residents",
-  "npc_witch:9:option:14": "Ask Clotho to examine the vampire's jaw"
+  "npc_witch:9:option:14": "Ask Clotho to examine the vampire's jaw",
+  "check_contraband_box:420": "Send the Cookbook to Donkey's comrades",
+  "check_contraband_box:53": "Send red apples to Donkey's comrades",
+  "contraband_box:12": "Collect Donkey's first revolutionary shipment",
+  "contraband_box:36": "Collect Donkey's first revolutionary shipment",
+  "contraband_box:47": "Collect Donkey's first revolutionary shipment",
+  "check_contraband_box:97": "Send aphorisms to Donkey's comrades",
+  "check_contraband_box:387": "Send Faith to Donkey's comrades",
+  "contraband_box:63": "Collect Donkey's second revolutionary shipment",
+  "contraband_box:74": "Collect Donkey's second revolutionary shipment",
+  "refugee_ev_s22:35": "Take a piece of Donkey's hair",
+  "refugee_ev_d6:76": "Take a piece of Donkey's hair"
 }

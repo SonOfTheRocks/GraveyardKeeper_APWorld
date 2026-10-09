@@ -543,6 +543,46 @@
     "label": "Clotho Reward - Ask her to examine the vampire's jaw",
     "parent_region": "REGION_SWAMP"
   },
+  "LOCATION_DONKEY_REWARD_SEND_COOKBOOK": {
+    "label": "Donkey Reward - Send the Cookbook",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_RED_APPLES": {
+    "label": "Donkey Reward - Send red apples",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_COLLECT_FIRST_REVOLUTIONARY_MESSAGE": {
+    "label": "Donkey Reward - Collect Revolutionary Message 1",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_COLLECT_GOLD_JEWELRY": {
+    "label": "Donkey Reward - Collect gold jewelry",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_COLLECT_BANK_CHECKS": {
+    "label": "Donkey Reward - Collect bank checks",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_APHORISMS": {
+    "label": "Donkey Reward - Send aphorisms",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_FAITH": {
+    "label": "Donkey Reward - Send Faith",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_COLLECT_SECOND_REVOLUTIONARY_MESSAGE": {
+    "label": "Donkey Reward - Collect Revolutionary Message 2",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_COLLECT_COMPONENTS": {
+    "label": "Donkey Reward - Collect the combat-equipment components",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_TAKE_HAIR": {
+    "label": "Donkey Reward - Take a piece of his hair",
+    "parent_region": "REGION_PLAINS"
+  },
 
 
   "LOCATION_USE_SCROLL_FROM_CELLAR_TRUNK": {

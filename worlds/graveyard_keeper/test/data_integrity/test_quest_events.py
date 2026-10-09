@@ -1239,6 +1239,113 @@ class TestAllQuestEvents(unittest.TestCase):
         node_names = load_json_data("quest_node_names.json")
         self.assertEqual(event.location_label, node_names["npc_witch:9:option:14"])
 
+    def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):
+        cookbook = data.events["EVENT_DONKEY_SEND_COOKBOOK"]
+        apples = data.events["EVENT_DONKEY_SEND_RED_APPLES"]
+        first_shipment = data.events["EVENT_DONKEY_COLLECT_FIRST_REVOLUTIONARY_SHIPMENT"]
+        aphorisms = data.events["EVENT_DONKEY_SEND_APHORISMS"]
+        faith = data.events["EVENT_DONKEY_SEND_FAITH"]
+        second_shipment = data.events["EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT"]
+        hair = data.events["EVENT_DONKEY_TAKE_HAIR"]
+
+        for delivery, supplied_item, reward in (
+            (
+                cookbook,
+                "ITEM_COOKBOOK",
+                "LOCATION_DONKEY_REWARD_SEND_COOKBOOK",
+            ),
+            (
+                apples,
+                "ITEM_RED_APPLE",
+                "LOCATION_DONKEY_REWARD_SEND_RED_APPLES",
+            ),
+        ):
+            with self.subTest(delivery=delivery.item_label):
+                self.assertEqual(["EVENT_CHURCH_OPEN"], list(delivery.required_quests))
+                self.assertEqual(
+                    {"ITEM_SEED_OIL", "ITEM_CARROT", supplied_item},
+                    set(delivery.required_craft_items),
+                    "Donkey's DLC quest starts only after both halves of his base-game strike",
+                )
+                self.assertEqual([reward], list(delivery.rewards))
+
+        self.assertEqual(
+            {"EVENT_DONKEY_SEND_COOKBOOK", "EVENT_DONKEY_SEND_RED_APPLES"},
+            set(first_shipment.required_quests),
+            "Both parallel deliveries increment the counter that unlocks the first message",
+        )
+        self.assertEqual([], list(first_shipment.required_quest_items))
+        self.assertEqual([], list(first_shipment.required_craft_items))
+        self.assertEqual(
+            {
+                "LOCATION_DONKEY_REWARD_COLLECT_FIRST_REVOLUTIONARY_MESSAGE",
+                "LOCATION_DONKEY_REWARD_COLLECT_GOLD_JEWELRY",
+                "LOCATION_DONKEY_REWARD_COLLECT_BANK_CHECKS",
+            },
+            set(first_shipment.rewards),
+        )
+
+        for delivery, supplied_item, reward in (
+            (
+                aphorisms,
+                "ITEM_APHORISMS_ABOUT_THE_EVILS_OF_MONEY",
+                "LOCATION_DONKEY_REWARD_SEND_APHORISMS",
+            ),
+            (faith, "ITEM_FAITH", "LOCATION_DONKEY_REWARD_SEND_FAITH"),
+        ):
+            with self.subTest(delivery=delivery.item_label):
+                self.assertEqual(
+                    ["EVENT_DONKEY_COLLECT_FIRST_REVOLUTIONARY_SHIPMENT"],
+                    list(delivery.required_quests),
+                )
+                self.assertEqual(
+                    ["ITEM_REVOLUTIONARY_MESSAGE_1"],
+                    list(delivery.required_quest_items),
+                )
+                self.assertEqual([supplied_item], list(delivery.required_craft_items))
+                self.assertEqual([reward], list(delivery.rewards))
+
+        self.assertEqual(
+            {"EVENT_DONKEY_SEND_APHORISMS", "EVENT_DONKEY_SEND_FAITH"},
+            set(second_shipment.required_quests),
+            "Both parallel deliveries increment the counter that unlocks the second message",
+        )
+        self.assertEqual(
+            {
+                "LOCATION_DONKEY_REWARD_COLLECT_SECOND_REVOLUTIONARY_MESSAGE",
+                "LOCATION_DONKEY_REWARD_COLLECT_COMPONENTS",
+            },
+            set(second_shipment.rewards),
+        )
+
+        self.assertEqual(
+            {
+                "EVENT_CLOTHO_EXAMINE_VAMPIRES_JAW",
+                "EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT",
+            },
+            set(hair.required_quests),
+            "The hair drops only after both the vampire investigation and Donkey's D6 milestone",
+        )
+        self.assertEqual(
+            {"ITEM_VAMPIRES_JAW", "ITEM_REVOLUTIONARY_MESSAGE_2"},
+            set(hair.required_quest_items),
+        )
+        self.assertEqual(["ITEM_MEMORY_TINCTURE"], list(hair.required_craft_items))
+        self.assertEqual(["LOCATION_DONKEY_REWARD_TAKE_HAIR"], list(hair.rewards))
+
+        node_names = load_json_data("quest_node_names.json")
+        for node_id in ("refugee_ev_s22:35", "refugee_ev_d6:76"):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(hair.location_label, node_names[node_id])
+        self.assertEqual(
+            first_shipment.location_label,
+            node_names["contraband_box:12"],
+        )
+        self.assertEqual(
+            second_shipment.location_label,
+            node_names["contraband_box:63"],
+        )
+
     def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
         kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
         upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]
