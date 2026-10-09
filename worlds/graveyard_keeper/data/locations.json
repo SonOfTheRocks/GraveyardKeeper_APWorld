@@ -884,6 +884,18 @@
     "label": "Alarich Reward - Revive him with blood",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
+  "LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
+    "label": "Teodoro Reward - Upgrade the depot and campfire and build the sixth tent",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_BUILD_SEVENTH_TENT_AND_WORKPLACE": {
+    "label": "Teodoro Reward - Build the seventh tent and his workplace",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_GROW_CAMP_TO_ELEVEN_RESIDENTS": {
+    "label": "Teodoro Reward - Grow the camp to eleven residents",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN": {
     "label": "Refugee Cook Reward - Build the kitchen",
     "parent_region": "REGION_REFUGEE_CAMP"

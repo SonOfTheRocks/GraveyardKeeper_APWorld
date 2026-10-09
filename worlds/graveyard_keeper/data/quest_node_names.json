@@ -365,5 +365,13 @@
   "npc_refugee_coffin_maker:15:option:3": "Give gold-quality steel chisels to the Refugee Coffin Maker",
   "npc_alarich:21:option:9": "Confront Alarich about the vampire attacks",
   "npc_alarich:1163": "Revive Alarich with blood",
-  "npc_alarich:1174": "Revive Alarich with blood"
+  "npc_alarich:1174": "Revive Alarich with blood",
+  "npc_teodoro:1241": "Upgrade the depot and campfire and build the sixth tent for Teodoro",
+  "npc_teodoro:1302": "Build the seventh tent and Teodoro's workplace",
+  "npc_teodoro:1348": "Grow Teodoro's camp to eleven residents",
+  "npc_teodoro:1362": "Grow Teodoro's camp to eleven residents",
+  "npc_teodoro:1376": "Grow Teodoro's camp to eleven residents",
+  "npc_teodoro:1390": "Grow Teodoro's camp to eleven residents",
+  "npc_teodoro:1406": "Grow Teodoro's camp to eleven residents",
+  "npc_teodoro:1435": "Grow Teodoro's camp to eleven residents"
 }

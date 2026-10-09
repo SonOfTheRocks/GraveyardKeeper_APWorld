@@ -3269,6 +3269,55 @@
     "required_craft_items": ["ITEM_BLOOD"],
     "rewards": ["LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD"]
   },
+  "EVENT_TEODORO_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
+    "comment": "Flow: Alarich's refugees_s14 conversation and Teodoro's event_city_1_fin each add one to beatrice_should_come_count. sleep starts refugee_ev_s15_1 only at a count of two, so both EVENT_ALARICH_REVIVE_WITH_BLOOD and EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS are mandatory before @refugees_city_2_1 is unlocked. That rewardless conversation unlocks the depot upgrade, campfire upgrade, and sixth Residential Tent. Their completion scripts each call macro__check_city_2_2_start; only its third call adds event_city_2_2, which grants +10 Teodoro relation. GameData requires flitch and silk for the depot, flitch and polished stone for the campfire, wooden sticks and silk for the tent, and at most 8 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Upgrade the depot and campfire and build the sixth tent for Teodoro",
+    "item_label": "Upgraded the depot and campfire and built the sixth tent for Teodoro",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_ALARICH_REVIVE_WITH_BLOOD",
+      "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_FLITCH",
+      "ITEM_SILK",
+      "ITEM_A_POLISHED_BRICK_OF_STONE",
+      "ITEM_WOODEN_STICK"
+    ],
+    "required_area_points": ["REFUGEE_CAMP_8"],
+    "rewards": ["LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT"]
+  },
+  "EVENT_TEODORO_BUILD_SEVENTH_TENT_AND_WORKPLACE": {
+    "comment": "Flow: event_city_2_2 unlocks the seventh Residential Tent and Teodoro's workplace. Their completion scripts each call macro__check_city_2_3_start; only its second call adds event_city_2_3, which grants +10 Teodoro relation and asks for eleven camp residents. GameData requires wooden sticks and silk for the tent, wooden planks and nails for the workplace, and at most 10 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Build the seventh tent and Teodoro's workplace",
+    "item_label": "Built the seventh tent and Teodoro's workplace",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_WOODEN_STICK",
+      "ITEM_SILK",
+      "ITEM_WOODEN_PLANK",
+      "ITEM_NAILS"
+    ],
+    "required_area_points": ["REFUGEE_CAMP_10"],
+    "rewards": ["LOCATION_TEODORO_REWARD_BUILD_SEVENTH_TENT_AND_WORKPLACE"]
+  },
+  "EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS": {
+    "comment": "Flow: event_city_2_3 asks for eleven camp residents and sets is_event_city_2_3_triggered. Each subsequent spawn_and_send_new_refugee calls macro__check_city_2_fin_start; at a count of two it replaces event_city_2_3 with event_city_2_fin. That final conversation completes dlc_refugees_city_2_3_11ref, grants +10 Teodoro relation, and drops three gold-quality marble plates, one gold ingot, the universal bag recipe, one universal bag, and one gold-quality hard book. These simultaneous vanilla rewards form one AP reward check. As with the earlier camp-growth event, the repeated renewable action is represented by access to 2 Refugee Camp happiness rather than a quantity.",
+    "location_label": "Grow Teodoro's camp to eleven residents",
+    "item_label": "Grew Teodoro's camp to eleven residents",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_BUILD_SEVENTH_TENT_AND_WORKPLACE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["REFUGEE_CAMP_2"],
+    "rewards": ["LOCATION_TEODORO_REWARD_GROW_CAMP_TO_ELEVEN_RESIDENTS"]
+  },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
     "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",
