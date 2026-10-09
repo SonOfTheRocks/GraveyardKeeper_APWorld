@@ -539,6 +539,10 @@
     "label": "Clotho - Ask her about a food-enhancing sauce",
     "parent_region": "REGION_SWAMP"
   },
+  "LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW": {
+    "label": "Clotho Reward - Ask her to examine the vampire's jaw",
+    "parent_region": "REGION_SWAMP"
+  },
 
 
   "LOCATION_USE_SCROLL_FROM_CELLAR_TRUNK": {

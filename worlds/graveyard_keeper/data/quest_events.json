@@ -3318,6 +3318,20 @@
     "required_area_points": ["REFUGEE_CAMP_2"],
     "rewards": ["LOCATION_TEODORO_REWARD_GROW_CAMP_TO_ELEVEN_RESIDENTS"]
   },
+  "EVENT_CLOTHO_EXAMINE_VAMPIRES_JAW": {
+    "comment": "Flow: after Alarich is revived, his mandatory refugees_s14 conversation explains how to use the Witcher's Eye. The eye is normally awarded by EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS, whose flow also sets has_witchers_eye. With the eye, the player views the waterfall memories and the attached pile_on_ground_with_jaw_digged script unlocks @refugees_s17 after the vampire's jaw is unearthed. Giving that jaw to Clotho at npc_witch option 14 completes s_ev_16_jaw, grants three memory powders, and drops the memory tincture recipe. The rewardless memories and digging step are folded into this rewarded event; both randomized quest items remain explicit requirements.",
+    "location_label": "Ask Clotho to examine the vampire's jaw",
+    "item_label": "Asked Clotho to examine the vampire's jaw",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_ALARICH_REVIVE_WITH_BLOOD",
+      "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_WITCHERS_EYE", "ITEM_VAMPIRES_JAW"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW"]
+  },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
     "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",

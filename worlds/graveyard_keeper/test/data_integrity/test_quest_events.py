@@ -1216,6 +1216,29 @@ class TestAllQuestEvents(unittest.TestCase):
             with self.subTest(node_id=node_id):
                 self.assertEqual(third_stage.location_label, node_names[node_id])
 
+    def test_clotho_vampire_jaw_reward_folds_memory_search_and_requires_both_quest_items(self):
+        event = data.events["EVENT_CLOTHO_EXAMINE_VAMPIRES_JAW"]
+
+        self.assertEqual(
+            {
+                "EVENT_ALARICH_REVIVE_WITH_BLOOD",
+                "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS",
+            },
+            set(event.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_WITCHERS_EYE", "ITEM_VAMPIRES_JAW"},
+            set(event.required_quest_items),
+        )
+        self.assertEqual([], list(event.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW"],
+            list(event.rewards),
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(event.location_label, node_names["npc_witch:9:option:14"])
+
     def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
         kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
         upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]
