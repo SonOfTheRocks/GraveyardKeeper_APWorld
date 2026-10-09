@@ -362,5 +362,8 @@
   "unlock:place_coffin_workplace.json:6": "Build the Refugee Coffin Maker's workplace",
   "npc_refugee_coffin_maker:15:option:2": "Build the Refugee Coffin Maker's workplace",
   "unlock:npc_refugee_coffin_maker.json:420": "Receive the Refugee Coffin Maker's advanced chisel request",
-  "npc_refugee_coffin_maker:15:option:3": "Give gold-quality steel chisels to the Refugee Coffin Maker"
+  "npc_refugee_coffin_maker:15:option:3": "Give gold-quality steel chisels to the Refugee Coffin Maker",
+  "npc_alarich:21:option:9": "Confront Alarich about the vampire attacks",
+  "npc_alarich:1163": "Revive Alarich with blood",
+  "npc_alarich:1174": "Revive Alarich with blood"
 }

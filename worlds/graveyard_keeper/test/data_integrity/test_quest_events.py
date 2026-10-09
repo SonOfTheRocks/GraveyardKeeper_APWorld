@@ -1107,6 +1107,38 @@ class TestAllQuestEvents(unittest.TestCase):
             with self.subTest(node_id=node_id):
                 self.assertEqual(third_stage.location_label, node_names[node_id])
 
+    def test_early_alarich_rewards_fold_mandatory_investigation_and_model_blood_route(self):
+        confrontation = data.events["EVENT_ALARICH_CONFRONT_ABOUT_VAMPIRE_ATTACKS"]
+        revival = data.events["EVENT_ALARICH_REVIVE_WITH_BLOOD"]
+
+        self.assertEqual(["EVENT_CHURCH_OPEN"], list(confrontation.required_quests))
+        self.assertEqual([], list(confrontation.required_quest_items))
+        self.assertEqual([], list(confrontation.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_ALARICH_REWARD_CONFRONT_ABOUT_VAMPIRE_ATTACKS"],
+            list(confrontation.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_ALARICH_CONFRONT_ABOUT_VAMPIRE_ATTACKS"],
+            list(revival.required_quests),
+        )
+        self.assertEqual([], list(revival.required_quest_items))
+        self.assertEqual(["ITEM_BLOOD"], list(revival.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD"],
+            list(revival.rewards),
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            confrontation.location_label,
+            node_names["npc_alarich:21:option:9"],
+        )
+        for node_id in ("npc_alarich:1163", "npc_alarich:1174"):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(revival.location_label, node_names[node_id])
+
     def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
         kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
         upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]

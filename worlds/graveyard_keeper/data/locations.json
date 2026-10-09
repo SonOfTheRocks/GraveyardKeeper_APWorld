@@ -876,6 +876,14 @@
     "label": "Teodoro Reward - Grow the camp to seven residents",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
+  "LOCATION_ALARICH_REWARD_CONFRONT_ABOUT_VAMPIRE_ATTACKS": {
+    "label": "Alarich Reward - Confront him about the vampire attacks",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD": {
+    "label": "Alarich Reward - Revive him with blood",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN": {
     "label": "Refugee Cook Reward - Build the kitchen",
     "parent_region": "REGION_REFUGEE_CAMP"

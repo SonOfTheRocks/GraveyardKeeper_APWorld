@@ -3247,6 +3247,28 @@
     "required_area_points": ["REFUGEE_CAMP_2"],
     "rewards": ["LOCATION_TEODORO_REWARD_GROW_CAMP_TO_SEVEN_RESIDENTS"]
   },
+  "EVENT_ALARICH_CONFRONT_ABOUT_VAMPIRE_ATTACKS": {
+    "comment": "Flow: the mandatory Game of Crone introduction runs after EVENT_CHURCH_OPEN. refugee_ev_s5 starts the village vampire investigation, refugee_ev_s6_main_part unlocks the three required rumor conversations with the Astrologer, Farmer's Son, and Shepherd's Wife, and macro__ev_s8_check_start unlocks Alarich only after all three have completed. In npc_alarich, the player must then ask two available questions before @refugees_s12_q9_1 becomes available; selecting it grants +20 Alarich relation and three teleport scrolls. All intervening rewardless conversations and automatic cutscenes are folded into this rewarded event.",
+    "location_label": "Confront Alarich about the vampire attacks",
+    "item_label": "Confronted Alarich about the vampire attacks",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ALARICH_REWARD_CONFRONT_ABOUT_VAMPIRE_ATTACKS"]
+  },
+  "EVENT_ALARICH_REVIVE_WITH_BLOOD": {
+    "comment": "Flow: Alarich faints after @refugees_s12_q9_1 and unlocks two alternative interactions on alarich_fainted: one Blood or one Bucket of Blood. Either fires refugee_event_s13, which grants +20 Alarich relation and drops the vampire sunscreen. The less restrictive Blood route is modeled; the Bucket of Blood route is an optional substitute and its repeatable later trade for a teleport scroll is not an AP location. Renewable quantities are intentionally not modeled.",
+    "location_label": "Revive Alarich with blood",
+    "item_label": "Revived Alarich with blood",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_ALARICH_CONFRONT_ABOUT_VAMPIRE_ATTACKS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BLOOD"],
+    "rewards": ["LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD"]
+  },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
     "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",
