@@ -385,5 +385,15 @@
   "contraband_box:63": "Collect Donkey's second revolutionary shipment",
   "contraband_box:74": "Collect Donkey's second revolutionary shipment",
   "refugee_ev_s22:35": "Take a piece of Donkey's hair",
-  "refugee_ev_d6:76": "Take a piece of Donkey's hair"
+  "refugee_ev_d6:76": "Take a piece of Donkey's hair",
+  "npc_witch:9:option:17": "Ask Clotho to enchant Donkey's pumpkin",
+  "npc_blacksmith:11:option:9": "Ask Krezvold to make Donkey's combat equipment",
+  "check_contraband_box:368": "Send the magic pumpkin to Donkey's comrades",
+  "check_contraband_box:338": "Send Donkey's combat equipment to his comrades",
+  "contraband_box:125": "Collect Donkey's third revolutionary message",
+  "check_contraband_box:200": "Send paint cans to Donkey's comrades",
+  "check_contraband_box:276": "Send jelly of incredible power to Donkey's comrades",
+  "check_contraband_box:257": "Send the revolutionary banner to Donkey's comrades",
+  "refugee_ev_d16:24": "Celebrate the end of Donkey's revolution",
+  "refugee_ev_d16:59": "Celebrate the end of Donkey's revolution"
 }

@@ -325,6 +325,11 @@
     "dlc": "GAME_OF_CRONE",
     "classification": "PROGRESSION"
   },
+  "ITEM_ICE_AXE": {
+    "label": "Ice axe",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
   "ITEM_JELLY_OF_INCREDIBLE_POWER": {
     "label": "Jelly of incredible power",
     "dlc": "GAME_OF_CRONE",
@@ -340,6 +345,11 @@
     "dlc": "GAME_OF_CRONE",
     "classification": "PROGRESSION"
   },
+  "ITEM_MAGIC_PUMPKIN": {
+    "label": "Magic pumpkin",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
   "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING": {
     "label": "Pagan amulet of spirit summoning",
     "dlc": "GAME_OF_CRONE",
@@ -347,6 +357,11 @@
   },
   "ITEM_PIECE_OF_DONKEY_HAIR": {
     "label": "Piece of donkey hair",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
+  "ITEM_PILE_OF_COMPONENTS": {
+    "label": "Pile of components",
     "dlc": "GAME_OF_CRONE",
     "classification": "PROGRESSION"
   },

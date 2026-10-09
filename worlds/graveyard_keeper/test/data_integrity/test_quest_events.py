@@ -1346,6 +1346,151 @@ class TestAllQuestEvents(unittest.TestCase):
             node_names["contraband_box:63"],
         )
 
+    def test_donkey_revolution_from_second_shipment_to_finale_matches_flow(self):
+        enchant_pumpkin = data.events["EVENT_CLOTHO_ENCHANT_DONKEYS_PUMPKIN"]
+        make_equipment = data.events["EVENT_KREZVOLD_MAKE_DONKEY_COMBAT_EQUIPMENT"]
+        send_pumpkin = data.events["EVENT_DONKEY_SEND_MAGIC_PUMPKIN"]
+        send_equipment = data.events["EVENT_DONKEY_SEND_COMBAT_EQUIPMENT"]
+        third_message = data.events["EVENT_DONKEY_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"]
+        send_paint = data.events["EVENT_DONKEY_SEND_PAINT_CANS"]
+        send_jelly = data.events["EVENT_DONKEY_SEND_JELLY_OF_INCREDIBLE_POWER"]
+        send_banner = data.events["EVENT_DONKEY_SEND_REVOLUTIONARY_BANNER"]
+        finale = data.events["EVENT_DONKEY_FINISH_REVOLUTION"]
+
+        self.assertEqual(
+            ["EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT"],
+            list(enchant_pumpkin.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_REVOLUTIONARY_MESSAGE_2"],
+            list(enchant_pumpkin.required_quest_items),
+        )
+        self.assertEqual(["ITEM_PUMPKIN_GOLD"], list(enchant_pumpkin.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_CLOTHO_REWARD_ENCHANT_DONKEYS_PUMPKIN"],
+            list(enchant_pumpkin.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT"],
+            list(make_equipment.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_REVOLUTIONARY_MESSAGE_2", "ITEM_PILE_OF_COMPONENTS"},
+            set(make_equipment.required_quest_items),
+        )
+        self.assertEqual([], list(make_equipment.required_craft_items))
+        self.assertEqual(
+            {
+                "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_UNICORN_HORNS",
+                "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_BATTLE_HORSESHOES",
+            },
+            set(make_equipment.rewards),
+        )
+
+        for delivery, predecessor, quest_items, reward in (
+            (
+                send_pumpkin,
+                "EVENT_CLOTHO_ENCHANT_DONKEYS_PUMPKIN",
+                {"ITEM_MAGIC_PUMPKIN"},
+                "LOCATION_DONKEY_REWARD_SEND_MAGIC_PUMPKIN",
+            ),
+            (
+                send_equipment,
+                "EVENT_KREZVOLD_MAKE_DONKEY_COMBAT_EQUIPMENT",
+                {"ITEM_BATTLE_HORSESHOES", "ITEM_IRON_UNICORN_HORNS"},
+                "LOCATION_DONKEY_REWARD_SEND_COMBAT_EQUIPMENT",
+            ),
+        ):
+            with self.subTest(delivery=delivery.item_label):
+                self.assertEqual([predecessor], list(delivery.required_quests))
+                self.assertEqual(quest_items, set(delivery.required_quest_items))
+                self.assertEqual([], list(delivery.required_craft_items))
+                self.assertEqual([reward], list(delivery.rewards))
+
+        self.assertEqual(
+            {"EVENT_DONKEY_SEND_MAGIC_PUMPKIN", "EVENT_DONKEY_SEND_COMBAT_EQUIPMENT"},
+            set(third_message.required_quests),
+            "Both second-phase deliveries increment the counter that unlocks the third message",
+        )
+        self.assertEqual([], list(third_message.required_quest_items))
+        self.assertEqual(
+            ["LOCATION_DONKEY_REWARD_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"],
+            list(third_message.rewards),
+        )
+
+        for delivery, craft_items, reward in (
+            (
+                send_paint,
+                {"ITEM_BLACK_PAINT", "ITEM_WHITE_PAINT"},
+                "LOCATION_DONKEY_REWARD_SEND_PAINT_CANS",
+            ),
+            (
+                send_jelly,
+                {"ITEM_JELLY_OF_INCREDIBLE_POWER"},
+                "LOCATION_DONKEY_REWARD_SEND_JELLY_OF_INCREDIBLE_POWER",
+            ),
+            (
+                send_banner,
+                {"ITEM_REVOLUTIONARY_DONKEY_BANNER"},
+                "LOCATION_DONKEY_REWARD_SEND_REVOLUTIONARY_BANNER",
+            ),
+        ):
+            with self.subTest(delivery=delivery.item_label):
+                self.assertEqual(
+                    ["EVENT_DONKEY_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"],
+                    list(delivery.required_quests),
+                )
+                self.assertEqual(
+                    ["ITEM_REVOLUTIONARY_MESSAGE_3"],
+                    list(delivery.required_quest_items),
+                )
+                self.assertEqual(craft_items, set(delivery.required_craft_items))
+                self.assertEqual([reward], list(delivery.rewards))
+
+        self.assertEqual(
+            {
+                "EVENT_DONKEY_SEND_PAINT_CANS",
+                "EVENT_DONKEY_SEND_JELLY_OF_INCREDIBLE_POWER",
+                "EVENT_DONKEY_SEND_REVOLUTIONARY_BANNER",
+            },
+            set(finale.required_quests),
+            "All three final deliveries increment the counter that starts the finale",
+        )
+        self.assertEqual([], list(finale.required_quest_items))
+        self.assertEqual([], list(finale.required_craft_items))
+        self.assertEqual(
+            {
+                "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_ICE_AXE",
+                "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_RELATION",
+            },
+            set(finale.rewards),
+        )
+
+        for item_key in ("ITEM_MAGIC_PUMPKIN", "ITEM_PILE_OF_COMPONENTS", "ITEM_ICE_AXE"):
+            with self.subTest(item=item_key):
+                self.assertEqual(
+                    ItemClassification.progression,
+                    data.items[item_key].classification,
+                )
+
+        node_names = load_json_data("quest_node_names.json")
+        expected_node_events = {
+            "npc_witch:9:option:17": enchant_pumpkin,
+            "npc_blacksmith:11:option:9": make_equipment,
+            "check_contraband_box:368": send_pumpkin,
+            "check_contraband_box:338": send_equipment,
+            "contraband_box:125": third_message,
+            "check_contraband_box:200": send_paint,
+            "check_contraband_box:276": send_jelly,
+            "check_contraband_box:257": send_banner,
+            "refugee_ev_d16:24": finale,
+            "refugee_ev_d16:59": finale,
+        }
+        for node_id, event in expected_node_events.items():
+            with self.subTest(node_id=node_id):
+                self.assertEqual(event.location_label, node_names[node_id])
+
     def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
         kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
         upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]

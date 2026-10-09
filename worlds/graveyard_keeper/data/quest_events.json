@@ -3428,6 +3428,124 @@
     "required_craft_items": ["ITEM_MEMORY_TINCTURE"],
     "rewards": ["LOCATION_DONKEY_REWARD_TAKE_HAIR"]
   },
+  "EVENT_CLOTHO_ENCHANT_DONKEYS_PUMPKIN": {
+    "comment": "Flow: refugee_ev_d6 unlocks @refugee_d_7 for Clotho after Revolutionary Message 2 is collected. The first conversation requires a gold-quality pumpkin and unlocks the mandatory 50-silver payment option @refugee_d_7_money; that option creates magic_pumpkin. The mandatory money cost is intentionally not an AP item requirement.",
+    "location_label": "Ask Clotho to enchant Donkey's pumpkin",
+    "item_label": "Asked Clotho to enchant Donkey's pumpkin",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_REVOLUTIONARY_MESSAGE_2"],
+    "required_craft_items": ["ITEM_PUMPKIN_GOLD"],
+    "rewards": ["LOCATION_CLOTHO_REWARD_ENCHANT_DONKEYS_PUMPKIN"]
+  },
+  "EVENT_KREZVOLD_MAKE_DONKEY_COMBAT_EQUIPMENT": {
+    "comment": "Flow: refugee_ev_d6 unlocks Krezvold's @refugee_d_8 after Revolutionary Message 2 is collected. The rewardless request and mandatory payment consume details_pile and schedule @refugee_d_9 for the next day; that option creates unicorn_horn and battle_horseshoes as two distinct reward nodes. The mandatory money cost is intentionally not an AP item requirement.",
+    "location_label": "Ask Krezvold to make Donkey's combat equipment",
+    "item_label": "Asked Krezvold to make Donkey's combat equipment",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_SECOND_REVOLUTIONARY_SHIPMENT"],
+    "required_happiness": [],
+    "required_quest_items": [
+      "ITEM_REVOLUTIONARY_MESSAGE_2",
+      "ITEM_PILE_OF_COMPONENTS"
+    ],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_UNICORN_HORNS",
+      "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_BATTLE_HORSESHOES"
+    ]
+  },
+  "EVENT_DONKEY_SEND_MAGIC_PUMPKIN": {
+    "comment": "Flow: refugee_ev_d6 unlocks d7_send_items. Sending magic_pumpkin through the Contraband Box completes dlc_refugees_s_ev_d6_pumpkin; check_contraband_box removes it, grants +10 Donkey relation, and calls macro__check_ev_d10_start.",
+    "location_label": "Send the magic pumpkin to Donkey's comrades",
+    "item_label": "Sent the magic pumpkin to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_CLOTHO_ENCHANT_DONKEYS_PUMPKIN"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_MAGIC_PUMPKIN"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_MAGIC_PUMPKIN"]
+  },
+  "EVENT_DONKEY_SEND_COMBAT_EQUIPMENT": {
+    "comment": "Flow: refugee_ev_d6 unlocks d9_send_items. Sending battle_horseshoes and unicorn_horn through the Contraband Box completes dlc_refugees_s_ev_d6_battle_supply; check_contraband_box removes both, grants +10 Donkey relation, and calls macro__check_ev_d10_start.",
+    "location_label": "Send Donkey's combat equipment to his comrades",
+    "item_label": "Sent Donkey's combat equipment to his comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_KREZVOLD_MAKE_DONKEY_COMBAT_EQUIPMENT"],
+    "required_happiness": [],
+    "required_quest_items": [
+      "ITEM_BATTLE_HORSESHOES",
+      "ITEM_IRON_UNICORN_HORNS"
+    ],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_COMBAT_EQUIPMENT"]
+  },
+  "EVENT_DONKEY_COLLECT_THIRD_REVOLUTIONARY_MESSAGE": {
+    "comment": "Flow: both second-phase deliveries call macro__check_ev_d10_start. At a count of two Donkey brings the third message; check_contraband_box fires event_third_letter_delivered and the Contraband Box drops third_letter as one non-missable reward.",
+    "location_label": "Collect Donkey's third revolutionary message",
+    "item_label": "Collected Donkey's third revolutionary message",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_DONKEY_SEND_MAGIC_PUMPKIN",
+      "EVENT_DONKEY_SEND_COMBAT_EQUIPMENT"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_DONKEY_REWARD_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"]
+  },
+  "EVENT_DONKEY_SEND_PAINT_CANS": {
+    "comment": "Flow: collecting third_letter runs refugee_ev_d10 and unlocks three final Contraband Box deliveries in parallel. d11_send_items requires black and white paint; check_contraband_box removes both, grants +10 Donkey relation, and calls macro__check_ev_d16_start. Quantities of renewable items are intentionally not modeled.",
+    "location_label": "Send paint cans to Donkey's comrades",
+    "item_label": "Sent paint cans to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_REVOLUTIONARY_MESSAGE_3"],
+    "required_craft_items": ["ITEM_BLACK_PAINT", "ITEM_WHITE_PAINT"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_PAINT_CANS"]
+  },
+  "EVENT_DONKEY_SEND_JELLY_OF_INCREDIBLE_POWER": {
+    "comment": "Flow: collecting third_letter runs refugee_ev_d10 and unlocks three final Contraband Box deliveries in parallel. d12_send_items requires jelly_splinter; check_contraband_box removes it, grants +10 Donkey relation, and calls macro__check_ev_d16_start. Quantities of renewable items are intentionally not modeled.",
+    "location_label": "Send jelly of incredible power to Donkey's comrades",
+    "item_label": "Sent jelly of incredible power to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_REVOLUTIONARY_MESSAGE_3"],
+    "required_craft_items": ["ITEM_JELLY_OF_INCREDIBLE_POWER"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_JELLY_OF_INCREDIBLE_POWER"]
+  },
+  "EVENT_DONKEY_SEND_REVOLUTIONARY_BANNER": {
+    "comment": "Flow: collecting third_letter runs refugee_ev_d10 and unlocks three final Contraband Box deliveries in parallel. d15_send_items requires revolutionary_banner; check_contraband_box removes it, grants +10 Donkey relation, and calls macro__check_ev_d16_start.",
+    "location_label": "Send the revolutionary banner to Donkey's comrades",
+    "item_label": "Sent the revolutionary banner to Donkey's comrades",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_DONKEY_COLLECT_THIRD_REVOLUTIONARY_MESSAGE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_REVOLUTIONARY_MESSAGE_3"],
+    "required_craft_items": ["ITEM_REVOLUTIONARY_DONKEY_BANNER"],
+    "rewards": ["LOCATION_DONKEY_REWARD_SEND_REVOLUTIONARY_BANNER"]
+  },
+  "EVENT_DONKEY_FINISH_REVOLUTION": {
+    "comment": "Flow: each of the three final deliveries calls macro__check_ev_d16_start. At a count of three Donkey returns for refugee_ev_d16, which drops ice_axe and grants +10 Donkey relation; the is_need_bring_carl_for_ev_31 branch changes dialogue only and reaches the same rewards.",
+    "location_label": "Celebrate the end of Donkey's revolution",
+    "item_label": "Celebrated the end of Donkey's revolution",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_DONKEY_SEND_PAINT_CANS",
+      "EVENT_DONKEY_SEND_JELLY_OF_INCREDIBLE_POWER",
+      "EVENT_DONKEY_SEND_REVOLUTIONARY_BANNER"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_ICE_AXE",
+      "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_RELATION"
+    ]
+  },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
     "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",

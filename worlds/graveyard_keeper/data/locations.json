@@ -583,6 +583,50 @@
     "label": "Donkey Reward - Take a piece of his hair",
     "parent_region": "REGION_PLAINS"
   },
+  "LOCATION_CLOTHO_REWARD_ENCHANT_DONKEYS_PUMPKIN": {
+    "label": "Clotho Reward - Enchant Donkey's pumpkin",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_UNICORN_HORNS": {
+    "label": "Krezvold Reward - Make Donkey's iron unicorn horns",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_BATTLE_HORSESHOES": {
+    "label": "Krezvold Reward - Make Donkey's battle horseshoes",
+    "parent_region": "REGION_THE_VILLAGE"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_MAGIC_PUMPKIN": {
+    "label": "Donkey Reward - Send the magic pumpkin",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_COMBAT_EQUIPMENT": {
+    "label": "Donkey Reward - Send the combat equipment",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_COLLECT_THIRD_REVOLUTIONARY_MESSAGE": {
+    "label": "Donkey Reward - Collect Revolutionary Message 3",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_PAINT_CANS": {
+    "label": "Donkey Reward - Send paint cans",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_JELLY_OF_INCREDIBLE_POWER": {
+    "label": "Donkey Reward - Send jelly of incredible power",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_SEND_REVOLUTIONARY_BANNER": {
+    "label": "Donkey Reward - Send the revolutionary banner",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_ICE_AXE": {
+    "label": "Donkey Reward - Finish the revolution (Ice axe)",
+    "parent_region": "REGION_PLAINS"
+  },
+  "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_RELATION": {
+    "label": "Donkey Reward - Finish the revolution (Relation)",
+    "parent_region": "REGION_PLAINS"
+  },
 
 
   "LOCATION_USE_SCROLL_FROM_CELLAR_TRUNK": {
