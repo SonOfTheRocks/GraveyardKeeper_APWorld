@@ -3206,17 +3206,56 @@
     ],
     "rewards": ["LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE"]
   },
-  "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
-    "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. Reaching her requires the first additional tent and one New refugee craft; the mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. Craft requirements from all mandatory steps are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
-    "location_label": "Build the Refugee Cook's kitchen",
-    "item_label": "Built the Refugee Cook's kitchen",
+  "EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT": {
+    "comment": "Flow: place_refugee_well and macro__on_refugee_tent_build jointly trigger npc_teodoro event_city_1_2 only after the first Water Well and Residential Tent are complete; the event grants +10 Teodoro relation. GameData requires stone and simple iron parts for the well, wooden sticks and silk for the tent, and at most 3 current Refugee Camp happiness. The camp introduction is triggered after EVENT_CHURCH_OPEN and is folded into this first rewarded event.",
+    "location_label": "Build the first well and residential tent for Teodoro",
+    "item_label": "Built the first well and residential tent for Teodoro",
     "dlc": "GAME_OF_CRONE",
     "required_quests": ["EVENT_CHURCH_OPEN"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
+      "ITEM_A_PIECE_OF_STONE",
+      "ITEM_SIMPLE_IRON_PARTS",
       "ITEM_WOODEN_STICK",
-      "ITEM_SILK",
+      "ITEM_SILK"
+    ],
+    "required_area_points": ["REFUGEE_CAMP_3"],
+    "rewards": ["LOCATION_TEODORO_REWARD_BUILD_FIRST_WELL_AND_TENT"]
+  },
+  "EVENT_TEODORO_BUILD_SECOND_TENT": {
+    "comment": "Flow: event_city_1_2 unlocks the second Residential Tent. macro__check_city_1_3_start adds npc_teodoro event_city_1_3 as soon as that tent is complete, and the event grants +10 Teodoro relation; despite the parallel garden task, the code does not check garden completion here. GameData requires wooden sticks, silk, and 5 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Build the second residential tent for Teodoro",
+    "item_label": "Built the second residential tent for Teodoro",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOODEN_STICK", "ITEM_SILK"],
+    "required_area_points": ["REFUGEE_CAMP_5"],
+    "rewards": ["LOCATION_TEODORO_REWARD_BUILD_SECOND_TENT"]
+  },
+  "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS": {
+    "comment": "Flow: event_city_1_3 asks for seven camp residents. spawn_and_send_new_refugee adds npc_teodoro event_city_1_fin when the resident count reaches exactly seven; that event grants +10 Teodoro relation and drops the Witcher's Eye, porcelain pitchers, and gold jewelry. Water Well II is a parallel task, but place_refugee_well_2 only completes its own task and neither unlocks nor gates event_city_1_fin, so the rewardless well upgrade is intentionally not an AP requirement. The initial four residents plus the first two tents provide enough capacity for the three mandatory New refugee actions.",
+    "location_label": "Grow Teodoro's camp to seven residents",
+    "item_label": "Grew Teodoro's camp to seven residents",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_BUILD_SECOND_TENT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "required_area_points": ["REFUGEE_CAMP_2"],
+    "rewards": ["LOCATION_TEODORO_REWARD_GROW_CAMP_TO_SEVEN_RESIDENTS"]
+  },
+  "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
+    "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
+    "location_label": "Build the Refugee Cook's kitchen",
+    "item_label": "Built the Refugee Cook's kitchen",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
       "ITEM_FLITCH",
       "ITEM_WOOD_BILLET",
       "ITEM_NAILS"

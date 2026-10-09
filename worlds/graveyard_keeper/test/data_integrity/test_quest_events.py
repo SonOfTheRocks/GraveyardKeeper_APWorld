@@ -1045,19 +1045,79 @@ class TestAllQuestEvents(unittest.TestCase):
             data.regions["REGION_CHURCH"].events,
         )
 
+    def test_teodoro_first_camp_expansion_models_actual_reward_triggers(self):
+        first_stage = data.events["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"]
+        second_stage = data.events["EVENT_TEODORO_BUILD_SECOND_TENT"]
+        third_stage = data.events["EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"]
+
+        self.assertEqual(["EVENT_CHURCH_OPEN"], list(first_stage.required_quests))
+        self.assertEqual(
+            {
+                "ITEM_A_PIECE_OF_STONE",
+                "ITEM_SIMPLE_IRON_PARTS",
+                "ITEM_WOODEN_STICK",
+                "ITEM_SILK",
+            },
+            set(first_stage.required_craft_items),
+        )
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 3)},
+            set(first_stage.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_TEODORO_REWARD_BUILD_FIRST_WELL_AND_TENT"],
+            list(first_stage.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"],
+            list(second_stage.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_WOODEN_STICK", "ITEM_SILK"},
+            set(second_stage.required_craft_items),
+        )
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 5)},
+            set(second_stage.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_TEODORO_REWARD_BUILD_SECOND_TENT"],
+            list(second_stage.rewards),
+        )
+
+        self.assertEqual(
+            ["EVENT_TEODORO_BUILD_SECOND_TENT"],
+            list(third_stage.required_quests),
+        )
+        self.assertEqual([], list(third_stage.required_craft_items))
+        self.assertEqual(
+            {AreaPointData("REFUGEE_CAMP", 2)},
+            set(third_stage.required_area_points),
+        )
+        self.assertEqual(
+            ["LOCATION_TEODORO_REWARD_GROW_CAMP_TO_SEVEN_RESIDENTS"],
+            list(third_stage.rewards),
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(first_stage.location_label, node_names["npc_teodoro:961"])
+        self.assertEqual(second_stage.location_label, node_names["npc_teodoro:1002"])
+        for node_id in ("npc_teodoro:1062", "npc_teodoro:1076", "npc_teodoro:1095", "npc_teodoro:1140"):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(third_stage.location_label, node_names[node_id])
+
     def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
         kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
         upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]
         beehives = data.events["EVENT_REFUGEE_COOK_BUILD_BEEHIVES"]
 
         self.assertEqual(
-            ["EVENT_CHURCH_OPEN"],
+            ["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"],
             list(kitchen.required_quests),
         )
         self.assertEqual(
             {
-                "ITEM_WOODEN_STICK",
-                "ITEM_SILK",
                 "ITEM_FLITCH",
                 "ITEM_WOOD_BILLET",
                 "ITEM_NAILS",

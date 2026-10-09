@@ -864,6 +864,18 @@
     "label": "Sacrifice Zone - Examine Broken Cabinet (Next to Gunter)",
     "parent_region": "REGION_SACRIFICE_ZONE"
   },
+  "LOCATION_TEODORO_REWARD_BUILD_FIRST_WELL_AND_TENT": {
+    "label": "Teodoro Reward - Build the first well and residential tent",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_BUILD_SECOND_TENT": {
+    "label": "Teodoro Reward - Build the second residential tent",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_GROW_CAMP_TO_SEVEN_RESIDENTS": {
+    "label": "Teodoro Reward - Grow the camp to seven residents",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN": {
     "label": "Refugee Cook Reward - Build the kitchen",
     "parent_region": "REGION_REFUGEE_CAMP"
