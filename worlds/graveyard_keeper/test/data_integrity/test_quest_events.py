@@ -95,6 +95,28 @@ class TestAllQuestEvents(unittest.TestCase):
             [AreaPointData("SACRIFICE_ZONE", 20)],
         )
 
+    def test_snake_dark_heart_includes_all_linear_final_ritual_rewards(self):
+        event = data.events["EVENT_SNAKE_GIVE_DARK_HEART"]
+        expected_rewards = {
+            "LOCATION_SNAKE_REWARD_GIVE_DARK_HEART",
+            "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_1",
+            "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_2",
+            "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_3",
+        }
+
+        self.assertEqual(["ITEM_DARK_HEART"], list(event.required_craft_items))
+        self.assertEqual(expected_rewards, set(event.rewards))
+        sacrifice_zone = data.regions["REGION_SACRIFICE_ZONE"]
+        for reward in expected_rewards:
+            with self.subTest(reward=reward):
+                self.assertIn(reward, sacrifice_zone.locations)
+                self.assertEqual("REGION_SACRIFICE_ZONE", data.locations[reward].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        for node_id in ("final_ritual:247", "final_ritual:264", "final_ritual:340"):
+            with self.subTest(node_id=node_id):
+                self.assertEqual("Complete Snake's final ritual", node_names[node_id])
+
     def test_meeting_snake_is_a_rewardless_region_gated_start_event(self):
         event = data.events["EVENT_SNAKE_MEET"]
         self.assertEqual([], list(event.required_quests))

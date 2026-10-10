@@ -1701,7 +1701,7 @@
     "rewards": []
   },
   "EVENT_SNAKE_GIVE_DARK_HEART": {
-    "comment": "Flow: npc_cultist:106:option:17; grants 10 Snake happiness and starts the final ritual",
+    "comment": "Flow: npc_cultist:106:option:17 requires the dark heart, grants +10 Snake relation, and immediately runs final_ritual. That linear script drops the Endless Notebook and Eternal Burning Coal and grants +10 Inquisitor relation, so all four non-missable rewards belong to this one player action.",
     "location_label": "Give Snake a dark heart",
     "item_label": "Gave Snake a dark heart",
     "dlc": "BASE_GAME",
@@ -1709,7 +1709,12 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_DARK_HEART"],
-    "rewards": ["LOCATION_SNAKE_REWARD_GIVE_DARK_HEART"]
+    "rewards": [
+      "LOCATION_SNAKE_REWARD_GIVE_DARK_HEART",
+      "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_1",
+      "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_2",
+      "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_3"
+    ]
   },
   "EVENT_SNAKE_ASK_ABOUT_PORTAL_ARTIFACTS": {
     "comment": "Flow: npc_cultist:106:option:20",
