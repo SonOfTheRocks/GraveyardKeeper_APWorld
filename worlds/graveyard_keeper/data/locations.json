@@ -996,6 +996,14 @@
     "label": "Alarich Reward - Complete Clotho's memory puzzle",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
+  "LOCATION_TEODORO_REWARD_REPORT_CAMP_FATE": {
+    "label": "Teodoro Reward - Tell him what happened to the refugee camp",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_ALARICH_REWARD_DISCUSS_CAMP_FATE": {
+    "label": "Alarich Reward - Discuss the refugee camp's fate",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
     "label": "Teodoro Reward - Upgrade the depot and campfire and build the sixth tent",
     "parent_region": "REGION_REFUGEE_CAMP"

@@ -1426,6 +1426,46 @@ class TestAllQuestEvents(unittest.TestCase):
             node_names["refugee_ev_s38:142"],
         )
 
+    def test_beatrice_routes_reconverge_before_teodoro_and_alarich_rewards(self):
+        teodoro = data.events["EVENT_TEODORO_REPORT_CAMP_FATE"]
+        alarich = data.events["EVENT_ALARICH_DISCUSS_CAMP_FATE"]
+
+        self.assertEqual(
+            {
+                "EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES",
+                "EVENT_TEODORO_BUILD_OBSERVATION_TOWER",
+            },
+            set(teodoro.required_quests),
+            "refugee_ev_s39 joins the completed memory and camp-building branches",
+        )
+        self.assertEqual([], list(teodoro.required_quest_items))
+        self.assertEqual([], list(teodoro.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_TEODORO_REWARD_REPORT_CAMP_FATE"],
+            list(teodoro.rewards),
+            "The simultaneous relation and item bundle is one AP check",
+        )
+
+        self.assertEqual(
+            ["EVENT_TEODORO_REPORT_CAMP_FATE"],
+            list(alarich.required_quests),
+        )
+        self.assertEqual(
+            ["LOCATION_ALARICH_REWARD_DISCUSS_CAMP_FATE"],
+            list(alarich.rewards),
+        )
+        for event in (teodoro, alarich):
+            with self.subTest(event=event.location_label):
+                self.assertEqual(DLCType.GAME_OF_CRONE, event.dlc)
+                self.assertEqual(
+                    "REGION_REFUGEE_CAMP",
+                    data.locations[next(iter(event.rewards))].parent_region,
+                )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(teodoro.location_label, node_names["npc_teodoro:17:option:6"])
+        self.assertEqual(alarich.location_label, node_names["npc_alarich:21:option:16"])
+
     def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):
         cookbook = data.events["EVENT_DONKEY_SEND_COOKBOOK"]
         apples = data.events["EVENT_DONKEY_SEND_RED_APPLES"]

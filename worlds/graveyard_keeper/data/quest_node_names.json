@@ -400,6 +400,8 @@
   "refugee_ev_s37:4": "Accompany Alarich to Clotho",
   "refugee_ev_s38:249": "Enter Clotho's mind with Alarich",
   "refugee_ev_s38:142": "Complete Clotho's memory puzzle",
+  "npc_teodoro:17:option:6": "Tell Teodoro what happened to the refugee camp",
+  "npc_alarich:21:option:16": "Discuss the refugee camp's fate with Alarich",
   "check_contraband_box:420": "Send the Cookbook to Donkey's comrades",
   "check_contraband_box:53": "Send red apples to Donkey's comrades",
   "contraband_box:12": "Collect Donkey's first revolutionary shipment",

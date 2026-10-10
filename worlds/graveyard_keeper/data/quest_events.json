@@ -3408,6 +3408,31 @@
       "LOCATION_ALARICH_REWARD_COMPLETE_MEMORY_PUZZLE"
     ]
   },
+  "EVENT_TEODORO_REPORT_CAMP_FATE": {
+    "comment": "Flow: refugee_ev_s39 starts only after both event_s38_complete from Alarich's recovered memories and event_city_3_3_complete from the Observation Tower. The Beatrice sequence then branches, but both refugee_ev_s44 and the alternative refugee_ev_s81 unlock Teodoro's same @refugee_s45 conversation. That conversation grants +10 Teodoro relation and simultaneously drops lamellar armor, a gemmed damask sword, a silver ingot, and a gold ingot before refugee_ev_s45_part_2 unlocks Alarich. Because every route reconverges on the same conversation, the simultaneous vanilla rewards form one non-missable AP reward check; route-specific actions are not modeled as requirements.",
+    "location_label": "Tell Teodoro what happened to the refugee camp",
+    "item_label": "Told Teodoro what happened to the refugee camp",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES",
+      "EVENT_TEODORO_BUILD_OBSERVATION_TOWER"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_TEODORO_REWARD_REPORT_CAMP_FATE"]
+  },
+  "EVENT_ALARICH_DISCUSS_CAMP_FATE": {
+    "comment": "Flow: Teodoro's shared @refugee_s45 conclusion always runs refugee_ev_s45_part_2, which unlocks Alarich's @refugee_s46 conversation. That conversation completes dlc_refugees_s_ev_45_alaric, grants +20 Alarich relation, and unlocks the following dialogue. It is downstream of the reconverged route and is therefore non-missable; later ending-specific rewards remain intentionally unmodeled.",
+    "location_label": "Discuss the refugee camp's fate with Alarich",
+    "item_label": "Discussed the refugee camp's fate with Alarich",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_REPORT_CAMP_FATE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_ALARICH_REWARD_DISCUSS_CAMP_FATE"]
+  },
   "EVENT_DONKEY_SEND_COOKBOOK": {
     "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the Cookbook completes dlc_refugees_s_ev_d1_cookbook; check_contraband_box removes it and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",
     "location_label": "Send the Cookbook to Donkey's comrades",
