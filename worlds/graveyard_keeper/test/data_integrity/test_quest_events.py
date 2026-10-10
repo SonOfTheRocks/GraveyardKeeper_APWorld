@@ -151,6 +151,10 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(["EVENT_REPAIR_MILL"], list(permission_event.required_quests))
         self.assertEqual(2, len(permission_event.rewards))
+        node_names = load_json_data("quest_node_names.json")
+        for node_id in ("npc_farmer:225", "npc_farmer:235"):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(permission_event.location_label, node_names[node_id])
         self.assertEqual(["ITEM_ALISAS_PAPERS"], list(papers_event.required_quest_items))
         self.assertEqual(["EVENT_MS_CHARM_GIVE_ALISAS_PAPERS"], list(aristocrat_event.required_quests))
         self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(aristocrat_event.required_quest_items))
@@ -245,6 +249,16 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(4, len(rescue_event.rewards))
         self.assertIn("EVENT_ASTROLOGER_RESCUE_VAGNER", data.regions["REGION_LIGHTHOUSE"].events)
+
+        node_names = load_json_data("quest_node_names.json")
+        for node_id in (
+            "archaeological_excavations:284",
+            "archaeological_excavations:286",
+            "archaeological_excavations:299",
+            "archaeological_excavations:301",
+        ):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(rescue_event.location_label, node_names[node_id])
 
     def test_royal_services_status_and_document_chain_matches_flow_requirements(self):
         citizen = data.events["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"]
@@ -681,6 +695,11 @@ class TestAllQuestEvents(unittest.TestCase):
         ceremony = data.events["EVENT_BISHOP_HOLD_FINAL_CEREMONY"]
         ask_artifact = data.events["EVENT_BISHOP_ASK_ABOUT_PORTAL_ARTIFACT"]
         artifact = data.events["EVENT_BISHOP_HAND_OVER_PORTAL_ARTIFACT"]
+
+        node_names = load_json_data("quest_node_names.json")
+        for node_id in ("final_ceremony:170", "final_ceremony:172", "final_ceremony:185", "final_ceremony:187"):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(ceremony.location_label, node_names[node_id])
 
         self.assertEqual([], list(meet.required_quests))
         self.assertEqual(1, len(meet.rewards))
