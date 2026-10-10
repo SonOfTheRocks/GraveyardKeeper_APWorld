@@ -543,6 +543,14 @@
     "label": "Clotho Reward - Ask her to examine the vampire's jaw",
     "parent_region": "REGION_SWAMP"
   },
+  "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_BONE_LEG": {
+    "label": "Misty Quagmire Reward - Unearth the bone leg",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_CHARRED_VAMPIRE_SHOE": {
+    "label": "Misty Quagmire Reward - Unearth the charred vampire shoe",
+    "parent_region": "REGION_SWAMP"
+  },
   "LOCATION_DONKEY_REWARD_SEND_COOKBOOK": {
     "label": "Donkey Reward - Send the Cookbook",
     "parent_region": "REGION_PLAINS"

@@ -305,6 +305,11 @@
     "dlc": "GAME_OF_CRONE",
     "classification": "PROGRESSION"
   },
+  "ITEM_BONE_LEG": {
+    "label": "Bone leg",
+    "dlc": "GAME_OF_CRONE",
+    "classification": "PROGRESSION"
+  },
   "ITEM_CHARRED_VAMPIRE_SHOE": {
     "label": "Charred vampire shoe",
     "dlc": "GAME_OF_CRONE",

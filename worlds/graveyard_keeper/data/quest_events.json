@@ -3332,6 +3332,23 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW"]
   },
+  "EVENT_TEODORO_EXPLORE_MISTY_QUAGMIRE": {
+    "comment": "Flow: crafting the Pagan amulet and entering the old graveyard starts refugee_ev_s23; its mandatory Shepherd conversation runs refugee_ev_s25. That event unlocks Clotho's optional @refugee_s26_2 exposition and records refugee_s25_reached. macro__ev_s26_1and3_check_and_unlock unlocks Teodoro's @refugees_s26_1 only after the second camp-building finale has also set is_citybuilder_fin_2_completed, so Clotho's conversation is not a prerequisite. Teodoro immediately starts refugee_ev_s27_2 when the randomized Witcher's Eye is present, or unlocks the ready option until it is. The Quagmire memories then create two separate non-missable piles: refugee_purple_cloud node 289 contains skeleton_leg (Bone leg), and node 358 contains vampires_blackened_boot (Charred vampire shoe). Neither item gates the other reward, so both locations belong to this one exploration event; the shoe is checked separately by the following Teodoro interaction.",
+    "location_label": "Explore Misty Quagmire with Teodoro",
+    "item_label": "Explored Misty Quagmire with Teodoro",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_DONKEY_TAKE_HAIR",
+      "EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_WITCHERS_EYE"],
+    "required_craft_items": ["ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING"],
+    "rewards": [
+      "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_BONE_LEG",
+      "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_CHARRED_VAMPIRE_SHOE"
+    ]
+  },
   "EVENT_DONKEY_SEND_COOKBOOK": {
     "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the Cookbook completes dlc_refugees_s_ev_d1_cookbook; check_contraband_box removes it and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",
     "location_label": "Send the Cookbook to Donkey's comrades",

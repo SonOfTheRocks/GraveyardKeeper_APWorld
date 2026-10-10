@@ -1239,6 +1239,68 @@ class TestAllQuestEvents(unittest.TestCase):
         node_names = load_json_data("quest_node_names.json")
         self.assertEqual(event.location_label, node_names["npc_witch:9:option:14"])
 
+    def test_misty_quagmire_models_parallel_clotho_exposition_and_both_dig_rewards(self):
+        event = data.events["EVENT_TEODORO_EXPLORE_MISTY_QUAGMIRE"]
+
+        self.assertEqual(DLCType.GAME_OF_CRONE, event.dlc)
+        self.assertEqual(
+            {
+                "EVENT_DONKEY_TAKE_HAIR",
+                "EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS",
+            },
+            set(event.required_quests),
+            "The Pagan-amulet story and second camp finale independently gate Teodoro's trip",
+        )
+        self.assertNotIn(
+            "EVENT_CLOTHO_ASK_ABOUT_MISTY_QUAGMIRE",
+            event.required_quests,
+            "Clotho's dialogue is optional exposition unlocked in parallel with Teodoro's task",
+        )
+        self.assertEqual(["ITEM_WITCHERS_EYE"], list(event.required_quest_items))
+        self.assertEqual(
+            ["ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING"],
+            list(event.required_craft_items),
+        )
+        self.assertEqual(
+            {
+                "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_BONE_LEG",
+                "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_CHARRED_VAMPIRE_SHOE",
+            },
+            set(event.rewards),
+            "The two guaranteed dig piles are separate randomized checks",
+        )
+
+        raw_quest_items = load_json_data("items/quest/items.json")
+        for item_key in ("ITEM_BONE_LEG", "ITEM_CHARRED_VAMPIRE_SHOE"):
+            with self.subTest(item=item_key):
+                self.assertEqual(
+                    ItemClassification.progression,
+                    data.items[item_key].classification,
+                )
+                self.assertEqual("GAME_OF_CRONE", raw_quest_items[item_key]["dlc"])
+
+        for location_key in event.rewards:
+            with self.subTest(location=location_key):
+                self.assertEqual("REGION_SWAMP", data.locations[location_key].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            "Ask Clotho about Misty Quagmire",
+            node_names["npc_witch:9:option:15"],
+        )
+        self.assertEqual(
+            "Travel to Misty Quagmire with Teodoro",
+            node_names["npc_teodoro:17:option:3"],
+        )
+        self.assertEqual(
+            "Unearth the bone leg at Misty Quagmire",
+            node_names["refugee_purple_cloud:289"],
+        )
+        self.assertEqual(
+            "Unearth the charred vampire shoe at Misty Quagmire",
+            node_names["refugee_purple_cloud:358"],
+        )
+
     def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):
         cookbook = data.events["EVENT_DONKEY_SEND_COOKBOOK"]
         apples = data.events["EVENT_DONKEY_SEND_RED_APPLES"]
