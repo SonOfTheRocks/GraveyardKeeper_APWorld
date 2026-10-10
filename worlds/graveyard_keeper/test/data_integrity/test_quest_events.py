@@ -1466,6 +1466,23 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(teodoro.location_label, node_names["npc_teodoro:17:option:6"])
         self.assertEqual(alarich.location_label, node_names["npc_alarich:21:option:16"])
 
+    def test_game_of_crone_repeatable_and_ending_rewards_have_graph_names(self):
+        node_names = load_json_data("quest_node_names.json")
+        expected_names = {
+            "npc_alarich:21:option:11": "Trade a bucket of blood with Alarich",
+            "npc_witch:9:option:18": "Buy memory powder from Clotho",
+            "npc_hunchback:90:option:11": "Ask Koukol to steal Lady Beatrice's magic scroll",
+            "npc_teodoro:17:option:11": "Tell Teodoro the refugees are safe",
+            "npc_teodoro:1685:option:0": "Tell Teodoro the refugees are safe",
+            "refugee_ev_s53_try_give_tech_scrolls:97": "Tell Teodoro the refugees are safe",
+            "npc_alarich:21:option:18": "Say goodbye to Alarich after saving the refugees",
+            "refugee_ev_s47_spawn_bodies:14": "Find Lady Beatrice's victims in the morgue",
+        }
+
+        for node_id, expected_name in expected_names.items():
+            with self.subTest(node_id=node_id):
+                self.assertEqual(expected_name, node_names[node_id])
+
     def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):
         cookbook = data.events["EVENT_DONKEY_SEND_COOKBOOK"]
         apples = data.events["EVENT_DONKEY_SEND_RED_APPLES"]
