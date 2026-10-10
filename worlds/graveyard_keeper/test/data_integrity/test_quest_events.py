@@ -1301,6 +1301,73 @@ class TestAllQuestEvents(unittest.TestCase):
             node_names["refugee_purple_cloud:358"],
         )
 
+    def test_third_refugee_camp_stage_models_defenses_materials_and_area_points(self):
+        stakes = data.events["EVENT_TEODORO_BUILD_DEFENSIVE_STAKES"]
+        swords = data.events["EVENT_TEODORO_BUILD_SWORD_RACK"]
+        tower = data.events["EVENT_TEODORO_BUILD_OBSERVATION_TOWER"]
+
+        for event in (stakes, swords, tower):
+            with self.subTest(event=event.location_label):
+                self.assertEqual(DLCType.GAME_OF_CRONE, event.dlc)
+                self.assertEqual(1, len(event.rewards))
+                self.assertEqual(
+                    "REGION_REFUGEE_CAMP",
+                    data.locations[next(iter(event.rewards))].parent_region,
+                )
+
+        self.assertEqual(
+            {
+                "EVENT_DONKEY_TAKE_HAIR",
+                "EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS",
+            },
+            set(stakes.required_quests),
+            "The guards require both the Pagan-amulet investigation and city stage two",
+        )
+        self.assertEqual(
+            {
+                "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING",
+                "ITEM_FLITCH",
+                "ITEM_WOODEN_STICK",
+            },
+            set(stakes.required_craft_items),
+        )
+        self.assertEqual([AreaPointData("REFUGEE_CAMP", 11)], list(stakes.required_area_points))
+
+        self.assertEqual(
+            ["EVENT_TEODORO_BUILD_DEFENSIVE_STAKES"],
+            list(swords.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_STEEL_SWORD", "ITEM_FLITCH"},
+            set(swords.required_craft_items),
+        )
+        self.assertEqual([AreaPointData("REFUGEE_CAMP", 12)], list(swords.required_area_points))
+
+        self.assertEqual(
+            ["EVENT_TEODORO_BUILD_SWORD_RACK"],
+            list(tower.required_quests),
+        )
+        self.assertEqual(
+            {"ITEM_WOODEN_BEAM", "ITEM_FLITCH"},
+            set(tower.required_craft_items),
+        )
+        self.assertEqual([AreaPointData("REFUGEE_CAMP", 13)], list(tower.required_area_points))
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(stakes.location_label, node_names["npc_teodoro:1538"])
+        self.assertEqual(swords.location_label, node_names["npc_teodoro:1588"])
+        for node_id in (
+            "refugee_ev_city_3_fin:55",
+            "refugee_ev_city_3_fin:69",
+            "refugee_ev_city_3_fin:83",
+            "refugee_ev_city_3_fin:97",
+            "refugee_ev_city_3_fin:111",
+            "refugee_ev_city_3_fin:125",
+            "refugee_ev_city_3_fin:255",
+        ):
+            with self.subTest(node_id=node_id):
+                self.assertEqual(tower.location_label, node_names[node_id])
+
     def test_alarich_vampire_clan_report_folds_rewardless_investigation_but_not_bone_leg(self):
         event = data.events["EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES"]
 
@@ -1317,13 +1384,21 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertNotIn("ITEM_BONE_LEG", event.required_quest_items)
         self.assertEqual(["ITEM_MEMORY_TINCTURE"], list(event.required_craft_items))
         self.assertEqual(
-            ["LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES"],
-            list(event.rewards),
+            {
+                "LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES",
+                "LOCATION_ALARICH_REWARD_ACCOMPANY_HIM_TO_CLOTHO",
+                "LOCATION_ALARICH_REWARD_ENTER_CLOTHOS_MIND",
+                "LOCATION_ALARICH_REWARD_COMPLETE_MEMORY_PUZZLE",
+            },
+            set(event.rewards),
+            "Both item drops and both Alarich relation gains are randomized checks",
         )
-        self.assertEqual(
-            "REGION_REFUGEE_CAMP",
-            data.locations[event.rewards[0]].parent_region,
-        )
+        for location_key in event.rewards:
+            with self.subTest(location=location_key):
+                self.assertEqual(
+                    "REGION_REFUGEE_CAMP",
+                    data.locations[location_key].parent_region,
+                )
 
         node_names = load_json_data("quest_node_names.json")
         self.assertEqual(
@@ -1337,6 +1412,18 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             "Find Miss Chain by the sea",
             node_names["unlock:refugee_ev_s34_near_sea.json:120"],
+        )
+        self.assertEqual(
+            "Accompany Alarich to Clotho",
+            node_names["refugee_ev_s37:4"],
+        )
+        self.assertEqual(
+            "Enter Clotho's mind with Alarich",
+            node_names["refugee_ev_s38:249"],
+        )
+        self.assertEqual(
+            "Complete Clotho's memory puzzle",
+            node_names["refugee_ev_s38:142"],
         )
 
     def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):

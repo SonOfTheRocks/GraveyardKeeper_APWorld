@@ -3318,6 +3318,49 @@
     "required_area_points": ["REFUGEE_CAMP_2"],
     "rewards": ["LOCATION_TEODORO_REWARD_GROW_CAMP_TO_ELEVEN_RESIDENTS"]
   },
+  "EVENT_TEODORO_BUILD_DEFENSIVE_STAKES": {
+    "comment": "Flow: refugee_ev_s25 sets ev_27_1_guards_come after the Pagan-amulet investigation, while EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS resets ev_27_1_day_num. Sleeping after both milestones spawns the guards and runs refugee_ev_s27_1; reporting that encounter to Teodoro unlocks refugee_camp_fence. Completing the defensive stakes fires event_city_3_2, whose Teodoro conversation grants +10 relation and unlocks the Sword Rack. GameData requires flitch, wooden sticks, and 11 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Build defensive stakes around the refugee camp",
+    "item_label": "Built defensive stakes around the refugee camp",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": [
+      "EVENT_DONKEY_TAKE_HAIR",
+      "EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [
+      "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING",
+      "ITEM_FLITCH",
+      "ITEM_WOODEN_STICK"
+    ],
+    "required_area_points": ["REFUGEE_CAMP_11"],
+    "rewards": ["LOCATION_TEODORO_REWARD_BUILD_DEFENSIVE_STAKES"]
+  },
+  "EVENT_TEODORO_BUILD_SWORD_RACK": {
+    "comment": "Flow: event_city_3_2 unlocks refugee_camp_sword_rack_place. Completing it fires event_city_3_3, whose Teodoro conversation grants +10 relation and unlocks the Observation Tower. GameData requires steel swords, flitch, and 12 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Build the refugee camp's sword rack",
+    "item_label": "Built the refugee camp's sword rack",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_BUILD_DEFENSIVE_STAKES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_STEEL_SWORD", "ITEM_FLITCH"],
+    "required_area_points": ["REFUGEE_CAMP_12"],
+    "rewards": ["LOCATION_TEODORO_REWARD_BUILD_SWORD_RACK"]
+  },
+  "EVENT_TEODORO_BUILD_OBSERVATION_TOWER": {
+    "comment": "Flow: event_city_3_3 unlocks refugee_camp_observation_tower_place. Completing the tower runs refugee_ev_city_3_fin, which grants +10 Teodoro relation and simultaneously drops a gemmed steel sword, three great technology books, a big universal bag, and its recipe. These simultaneous vanilla rewards form one AP reward check. The event sets event_city_3_3_complete, which joins with the completed vampire-memory storyline to start refugee_ev_s39. GameData requires wooden beams, flitch, and 13 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Build the refugee camp's observation tower",
+    "item_label": "Built the refugee camp's observation tower",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_BUILD_SWORD_RACK"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_WOODEN_BEAM", "ITEM_FLITCH"],
+    "required_area_points": ["REFUGEE_CAMP_13"],
+    "rewards": ["LOCATION_TEODORO_REWARD_BUILD_OBSERVATION_TOWER"]
+  },
   "EVENT_CLOTHO_EXAMINE_VAMPIRES_JAW": {
     "comment": "Flow: after Alarich is revived, his mandatory refugees_s14 conversation explains how to use the Witcher's Eye. The eye is normally awarded by EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS, whose flow also sets has_witchers_eye. With the eye, the player views the waterfall memories and the attached pile_on_ground_with_jaw_digged script unlocks @refugees_s17 after the vampire's jaw is unearthed. Giving that jaw to Clotho at npc_witch option 14 completes s_ev_16_jaw, grants three memory powders, and drops the memory tincture recipe. The rewardless memories and digging step are folded into this rewarded event; both randomized quest items remain explicit requirements.",
     "location_label": "Ask Clotho to examine the vampire's jaw",
@@ -3350,7 +3393,7 @@
     ]
   },
   "EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES": {
-    "comment": "Flow: after leaving Misty Quagmire, refugee_ev_s28 starts the golem encounter and exposes two separate follow-ups. Returning skeleton_leg only completes the rewardless s_ev_28_leg_return side task and does not gate the main story. Using memory_potion while carrying vampires_blackened_boot increments memory_potion_boot_use_count; the third use runs refugee_ev_s29_1_flashback and starts the mandatory Donkey/Carl investigation. The subsequent Carl interrogation, Shepherd questioning, Miss Chain conversations, Horadric direction, and seaside scene are all rewardless connective steps. refugee_ev_s34_near_sea finally unlocks Alarich's @refugee_s35_11 report, whose option grants +20 Alarich relation and starts refugee_ev_s36. Those mandatory intermediates are folded into this rewarded event. Renewable quantities are intentionally not modeled.",
+    "comment": "Flow: after leaving Misty Quagmire, refugee_ev_s28 starts the golem encounter and exposes two separate follow-ups. Returning skeleton_leg only completes the rewardless s_ev_28_leg_return side task and does not gate the main story. Using memory_potion while carrying vampires_blackened_boot increments memory_potion_boot_use_count; the third use runs refugee_ev_s29_1_flashback and starts the mandatory Donkey/Carl investigation. The subsequent Carl interrogation, Shepherd questioning, Miss Chain conversations, Horadric direction, and seaside scene are all rewardless connective steps. refugee_ev_s34_near_sea finally unlocks Alarich's @refugee_s35_11 report, whose option grants +20 Alarich relation and starts refugee_ev_s36. That continuous sequence runs refugee_ev_s37, where Alarich hands the player dark_gold_cloak, and refugee_ev_s38, whose opening grants another +20 Alarich relation before the mandatory memory puzzle drops golden_apple. These four reward nodes share the same requirements and are modeled as separate locations in one event. Renewable quantities are intentionally not modeled.",
     "location_label": "Tell Alarich what happened to the vampire clan",
     "item_label": "Told Alarich what happened to the vampire clan",
     "dlc": "GAME_OF_CRONE",
@@ -3358,7 +3401,12 @@
     "required_happiness": [],
     "required_quest_items": ["ITEM_CHARRED_VAMPIRE_SHOE"],
     "required_craft_items": ["ITEM_MEMORY_TINCTURE"],
-    "rewards": ["LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES"]
+    "rewards": [
+      "LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES",
+      "LOCATION_ALARICH_REWARD_ACCOMPANY_HIM_TO_CLOTHO",
+      "LOCATION_ALARICH_REWARD_ENTER_CLOTHOS_MIND",
+      "LOCATION_ALARICH_REWARD_COMPLETE_MEMORY_PUZZLE"
+    ]
   },
   "EVENT_DONKEY_SEND_COOKBOOK": {
     "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the Cookbook completes dlc_refugees_s_ev_d1_cookbook; check_contraband_box removes it and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",

@@ -984,6 +984,18 @@
     "label": "Alarich Reward - Tell him what happened to the vampire clan",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
+  "LOCATION_ALARICH_REWARD_ACCOMPANY_HIM_TO_CLOTHO": {
+    "label": "Alarich Reward - Accompany him to Clotho",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_ALARICH_REWARD_ENTER_CLOTHOS_MIND": {
+    "label": "Alarich Reward - Enter Clotho's mind with him",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_ALARICH_REWARD_COMPLETE_MEMORY_PUZZLE": {
+    "label": "Alarich Reward - Complete Clotho's memory puzzle",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
     "label": "Teodoro Reward - Upgrade the depot and campfire and build the sixth tent",
     "parent_region": "REGION_REFUGEE_CAMP"
@@ -994,6 +1006,18 @@
   },
   "LOCATION_TEODORO_REWARD_GROW_CAMP_TO_ELEVEN_RESIDENTS": {
     "label": "Teodoro Reward - Grow the camp to eleven residents",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_BUILD_DEFENSIVE_STAKES": {
+    "label": "Teodoro Reward - Build defensive stakes around the camp",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_BUILD_SWORD_RACK": {
+    "label": "Teodoro Reward - Build the camp's sword rack",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
+  "LOCATION_TEODORO_REWARD_BUILD_OBSERVATION_TOWER": {
+    "label": "Teodoro Reward - Build the camp's observation tower",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
   "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN": {
