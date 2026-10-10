@@ -1287,6 +1287,56 @@
       "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_2"
     ]
   },
+  "EVENT_VAGNER_MEET": {
+    "comment": "Flow: Ms. Charm's first npc_actress intro fires Vagner's npc_actor intro event. That cutscene grants +5 Vagner relation, exposes actor_paper_ink, and unlocks Journalist. The rewardless Ms. Charm introduction is folded into this first rewarded Vagner event; the disconnected duplicate Flow_AddRelation at npc_actor:263 has no incoming execution edge and is not a second reward.",
+    "location_label": "Meet Vagner after meeting Ms. Charm",
+    "item_label": "Met Vagner after meeting Ms. Charm",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_VAGNER_REWARD_MEET"]
+  },
+  "EVENT_VAGNER_GIVE_INK": {
+    "comment": "Flow: npc_actor:17:option:0 (actor_2_1a) requires ink:ink_jar, grants +10 Vagner relation, and remains independent of the clean-paper option. Quantities of craftable items are intentionally not modeled.",
+    "location_label": "Give Vagner ink",
+    "item_label": "Gave Vagner ink",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_VAGNER_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_INK"],
+    "rewards": ["LOCATION_VAGNER_REWARD_GIVE_INK"]
+  },
+  "EVENT_VAGNER_GIVE_CLEAN_PAPER": {
+    "comment": "Flow: npc_actor:17:option:1 (actor_2_1b) requires paper_clean, grants +10 Vagner relation, and remains independent of the ink option. Quantities of craftable items are intentionally not modeled.",
+    "location_label": "Give Vagner clean paper",
+    "item_label": "Gave Vagner clean paper",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_VAGNER_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_CLEAN_PAPER"],
+    "rewards": ["LOCATION_VAGNER_REWARD_GIVE_CLEAN_PAPER"]
+  },
+  "EVENT_VAGNER_GIVE_SILVER_WINE": {
+    "comment": "Flow: npc_actor interaction routes to the actor_3a menu only at 20 or more Vagner relation. The two independent writing-supply turn-ins provide the required relation. npc_actor:145:option:0 then requires bottle_red_vine:2, grants +5 Vagner relation, drops a silver-quality story, and blacklists actor_3a.",
+    "location_label": "Give Vagner silver-quality red wine",
+    "item_label": "Gave Vagner silver-quality red wine",
+    "dlc": "BASE_GAME",
+    "required_quests": [
+      "EVENT_VAGNER_GIVE_INK",
+      "EVENT_VAGNER_GIVE_CLEAN_PAPER"
+    ],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_RED_WINE_SILVER"],
+    "rewards": [
+      "LOCATION_VAGNER_REWARD_GIVE_SILVER_WINE_1",
+      "LOCATION_VAGNER_REWARD_GIVE_SILVER_WINE_2"
+    ]
+  },
   "EVENT_VAGNER_ASK_TO_WRITE_LOVE_SONG": {
     "comment": "Flow: npc_actor:145:option:1 (@actor_song); unlocks the infusion craft and @actor_inspiration",
     "location_label": "Ask Vagner to write a love song for Ms. Charm",

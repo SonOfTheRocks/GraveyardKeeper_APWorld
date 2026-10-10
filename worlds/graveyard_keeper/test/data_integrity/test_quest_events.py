@@ -156,6 +156,56 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["EVENT_MS_CHARM_GIVE_SONG_LYRICS"], list(rescue_event.required_quests))
         self.assertEqual(["EVENT_ASTROLOGER_ASK_TO_HELP_RESCUE_VAGNER"], list(expedition_event.required_quests))
 
+    def test_vagner_writing_supplies_and_wine_are_separate_reward_steps(self):
+        meeting = data.events["EVENT_VAGNER_MEET"]
+        ink = data.events["EVENT_VAGNER_GIVE_INK"]
+        paper = data.events["EVENT_VAGNER_GIVE_CLEAN_PAPER"]
+        wine = data.events["EVENT_VAGNER_GIVE_SILVER_WINE"]
+
+        self.assertEqual(["EVENT_TUTORIAL_FINISH"], list(meeting.required_quests))
+        self.assertEqual(["LOCATION_VAGNER_REWARD_MEET"], list(meeting.rewards))
+
+        for event, required_item, reward in (
+            (ink, "ITEM_INK", "LOCATION_VAGNER_REWARD_GIVE_INK"),
+            (paper, "ITEM_CLEAN_PAPER", "LOCATION_VAGNER_REWARD_GIVE_CLEAN_PAPER"),
+        ):
+            with self.subTest(event=event.location_label):
+                self.assertEqual(["EVENT_VAGNER_MEET"], list(event.required_quests))
+                self.assertEqual([required_item], list(event.required_craft_items))
+                self.assertEqual([reward], list(event.rewards))
+
+        self.assertEqual(
+            {"EVENT_VAGNER_GIVE_INK", "EVENT_VAGNER_GIVE_CLEAN_PAPER"},
+            set(wine.required_quests),
+            "Both independently rewarded +10 relation turn-ins are needed to reach Vagner's 20-relation menu",
+        )
+        self.assertEqual(["ITEM_RED_WINE_SILVER"], list(wine.required_craft_items))
+        self.assertEqual(2, len(wine.rewards))
+
+        node_names = load_json_data("quest_node_names.json")
+        expected_names = {
+            "npc_actor:221": meeting.location_label,
+            "npc_actor:17:option:0": ink.location_label,
+            "npc_actor:17:option:1": paper.location_label,
+            "npc_actor:145:option:0": wine.location_label,
+        }
+        for node_id, expected_name in expected_names.items():
+            with self.subTest(node_id=node_id):
+                self.assertEqual(expected_name, node_names[node_id])
+
+        dead_horse = data.regions["REGION_THE_DEAD_HORSE"]
+        for event_name, event in (
+            ("EVENT_VAGNER_MEET", meeting),
+            ("EVENT_VAGNER_GIVE_INK", ink),
+            ("EVENT_VAGNER_GIVE_CLEAN_PAPER", paper),
+            ("EVENT_VAGNER_GIVE_SILVER_WINE", wine),
+        ):
+            with self.subTest(region_event=event.location_label):
+                self.assertIn(event_name, dead_horse.events)
+                for reward in event.rewards:
+                    self.assertIn(reward, dead_horse.locations)
+                    self.assertEqual("REGION_THE_DEAD_HORSE", data.locations[reward].parent_region)
+
     def test_astrologer_rescue_expedition_matches_linear_flow_rewards(self):
         papers_event = data.events["EVENT_ASTROLOGER_SHOW_ARISTOCRAT_PAPERS"]
         rescue_event = data.events["EVENT_ASTROLOGER_RESCUE_VAGNER"]

@@ -94,6 +94,26 @@
     "label": "Ms. Charm Reward - Show her aristocrat papers (2)",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
+  "LOCATION_VAGNER_REWARD_MEET": {
+    "label": "Vagner Reward - Meet him after Ms. Charm",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_VAGNER_REWARD_GIVE_INK": {
+    "label": "Vagner Reward - Give him ink",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_VAGNER_REWARD_GIVE_CLEAN_PAPER": {
+    "label": "Vagner Reward - Give him clean paper",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_VAGNER_REWARD_GIVE_SILVER_WINE_1": {
+    "label": "Vagner Reward - Give him silver-quality red wine (1)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_VAGNER_REWARD_GIVE_SILVER_WINE_2": {
+    "label": "Vagner Reward - Give him silver-quality red wine (2)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
   "LOCATION_VAGNER_REWARD_MEET_AT_CLIFFS": {
     "label": "Vagner Reward - Meet him at the cliffs",
     "parent_region": "REGION_CLIFFS"
