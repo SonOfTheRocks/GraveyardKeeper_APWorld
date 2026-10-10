@@ -980,6 +980,10 @@
     "label": "Alarich Reward - Revive him with blood",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
+  "LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES": {
+    "label": "Alarich Reward - Tell him what happened to the vampire clan",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
     "label": "Teodoro Reward - Upgrade the depot and campfire and build the sixth tent",
     "parent_region": "REGION_REFUGEE_CAMP"

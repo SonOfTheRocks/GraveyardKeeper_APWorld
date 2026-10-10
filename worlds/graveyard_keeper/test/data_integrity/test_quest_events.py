@@ -1301,6 +1301,44 @@ class TestAllQuestEvents(unittest.TestCase):
             node_names["refugee_purple_cloud:358"],
         )
 
+    def test_alarich_vampire_clan_report_folds_rewardless_investigation_but_not_bone_leg(self):
+        event = data.events["EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES"]
+
+        self.assertEqual(DLCType.GAME_OF_CRONE, event.dlc)
+        self.assertEqual(
+            ["EVENT_TEODORO_EXPLORE_MISTY_QUAGMIRE"],
+            list(event.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_CHARRED_VAMPIRE_SHOE"],
+            list(event.required_quest_items),
+            "Only the shoe continues the main story; returning the bone leg is a side task",
+        )
+        self.assertNotIn("ITEM_BONE_LEG", event.required_quest_items)
+        self.assertEqual(["ITEM_MEMORY_TINCTURE"], list(event.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES"],
+            list(event.rewards),
+        )
+        self.assertEqual(
+            "REGION_REFUGEE_CAMP",
+            data.locations[event.rewards[0]].parent_region,
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            event.location_label,
+            node_names["npc_alarich:21:option:14"],
+        )
+        self.assertEqual(
+            "Reveal the charred vampire shoe's memory",
+            node_names["script-call:OnMemoryPotionUse.json:137"],
+        )
+        self.assertEqual(
+            "Find Miss Chain by the sea",
+            node_names["unlock:refugee_ev_s34_near_sea.json:120"],
+        )
+
     def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):
         cookbook = data.events["EVENT_DONKEY_SEND_COOKBOOK"]
         apples = data.events["EVENT_DONKEY_SEND_RED_APPLES"]

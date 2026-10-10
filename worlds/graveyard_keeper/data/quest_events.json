@@ -3349,6 +3349,17 @@
       "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_CHARRED_VAMPIRE_SHOE"
     ]
   },
+  "EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES": {
+    "comment": "Flow: after leaving Misty Quagmire, refugee_ev_s28 starts the golem encounter and exposes two separate follow-ups. Returning skeleton_leg only completes the rewardless s_ev_28_leg_return side task and does not gate the main story. Using memory_potion while carrying vampires_blackened_boot increments memory_potion_boot_use_count; the third use runs refugee_ev_s29_1_flashback and starts the mandatory Donkey/Carl investigation. The subsequent Carl interrogation, Shepherd questioning, Miss Chain conversations, Horadric direction, and seaside scene are all rewardless connective steps. refugee_ev_s34_near_sea finally unlocks Alarich's @refugee_s35_11 report, whose option grants +20 Alarich relation and starts refugee_ev_s36. Those mandatory intermediates are folded into this rewarded event. Renewable quantities are intentionally not modeled.",
+    "location_label": "Tell Alarich what happened to the vampire clan",
+    "item_label": "Told Alarich what happened to the vampire clan",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_EXPLORE_MISTY_QUAGMIRE"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_CHARRED_VAMPIRE_SHOE"],
+    "required_craft_items": ["ITEM_MEMORY_TINCTURE"],
+    "rewards": ["LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES"]
+  },
   "EVENT_DONKEY_SEND_COOKBOOK": {
     "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the Cookbook completes dlc_refugees_s_ev_d1_cookbook; check_contraband_box removes it and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",
     "location_label": "Send the Cookbook to Donkey's comrades",
