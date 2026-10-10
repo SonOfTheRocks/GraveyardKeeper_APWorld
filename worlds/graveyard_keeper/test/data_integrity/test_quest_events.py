@@ -134,6 +134,29 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(farmer_event.rewards))
         self.assertEqual([], list(miller_event.rewards))
 
+    def test_lighthouse_keeper_necronomicon_turn_in_bridges_astrologer_and_snake(self):
+        event = data.events["EVENT_LIGHTHOUSE_KEEPER_GET_NECRONOMICON"]
+
+        self.assertEqual(
+            ["EVENT_ASTROLOGER_ASK_ABOUT_NECRONOMICON"],
+            list(event.required_quests),
+        )
+        self.assertEqual(["ITEM_MAGGOT"], list(event.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_LIGHTHOUSE_KEEPER_REWARD_GET_NECRONOMICON"],
+            list(event.rewards),
+        )
+        self.assertIn("EVENT_LIGHTHOUSE_KEEPER_GET_NECRONOMICON", data.regions["REGION_LIGHTHOUSE"].events)
+        self.assertIn(event.rewards[0], data.regions["REGION_LIGHTHOUSE"].locations)
+        self.assertEqual("REGION_LIGHTHOUSE", data.locations[event.rewards[0]].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            "Ask the Lighthouse Keeper about the Necronomicon",
+            node_names["npc_light_keeper:13:option:0"],
+        )
+        self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:1"])
+
     def test_fixing_the_mill_and_alisa_chain_matches_flow_requirements(self):
         repair_event = data.events["EVENT_REPAIR_MILL"]
         permission_event = data.events["EVENT_FARMER_GET_PERMISSION_FOR_ALISA"]

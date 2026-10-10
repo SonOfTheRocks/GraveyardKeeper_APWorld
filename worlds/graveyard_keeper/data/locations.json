@@ -73,6 +73,10 @@
     "label": "Astrologer - Ask him about his Day",
     "parent_region": "REGION_LIGHTHOUSE"
   },
+  "LOCATION_LIGHTHOUSE_KEEPER_REWARD_GET_NECRONOMICON": {
+    "label": "Lighthouse Keeper Reward - Get the Necronomicon",
+    "parent_region": "REGION_LIGHTHOUSE"
+  },
 
   "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_1": {
     "label": "Farmer Reward - Get permission for Alisa to leave (1)",

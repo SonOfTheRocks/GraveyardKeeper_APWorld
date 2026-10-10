@@ -1001,6 +1001,17 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_LIGHTHOUSE_KEEPER_GET_NECRONOMICON": {
+    "comment": "Flow: npc_light_keeper:13:option:0 unlocks @light_keeper_book_ready; option 1 requires five maggots and drops the Necronomicon. The rewardless first conversation is folded into this event.",
+    "location_label": "Get the Necronomicon from the Lighthouse Keeper",
+    "item_label": "Got the Necronomicon from the Lighthouse Keeper",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_ASTROLOGER_ASK_ABOUT_NECRONOMICON"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_MAGGOT"],
+    "rewards": ["LOCATION_LIGHTHOUSE_KEEPER_REWARD_GET_NECRONOMICON"]
+  },
   "EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA": {
     "comment": "gave acid and rest. tools -> unlock phrases snake_magic_item",
     "location_label": "Learn about Esmeralda",

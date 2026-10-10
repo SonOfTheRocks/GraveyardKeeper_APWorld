@@ -16,6 +16,8 @@
   "npc_astrologer:44:option:3": "Get Astrologer acid",
   "npc_astrologer:44:option:4": "Get Astrologer restoration tools",
   "npc_astrologer:44:option:5": "Ask Astrologer about the Necronomicon",
+  "npc_light_keeper:13:option:0": "Ask the Lighthouse Keeper about the Necronomicon",
+  "npc_light_keeper:13:option:1": "Get the Necronomicon from the Lighthouse Keeper",
   "npc_astrologer:44:option:6": "Tell Astrologer about Esmeralda's fate",
   "npc_astrologer:44:option:7": "Tell Astrologer Ms. Charm knows nothing",
   "npc_astrologer:44:option:8": "Ask Astrologer to help rescue Vagner",
