@@ -1483,6 +1483,26 @@ class TestAllQuestEvents(unittest.TestCase):
             with self.subTest(node_id=node_id):
                 self.assertEqual(expected_name, node_names[node_id])
 
+    def test_game_of_crone_endings_share_one_reward_location(self):
+        ending = data.events["EVENT_COMPLETE_GAME_OF_CRONE"]
+
+        self.assertEqual(DLCType.GAME_OF_CRONE, ending.dlc)
+        self.assertEqual(
+            ["EVENT_TEODORO_REPORT_CAMP_FATE"],
+            list(ending.required_quests),
+            "Only requirements shared by all three endings belong on the combined check",
+        )
+        self.assertEqual([], list(ending.required_quest_items))
+        self.assertEqual([], list(ending.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_GAME_OF_CRONE_REWARD_COMPLETE_STORY"],
+            list(ending.rewards),
+        )
+        self.assertEqual(
+            "REGION_REFUGEE_CAMP",
+            data.locations["LOCATION_GAME_OF_CRONE_REWARD_COMPLETE_STORY"].parent_region,
+        )
+
     def test_donkey_revolution_through_second_shipment_and_hair_join_matches_flow(self):
         cookbook = data.events["EVENT_DONKEY_SEND_COOKBOOK"]
         apples = data.events["EVENT_DONKEY_SEND_RED_APPLES"]

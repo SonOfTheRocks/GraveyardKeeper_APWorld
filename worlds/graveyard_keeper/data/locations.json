@@ -1004,6 +1004,10 @@
     "label": "Alarich Reward - Discuss the refugee camp's fate",
     "parent_region": "REGION_REFUGEE_CAMP"
   },
+  "LOCATION_GAME_OF_CRONE_REWARD_COMPLETE_STORY": {
+    "label": "Game of Crone Reward - Complete any ending",
+    "parent_region": "REGION_REFUGEE_CAMP"
+  },
   "LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
     "label": "Teodoro Reward - Upgrade the depot and campfire and build the sixth tent",
     "parent_region": "REGION_REFUGEE_CAMP"

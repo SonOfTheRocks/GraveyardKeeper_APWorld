@@ -3433,6 +3433,17 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_ALARICH_REWARD_DISCUSS_CAMP_FATE"]
   },
+  "EVENT_COMPLETE_GAME_OF_CRONE": {
+    "comment": "The ending choice guarantees exactly one of Persistence, Industriousness, or Eloquence. These mutually exclusive vanilla rewards are represented by one shared AP location. EVENT_TEODORO_REPORT_CAMP_FATE is the last modeled prerequisite common to every ending; ending-specific conversations, notes, payments, and craft inputs are deliberately not combined into an impossible AND requirement. The client reports this same check whenever GameSave.UnlockTech receives any of the three ending tech IDs.",
+    "location_label": "Complete any Game of Crone ending",
+    "item_label": "Completed a Game of Crone ending",
+    "dlc": "GAME_OF_CRONE",
+    "required_quests": ["EVENT_TEODORO_REPORT_CAMP_FATE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_GAME_OF_CRONE_REWARD_COMPLETE_STORY"]
+  },
   "EVENT_DONKEY_SEND_COOKBOOK": {
     "comment": "Flow: Game of Crone's refugee_ev_d1 starts only after Donkey's base-game strike_completed counter reaches two, which requires reopening the church, giving Seed Oil, and supplying carrots. The event spawns the material-free Contraband Box and unlocks the Cookbook and red-apple deliveries in parallel. Sending the Cookbook completes dlc_refugees_s_ev_d1_cookbook; check_contraband_box removes it and grants +10 Donkey relation. Quantities of renewable items are intentionally not modeled.",
     "location_label": "Send the Cookbook to Donkey's comrades",
