@@ -709,25 +709,27 @@
     "rewards": []
   },
 
-  "EVENT_GERRY_GET_GERRY_BEER": {
-    "location_label": "Get Gerry Beer",
-    "item_label": "Got Gerry Beer",
+  "EVENT_GERRY_GIVE_BEER": {
+    "comment": "Flow: crafting_skull_3:134:option:0 (skull_8_2a) has Answer.price cup_beer:1 and Answer.reward +20 Gerry happiness; it unlocks @skull_8_2a_wine",
+    "location_label": "Give Gerry a copper-quality beer",
+    "item_label": "Gave Gerry a copper-quality beer",
     "dlc": "BASE_GAME",
     "required_quests": ["EVENT_TUTORIAL_FINISH"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_A_MUG_OF_BEER_COPPER"],
-    "rewards": ["LOCATION_GERRY_REWARD_GET_GERRY_BEER"]
+    "rewards": ["LOCATION_GERRY_REWARD_GIVE_BEER"]
   },
-  "EVENT_GERRY_GET_GERRY_WINE": {
-    "location_label": "Get Gerry Wine",
-    "item_label": "Got Gerry Wine",
+  "EVENT_GERRY_GIVE_SILVER_WINE": {
+    "comment": "Flow: crafting_skull_3:134:option:2 (@skull_8_2a_wine) is unlocked by the beer turn-in, has Answer.price bottle_red_vine:2, and Answer.reward +20 Gerry happiness",
+    "location_label": "Give Gerry silver-quality wine",
+    "item_label": "Gave Gerry silver-quality wine",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_GERRY_GET_GERRY_BEER"],
+    "required_quests": ["EVENT_GERRY_GIVE_BEER"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_RED_WINE_SILVER"],
-    "rewards": ["LOCATION_GERRY_REWARD_GET_GERRY_WINE"]
+    "rewards": ["LOCATION_GERRY_REWARD_GIVE_SILVER_WINE"]
   },
   "EVENT_GERRY_TALK_ABOUT_GUNTER": {
     "location_label": "Gerry: Talk about Gunter",
@@ -2165,7 +2167,7 @@
     "location_label": "Open tavern",
     "item_label": "Tavern opened",
     "dlc": "STRANGER_SINS",
-    "required_quests": ["EVENT_GERRY_GET_GERRY_WINE"],
+    "required_quests": ["EVENT_GERRY_GIVE_SILVER_WINE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],

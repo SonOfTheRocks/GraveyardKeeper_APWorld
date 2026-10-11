@@ -577,12 +577,12 @@
     "label": "Gerry Reward - Come back from the village (2)",
     "parent_region": "REGION_PLAINS"
   },
-  "LOCATION_GERRY_REWARD_GET_GERRY_BEER": {
-    "label": "Gerry Reward - Get Gerry Beer",
+  "LOCATION_GERRY_REWARD_GIVE_BEER": {
+    "label": "Gerry Reward - Give him a copper-quality beer",
     "parent_region": "REGION_MORGUE"
   },
-  "LOCATION_GERRY_REWARD_GET_GERRY_WINE": {
-    "label": "Gerry Reward - Get Berry Wine",
+  "LOCATION_GERRY_REWARD_GIVE_SILVER_WINE": {
+    "label": "Gerry Reward - Give him silver-quality wine",
     "parent_region": "REGION_MORGUE"
   },
   "LOCATION_GERRY_REWARD_GIVE_BEER_AND_SAND": {

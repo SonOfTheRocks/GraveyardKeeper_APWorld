@@ -249,6 +249,45 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(powder.location_label, node_names["npc_witch:9:option:2"])
         self.assertEqual(bee.location_label, node_names["npc_witch:9:option:3"])
 
+    def test_gerry_drink_turn_ins_follow_the_vanilla_order(self):
+        beer = data.events["EVENT_GERRY_GIVE_BEER"]
+        wine = data.events["EVENT_GERRY_GIVE_SILVER_WINE"]
+        tavern = data.events["EVENT_TAVERN_OPEN"]
+
+        self.assertEqual(["EVENT_TUTORIAL_FINISH"], list(beer.required_quests))
+        self.assertEqual(["ITEM_A_MUG_OF_BEER_COPPER"], list(beer.required_craft_items))
+        self.assertEqual(["LOCATION_GERRY_REWARD_GIVE_BEER"], list(beer.rewards))
+
+        self.assertEqual(["EVENT_GERRY_GIVE_BEER"], list(wine.required_quests))
+        self.assertEqual(["ITEM_RED_WINE_SILVER"], list(wine.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_GERRY_REWARD_GIVE_SILVER_WINE"],
+            list(wine.rewards),
+        )
+        self.assertEqual(["EVENT_GERRY_GIVE_SILVER_WINE"], list(tavern.required_quests))
+
+        morgue = data.regions["REGION_MORGUE"]
+        for event_name, event in (
+            ("EVENT_GERRY_GIVE_BEER", beer),
+            ("EVENT_GERRY_GIVE_SILVER_WINE", wine),
+        ):
+            with self.subTest(event=event_name):
+                self.assertIn(event_name, morgue.events)
+                self.assertIn(event.rewards[0], morgue.locations)
+                self.assertEqual(
+                    "REGION_MORGUE",
+                    data.locations[event.rewards[0]].parent_region,
+                )
+
+        self.assertNotIn("EVENT_GERRY_GET_GERRY_BEER", data.events)
+        self.assertNotIn("EVENT_GERRY_GET_GERRY_WINE", data.events)
+        self.assertNotIn("LOCATION_GERRY_REWARD_GET_GERRY_BEER", data.locations)
+        self.assertNotIn("LOCATION_GERRY_REWARD_GET_GERRY_WINE", data.locations)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(beer.location_label, node_names["crafting_skull_3:134:option:0"])
+        self.assertEqual(wine.location_label, node_names["crafting_skull_3:134:option:2"])
+
     def test_miss_chain_perfume_chain_matches_flow_requirements(self):
         ask = data.events["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"]
         deliver = data.events["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"]

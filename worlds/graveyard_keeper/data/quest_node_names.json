@@ -122,6 +122,8 @@
   "npc_witch:9:option:1": "Restore Clotho's memory with a health potion",
   "npc_witch:9:option:2": "Give Clotho health powder",
   "npc_witch:9:option:3": "Give Clotho a bee",
+  "crafting_skull_3:134:option:0": "Give Gerry a copper-quality beer",
+  "crafting_skull_3:134:option:2": "Give Gerry silver-quality wine",
   "unlock:ev_s_s1.json:115": "Meet Euric after the unusual corpse delivery",
   "crafting_skull_3:134:option:10": "Ask Gerry about the old rusty key",
   "crafting_skull_3:134:option:11": "Wash Gerry with beer and river sand",
