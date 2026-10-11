@@ -30,7 +30,7 @@
     "parent_region": "REGION_LIGHTHOUSE"
   },
   "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_KEEPERS_JOURNAL": {
-    "label": "Astrologer - Give him the Diary",
+    "label": "Astrologer Reward - Give him the Keeper's Journal",
     "parent_region": "REGION_LIGHTHOUSE"
   },
   "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_ACID": {
@@ -420,6 +420,10 @@
   },
   "LOCATION_SNAKE_REWARD_GIVE_ACTIVE_KEY": {
     "label": "Snake - Give him the active Keeper's key",
+    "parent_region": "REGION_UNDERGROUND_TUNNEL"
+  },
+  "LOCATION_SNAKE_REWARD_TAKE_KEEPERS_JOURNAL_FROM_TABLE": {
+    "label": "Snake Reward - Take the Keeper's Journal from his table",
     "parent_region": "REGION_UNDERGROUND_TUNNEL"
   },
   "LOCATION_SNAKE_REWARD_GIVE_BUCKET_OF_BLOOD": {

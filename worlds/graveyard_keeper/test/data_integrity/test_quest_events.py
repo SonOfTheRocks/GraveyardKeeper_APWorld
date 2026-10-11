@@ -123,6 +123,36 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual([], list(event.rewards))
         self.assertIn("EVENT_SNAKE_MEET", data.regions["REGION_UNDERGROUND_TUNNEL"].events)
 
+    def test_snake_table_journal_bridges_active_key_and_astrologer(self):
+        take_journal = data.events["EVENT_SNAKE_TAKE_KEEPERS_JOURNAL_FROM_TABLE"]
+        give_journal = data.events["EVENT_ASTROLOGER_GET_ASTROLOGER_KEEPERS_JOURNAL"]
+
+        self.assertEqual(
+            ["EVENT_SNAKE_GIVE_ACTIVE_KEY"],
+            list(take_journal.required_quests),
+        )
+        self.assertEqual(
+            ["LOCATION_SNAKE_REWARD_TAKE_KEEPERS_JOURNAL_FROM_TABLE"],
+            list(take_journal.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_ASTROLOGER_ASK_ABOUT_PORTAL"],
+            list(give_journal.required_quests),
+        )
+        self.assertEqual(["ITEM_KEEPERS_JOURNAL"], list(give_journal.required_quest_items))
+
+        tunnel = data.regions["REGION_UNDERGROUND_TUNNEL"]
+        self.assertIn("EVENT_SNAKE_TAKE_KEEPERS_JOURNAL_FROM_TABLE", tunnel.events)
+        self.assertIn(take_journal.rewards[0], tunnel.locations)
+        self.assertEqual(
+            "REGION_UNDERGROUND_TUNNEL",
+            data.locations[take_journal.rewards[0]].parent_region,
+        )
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(take_journal.location_label, node_names["table_cultist_quest:11"])
+        self.assertEqual(give_journal.location_label, node_names["npc_astrologer:44:option:2"])
+
     def test_mill_fix_conversation_chain_matches_phrase_unlocks(self):
         farmer_event = data.events["EVENT_FARMER_ASK_ABOUT_ALISA"]
         miller_event = data.events["EVENT_MILLER_ASK_TO_FIX_MILL"]

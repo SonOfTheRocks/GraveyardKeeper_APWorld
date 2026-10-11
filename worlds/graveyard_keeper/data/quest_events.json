@@ -993,11 +993,11 @@
     "rewards": ["LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_PORTAL"]
   },
   "EVENT_ASTROLOGER_GET_ASTROLOGER_KEEPERS_JOURNAL": {
-    "comment": "give journal, get 10 relation",
-    "location_label": "Get Astrologer the Keepers Journal",
-    "item_label": "Got Astrologer the Keepers Journal",
+    "comment": "Flow: npc_astrologer:44:option:2 (@astrologer_diary); the phrase is unlocked while asking about the portal and Answer.price requires quest_cultit_book (Keeper's Journal); reward +10 Astrologer happiness",
+    "location_label": "Give Astrologer the Keeper's Journal",
+    "item_label": "Gave Astrologer the Keeper's Journal",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_TUTORIAL_FINISH"],
+    "required_quests": ["EVENT_ASTROLOGER_ASK_ABOUT_PORTAL"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_KEEPERS_JOURNAL"],
     "required_craft_items": [],
@@ -1565,6 +1565,17 @@
     "required_quest_items": ["ITEM_ACTIVE_KEY"],
     "required_craft_items": [],
     "rewards": ["LOCATION_SNAKE_REWARD_GIVE_ACTIVE_KEY"]
+  },
+  "EVENT_SNAKE_TAKE_KEEPERS_JOURNAL_FROM_TABLE": {
+    "comment": "Flow: npc_cultist open_gate adds the intro interaction to table_cultist_quest after the active key hand-in; table_cultist_quest:11 then drops quest_cultit_book (Keeper's Journal)",
+    "location_label": "Take the Keeper's Journal from Snake's table",
+    "item_label": "Took the Keeper's Journal from Snake's table",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_GIVE_ACTIVE_KEY"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_SNAKE_REWARD_TAKE_KEEPERS_JOURNAL_FROM_TABLE"]
   },
   "EVENT_SNAKE_RETURN_AFTER_DUNGEON_TRAP": {
     "comment": "Flow: npc_cultist:359:option:0 and option:1; both answers unlock the same quest steps",
