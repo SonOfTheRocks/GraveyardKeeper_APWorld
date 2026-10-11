@@ -2170,12 +2170,24 @@ class TestAllQuestEvents(unittest.TestCase):
             set(finale.rewards),
         )
 
-        for item_key in ("ITEM_MAGIC_PUMPKIN", "ITEM_PILE_OF_COMPONENTS", "ITEM_ICE_AXE"):
+        for item_key in ("ITEM_MAGIC_PUMPKIN", "ITEM_PILE_OF_COMPONENTS"):
             with self.subTest(item=item_key):
                 self.assertEqual(
                     ItemClassification.progression,
                     data.items[item_key].classification,
                 )
+        modeled_requirements = {
+            item_key
+            for event in data.events.values()
+            if isinstance(event, QuestEventData)
+            for item_key in (*event.required_quest_items, *event.required_craft_items)
+        }
+        self.assertNotIn("ITEM_ICE_AXE", modeled_requirements)
+        self.assertEqual(
+            ItemClassification.useful,
+            data.items["ITEM_ICE_AXE"].classification,
+            "The Ice axe is a finale reward and is not required by any modeled check",
+        )
 
         node_names = load_json_data("quest_node_names.json")
         expected_node_events = {
