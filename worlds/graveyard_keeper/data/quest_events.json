@@ -1171,12 +1171,67 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_MS_CHARM_REWARD_REPORT_FAKE_COINS"]
   },
+  "EVENT_MISS_CHAIN_ASK_FOR_PERFUME": {
+    "comment": "Flow: npc_mrs chain:13:option:0 (@chain_parfume), unlocked by Ms. Charm's fake-coins follow-up; normally drops the basket of food and unlocks both Clotho's delivery option and the frog turn-in",
+    "location_label": "Ask Miss Chain for perfume",
+    "item_label": "Asked Miss Chain for perfume",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MS_CHARM_REPORT_FAKE_COINS"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MISS_CHAIN_REWARD_ASK_FOR_PERFUME"]
+  },
+  "EVENT_CLOTHO_GIVE_BASKET_OF_FOOD": {
+    "comment": "Flow: npc_witch:9:option:6 (@clotho_give_food); Answer.price is picnic_basket, the conversation is rewardless, and it unlocks @chain_food plus @chain_get_parfue",
+    "location_label": "Deliver Miss Chain's basket of food to Clotho",
+    "item_label": "Delivered Miss Chain's basket of food to Clotho",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_BASKET_OF_FOOD"],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_MISS_CHAIN_REPORT_FOOD_DELIVERED": {
+    "comment": "Flow: npc_mrs chain:13:option:1 (@chain_food); unlocked after delivering the basket to Clotho and grants 10 Miss Chain happiness",
+    "location_label": "Tell Miss Chain the food was delivered",
+    "item_label": "Told Miss Chain the food was delivered",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MISS_CHAIN_REWARD_REPORT_FOOD_DELIVERED"]
+  },
+  "EVENT_MISS_CHAIN_GIVE_FROGS": {
+    "comment": "Flow: npc_mrs chain:13:option:2 (@chain_frog); Answer.price is twelve fish_frog_green and Answer.reward grants 10 Miss Chain happiness. Renewable quantities are intentionally not modeled.",
+    "location_label": "Give Miss Chain frogs for the perfume",
+    "item_label": "Gave Miss Chain frogs for the perfume",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_FROG"],
+    "rewards": ["LOCATION_MISS_CHAIN_REWARD_GIVE_FROGS"]
+  },
+  "EVENT_MISS_CHAIN_GET_PERFUME": {
+    "comment": "Flow: npc_mrs chain:13:option:3 (@chain_get_parfue); the phrase comes from Clotho's basket delivery, the answer is locked at 20 Miss Chain happiness, and the path drops parfum_1",
+    "location_label": "Get perfume from Miss Chain",
+    "item_label": "Got perfume from Miss Chain",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"],
+    "required_happiness": ["MISS_CHAIN_20"],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MISS_CHAIN_REWARD_GET_PERFUME"]
+  },
   "EVENT_MS_CHARM_GIVE_PERFUME": {
     "comment": "get perfume, get 10 relation",
     "location_label": "Give Ms. Charm perfume",
     "item_label": "Gave Ms. Charm perfume",
     "dlc": "BASE_GAME",
-    "required_quests": [],
+    "required_quests": ["EVENT_MS_CHARM_REPORT_FAKE_COINS"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PERFUME"],
     "required_craft_items": [],

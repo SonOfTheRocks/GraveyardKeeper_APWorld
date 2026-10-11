@@ -380,6 +380,22 @@
     "label": "Ms. Charm Reward - Report back about the fake coins",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
+  "LOCATION_MISS_CHAIN_REWARD_ASK_FOR_PERFUME": {
+    "label": "Miss Chain Reward - Ask her for perfume",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MISS_CHAIN_REWARD_REPORT_FOOD_DELIVERED": {
+    "label": "Miss Chain Reward - Report the food delivery",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MISS_CHAIN_REWARD_GIVE_FROGS": {
+    "label": "Miss Chain Reward - Give her frogs",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_MISS_CHAIN_REWARD_GET_PERFUME": {
+    "label": "Miss Chain Reward - Get the perfume",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
   "LOCATION_MS_CHARM_REWARD_GIVE_GOLD_STORY": {
     "label": "Ms. Charm Reward - Give her a gold story",
     "parent_region": "REGION_THE_DEAD_HORSE"

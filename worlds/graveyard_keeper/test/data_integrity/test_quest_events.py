@@ -157,6 +157,60 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:1"])
 
+    def test_miss_chain_perfume_chain_matches_flow_requirements(self):
+        ask = data.events["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"]
+        deliver = data.events["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"]
+        report = data.events["EVENT_MISS_CHAIN_REPORT_FOOD_DELIVERED"]
+        frogs = data.events["EVENT_MISS_CHAIN_GIVE_FROGS"]
+        perfume = data.events["EVENT_MISS_CHAIN_GET_PERFUME"]
+        give_perfume = data.events["EVENT_MS_CHARM_GIVE_PERFUME"]
+
+        self.assertEqual(["EVENT_MS_CHARM_REPORT_FAKE_COINS"], list(ask.required_quests))
+        self.assertEqual(["LOCATION_MISS_CHAIN_REWARD_ASK_FOR_PERFUME"], list(ask.rewards))
+        self.assertEqual(["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"], list(deliver.required_quests))
+        self.assertEqual(["ITEM_BASKET_OF_FOOD"], list(deliver.required_quest_items))
+        self.assertEqual([], list(deliver.rewards))
+        self.assertEqual(["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"], list(report.required_quests))
+        self.assertEqual(["LOCATION_MISS_CHAIN_REWARD_REPORT_FOOD_DELIVERED"], list(report.rewards))
+        self.assertEqual(["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"], list(frogs.required_quests))
+        self.assertEqual(["ITEM_FROG"], list(frogs.required_craft_items))
+        self.assertEqual(["LOCATION_MISS_CHAIN_REWARD_GIVE_FROGS"], list(frogs.rewards))
+        self.assertEqual(["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"], list(perfume.required_quests))
+        self.assertEqual([HappinessData("MISS_CHAIN", 20)], list(perfume.required_happiness))
+        self.assertEqual(["LOCATION_MISS_CHAIN_REWARD_GET_PERFUME"], list(perfume.rewards))
+        self.assertEqual(["EVENT_MS_CHARM_REPORT_FAKE_COINS"], list(give_perfume.required_quests))
+        self.assertEqual(["ITEM_PERFUME"], list(give_perfume.required_quest_items))
+
+        miss_chain_happiness = data.items["ITEM_MISS_CHAIN_HAPPINESS_10"]
+        self.assertEqual(ItemClassification.progression, miss_chain_happiness.classification)
+        self.assertEqual(10, miss_chain_happiness.amount)
+
+        dead_horse = data.regions["REGION_THE_DEAD_HORSE"]
+        for event_name, event in (
+            ("EVENT_MISS_CHAIN_ASK_FOR_PERFUME", ask),
+            ("EVENT_MISS_CHAIN_REPORT_FOOD_DELIVERED", report),
+            ("EVENT_MISS_CHAIN_GIVE_FROGS", frogs),
+            ("EVENT_MISS_CHAIN_GET_PERFUME", perfume),
+        ):
+            with self.subTest(event=event_name):
+                self.assertIn(event_name, dead_horse.events)
+                for reward in event.rewards:
+                    self.assertIn(reward, dead_horse.locations)
+                    self.assertEqual("REGION_THE_DEAD_HORSE", data.locations[reward].parent_region)
+        self.assertIn("EVENT_CLOTHO_GIVE_BASKET_OF_FOOD", data.regions["REGION_SWAMP"].events)
+
+        node_names = load_json_data("quest_node_names.json")
+        expected_names = {
+            "npc_mrs chain:13:option:0": ask.location_label,
+            "npc_witch:9:option:6": deliver.location_label,
+            "npc_mrs chain:13:option:1": report.location_label,
+            "npc_mrs chain:13:option:2": frogs.location_label,
+            "npc_mrs chain:13:option:3": perfume.location_label,
+        }
+        for node_id, expected_name in expected_names.items():
+            with self.subTest(node_id=node_id):
+                self.assertEqual(expected_name, node_names[node_id])
+
     def test_fixing_the_mill_and_alisa_chain_matches_flow_requirements(self):
         repair_event = data.events["EVENT_REPAIR_MILL"]
         permission_event = data.events["EVENT_FARMER_GET_PERMISSION_FOR_ALISA"]

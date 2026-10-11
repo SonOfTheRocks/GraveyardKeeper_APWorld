@@ -65,6 +65,12 @@
     "classification": "PROGRESSION",
     "amount": 10
   },
+  "ITEM_MISS_CHAIN_HAPPINESS_10": {
+    "label": "Miss Chain - Happiness +10",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION",
+    "amount": 10
+  },
   "ITEM_EURIC_HAPPINESS_10": {
     "label": "Euric - Happiness +10",
     "dlc": "BETTER_SAVE_SOUL",
