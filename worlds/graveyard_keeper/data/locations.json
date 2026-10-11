@@ -3,23 +3,23 @@
     "label": "Yorick Reward - Meet him after the first burial",
     "parent_region": "REGION_SWEET_HOME"
   },
-  "LOCATION_TUTORIAL_ENTER_MORGUE_WITH_CORPSE": {
+  "LOCATION_TUTORIAL_REWARD_ENTER_MORGUE_WITH_CORPSE": {
     "label": "Tutorial - Enter Morgue with Corpse",
     "parent_region": "REGION_MORGUE"
   },
-  "LOCATION_TUTORIAL_GET_FIRST_FLESH": {
+  "LOCATION_TUTORIAL_REWARD_GET_FIRST_FLESH": {
     "label": "Tutorial - Get First Flesh",
     "parent_region": "REGION_MORGUE"
   },
-  "LOCATION_TUTORIAL_TALK_TO_BISHOP_1": {
+  "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_1": {
     "label": "Tutorial - Talk to Bishop (1)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
-  "LOCATION_TUTORIAL_TALK_TO_BISHOP_2": {
+  "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_2": {
     "label": "Tutorial - Talk to Bishop (2)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
-  "LOCATION_TUTORIAL_TALK_TO_BISHOP_3": {
+  "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_3": {
     "label": "Tutorial - Talk to Bishop (3)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },

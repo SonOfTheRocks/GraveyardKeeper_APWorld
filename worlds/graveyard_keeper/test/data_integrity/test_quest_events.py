@@ -173,6 +173,47 @@ class TestAllQuestEvents(unittest.TestCase):
             node_names["ghost_comes_after_players_sleep:48"],
         )
 
+    def test_tutorial_checks_form_the_forced_first_burial_chain(self):
+        enter_morgue = data.events["EVENT_TUTORIAL_ENTER_MORGUE_WITH_CORPSE"]
+        first_flesh = data.events["EVENT_TUTORIAL_GET_FIRST_FLESH"]
+        meet_bishop = data.events["EVENT_BISHOP_MEET"]
+        finish = data.events["EVENT_TUTORIAL_FINISH"]
+
+        self.assertEqual([], list(enter_morgue.required_quests))
+        self.assertEqual(
+            ["LOCATION_TUTORIAL_REWARD_ENTER_MORGUE_WITH_CORPSE"],
+            list(enter_morgue.rewards),
+        )
+        self.assertEqual(
+            ["EVENT_TUTORIAL_ENTER_MORGUE_WITH_CORPSE"],
+            list(first_flesh.required_quests),
+        )
+        self.assertEqual(["LOCATION_TUTORIAL_REWARD_GET_FIRST_FLESH"], list(first_flesh.rewards))
+        self.assertEqual(["EVENT_TUTORIAL_GET_FIRST_FLESH"], list(meet_bishop.required_quests))
+        self.assertEqual(
+            {
+                "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_1",
+                "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_2",
+                "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_3",
+                "LOCATION_BISHOP_REWARD_MEET",
+            },
+            set(meet_bishop.rewards),
+        )
+        self.assertEqual(["EVENT_BISHOP_MEET"], list(finish.required_quests))
+
+        morgue = data.regions["REGION_MORGUE"]
+        for event in (enter_morgue, first_flesh):
+            with self.subTest(event=event.location_label):
+                self.assertIn(event.rewards[0], morgue.locations)
+                self.assertEqual("REGION_MORGUE", data.locations[event.rewards[0]].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(enter_morgue.location_label, node_names["autopsi_enter:18"])
+        self.assertEqual(
+            "Receive the rusty shovel for the first burial",
+            node_names["talking_skull:95"],
+        )
+
     def test_mill_fix_conversation_chain_matches_phrase_unlocks(self):
         farmer_event = data.events["EVENT_FARMER_ASK_ABOUT_ALISA"]
         miller_event = data.events["EVENT_MILLER_ASK_TO_FIX_MILL"]
@@ -1008,8 +1049,8 @@ class TestAllQuestEvents(unittest.TestCase):
             with self.subTest(node_id=node_id):
                 self.assertEqual(ceremony.location_label, node_names[node_id])
 
-        self.assertEqual([], list(meet.required_quests))
-        self.assertEqual(1, len(meet.rewards))
+        self.assertEqual(["EVENT_TUTORIAL_GET_FIRST_FLESH"], list(meet.required_quests))
+        self.assertEqual(4, len(meet.rewards))
         self.assertEqual(["EVENT_BISHOP_MEET"], list(church_open.required_quests))
         self.assertEqual({AreaPointData("OLD_GRAVEYARD", 5)}, set(church_open.required_area_points))
         self.assertEqual(2, len(church_open.rewards))

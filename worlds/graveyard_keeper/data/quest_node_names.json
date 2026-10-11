@@ -1,4 +1,5 @@
 {
+  "autopsi_enter:18": "Enter the morgue with the first corpse",
   "ghost_comes_after_players_sleep:48": "Meet Yorick after the first burial",
   "npc_actress:30:option:0": "Prove your worth to Ms. Charm",
   "npc_actress:30:option:2": "Report back to Ms. Charm about the fake coins",
@@ -152,6 +153,7 @@
   "npc_cultist:106:option:0": "Prove you are the Graveyard Keeper to Snake",
   "npc_cultist:106:option:3": "Give Snake the active Keeper's key",
   "table_cultist_quest:11": "Take the Keeper's Journal from Snake's table",
+  "talking_skull:95": "Receive the rusty shovel for the first burial",
   "npc_cultist:106:option:4": "Give Snake a bucket of blood",
   "npc_cultist:106:option:5": "Give Snake bloody nails",
   "npc_cultist:106:option:6": "Ask Snake about doing business",

@@ -1,9 +1,32 @@
 {
+  "EVENT_TUTORIAL_ENTER_MORGUE_WITH_CORPSE": {
+    "comment": "Flow: entering the morgue runs autopsi_enter once while demo_enter is 0; its node 18 drops the tutorial sandwich",
+    "location_label": "Enter the morgue with the first corpse",
+    "item_label": "Entered the morgue with the first corpse",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_TUTORIAL_REWARD_ENTER_MORGUE_WITH_CORPSE"]
+  },
+  "EVENT_TUTORIAL_GET_FIRST_FLESH": {
+    "comment": "GameData: the first flesh extraction emits item_flesh, whose one-time quest runs on_skull_talk_autopsi; that flow starts Gerry's cemetery tutorial and the forced first-burial sequence",
+    "location_label": "Extract flesh from the first corpse",
+    "item_label": "Extracted flesh from the first corpse",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_TUTORIAL_ENTER_MORGUE_WITH_CORPSE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_TUTORIAL_REWARD_GET_FIRST_FLESH"]
+  },
   "EVENT_TUTORIAL_FINISH": {
+    "comment": "The Bishop's forced introduction after the first burial sets in_tutorial to 0",
     "location_label": "Finish tutorial",
     "item_label": "Finished tutorial",
     "dlc": "BASE_GAME",
-    "required_quests": [],
+    "required_quests": ["EVENT_BISHOP_MEET"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -754,15 +777,20 @@
   },
 
   "EVENT_BISHOP_MEET": {
-    "comment": "Flow: npc_bishop intro event sets met_bishop, unlocks the Grave plate technology, and starts bishop_5_qual",
+    "comment": "Flow: after first flesh, on_skull_talk_autopsi leads through Gerry's forced shovel and first-burial tutorial; npc_bishop intro then drops the starting tools, unlocks Grave plate and the Bishop portrait, sets met_bishop and in_tutorial=0, and starts bishop_5_qual",
     "location_label": "Meet the Bishop",
     "item_label": "Met the Bishop",
     "dlc": "BASE_GAME",
-    "required_quests": [],
+    "required_quests": ["EVENT_TUTORIAL_GET_FIRST_FLESH"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": ["LOCATION_BISHOP_REWARD_MEET"]
+    "rewards": [
+      "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_1",
+      "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_2",
+      "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_3",
+      "LOCATION_BISHOP_REWARD_MEET"
+    ]
   },
   "EVENT_BISHOP_ASK_ABOUT_SOUP_KITCHEN": {
     "comment": "Flow: npc_bishop:75:option:4 (@bishop_4_0) unlocks The idea of the earth and @bishop_5_1",
