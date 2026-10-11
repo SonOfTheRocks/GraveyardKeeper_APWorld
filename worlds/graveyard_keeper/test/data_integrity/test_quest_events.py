@@ -176,6 +176,79 @@ class TestAllQuestEvents(unittest.TestCase):
         node_names = load_json_data("quest_node_names.json")
         self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:4"])
 
+    def test_clotho_lost_memories_long_route_has_three_independent_rewards(self):
+        cauldron = data.events["EVENT_CLOTHO_GIVE_CAULDRON"]
+        powder = data.events["EVENT_CLOTHO_GIVE_HEALTH_POWDER"]
+        bee = data.events["EVENT_CLOTHO_GIVE_BEE"]
+
+        self.assertEqual([], list(cauldron.required_quests))
+        self.assertEqual(["ITEM_CAULDRON"], list(cauldron.required_quest_items))
+        self.assertEqual(["LOCATION_CLOTHO_REWARD_GIVE_CAULDRON"], list(cauldron.rewards))
+
+        for ingredient_event in (powder, bee):
+            self.assertEqual(
+                ["EVENT_CLOTHO_GIVE_CAULDRON"],
+                list(ingredient_event.required_quests),
+            )
+        self.assertNotIn("EVENT_CLOTHO_GIVE_BEE", powder.required_quests)
+        self.assertNotIn("EVENT_CLOTHO_GIVE_HEALTH_POWDER", bee.required_quests)
+        self.assertEqual(["ITEM_HEALTH_POWDER"], list(powder.required_craft_items))
+        self.assertEqual(["ITEM_BEE"], list(bee.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_CLOTHO_REWARD_GIVE_HEALTH_POWDER"],
+            list(powder.rewards),
+        )
+        self.assertEqual(["LOCATION_CLOTHO_REWARD_GIVE_BEE"], list(bee.rewards))
+
+        clotho_lost_memories_rewards = {
+            location_key
+            for event in (cauldron, powder, bee)
+            for location_key in event.rewards
+        }
+        self.assertEqual(
+            {
+                "LOCATION_CLOTHO_REWARD_GIVE_CAULDRON",
+                "LOCATION_CLOTHO_REWARD_GIVE_HEALTH_POWDER",
+                "LOCATION_CLOTHO_REWARD_GIVE_BEE",
+            },
+            clotho_lost_memories_rewards,
+        )
+        self.assertFalse(
+            any("HEALTH_POTION" in location_key for location_key in data.locations),
+            "The exclusive health-potion shortcut must reuse the three long-route checks",
+        )
+
+        self.assertEqual(10, data.items["ITEM_CLOTHO_HAPPINESS_10"].amount)
+        self.assertEqual(5, data.items["ITEM_CLOTHO_HAPPINESS_5"].amount)
+        self.assertEqual(
+            ItemClassification.progression,
+            data.items["ITEM_CLOTHO_HAPPINESS_10"].classification,
+        )
+        self.assertEqual(
+            ItemClassification.progression,
+            data.items["ITEM_CLOTHO_HAPPINESS_5"].classification,
+        )
+
+        swamp = data.regions["REGION_SWAMP"]
+        for event_name, event in (
+            ("EVENT_CLOTHO_GIVE_CAULDRON", cauldron),
+            ("EVENT_CLOTHO_GIVE_HEALTH_POWDER", powder),
+            ("EVENT_CLOTHO_GIVE_BEE", bee),
+        ):
+            with self.subTest(event=event_name):
+                self.assertIn(event_name, swamp.events)
+                self.assertEqual(1, len(event.rewards))
+                self.assertIn(event.rewards[0], swamp.locations)
+                self.assertEqual("REGION_SWAMP", data.locations[event.rewards[0]].parent_region)
+
+        self.assertNotIn("LOCATION_CLOTHO_MEET", data.locations)
+        self.assertNotIn("LOCATION_CLOTHO_ACCEPT_QUEST_LOST_MEMORIES", data.locations)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(cauldron.location_label, node_names["npc_witch:9:option:0"])
+        self.assertEqual(powder.location_label, node_names["npc_witch:9:option:2"])
+        self.assertEqual(bee.location_label, node_names["npc_witch:9:option:3"])
+
     def test_miss_chain_perfume_chain_matches_flow_requirements(self):
         ask = data.events["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"]
         deliver = data.events["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"]

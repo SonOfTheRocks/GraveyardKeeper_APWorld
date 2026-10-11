@@ -595,12 +595,16 @@
   },
 
 
-  "LOCATION_CLOTHO_MEET": {
-    "label": "Clotho - Meet Clotho",
+  "LOCATION_CLOTHO_REWARD_GIVE_CAULDRON": {
+    "label": "Clotho Reward - Give her the cauldron",
     "parent_region": "REGION_SWAMP"
   },
-  "LOCATION_CLOTHO_ACCEPT_QUEST_LOST_MEMORIES": {
-    "label": "Clotho - Accept Quest - Lost Memories",
+  "LOCATION_CLOTHO_REWARD_GIVE_HEALTH_POWDER": {
+    "label": "Clotho Reward - Give her health powder",
+    "parent_region": "REGION_SWAMP"
+  },
+  "LOCATION_CLOTHO_REWARD_GIVE_BEE": {
+    "label": "Clotho Reward - Give her a bee",
     "parent_region": "REGION_SWAMP"
   },
   "LOCATION_CLOTHO_REWARD_GIVE_HONEY": {

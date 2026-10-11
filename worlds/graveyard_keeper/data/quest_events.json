@@ -528,6 +528,39 @@
     "required_craft_items": ["ITEM_HICCUP_GRASS"],
     "rewards": ["LOCATION_MERCHANT_REWARD_HICCUP_CURE"]
   },
+  "EVENT_CLOTHO_GIVE_CAULDRON": {
+    "comment": "Flow: after Clotho's automatic intro, npc_witch:9:option:0 (сlotho_vat) has Answer.price caldron and Answer.reward +10 Clotho happiness; it unlocks the independent health-powder and bee turn-ins and immediately blacklists the alternative сlotho_pot health-potion route. The intro is folded into this rewarded event.",
+    "location_label": "Give Clotho the cauldron",
+    "item_label": "Gave Clotho the cauldron",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_CAULDRON"],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_CLOTHO_REWARD_GIVE_CAULDRON"]
+  },
+  "EVENT_CLOTHO_GIVE_HEALTH_POWDER": {
+    "comment": "Flow: npc_witch:9:option:2 (@сlotho_intence) has Answer.price alchemy_1_yellow and Answer.reward +5 Clotho happiness; it can be turned in before or after the bee",
+    "location_label": "Give Clotho health powder",
+    "item_label": "Gave Clotho health powder",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CLOTHO_GIVE_CAULDRON"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_HEALTH_POWDER"],
+    "rewards": ["LOCATION_CLOTHO_REWARD_GIVE_HEALTH_POWDER"]
+  },
+  "EVENT_CLOTHO_GIVE_BEE": {
+    "comment": "Flow: npc_witch:9:option:3 (@сlotho_bee) has Answer.price bee and Answer.reward +5 Clotho happiness; it can be turned in before or after the health powder. Completing both ingredient turn-ins drops three pot_heal as an asymmetric vanilla bonus, which intentionally remains untouched and is not an AP location.",
+    "location_label": "Give Clotho a bee",
+    "item_label": "Gave Clotho a bee",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CLOTHO_GIVE_CAULDRON"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_BEE"],
+    "rewards": ["LOCATION_CLOTHO_REWARD_GIVE_BEE"]
+  },
   "EVENT_CLOTHO_ASK_ABOUT_MERCHANT_CURSE": {
     "comment": "Flow: npc_witch:107:option:0 (@сlotho_merch); unlocks the spices recipe and @merchant_on_cure",
     "location_label": "Ask Clotho about the Merchant's curse",

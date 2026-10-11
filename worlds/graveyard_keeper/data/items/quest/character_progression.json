@@ -29,6 +29,18 @@
     "classification": "PROGRESSION",
     "amount": 10
   },
+  "ITEM_CLOTHO_HAPPINESS_10": {
+    "label": "Clotho - Happiness +10",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION",
+    "amount": 10
+  },
+  "ITEM_CLOTHO_HAPPINESS_5": {
+    "label": "Clotho - Happiness +5",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION",
+    "amount": 5
+  },
   "ITEM_MS_CHARM_HAPPINESS_10": {
     "label": "Ms. Charm - Happiness +10",
     "dlc": "BASE_GAME",
