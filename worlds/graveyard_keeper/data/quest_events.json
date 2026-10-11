@@ -1012,6 +1012,17 @@
     "required_craft_items": ["ITEM_MAGGOT"],
     "rewards": ["LOCATION_LIGHTHOUSE_KEEPER_REWARD_GET_NECRONOMICON"]
   },
+  "EVENT_LIGHTHOUSE_KEEPER_TRADE_MOTHS_FOR_FISHING_ROD": {
+    "comment": "Flow: the automatic Lighthouse Keeper intro unlocks @light_keeper_rode_1; that rewardless conversation is folded into option 4, which requires six moths, completes lightkeeper_moth, and drops fishing_rod_0. Renewable quantities are intentionally not modeled.",
+    "location_label": "Trade moths for a fishing rod",
+    "item_label": "Traded moths for a fishing rod",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_MOTH"],
+    "rewards": ["LOCATION_LIGHTHOUSE_KEEPER_REWARD_TRADE_MOTHS_FOR_FISHING_ROD"]
+  },
   "EVENT_ASTROLOGER_LEARN_ABOUT_ESMERALDA": {
     "comment": "gave acid and rest. tools -> unlock phrases snake_magic_item",
     "location_label": "Learn about Esmeralda",

@@ -157,6 +157,25 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:1"])
 
+    def test_lighthouse_keeper_fishing_rod_trade_matches_flow_requirements(self):
+        event = data.events["EVENT_LIGHTHOUSE_KEEPER_TRADE_MOTHS_FOR_FISHING_ROD"]
+
+        self.assertEqual([], list(event.required_quests))
+        self.assertEqual([], list(event.required_quest_items))
+        self.assertEqual(["ITEM_MOTH"], list(event.required_craft_items))
+        self.assertEqual(
+            ["LOCATION_LIGHTHOUSE_KEEPER_REWARD_TRADE_MOTHS_FOR_FISHING_ROD"],
+            list(event.rewards),
+        )
+
+        lighthouse = data.regions["REGION_LIGHTHOUSE"]
+        self.assertIn("EVENT_LIGHTHOUSE_KEEPER_TRADE_MOTHS_FOR_FISHING_ROD", lighthouse.events)
+        self.assertIn(event.rewards[0], lighthouse.locations)
+        self.assertEqual("REGION_LIGHTHOUSE", data.locations[event.rewards[0]].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:4"])
+
     def test_miss_chain_perfume_chain_matches_flow_requirements(self):
         ask = data.events["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"]
         deliver = data.events["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"]
