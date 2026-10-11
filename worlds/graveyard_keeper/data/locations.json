@@ -514,6 +514,22 @@
     "label": "Horadric Reward - Talk to him about the blacksmith",
     "parent_region": "REGION_THE_DEAD_HORSE"
   },
+  "LOCATION_HORADRIC_REWARD_COLLECT_SLIME_QUEST_REWARD_1": {
+    "label": "Horadric Reward - Collect the slime quest reward (1)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_HORADRIC_REWARD_COLLECT_SLIME_QUEST_REWARD_2": {
+    "label": "Horadric Reward - Collect the slime quest reward (2)",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_HORADRIC_REWARD_TALK_AFTER_CHURCH_UPGRADE": {
+    "label": "Horadric Reward - Talk after upgrading the church",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
+  "LOCATION_HORADRIC_REWARD_GIVE_GOLD_BEER": {
+    "label": "Horadric Reward - Give him gold-quality beer",
+    "parent_region": "REGION_THE_DEAD_HORSE"
+  },
 
 
   "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_1": {

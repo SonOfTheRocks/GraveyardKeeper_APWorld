@@ -700,6 +700,55 @@ class TestAllQuestEvents(unittest.TestCase):
             data.items["ITEM_KREZVOLD_HAPPINESS_10"].classification,
         )
 
+    def test_horadric_side_rewards_match_their_interaction_event_sources(self):
+        slimes = data.events["EVENT_HORADRIC_COLLECT_SLIME_QUEST_REWARD"]
+        church = data.events["EVENT_HORADRIC_TALK_AFTER_CHURCH_UPGRADE"]
+        beer = data.events["EVENT_HORADRIC_GIVE_GOLD_BEER"]
+
+        self.assertEqual(
+            ["EVENT_KREZVOLD_COMPLETE_SLIME_QUEST"],
+            list(slimes.required_quests),
+        )
+        self.assertEqual(2, len(slimes.rewards))
+        self.assertEqual(
+            ["EVENT_BISHOP_UPGRADE_TO_BIG_CHURCH"],
+            list(church.required_quests),
+        )
+        self.assertEqual(1, len(church.rewards))
+        self.assertEqual(
+            ["EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING"],
+            list(beer.required_quests),
+        )
+        self.assertEqual(["ITEM_A_MUG_OF_BEER_GOLD"], list(beer.required_craft_items))
+        self.assertEqual(1, len(beer.rewards))
+
+        horadric_happiness = data.items["ITEM_HORADRIC_HAPPINESS_10"]
+        self.assertEqual(ItemClassification.progression, horadric_happiness.classification)
+        self.assertEqual(10, horadric_happiness.amount)
+
+        dead_horse = data.regions["REGION_THE_DEAD_HORSE"]
+        for event_name, event in (
+            ("EVENT_HORADRIC_COLLECT_SLIME_QUEST_REWARD", slimes),
+            ("EVENT_HORADRIC_TALK_AFTER_CHURCH_UPGRADE", church),
+            ("EVENT_HORADRIC_GIVE_GOLD_BEER", beer),
+        ):
+            with self.subTest(event=event_name):
+                self.assertIn(event_name, dead_horse.events)
+                for reward in event.rewards:
+                    self.assertIn(reward, dead_horse.locations)
+                    self.assertEqual("REGION_THE_DEAD_HORSE", data.locations[reward].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        expected_names = {
+            "npc_tavern owner:350": slimes.location_label,
+            "npc_tavern owner:361": slimes.location_label,
+            "npc_tavern owner:468": church.location_label,
+            "npc_tavern owner:13:option:7": beer.location_label,
+        }
+        for node_id, expected_name in expected_names.items():
+            with self.subTest(node_id=node_id):
+                self.assertEqual(expected_name, node_names[node_id])
+
     def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
         crate = data.recipes["ITEM_TRADE_CRATE"]

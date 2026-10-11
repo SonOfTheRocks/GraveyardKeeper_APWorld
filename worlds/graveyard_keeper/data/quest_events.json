@@ -1992,6 +1992,42 @@
     "required_craft_items": ["ITEM_GREEN_JELLY"],
     "rewards": ["LOCATION_KREZVOLD_REWARD_KILL_SLIMES"]
   },
+  "EVENT_HORADRIC_COLLECT_SLIME_QUEST_REWARD": {
+    "comment": "Flow: completing Krezvold's slime task adds Horadric's after_slime interaction; talking to Horadric drops one copper-quality beer and grants 10 Horadric happiness",
+    "location_label": "Collect the slime quest reward from Horadric",
+    "item_label": "Collected the slime quest reward from Horadric",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_KREZVOLD_COMPLETE_SLIME_QUEST"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_HORADRIC_REWARD_COLLECT_SLIME_QUEST_REWARD_1",
+      "LOCATION_HORADRIC_REWARD_COLLECT_SLIME_QUEST_REWARD_2"
+    ]
+  },
+  "EVENT_HORADRIC_TALK_AFTER_CHURCH_UPGRADE": {
+    "comment": "Flow: Bishop's big-church upgrade adds Horadric's horadric_after_church_upgrade interaction, which grants 10 Horadric happiness",
+    "location_label": "Talk to Horadric after upgrading the church",
+    "item_label": "Talked to Horadric after upgrading the church",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_UPGRADE_TO_BIG_CHURCH"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_HORADRIC_REWARD_TALK_AFTER_CHURCH_UPGRADE"]
+  },
+  "EVENT_HORADRIC_GIVE_GOLD_BEER": {
+    "comment": "Flow: the first buffet witch burning adds Horadric's rewardless horadric_after_burger_witch interaction, which unlocks @horadric_beer_1; that setup is folded into option 7, whose Answer.price is one gold-quality beer and whose reward is 10 Horadric happiness",
+    "location_label": "Give Horadric gold-quality beer",
+    "item_label": "Gave Horadric gold-quality beer",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_A_MUG_OF_BEER_GOLD"],
+    "rewards": ["LOCATION_HORADRIC_REWARD_GIVE_GOLD_BEER"]
+  },
 
   "EVENT_DIG_ASK_FOR_BOOZE": {
     "comment": "Flow prerequisite for npc_cultist:106:option:23; Dig asks the player to obtain booze from Snake",

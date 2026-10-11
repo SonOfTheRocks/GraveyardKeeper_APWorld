@@ -23,6 +23,12 @@
     "classification": "PROGRESSION",
     "amount": 10
   },
+  "ITEM_HORADRIC_HAPPINESS_10": {
+    "label": "Horadric - Happiness +10",
+    "dlc": "BASE_GAME",
+    "classification": "PROGRESSION",
+    "amount": 10
+  },
   "ITEM_MS_CHARM_HAPPINESS_10": {
     "label": "Ms. Charm - Happiness +10",
     "dlc": "BASE_GAME",
