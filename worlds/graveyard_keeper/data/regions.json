@@ -2,9 +2,12 @@
   "REGION_SWEET_HOME": {
     "label": "Sweet Home",
     "dlc": "BASE_GAME",
-    "locations": [],
+    "locations": [
+      "LOCATION_YORICK_REWARD_VISIT_AFTER_FIRST_BURIAL"
+    ],
     "events": [
-      "EVENT_PLAYER_KNOWS_PORTAL"
+      "EVENT_PLAYER_KNOWS_PORTAL",
+      "EVENT_YORICK_VISIT_AFTER_FIRST_BURIAL"
     ],
     "exits": [
       "REGION_TECH_TREE_MENU",

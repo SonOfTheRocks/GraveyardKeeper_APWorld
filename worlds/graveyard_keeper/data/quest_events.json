@@ -37,6 +37,17 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_YORICK_VISIT_AFTER_FIRST_BURIAL": {
+    "comment": "Flow: the first burial starts ghost_come_after_1st_burial; after npc_bishop intro clears in_tutorial, sleep runs ghost_comes_after_players_sleep, whose node 48 drops the first exhumation permission",
+    "location_label": "Meet Yorick after the first burial",
+    "item_label": "Met Yorick after the first burial",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_BISHOP_MEET"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_YORICK_REWARD_VISIT_AFTER_FIRST_BURIAL"]
+  },
 
   "EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP": {
     "comment": "Flow: npc_royal_box:40:option:0 (mailbox_1a_1_al); the initial citizen-status payment rewards +30 Royal Services happiness",

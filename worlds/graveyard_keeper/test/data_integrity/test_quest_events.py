@@ -153,6 +153,26 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(take_journal.location_label, node_names["table_cultist_quest:11"])
         self.assertEqual(give_journal.location_label, node_names["npc_astrologer:44:option:2"])
 
+    def test_yorick_first_visit_follows_the_forced_bishop_tutorial(self):
+        event = data.events["EVENT_YORICK_VISIT_AFTER_FIRST_BURIAL"]
+
+        self.assertEqual(["EVENT_BISHOP_MEET"], list(event.required_quests))
+        self.assertEqual(
+            ["LOCATION_YORICK_REWARD_VISIT_AFTER_FIRST_BURIAL"],
+            list(event.rewards),
+        )
+
+        sweet_home = data.regions["REGION_SWEET_HOME"]
+        self.assertIn("EVENT_YORICK_VISIT_AFTER_FIRST_BURIAL", sweet_home.events)
+        self.assertIn(event.rewards[0], sweet_home.locations)
+        self.assertEqual("REGION_SWEET_HOME", data.locations[event.rewards[0]].parent_region)
+
+        node_names = load_json_data("quest_node_names.json")
+        self.assertEqual(
+            event.location_label,
+            node_names["ghost_comes_after_players_sleep:48"],
+        )
+
     def test_mill_fix_conversation_chain_matches_phrase_unlocks(self):
         farmer_event = data.events["EVENT_FARMER_ASK_ABOUT_ALISA"]
         miller_event = data.events["EVENT_MILLER_ASK_TO_FIX_MILL"]

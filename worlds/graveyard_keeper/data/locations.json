@@ -1,4 +1,8 @@
 {
+  "LOCATION_YORICK_REWARD_VISIT_AFTER_FIRST_BURIAL": {
+    "label": "Yorick Reward - Meet him after the first burial",
+    "parent_region": "REGION_SWEET_HOME"
+  },
   "LOCATION_TUTORIAL_ENTER_MORGUE_WITH_CORPSE": {
     "label": "Tutorial - Enter Morgue with Corpse",
     "parent_region": "REGION_MORGUE"
