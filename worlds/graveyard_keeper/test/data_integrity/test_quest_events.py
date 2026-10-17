@@ -794,6 +794,32 @@ class TestAllQuestEvents(unittest.TestCase):
         ):
             self.assertIn(event_key, data.regions["REGION_CAMP"].events)
 
+    def test_gypsy_baron_kebab_recipe_quest_matches_flow_requirements(self):
+        ask = data.events["EVENT_GYPSY_BARON_ASK_FOR_KEBAB_RECIPES"]
+        fillets = data.events["EVENT_GYPSY_BARON_GIVE_SILVER_FISH_FILLETS"]
+        camp = data.regions["REGION_CAMP"]
+
+        self.assertEqual([], list(ask.required_quests))
+        self.assertEqual([], list(ask.rewards))
+        self.assertEqual(
+            ["EVENT_GYPSY_BARON_ASK_FOR_KEBAB_RECIPES"],
+            list(fillets.required_quests),
+        )
+        self.assertEqual(
+            ["ITEM_QUALITY_FISH_FILLET_SILVER"],
+            list(fillets.required_craft_items),
+        )
+        self.assertEqual(
+            ["LOCATION_GYPSY_BARON_REWARD_GET_KEBAB_RECIPES"],
+            list(fillets.rewards),
+        )
+        for event_key in (
+            "EVENT_GYPSY_BARON_ASK_FOR_KEBAB_RECIPES",
+            "EVENT_GYPSY_BARON_GIVE_SILVER_FISH_FILLETS",
+        ):
+            self.assertIn(event_key, camp.events)
+        self.assertIn("LOCATION_GYPSY_BARON_REWARD_GET_KEBAB_RECIPES", camp.locations)
+
     def test_krezvold_tutorial_questline_matches_flow_requirements(self):
         get_letter = data.events["EVENT_HORADRIC_GET_BLACKSMITH_LETTER"]
         give_letter = data.events["EVENT_KREZVOLD_GIVE_BLACKSMITH_LETTER"]

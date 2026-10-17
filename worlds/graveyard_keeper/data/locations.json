@@ -162,6 +162,10 @@
     "label": "Gypsy Baron Reward - Tell him his friend is free",
     "parent_region": "REGION_CAMP"
   },
+  "LOCATION_GYPSY_BARON_REWARD_GET_KEBAB_RECIPES": {
+    "label": "Gypsy Baron Reward - Give him silver-quality fish fillets",
+    "parent_region": "REGION_CAMP"
+  },
 
 
   "LOCATION_DONKEY_MEET": {

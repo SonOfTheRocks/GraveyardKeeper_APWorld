@@ -2193,6 +2193,28 @@
     "required_craft_items": [],
     "rewards": []
   },
+  "EVENT_GYPSY_BARON_ASK_FOR_KEBAB_RECIPES": {
+    "comment": "Flow: npc_gypsy:11:option:3 (gypsy_recipe_1) is initially available, starts gypsy_fish, and unlocks @gypsy_recipe_done_1",
+    "location_label": "Ask the Gypsy Baron for his kebab recipes",
+    "item_label": "Asked the Gypsy Baron for his kebab recipes",
+    "dlc": "BASE_GAME",
+    "required_quests": [],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": []
+  },
+  "EVENT_GYPSY_BARON_GIVE_SILVER_FISH_FILLETS": {
+    "comment": "Flow: npc_gypsy:11:option:4 (@gypsy_recipe_done_1) requires fillet_fish_red quality 2 and completes gypsy_fish. GameSave restores the single Fish shish kebab technology from that blacklisted phrase; its three recipes are one technology reward and therefore one AP check. Renewable quantities are intentionally not modeled.",
+    "location_label": "Give the Gypsy Baron silver-quality fish fillets",
+    "item_label": "Gave the Gypsy Baron silver-quality fish fillets",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_GYPSY_BARON_ASK_FOR_KEBAB_RECIPES"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": ["ITEM_QUALITY_FISH_FILLET_SILVER"],
+    "rewards": ["LOCATION_GYPSY_BARON_REWARD_GET_KEBAB_RECIPES"]
+  },
 
   "EVENT_TAVERN_EVENT_COMEDY_STANDUP": {
     "comment": "Flow: npc_light_keeper goto_search_hook_cutscene unlocks players_tavern_builddesk::tavern_stand_up; the first stand-up drops millers_invitation directly, while lighthouse_keeper_after_1st_standup is a fallback path for the same item",
