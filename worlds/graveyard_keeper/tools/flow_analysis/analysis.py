@@ -385,10 +385,32 @@ def _is_positive(value: Any) -> bool:
     return isinstance(value, (int, float)) and not isinstance(value, bool) and value > 0
 
 
+def _is_overhead_roundtrip_drop(graph: Graph, node_id: str) -> bool:
+    """Whether a drop only transfers the player's displayed overhead item.
+
+    Sermon setup reads the currently selected prayer with Flow_GetOverhead,
+    passes that exact Item into Flow_DropItem, and immediately restores the
+    overhead display.  This is presentation/inventory plumbing, not a newly
+    awarded item.
+    """
+    item_sources = graph.incoming_data.get((node_id, "Item"), [])
+    reads_overhead = any(
+        graph.nodes[edge.source].type_name == "Flow_GetOverhead"
+        for edge in item_sources
+    )
+    restores_overhead = any(
+        graph.nodes[edge.target].type_name == "Flow_SetOverhead"
+        for edge in graph.outgoing_flow[node_id]
+    )
+    return reads_overhead and restores_overhead
+
+
 def _direct_findings(graph: Graph, resolver: ValueResolver) -> list[RewardFinding]:
     findings: list[RewardFinding] = []
     for node in graph.nodes.values():
         if node.type_name == "Flow_DropItem":
+            if _is_overhead_roundtrip_drop(graph, node.id):
+                continue
             item = resolver.resolve_input(node.id, "Item")
             if isinstance(item, SymbolicValue) and item.kind == "item" and item.resource_id is not None:
                 resource, amount = item, item.amount

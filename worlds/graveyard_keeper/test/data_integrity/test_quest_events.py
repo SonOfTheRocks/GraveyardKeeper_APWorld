@@ -969,6 +969,7 @@ class TestAllQuestEvents(unittest.TestCase):
     def test_bishop_base_game_questline_matches_flow_requirements(self):
         meet = data.events["EVENT_BISHOP_MEET"]
         church_open = data.events["EVENT_CHURCH_OPEN"]
+        first_sermon = data.events["EVENT_BISHOP_HOLD_FIRST_SERMON"]
         ask_bowls = data.events["EVENT_BISHOP_ASK_ABOUT_SOUP_KITCHEN"]
         bowls = data.events["EVENT_BISHOP_GIVE_CERAMIC_BOWLS"]
         graveyard = data.events["EVENT_BISHOP_IMPROVE_GRAVEYARD"]
@@ -992,7 +993,15 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["EVENT_BISHOP_MEET"], list(church_open.required_quests))
         self.assertEqual({AreaPointData("OLD_GRAVEYARD", 5)}, set(church_open.required_area_points))
         self.assertEqual(2, len(church_open.rewards))
-        self.assertEqual(["EVENT_CHURCH_OPEN"], list(ask_bowls.required_quests))
+        self.assertEqual(["EVENT_CHURCH_OPEN"], list(first_sermon.required_quests))
+        self.assertEqual(["ITEM_CASUAL_PRAYER"], list(first_sermon.required_quest_items))
+        self.assertEqual(3, len(first_sermon.rewards))
+        self.assertTrue(all("REWARD" in reward for reward in first_sermon.rewards))
+        self.assertTrue(all(
+            data.locations[reward].parent_region == "REGION_CHURCH"
+            for reward in first_sermon.rewards
+        ))
+        self.assertEqual(["EVENT_BISHOP_HOLD_FIRST_SERMON"], list(ask_bowls.required_quests))
         self.assertEqual(["ITEM_CERAMIC_BOWLS"], list(bowls.required_craft_items))
         self.assertEqual(2, len(bowls.rewards))
 

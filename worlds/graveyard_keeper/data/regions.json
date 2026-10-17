@@ -255,8 +255,14 @@
   "REGION_CHURCH": {
     "label": "Church",
     "dlc": "BASE_GAME",
-    "locations": [],
-    "events": [],
+    "locations": [
+      "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_1",
+      "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_2",
+      "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_3"
+    ],
+    "events": [
+      "EVENT_BISHOP_HOLD_FIRST_SERMON"
+    ],
     "exits": [
       "REGION_ALCHEMY_LAB",
       "REGION_OLD_GRAVEYARD"

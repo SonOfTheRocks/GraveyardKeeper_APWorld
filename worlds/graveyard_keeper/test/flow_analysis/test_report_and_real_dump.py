@@ -204,6 +204,20 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertEqual([], summary.item_drops)
         self.assertEqual(["papers_shown"], summary.phrases_unlocked)
 
+    def test_overhead_item_roundtrip_is_not_an_item_reward(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "Flow_GetOverhead"),
+            node(2, "Flow_DropItem", {"Item": None, "Amount": stored(1)}),
+            node(3, "Flow_SetOverhead"),
+        ], [
+            edge(1, "Item", 2, "Item", "Item"),
+            edge(2, "Out", 3, "In"),
+        ]))
+
+        analysis = analyze_graph(graph)
+
+        self.assertEqual([], analysis.findings)
+
     def test_item_return_excess_remains_a_reward(self) -> None:
         graph = parse_graph(self.write_graph([
             node(1, "Flow_MultiAnswer", {"#0": {"$type": "AnswerData"}}, answers=["trade"]),
@@ -939,6 +953,15 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
 
         self.assertTrue(finding["isDebug"])
         self.assertTrue(data["details"][finding["id"]]["isDebug"])
+
+    def test_detached_legacy_first_sermon_rewards_are_marked_debug(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(100, "Flow_DropItem", {"Res_id": stored("faith"), "Amount": stored(1)}),
+        ], [], name="on_start_preaching"))
+
+        data = build_quest_graph_data([analyze_graph(graph)])
+
+        self.assertTrue(data["details"]["on_start_preaching:100"]["isDebug"])
 
     def test_real_horadric_letter_function_is_not_duplicated_for_leave(self) -> None:
         if not TAVERN_OWNER_DUMP.exists():

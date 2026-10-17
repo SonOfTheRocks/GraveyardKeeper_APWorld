@@ -797,7 +797,7 @@
     "location_label": "Ask Bishop about the soup kitchen",
     "item_label": "Asked Bishop about the soup kitchen",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_quests": ["EVENT_BISHOP_HOLD_FIRST_SERMON"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -3108,7 +3108,7 @@
   },
 
   "EVENT_CHURCH_OPEN": {
-    "comment": "Flow: npc_bishop:75:option:2 has graveyard_quality 5 as Answer.price, +10 Bishop happiness as Answer.reward, and opens the church",
+    "comment": "Flow: npc_bishop:75:option:2 has graveyard_quality 5 as Answer.price, grants +10 Bishop happiness, and opens the church. The forced npc_bishop event_open_church aftermath sets first_sermon and first_time_preaching and drops b_empty (the Casual prayer), so both guaranteed rewards belong to this event.",
     "location_label": "Open church",
     "item_label": "Church opened",
     "dlc": "BASE_GAME",
@@ -3120,6 +3120,21 @@
     "rewards": [
       "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_1",
       "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_2"
+    ]
+  },
+  "EVENT_BISHOP_HOLD_FIRST_SERMON": {
+    "comment": "Flow: PrayCraftGUI runs pray after the player selects the Casual prayer at the church pulpit. With first_sermon set by EVENT_CHURCH_OPEN, pray nodes 26, 28, and 30 each drop one Faith, then fire on_after_first_time_preaching. The matching npc_bishop event unlocks Research and @bishop_4_0. The similarly named on_start_preaching nodes 100/102/104 are a disconnected legacy fragment and are not counted.",
+    "location_label": "Hold your first sermon",
+    "item_label": "Held your first sermon",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_happiness": [],
+    "required_quest_items": ["ITEM_CASUAL_PRAYER"],
+    "required_craft_items": [],
+    "rewards": [
+      "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_1",
+      "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_2",
+      "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_3"
     ]
   },
   "EVENT_CORPSE_HATCH_REPAIRED": {

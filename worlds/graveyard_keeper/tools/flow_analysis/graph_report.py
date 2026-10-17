@@ -18,11 +18,22 @@ CONTENT_PACKS = ("Base Game", "Better Call Soul", "Game of Crone", "Stranger Sin
 # interactions rather than player quest progression.  Keep them in the payload
 # for diagnostics, while letting the HTML hide them by default.
 DEBUG_GRAPH_NAMES = frozenset({"body_spawn", "priest_speak"})
+DEBUG_NODE_REFERENCES = frozenset({
+    # Detached duplicate of pray's live first-sermon branch.  It has no flow
+    # entry in on_start_preaching and the real PrayCraftGUI path runs `pray`.
+    "on_start_preaching:100",
+    "on_start_preaching:102",
+    "on_start_preaching:104",
+})
 
 
 def _is_debug_graph(graph_name: str) -> bool:
     normalized = graph_name.casefold()
     return normalized.startswith("test_") or normalized in DEBUG_GRAPH_NAMES
+
+
+def _is_debug_node(graph_name: str, reference: str) -> bool:
+    return _is_debug_graph(graph_name) or reference in DEBUG_NODE_REFERENCES
 
 
 def load_quest_node_names(path: Path | None) -> dict[str, str]:
@@ -1774,7 +1785,7 @@ def build_quest_graph_data(analyses: list[GraphAnalysis],
         for node_id in unused_bridges:
             details.pop(node_id, None)
     for node in nodes:
-        is_debug = _is_debug_graph(node["graph"])
+        is_debug = _is_debug_node(node["graph"], node["id"])
         node["isDebug"] = is_debug
         details[node["id"]]["isDebug"] = is_debug
     for node in nodes:

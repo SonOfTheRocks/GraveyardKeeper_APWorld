@@ -37,6 +37,9 @@ function result is rendered once and every calling answer remains listed as a
 variant. Known developer/test dialogue graphs such as `body_spawn` and
 `priest_speak` remain in the HTML payload for diagnostics, but the **Show
 debug/test nodes** toggle hides them by default and persists the chosen setting.
+The same toggle covers specifically verified detached legacy fragments, such as
+the duplicate first-sermon Faith drops in `on_start_preaching`; their live
+counterparts in `pray` remain ordinary visible reward nodes.
 
 When `--apworld-data` is supplied, `quest_node_names.json` in that directory is loaded as a manually curated map from stable end-graph node IDs to English display names. A mapped name becomes the graph-node title and is searchable; the generated detail view retains both the original technical name and the stable ID. Missing mappings safely fall back to the original generated label. This file is deliberately separate from `quest_events.json`, which remains source quest data rather than graph presentation metadata.
 

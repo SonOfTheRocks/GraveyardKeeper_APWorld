@@ -186,6 +186,18 @@
     "label": "Bishop Reward - Fix the Graveyard (2)",
     "parent_region": "REGION_OLD_GRAVEYARD"
   },
+  "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_1": {
+    "label": "Bishop Reward - Hold your first sermon (1)",
+    "parent_region": "REGION_CHURCH"
+  },
+  "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_2": {
+    "label": "Bishop Reward - Hold your first sermon (2)",
+    "parent_region": "REGION_CHURCH"
+  },
+  "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_3": {
+    "label": "Bishop Reward - Hold your first sermon (3)",
+    "parent_region": "REGION_CHURCH"
+  },
   "LOCATION_BISHOP_REWARD_ACCEPT_QUEST_BOWLS_FOR_THE_SOUP_KITCHEN": {
     "label": "Bishop - Accept Quest - Bowls for the Soup Kitchen",
     "parent_region": "REGION_OLD_GRAVEYARD"
