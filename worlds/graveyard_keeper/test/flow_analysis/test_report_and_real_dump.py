@@ -27,9 +27,23 @@ INQUISITOR_DUMP = COMPANION_DUMP.with_name("npc_inquisitor.json")
 GYPSY_DUMP = COMPANION_DUMP.with_name("npc_gypsy.json")
 BISHOP_DUMP = COMPANION_DUMP.with_name("npc_bishop.json")
 CRAFTING_SKULL_DUMP = COMPANION_DUMP.with_name("crafting_skull_3.json")
+QUEST_NODE_NAMES = Path(__file__).parents[2] / "data" / "quest_node_names.json"
 
 
 class TestFlowGraphReports(FlowAnalysisTestCase):
+    def test_real_curated_node_names_are_valid_analyzer_data(self) -> None:
+        raw_names = json.loads(QUEST_NODE_NAMES.read_text(encoding="utf-8-sig"))
+        loaded_names = load_quest_node_names(QUEST_NODE_NAMES)
+
+        self.assertIsInstance(raw_names, dict)
+        self.assertTrue(raw_names)
+        self.assertEqual(raw_names.keys(), loaded_names.keys())
+        for node_id, display_name in loaded_names.items():
+            with self.subTest(node_id=node_id):
+                self.assertTrue(node_id.strip())
+                self.assertEqual(node_id, node_id.strip())
+                self.assertEqual(display_name, display_name.strip())
+
     def test_curated_node_name_replaces_label_but_preserves_technical_name(self) -> None:
         graph = parse_graph(self.write_graph([
             node(1, "Flow_MultiAnswer", {"#0": None}, answers=["technical_phrase"]),

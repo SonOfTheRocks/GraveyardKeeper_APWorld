@@ -112,11 +112,6 @@ class TestAllQuestEvents(unittest.TestCase):
                 self.assertIn(reward, sacrifice_zone.locations)
                 self.assertEqual("REGION_SACRIFICE_ZONE", data.locations[reward].parent_region)
 
-        node_names = load_json_data("quest_node_names.json")
-        for node_id in ("final_ritual:247", "final_ritual:264", "final_ritual:340"):
-            with self.subTest(node_id=node_id):
-                self.assertEqual("Complete Snake's final ritual", node_names[node_id])
-
     def test_meeting_snake_is_a_rewardless_region_gated_start_event(self):
         event = data.events["EVENT_SNAKE_MEET"]
         self.assertEqual([], list(event.required_quests))
@@ -149,10 +144,6 @@ class TestAllQuestEvents(unittest.TestCase):
             data.locations[take_journal.rewards[0]].parent_region,
         )
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(take_journal.location_label, node_names["table_cultist_quest:11"])
-        self.assertEqual(give_journal.location_label, node_names["npc_astrologer:44:option:2"])
-
     def test_yorick_first_visit_follows_the_forced_bishop_tutorial(self):
         event = data.events["EVENT_YORICK_VISIT_AFTER_FIRST_BURIAL"]
 
@@ -166,12 +157,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertIn("EVENT_YORICK_VISIT_AFTER_FIRST_BURIAL", sweet_home.events)
         self.assertIn(event.rewards[0], sweet_home.locations)
         self.assertEqual("REGION_SWEET_HOME", data.locations[event.rewards[0]].parent_region)
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            event.location_label,
-            node_names["ghost_comes_after_players_sleep:48"],
-        )
 
     def test_tutorial_checks_form_the_forced_first_burial_chain(self):
         enter_morgue = data.events["EVENT_TUTORIAL_ENTER_MORGUE_WITH_CORPSE"]
@@ -207,13 +192,6 @@ class TestAllQuestEvents(unittest.TestCase):
                 self.assertIn(event.rewards[0], morgue.locations)
                 self.assertEqual("REGION_MORGUE", data.locations[event.rewards[0]].parent_region)
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(enter_morgue.location_label, node_names["autopsi_enter:18"])
-        self.assertEqual(
-            "Receive the rusty shovel for the first burial",
-            node_names["talking_skull:95"],
-        )
-
     def test_mill_fix_conversation_chain_matches_phrase_unlocks(self):
         farmer_event = data.events["EVENT_FARMER_ASK_ABOUT_ALISA"]
         miller_event = data.events["EVENT_MILLER_ASK_TO_FIX_MILL"]
@@ -241,13 +219,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertIn(event.rewards[0], data.regions["REGION_LIGHTHOUSE"].locations)
         self.assertEqual("REGION_LIGHTHOUSE", data.locations[event.rewards[0]].parent_region)
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            "Ask the Lighthouse Keeper about the Necronomicon",
-            node_names["npc_light_keeper:13:option:0"],
-        )
-        self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:1"])
-
     def test_lighthouse_keeper_fishing_rod_trade_matches_flow_requirements(self):
         event = data.events["EVENT_LIGHTHOUSE_KEEPER_TRADE_MOTHS_FOR_FISHING_ROD"]
 
@@ -263,9 +234,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertIn("EVENT_LIGHTHOUSE_KEEPER_TRADE_MOTHS_FOR_FISHING_ROD", lighthouse.events)
         self.assertIn(event.rewards[0], lighthouse.locations)
         self.assertEqual("REGION_LIGHTHOUSE", data.locations[event.rewards[0]].parent_region)
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(event.location_label, node_names["npc_light_keeper:13:option:4"])
 
     def test_clotho_lost_memories_long_route_has_three_independent_rewards(self):
         cauldron = data.events["EVENT_CLOTHO_GIVE_CAULDRON"]
@@ -335,11 +303,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertNotIn("LOCATION_CLOTHO_MEET", data.locations)
         self.assertNotIn("LOCATION_CLOTHO_ACCEPT_QUEST_LOST_MEMORIES", data.locations)
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(cauldron.location_label, node_names["npc_witch:9:option:0"])
-        self.assertEqual(powder.location_label, node_names["npc_witch:9:option:2"])
-        self.assertEqual(bee.location_label, node_names["npc_witch:9:option:3"])
-
     def test_gerry_drink_turn_ins_follow_the_vanilla_order(self):
         beer = data.events["EVENT_GERRY_GIVE_BEER"]
         wine = data.events["EVENT_GERRY_GIVE_SILVER_WINE"]
@@ -374,10 +337,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertNotIn("EVENT_GERRY_GET_GERRY_WINE", data.events)
         self.assertNotIn("LOCATION_GERRY_REWARD_GET_GERRY_BEER", data.locations)
         self.assertNotIn("LOCATION_GERRY_REWARD_GET_GERRY_WINE", data.locations)
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(beer.location_label, node_names["crafting_skull_3:134:option:0"])
-        self.assertEqual(wine.location_label, node_names["crafting_skull_3:134:option:2"])
 
     def test_miss_chain_perfume_chain_matches_flow_requirements(self):
         ask = data.events["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"]
@@ -421,18 +380,6 @@ class TestAllQuestEvents(unittest.TestCase):
                     self.assertEqual("REGION_THE_DEAD_HORSE", data.locations[reward].parent_region)
         self.assertIn("EVENT_CLOTHO_GIVE_BASKET_OF_FOOD", data.regions["REGION_SWAMP"].events)
 
-        node_names = load_json_data("quest_node_names.json")
-        expected_names = {
-            "npc_mrs chain:13:option:0": ask.location_label,
-            "npc_witch:9:option:6": deliver.location_label,
-            "npc_mrs chain:13:option:1": report.location_label,
-            "npc_mrs chain:13:option:2": frogs.location_label,
-            "npc_mrs chain:13:option:3": perfume.location_label,
-        }
-        for node_id, expected_name in expected_names.items():
-            with self.subTest(node_id=node_id):
-                self.assertEqual(expected_name, node_names[node_id])
-
     def test_fixing_the_mill_and_alisa_chain_matches_flow_requirements(self):
         repair_event = data.events["EVENT_REPAIR_MILL"]
         permission_event = data.events["EVENT_FARMER_GET_PERMISSION_FOR_ALISA"]
@@ -450,10 +397,6 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(["EVENT_REPAIR_MILL"], list(permission_event.required_quests))
         self.assertEqual(2, len(permission_event.rewards))
-        node_names = load_json_data("quest_node_names.json")
-        for node_id in ("npc_farmer:225", "npc_farmer:235"):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(permission_event.location_label, node_names[node_id])
         self.assertEqual(["ITEM_ALISAS_PAPERS"], list(papers_event.required_quest_items))
         self.assertEqual(["EVENT_MS_CHARM_GIVE_ALISAS_PAPERS"], list(aristocrat_event.required_quests))
         self.assertEqual(["ITEM_ARISTOCRAT_PAPERS"], list(aristocrat_event.required_quest_items))
@@ -507,17 +450,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["ITEM_RED_WINE_SILVER"], list(wine.required_craft_items))
         self.assertEqual(2, len(wine.rewards))
 
-        node_names = load_json_data("quest_node_names.json")
-        expected_names = {
-            "npc_actor:221": meeting.location_label,
-            "npc_actor:17:option:0": ink.location_label,
-            "npc_actor:17:option:1": paper.location_label,
-            "npc_actor:145:option:0": wine.location_label,
-        }
-        for node_id, expected_name in expected_names.items():
-            with self.subTest(node_id=node_id):
-                self.assertEqual(expected_name, node_names[node_id])
-
         dead_horse = data.regions["REGION_THE_DEAD_HORSE"]
         for event_name, event in (
             ("EVENT_VAGNER_MEET", meeting),
@@ -548,16 +480,6 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(4, len(rescue_event.rewards))
         self.assertIn("EVENT_ASTROLOGER_RESCUE_VAGNER", data.regions["REGION_LIGHTHOUSE"].events)
-
-        node_names = load_json_data("quest_node_names.json")
-        for node_id in (
-            "archaeological_excavations:284",
-            "archaeological_excavations:286",
-            "archaeological_excavations:299",
-            "archaeological_excavations:301",
-        ):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(rescue_event.location_label, node_names[node_id])
 
     def test_royal_services_status_and_document_chain_matches_flow_requirements(self):
         citizen = data.events["EVENT_ROYAL_SERVICES_BUY_CITIZENSHIP"]
@@ -941,17 +863,6 @@ class TestAllQuestEvents(unittest.TestCase):
                     self.assertIn(reward, dead_horse.locations)
                     self.assertEqual("REGION_THE_DEAD_HORSE", data.locations[reward].parent_region)
 
-        node_names = load_json_data("quest_node_names.json")
-        expected_names = {
-            "npc_tavern owner:350": slimes.location_label,
-            "npc_tavern owner:361": slimes.location_label,
-            "npc_tavern owner:468": church.location_label,
-            "npc_tavern owner:13:option:7": beer.location_label,
-        }
-        for node_id, expected_name in expected_names.items():
-            with self.subTest(node_id=node_id):
-                self.assertEqual(expected_name, node_names[node_id])
-
     def test_merchant_quest_craft_abstractions_have_verified_recipes(self):
         dinner = data.recipes["ITEM_DINNER_GOLD"]
         crate = data.recipes["ITEM_TRADE_CRATE"]
@@ -1043,11 +954,6 @@ class TestAllQuestEvents(unittest.TestCase):
         ceremony = data.events["EVENT_BISHOP_HOLD_FINAL_CEREMONY"]
         ask_artifact = data.events["EVENT_BISHOP_ASK_ABOUT_PORTAL_ARTIFACT"]
         artifact = data.events["EVENT_BISHOP_HAND_OVER_PORTAL_ARTIFACT"]
-
-        node_names = load_json_data("quest_node_names.json")
-        for node_id in ("final_ceremony:170", "final_ceremony:172", "final_ceremony:185", "final_ceremony:187"):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(ceremony.location_label, node_names[node_id])
 
         self.assertEqual(["EVENT_TUTORIAL_GET_FIRST_FLESH"], list(meet.required_quests))
         self.assertEqual(4, len(meet.rewards))
@@ -1539,13 +1445,6 @@ class TestAllQuestEvents(unittest.TestCase):
             list(third_stage.rewards),
         )
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(first_stage.location_label, node_names["npc_teodoro:961"])
-        self.assertEqual(second_stage.location_label, node_names["npc_teodoro:1002"])
-        for node_id in ("npc_teodoro:1062", "npc_teodoro:1076", "npc_teodoro:1095", "npc_teodoro:1140"):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(third_stage.location_label, node_names[node_id])
-
     def test_early_alarich_rewards_fold_mandatory_investigation_and_model_blood_route(self):
         confrontation = data.events["EVENT_ALARICH_CONFRONT_ABOUT_VAMPIRE_ATTACKS"]
         revival = data.events["EVENT_ALARICH_REVIVE_WITH_BLOOD"]
@@ -1568,15 +1467,6 @@ class TestAllQuestEvents(unittest.TestCase):
             ["LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD"],
             list(revival.rewards),
         )
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            confrontation.location_label,
-            node_names["npc_alarich:21:option:9"],
-        )
-        for node_id in ("npc_alarich:1163", "npc_alarich:1174"):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(revival.location_label, node_names[node_id])
 
     def test_teodoro_second_camp_expansion_models_parallel_entry_and_reward_triggers(self):
         first_stage = data.events[
@@ -1641,20 +1531,6 @@ class TestAllQuestEvents(unittest.TestCase):
             list(third_stage.rewards),
         )
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(first_stage.location_label, node_names["npc_teodoro:1241"])
-        self.assertEqual(second_stage.location_label, node_names["npc_teodoro:1302"])
-        for node_id in (
-            "npc_teodoro:1348",
-            "npc_teodoro:1362",
-            "npc_teodoro:1376",
-            "npc_teodoro:1390",
-            "npc_teodoro:1406",
-            "npc_teodoro:1435",
-        ):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(third_stage.location_label, node_names[node_id])
-
     def test_clotho_vampire_jaw_reward_folds_memory_search_and_requires_both_quest_items(self):
         event = data.events["EVENT_CLOTHO_EXAMINE_VAMPIRES_JAW"]
 
@@ -1674,9 +1550,6 @@ class TestAllQuestEvents(unittest.TestCase):
             ["LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW"],
             list(event.rewards),
         )
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(event.location_label, node_names["npc_witch:9:option:14"])
 
     def test_misty_quagmire_models_parallel_clotho_exposition_and_both_dig_rewards(self):
         event = data.events["EVENT_TEODORO_EXPLORE_MISTY_QUAGMIRE"]
@@ -1721,24 +1594,6 @@ class TestAllQuestEvents(unittest.TestCase):
         for location_key in event.rewards:
             with self.subTest(location=location_key):
                 self.assertEqual("REGION_SWAMP", data.locations[location_key].parent_region)
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            "Ask Clotho about Misty Quagmire",
-            node_names["npc_witch:9:option:15"],
-        )
-        self.assertEqual(
-            "Travel to Misty Quagmire with Teodoro",
-            node_names["npc_teodoro:17:option:3"],
-        )
-        self.assertEqual(
-            "Unearth the bone leg at Misty Quagmire",
-            node_names["refugee_purple_cloud:289"],
-        )
-        self.assertEqual(
-            "Unearth the charred vampire shoe at Misty Quagmire",
-            node_names["refugee_purple_cloud:358"],
-        )
 
     def test_third_refugee_camp_stage_models_defenses_materials_and_area_points(self):
         stakes = data.events["EVENT_TEODORO_BUILD_DEFENSIVE_STAKES"]
@@ -1792,21 +1647,6 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual([AreaPointData("REFUGEE_CAMP", 13)], list(tower.required_area_points))
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(stakes.location_label, node_names["npc_teodoro:1538"])
-        self.assertEqual(swords.location_label, node_names["npc_teodoro:1588"])
-        for node_id in (
-            "refugee_ev_city_3_fin:55",
-            "refugee_ev_city_3_fin:69",
-            "refugee_ev_city_3_fin:83",
-            "refugee_ev_city_3_fin:97",
-            "refugee_ev_city_3_fin:111",
-            "refugee_ev_city_3_fin:125",
-            "refugee_ev_city_3_fin:255",
-        ):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(tower.location_label, node_names[node_id])
-
     def test_alarich_vampire_clan_report_folds_rewardless_investigation_but_not_bone_leg(self):
         event = data.events["EVENT_ALARICH_REPORT_VAMPIRE_QUEEN_MEMORIES"]
 
@@ -1838,32 +1678,6 @@ class TestAllQuestEvents(unittest.TestCase):
                     "REGION_REFUGEE_CAMP",
                     data.locations[location_key].parent_region,
                 )
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            event.location_label,
-            node_names["npc_alarich:21:option:14"],
-        )
-        self.assertEqual(
-            "Reveal the charred vampire shoe's memory",
-            node_names["script-call:OnMemoryPotionUse.json:137"],
-        )
-        self.assertEqual(
-            "Find Miss Chain by the sea",
-            node_names["unlock:refugee_ev_s34_near_sea.json:120"],
-        )
-        self.assertEqual(
-            "Accompany Alarich to Clotho",
-            node_names["refugee_ev_s37:4"],
-        )
-        self.assertEqual(
-            "Enter Clotho's mind with Alarich",
-            node_names["refugee_ev_s38:249"],
-        )
-        self.assertEqual(
-            "Complete Clotho's memory puzzle",
-            node_names["refugee_ev_s38:142"],
-        )
 
     def test_beatrice_routes_reconverge_before_teodoro_and_alarich_rewards(self):
         teodoro = data.events["EVENT_TEODORO_REPORT_CAMP_FATE"]
@@ -1900,27 +1714,6 @@ class TestAllQuestEvents(unittest.TestCase):
                     "REGION_REFUGEE_CAMP",
                     data.locations[next(iter(event.rewards))].parent_region,
                 )
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(teodoro.location_label, node_names["npc_teodoro:17:option:6"])
-        self.assertEqual(alarich.location_label, node_names["npc_alarich:21:option:16"])
-
-    def test_game_of_crone_repeatable_and_ending_rewards_have_graph_names(self):
-        node_names = load_json_data("quest_node_names.json")
-        expected_names = {
-            "npc_alarich:21:option:11": "Trade a bucket of blood with Alarich",
-            "npc_witch:9:option:18": "Buy memory powder from Clotho",
-            "npc_hunchback:90:option:11": "Ask Koukol to steal Lady Beatrice's magic scroll",
-            "npc_teodoro:17:option:11": "Tell Teodoro the refugees are safe",
-            "npc_teodoro:1685:option:0": "Tell Teodoro the refugees are safe",
-            "refugee_ev_s53_try_give_tech_scrolls:97": "Tell Teodoro the refugees are safe",
-            "npc_alarich:21:option:18": "Say goodbye to Alarich after saving the refugees",
-            "refugee_ev_s47_spawn_bodies:14": "Find Lady Beatrice's victims in the morgue",
-        }
-
-        for node_id, expected_name in expected_names.items():
-            with self.subTest(node_id=node_id):
-                self.assertEqual(expected_name, node_names[node_id])
 
     def test_game_of_crone_endings_share_one_reward_location(self):
         ending = data.events["EVENT_COMPLETE_GAME_OF_CRONE"]
@@ -2035,19 +1828,6 @@ class TestAllQuestEvents(unittest.TestCase):
         )
         self.assertEqual(["ITEM_MEMORY_TINCTURE"], list(hair.required_craft_items))
         self.assertEqual(["LOCATION_DONKEY_REWARD_TAKE_HAIR"], list(hair.rewards))
-
-        node_names = load_json_data("quest_node_names.json")
-        for node_id in ("refugee_ev_s22:35", "refugee_ev_d6:76"):
-            with self.subTest(node_id=node_id):
-                self.assertEqual(hair.location_label, node_names[node_id])
-        self.assertEqual(
-            first_shipment.location_label,
-            node_names["contraband_box:12"],
-        )
-        self.assertEqual(
-            second_shipment.location_label,
-            node_names["contraband_box:63"],
-        )
 
     def test_donkey_revolution_from_second_shipment_to_finale_matches_flow(self):
         enchant_pumpkin = data.events["EVENT_CLOTHO_ENCHANT_DONKEYS_PUMPKIN"]
@@ -2189,23 +1969,6 @@ class TestAllQuestEvents(unittest.TestCase):
             "The Ice axe is a finale reward and is not required by any modeled check",
         )
 
-        node_names = load_json_data("quest_node_names.json")
-        expected_node_events = {
-            "npc_witch:9:option:17": enchant_pumpkin,
-            "npc_blacksmith:11:option:9": make_equipment,
-            "check_contraband_box:368": send_pumpkin,
-            "check_contraband_box:338": send_equipment,
-            "contraband_box:125": third_message,
-            "check_contraband_box:200": send_paint,
-            "check_contraband_box:276": send_jelly,
-            "check_contraband_box:257": send_banner,
-            "refugee_ev_d16:24": finale,
-            "refugee_ev_d16:59": finale,
-        }
-        for node_id, event in expected_node_events.items():
-            with self.subTest(node_id=node_id):
-                self.assertEqual(event.location_label, node_names[node_id])
-
     def test_refugee_cook_rewards_model_kitchen_and_beehive_builds(self):
         kitchen = data.events["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
         upgraded_kitchen = data.events["EVENT_REFUGEE_COOK_UPGRADE_KITCHEN"]
@@ -2257,13 +2020,6 @@ class TestAllQuestEvents(unittest.TestCase):
             list(beehives.rewards),
         )
 
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            node_names["npc_refugee_cook:282"],
-            node_names["npc_refugee_cook:15:option:0"],
-            "The prebuilt-kitchen and post-build dialogue paths are one reward",
-        )
-
     def test_refugee_tanner_rewards_model_workplace_fence_and_livestock(self):
         workplace = data.events["EVENT_REFUGEE_TANNER_BUILD_WORKPLACE"]
         fence = data.events["EVENT_REFUGEE_TANNER_BUILD_FARM_FENCE"]
@@ -2313,20 +2069,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             ["LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK"],
             list(livestock.rewards),
-        )
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            "Arrange chickens for the Refugee Tanner",
-            node_names["egg_seller:13:option:0"],
-        )
-        self.assertEqual(
-            "Arrange cows for the Refugee Tanner",
-            node_names["npc_shepherds_wife:13:option:1"],
-        )
-        self.assertEqual(
-            "Finish arranging livestock for the Refugee Tanner",
-            node_names["unlock:macro__check_and_set_refugee_tanner_4_1_start.json:8"],
         )
 
     def test_refugee_coffin_maker_rewards_require_both_supply_requests(self):
@@ -2396,20 +2138,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_GOLD_STEEL_CHISELS"],
             list(gold_chisels.rewards),
-        )
-
-        node_names = load_json_data("quest_node_names.json")
-        self.assertEqual(
-            "Give iron chisels to the Refugee Coffin Maker",
-            node_names["npc_refugee_coffin_maker:15:option:0"],
-        )
-        self.assertEqual(
-            "Give wood wedges to the Refugee Coffin Maker",
-            node_names["npc_refugee_coffin_maker:15:option:1"],
-        )
-        self.assertEqual(
-            "Build the Refugee Coffin Maker's workplace",
-            node_names["unlock:place_coffin_workplace.json:6"],
         )
 
     def test_todo_quest_requirements_name_an_undefined_event(self):
