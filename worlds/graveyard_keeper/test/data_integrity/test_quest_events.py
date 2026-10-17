@@ -278,14 +278,9 @@ class TestAllQuestEvents(unittest.TestCase):
         )
 
         self.assertEqual(10, data.items["ITEM_CLOTHO_HAPPINESS_10"].amount)
-        self.assertEqual(5, data.items["ITEM_CLOTHO_HAPPINESS_5"].amount)
         self.assertEqual(
             ItemClassification.progression,
             data.items["ITEM_CLOTHO_HAPPINESS_10"].classification,
-        )
-        self.assertEqual(
-            ItemClassification.progression,
-            data.items["ITEM_CLOTHO_HAPPINESS_5"].classification,
         )
 
         swamp = data.regions["REGION_SWAMP"]

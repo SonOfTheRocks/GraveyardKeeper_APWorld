@@ -9,6 +9,21 @@ from ...items import ITEM_NAME_TO_ID
 
 class TestDataIntegrity(unittest.TestCase):
 
+    def test_happiness_items_use_the_ten_point_logic_quantum(self):
+        happiness_items = {
+            item_key: item_data
+            for item_key, item_data in data.items.items()
+            if "_HAPPINESS_" in item_key
+        }
+
+        self.assertTrue(happiness_items)
+        for item_key, item_data in happiness_items.items():
+            with self.subTest(item=item_key):
+                self.assertTrue(item_key.endswith("_HAPPINESS_10"))
+                self.assertTrue(item_data.label.endswith("Happiness +10"))
+                self.assertEqual(10, item_data.amount)
+                self.assertEqual(ItemClassification.progression, item_data.classification)
+
     def test_item_ids_are_unique_and_positive(self):
         item_ids = tuple(ITEM_NAME_TO_ID.values())
 
