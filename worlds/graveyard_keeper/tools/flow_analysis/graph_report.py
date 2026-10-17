@@ -14,6 +14,16 @@ from .summaries import QuestSummary, build_phrase_unlock_index, build_quest_summ
 
 CONTENT_PACKS = ("Base Game", "Better Call Soul", "Game of Crone", "Stranger Sins")
 
+# These scripts are shipped in the game data but expose developer-facing test
+# interactions rather than player quest progression.  Keep them in the payload
+# for diagnostics, while letting the HTML hide them by default.
+DEBUG_GRAPH_NAMES = frozenset({"body_spawn", "priest_speak"})
+
+
+def _is_debug_graph(graph_name: str) -> bool:
+    normalized = graph_name.casefold()
+    return normalized.startswith("test_") or normalized in DEBUG_GRAPH_NAMES
+
 
 def load_quest_node_names(path: Path | None) -> dict[str, str]:
     """Load manually curated end-graph display names without affecting quest data."""
@@ -1423,6 +1433,47 @@ def build_quest_graph_data(analyses: list[GraphAnalysis],
             reference = aliases[reference]
         return reference
 
+    # Several menu answers can invoke the same CustomFunctionEvent.  The
+    # function's reward/state effects are one executable outcome, not one new
+    # outcome per caller.  Collapse summaries that contain the exact same
+    # concrete reward nodes and progression effects, while retaining every
+    # calling answer as provenance in the detail panel.  This notably prevents
+    # Horadric's shared "Drop letter to BS" function from showing the letter
+    # once for the dialogue answer and a second time for "Leave".
+    shared_callable_groups: dict[tuple[str, tuple[str, ...], str], list[QuestSummary]] = {}
+    for summary in included:
+        if not summary.multi_answer or not summary.reward_nodes:
+            continue
+        key = (
+            summary.graph,
+            tuple(sorted(summary.reward_nodes)),
+            _choice_outcome_signature(summary),
+        )
+        shared_callable_groups.setdefault(key, []).append(summary)
+    for duplicates in shared_callable_groups.values():
+        roots = sorted({resolve_alias(value.reference) for value in duplicates})
+        distinct_answers = {value.multi_answer for value in duplicates}
+        if len(roots) < 2 or len(distinct_answers) < 2:
+            continue
+        canonical = roots[0]
+        variants = sorted(duplicates, key=lambda value: (
+            value.multi_answer_index if value.multi_answer_index is not None else -1,
+            value.reference,
+        ))
+        existing_variant_ids = {
+            value.get("id") for value in details[canonical]["choiceAlternatives"]
+        }
+        details[canonical]["choiceAlternatives"].extend(
+            _choice_alternative(value) for value in variants
+            if value.reference not in existing_variant_ids
+        )
+        details[canonical]["multiAnswerNodes"] = sorted({
+            value.multi_answer_node for value in variants
+            if value.multi_answer_node is not None
+        }, key=lambda value: (not value.isdigit(), int(value) if value.isdigit() else value))
+        for duplicate in roots[1:]:
+            aliases[duplicate] = canonical
+
     # FlowCanvas may offer the exact same phrase through several MultiAnswer
     # menus and wire those options to the same executable branch. Keep one
     # domain finding while retaining every source menu as provenance.
@@ -1723,6 +1774,10 @@ def build_quest_graph_data(analyses: list[GraphAnalysis],
         for node_id in unused_bridges:
             details.pop(node_id, None)
     for node in nodes:
+        is_debug = _is_debug_graph(node["graph"])
+        node["isDebug"] = is_debug
+        details[node["id"]]["isDebug"] = is_debug
+    for node in nodes:
         data = details[node["id"]]
         alternatives = data.get("choiceAlternatives", [])
         if len(alternatives) > 1:
@@ -1793,6 +1848,8 @@ header {{ display:flex; gap:12px; align-items:end; padding:12px 16px; border-bot
 label,.filter-field {{ display:grid; gap:4px; color:var(--muted); }}
 input,select,button {{ font:inherit; color:var(--text); background:var(--bg); border:1px solid var(--border); border-radius:5px; padding:8px 10px; }}
 input {{ width:min(420px,70vw); }} button {{ background:var(--reward); border-color:var(--reward); }}
+.toggle {{ display:flex; align-items:center; gap:8px; min-height:36px; padding:0 3px; color:var(--text); cursor:pointer; }}
+.toggle input {{ width:16px; height:16px; margin:0; padding:0; accent-color:var(--accent); }}
 .multi-select {{ position:relative; min-width:190px; color:var(--text); }}
 .multi-select summary {{ min-height:36px; max-width:280px; padding:8px 32px 8px 10px; border:1px solid var(--border); border-radius:5px; background:var(--bg); cursor:pointer; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; list-style:none; }}
 .multi-select summary::-webkit-details-marker {{ display:none; }}
@@ -1846,6 +1903,7 @@ code {{ overflow-wrap:anywhere; color:var(--accent); }}
   <div class="filter-field"><span>Content</span><details class="multi-select" id="content-pack"><summary>All content</summary><div class="checkbox-menu"><label class="select-all"><input type="checkbox">Select all</label><div class="checkbox-options"></div></div></details></div>
   <div class="filter-field"><span>Graph</span><details class="multi-select has-search" id="graph"><summary>All graphs</summary><div class="checkbox-menu"><input class="option-search" type="search" placeholder="Search graphs…" aria-label="Search graph options"><label class="select-all"><input type="checkbox">Select all</label><div class="checkbox-options"></div></div></details></div>
   <div class="filter-field"><span>Matching node</span><details class="multi-select has-search" id="node-list"><summary>Select nodes</summary><div class="checkbox-menu"><input class="option-search" type="search" placeholder="Search matching nodes…" aria-label="Search matching node options"><label class="select-all"><input type="checkbox">Select all</label><div class="checkbox-options"></div></div></details></div>
+  <label class="toggle"><input id="show-debug" type="checkbox">Show debug/test nodes</label>
   <button id="fit" type="button">Fit graph</button>
   <span id="status" aria-live="polite"></span>
   <div class="graph-navigation" id="graph-navigation" aria-live="polite"></div>
@@ -1881,7 +1939,7 @@ const network=new vis.Network(document.getElementById('network'),{{nodes,edges}}
 }});
 setLoading(65,'Interaktive Ansicht initialisiert');
 await nextPaint();
-const search=document.getElementById('search'), pack=document.getElementById('content-pack'), graph=document.getElementById('graph'), nodeList=document.getElementById('node-list'), status=document.getElementById('status'), graphNavigation=document.getElementById('graph-navigation');
+const search=document.getElementById('search'), pack=document.getElementById('content-pack'), graph=document.getElementById('graph'), nodeList=document.getElementById('node-list'), showDebug=document.getElementById('show-debug'), status=document.getElementById('status'), graphNavigation=document.getElementById('graph-navigation');
 const nodeById=new Map(allNodes.map(node=>[node.id,node]));
 const contentEntries=graphData.lanes.map(lane=>({{value:lane.name,label:`${{lane.name}} (${{graphData.stats.contentPacks[lane.name]??0}})`}}));
 const graphEntries=[...new Set(allNodes.map(n=>n.graph))].sort().map(name=>({{value:name,label:name}}));
@@ -1906,6 +1964,7 @@ function persistState(){{
   try{{localStorage.setItem(STORAGE_KEY,JSON.stringify({{
     version:1,search:search.value,
     contentPacks:[...checklistValues(pack)],graphs:[...checklistValues(graph)],matchingNodes:[...checklistValues(nodeList)],
+    showDebug:showDebug.checked,
     graphOptionSearch:graphOptionSearch?.value??'',nodeOptionSearch:nodeOptionSearch?.value??'',
     view:{{position:network.getViewPosition(),scale:network.getScale()}},
     selection:{{nodes:network.getSelectedNodes(),edges:network.getSelectedEdges()}}
@@ -1952,6 +2011,7 @@ function setChecklistOptions(control,entries,selectedValues,allLabel,emptyLabel,
   filterChecklistOptions(control);
 }}
 search.value=typeof savedState.search==='string'?savedState.search:'';
+showDebug.checked=savedState.showDebug===true;
 graph.querySelector('.option-search').value=typeof savedState.graphOptionSearch==='string'?savedState.graphOptionSearch:'';
 nodeList.querySelector('.option-search').value=typeof savedState.nodeOptionSearch==='string'?savedState.nodeOptionSearch:'';
 pendingMatchingSelection=Array.isArray(savedState.matchingNodes)?new Set(savedState.matchingNodes):null;
@@ -2010,7 +2070,7 @@ function compactVisibleLayout(visible,layoutHelpers=[]){{
 function applyFilter(preservedView=null){{
   const term=search.value.trim().toLocaleLowerCase(),selectedGraphs=checklistValues(graph),selectedPacks=checklistValues(pack);
   const graphRestricted=selectedGraphs.size<graphEntries.length;
-  const seed=allNodes.filter(n=>selectedGraphs.has(n.graph)&&selectedPacks.has(n.contentPack)&&(!term||n.search.includes(term)));
+  const seed=allNodes.filter(n=>(showDebug.checked||!n.isDebug)&&selectedGraphs.has(n.graph)&&selectedPacks.has(n.contentPack)&&(!term||n.search.includes(term)));
   const seedIds=new Set(seed.map(n=>n.id));
   const shownEdges=allEdges.filter(edge=>seedIds.has(edge.from)&&seedIds.has(edge.to));
   const boundaryGroups=new Map();
@@ -2019,7 +2079,7 @@ function applyFilter(preservedView=null){{
     if(fromVisible===toVisible)return;
     const visibleId=fromVisible?edge.from:edge.to,externalId=fromVisible?edge.to:edge.from;
     const external=nodeById.get(externalId),visibleNode=nodeById.get(visibleId);
-    if(!external||!visibleNode||selectedGraphs.has(external.graph)||!selectedPacks.has(external.contentPack))return;
+    if(!external||!visibleNode||(!showDebug.checked&&external.isDebug)||selectedGraphs.has(external.graph)||!selectedPacks.has(external.contentPack))return;
     const direction=fromVisible?'out':'in',key=`${{visibleId}}\u0000${{external.graph}}\u0000${{direction}}`;
     const group=boundaryGroups.get(key)??{{visibleId,externalGraph:external.graph,direction,edges:[]}};
     group.edges.push(edge);boundaryGroups.set(key,group);
@@ -2042,12 +2102,14 @@ function applyFilter(preservedView=null){{
   setChecklistOptions(nodeList,nodeEntries,retainedSelection,'All matching nodes','Select nodes',handleNodeSelection);
   handleNodeSelection();
   updateGraphNavigation(selectedGraphs);
-  status.textContent=`${{visible.length}} nodes · ${{shownEdges.length}} links${{expanders.length?` · ${{expanders.length}} expandable graph boundaries`:''}}`;
+  const hiddenDebug=showDebug.checked?0:allNodes.filter(node=>node.isDebug).length;
+  status.textContent=`${{visible.length}} nodes · ${{shownEdges.length}} links${{hiddenDebug?` · ${{hiddenDebug}} debug/test nodes hidden`:''}}${{expanders.length?` · ${{expanders.length}} expandable graph boundaries`:''}}`;
   if(preservedView)network.moveTo({{position:preservedView.position,scale:preservedView.scale,animation:false}});
   else if(visible.length||expanders.length)network.fit({{animation:false}});
   schedulePersist();
 }}
 search.addEventListener('input',()=>applyFilter());
+showDebug.addEventListener('change',()=>applyFilter());
 document.addEventListener('click',event=>document.querySelectorAll('.multi-select[open]').forEach(control=>{{if(!control.contains(event.target))control.open=false;}}));
 document.getElementById('fit').addEventListener('click',()=>network.fit({{animation:true}}));
 const esc=value=>String(value??'').replace(/[&<>\"']/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}}[c]));

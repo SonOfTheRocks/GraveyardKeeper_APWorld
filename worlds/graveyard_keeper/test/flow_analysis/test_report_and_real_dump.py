@@ -23,6 +23,7 @@ COMPANION_DUMP = Path(
 ACTRESS_DUMP = COMPANION_DUMP.with_name("npc_actress.json")
 CULTIST_DUMP = COMPANION_DUMP.with_name("npc_cultist.json")
 TAVERN_SKULL_DUMP = COMPANION_DUMP.with_name("tavern_skull.json")
+TAVERN_OWNER_DUMP = COMPANION_DUMP.with_name("npc_tavern owner.json")
 INQUISITOR_DUMP = COMPANION_DUMP.with_name("npc_inquisitor.json")
 GYPSY_DUMP = COMPANION_DUMP.with_name("npc_gypsy.json")
 BISHOP_DUMP = COMPANION_DUMP.with_name("npc_bishop.json")
@@ -105,6 +106,9 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertIn('class="select-all"', rendered)
         self.assertIn('placeholder="Search graphs…"', rendered)
         self.assertIn('placeholder="Search matching nodes…"', rendered)
+        self.assertIn('id="show-debug"', rendered)
+        self.assertIn("showDebug.checked=savedState.showDebug===true", rendered)
+        self.assertIn("showDebug.checked||!n.isDebug", rendered)
         self.assertIn(".checkbox-menu label[hidden] { display:none; }", rendered)
         self.assertIn("setChecklistOptions", rendered)
         self.assertIn("visibleChecklistInputs(control)", rendered)
@@ -893,6 +897,63 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertIn("after_function", parent["phrasesUnlocked"])
         self.assertEqual(["2 -> shared_function (CustomFunctionEvent 3)"], parent["functionCalls"])
         self.assertNotIn("unlock:fixture.json:7", data["details"])
+
+    def test_shared_custom_function_reward_is_one_outcome_with_multiple_callers(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "Flow_MultiAnswer", {"#0": None, "#1": None},
+                 answers=["ask_about_blacksmith", "Leave"]),
+            node(2, "CustomFunctionCall", _sourceOutputUID="function-uid"),
+            node(3, "CustomFunctionCall", _sourceOutputUID="function-uid"),
+            node(4, "CustomFunctionEvent", _UID="function-uid", identifier="shared_reward"),
+            node(5, "Flow_DropItem", {"Res_id": stored("letter"), "Amount": stored(1)}),
+            node(6, "Return"),
+            node(7, "Flow_PlayerEnable"),
+            node(8, "Flow_Vendor"),
+        ], [
+            edge(1, "out_0", 2, "In"), edge(1, "out_1", 3, "In"),
+            edge(2, "", 8, "In"), edge(3, "", 7, "In"),
+            edge(4, "", 5, "In"), edge(5, "Out", 6, "In"),
+        ]))
+
+        data = build_quest_graph_data([analyze_graph(graph)])
+        canonical = "fixture:1:option:0"
+
+        self.assertIn(canonical, data["details"])
+        self.assertNotIn("fixture:1:option:1", data["details"])
+        self.assertEqual(["letter"], [
+            reward["item"] for reward in data["details"][canonical]["rewards"]
+        ])
+        self.assertEqual(
+            ["ask_about_blacksmith", "Leave"],
+            [variant["phrase"] for variant in data["details"][canonical]["choiceAlternatives"]],
+        )
+
+    def test_known_debug_dialogue_graph_is_available_but_marked_hidden_by_default(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "Flow_MultiAnswer", {"#0": None}, answers=["Say something good"]),
+            node(2, "Flow_AddRelation", {"Value": stored(10.0, "System.Single")}),
+        ], [edge(1, "out_0", 2, "In")], name="priest_speak"))
+
+        data = build_quest_graph_data([analyze_graph(graph)])
+        finding = data["nodes"][0]
+
+        self.assertTrue(finding["isDebug"])
+        self.assertTrue(data["details"][finding["id"]]["isDebug"])
+
+    def test_real_horadric_letter_function_is_not_duplicated_for_leave(self) -> None:
+        if not TAVERN_OWNER_DUMP.exists():
+            self.skipTest("Companion FlowGraph dump is unavailable")
+        data = build_quest_graph_data([analyze_graph(parse_graph(TAVERN_OWNER_DUMP))])
+        canonical = data["details"]["npc_tavern owner:13:option:20"]
+
+        self.assertNotIn("npc_tavern owner:13:option:26", data["details"])
+        self.assertEqual(
+            ["horadric_2_1b", "Leave"],
+            [variant["phrase"] for variant in canonical["choiceAlternatives"]],
+        )
+        self.assertEqual(["bs_letter"], [
+            reward["item"] for reward in canonical["rewards"]
+        ])
 
     def test_markdown_is_stable_and_compact(self) -> None:
         graph = parse_graph(self.write_graph([
