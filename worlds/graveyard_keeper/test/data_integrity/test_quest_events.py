@@ -334,6 +334,7 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertNotIn("LOCATION_GERRY_REWARD_GET_GERRY_WINE", data.locations)
 
     def test_miss_chain_perfume_chain_matches_flow_requirements(self):
+        necklace = data.events["EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE"]
         ask = data.events["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"]
         deliver = data.events["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"]
         report = data.events["EVENT_MISS_CHAIN_REPORT_FOOD_DELIVERED"]
@@ -341,7 +342,15 @@ class TestAllQuestEvents(unittest.TestCase):
         perfume = data.events["EVENT_MISS_CHAIN_GET_PERFUME"]
         give_perfume = data.events["EVENT_MS_CHARM_GIVE_PERFUME"]
 
-        self.assertEqual(["EVENT_MS_CHARM_REPORT_FAKE_COINS"], list(ask.required_quests))
+        self.assertEqual(
+            ["EVENT_SNAKE_LEARN_WHO_HAS_MS_CHARMS_NECKLACE"],
+            list(necklace.required_quests),
+        )
+        self.assertEqual(
+            ["LOCATION_MS_CHARM_REWARD_TELL_WHO_HAS_NECKLACE"],
+            list(necklace.rewards),
+        )
+        self.assertEqual(["EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE"], list(ask.required_quests))
         self.assertEqual(["LOCATION_MISS_CHAIN_REWARD_ASK_FOR_PERFUME"], list(ask.rewards))
         self.assertEqual(["EVENT_MISS_CHAIN_ASK_FOR_PERFUME"], list(deliver.required_quests))
         self.assertEqual(["ITEM_BASKET_OF_FOOD"], list(deliver.required_quest_items))
@@ -354,7 +363,7 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(["EVENT_CLOTHO_GIVE_BASKET_OF_FOOD"], list(perfume.required_quests))
         self.assertEqual([HappinessData("MISS_CHAIN", 20)], list(perfume.required_happiness))
         self.assertEqual(["LOCATION_MISS_CHAIN_REWARD_GET_PERFUME"], list(perfume.rewards))
-        self.assertEqual(["EVENT_MS_CHARM_REPORT_FAKE_COINS"], list(give_perfume.required_quests))
+        self.assertEqual(["EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE"], list(give_perfume.required_quests))
         self.assertEqual(["ITEM_PERFUME"], list(give_perfume.required_quest_items))
 
         miss_chain_happiness = data.items["ITEM_MISS_CHAIN_HAPPINESS_10"]
@@ -362,6 +371,8 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(10, miss_chain_happiness.amount)
 
         dead_horse = data.regions["REGION_THE_DEAD_HORSE"]
+        self.assertIn("EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE", dead_horse.events)
+        self.assertIn("LOCATION_MS_CHARM_REWARD_TELL_WHO_HAS_NECKLACE", dead_horse.locations)
         for event_name, event in (
             ("EVENT_MISS_CHAIN_ASK_FOR_PERFUME", ask),
             ("EVENT_MISS_CHAIN_REPORT_FOOD_DELIVERED", report),

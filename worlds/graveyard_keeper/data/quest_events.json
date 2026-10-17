@@ -1256,12 +1256,23 @@
     "required_craft_items": [],
     "rewards": ["LOCATION_MS_CHARM_REWARD_REPORT_FAKE_COINS"]
   },
+  "EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE": {
+    "comment": "Flow: npc_actress:30:option:4 (@actress_money_back) is unlocked by Snake's final necklace answer; it grants 10 Ms. Charm happiness and unlocks both her perfume turn-in and Miss Chain's perfume quest",
+    "location_label": "Tell Ms. Charm who has her necklace",
+    "item_label": "Told Ms. Charm who has her necklace",
+    "dlc": "BASE_GAME",
+    "required_quests": ["EVENT_SNAKE_LEARN_WHO_HAS_MS_CHARMS_NECKLACE"],
+    "required_happiness": [],
+    "required_quest_items": [],
+    "required_craft_items": [],
+    "rewards": ["LOCATION_MS_CHARM_REWARD_TELL_WHO_HAS_NECKLACE"]
+  },
   "EVENT_MISS_CHAIN_ASK_FOR_PERFUME": {
     "comment": "Flow: npc_mrs chain:13:option:0 (@chain_parfume), unlocked by Ms. Charm's fake-coins follow-up; normally drops the basket of food and unlocks both Clotho's delivery option and the frog turn-in",
     "location_label": "Ask Miss Chain for perfume",
     "item_label": "Asked Miss Chain for perfume",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_MS_CHARM_REPORT_FAKE_COINS"],
+    "required_quests": ["EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
@@ -1316,7 +1327,7 @@
     "location_label": "Give Ms. Charm perfume",
     "item_label": "Gave Ms. Charm perfume",
     "dlc": "BASE_GAME",
-    "required_quests": ["EVENT_MS_CHARM_REPORT_FAKE_COINS"],
+    "required_quests": ["EVENT_MS_CHARM_TELL_WHO_HAS_NECKLACE"],
     "required_happiness": [],
     "required_quest_items": ["ITEM_PERFUME"],
     "required_craft_items": [],
