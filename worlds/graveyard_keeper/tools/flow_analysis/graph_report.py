@@ -736,6 +736,32 @@ def _assign_content_packs(nodes: list[dict[str, Any]], details: dict[str, dict[s
             continue
         details[node["id"]]["contentPack"] = _content_pack(details[node["id"]])
 
+    # A few DLC outcomes are executed by otherwise neutral shared scripts.  A
+    # proven PlayerParam requirement is a semantic dependency, rather than an
+    # arbitrary graph neighbor, so a still-unclassified target may inherit the
+    # source finding's DLC.  Iterate because a neutral relay can itself depend
+    # on an already classified DLC source.  Conflicting DLC sources stay Base
+    # Game instead of being assigned by accident.
+    changed = True
+    while changed:
+        changed = False
+        for node in nodes:
+            node_id = node["id"]
+            if node_id in menu_ids or details[node_id]["contentPack"] != "Base Game":
+                continue
+            source_packs = {
+                details[source_id]["contentPack"]
+                for link in details[node_id].get("playerStateLinks", [])
+                if link.get("direction") == "requires"
+                and link.get("certainty") == "satisfies"
+                and (source_id := link.get("from")) in details
+                and source_id not in menu_ids
+                and details[source_id].get("contentPack") != "Base Game"
+            }
+            if len(source_packs) == 1:
+                details[node_id]["contentPack"] = next(iter(source_packs))
+                changed = True
+
     neighbors: dict[str, set[str]] = {node_id: set() for node_id in menu_ids}
     for edge in edges:
         if edge["from"] in menu_ids and edge["to"] in details:

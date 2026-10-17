@@ -136,6 +136,30 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertIn("left → right by dependency depth", rendered)
         self.assertIn("content-anchor:${packName}", rendered)
 
+    def test_neutral_reward_inherits_dlc_from_required_player_state_source(self) -> None:
+        source_graph = parse_graph(self.write_graph([
+            node(1, "StartEvent"),
+            node(2, "Flow_SetPlayerParam", {
+                "Param name": stored("drop_ending_note"), "Value": stored(1)}),
+            node(3, "Flow_UnlockPhrase", {"Phrase": stored("refugee_ending_ready")}),
+        ], [
+            edge(1, "Once", 2, "In"), edge(2, "Out", 3, "In"),
+        ], name="alarich"))
+        neutral_graph = parse_graph(self.write_graph([
+            node(1, "CustomEvent", identifier="prayed"),
+            node(2, "Flow_PlayerFlag", {"param": stored("drop_ending_note")}),
+            node(3, "Flow_DropItem", {
+                "Res_id": stored("ending_note"), "Amount": stored(1)}),
+        ], [
+            edge(1, "Out", 2, "In"), edge(2, ">= 1", 3, "In"),
+        ], name="donation_box"))
+
+        data = build_quest_graph_data([
+            analyze_graph(source_graph), analyze_graph(neutral_graph),
+        ])
+
+        self.assertEqual("Game of Crone", data["details"]["donation_box:3"]["contentPack"])
+
     def test_generated_edge_ids_are_unique_and_contiguous(self) -> None:
         graph = parse_graph(self.write_graph([
             node(1, "Flow_MultiAnswer", {"#0": None}, answers=["answer"]),
