@@ -13,6 +13,13 @@ from .summaries import QuestSummary, build_phrase_unlock_index, build_quest_summ
 
 
 CONTENT_PACKS = ("Base Game", "Better Call Soul", "Game of Crone", "Stranger Sins")
+CONTENT_PACK_GRAPH_OVERRIDES = {
+    # These DLC subsystem scripts use neutral identifiers throughout, so their
+    # ownership cannot be recovered from the individual reward payload alone.
+    "check_contraband_box": "Game of Crone",
+    "contraband_box": "Game of Crone",
+    "soul_extractor": "Better Call Soul",
+}
 
 # These scripts are shipped in the game data but expose developer-facing test
 # interactions rather than player quest progression.  Keep them in the payload
@@ -708,6 +715,9 @@ def _tooltip(data: dict[str, Any]) -> str:
 def _content_pack(data: dict[str, Any]) -> str:
     # Classify a finding by its own semantic identifiers. Cross-graph source and
     # bridge metadata must not make a Base Game node inherit a neighbor's DLC.
+    graph_name = str(data.get("graph") or Path(str(data.get("file", ""))).stem).casefold()
+    if graph_name in CONTENT_PACK_GRAPH_OVERRIDES:
+        return CONTENT_PACK_GRAPH_OVERRIDES[graph_name]
     identity = {
         key: data.get(key) for key in (
             "file", "multiAnswer", "rewards", "requiredQuests", "requiredItems", "costs",

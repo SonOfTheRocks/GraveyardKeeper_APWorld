@@ -699,6 +699,17 @@ class TestAllQuestEvents(unittest.TestCase):
             {"ITEM_A_MUG_OF_BEER_GOLD", "ITEM_BURGER_GOLD"},
             set(buffet.required_craft_items),
         )
+        self.assertEqual(
+            {
+                "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING",
+                "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_2",
+                "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_3",
+            },
+            set(buffet.rewards),
+            "The first buffet flow executes three sequential Faith drops",
+        )
+        for reward in buffet.rewards:
+            self.assertEqual("REGION_WITCH_HILL", data.locations[reward].parent_region)
         self.assertEqual(["EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING"], list(wait_for_organs.required_quests))
         self.assertEqual([], list(wait_for_organs.rewards))
 

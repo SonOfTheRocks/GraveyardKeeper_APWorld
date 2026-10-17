@@ -283,7 +283,7 @@
     "rewards": ["LOCATION_INQUISITOR_REWARD_REPORT_BUFFET_TENT_READY"]
   },
   "EVENT_INQUISITOR_HOST_FIRST_BUFFET_BURNING": {
-    "comment": "GameData crafts beer_barrels_place and burgers_place require gold beer and burgers; witch_tasty_burning starts the persistent weekly counter and grants the first buffet-burning payout",
+    "comment": "GameData crafts beer_barrels_place and burgers_place require gold beer and burgers; witch_tasty_burning starts the persistent weekly counter and sequentially drops one Faith at nodes 158, 169, and 180",
     "location_label": "Host the first buffet witch burning",
     "item_label": "Hosted the first buffet witch burning",
     "dlc": "BASE_GAME",
@@ -291,7 +291,11 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_A_MUG_OF_BEER_GOLD", "ITEM_BURGER_GOLD"],
-    "rewards": ["LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING"]
+    "rewards": [
+      "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING",
+      "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_2",
+      "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_3"
+    ]
   },
   "EVENT_INQUISITOR_WAIT_FOR_DARK_ORGAN_REQUEST": {
     "comment": "Flow: on_came_to_finish increments do_count_weeks_after_first_tasty; at value >=4 it schedules inquisitor_black_event, which unlocks @inquisitor_dark",

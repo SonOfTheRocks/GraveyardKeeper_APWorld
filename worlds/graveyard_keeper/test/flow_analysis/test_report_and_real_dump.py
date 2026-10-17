@@ -160,6 +160,24 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
 
         self.assertEqual("Game of Crone", data["details"]["donation_box:3"]["contentPack"])
 
+    def test_known_neutral_dlc_subsystem_graphs_use_explicit_content_pack(self) -> None:
+        cases = (
+            ("contraband_box", "Game of Crone"),
+            ("check_contraband_box", "Game of Crone"),
+            ("soul_extractor", "Better Call Soul"),
+        )
+        for graph_name, expected_pack in cases:
+            with self.subTest(graph=graph_name):
+                graph = parse_graph(self.write_graph([
+                    node(1, "StartEvent"),
+                    node(2, "Flow_DropItem", {
+                        "Res_id": stored("neutral_item"), "Amount": stored(1),
+                    }),
+                ], [edge(1, "Once", 2, "In")], name=graph_name))
+                data = build_quest_graph_data([analyze_graph(graph)])
+
+                self.assertEqual(expected_pack, data["details"][f"{graph_name}:2"]["contentPack"])
+
     def test_generated_edge_ids_are_unique_and_contiguous(self) -> None:
         graph = parse_graph(self.write_graph([
             node(1, "Flow_MultiAnswer", {"#0": None}, answers=["answer"]),

@@ -312,6 +312,14 @@
     "label": "Inquisitor Reward - Host the First Buffet Burning",
     "parent_region": "REGION_WITCH_HILL"
   },
+  "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_2": {
+    "label": "Inquisitor Reward - Host the First Buffet Burning (2)",
+    "parent_region": "REGION_WITCH_HILL"
+  },
+  "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_3": {
+    "label": "Inquisitor Reward - Host the First Buffet Burning (3)",
+    "parent_region": "REGION_WITCH_HILL"
+  },
   "LOCATION_INQUISITOR_REWARD_GIVE_DARK_HEART": {
     "label": "Inquisitor Reward - Give a Dark Heart",
     "parent_region": "REGION_WITCH_HILL"

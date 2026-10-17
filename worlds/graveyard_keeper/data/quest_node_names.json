@@ -454,6 +454,9 @@
   "donat_box:23": "Inspect the donation box after meeting the Bishop",
   "donat_box_inside:19": "Collect Lady Beatrice's final letter after a sermon",
   "donat_box_inside:30": "Collect Lady Beatrice's final letter after a sermon",
+  "witch_tasty_burning:158": "Host the first buffet witch burning",
+  "witch_tasty_burning:169": "Host the first buffet witch burning",
+  "witch_tasty_burning:180": "Host the first buffet witch burning",
   "check_contraband_box:420": "Send the Cookbook to Donkey's comrades",
   "check_contraband_box:53": "Send red apples to Donkey's comrades",
   "contraband_box:12": "Collect Donkey's first revolutionary shipment",
@@ -465,6 +468,7 @@
   "contraband_box:74": "Collect Donkey's second revolutionary shipment",
   "refugee_ev_s22:35": "Take a piece of Donkey's hair",
   "refugee_ev_d6:76": "Take a piece of Donkey's hair",
+  "contraband_box:107": "Take a piece of Donkey's hair",
   "npc_witch:9:option:17": "Ask Clotho to enchant Donkey's pumpkin",
   "npc_blacksmith:11:option:9": "Ask Krezvold to make Donkey's combat equipment",
   "check_contraband_box:368": "Send the magic pumpkin to Donkey's comrades",
@@ -474,5 +478,7 @@
   "check_contraband_box:276": "Send jelly of incredible power to Donkey's comrades",
   "check_contraband_box:257": "Send the revolutionary banner to Donkey's comrades",
   "refugee_ev_d16:24": "Celebrate the end of Donkey's revolution",
-  "refugee_ev_d16:59": "Celebrate the end of Donkey's revolution"
+  "refugee_ev_d16:59": "Celebrate the end of Donkey's revolution",
+  "soul_extractor:27": "Extract a soul",
+  "soul_extractor:53": "Extract a soul"
 }
