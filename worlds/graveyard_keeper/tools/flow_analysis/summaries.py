@@ -53,6 +53,8 @@ class RelationRewardSummary:
     amount: Any
     npc: str | None
     npc_source: str | None
+    node_id: str | None = field(default=None, repr=False, compare=False)
+    answer_index: int | None = field(default=None, repr=False, compare=False)
 
 
 @dataclass(frozen=True)
@@ -219,7 +221,13 @@ def _add_reward(summary: QuestSummary, finding: RewardFinding) -> None:
     summary.reward_nodes.add(finding.node_id)
     if finding.kind == "relation":
         npc, source = ((finding.npc_id, "explizites npc_id-Feld") if finding.npc_id else _graph_npc(summary.graph))
-        summary.relation_rewards.append(RelationRewardSummary(finding.amount, npc, source))
+        summary.relation_rewards.append(RelationRewardSummary(
+            finding.amount,
+            npc,
+            source,
+            finding.node_id,
+            finding.option.index if finding.option is not None else None,
+        ))
     else:
         reward = ItemDropSummary(
             finding.resource_id, finding.amount, finding.resource_detail, finding.node_id)
@@ -265,7 +273,8 @@ def _add_answer_data(summary: QuestSummary, option: DialogueOption) -> None:
         if _usable_smart_res(reward):
             if reward.resource_type == "GameRes" and reward.resource_id == "_rel":
                 npc, source = _graph_npc(summary.graph)
-                summary.relation_rewards.append(RelationRewardSummary(reward.amount, npc, source))
+                summary.relation_rewards.append(RelationRewardSummary(
+                    reward.amount, npc, source, option.multi_answer_node, option.index))
                 _append_unique(summary.uncertainties, ["Empfänger des AnswerData-Relationsgewinns ist implizit"])
             elif reward.resource_type == "Item":
                 item = ItemDropSummary(

@@ -1,7 +1,7 @@
 import enum
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import List, FrozenSet, Dict, Set, Counter, override
+from typing import Any, List, FrozenSet, Dict, Set, Counter, override
 
 from BaseClasses import ItemClassification, CollectionState
 
@@ -89,9 +89,32 @@ class RegionData:
 
 
 @dataclass
+class LocationTriggerData:
+    type: str
+    graph: str | None = None
+    node_id: str | None = None
+    answer_index: int | None = None
+    craft_id: str | None = None
+    item_id: str | None = None
+    technology_id: str | None = None
+
+    def to_slot_data(self) -> Dict[str, Any]:
+        result: Dict[str, Any] = {"type": self.type}
+        for field_name in (
+            "graph", "node_id", "answer_index", "craft_id", "item_id", "technology_id",
+        ):
+            value = getattr(self, field_name)
+            if value is not None:
+                result[field_name] = value
+        return result
+
+
+@dataclass
 class LocationData:
     label: str
     parent_region: str
+    triggers: tuple[LocationTriggerData, ...] = ()
+    trigger_todo: str | None = None
 
 
 @dataclass

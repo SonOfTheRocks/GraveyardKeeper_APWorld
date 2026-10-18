@@ -38,6 +38,19 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self):
-        return self.options.as_dict(
+        slot_data = self.options.as_dict(
             "stranger_sins", "game_of_crone", "better_save_soul"
         )
+        enabled_location_names = {
+            location.name for location in self.multiworld.get_locations(self.player)
+            if location.address is not None
+        }
+        slot_data["quest_location_triggers"] = {
+            "version": 1,
+            "locations": {
+                location_data.label: [trigger.to_slot_data() for trigger in location_data.triggers]
+                for location_data in data.data.locations.values()
+                if location_data.triggers and location_data.label in enabled_location_names
+            },
+        }
+        return slot_data

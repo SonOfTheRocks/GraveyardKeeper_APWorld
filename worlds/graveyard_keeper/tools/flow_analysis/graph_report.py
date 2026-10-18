@@ -132,11 +132,14 @@ def _reward_dicts(summary: QuestSummary) -> list[dict[str, Any]]:
         rewards.append({
             "type": "relation", "amount": display_value(reward.amount),
             "npc": reward.npc or "unresolved", "npcSource": reward.npc_source,
+            "nodeId": reward.node_id,
+            "answerIndex": reward.answer_index,
         })
     for reward in summary.item_drops:
         rewards.append({
             "type": "item_drop", "item": reward.item or "dynamic/unresolved",
             "amount": display_value(reward.amount), "resolution": reward.resolution,
+            "nodeId": reward.node_id,
         })
     return rewards
 
@@ -798,8 +801,12 @@ def _assign_content_packs(nodes: list[dict[str, Any]], details: dict[str, dict[s
 
 def _choice_outcome_signature(summary: QuestSummary) -> str:
     own_phrase = (summary.multi_answer or "").removeprefix("@")
+    semantic_rewards = [
+        {key: value for key, value in reward.items() if key not in {"nodeId", "answerIndex"}}
+        for reward in _reward_dicts(summary)
+    ]
     payload = {
-        "rewards": _reward_dicts(summary),
+        "rewards": semantic_rewards,
         "taskStates": [(value.task, value.state) for value in summary.task_states],
         "phrasesUnlocked": summary.phrases_unlocked,
         "phrasesToBlacklist": [
@@ -822,6 +829,10 @@ def _duplicate_finding_signature(summary: QuestSummary) -> str:
         "uncertainties",
     ):
         data.pop(key, None)
+    data["rewards"] = [
+        {key: value for key, value in reward.items() if key not in {"nodeId", "answerIndex"}}
+        for reward in data["rewards"]
+    ]
     return json.dumps(data, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 

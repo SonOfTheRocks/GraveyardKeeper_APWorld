@@ -1092,6 +1092,26 @@ class TestFlowGraphReports(FlowAnalysisTestCase):
         self.assertFalse(summary.costs)
         self.assertFalse(summary.other_requirements)
 
+    def test_graph_reward_details_expose_relation_node_and_answer_index(self) -> None:
+        graph = parse_graph(self.write_graph([
+            node(1, "Flow_MultiAnswer", {"#0": {"$type": "AnswerData"}}, answers=["@reward"]),
+            node(2, "Return"),
+            wrapper(3, "Flow_Answer", {"price": {}, "lock": {}, "reward": {}}),
+            wrapper(4, "Flow_SmartRes", {
+                "res_type": stored("GameRes"), "id": stored("_rel"), "v": stored(10.0),
+            }),
+        ], [
+            edge(1, "out_0", 2, "In"),
+            edge(4, "Value", 3, "reward", "SmartRes"),
+            edge(3, "Value", 1, "#0", "AnswerData"),
+        ]))
+
+        report = build_quest_graph_data([analyze_graph(graph)])
+        reward = report["details"][f"{graph.name}:1:option:0"]["rewards"][0]
+
+        self.assertEqual("1", reward["nodeId"])
+        self.assertEqual(0, reward["answerIndex"])
+
     def test_astrologer_charm_no_compact_summary(self) -> None:
         if not COMPANION_DUMP.exists() or not ACTRESS_DUMP.exists():
             self.skipTest("local companion dumps are not available")
