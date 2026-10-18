@@ -16,6 +16,10 @@ GAME_DATA_ROOT = Path(__file__).parents[2] / "dumps" / "raw"
 
 
 class TestQuestLocationTriggers(unittest.TestCase):
+    @staticmethod
+    def _serialized_triggers(location_key):
+        return [trigger.to_slot_data() for trigger in data.locations[location_key].triggers]
+
     def test_every_quest_reward_location_has_triggers_or_an_explicit_todo(self):
         reward_locations = {
             location
@@ -93,6 +97,56 @@ class TestQuestLocationTriggers(unittest.TestCase):
         self.assertIn("flow_relation_reward", trigger_types)
         self.assertIn("flow_quest_reward", trigger_types)
 
+    def test_equivalent_vanilla_routes_are_all_valid_location_triggers(self):
+        expected_alternatives = {
+            "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FIREWOOD": {3, 5},
+            "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FLYERS": {4, 6},
+            "LOCATION_INQUISITOR_REWARD_GET_GRAVEYARD_EXPANSION_PERMISSION": {1, 2},
+            "LOCATION_FARMER_REWARD_RECOVER_BELLAS_RING": {0, 7},
+        }
+        for location_key, answer_indexes in expected_alternatives.items():
+            with self.subTest(location=location_key):
+                self.assertEqual(
+                    answer_indexes,
+                    {
+                        trigger.answer_index
+                        for trigger in data.locations[location_key].triggers
+                    },
+                )
+
+        farmer_triggers = self._serialized_triggers(
+            "LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"
+        )
+        self.assertIn(
+            {
+                "type": "flow_relation_reward",
+                "graph": "farmer_comes_to_pl_house",
+                "node_id": "21",
+            },
+            farmer_triggers,
+        )
+        self.assertIn(
+            {
+                "type": "flow_relation_reward",
+                "graph": "npc_farmer",
+                "node_id": "15",
+                "answer_index": 3,
+            },
+            farmer_triggers,
+        )
+
+    def test_clotho_health_potion_route_checks_the_three_equivalent_relation_rewards(self):
+        clotho_locations = (
+            "LOCATION_CLOTHO_REWARD_GIVE_CAULDRON",
+            "LOCATION_CLOTHO_REWARD_GIVE_HEALTH_POWDER",
+            "LOCATION_CLOTHO_REWARD_GIVE_BEE",
+        )
+        for location_key in clotho_locations:
+            with self.subTest(location=location_key):
+                triggers = data.locations[location_key].triggers
+                self.assertTrue(all(trigger.type == "flow_relation_reward" for trigger in triggers))
+                self.assertIn(1, {trigger.answer_index for trigger in triggers})
+
     def test_real_flow_trigger_nodes_and_answer_indexes_exist_when_dumps_are_available(self):
         if not FLOW_DUMP_ROOT.exists():
             self.skipTest("local companion FlowGraph exports are not available")
@@ -112,8 +166,13 @@ class TestQuestLocationTriggers(unittest.TestCase):
                     graphs[trigger.graph] = graph_nodes
                 with self.subTest(location=location_key, graph=trigger.graph, node=trigger.node_id):
                     self.assertIn(trigger.node_id, graph_nodes)
+                    node = graph_nodes[trigger.node_id]
+                    if "MultiAnswer" in node["$type"]:
+                        self.assertIsNotNone(
+                            trigger.answer_index,
+                            f"MultiAnswer trigger must identify the selected answer: {location_key}",
+                        )
                     if trigger.answer_index is not None:
-                        node = graph_nodes[trigger.node_id]
                         self.assertIn("MultiAnswer", node["$type"])
                         self.assertLess(trigger.answer_index, len(node.get("answers", [])))
 
