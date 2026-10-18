@@ -34,17 +34,13 @@ class TestQuestLocationTriggers(unittest.TestCase):
         }
         self.assertFalse(incomplete, f"Quest reward locations without trigger metadata: {incomplete}")
 
-    def test_only_the_known_clay_pot_legacy_location_has_a_trigger_todo(self):
+    def test_no_quest_location_trigger_todos_remain(self):
         todos = {
             location_key: location.trigger_todo
             for location_key, location in data.locations.items()
             if location.trigger_todo is not None
         }
-        self.assertEqual(
-            {"LOCATION_REWARD_TIME_MACHINE_ITEM_14_2"},
-            set(todos),
-            f"Resolve existing trigger TODOs before adding new ones: {todos}",
-        )
+        self.assertFalse(todos, f"Resolve trigger TODOs before adding new ones: {todos}")
 
     def test_trigger_metadata_is_only_attached_to_quest_reward_locations(self):
         reward_locations = {

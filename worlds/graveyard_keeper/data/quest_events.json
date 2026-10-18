@@ -2907,7 +2907,7 @@
     "rewards": ["LOCATION_TAVERN_REWARD_USE_ANCIENT_KEYS_IN_TIME_MACHINE"]
   },
   "EVENT_DIG_UP_CLAY_POT_OF_TAR": {
-    "comment": "The Clay Pot of Tar is buried on Witch Hill; the purpose of the second legacy reward location is still unresolved",
+    "comment": "The Clay Pot of Tar is buried on Witch Hill; GameData exposes exactly one quest pickup, tr_resin_pot",
     "location_label": "Dig up the Clay Pot of Tar",
     "item_label": "Dug up the Clay Pot of Tar",
     "dlc": "STRANGER_SINS",
@@ -2915,10 +2915,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
-    "rewards": [
-      "LOCATION_WITCH_HILL_REWARD_DIG_UP_CLAY_POT_OF_TAR",
-      "LOCATION_REWARD_TIME_MACHINE_ITEM_14_2"
-    ]
+    "rewards": ["LOCATION_WITCH_HILL_REWARD_DIG_UP_CLAY_POT_OF_TAR"]
   },
   "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE": {
     "comment": "Flow: tavern_skull:15:option:20; this vision has no item or relation reward",
