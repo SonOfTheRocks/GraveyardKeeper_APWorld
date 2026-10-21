@@ -30,20 +30,23 @@
     ]
   },
   "ITEM_BP_CRATE_FACTORY": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "flow_script",
+    "script_id": "elevator_and_supplies_place"
   },
   "ITEM_RED_RESEARCH_POINTS": {
-    "type": "game_item",
-    "item_id": "techpoints_red"
+    "type": "research_points",
+    "color": "red",
+    "amount": 100
   },
   "ITEM_GREEN_RESEARCH_POINTS": {
-    "type": "game_item",
-    "item_id": "techpoints_green"
+    "type": "research_points",
+    "color": "green",
+    "amount": 100
   },
   "ITEM_BLUE_RESEARCH_POINTS": {
-    "type": "game_item",
-    "item_id": "techpoints_blue"
+    "type": "research_points",
+    "color": "blue",
+    "amount": 100
   },
   "ITEM_PBUFF_BEER_THIRST": {
     "type": "permanent_buff",
@@ -296,8 +299,9 @@
     "amount": 10
   },
   "ITEM_SMILER_HAPPINESS_10": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "relation",
+    "npc_id": "npc_smiler",
+    "amount": 10
   },
   "ITEM_SALTY_FORK": {
     "type": "game_item",
@@ -309,7 +313,7 @@
   },
   "ITEM_ETERNAL_BURNING_COAL": {
     "type": "game_item",
-    "item_id": "eternal_burning_coal"
+    "item_id": "eternal_burning_coil"
   },
   "ITEM_GOLDEN_ANGLE": {
     "type": "game_item",
@@ -324,12 +328,12 @@
     "item_id": "necklace"
   },
   "ITEM_ACCEPTED_INVITATION": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "accepted_invitation"
   },
   "ITEM_ACTIVE_KEY": {
-    "type": "TODO",
-    "reason": "Duplicate AP network label 'Active key' prevents an unambiguous client mapping."
+    "type": "game_item",
+    "item_id": "ques_key_cultist"
   },
   "ITEM_ARISTOCRAT_PAPERS": {
     "type": "game_item",
@@ -356,20 +360,20 @@
     "item_id": "picnic_basket"
   },
   "ITEM_CAULDRON": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "caldron"
   },
   "ITEM_COINS": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "coins"
   },
   "ITEM_FAKE_COINS": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "quest_fake_coins"
   },
   "ITEM_GARDEN_CERTIFICATE": {
-    "type": "TODO",
-    "reason": "Duplicate AP network label 'Active key' prevents an unambiguous client mapping."
+    "type": "game_item",
+    "item_id": "scroll_garden_prop"
   },
   "ITEM_GRAVEYARD_SCROLL": {
     "type": "game_item",
@@ -388,16 +392,16 @@
     "item_id": "quest_instruction_snake"
   },
   "ITEM_KEEPERS_JOURNAL": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "quest_cultit_book"
   },
   "ITEM_KEEPERS_KEY": {
     "type": "game_item",
     "item_id": "quest_key_astrologer"
   },
   "ITEM_LETTER_TO_THE_BLACKSMITH": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "bs_letter"
   },
   "ITEM_NECRONOMICON": {
     "type": "game_item",
@@ -412,8 +416,8 @@
     "item_id": "parfum_1"
   },
   "ITEM_RESTORATION_TOOLS": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "restoration_instrument"
   },
   "ITEM_STAMP": {
     "type": "game_item",
@@ -425,7 +429,7 @@
   },
   "ITEM_CASUAL_PRAYER": {
     "type": "game_item",
-    "item_id": ""
+    "item_id": "preach_1"
   },
   "ITEM_A_BRICK_FROM_THE_CHURCH": {
     "type": "game_item",
@@ -528,96 +532,96 @@
     "item_id": "vases_with_poison"
   },
   "ITEM_BANK_CHECKS": {
-    "type": "TODO",
-    "reason": "Duplicate AP network label 'Memory powder' prevents an unambiguous client mapping."
+    "type": "game_item",
+    "item_id": "bank_check"
   },
   "ITEM_BATTLE_HORSESHOES": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "battle_horseshoes"
   },
   "ITEM_BLACK_AND_GOLD_CLOAK": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "dark_gold_cloak"
   },
   "ITEM_BONE_LEG": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "skeleton_leg"
   },
   "ITEM_CHARRED_VAMPIRE_SHOE": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "vampires_blackened_boot"
   },
   "ITEM_COOKBOOK": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "book_of_receipts"
   },
   "ITEM_EMULSION_OF_DEATH": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "death_emulsion"
   },
   "ITEM_IRON_UNICORN_HORNS": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "unicorn_horn"
   },
   "ITEM_ICE_AXE": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "ice_axe"
   },
   "ITEM_JELLY_OF_INCREDIBLE_POWER": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "jelly_splinter"
   },
   "ITEM_MEMORY_POWDER": {
-    "type": "TODO",
-    "reason": "Duplicate AP network label 'Memory powder' prevents an unambiguous client mapping."
+    "type": "game_item",
+    "item_id": "memory_powder"
   },
   "ITEM_MEMORY_TINCTURE": {
-    "type": "TODO",
-    "reason": "Duplicate AP network label 'Memory powder' prevents an unambiguous client mapping."
+    "type": "game_item",
+    "item_id": "memory_potion"
   },
   "ITEM_MAGIC_PUMPKIN": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "magic_pumpkin"
   },
   "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "pagan_amulet"
   },
   "ITEM_PIECE_OF_DONKEY_HAIR": {
     "type": "game_item",
     "item_id": "donkey_lock_wool"
   },
   "ITEM_PILE_OF_COMPONENTS": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "details_pile"
   },
   "ITEM_REVOLUTIONARY_DONKEY_BANNER": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "revolutionary_banner"
   },
   "ITEM_REVOLUTIONARY_MESSAGE_1": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "first_letter"
   },
   "ITEM_REVOLUTIONARY_MESSAGE_2": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "second_letter"
   },
   "ITEM_REVOLUTIONARY_MESSAGE_3": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "third_letter"
   },
   "ITEM_SCROLL_OF_TELEPORTATION": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "teleport_scroll"
   },
   "ITEM_VAMPIRES_JAW": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "vampire_jaw"
   },
   "ITEM_WITCHERS_EYE": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "game_item",
+    "item_id": "witchers_eye"
   },
   "ITEM_OLD_RUSTY_KEY": {
     "type": "game_item",
@@ -653,7 +657,7 @@
   },
   "ITEM_REMOTE_CRAFTING": {
     "type": "game_item",
-    "item_id": ""
+    "item_id": "global_control"
   },
   "ITEM_ODE_FOR_BISHOP": {
     "type": "game_item",

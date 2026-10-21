@@ -124,6 +124,12 @@ function Convert-RegistryItemToGrant {
             if ($itemIds.Count -ne 1) {
                 throw "Expected one in-game item ID, found $($itemIds.Count)."
             }
+            if ([string]::IsNullOrWhiteSpace($itemIds[0])) {
+                return [ordered]@{
+                    type = "TODO"
+                    reason = "The current client registry contains an empty in-game item ID."
+                }
+            }
             return [ordered]@{
                 type = "game_item"
                 item_id = $itemIds[0]
@@ -212,8 +218,29 @@ $registryAliases = @{
 
 # Corrections established directly from the raw game data rather than copied
 # from the client factory. Martial skills grants p_big_guy (techs_data.json),
-# and the human soul healing workstation is the named craft_obj_data entry.
+# the human soul healing workstation is the named craft_obj_data entry, and
+# the crate factory is placed by its vanilla FlowScript rather than unlocked
+# through a CraftDefinition.
 $manualGrants = @{
+    "ITEM_BP_CRATE_FACTORY" = [ordered]@{
+        type = "flow_script"
+        script_id = "elevator_and_supplies_place"
+    }
+    "ITEM_RED_RESEARCH_POINTS" = [ordered]@{
+        type = "research_points"
+        color = "red"
+        amount = 100
+    }
+    "ITEM_GREEN_RESEARCH_POINTS" = [ordered]@{
+        type = "research_points"
+        color = "green"
+        amount = 100
+    }
+    "ITEM_BLUE_RESEARCH_POINTS" = [ordered]@{
+        type = "research_points"
+        color = "blue"
+        amount = 100
+    }
     "ITEM_PERK_BIG_GUY" = [ordered]@{
         type = "perk_unlock"
         perk_id = "p_big_guy"
@@ -225,6 +252,57 @@ $manualGrants = @{
         craft_ids = [System.Collections.Generic.List[string]] @(
             "souls_builddesk::soul_healing_for_human"
         )
+    }
+    "ITEM_SMILER_HAPPINESS_10" = [ordered]@{
+        type = "relation"
+        npc_id = "npc_smiler"
+        amount = 10
+    }
+}
+
+# Quest-item IDs are taken from connected FlowGraph item values and verified
+# against items_data.json by the data-integrity suite. Explicit item-key lookup
+# also disambiguates the few currently duplicated player-facing AP labels.
+$gameItemIdsByItemKey = @{
+    "ITEM_ACCEPTED_INVITATION" = "accepted_invitation"
+    "ITEM_ACTIVE_KEY" = "ques_key_cultist"
+    "ITEM_CASUAL_PRAYER" = "preach_1"
+    "ITEM_CAULDRON" = "caldron"
+    "ITEM_COINS" = "coins"
+    "ITEM_FAKE_COINS" = "quest_fake_coins"
+    "ITEM_GARDEN_CERTIFICATE" = "scroll_garden_prop"
+    "ITEM_KEEPERS_JOURNAL" = "quest_cultit_book"
+    "ITEM_LETTER_TO_THE_BLACKSMITH" = "bs_letter"
+    "ITEM_RESTORATION_TOOLS" = "restoration_instrument"
+    "ITEM_BANK_CHECKS" = "bank_check"
+    "ITEM_BATTLE_HORSESHOES" = "battle_horseshoes"
+    "ITEM_BLACK_AND_GOLD_CLOAK" = "dark_gold_cloak"
+    "ITEM_BONE_LEG" = "skeleton_leg"
+    "ITEM_CHARRED_VAMPIRE_SHOE" = "vampires_blackened_boot"
+    "ITEM_COOKBOOK" = "book_of_receipts"
+    "ITEM_EMULSION_OF_DEATH" = "death_emulsion"
+    "ITEM_ETERNAL_BURNING_COAL" = "eternal_burning_coil"
+    "ITEM_IRON_UNICORN_HORNS" = "unicorn_horn"
+    "ITEM_ICE_AXE" = "ice_axe"
+    "ITEM_JELLY_OF_INCREDIBLE_POWER" = "jelly_splinter"
+    "ITEM_MEMORY_POWDER" = "memory_powder"
+    "ITEM_MEMORY_TINCTURE" = "memory_potion"
+    "ITEM_MAGIC_PUMPKIN" = "magic_pumpkin"
+    "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING" = "pagan_amulet"
+    "ITEM_PILE_OF_COMPONENTS" = "details_pile"
+    "ITEM_REVOLUTIONARY_DONKEY_BANNER" = "revolutionary_banner"
+    "ITEM_REVOLUTIONARY_MESSAGE_1" = "first_letter"
+    "ITEM_REVOLUTIONARY_MESSAGE_2" = "second_letter"
+    "ITEM_REVOLUTIONARY_MESSAGE_3" = "third_letter"
+    "ITEM_REMOTE_CRAFTING" = "global_control"
+    "ITEM_SCROLL_OF_TELEPORTATION" = "teleport_scroll"
+    "ITEM_VAMPIRES_JAW" = "vampire_jaw"
+    "ITEM_WITCHERS_EYE" = "witchers_eye"
+}
+foreach ($mapping in $gameItemIdsByItemKey.GetEnumerator()) {
+    $manualGrants[$mapping.Key] = [ordered]@{
+        type = "game_item"
+        item_id = $mapping.Value
     }
 }
 

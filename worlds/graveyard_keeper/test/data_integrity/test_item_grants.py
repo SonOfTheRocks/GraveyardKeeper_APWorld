@@ -38,7 +38,9 @@ class TestItemGrants(unittest.TestCase):
             "perk_unlock": ({"perk_id", "craft_ids", "work_ids"}, set()),
             "permanent_buff": ({"buff_id", "resource_types", "icon"}, set()),
             "relation": ({"npc_id", "amount"}, set()),
+            "research_points": ({"color", "amount"}, set()),
             "technology_unlock": ({"technology_ids"}, set()),
+            "flow_script": ({"script_id"}, set()),
             "TODO": ({"reason"}, set()),
         }
         for item_key, grant in self.raw_grants.items():
@@ -50,20 +52,37 @@ class TestItemGrants(unittest.TestCase):
                 self.assertFalse(grant.keys() - required - optional - {"type"})
 
     def test_scalar_grant_fields_have_valid_values(self):
-        string_fields = {"item_id", "perk_id", "buff_id", "npc_id", "reason"}
+        string_fields = {
+            "item_id", "perk_id", "buff_id", "npc_id", "color", "reason", "script_id",
+        }
         for item_key, grant in self.raw_grants.items():
             for field in string_fields & grant.keys():
                 with self.subTest(item=item_key, field=field):
                     self.assertIsInstance(grant[field], str)
-                    if grant["type"] != "game_item" or item_key not in {
-                        "ITEM_CASUAL_PRAYER",
-                        "ITEM_REMOTE_CRAFTING",
-                    }:
-                        self.assertTrue(grant[field].strip())
+                    self.assertTrue(grant[field].strip())
             if "amount" in grant:
                 with self.subTest(item=item_key, field="amount"):
                     self.assertIs(type(grant["amount"]), int)
                     self.assertGreater(grant["amount"], 0)
+
+    def test_research_point_grants_use_supported_colors(self):
+        research_grants = {
+            item_key: grant
+            for item_key, grant in self.raw_grants.items()
+            if grant["type"] == "research_points"
+        }
+        self.assertEqual(
+            {
+                "ITEM_RED_RESEARCH_POINTS",
+                "ITEM_GREEN_RESEARCH_POINTS",
+                "ITEM_BLUE_RESEARCH_POINTS",
+            },
+            research_grants.keys(),
+        )
+        self.assertEqual(
+            {"red", "green", "blue"},
+            {grant["color"] for grant in research_grants.values()},
+        )
 
     def test_list_grant_fields_contain_only_unique_strings(self):
         list_fields = {
@@ -112,6 +131,15 @@ class TestItemGrants(unittest.TestCase):
             ["souls_builddesk::soul_healing_for_human"],
             self.raw_grants["ITEM_BP_HUMAN_SOUL_HEALING"]["craft_ids"],
         )
+        self.assertEqual("preach_1", self.raw_grants["ITEM_CASUAL_PRAYER"]["item_id"])
+        self.assertEqual("global_control", self.raw_grants["ITEM_REMOTE_CRAFTING"]["item_id"])
+        self.assertEqual(
+            {
+                "type": "flow_script",
+                "script_id": "elevator_and_supplies_place",
+            },
+            self.raw_grants["ITEM_BP_CRATE_FACTORY"],
+        )
 
     def test_technology_grant_ids_exist_in_raw_game_data_when_available(self):
         techs_path = GAME_DATA_ROOT / "techs_data.json"
@@ -127,6 +155,28 @@ class TestItemGrants(unittest.TestCase):
             for technology_id in grant["technology_ids"]:
                 with self.subTest(item=item_key, technology=technology_id):
                     self.assertIn(technology_id, technology_ids)
+
+    def test_game_item_grant_ids_exist_in_raw_game_data_when_available(self):
+        items_path = GAME_DATA_ROOT / "items_data.json"
+        if not items_path.exists():
+            self.skipTest("local raw item dump is not available")
+        game_item_ids = {
+            item["id"]
+            for item in json.loads(items_path.read_text(encoding="utf-8-sig"))
+        }
+        for item_key, grant in self.raw_grants.items():
+            if grant["type"] != "game_item":
+                continue
+            with self.subTest(item=item_key, game_item=grant["item_id"]):
+                self.assertIn(grant["item_id"], game_item_ids)
+
+    def test_item_grants_have_no_unresolved_todos(self):
+        unresolved = {
+            item_key: grant["reason"]
+            for item_key, grant in self.raw_grants.items()
+            if grant["type"] == "TODO"
+        }
+        self.assertEqual({}, unresolved)
 
 
 if __name__ == "__main__":
