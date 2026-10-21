@@ -5,7 +5,7 @@ from types import SimpleNamespace
 from unittest.mock import MagicMock
 
 from ...data import data, load_json_data
-from ...models import LocationTriggerData, QuestEventData
+from ...models import QuestEventData
 from ...world import GraveyardKeeperWorld
 
 
@@ -16,11 +16,11 @@ GAME_DATA_ROOT = Path(__file__).parents[2] / "dumps" / "raw"
 
 
 class TestQuestLocationTriggers(unittest.TestCase):
-    @staticmethod
-    def _serialized_triggers(location_key):
-        return [trigger.to_slot_data() for trigger in data.locations[location_key].triggers]
+    @classmethod
+    def setUpClass(cls):
+        cls.raw_locations = load_json_data("locations.json")
 
-    def test_every_quest_reward_location_has_triggers_or_an_explicit_todo(self):
+    def test_every_quest_reward_location_has_triggers(self):
         reward_locations = {
             location
             for event in data.events.values()
@@ -28,17 +28,17 @@ class TestQuestLocationTriggers(unittest.TestCase):
             for location in event.rewards
         }
         incomplete = {
-            location: data.locations[location].trigger_todo
+            location
             for location in reward_locations
-            if not data.locations[location].triggers and not data.locations[location].trigger_todo
+            if not self.raw_locations[location].get("triggers")
         }
         self.assertFalse(incomplete, f"Quest reward locations without trigger metadata: {incomplete}")
 
     def test_no_quest_location_trigger_todos_remain(self):
         todos = {
-            location_key: location.trigger_todo
-            for location_key, location in data.locations.items()
-            if location.trigger_todo is not None
+            location_key: location["trigger_todo"]
+            for location_key, location in self.raw_locations.items()
+            if "trigger_todo" in location
         }
         self.assertFalse(todos, f"Resolve trigger TODOs before adding new ones: {todos}")
 
@@ -51,19 +51,20 @@ class TestQuestLocationTriggers(unittest.TestCase):
         }
         unexpected = {
             location_key
-            for location_key, location in data.locations.items()
-            if (location.triggers or location.trigger_todo) and location_key not in reward_locations
+            for location_key, location in self.raw_locations.items()
+            if (location.get("triggers") or location.get("trigger_todo")) and location_key not in reward_locations
         }
         self.assertFalse(unexpected)
 
-    def test_location_triggers_are_unique_and_serialize_without_null_fields(self):
-        for location_key, location in data.locations.items():
-            serialized = [trigger.to_slot_data() for trigger in location.triggers]
+    def test_location_triggers_are_unique_and_contain_no_null_fields(self):
+        for location_key, location in self.raw_locations.items():
+            triggers = location.get("triggers", [])
             with self.subTest(location=location_key):
-                self.assertEqual(len(serialized), len({
-                    json.dumps(trigger, sort_keys=True) for trigger in serialized
-                }))
-                self.assertTrue(all(value is not None for trigger in serialized for value in trigger.values()))
+                self.assertEqual(
+                    len(triggers),
+                    len({json.dumps(trigger, sort_keys=True) for trigger in triggers}),
+                )
+                self.assertTrue(all(value is not None for trigger in triggers for value in trigger.values()))
 
     def test_raw_location_trigger_schema_uses_only_supported_type_specific_fields(self):
         required_fields = {
@@ -73,22 +74,30 @@ class TestQuestLocationTriggers(unittest.TestCase):
             "world_item_reward": {"item_id"},
             "technology_reward": {"technology_id"},
         }
-        raw_locations = load_json_data("locations.json")
-        for location_key, location in raw_locations.items():
-            for index, trigger in enumerate(location.get("triggers", [])):
+        for location_key, location in self.raw_locations.items():
+            triggers = location.get("triggers", [])
+            self.assertIsInstance(triggers, list, location_key)
+            for index, trigger in enumerate(triggers):
                 with self.subTest(location=location_key, trigger=index):
+                    self.assertIsInstance(trigger, dict)
                     self.assertIn(trigger.get("type"), required_fields)
                     allowed = required_fields[trigger["type"]] | {"type"}
                     if trigger["type"].startswith("flow_"):
                         allowed.add("answer_index")
                     self.assertFalse(required_fields[trigger["type"]] - trigger.keys())
                     self.assertFalse(trigger.keys() - allowed)
+                    for field_name in required_fields[trigger["type"]]:
+                        self.assertIsInstance(trigger[field_name], str)
+                        self.assertTrue(trigger[field_name].strip())
+                    if "answer_index" in trigger:
+                        self.assertIs(type(trigger["answer_index"]), int)
+                        self.assertGreaterEqual(trigger["answer_index"], 0)
 
     def test_relation_and_non_relation_flow_rewards_remain_distinguishable(self):
         trigger_types = {
-            trigger.type
-            for location in data.locations.values()
-            for trigger in location.triggers
+            trigger["type"]
+            for location in self.raw_locations.values()
+            for trigger in location.get("triggers", [])
         }
         self.assertIn("flow_relation_reward", trigger_types)
         self.assertIn("flow_quest_reward", trigger_types)
@@ -105,14 +114,14 @@ class TestQuestLocationTriggers(unittest.TestCase):
                 self.assertEqual(
                     answer_indexes,
                     {
-                        trigger.answer_index
-                        for trigger in data.locations[location_key].triggers
+                        trigger["answer_index"]
+                        for trigger in self.raw_locations[location_key]["triggers"]
                     },
                 )
 
-        farmer_triggers = self._serialized_triggers(
+        farmer_triggers = self.raw_locations[
             "LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"
-        )
+        ]["triggers"]
         self.assertIn(
             {
                 "type": "flow_relation_reward",
@@ -139,38 +148,41 @@ class TestQuestLocationTriggers(unittest.TestCase):
         )
         for location_key in clotho_locations:
             with self.subTest(location=location_key):
-                triggers = data.locations[location_key].triggers
-                self.assertTrue(all(trigger.type == "flow_relation_reward" for trigger in triggers))
-                self.assertIn(1, {trigger.answer_index for trigger in triggers})
+                triggers = self.raw_locations[location_key]["triggers"]
+                self.assertTrue(all(trigger["type"] == "flow_relation_reward" for trigger in triggers))
+                self.assertIn(1, {trigger["answer_index"] for trigger in triggers})
 
     def test_real_flow_trigger_nodes_and_answer_indexes_exist_when_dumps_are_available(self):
         if not FLOW_DUMP_ROOT.exists():
             self.skipTest("local companion FlowGraph exports are not available")
         graphs = {}
-        for location_key, location in data.locations.items():
-            for trigger in location.triggers:
-                if not trigger.type.startswith("flow_"):
+        for location_key, location in self.raw_locations.items():
+            for trigger in location.get("triggers", []):
+                if not trigger["type"].startswith("flow_"):
                     continue
-                graph_nodes = graphs.get(trigger.graph)
+                graph_name = trigger["graph"]
+                graph_nodes = graphs.get(graph_name)
                 if graph_nodes is None:
-                    graph_path = FLOW_DUMP_ROOT / f"{trigger.graph}.json"
+                    graph_path = FLOW_DUMP_ROOT / f"{graph_name}.json"
                     self.assertTrue(graph_path.exists(), f"Missing graph for {location_key}: {graph_path}")
                     graph = json.loads(graph_path.read_text(encoding="utf-8-sig"))
                     graph_nodes = {
                         node.get("$id"): node for node in graph["nodes"] if node.get("$id") is not None
                     }
-                    graphs[trigger.graph] = graph_nodes
-                with self.subTest(location=location_key, graph=trigger.graph, node=trigger.node_id):
-                    self.assertIn(trigger.node_id, graph_nodes)
-                    node = graph_nodes[trigger.node_id]
+                    graphs[graph_name] = graph_nodes
+                node_id = trigger["node_id"]
+                with self.subTest(location=location_key, graph=graph_name, node=node_id):
+                    self.assertIn(node_id, graph_nodes)
+                    node = graph_nodes[node_id]
+                    answer_index = trigger.get("answer_index")
                     if "MultiAnswer" in node["$type"]:
                         self.assertIsNotNone(
-                            trigger.answer_index,
+                            answer_index,
                             f"MultiAnswer trigger must identify the selected answer: {location_key}",
                         )
-                    if trigger.answer_index is not None:
+                    if answer_index is not None:
                         self.assertIn("MultiAnswer", node["$type"])
-                        self.assertLess(trigger.answer_index, len(node.get("answers", [])))
+                        self.assertLess(answer_index, len(node.get("answers", [])))
 
     def test_non_flow_trigger_ids_exist_in_game_data_when_dumps_are_available(self):
         dump_files = {
@@ -192,56 +204,34 @@ class TestQuestLocationTriggers(unittest.TestCase):
                 row["id"]
                 for row in json.loads(craft_objects_path.read_text(encoding="utf-8-sig"))
             })
-        for location_key, location in data.locations.items():
-            for trigger in location.triggers:
-                if trigger.type not in dump_files:
+        for location_key, location in self.raw_locations.items():
+            for trigger in location.get("triggers", []):
+                trigger_type = trigger["type"]
+                if trigger_type not in dump_files:
                     continue
-                field_name = dump_files[trigger.type][1]
-                trigger_id = getattr(trigger, field_name)
-                with self.subTest(location=location_key, trigger_type=trigger.type, trigger_id=trigger_id):
-                    self.assertIn(trigger_id, ids[trigger.type])
+                field_name = dump_files[trigger_type][1]
+                trigger_id = trigger[field_name]
+                with self.subTest(location=location_key, trigger_type=trigger_type, trigger_id=trigger_id):
+                    self.assertIn(trigger_id, ids[trigger_type])
 
 
-class TestLocationTriggerSerialization(unittest.TestCase):
-    def test_serialization_uses_only_fields_relevant_to_the_trigger_type(self):
-        trigger = LocationTriggerData(
-            type="flow_relation_reward", graph="npc_bishop", node_id="75", answer_index=2,
-        )
-        self.assertEqual(
-            {
-                "type": "flow_relation_reward",
-                "graph": "npc_bishop",
-                "node_id": "75",
-                "answer_index": 2,
-            },
-            trigger.to_slot_data(),
-        )
+class TestLocationTriggersStayOutOfAPWorldRuntime(unittest.TestCase):
+    def test_runtime_location_models_do_not_contain_trigger_metadata(self):
+        location = data.locations["LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_1"]
+        self.assertFalse(hasattr(location, "triggers"))
+        self.assertFalse(hasattr(location, "trigger_todo"))
 
-    def test_slot_data_contains_only_enabled_addressable_location_triggers(self):
-        enabled_label = data.locations["LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_1"].label
-        disabled_label = data.locations["LOCATION_GAME_OF_CRONE_REWARD_COMPLETE_STORY"].label
-        fake_world = SimpleNamespace(
-            player=1,
-            options=MagicMock(),
-            multiworld=MagicMock(),
-        )
+    def test_slot_data_does_not_contain_location_trigger_metadata(self):
+        fake_world = SimpleNamespace(options=MagicMock())
         fake_world.options.as_dict.return_value = {
             "stranger_sins": 0,
             "game_of_crone": 0,
             "better_save_soul": 0,
         }
-        fake_world.multiworld.get_locations.return_value = [
-            SimpleNamespace(name=enabled_label, address=1),
-            SimpleNamespace(name=disabled_label, address=None),
-        ]
 
         slot_data = GraveyardKeeperWorld.fill_slot_data(fake_world)
 
         fake_world.options.as_dict.assert_called_once_with(
             "stranger_sins", "game_of_crone", "better_save_soul",
         )
-        self.assertEqual(1, slot_data["quest_location_triggers"]["version"])
-        self.assertEqual(
-            {enabled_label},
-            set(slot_data["quest_location_triggers"]["locations"]),
-        )
+        self.assertNotIn("quest_location_triggers", slot_data)

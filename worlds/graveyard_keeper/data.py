@@ -7,7 +7,6 @@ from typing import List, Dict, Union, Any, Tuple, Set
 from BaseClasses import ItemClassification
 from worlds.graveyard_keeper.models import DLCType, EventData, RegionData, LocationData, ItemData, VendorData, \
     RecipeData, UnlockData, GraveyardKeeperData, ReverseItemData, QualityRecipeData, SimpleRecipeData, QuestEventData, \
-    LocationTriggerData, \
     HappinessData, AreaPointData
 
 UNREACHABLE_REGION_KEY = "REGION_UNREACHABLE"
@@ -91,78 +90,15 @@ def load_locations(regions: Dict[str, RegionData]) -> Dict[str, LocationData]:
     locations: Dict[str, LocationData] = {}
 
     for location_name, location_json in load_json_data("locations.json").items():
-        unknown_fields = location_json.keys() - {"label", "parent_region", "triggers", "trigger_todo"}
+        # Trigger metadata is source data for tooling and future shared-data integration. It is intentionally
+        # not loaded into APWorld runtime models; data-integrity tests validate it directly from the JSON.
+        unknown_fields = location_json.keys() - {"label", "parent_region", "triggers"}
         if unknown_fields:
             raise ValueError(f"Unknown location fields for '{location_name}': {sorted(unknown_fields)}")
-
-        triggers = []
-        for index, trigger_json in enumerate(location_json.get("triggers", [])):
-            if not isinstance(trigger_json, dict):
-                raise ValueError(f"Location trigger {location_name}[{index}] must be an object")
-            trigger_fields = {
-                "type", "graph", "node_id", "answer_index", "craft_id", "item_id", "technology_id",
-            }
-            unknown_trigger_fields = trigger_json.keys() - trigger_fields
-            if unknown_trigger_fields:
-                raise ValueError(
-                    f"Unknown trigger fields for '{location_name}[{index}]': "
-                    f"{sorted(unknown_trigger_fields)}"
-                )
-            if "type" not in trigger_json:
-                raise ValueError(f"Trigger '{location_name}[{index}]' has no type")
-            trigger_type = trigger_json["type"]
-            required_fields = {
-                "flow_quest_reward": {"graph", "node_id"},
-                "flow_relation_reward": {"graph", "node_id"},
-                "craft_reward": {"craft_id"},
-                "world_item_reward": {"item_id"},
-                "technology_reward": {"technology_id"},
-            }
-            if trigger_type not in required_fields:
-                raise ValueError(f"Unknown trigger type '{trigger_type}' for '{location_name}[{index}]'")
-            missing_trigger_fields = required_fields[trigger_type] - trigger_json.keys()
-            if missing_trigger_fields:
-                raise ValueError(
-                    f"Incomplete trigger for '{location_name}[{index}]': "
-                    f"missing {sorted(missing_trigger_fields)}"
-                )
-            allowed_fields = required_fields[trigger_type] | {"type"}
-            if trigger_type.startswith("flow_"):
-                allowed_fields.add("answer_index")
-            incompatible_fields = trigger_json.keys() - allowed_fields
-            if incompatible_fields:
-                raise ValueError(
-                    f"Incompatible trigger fields for '{location_name}[{index}]': "
-                    f"{sorted(incompatible_fields)}"
-                )
-            for field_name in required_fields[trigger_type]:
-                value = trigger_json[field_name]
-                if not isinstance(value, str) or not value.strip():
-                    raise ValueError(f"Invalid trigger {field_name} for '{location_name}[{index}]'")
-            answer_index = trigger_json.get("answer_index")
-            if answer_index is not None and (not isinstance(answer_index, int) or answer_index < 0):
-                raise ValueError(f"Invalid trigger answer_index for '{location_name}[{index}]'")
-            triggers.append(LocationTriggerData(
-                type=trigger_type,
-                graph=trigger_json.get("graph"),
-                node_id=trigger_json.get("node_id"),
-                answer_index=answer_index,
-                craft_id=trigger_json.get("craft_id"),
-                item_id=trigger_json.get("item_id"),
-                technology_id=trigger_json.get("technology_id"),
-            ))
-
-        trigger_todo = location_json.get("trigger_todo")
-        if trigger_todo is not None and (not isinstance(trigger_todo, str) or not trigger_todo.strip()):
-            raise ValueError(f"Invalid trigger_todo for '{location_name}'")
-        if triggers and trigger_todo is not None:
-            raise ValueError(f"Location '{location_name}' cannot have triggers and trigger_todo")
 
         locations[location_name] = LocationData(
             location_json["label"],
             location_json["parent_region"],
-            tuple(triggers),
-            trigger_todo,
         )
 
     ''' disabled for now
