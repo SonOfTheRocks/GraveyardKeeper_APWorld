@@ -19,6 +19,7 @@ class TestQuestLocationTriggers(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.raw_locations = load_json_data("locations.json")
+        cls.raw_triggers = load_json_data("quest_reward_triggers.json")
 
     def test_every_quest_reward_location_has_triggers(self):
         reward_locations = {
@@ -30,17 +31,17 @@ class TestQuestLocationTriggers(unittest.TestCase):
         incomplete = {
             location
             for location in reward_locations
-            if not self.raw_locations[location].get("triggers")
+            if not self.raw_triggers.get(location)
         }
         self.assertFalse(incomplete, f"Quest reward locations without trigger metadata: {incomplete}")
 
     def test_no_quest_location_trigger_todos_remain(self):
         todos = {
-            location_key: location["trigger_todo"]
-            for location_key, location in self.raw_locations.items()
-            if "trigger_todo" in location
+            location_key: triggers
+            for location_key, triggers in self.raw_triggers.items()
+            if not triggers
         }
-        self.assertFalse(todos, f"Resolve trigger TODOs before adding new ones: {todos}")
+        self.assertFalse(todos, f"Resolve empty trigger mappings before adding new ones: {todos}")
 
     def test_trigger_metadata_is_only_attached_to_quest_reward_locations(self):
         reward_locations = {
@@ -51,14 +52,13 @@ class TestQuestLocationTriggers(unittest.TestCase):
         }
         unexpected = {
             location_key
-            for location_key, location in self.raw_locations.items()
-            if (location.get("triggers") or location.get("trigger_todo")) and location_key not in reward_locations
+            for location_key in self.raw_triggers
+            if location_key not in reward_locations
         }
         self.assertFalse(unexpected)
 
     def test_location_triggers_are_unique_and_contain_no_null_fields(self):
-        for location_key, location in self.raw_locations.items():
-            triggers = location.get("triggers", [])
+        for location_key, triggers in self.raw_triggers.items():
             with self.subTest(location=location_key):
                 self.assertEqual(
                     len(triggers),
@@ -74,8 +74,7 @@ class TestQuestLocationTriggers(unittest.TestCase):
             "world_item_reward": {"item_id"},
             "technology_reward": {"technology_id"},
         }
-        for location_key, location in self.raw_locations.items():
-            triggers = location.get("triggers", [])
+        for location_key, triggers in self.raw_triggers.items():
             self.assertIsInstance(triggers, list, location_key)
             for index, trigger in enumerate(triggers):
                 with self.subTest(location=location_key, trigger=index):
@@ -96,8 +95,8 @@ class TestQuestLocationTriggers(unittest.TestCase):
     def test_relation_and_non_relation_flow_rewards_remain_distinguishable(self):
         trigger_types = {
             trigger["type"]
-            for location in self.raw_locations.values()
-            for trigger in location.get("triggers", [])
+            for triggers in self.raw_triggers.values()
+            for trigger in triggers
         }
         self.assertIn("flow_relation_reward", trigger_types)
         self.assertIn("flow_quest_reward", trigger_types)
@@ -115,13 +114,11 @@ class TestQuestLocationTriggers(unittest.TestCase):
                     answer_indexes,
                     {
                         trigger["answer_index"]
-                        for trigger in self.raw_locations[location_key]["triggers"]
+                        for trigger in self.raw_triggers[location_key]
                     },
                 )
 
-        farmer_triggers = self.raw_locations[
-            "LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"
-        ]["triggers"]
+        farmer_triggers = self.raw_triggers["LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING"]
         self.assertIn(
             {
                 "type": "flow_relation_reward",
@@ -148,7 +145,7 @@ class TestQuestLocationTriggers(unittest.TestCase):
         )
         for location_key in clotho_locations:
             with self.subTest(location=location_key):
-                triggers = self.raw_locations[location_key]["triggers"]
+                triggers = self.raw_triggers[location_key]
                 self.assertTrue(all(trigger["type"] == "flow_relation_reward" for trigger in triggers))
                 self.assertIn(1, {trigger["answer_index"] for trigger in triggers})
 
@@ -156,8 +153,8 @@ class TestQuestLocationTriggers(unittest.TestCase):
         if not FLOW_DUMP_ROOT.exists():
             self.skipTest("local companion FlowGraph exports are not available")
         graphs = {}
-        for location_key, location in self.raw_locations.items():
-            for trigger in location.get("triggers", []):
+        for location_key, triggers in self.raw_triggers.items():
+            for trigger in triggers:
                 if not trigger["type"].startswith("flow_"):
                     continue
                 graph_name = trigger["graph"]
@@ -204,8 +201,8 @@ class TestQuestLocationTriggers(unittest.TestCase):
                 row["id"]
                 for row in json.loads(craft_objects_path.read_text(encoding="utf-8-sig"))
             })
-        for location_key, location in self.raw_locations.items():
-            for trigger in location.get("triggers", []):
+        for location_key, triggers in self.raw_triggers.items():
+            for trigger in triggers:
                 trigger_type = trigger["type"]
                 if trigger_type not in dump_files:
                     continue

@@ -90,9 +90,7 @@ def load_locations(regions: Dict[str, RegionData]) -> Dict[str, LocationData]:
     locations: Dict[str, LocationData] = {}
 
     for location_name, location_json in load_json_data("locations.json").items():
-        # Trigger metadata is source data for tooling and future shared-data integration. It is intentionally
-        # not loaded into APWorld runtime models; data-integrity tests validate it directly from the JSON.
-        unknown_fields = location_json.keys() - {"label", "parent_region", "triggers"}
+        unknown_fields = location_json.keys() - {"label", "parent_region"}
         if unknown_fields:
             raise ValueError(f"Unknown location fields for '{location_name}': {sorted(unknown_fields)}")
 

@@ -1,0 +1,2222 @@
+{
+  "LOCATION_YORICK_REWARD_VISIT_AFTER_FIRST_BURIAL": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "ghost_comes_after_players_sleep",
+      "node_id": "48"
+    }
+  ],
+  "LOCATION_TUTORIAL_REWARD_ENTER_MORGUE_WITH_CORPSE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "autopsi_enter",
+      "node_id": "18"
+    }
+  ],
+  "LOCATION_TUTORIAL_REWARD_GET_FIRST_FLESH": [
+    {
+      "type": "craft_reward",
+      "craft_id": "ex:mf_preparation_1:flesh"
+    },
+    {
+      "type": "craft_reward",
+      "craft_id": "ex:mf_preparation_2:flesh"
+    }
+  ],
+  "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_1": [
+    {
+      "type": "technology_reward",
+      "technology_id": "Grave plate"
+    }
+  ],
+  "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_2": [
+    {
+      "type": "craft_reward",
+      "craft_id": "keeper_room_builddesk:p:keeper_room_picture_4"
+    }
+  ],
+  "LOCATION_TUTORIAL_REWARD_TALK_TO_BISHOP_3": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "donat_box",
+      "node_id": "23"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_SKULL": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_PORTAL": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_astrologer",
+      "node_id": "163"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_KEEPERS_JOURNAL": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_ACID": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_GET_ASTROLOGER_RESTORATION_TOOLS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 10
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_RESTORE_REPUTATION_2": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 11
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 12
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_SHOW_ARISTOCRAT_PAPERS_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 12
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_TELL_ABOUT_MS_CHARM": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "774"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_TELL_ESMERALDAS_FATE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "742"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_MILL_FIX": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_astrologer",
+      "node_id": "1151"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_ASK_ABOUT_HIS_DAY": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_astrologer",
+      "node_id": "1555"
+    }
+  ],
+  "LOCATION_LIGHTHOUSE_KEEPER_REWARD_GET_NECRONOMICON": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_light_keeper",
+      "node_id": "13",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_LIGHTHOUSE_KEEPER_REWARD_TRADE_MOTHS_FOR_FISHING_ROD": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_light_keeper",
+      "node_id": "13",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_farmer",
+      "node_id": "225"
+    }
+  ],
+  "LOCATION_FARMER_REWARD_GET_PERMISSION_FOR_ALISA_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_farmer",
+      "node_id": "235"
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_GIVE_ALISAS_PAPERS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 7
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 8
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_SHOW_ARISTOCRAT_PAPERS_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 8
+    }
+  ],
+  "LOCATION_VAGNER_REWARD_MEET": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actor",
+      "node_id": "221"
+    }
+  ],
+  "LOCATION_VAGNER_REWARD_GIVE_INK": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actor",
+      "node_id": "17",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_VAGNER_REWARD_GIVE_CLEAN_PAPER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actor",
+      "node_id": "17",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_VAGNER_REWARD_GIVE_SILVER_WINE_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actor",
+      "node_id": "188"
+    }
+  ],
+  "LOCATION_VAGNER_REWARD_GIVE_SILVER_WINE_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_actor",
+      "node_id": "145",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_VAGNER_REWARD_MEET_AT_CLIFFS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "actor_satyr_cutscene",
+      "node_id": "42"
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_GIVE_SONG_LYRICS_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 9
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_GIVE_SONG_LYRICS_2": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "818"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_ASK_TO_HELP_RESCUE_VAGNER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_astrologer",
+      "node_id": "44",
+      "answer_index": 8
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "archaeological_excavations",
+      "node_id": "284"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "archaeological_excavations",
+      "node_id": "286"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_3": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "archaeological_excavations",
+      "node_id": "299"
+    }
+  ],
+  "LOCATION_ASTROLOGER_REWARD_RESCUE_VAGNER_4": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "archaeological_excavations",
+      "node_id": "301"
+    }
+  ],
+  "LOCATION_GYPSY_BARON_REWARD_REPORT_FRIEND_RELEASED": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_gypsy",
+      "node_id": "11",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_GYPSY_BARON_REWARD_GET_KEBAB_RECIPES": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_gypsy",
+      "node_id": "11",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_MEET": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "417"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "75",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_FIX_THE_GRAVEYARD_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "529"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_1": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "pray",
+      "node_id": "26"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "pray",
+      "node_id": "28"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FIRST_SERMON_3": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "pray",
+      "node_id": "30"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_ACCEPT_QUEST_BOWLS_FOR_THE_SOUP_KITCHEN": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "75",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_BOWLS_FOR_THE_SOUP_KITCHEN_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "75",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_BOWLS_FOR_THE_SOUP_KITCHEN_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "243"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_IMPROVE_GRAVEYARD": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "679",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_IMPROVE_CHURCH": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "679",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_GIVE_QUALITY_FISH_FILLET": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "75",
+      "answer_index": 7
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "679",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_UPGRADE_TO_BIG_CHURCH": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "679",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_IMPROVE_CHURCH_FOR_CATHEDRAL": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "1030",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_IMPROVE_GRAVEYARD_FOR_CATHEDRAL": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "1030",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_BUILD_STATUE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "1068",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_SHOW_ARISTOCRAT_PAPERS_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "1030",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_SHOW_ARISTOCRAT_PAPERS_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "1030",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_GIVE_ACCEPTED_INVITATION": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_bishop",
+      "node_id": "1030",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "final_ceremony",
+      "node_id": "170"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "final_ceremony",
+      "node_id": "172"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_3": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "final_ceremony",
+      "node_id": "185"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HOLD_FINAL_CEREMONY_4": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "final_ceremony",
+      "node_id": "187"
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_HAND_OVER_PORTAL_ARTIFACT": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "1030",
+      "answer_index": 8
+    }
+  ],
+  "LOCATION_BISHOP_REWARD_RECITE_ODE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_bishop",
+      "node_id": "1982"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_ATTEND_FIRST_BURNING": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "440"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FIREWOOD": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "736",
+      "answer_index": 3
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "736",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_BURN_THE_WITCH_FLYERS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "736",
+      "answer_index": 4
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "736",
+      "answer_index": 6
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_GET_GRAVEYARD_EXPANSION_PERMISSION": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "736",
+      "answer_index": 1
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "736",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_ATTEND_SECOND_BURNING": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1061"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_GIVE_RED_WINE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "843",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_ASK_TO_BUILD_BUFFET_TENT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1231"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_REPORT_BUFFET_TENT_READY": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "843",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "witch_tasty_burning",
+      "node_id": "158"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "witch_tasty_burning",
+      "node_id": "169"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_HOST_FIRST_BUFFET_BURNING_3": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "witch_tasty_burning",
+      "node_id": "180"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_GIVE_DARK_HEART": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1556",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_GIVE_DARK_BRAIN": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1556",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_GIVE_DARK_INTESTINE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1556",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_REPORT_PORTAL_GUARDS_REMOVED": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1399"
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_HAND_OVER_PORTAL_ARTIFACT": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "843",
+      "answer_index": 12
+    }
+  ],
+  "LOCATION_INQUISITOR_REWARD_SHOW_UNUSUAL_ASH": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_inquisitor",
+      "node_id": "1958"
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_REPAY_LOAN": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "190",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_ACCEPT_LOAN": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_merchant",
+      "node_id": "231",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_GIVE_HIM_VEGETABLES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "525"
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_HICCUP_CURE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "38",
+      "answer_index": 6
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_GIVE_MYSTERIOUS_FOOD_SAUCE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_merchant",
+      "node_id": "1559"
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_GIVE_SPICES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "38",
+      "answer_index": 7
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_GIVE_DINNER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "38",
+      "answer_index": 8
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_SHOW_TRADE_LICENSE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "38",
+      "answer_index": 9
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_COMPLETE_MARKETING": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "938",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_COMPLETE_SALES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "938",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_DISCUSS_STRATEGY": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "926"
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_REPORT_MS_CHARM_SUPPORT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_merchant",
+      "node_id": "38",
+      "answer_index": 14
+    }
+  ],
+  "LOCATION_MERCHANT_REWARD_INVITE_TO_FINAL_CEREMONY": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_merchant",
+      "node_id": "1197"
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_PROVE_YOUR_WORTH": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_ASK_ABOUT_SNAKE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_actress",
+      "node_id": "92"
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_REPORT_FAKE_COINS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_TELL_WHO_HAS_NECKLACE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "391"
+    }
+  ],
+  "LOCATION_MISS_CHAIN_REWARD_ASK_FOR_PERFUME": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_mrs chain",
+      "node_id": "87"
+    }
+  ],
+  "LOCATION_MISS_CHAIN_REWARD_REPORT_FOOD_DELIVERED": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_mrs chain",
+      "node_id": "116"
+    }
+  ],
+  "LOCATION_MISS_CHAIN_REWARD_GIVE_FROGS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_mrs chain",
+      "node_id": "13",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_MISS_CHAIN_REWARD_GET_PERFUME": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_mrs chain",
+      "node_id": "13",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_GIVE_GOLD_STORY": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 6
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_GIVE_PERFUME": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_actress",
+      "node_id": "30",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_MS_CHARM_REWARD_PERSUADE_TO_DANCE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_actress",
+      "node_id": "1196"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_PROVE_YOU_ARE_GRAVEYARD_KEEPER": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "582"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_ACTIVE_KEY": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_TAKE_KEEPERS_JOURNAL_FROM_TABLE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "table_cultist_quest",
+      "node_id": "11"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_BUCKET_OF_BLOOD": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_BLOODY_NAILS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_ASK_FOR_TOWN_PASS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 8
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_ASK_FOR_ROYAL_STAMP": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 7
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_LEARN_WHO_HAS_MS_CHARMS_NECKLACE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "854"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_PRESS_FOR_RESTORATION_TOOLS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 10
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_NECRONOMICON": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 14
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_SHOW_PREPARED_RITUAL_SITE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "1168"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_DAMASK_SWORD": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 13
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_BRING_PLANK_FOR_VAMPIRE_HUNTER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "1520",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_GOLDEN_APPLE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 16
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_GIVE_DARK_HEART": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 17
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_1": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "final_ritual",
+      "node_id": "247"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "final_ritual",
+      "node_id": "264"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_COMPLETE_FINAL_RITUAL_3": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "final_ritual",
+      "node_id": "340"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_ASK_FOR_HIS_PORTAL_ARTIFACT": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "106",
+      "answer_index": 22
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_CHARGE_ENVY_SHARD": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "2432"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_RETURN_FOR_DIGS_BOOZE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "2156"
+    }
+  ],
+  "LOCATION_SNAKE_REWARD_REPORT_RAT_RACE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_cultist",
+      "node_id": "2353"
+    }
+  ],
+  "LOCATION_HORADRIC_REWARD_ASK_ABOUT_KITCHEN_GARDEN": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_tavern owner",
+      "node_id": "84"
+    }
+  ],
+  "LOCATION_HORADRIC_REWARD_GET_BLACKSMITH_LETTER": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_tavern owner",
+      "node_id": "377"
+    }
+  ],
+  "LOCATION_HORADRIC_REWARD_COLLECT_SLIME_QUEST_REWARD_1": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_tavern owner",
+      "node_id": "350"
+    }
+  ],
+  "LOCATION_HORADRIC_REWARD_COLLECT_SLIME_QUEST_REWARD_2": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_tavern owner",
+      "node_id": "361"
+    }
+  ],
+  "LOCATION_HORADRIC_REWARD_TALK_AFTER_CHURCH_UPGRADE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_tavern owner",
+      "node_id": "468"
+    }
+  ],
+  "LOCATION_HORADRIC_REWARD_GIVE_GOLD_BEER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_tavern owner",
+      "node_id": "511"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "11",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "64"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_3": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "66"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_GIVE_LETTER_4": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "70"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_ASK_ABOUT_METAL_ORE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "11",
+      "answer_index": 1
+    },
+    {
+      "type": "technology_reward",
+      "technology_id": "Iron"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_KILL_SLIMES": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "11",
+      "answer_index": 12
+    }
+  ],
+  "LOCATION_TRESS_REWARD_FOR_FIXING_THE_VILLAGE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_carpenter",
+      "node_id": "13",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_GERRY_REWARD_GIVE_BEER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "crafting_skull_3",
+      "node_id": "134",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_GERRY_REWARD_GIVE_SILVER_WINE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "crafting_skull_3",
+      "node_id": "134",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_GERRY_REWARD_GIVE_BEER_AND_SAND": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "crafting_skull_3",
+      "node_id": "1251"
+    }
+  ],
+  "LOCATION_GERRY_REWARD_ASK_ABOUT_PREVIOUS_KEEPERS_JOURNAL": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "crafting_skull_3",
+      "node_id": "1400"
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_GIVE_CAULDRON": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 0
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_GIVE_HEALTH_POWDER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 2
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_GIVE_BEE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 3
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_GIVE_HONEY": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "1223"
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_ASK_ABOUT_SAUCE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "9",
+      "answer_index": 22
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_EXAMINE_VAMPIRES_JAW": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "862"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "892"
+    }
+  ],
+  "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_BONE_LEG": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_purple_cloud",
+      "node_id": "289"
+    }
+  ],
+  "LOCATION_MISTY_QUAGMIRE_REWARD_UNEARTH_CHARRED_VAMPIRE_SHOE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_purple_cloud",
+      "node_id": "358"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_COOKBOOK": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "420"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_RED_APPLES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "53"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_COLLECT_FIRST_REVOLUTIONARY_MESSAGE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "12"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_COLLECT_GOLD_JEWELRY": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "36"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_COLLECT_BANK_CHECKS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "47"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_APHORISMS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "97"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_FAITH": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "387"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_COLLECT_SECOND_REVOLUTIONARY_MESSAGE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "63"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_COLLECT_COMPONENTS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "74"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_TAKE_HAIR": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_s22",
+      "node_id": "35"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_d6",
+      "node_id": "76"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "107"
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_ENCHANT_DONKEYS_PUMPKIN": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "1120"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_UNICORN_HORNS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "603"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_MAKE_DONKEY_BATTLE_HORSESHOES": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "614"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_MAGIC_PUMPKIN": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "368"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_COMBAT_EQUIPMENT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "338"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_COLLECT_THIRD_REVOLUTIONARY_MESSAGE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "contraband_box",
+      "node_id": "125"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_PAINT_CANS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "200"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_JELLY_OF_INCREDIBLE_POWER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "276"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_SEND_REVOLUTIONARY_BANNER": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "check_contraband_box",
+      "node_id": "257"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_ICE_AXE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_d16",
+      "node_id": "24"
+    }
+  ],
+  "LOCATION_DONKEY_REWARD_FINISH_REVOLUTION_RELATION": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "refugee_ev_d16",
+      "node_id": "59"
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_CITIZENSHIP": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_royal_box",
+      "node_id": "40",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_ROYAL_STAMP": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "52",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_BUILDING_PERMISSION": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "45",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_RIGHTFUL_CITIZENSHIP": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_royal_box",
+      "node_id": "83",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_CLAIM_RIGHTFUL_CITIZEN_PAPERS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "63",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_CLAIM_TOWN_PASS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "63",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_TRADE_LICENSE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "68",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_BUY_ARISTOCRAT_STATUS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_royal_box",
+      "node_id": "95",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_ROYAL_SERVICES_REWARD_CLAIM_ARISTOCRAT_PAPERS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "90",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_REWARD_OBTAIN_ODE_FOR_BISHOP": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_actor",
+      "node_id": "424"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_royal_box",
+      "node_id": "487"
+    }
+  ],
+  "LOCATION_MISS_CHAIN_REWARD_REVEAL_HORADRICS_BIRTHDAY_SURPRISE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_mrs chain",
+      "node_id": "368"
+    }
+  ],
+  "LOCATION_FARMERS_SON_REWARD_CONFESS_SECRET_DRINKING": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_farmers son",
+      "node_id": "119"
+    }
+  ],
+  "LOCATION_FARMER_REWARD_REACT_TO_SONS_SECRET_DRINKING": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "farmer_comes_to_pl_house",
+      "node_id": "21"
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_farmer",
+      "node_id": "15",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_VILLAGE_REWARD_DIG_UP_DOOR_HINGE": [
+    {
+      "type": "world_item_reward",
+      "item_id": "tr_door_hinge"
+    }
+  ],
+  "LOCATION_FARMER_REWARD_ACCEPT_GIANT_CARROT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_farmer",
+      "node_id": "540",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_ENLARGE_CARROT": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "603"
+    }
+  ],
+  "LOCATION_FARMER_REWARD_SEARCH_HOUSE_FOR_LEGIONARY_HELM": [
+    {
+      "type": "world_item_reward",
+      "item_id": "tr_helmet"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_HOLD_FIRST_COMEDY_STANDUP": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_stand_up",
+      "node_id": "351"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "lighthouse_keeper_after_1st_standup",
+      "node_id": "22"
+    }
+  ],
+  "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_miller",
+      "node_id": "383"
+    }
+  ],
+  "LOCATION_MILLER_REWARD_ACCEPT_COMEDY_INVITATION_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_miller",
+      "node_id": "364"
+    }
+  ],
+  "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_dig",
+      "node_id": "316"
+    }
+  ],
+  "LOCATION_DIG_REWARD_ACCEPT_SNAKES_BOOZE_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_dig",
+      "node_id": "289"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "392"
+    }
+  ],
+  "LOCATION_KREZVOLD_REWARD_HEAR_MS_CHARM_WILL_SING_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_blacksmith",
+      "node_id": "379"
+    }
+  ],
+  "LOCATION_TRESS_REWARD_GIVE_RARE_DAGGER": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_carpenter",
+      "node_id": "230"
+    }
+  ],
+  "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_wood_cutter",
+      "node_id": "11",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_WOODCUTTER_REWARD_ACCEPT_HONEY_PLASTER_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_wood_cutter",
+      "node_id": "288"
+    }
+  ],
+  "LOCATION_VILLAGE_REWARD_DIG_UP_BEEKEEPERS_HONEY_BARREL": [
+    {
+      "type": "world_item_reward",
+      "item_id": "honey_barrel"
+    }
+  ],
+  "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_beekeeper",
+      "node_id": "13",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_BEEKEEPER_REWARD_ACCEPT_HONEY_BARREL_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_beekeeper",
+      "node_id": "241"
+    }
+  ],
+  "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_potter",
+      "node_id": "13",
+      "answer_index": 3
+    }
+  ],
+  "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_potter",
+      "node_id": "330"
+    }
+  ],
+  "LOCATION_SWAMP_REWARD_DIG_UP_ANCIENT_SHACKLES": [
+    {
+      "type": "world_item_reward",
+      "item_id": "tr_handcuff"
+    }
+  ],
+  "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_hunchback",
+      "node_id": "90",
+      "answer_index": 4
+    }
+  ],
+  "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_hunchback",
+      "node_id": "362"
+    }
+  ],
+  "LOCATION_CLOTHO_REWARD_GIVE_MAGIC_SCROLL_FOR_KOUKOL": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_witch",
+      "node_id": "749"
+    }
+  ],
+  "LOCATION_KOUKOL_REWARD_RETURN_WITH_DARK_ORGAN": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_hunchback",
+      "node_id": "317"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_hunchback",
+      "node_id": "328"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_hunchback",
+      "node_id": "339"
+    }
+  ],
+  "LOCATION_DIG_REWARD_SOLVE_POISON_RIDDLE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tr_15_dig_and_cake",
+      "node_id": "44"
+    }
+  ],
+  "LOCATION_BEEKEEPER_REWARD_TRADE_POISONED_PIE_FOR_VASES": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_beekeeper",
+      "node_id": "353"
+    }
+  ],
+  "LOCATION_ADAM_REWARD_ACCEPT_POISONED_VASES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_potter",
+      "node_id": "13",
+      "answer_index": 6
+    }
+  ],
+  "LOCATION_ADAM_REWARD_SEARCH_HOUSE_FOR_ANCIENT_KEYS": [
+    {
+      "type": "world_item_reward",
+      "item_id": "tr_key"
+    }
+  ],
+  "LOCATION_WITCH_HILL_REWARD_DIG_UP_CLAY_POT_OF_TAR": [
+    {
+      "type": "world_item_reward",
+      "item_id": "tr_resin_pot"
+    }
+  ],
+  "LOCATION_GYPSY_BARON_REWARD_BUY_RACING_RAT": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_gypsy",
+      "node_id": "321"
+    }
+  ],
+  "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_dig",
+      "node_id": "15",
+      "answer_index": 5
+    }
+  ],
+  "LOCATION_DIG_REWARD_ACCEPT_GYPSY_BARONS_RAT_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_dig",
+      "node_id": "441"
+    }
+  ],
+  "LOCATION_FARMER_REWARD_RESOLVE_BELLAS_STORY": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_farmer",
+      "node_id": "578"
+    }
+  ],
+  "LOCATION_FARMER_REWARD_RECOVER_BELLAS_RING": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_farmer",
+      "node_id": "15",
+      "answer_index": 7
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_farmer",
+      "node_id": "641",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_OLD_GRAVEYARD_REWARD_DIG_UP_CHURCH_BRICK": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tr_quest_19_empty_obj",
+      "node_id": "7"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_STATUETTE_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "142"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_FLASK_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "336"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_LEGIONARY_HELM_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "623"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "784"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "917"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "1077"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_BELT_BUCKLE_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "1189"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_CLAY_SHARDS_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "1317"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "1498"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "1784"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_ANCIENT_KEYS_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "1912"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "2475"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_PRIESTESS_RING_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "2311"
+    }
+  ],
+  "LOCATION_TAVERN_REWARD_USE_CHURCH_BRICK_IN_TIME_MACHINE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "tavern_skull",
+      "node_id": "2589"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_FIRST_HEALING_1": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_euric",
+      "node_id": "960"
+    }
+  ],
+  "LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_smiler",
+      "node_id": "9",
+      "answer_index": 5
+    },
+    {
+      "type": "craft_reward",
+      "craft_id": "souls_builddesk::soul_healing_for_human"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_REPAIR_BED": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "on_fix_euric_bed",
+      "node_id": "10"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_REPAIR_FURNITURE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "macro__check_euric_room_complete",
+      "node_id": "16"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_FIRST_HEALING_2": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_euric",
+      "node_id": "966"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_SECOND_HEALING": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "on_enter_ev_s_s25_gd_zone",
+      "node_id": "152"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_ASK_FOR_ENVY_SHARD": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_euric",
+      "node_id": "1482"
+    }
+  ],
+  "LOCATION_EURIC_REWARD_THIRD_HEALING": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "on_enter_ev_s_s34_gd_zone",
+      "node_id": "161"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_BUILD_FIRST_WELL_AND_TENT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "961"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_BUILD_SECOND_TENT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1002"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_GROW_CAMP_TO_SEVEN_RESIDENTS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1062"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1076"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1095"
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1140"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_CONFRONT_ABOUT_VAMPIRE_ATTACKS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_alarich",
+      "node_id": "21",
+      "answer_index": 9
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_alarich",
+      "node_id": "355"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_alarich",
+      "node_id": "1163"
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_alarich",
+      "node_id": "1174"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_REPORT_VAMPIRE_QUEEN_MEMORIES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_alarich",
+      "node_id": "868"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_ACCOMPANY_HIM_TO_CLOTHO": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_s37",
+      "node_id": "4"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_ENTER_CLOTHOS_MIND": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "refugee_ev_s38",
+      "node_id": "249"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_COMPLETE_MEMORY_PUZZLE": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_s38",
+      "node_id": "142"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_REPORT_CAMP_FATE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "798"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "745"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "759"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "773"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "787"
+    }
+  ],
+  "LOCATION_ALARICH_REWARD_DISCUSS_CAMP_FATE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_alarich",
+      "node_id": "969"
+    }
+  ],
+  "LOCATION_GAME_OF_CRONE_REWARD_COMPLETE_STORY": [
+    {
+      "type": "technology_reward",
+      "technology_id": "Persistence"
+    },
+    {
+      "type": "technology_reward",
+      "technology_id": "Industriousness"
+    },
+    {
+      "type": "technology_reward",
+      "technology_id": "Eloquence"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1241"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_BUILD_SEVENTH_TENT_AND_WORKPLACE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1302"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_GROW_CAMP_TO_ELEVEN_RESIDENTS": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1348"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1362"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1376"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1390"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1406"
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1435"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_BUILD_DEFENSIVE_STAKES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1538"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_BUILD_SWORD_RACK": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_teodoro",
+      "node_id": "1588"
+    }
+  ],
+  "LOCATION_TEODORO_REWARD_BUILD_OBSERVATION_TOWER": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "55"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "69"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "83"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "97"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "111"
+    },
+    {
+      "type": "flow_quest_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "125"
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "refugee_ev_city_3_fin",
+      "node_id": "255"
+    }
+  ],
+  "LOCATION_REFUGEE_COOK_REWARD_BUILD_KITCHEN": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_cook",
+      "node_id": "282"
+    },
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_cook",
+      "node_id": "306"
+    }
+  ],
+  "LOCATION_REFUGEE_COOK_REWARD_UPGRADE_KITCHEN": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_cook",
+      "node_id": "334"
+    }
+  ],
+  "LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_cook",
+      "node_id": "15",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_REFUGEE_TANNER_REWARD_BUILD_WORKPLACE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_tanner",
+      "node_id": "15",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_REFUGEE_TANNER_REWARD_BUILD_FARM_FENCE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_tanner",
+      "node_id": "15",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK": [
+    {
+      "type": "flow_quest_reward",
+      "graph": "npc_refugee_tanner",
+      "node_id": "15",
+      "answer_index": 2
+    }
+  ],
+  "LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_IRON_CHISELS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_coffin_maker",
+      "node_id": "15",
+      "answer_index": 0
+    }
+  ],
+  "LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_WOOD_WEDGES": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_coffin_maker",
+      "node_id": "15",
+      "answer_index": 1
+    }
+  ],
+  "LOCATION_REFUGEE_COFFIN_MAKER_REWARD_BUILD_WORKPLACE": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_coffin_maker",
+      "node_id": "406"
+    }
+  ],
+  "LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_GOLD_STEEL_CHISELS": [
+    {
+      "type": "flow_relation_reward",
+      "graph": "npc_refugee_coffin_maker",
+      "node_id": "434"
+    }
+  ]
+}
