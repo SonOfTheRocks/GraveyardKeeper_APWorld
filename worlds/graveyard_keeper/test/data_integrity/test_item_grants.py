@@ -1,8 +1,13 @@
+import json
 import unittest
+from pathlib import Path
 
 import importlib_resources
 
 from ...data import load_json_data
+
+
+GAME_DATA_ROOT = Path(__file__).parents[2] / "dumps" / "raw"
 
 
 class TestItemGrants(unittest.TestCase):
@@ -33,6 +38,7 @@ class TestItemGrants(unittest.TestCase):
             "perk_unlock": ({"perk_id", "craft_ids", "work_ids"}, set()),
             "permanent_buff": ({"buff_id", "resource_types", "icon"}, set()),
             "relation": ({"npc_id", "amount"}, set()),
+            "technology_unlock": ({"technology_ids"}, set()),
             "TODO": ({"reason"}, set()),
         }
         for item_key, grant in self.raw_grants.items():
@@ -60,7 +66,9 @@ class TestItemGrants(unittest.TestCase):
                     self.assertGreater(grant["amount"], 0)
 
     def test_list_grant_fields_contain_only_unique_strings(self):
-        list_fields = {"craft_ids", "work_ids", "perk_ids", "resource_types"}
+        list_fields = {
+            "craft_ids", "work_ids", "perk_ids", "resource_types", "technology_ids",
+        }
         for item_key, grant in self.raw_grants.items():
             for field in list_fields & grant.keys():
                 values = grant[field]
@@ -81,6 +89,44 @@ class TestItemGrants(unittest.TestCase):
                     self.assertTrue(stage)
                     self.assertTrue(all(isinstance(value, str) and value for value in stage))
                     self.assertEqual(len(stage), len(set(stage)))
+
+    def test_technology_group_grants_match_declared_research_roots(self):
+        unlocks = load_json_data("items/unlocks.json")
+        technology_grants = {
+            item_key: grant
+            for item_key, grant in self.raw_grants.items()
+            if grant["type"] == "technology_unlock"
+        }
+
+        self.assertEqual(unlocks.keys(), technology_grants.keys())
+        for item_key, unlock in unlocks.items():
+            with self.subTest(item=item_key):
+                self.assertEqual(
+                    len(unlock["researches"]),
+                    len(technology_grants[item_key]["technology_ids"]),
+                )
+
+    def test_raw_game_corrections_are_not_regressed_to_old_factory_values(self):
+        self.assertEqual("p_big_guy", self.raw_grants["ITEM_PERK_BIG_GUY"]["perk_id"])
+        self.assertEqual(
+            ["souls_builddesk::soul_healing_for_human"],
+            self.raw_grants["ITEM_BP_HUMAN_SOUL_HEALING"]["craft_ids"],
+        )
+
+    def test_technology_grant_ids_exist_in_raw_game_data_when_available(self):
+        techs_path = GAME_DATA_ROOT / "techs_data.json"
+        if not techs_path.exists():
+            self.skipTest("local raw technology dump is not available")
+        technology_ids = {
+            technology["id"]
+            for technology in json.loads(techs_path.read_text(encoding="utf-8-sig"))
+        }
+        for item_key, grant in self.raw_grants.items():
+            if grant["type"] != "technology_unlock":
+                continue
+            for technology_id in grant["technology_ids"]:
+                with self.subTest(item=item_key, technology=technology_id):
+                    self.assertIn(technology_id, technology_ids)
 
 
 if __name__ == "__main__":

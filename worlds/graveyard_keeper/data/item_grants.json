@@ -18,8 +18,10 @@
     ]
   },
   "ITEM_BP_MS_CHARM_MONROE": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "keeper_room_builddesk:p:keeper_room_picture_6"
+    ]
   },
   "ITEM_BP_DONKEYS_OF_THE_WORLD_UNITE": {
     "type": "craft_unlock",
@@ -953,8 +955,10 @@
     ]
   },
   "ITEM_BP_EMPTY_GARDEN_BED": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_builddesk:p:garden_empty_place"
+    ]
   },
   "ITEM_BP_TRUNK": {
     "type": "craft_unlock",
@@ -1193,12 +1197,18 @@
     ]
   },
   "ITEM_BP_ZOMBIE_STONE_QUARRY": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mining_builddesk::zombie_mine_fence_front_stone",
+      "@mining_builddesk::zombie_mine_fence_left_front_stone"
+    ]
   },
   "ITEM_BP_ZOMBIE_MARBLE_QUARRY": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mining_builddesk::zombie_mine_fence_front_marble_right",
+      "@mining_builddesk::zombie_mine_fence_front_marble_left"
+    ]
   },
   "ITEM_BP_PROGRESSIVE_SOUL_CONTAINER": {
     "type": "progressive_craft_unlock",
@@ -1280,8 +1290,10 @@
     ]
   },
   "ITEM_BP_HUMAN_SOUL_HEALING": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::soul_healing_for_human"
+    ]
   },
   "ITEM_LEARN_GATHERING_OLD_BOOKS": {
     "type": "work_unlock",
@@ -1548,8 +1560,10 @@
     "work_ids": []
   },
   "ITEM_PERK_BIG_GUY": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "perk_unlock",
+    "perk_id": "p_big_guy",
+    "craft_ids": [],
+    "work_ids": []
   },
   "ITEM_PERK_FIREMAN": {
     "type": "perk_unlock",
@@ -2190,16 +2204,25 @@
     ]
   },
   "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_grat_points_incr",
+      "@b_grat_points_incr_2"
+    ]
   },
   "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_souls",
+      "@b_souls_2"
+    ]
   },
   "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_sin_shard",
+      "@b_sin_shard_2"
+    ]
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_SHOVEL": {
     "type": "progressive_craft_unlock",
@@ -2501,8 +2524,11 @@
     ]
   },
   "ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "grave_bot_wd_1",
+      "@destroy_grave_bot_wd_1"
+    ]
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE": {
     "type": "progressive_craft_unlock",
@@ -2786,8 +2812,18 @@
     ]
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_METAL_PARTS": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "detail_1"
+      ],
+      [
+        "detail_2"
+      ],
+      [
+        "detail_3"
+      ]
+    ]
   },
   "ITEM_LEARN_CREATE_PROGRESSIVE_GLASS": {
     "type": "progressive_craft_unlock",
@@ -2968,8 +3004,11 @@
     ]
   },
   "ITEM_LEARN_CREATE_MARBLE_REPAIR_KIT": {
-    "type": "TODO",
-    "reason": "No matching entry exists in the current client item registry."
+    "type": "craft_unlock",
+    "craft_ids": [
+      "repair_mrb",
+      "@repair_mrb_2"
+    ]
   },
   "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_MARBLE": {
     "type": "craft_unlock",
@@ -3033,103 +3072,149 @@
     ]
   },
   "ITEM_UNLOCK_ANATOMY": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "First slice"
+    ]
   },
   "ITEM_UNLOCK_ALCHEMY": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "The Beginning Of Alchemy"
+    ]
   },
   "ITEM_UNLOCK_FAITH": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Faith"
+    ]
   },
   "ITEM_UNLOCK_GRAVES": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Grave plate"
+    ]
   },
   "ITEM_UNLOCK_WRITING": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Research"
+    ]
   },
   "ITEM_UNLOCK_FARMING": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Garden beds"
+    ]
   },
   "ITEM_UNLOCK_GATHERING": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Gathering"
+    ]
   },
   "ITEM_UNLOCK_SMITHING": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Iron"
+    ]
   },
   "ITEM_UNLOCK_WOOD": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "The idea of the tree"
+    ]
   },
   "ITEM_UNLOCK_STONE": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "The idea of the stone"
+    ]
   },
   "ITEM_UNLOCK_CLAY": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "The idea of the earth"
+    ]
   },
   "ITEM_UNLOCK_SIMPLE_AND_TASTY": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "2min"
+    ]
   },
   "ITEM_UNLOCK_VEGETABLE_DISHES": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Vegetable dishes"
+    ]
   },
   "ITEM_UNLOCK_JELLY": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Jelly desserts"
+    ]
   },
   "ITEM_UNLOCK_BREAD": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Bread"
+    ]
   },
   "ITEM_UNLOCK_FISH_DISHES": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Fish"
+    ]
   },
   "ITEM_UNLOCK_SWEET_BAKING": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Sweet baking"
+    ]
   },
   "ITEM_UNLOCK_EGG_DISHES": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "French cuisine"
+    ]
   },
   "ITEM_UNLOCK_PIES": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Pies"
+    ]
   },
   "ITEM_UNLOCK_TASTY_AND_HEALTHY": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Vegetable bowl"
+    ]
   },
   "ITEM_UNLOCK_MEAT_FIESTA": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Fast food"
+    ]
   },
   "ITEM_UNLOCK_FISH_DELICACIES": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "Fish delicous"
+    ]
   },
   "ITEM_UNLOCK_ZOMBIE_BASICS": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": []
   },
   "ITEM_UNLOCK_ZOMBIE_WORKSTATIONS": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": []
   },
   "ITEM_UNLOCK_SPIRITUALISM": {
-    "type": "TODO",
-    "reason": "The client does not implement technology-group item delivery yet."
+    "type": "technology_unlock",
+    "technology_ids": [
+      "soul_sins_1"
+    ]
   }
 }

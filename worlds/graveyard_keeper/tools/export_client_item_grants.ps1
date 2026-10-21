@@ -195,11 +195,101 @@ foreach ($entry in $items.GetEnumerator()) {
     $keysByLabel[$label].Add([string] $entry.Key)
 }
 
+# These keys have intentionally improved player-facing AP labels while the old
+# client factory still uses a typo or a less accurate name for the same grant.
+$registryAliases = @{
+    "ITEM_BP_MS_CHARM_MONROE" = "Blueprint: Ms. Charm Monroe"
+    "ITEM_BP_EMPTY_GARDEN_BED" = "Blueprint: Empty garden bed"
+    "ITEM_BP_ZOMBIE_STONE_QUARRY" = "Blueprint: Zombie stone mine"
+    "ITEM_BP_ZOMBIE_MARBLE_QUARRY" = "Blueprint: Zombie marble mine"
+    "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE" = "Create: Prayer for souls' repose"
+    "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT" = "Create: Prayer for souls' contentment"
+    "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING" = "Create: Prayer for souls' thorough cleansing"
+    "ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE" = "Create: Wodden grave fence"
+    "ITEM_LEARN_CREATE_PROGRESSIVE_METAL_PARTS" = "Create: Progressive Metal Parts"
+    "ITEM_LEARN_CREATE_MARBLE_REPAIR_KIT" = "Create: Marble repair kit"
+}
+
+# Corrections established directly from the raw game data rather than copied
+# from the client factory. Martial skills grants p_big_guy (techs_data.json),
+# and the human soul healing workstation is the named craft_obj_data entry.
+$manualGrants = @{
+    "ITEM_PERK_BIG_GUY" = [ordered]@{
+        type = "perk_unlock"
+        perk_id = "p_big_guy"
+        craft_ids = [System.Collections.Generic.List[string]]::new()
+        work_ids = [System.Collections.Generic.List[string]]::new()
+    }
+    "ITEM_BP_HUMAN_SOUL_HEALING" = [ordered]@{
+        type = "craft_unlock"
+        craft_ids = [System.Collections.Generic.List[string]] @(
+            "souls_builddesk::soul_healing_for_human"
+        )
+    }
+}
+
+# The AP unlock groups name the root technology regions in their `researches`
+# field. The corresponding values below are the real TechDefinition IDs from
+# techs_data.json (also mirrored by the old client TechIds table). Receiving a
+# group must unlock these roots so the player can buy their descendants. The
+# two zombie groups intentionally have no root to auto-research: their item is
+# an AP access gate only, while the game reveals those technologies through
+# the normal quest progression.
+$researchTechIdsByItemKey = @{
+    "ITEM_UNLOCK_ANATOMY" = @("First slice")
+    "ITEM_UNLOCK_ALCHEMY" = @("The Beginning Of Alchemy")
+    "ITEM_UNLOCK_FAITH" = @("Faith")
+    "ITEM_UNLOCK_GRAVES" = @("Grave plate")
+    "ITEM_UNLOCK_WRITING" = @("Research")
+    "ITEM_UNLOCK_FARMING" = @("Garden beds")
+    "ITEM_UNLOCK_GATHERING" = @("Gathering")
+    "ITEM_UNLOCK_SMITHING" = @("Iron")
+    "ITEM_UNLOCK_WOOD" = @("The idea of the tree")
+    "ITEM_UNLOCK_STONE" = @("The idea of the stone")
+    "ITEM_UNLOCK_CLAY" = @("The idea of the earth")
+    "ITEM_UNLOCK_SIMPLE_AND_TASTY" = @("2min")
+    "ITEM_UNLOCK_VEGETABLE_DISHES" = @("Vegetable dishes")
+    "ITEM_UNLOCK_JELLY" = @("Jelly desserts")
+    "ITEM_UNLOCK_BREAD" = @("Bread")
+    "ITEM_UNLOCK_FISH_DISHES" = @("Fish")
+    "ITEM_UNLOCK_SWEET_BAKING" = @("Sweet baking")
+    "ITEM_UNLOCK_EGG_DISHES" = @("French cuisine")
+    "ITEM_UNLOCK_PIES" = @("Pies")
+    "ITEM_UNLOCK_TASTY_AND_HEALTHY" = @("Vegetable bowl")
+    "ITEM_UNLOCK_MEAT_FIESTA" = @("Fast food")
+    "ITEM_UNLOCK_FISH_DELICACIES" = @("Fish delicous")
+    "ITEM_UNLOCK_ZOMBIE_BASICS" = @()
+    "ITEM_UNLOCK_ZOMBIE_WORKSTATIONS" = @()
+    "ITEM_UNLOCK_SPIRITUALISM" = @("soul_sins_1")
+}
+
 $grants = [ordered]@{}
 foreach ($entry in $items.GetEnumerator()) {
     $itemKey = [string] $entry.Key
     $itemData = $entry.Value
     $label = [string] $itemData.label
+
+    if ($researchTechIdsByItemKey.ContainsKey($itemKey)) {
+        $grants[$itemKey] = [ordered]@{
+            type = "technology_unlock"
+            technology_ids = Copy-StringList $researchTechIdsByItemKey[$itemKey]
+        }
+        continue
+    }
+
+    if ($manualGrants.ContainsKey($itemKey)) {
+        $grants[$itemKey] = $manualGrants[$itemKey]
+        continue
+    }
+
+    if ($registryAliases.ContainsKey($itemKey)) {
+        $alias = $registryAliases[$itemKey]
+        if (-not $registryEntries.ContainsKey($alias)) {
+            throw "Client registry alias '$alias' for '$itemKey' does not exist."
+        }
+        $grants[$itemKey] = Convert-RegistryItemToGrant $registryEntries[$alias]
+        continue
+    }
 
     if ($keysByLabel[$label].Count -gt 1) {
         $grants[$itemKey] = [ordered]@{
