@@ -1,0 +1,3135 @@
+{
+  "ITEM_BP_BURNING_WITCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "keeper_room_builddesk:p:keeper_room_picture_1"
+    ]
+  },
+  "ITEM_BP_BISHOPS_CHOICE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "keeper_room_builddesk:p:keeper_room_picture_4"
+    ]
+  },
+  "ITEM_BP_INQUISITORS_JOY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "keeper_room_builddesk:p:keeper_room_picture_5"
+    ]
+  },
+  "ITEM_BP_MS_CHARM_MONROE": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_BP_DONKEYS_OF_THE_WORLD_UNITE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "keeper_room_builddesk:p:keeper_room_picture_7"
+    ]
+  },
+  "ITEM_BP_CRATE_FACTORY": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_RED_RESEARCH_POINTS": {
+    "type": "game_item",
+    "item_id": "techpoints_red"
+  },
+  "ITEM_GREEN_RESEARCH_POINTS": {
+    "type": "game_item",
+    "item_id": "techpoints_green"
+  },
+  "ITEM_BLUE_RESEARCH_POINTS": {
+    "type": "game_item",
+    "item_id": "techpoints_blue"
+  },
+  "ITEM_PBUFF_BEER_THIRST": {
+    "type": "permanent_buff",
+    "buff_id": "buff_beer",
+    "resource_types": [
+      "buff_beer"
+    ],
+    "icon": "b_beer"
+  },
+  "ITEM_PBUFF_BERSERK_DMG": {
+    "type": "permanent_buff",
+    "buff_id": "buff_pot_berserk_damage",
+    "resource_types": [
+      "add_damage"
+    ],
+    "icon": "b_sword"
+  },
+  "ITEM_PBUFF_BERSERK_POISON": {
+    "type": "permanent_buff",
+    "buff_id": "buff_pot_berserk_poison",
+    "resource_types": [],
+    "icon": "b_heart_hyphen"
+  },
+  "ITEM_PBUFF_DEEP_SLEEP": {
+    "type": "permanent_buff",
+    "buff_id": "buff_sleep",
+    "resource_types": [
+      "sleep_k_add"
+    ],
+    "icon": "b_pillow"
+  },
+  "ITEM_PBUFF_DIFFICULT_CORPSES": {
+    "type": "permanent_buff",
+    "buff_id": "buff_skull",
+    "resource_types": [
+      "body_max"
+    ],
+    "icon": "b_skull"
+  },
+  "ITEM_PBUFF_DIGESTION": {
+    "type": "permanent_buff",
+    "buff_id": "buff_pot_appetite",
+    "resource_types": [
+      "food_multiplier"
+    ],
+    "icon": "b_hunger"
+  },
+  "ITEM_PBUFF_FAST_REFLEXES": {
+    "type": "permanent_buff",
+    "buff_id": "buff_fishing",
+    "resource_types": [
+      "buff_fish_catch_time_mltplr"
+    ],
+    "icon": "b_fishing_1"
+  },
+  "ITEM_PBUFF_FERTILITY": {
+    "type": "permanent_buff",
+    "buff_id": "buff_plant",
+    "resource_types": [
+      "buff_plant"
+    ],
+    "icon": "b_plant"
+  },
+  "ITEM_PBUFF_GOOD_FISHERMAN": {
+    "type": "permanent_buff",
+    "buff_id": "buff_fishing2",
+    "resource_types": [
+      "buff_pulling_fish_multplr"
+    ],
+    "icon": "b_fishing_2"
+  },
+  "ITEM_PBUFF_HANDYMAN_MOOD": {
+    "type": "permanent_buff",
+    "buff_id": "buff_star",
+    "resource_types": [],
+    "icon": "b_star"
+  },
+  "ITEM_PBUFF_HARD_WORKER": {
+    "type": "permanent_buff",
+    "buff_id": "buff_hardwork",
+    "resource_types": [
+      "axe_energy_k_add",
+      "pickaxe_energy_k_add"
+    ],
+    "icon": "b_axe"
+  },
+  "ITEM_PBUFF_INSPIRATION": {
+    "type": "permanent_buff",
+    "buff_id": "buff_pen",
+    "resource_types": [],
+    "icon": "b_pen"
+  },
+  "ITEM_PBUFF_RAGE": {
+    "type": "permanent_buff",
+    "buff_id": "buff_sword",
+    "resource_types": [
+      "add_damage"
+    ],
+    "icon": "b_sword"
+  },
+  "ITEM_PBUFF_REPENTANCE": {
+    "type": "permanent_buff",
+    "buff_id": "buff_sins",
+    "resource_types": [
+      "buff_sins"
+    ],
+    "icon": "b_sins"
+  },
+  "ITEM_PBUFF_RESTORING": {
+    "type": "permanent_buff",
+    "buff_id": "buff_pot_heal_long",
+    "resource_types": [],
+    "icon": "b_heart_plus"
+  },
+  "ITEM_PBUFF_SlOW_METABOLISM": {
+    "type": "permanent_buff",
+    "buff_id": "buff_longtimer",
+    "resource_types": [
+      "buff_longtimer"
+    ],
+    "icon": "b_snail"
+  },
+  "ITEM_PBUFF_SPEED": {
+    "type": "permanent_buff",
+    "buff_id": "buff_pot_speed",
+    "resource_types": [
+      "speed_buff"
+    ],
+    "icon": "b_run"
+  },
+  "ITEM_PBUFF_SPIRITUAL_BLESSING": {
+    "type": "permanent_buff",
+    "buff_id": "buff_gp_increase",
+    "resource_types": [
+      "increase_gp_gain"
+    ],
+    "icon": "b_thanks"
+  },
+  "ITEM_PBUFF_SPIRITUAL_MAGNETISM": {
+    "type": "permanent_buff",
+    "buff_id": "buff_sin_shard",
+    "resource_types": [
+      "increase_sin_shard_drop"
+    ],
+    "icon": "b_shards"
+  },
+  "ITEM_PBUFF_STEADY_HAND": {
+    "type": "permanent_buff",
+    "buff_id": "buff_cleancut",
+    "resource_types": [
+      "buff_cleancut"
+    ],
+    "icon": "b_scalpel"
+  },
+  "ITEM_PBUFF_TOUGH_MOOD": {
+    "type": "permanent_buff",
+    "buff_id": "buff_shield",
+    "resource_types": [
+      "add_armor"
+    ],
+    "icon": "b_shield"
+  },
+  "ITEM_LEARN_CREATE_ROOF_TILE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "roof_tile_1",
+      "roof_tile_2",
+      "roof_tile_3"
+    ]
+  },
+  "ITEM_LEARN_CREATE_MYSTERIOUS_FOOD_SAUCE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sauce_for_meal"
+    ]
+  },
+  "ITEM_ASTROLOGER_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_astrologer",
+    "amount": 10
+  },
+  "ITEM_BISHOP_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_bishop",
+    "amount": 10
+  },
+  "ITEM_INQUISITOR_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_inquisitor",
+    "amount": 10
+  },
+  "ITEM_MERCHANT_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_merchant",
+    "amount": 10
+  },
+  "ITEM_HORADRIC_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_tavern owner",
+    "amount": 10
+  },
+  "ITEM_CLOTHO_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_witch",
+    "amount": 10
+  },
+  "ITEM_MS_CHARM_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_actress",
+    "amount": 10
+  },
+  "ITEM_SNAKE_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_cultist",
+    "amount": 10
+  },
+  "ITEM_FARMER_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_farmer",
+    "amount": 10
+  },
+  "ITEM_KREZVOLD_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_blacksmith",
+    "amount": 10
+  },
+  "ITEM_GERRY_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "crafting_skull_3",
+    "amount": 10
+  },
+  "ITEM_ROYAL_SERVICES_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_royal_box",
+    "amount": 10
+  },
+  "ITEM_GYPSY_BARON_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_gypsy",
+    "amount": 10
+  },
+  "ITEM_MISS_CHAIN_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_mrs_chain",
+    "amount": 10
+  },
+  "ITEM_EURIC_HAPPINESS_10": {
+    "type": "relation",
+    "npc_id": "npc_euric",
+    "amount": 10
+  },
+  "ITEM_SMILER_HAPPINESS_10": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_SALTY_FORK": {
+    "type": "game_item",
+    "item_id": "fork_salty"
+  },
+  "ITEM_MIRROR_OF_PRIDE": {
+    "type": "game_item",
+    "item_id": "mirror_of_pride"
+  },
+  "ITEM_ETERNAL_BURNING_COAL": {
+    "type": "game_item",
+    "item_id": "eternal_burning_coal"
+  },
+  "ITEM_GOLDEN_ANGLE": {
+    "type": "game_item",
+    "item_id": "sextant"
+  },
+  "ITEM_ENDLESS_NOTEBOOK": {
+    "type": "game_item",
+    "item_id": "endless_book"
+  },
+  "ITEM_NECKLACE": {
+    "type": "game_item",
+    "item_id": "necklace"
+  },
+  "ITEM_ACCEPTED_INVITATION": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_ACTIVE_KEY": {
+    "type": "TODO",
+    "reason": "Duplicate AP network label 'Active key' prevents an unambiguous client mapping."
+  },
+  "ITEM_ARISTOCRAT_PAPERS": {
+    "type": "game_item",
+    "item_id": "aristocrat_paper"
+  },
+  "ITEM_BUILDING_PERMISSION": {
+    "type": "game_item",
+    "item_id": "building_permission"
+  },
+  "ITEM_RIGHTFUL_CITIZEN_PAPERS": {
+    "type": "game_item",
+    "item_id": "rightful_citizen_paper"
+  },
+  "ITEM_TRADE_LICENSE": {
+    "type": "game_item",
+    "item_id": "merchant_traide_license"
+  },
+  "ITEM_ALISAS_PAPERS": {
+    "type": "game_item",
+    "item_id": "alice_paper"
+  },
+  "ITEM_BASKET_OF_FOOD": {
+    "type": "game_item",
+    "item_id": "picnic_basket"
+  },
+  "ITEM_CAULDRON": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_COINS": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_FAKE_COINS": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_GARDEN_CERTIFICATE": {
+    "type": "TODO",
+    "reason": "Duplicate AP network label 'Active key' prevents an unambiguous client mapping."
+  },
+  "ITEM_GRAVEYARD_SCROLL": {
+    "type": "game_item",
+    "item_id": "scroll_graveyard_prop"
+  },
+  "ITEM_SONG_LYRICS": {
+    "type": "game_item",
+    "item_id": "actors_song"
+  },
+  "ITEM_INFUSION_OF_FLY_AGARIC": {
+    "type": "game_item",
+    "item_id": "infusion"
+  },
+  "ITEM_INSTRUCTIONS_FOR_KEY": {
+    "type": "game_item",
+    "item_id": "quest_instruction_snake"
+  },
+  "ITEM_KEEPERS_JOURNAL": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_KEEPERS_KEY": {
+    "type": "game_item",
+    "item_id": "quest_key_astrologer"
+  },
+  "ITEM_LETTER_TO_THE_BLACKSMITH": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_NECRONOMICON": {
+    "type": "game_item",
+    "item_id": "necronomicon"
+  },
+  "ITEM_PAPER_WITH_CALCULATIONS": {
+    "type": "game_item",
+    "item_id": "calculation_for_mill_fix"
+  },
+  "ITEM_PERFUME": {
+    "type": "game_item",
+    "item_id": "parfum_1"
+  },
+  "ITEM_RESTORATION_TOOLS": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_STAMP": {
+    "type": "game_item",
+    "item_id": "stamp"
+  },
+  "ITEM_TOWN_PASS": {
+    "type": "game_item",
+    "item_id": "town_pass"
+  },
+  "ITEM_CASUAL_PRAYER": {
+    "type": "game_item",
+    "item_id": ""
+  },
+  "ITEM_A_BRICK_FROM_THE_CHURCH": {
+    "type": "game_item",
+    "item_id": "tr_brick"
+  },
+  "ITEM_AMULET_OF_THE_ANCIENT_GOD": {
+    "type": "game_item",
+    "item_id": "tr_red_eye_amulet"
+  },
+  "ITEM_ANCIENT_KEYS": {
+    "type": "game_item",
+    "item_id": "tr_key"
+  },
+  "ITEM_ANCIENT_LOCKPICKS": {
+    "type": "game_item",
+    "item_id": "tr_picklock"
+  },
+  "ITEM_MILLERS_INVITATION": {
+    "type": "game_item",
+    "item_id": "millers_invitation"
+  },
+  "ITEM_ANCIENT_PICKAXE": {
+    "type": "game_item",
+    "item_id": "tr_pickaxe"
+  },
+  "ITEM_ANCIENT_SHACKLES": {
+    "type": "game_item",
+    "item_id": "tr_handcuff"
+  },
+  "ITEM_BELT_BUCKLE": {
+    "type": "game_item",
+    "item_id": "tr_buckle"
+  },
+  "ITEM_HONEY_BARREL": {
+    "type": "game_item",
+    "item_id": "honey_barrel"
+  },
+  "ITEM_HONEY_PLASTER": {
+    "type": "game_item",
+    "item_id": "honey_plaster"
+  },
+  "ITEM_MAGIC_SCROLL_FOR_KOUKOL": {
+    "type": "game_item",
+    "item_id": "scroll_for_hunchback"
+  },
+  "ITEM_CLAY_POT_OF_TAR": {
+    "type": "game_item",
+    "item_id": "tr_resin_pot"
+  },
+  "ITEM_CLAY_SHARDS": {
+    "type": "game_item",
+    "item_id": "tr_clay_shards"
+  },
+  "ITEM_DOOR_HINGE": {
+    "type": "game_item",
+    "item_id": "tr_door_hinge"
+  },
+  "ITEM_FLASK": {
+    "type": "game_item",
+    "item_id": "tr_flask"
+  },
+  "ITEM_GIANT_CARROT": {
+    "type": "game_item",
+    "item_id": "huge_carrot"
+  },
+  "ITEM_LEGIONARY_HELM": {
+    "type": "game_item",
+    "item_id": "tr_helmet"
+  },
+  "ITEM_PRIESTESS_RING": {
+    "type": "game_item",
+    "item_id": "tr_bellas_ring"
+  },
+  "ITEM_PRIESTS_SIGNET": {
+    "type": "game_item",
+    "item_id": "tr_signet"
+  },
+  "ITEM_PRIESTS_MEDALLION": {
+    "type": "game_item",
+    "item_id": "tr_medallion"
+  },
+  "ITEM_STATUETTE": {
+    "type": "game_item",
+    "item_id": "tr_red_eye"
+  },
+  "ITEM_THE_LEGIONARY_DAGGER": {
+    "type": "game_item",
+    "item_id": "tr_dagger"
+  },
+  "ITEM_PIE_WITH_POISON": {
+    "type": "game_item",
+    "item_id": "pie_with_poison"
+  },
+  "ITEM_RAT_FOR_DIG": {
+    "type": "game_item",
+    "item_id": "rat_for_dig"
+  },
+  "ITEM_VASES_WITH_POISON": {
+    "type": "game_item",
+    "item_id": "vases_with_poison"
+  },
+  "ITEM_BANK_CHECKS": {
+    "type": "TODO",
+    "reason": "Duplicate AP network label 'Memory powder' prevents an unambiguous client mapping."
+  },
+  "ITEM_BATTLE_HORSESHOES": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_BLACK_AND_GOLD_CLOAK": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_BONE_LEG": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_CHARRED_VAMPIRE_SHOE": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_COOKBOOK": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_EMULSION_OF_DEATH": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_IRON_UNICORN_HORNS": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_ICE_AXE": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_JELLY_OF_INCREDIBLE_POWER": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_MEMORY_POWDER": {
+    "type": "TODO",
+    "reason": "Duplicate AP network label 'Memory powder' prevents an unambiguous client mapping."
+  },
+  "ITEM_MEMORY_TINCTURE": {
+    "type": "TODO",
+    "reason": "Duplicate AP network label 'Memory powder' prevents an unambiguous client mapping."
+  },
+  "ITEM_MAGIC_PUMPKIN": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_PIECE_OF_DONKEY_HAIR": {
+    "type": "game_item",
+    "item_id": "donkey_lock_wool"
+  },
+  "ITEM_PILE_OF_COMPONENTS": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_REVOLUTIONARY_DONKEY_BANNER": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_REVOLUTIONARY_MESSAGE_1": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_REVOLUTIONARY_MESSAGE_2": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_REVOLUTIONARY_MESSAGE_3": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_SCROLL_OF_TELEPORTATION": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_VAMPIRES_JAW": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_WITCHERS_EYE": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_OLD_RUSTY_KEY": {
+    "type": "game_item",
+    "item_id": "souls_zone_key"
+  },
+  "ITEM_LOST_TOOTH": {
+    "type": "game_item",
+    "item_id": "gerry_tooth"
+  },
+  "ITEM_PRIDE_CHARGED_SHARD": {
+    "type": "game_item",
+    "item_id": "pride_charged_shard"
+  },
+  "ITEM_WRATH_CHARGED_SHARD": {
+    "type": "game_item",
+    "item_id": "wrath_charged_shard"
+  },
+  "ITEM_GLUTTONY_CHARGED_SHARD": {
+    "type": "game_item",
+    "item_id": "gluttony_charged_shard"
+  },
+  "ITEM_SLOTH_CHARGED_SHARD": {
+    "type": "game_item",
+    "item_id": "sloth_charged_shard"
+  },
+  "ITEM_LUST_CHARGED_SHARD": {
+    "type": "game_item",
+    "item_id": "lust_charged_shard"
+  },
+  "ITEM_ENVY_CHARGED_SHARD": {
+    "type": "game_item",
+    "item_id": "envy_charged_shard"
+  },
+  "ITEM_REMOTE_CRAFTING": {
+    "type": "game_item",
+    "item_id": ""
+  },
+  "ITEM_ODE_FOR_BISHOP": {
+    "type": "game_item",
+    "item_id": "ode_for_bishop"
+  },
+  "ITEM_UNUSUAL_ASH": {
+    "type": "game_item",
+    "item_id": "ash_on_shawl"
+  },
+  "ITEM_NOTE_WITH_RUMOR": {
+    "type": "game_item",
+    "item_id": "note_with_rumors"
+  },
+  "ITEM_PREVIOUS_KEEPERS_JOURNAL_PAGE": {
+    "type": "game_item",
+    "item_id": "lost_book_part"
+  },
+  "ITEM_BP_PROGRESSIVE_PREPARATION_PLACE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "morgue_builddesk:p:mf_preparation_1_place"
+      ],
+      [
+        "morgue_builddesk:p:mf_preparation_2_place"
+      ]
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_PALLET": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "morgue_builddesk:p:corpse_bed_place"
+      ],
+      [
+        "morgue_builddesk:p:corpse_bed_big_place"
+      ],
+      [
+        "morgue_builddesk:p:corpse_fridge_place"
+      ]
+    ]
+  },
+  "ITEM_BP_ALCHEMY_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:mf_alchemy_craft_02_place"
+    ]
+  },
+  "ITEM_BP_ALCHEMY_WORKBENCH_2": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:mf_alchemy_craft_03_place"
+    ]
+  },
+  "ITEM_BP_HAND_MIXER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:mf_alchemy_stirrer_01_place"
+    ]
+  },
+  "ITEM_BP_ALCHEMY_MILL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:mf_alchemy_mill_place"
+    ]
+  },
+  "ITEM_BP_CHURCH_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:table_book_constr_place"
+    ]
+  },
+  "ITEM_BP_ALCHEMY_RACK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:rack_alchemy_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_EMBALMING_TABLE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "morgue_builddesk:p:mf_balsamation_1_place"
+      ],
+      [
+        "morgue_builddesk:p:mf_balsamation_2_place"
+      ]
+    ]
+  },
+  "ITEM_BP_MORTUARY_RACK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "morgue_builddesk:p:rack_organs_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_DISTILLATION_CUBE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "alchemy_builddesk:p:mf_distcube_2_clay_place"
+      ],
+      [
+        "alchemy_builddesk:p:mf_distcube_2_cuprum_place",
+        "@upgr_to_mf_distcube_2_cuprum"
+      ]
+    ]
+  },
+  "ITEM_BP_RESURRECTION_TABLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "morgue_builddesk:p:zombie_crafting_table_place"
+    ]
+  },
+  "ITEM_BP_PORTER_STATION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mining_builddesk:p:porter_station"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_ALCHEMY_DECOMPOSER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:alchemy_table_zombie_place"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_ALCHEMY_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:alchemy_workbench_zombie_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_CANDELABRA": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "church_builddesk:p:candelabrum_1",
+        "@church_builddesk:p:wall_candelabrum_1"
+      ],
+      [
+        "church_builddesk:p:candelabrum_2",
+        "@church_builddesk:p:wall_candelabrum_2"
+      ],
+      [
+        "church_builddesk:p:candelabrum_3",
+        "@church_builddesk:p:wall_candelabrum_3"
+      ]
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_CHURCH_BENCH": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "church_builddesk:p:church_bench"
+      ],
+      [
+        "church_builddesk:p:church_bench_2"
+      ]
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_CONFESSIONAL": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "church_builddesk:p:church_budka_1_place"
+      ],
+      [
+        "church_builddesk:p:church_budka_2_place"
+      ]
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_CHURCH_SHRINE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "church_builddesk:p:church_table_1_place"
+      ],
+      [
+        "church_builddesk:p:church_table_2_place"
+      ]
+    ]
+  },
+  "ITEM_BP_PLACE_FOR_BURNING_CORPSES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cremation_builddesk:p:mf_pyre_placed"
+    ]
+  },
+  "ITEM_BP_STONE_COLUMBARIUM": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "graveyard_builddesk:p:columbarium_stone_place"
+    ]
+  },
+  "ITEM_BP_MARBLE_COLUMBARIUM": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "graveyard_builddesk:p:columbarium_marble_place"
+    ]
+  },
+  "ITEM_BP_STAINED_GLASS_WINDOW": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "church_builddesk:p:church_window_1"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_INCENSE_BURNER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "church_builddesk:p:c_obj_incense_1_place"
+      ],
+      [
+        "church_builddesk:p:c_obj_incense_2_place"
+      ]
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_PRAYER_STATION": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "graveyard_builddesk:p:pray_stand_wd_place"
+      ],
+      [
+        "graveyard_builddesk:p:pray_stand_stn_place"
+      ]
+    ]
+  },
+  "ITEM_BP_LAWN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "graveyard_builddesk:p:grass_sward_2x3",
+      "@graveyard_builddesk:p:grass_sward_2x4",
+      "@graveyard_builddesk:p:grass_sward_2x6"
+    ]
+  },
+  "ITEM_BP_MARBLE_FLAGSTONES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "graveyard_builddesk:p:road_marble"
+    ]
+  },
+  "ITEM_BP_LANTERN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "graveyard_builddesk:p:lantern_3"
+    ]
+  },
+  "ITEM_BP_STUDY_TABLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:mf_alchemy_survey_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_DESK": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "alchemy_builddesk:p:desk"
+      ],
+      [
+        "alchemy_builddesk:p:desk_2"
+      ]
+    ]
+  },
+  "ITEM_BP_SCROLLSHELF": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:obj_church_scroll_cabinet_place"
+    ]
+  },
+  "ITEM_BP_RANDOM_TEXT_GENERATOR": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:zombie_pulpit"
+    ]
+  },
+  "ITEM_BP_BOOKSHELF": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "alchemy_builddesk:p:obj_church_bookcase_place"
+    ]
+  },
+  "ITEM_BP_PAPER_PRESS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_paper_press_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_PRINTING_PRESS": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "alchemy_builddesk:p:mf_printing_press_place"
+      ],
+      [
+        "alchemy_builddesk:p:mf_printing_press_2_place",
+        "@mf_printing_press_1_to_2"
+      ]
+    ]
+  },
+  "ITEM_BP_EMPTY_GARDEN_BED": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_BP_TRUNK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_builddesk:p:mf_box_stuff_place",
+      "@mining_builddesk:p:mf_box_stuff_place",
+      "@vineyard_builddesk:p:mf_box_stuff_place",
+      "@graveyard_builddesk:p:mf_box_stuff_place",
+      "@cremation_builddesk:p:mf_box_stuff_place"
+    ]
+  },
+  "ITEM_BP_GARDEN_BED_WITH_STICKS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_builddesk:p:garden_empty_stick_place"
+    ]
+  },
+  "ITEM_BP_PLACE_FOR_THE_BERRY_BUSH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "tree_garden_builddesk:p:bush_berry_garden_place"
+    ]
+  },
+  "ITEM_BP_PLACE_FOR_THE_APPLE_TREE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "tree_garden_builddesk:p:tree_apple_garden_place"
+    ]
+  },
+  "ITEM_BP_COMPOST_HEAP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_builddesk:p:v_obj_compost_heap_place"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_FARM": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_builddesk:p:zombie_garden_desk_place"
+    ]
+  },
+  "ITEM_BP_VINE_TRELLIS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "vineyard_builddesk:p:vineyard_grapes_stick_place"
+    ]
+  },
+  "ITEM_BP_BEEHIVE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "beehouse:p:beehouse_place"
+    ]
+  },
+  "ITEM_BP_BREWING_STAND": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cellar_builddesk:p:brewing_stand_place"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_VINEYARD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "vineyard_builddesk:p:zombie_vineyard_desk_place"
+    ]
+  },
+  "ITEM_BP_FERMENTATION_BARREL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cellar_builddesk:p:barrel_brew_place"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_BREWERY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cellar_builddesk:p:mf_zombie_brewing_place"
+    ]
+  },
+  "ITEM_BP_VINE_PRESS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_vine_press_place",
+      "@cellar_builddesk:p:mf_vine_press_place"
+    ]
+  },
+  "ITEM_BP_WINE_MAKING_BARREL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cellar_builddesk:p:mf_barrel_mid_place"
+    ]
+  },
+  "ITEM_BP_ALCOHOL_DISTILLER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cellar_builddesk:p:mf_distcube_3_place"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_WINERY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cellar_builddesk:p:mf_zombie_winemaking_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_FURNACE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "mf_wood_builddesk:p:mf_furnace_0_place"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_furnace_1_place",
+        "@mf_furnace_0_to_1"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_furnace_2_place",
+        "@mf_furnace_1_to_2"
+      ]
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_ANVIL": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "mf_wood_builddesk:p:mf_anvil_1"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_anvil_2"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_anvil_3",
+        "@mf_anvil_2_to_3"
+      ]
+    ]
+  },
+  "ITEM_BP_LANTERN_NETWORK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mining_builddesk:p:lantern_network"
+    ]
+  },
+  "ITEM_BP_PLACE_FOR_LANTERN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mining_builddesk:p:lantern_place"
+    ]
+  },
+  "ITEM_BP_WATER_PUMP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:well_pump_place"
+    ]
+  },
+  "ITEM_BP_JEWELRY_TABLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_jewelry_place"
+    ]
+  },
+  "ITEM_BP_TIMBER_STOCKPILE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_timber_1_place"
+    ]
+  },
+  "ITEM_BP_STONE_STOCKPILE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_stones_1_place",
+      "@mining_builddesk:p:mf_stones_1_place"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_SAW": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "mf_wood_builddesk:p:mf_timber_1_place"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_saw_1_place"
+      ]
+    ]
+  },
+  "ITEM_BP_POTTERS_WHEEL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_potter_wheel_1_place"
+    ]
+  },
+  "ITEM_BP_CHOPPING_SPOT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_chocks_1"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_STONE_CUTTER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "mf_wood_builddesk:p:mf_hammer_0_place",
+        "@mining_builddesk:p:mf_hammer_0_place"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_hammer_1_place"
+      ]
+    ]
+  },
+  "ITEM_BP_IRON_ORE_STOCKPILE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mf_wood_builddesk:p:mf_ore_1_complete",
+      "@mining_builddesk:p:mf_ore_1_complete"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_ORE_MINE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mining_builddesk::zombie_mine_bench_left",
+      "@mining_builddesk::zombie_mine_bench_right"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_CARPENTERS_WORKBENCH": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "mf_wood_builddesk:p:mf_workbench_1_place"
+      ],
+      [
+        "mf_wood_builddesk:p:mf_workbench_2_place",
+        "@mf_workbench_1_to_2"
+      ]
+    ]
+  },
+  "ITEM_BP_ZOMBIE_SAWMILL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "zombie_sawmill_unfinished_place"
+    ]
+  },
+  "ITEM_BP_ZOMBIE_STONE_QUARRY": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_BP_ZOMBIE_MARBLE_QUARRY": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_BP_PROGRESSIVE_SOUL_CONTAINER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "souls_builddesk:p:soul_container_place"
+      ],
+      [
+        "souls_builddesk:p:soul_container_2_place"
+      ],
+      [
+        "souls_builddesk:p:soul_container_3_place"
+      ]
+    ]
+  },
+  "ITEM_BP_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::soul_workbench"
+    ]
+  },
+  "ITEM_BP_PROGRESSIVE_SOUL_EXTRACTOR": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "souls_builddesk::soul_extractor_upgrd_to_2"
+      ],
+      [
+        "souls_builddesk::soul_extractor_upgrd_to_3"
+      ]
+    ]
+  },
+  "ITEM_BP_WALL_CREMATORIUM": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk:p:mf_crematorium"
+    ]
+  },
+  "ITEM_BP_SOUL_RECEIVER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::soul_totem_souls"
+    ]
+  },
+  "ITEM_BP_EXTENSION_HEALING_FROM_PRIDE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::pride_healing_extension"
+    ]
+  },
+  "ITEM_BP_EXTENSION_HEALING_FROM_WRATH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::wrath_healing_extension"
+    ]
+  },
+  "ITEM_BP_EXTENSION_HEALING_FROM_GLUTTONY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::gluttony_healing_extension"
+    ]
+  },
+  "ITEM_BP_EXTENSION_HEALING_FROM_SLOTH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::sloth_healing_extension"
+    ]
+  },
+  "ITEM_BP_EXTENSION_HEALING_FROM_LUST": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::lust_healing_extension"
+    ]
+  },
+  "ITEM_BP_EXTENSION_HEALING_FROM_ENVY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "souls_builddesk::envy_healing_extension"
+    ]
+  },
+  "ITEM_BP_HUMAN_SOUL_HEALING": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_GATHERING_OLD_BOOKS": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_old_books"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_EDIBLE_MUSHROOM": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_mushroom"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_BERRY": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_berry"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_APPLE": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_apple"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_BEESWAX": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_beeswax"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_BUTTERFLY": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_butterfly"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_MOTH": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_moth"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_BEE": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_bee"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_MAGGOT": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_maggot"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_SWAMP_IRON": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_iron_ore_1"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_PROGRESSIVE_TREE_FELLING": {
+    "type": "progressive_work_unlock",
+    "stages": [
+      [
+        "t_wood_small"
+      ],
+      [
+        "t_wood_big"
+      ]
+    ]
+  },
+  "ITEM_LEARN_GATHERING_STICK": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_stick"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_STONE_ROCK": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_stone"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_SAND": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_sand"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_CLAY": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_clai"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_COAL": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_coal"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_IRON_ORE": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_iron_ore_2"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_SILVER_ORE": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_silver_ore"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_GOLD_ORE": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_gold_ore"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_PYRITE": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_pyrite"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_SULFUR": {
+    "type": "work_unlock",
+    "work_ids": [],
+    "perk_ids": [
+      "p_t_sulfur"
+    ]
+  },
+  "ITEM_LEARN_GATHERING_LIMESTONE": {
+    "type": "work_unlock",
+    "work_ids": [
+      "p_t_lifestone"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_BIG_MARBLE_ROCK": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_marble"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_LEARN_GATHERING_DIAMOND": {
+    "type": "work_unlock",
+    "work_ids": [
+      "t_diamond"
+    ],
+    "perk_ids": []
+  },
+  "ITEM_PERK_BUTCHER": {
+    "type": "perk_unlock",
+    "perk_id": "p_butcher",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_SURGEON": {
+    "type": "perk_unlock",
+    "perk_id": "p_doctor",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_SCIENTIST": {
+    "type": "perk_unlock",
+    "perk_id": "p_scientist",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_CULTIST": {
+    "type": "perk_unlock",
+    "perk_id": "p_cultist",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_PREACHER": {
+    "type": "perk_unlock",
+    "perk_id": "p_preacher",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_CARDINAL": {
+    "type": "perk_unlock",
+    "perk_id": "p_cardinal",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_CURIOUS_MIND": {
+    "type": "perk_unlock",
+    "perk_id": "p_naturalist",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_JOURNALIST": {
+    "type": "perk_unlock",
+    "perk_id": "p_journalist",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_WRITER": {
+    "type": "perk_unlock",
+    "perk_id": "p_writer",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_PLAYWRIGHT": {
+    "type": "perk_unlock",
+    "perk_id": "p_good_writer",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_MASTER_GATHERER": {
+    "type": "perk_unlock",
+    "perk_id": "p_collector",
+    "craft_ids": [],
+    "work_ids": [
+      "t_mushroom2"
+    ]
+  },
+  "ITEM_PERK_FARMER": {
+    "type": "perk_unlock",
+    "perk_id": "p_farmer",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_BEEKEEPER": {
+    "type": "perk_unlock",
+    "perk_id": "p_beekeeper2",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_WINE_MASTER": {
+    "type": "perk_unlock",
+    "perk_id": "p_wine_master",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_BLACKSMITH": {
+    "type": "perk_unlock",
+    "perk_id": "p_blacksmith",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_BIG_GUY": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_PERK_FIREMAN": {
+    "type": "perk_unlock",
+    "perk_id": "p_fireman",
+    "craft_ids": [
+      "@ingot_metal_huge",
+      "@ingot_metal_1_huge",
+      "@ingot_metal_2_huge"
+    ],
+    "work_ids": []
+  },
+  "ITEM_PERK_ENGINEER": {
+    "type": "perk_unlock",
+    "perk_id": "p_engineer",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_SWORD_MASTER": {
+    "type": "perk_unlock",
+    "perk_id": "p_sword_master",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_AXEMAN": {
+    "type": "perk_unlock",
+    "perk_id": "p_axeman",
+    "craft_ids": [],
+    "work_ids": [
+      "t_wood_big"
+    ]
+  },
+  "ITEM_PERK_MINER": {
+    "type": "perk_unlock",
+    "perk_id": "p_miner",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_CARPENTER": {
+    "type": "perk_unlock",
+    "perk_id": "p_woodworker",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_MASON": {
+    "type": "perk_unlock",
+    "perk_id": "p_mason",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_JEWELER": {
+    "type": "perk_unlock",
+    "perk_id": "p_jevelery",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_ELOQUENCE": {
+    "type": "perk_unlock",
+    "perk_id": "p_eloquence",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_INDUSTRIOUSNESS": {
+    "type": "perk_unlock",
+    "perk_id": "p_industriousness",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_PERK_PERSISTENCE": {
+    "type": "perk_unlock",
+    "perk_id": "p_persistence",
+    "craft_ids": [],
+    "work_ids": []
+  },
+  "ITEM_LEARN_EXTRACT_FLESH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:flesh",
+      "ex:mf_preparation_2:flesh"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_SKULL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:skull",
+      "ex:mf_preparation_2:skull"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_BONE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:bone",
+      "ex:mf_preparation_2:bone"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_SKIN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:skin",
+      "ex:mf_preparation_2:skin"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_BLOOD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:blood",
+      "ex:mf_preparation_2:blood"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_FAT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:fat",
+      "ex:mf_preparation_2:fat"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_BRAIN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:brain",
+      "ex:mf_preparation_2:brain"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_HEART": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:heart",
+      "ex:mf_preparation_2:heart"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_INTESTINES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:intestine",
+      "ex:mf_preparation_2:intestine"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_DARK_BRAIN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:brain_dark",
+      "ex:mf_preparation_2:brain_dark"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_DARK_HEART": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:heart_dark",
+      "ex:mf_preparation_2:heart_dark"
+    ]
+  },
+  "ITEM_LEARN_EXTRACT_DARK_INTESTINES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ex:mf_preparation_1:intestine_dark",
+      "ex:mf_preparation_2:intestine_dark"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_MUSHROOMS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_kebab_7",
+      "@t_baked_kebab_7"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_APPLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_apple",
+      "@t_baked_apple"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CARROT_CUTLET": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cutlet_carrot",
+      "@t_cutlet_carrot"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_BOWL_OF_SAUERKRAUT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bowl_sauerkraut",
+      "@t_bowl_sauerkraut"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BEET_SLICES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "beet_slice",
+      "@t_beet_slice"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GREEN_JELLY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "jelly_green",
+      "@t_jelly_green"
+    ]
+  },
+  "ITEM_LEARN_CREATE_RED_JELLY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "jelly_red",
+      "@t_jelly_red"
+    ]
+  },
+  "ITEM_LEARN_CREATE_DOUGH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "dough",
+      "@t_dough"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PASTRY_DOUGH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "dough_2",
+      "@t_dough_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BREAD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bread",
+      "@t_bread"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_FISH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_fish",
+      "@t_baked_fish"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FISH_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "soup_fish",
+      "@t_soup_fish"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FISH_NUGGETS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "nuggets_fish",
+      "@t_nuggets_fish"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PANCAKES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "pancakes",
+      "@t_pancakes"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CROISSANT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "croissant",
+      "@t_croissant"
+    ]
+  },
+  "ITEM_LEARN_CREATE_MUFFIN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "muffin",
+      "@t_muffin"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CABBAGE_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "soup_red_green",
+      "@t_soup_red_green"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PUMPKIN_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "soup_red_yellow",
+      "@t_soup_red_yellow"
+    ]
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "soup_yellow_green",
+      "@t_soup_yellow_green"
+    ]
+  },
+  "ITEM_LEARN_CREATE_OMELETTE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "omlette",
+      "@t_omlette"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FRIED_EGG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "fried_egg",
+      "@t_fried_egg"
+    ]
+  },
+  "ITEM_LEARN_CREATE_LASAGNA": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "lasagne",
+      "@t_lasagne"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PASTA": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "pasta",
+      "@t_pasta"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_KEBAB_PUMPKIN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_kebab_1",
+      "@t_baked_kebab_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_KEBAB_ONIONS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_kebab_2",
+      "@t_baked_kebab_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_KEBAB_MUSHROOMS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_kebab_5",
+      "@t_baked_kebab_5"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BERRY_PIE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "pie_1",
+      "@t_pie_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GRAPE_PIE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "pie_2",
+      "@t_pie_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_BOWL_OF_PUMPKIN_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bowl_pumpkin",
+      "@t_bowl_pumpkin"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_PUMPKIN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_pumpkin",
+      "@t_baked_pumpkin"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_BOWL_OF_LENTILS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bowl_lentil",
+      "@t_bowl_lentil"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BURGER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "burger",
+      "@t_burger"
+    ]
+  },
+  "ITEM_LEARN_CREATE_SANDWICH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sandwich",
+      "@t_sandwich"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_MEAT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_meat",
+      "@t_baked_meat"
+    ]
+  },
+  "ITEM_LEARN_CREATE_ONION_RINGS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "onion_ring",
+      "@t_onion_ring"
+    ]
+  },
+  "ITEM_LEARN_CREATE_TOASTS_WITH_ONIONS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "toasts",
+      "@t_toasts"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BAKED_SALMON": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "baked_salmon",
+      "@t_baked_salmon"
+    ]
+  },
+  "ITEM_LEARN_CREATE_ROYAL_FISH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "honey_fish",
+      "@t_honey_fish"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CAKE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "pie",
+      "@t_pie"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GRATED_CARROT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "grated_carrot"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GRATED_BEETS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "grated_beetroot"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOILED_EGG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "boiled_egg"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_MUG_OF_MEAD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cup_mead"
+    ]
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_SALAD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "vegetable_salad"
+    ]
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_STEW": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "vegetable_stew"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CREAMY_VEGETABLE_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "creamy_vegetable_soup"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CHEESE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cheese"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BUTTER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "butter"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CREAM_OF_MUSHROOM_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cream_of_mushroom_soup"
+    ]
+  },
+  "ITEM_LEARN_CREATE_LENTIL_PORRIDGE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "lentil_porridge"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FANCY_LENTIL_SOUP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "greek_lentil_soup"
+    ]
+  },
+  "ITEM_LEARN_CREATE_LENTIL_CUTLETS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "lentil_cutlets"
+    ]
+  },
+  "ITEM_LEARN_CREATE_VEGETABLE_PATTY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "vegetable_patty"
+    ]
+  },
+  "ITEM_LEARN_CREATE_MUSHROOM_PATTY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "mushroom_patty"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CHEESE_PATTY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cheese_patty"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CHEESE_PIE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cheese_pie"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CHEESECAKE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cheesecake"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PANNA_COTTA": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "panna_cotta"
+    ]
+  },
+  "ITEM_LEARN_CREATE_HONEY_PUDDING": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "honey_pudding"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BERRY_PUDDING": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "berry_pudding"
+    ]
+  },
+  "ITEM_LEARN_CREATE_HONEY_CAKE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "honey_cake"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_REPOSE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_skull",
+      "@b_skull_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_FAITH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_faith",
+      "@b_faith_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_PROSPERITY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_village",
+      "@b_village_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_REPENTANCE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_sins",
+      "@b_sins_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_DONATIONS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_money",
+      "@b_money_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_COMBO_PRAYER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_faith_money",
+      "@b_faith_money_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_IMAGINATION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_pen",
+      "@b_pen_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_SHOOTS_AND_ROOTS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_plant",
+      "@b_plant_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_RETRIBUTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_sword",
+      "@b_sword_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_PROTECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_shield",
+      "@b_shield_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAYER_FOR_EXCELLENCE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "b_star",
+      "@b_star_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_REPOSE": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_CONTENTMENT": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_CREATE_PRAY_FOR_SOULS_THOROUGH_CLEANSING": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_SHOVEL": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "shovel_1",
+        "@shovel_1_2",
+        "@shovel_1_3"
+      ],
+      [
+        "shovel_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_PICKAXE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "pickaxe_1",
+        "@pickaxe_1_2",
+        "@pickaxe_1_3"
+      ],
+      [
+        "pickaxe_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_AXE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "axe_1",
+        "@axe_1_2",
+        "@axe_1_3"
+      ],
+      [
+        "axe_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_HAMMER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "@hammer_0"
+      ],
+      [
+        "hammer_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_CHISEL": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "chisel_1",
+        "@chisel_1_2"
+      ],
+      [
+        "chisel_2",
+        "@chisel_2_2",
+        "@chisel_2a",
+        "@chisel_2b",
+        "@chisel_2_2a",
+        "@chisel_2_2b"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_SWORD": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "sword_1",
+        "@sword_1_2"
+      ],
+      [
+        "sword_steel"
+      ],
+      [
+        "sword_steel_gem"
+      ],
+      [
+        "sword_damask_gem"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_ARMOR": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "armor_lamellar_1",
+        "@armor_lamellar_1_2"
+      ],
+      [
+        "armor_lamellar_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_ACID_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_-1_-1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_LYE_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_1_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GLUE_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_0_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PRESERVATIVE_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_stop"
+    ]
+  },
+  "ITEM_LEARN_CREATE_RESTORE_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_50"
+    ]
+  },
+  "ITEM_LEARN_CREATE_ALCHEMISTS_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_alchemy"
+    ]
+  },
+  "ITEM_LEARN_CREATE_DARK_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_2_0"
+    ]
+  },
+  "ITEM_LEARN_CREATE_SILVER_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_-1_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GOLD_INJECTION": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "embalm_-2_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FARMERS_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_farming"
+    ]
+  },
+  "ITEM_LEARN_FISHERMANS_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_fishing"
+    ]
+  },
+  "ITEM_LEARN_TOOL_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_tools"
+    ]
+  },
+  "ITEM_LEARN_UNIVERSAL_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_universal"
+    ]
+  },
+  "ITEM_LEARN_POTION_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_potions"
+    ]
+  },
+  "ITEM_LEARN_BUILDERS_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_builder"
+    ]
+  },
+  "ITEM_LEARN_FOOD_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_food"
+    ]
+  },
+  "ITEM_LEARN_BIG_UNIVERSAL_BAG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bag_universal_big"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_WOODEN_GRAVE_MARKER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "grave_top_wd_tab_1",
+        "@grave_top_wd_tab_1_2",
+        "@grave_top_wd_tab_1_3"
+      ],
+      [
+        "grave_top_wd_cross_1",
+        "@grave_top_wd_cross_1_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_MARKER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "grave_top_stn_plate_1",
+        "@grave_top_stn_plate_1_2",
+        "@destroy_grave_top_stn_plate_1"
+      ],
+      [
+        "grave_top_stn_plate_2",
+        "@destroy_grave_top_stn_plate_2"
+      ],
+      [
+        "grave_top_stn_cross_1",
+        "@destroy_grave_top_stn_cross_1"
+      ],
+      [
+        "grave_top_memorial_stn_1"
+      ],
+      [
+        "grave_top_stn_cross_2",
+        "@destroy_grave_top_stn_cross_2"
+      ],
+      [
+        "grave_top_stella_stn_1",
+        "@destroy_grave_top_stella_stn_1"
+      ],
+      [
+        "grave_top_sculpt_stn_1",
+        "@destroy_top_sculpt_stn_1"
+      ],
+      [
+        "grave_top_sculpt_stn_2",
+        "@destroy_top_sculpt_stn_2"
+      ],
+      [
+        "grave_top_womansaver_stn_1"
+      ],
+      [
+        "grave_top_highangel_stn_1"
+      ],
+      [
+        "grave_top_sculpt_stn_4",
+        "@destroy_top_sculpt_stn_4"
+      ],
+      [
+        "grave_top_sculpt_stn_5",
+        "@destroy_top_sculpt_stn_5"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_MARKER": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "grave_top_mrb_cross_1"
+      ],
+      [
+        "grave_top_mrb_cross_2"
+      ],
+      [
+        "grave_top_memorial_mrb_1"
+      ],
+      [
+        "grave_top_stella_mrb_1"
+      ],
+      [
+        "grave_top_sculpt_mrb_1"
+      ],
+      [
+        "grave_top_sculpt_mrb_2"
+      ],
+      [
+        "grave_top_womansaver_mrb_1"
+      ],
+      [
+        "grave_top_highangel_mrb_1"
+      ],
+      [
+        "grave_top_sculpt_mrb_4"
+      ],
+      [
+        "grave_top_sculpt_mrb_5"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "grave_bot_stn_1",
+        "@grave_bot_stn_1_2",
+        "@destroy_grave_bot_stn_1"
+      ],
+      [
+        "grave_bot_stn_2",
+        "@destroy_grave_bot_stn_2"
+      ],
+      [
+        "grave_bot_stn_3"
+      ],
+      [
+        "grave_bot_stn_4"
+      ],
+      [
+        "grave_bot_stn_5"
+      ],
+      [
+        "grave_bot_stn_6"
+      ],
+      [
+        "grave_bot_stn_7"
+      ],
+      [
+        "grave_bot_stn_8"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_FENCE": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "grave_bot_mrb_1"
+      ],
+      [
+        "grave_bot_mrb_2"
+      ],
+      [
+        "grave_bot_mrb_3"
+      ],
+      [
+        "grave_bot_mrb_4"
+      ],
+      [
+        "grave_bot_mrb_5"
+      ],
+      [
+        "grave_bot_mrb_6"
+      ],
+      [
+        "grave_bot_mrb_7"
+      ],
+      [
+        "grave_bot_mrb_8"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_CERAMIC_FUNERAL_URN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "funeral_urn_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PORCELAIN_FUNERAL_URN": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "funeral_urn_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CANDLE_1": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "candle_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CANDLE_3": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "candle_3"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CANDLE_4": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "candle_4"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FLYER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "flyer_bad",
+      "@flyer_good",
+      "@flyer_good_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_INCENSE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "incense_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_INCENSE_2": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "incense_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_NOTES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "notes"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CHAPTER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "chapter"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PIGSKIN_PAPER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "skroll_skin_pig",
+      "@skroll_skin_pig_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CLEAN_PAPER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "paper_bad, paper_from_herb"
+    ]
+  },
+  "ITEM_LEARN_CREATE_STORY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "story"
+    ]
+  },
+  "ITEM_LEARN_CREATE_INK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ink_jar"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PEN_AND_INK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ink_pen"
+    ]
+  },
+  "ITEM_LEARN_CREATE_SOFT_COVER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cover_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_HARD_COVER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cover_hard",
+      "@cover_hard_2",
+      "@cover_hard_3"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "book_hard",
+      "@book_hard_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PAPER_GLOP": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "pail_wet_paper"
+    ]
+  },
+  "ITEM_LEARN_CREATE_HONEY": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "honey_production"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PEAT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "peat_from_waste"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GRAPES": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_grapes_growing"
+    ]
+  },
+  "ITEM_LEARN_CREATE_HOPS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "garden_hop_growing"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_1": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sack_clock_silver"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_2": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sack_clock_gold"
+    ]
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_1": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sack_star_silver"
+    ]
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_2": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sack_star_gold"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_MUG_OF_BEER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "cup_beer"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOTTLE_OF_APPLE_FERMENT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bottle_apple_braga"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOTTLE_OF_BERRY_FERMENT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bottle_berry_braga"
+    ]
+  },
+  "ITEM_LEARN_CREATE_RED_WINE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "bottle_red_vine"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOZE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "booze_from_bottle_apple_braga",
+      "@booze_from_bottle_berry_braga",
+      "@booze_from_bottle_red_vine_1",
+      "@booze_from_bottle_red_vine_2",
+      "@booze_from_bottle_red_vine_3"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_INGOT": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "ingot_metal"
+      ],
+      [
+        "ingot_steel",
+        "@ingot_steel_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_NAILS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "nails"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_METAL_PARTS": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_GLASS": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "glass_0",
+        "@glass_0_1",
+        "@glass_0_2"
+      ],
+      [
+        "glass_1",
+        "@glass_1_2"
+      ],
+      [
+        "glass_2",
+        "@glass_2_2"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_LENS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "lense"
+    ]
+  },
+  "ITEM_LEARN_CREATE_SILVER_INGOT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ingot_silver",
+      "@ingot_silver_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GOLD_INGOT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ingot_gold",
+      "@ingot_gold_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PROGRESSIVE_JEWELRY": {
+    "type": "progressive_craft_unlock",
+    "stages": [
+      [
+        "jewelry_detail_gold"
+      ],
+      [
+        "bijouterie_gold"
+      ]
+    ]
+  },
+  "ITEM_LEARN_CREATE_FLITCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "flitch"
+    ]
+  },
+  "ITEM_LEARN_CREATE_WOOD_BILLET": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "wood1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CERAMIC_BOWLS": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ceramic_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_POLISHING_PASTE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "polishing_paste",
+      "@polishing_paste_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_FIREWOOD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "firewood"
+    ]
+  },
+  "ITEM_LEARN_CREATE_WOOD_WEDGE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "spike_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_PIECE_OF_STONE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "stone_plate_1",
+      "@stone_plate_1_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_STONE_REPAIR_KIT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "repair_stn",
+      "@repair_stn_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CERAMIC_JUG": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ceramic_2",
+      "@ceramic_2_1",
+      "@ceramic_2_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_PORCELAIN_PITCHER": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "ceramic_3",
+      "@ceramic_3_1",
+      "@ceramic_3_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_GRAPHITE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "graphite",
+      "@graphite_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_WOODEN_PLANK": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "wooden_plank",
+      "@wooden_plank_3"
+    ]
+  },
+  "ITEM_LEARN_CREATE_WOOD_REPAIR_KIT": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "repair_wdn",
+      "@repair_wdn_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_JOINTING": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "wood_constr_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_WOODEN_BEAM": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "wood_balk_1"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_STONE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "stone_plate_2",
+      "@stone_plate_2_2",
+      "@stone_plate_2_3",
+      "@stone_plate_2_4"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_STONE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "stone_plate_3",
+      "@stone_plate_3b"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CARVED_WOOD": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "carved_wood"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_PIECE_OF_MARBLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "marble_plate_1",
+      "@marble_plate_1_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_MARBLE_REPAIR_KIT": {
+    "type": "TODO",
+    "reason": "No matching entry exists in the current client item registry."
+  },
+  "ITEM_LEARN_CREATE_A_POLISHED_BRICK_OF_MARBLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "marble_plate_2",
+      "@marble_plate_2_2"
+    ]
+  },
+  "ITEM_LEARN_CREATE_A_CARVED_PIECE_OF_MARBLE": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "marble_plate_3"
+    ]
+  },
+  "ITEM_LEARN_CREATE_REMOTE_CRAFT_CONTROL": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "fake_global_craft"
+    ]
+  },
+  "ITEM_LEARN_CREATE_STORY_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "story_souls"
+    ]
+  },
+  "ITEM_LEARN_CREATE_CHAPTER_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "chapter_souls"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOK_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "book_souls"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_1_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sack_clock_silver_souls"
+    ]
+  },
+  "ITEM_LEARN_CREATE_BOOST_FERTILIZER_2_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "@sack_clock_gold_souls"
+    ]
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_1_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "sack_star_silver_souls"
+    ]
+  },
+  "ITEM_LEARN_CREATE_QUALITY_FERTILIZER_2_ORGAN_WORKBENCH": {
+    "type": "craft_unlock",
+    "craft_ids": [
+      "@sack_star_gold_souls"
+    ]
+  },
+  "ITEM_UNLOCK_ANATOMY": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_ALCHEMY": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_FAITH": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_GRAVES": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_WRITING": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_FARMING": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_GATHERING": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_SMITHING": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_WOOD": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_STONE": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_CLAY": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_SIMPLE_AND_TASTY": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_VEGETABLE_DISHES": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_JELLY": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_BREAD": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_FISH_DISHES": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_SWEET_BAKING": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_EGG_DISHES": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_PIES": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_TASTY_AND_HEALTHY": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_MEAT_FIESTA": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_FISH_DELICACIES": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_ZOMBIE_BASICS": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_ZOMBIE_WORKSTATIONS": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  },
+  "ITEM_UNLOCK_SPIRITUALISM": {
+    "type": "TODO",
+    "reason": "The client does not implement technology-group item delivery yet."
+  }
+}
