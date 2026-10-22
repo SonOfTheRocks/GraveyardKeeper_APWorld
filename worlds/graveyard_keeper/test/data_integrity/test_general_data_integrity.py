@@ -81,11 +81,11 @@ class TestDataIntegrity(unittest.TestCase):
             "ITEM_BP_DONKEYS_OF_THE_WORLD_UNITE",
             "ITEM_BP_SPICY_ORANGE"
         ]
-        blueprint_filenames = importlib_resources.files(__name__).glob("data/items/**/blueprints.json")
+        item_root = importlib_resources.files("worlds.graveyard_keeper") / "data/shared/items"
+        blueprint_filenames = item_root.rglob("blueprints.json")
         for blueprint_filename in blueprint_filenames:
-            blueprint_filename = str(blueprint_filename)
-
-            for blueprint_name, blueprint_json in load_json_data(f"items/{blueprint_filename}").items():
+            relative_name = str(blueprint_filename.relative_to(item_root))
+            for blueprint_name, blueprint_json in load_json_data(f"items/{relative_name}").items():
                 with self.subTest(file=blueprint_filename, blueprint=blueprint_name):
                     if blueprint_name in decorative_items:
                         self.assertEqual(
@@ -157,12 +157,11 @@ class TestDataIntegrity(unittest.TestCase):
         return
 
     def test_all_items_have_dlc_classification(self):
-        found = importlib_resources.files(__name__).glob("data/items/*.json")
-        item_filenames = set(found)
-        found = importlib_resources.files(__name__).glob("data/items/**/*.json")
-        item_filenames.update(set(found))
+        item_root = importlib_resources.files("worlds.graveyard_keeper") / "data/shared/items"
+        item_filenames = set(item_root.rglob("*.json"))
         for item_filename in item_filenames:
-            for item_key, item_data in load_json_data(f"data/items/{item_filename}").items():
+            relative_name = str(item_filename.relative_to(item_root))
+            for item_key, item_data in load_json_data(f"items/{relative_name}").items():
                 with self.subTest(file=str(item_filename), item=item_key):
                     self.assertIn("dlc", item_data)
                     self.assertIn(

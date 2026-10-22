@@ -232,3 +232,4 @@ class TestLocationTriggersStayOutOfAPWorldRuntime(unittest.TestCase):
             "stranger_sins", "game_of_crone", "better_save_soul",
         )
         self.assertNotIn("quest_location_triggers", slot_data)
+        self.assertIn("graveyard_keeper_data_version", slot_data)

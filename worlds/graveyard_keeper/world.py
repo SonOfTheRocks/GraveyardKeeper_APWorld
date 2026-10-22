@@ -3,6 +3,7 @@ from typing import Dict
 from BaseClasses import Region
 from rule_builder.cached_world import CachedRuleBuilderWorld
 from . import items, locations, regions, rules, web_world
+from .data import load_json_data
 from . import options as graveyard_keeper_options
 
 
@@ -38,6 +39,8 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
         return items.get_random_filler_item_name(self)
 
     def fill_slot_data(self):
-        return self.options.as_dict(
+        slot_data = self.options.as_dict(
             "stranger_sins", "game_of_crone", "better_save_soul"
         )
+        slot_data["graveyard_keeper_data_version"] = load_json_data("manifest.json")["data_version"]
+        return slot_data

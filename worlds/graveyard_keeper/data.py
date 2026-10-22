@@ -13,8 +13,12 @@ UNREACHABLE_REGION_KEY = "REGION_UNREACHABLE"
 CRAFTING_REGION_KEY = "REGION_CRAFTING"
 CRAFTING_EVENT_PREFIX = "EVENT_CAN_GET_"
 CRAFTING_EVENT_LABEL_PREFIX = "Can obtain "
+SHARED_DATA_PREFIX = "shared/"
+SHARED_ROOT_FILES = {"item_grants.json", "locations.json", "manifest.json", "quest_reward_triggers.json"}
 
-def load_json_data(data_name: str) -> Union[List[Any], Dict[str, Any]]:
+def load_json_data(data_name: Union[str, Any]) -> Union[List[Any], Dict[str, Any]]:
+    if isinstance(data_name, str) and (data_name.startswith("items/") or data_name in SHARED_ROOT_FILES):
+        data_name = SHARED_DATA_PREFIX + data_name
     raw = pkgutil.get_data(__name__, f"data/{data_name}")
 
     if raw is None:
@@ -166,7 +170,7 @@ def load_items() -> Dict[str, ItemData]:
     #    in importlib_resources.files(__name__).glob("data/items/*.json")
     #    if "unused" not in str(filename)
     #)
-    root = importlib_resources.files(__name__) / "data/items"
+    root = importlib_resources.files(__name__) / "data/shared/items"
     item_files_data = (
         load_json_data("items/" + str(p.relative_to(root)))
         for p in iter_json_files(root)

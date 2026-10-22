@@ -14,7 +14,7 @@ class TestItemGrants(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.raw_items = {}
-        item_root = importlib_resources.files("worlds.graveyard_keeper") / "data" / "items"
+        item_root = importlib_resources.files("worlds.graveyard_keeper") / "data" / "shared" / "items"
         for item_file in sorted(item_root.rglob("*.json"), key=str):
             if "unused" in item_file.parts:
                 continue
