@@ -1,4 +1,5 @@
 import json
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -16,6 +17,19 @@ class TestClientContract(unittest.TestCase):
     def test_checked_in_contract_matches_its_source_data(self):
         checked_in = json.loads(DEFAULT_OUTPUT.read_text(encoding="utf-8-sig"))
         self.assertEqual(self.contract, checked_in)
+
+    def test_content_hash_covers_the_canonical_contract(self):
+        content_without_hash = {
+            key: value for key, value in self.contract.items() if key != "content_hash"
+        }
+        canonical = json.dumps(
+            content_without_hash,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+        expected_hash = f"sha256:{hashlib.sha256(canonical).hexdigest()}"
+        self.assertEqual(expected_hash, self.contract["content_hash"])
 
     def test_network_names_are_unique(self):
         for section in ("items", "locations"):

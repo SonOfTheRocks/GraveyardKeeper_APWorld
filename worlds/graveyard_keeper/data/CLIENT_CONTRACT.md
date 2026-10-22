@@ -1,21 +1,26 @@
 # APWorld/client data contract
 
-`client_contract.json` is a generated, versioned interface between the
-Graveyard Keeper APWorld and the companion client. The canonical source data
-remains in this directory:
+The `external/graveyard_keeper_data` submodule contains the generated,
+versioned interface between the Graveyard Keeper APWorld and the companion
+client. The canonical authoring data remains in this directory:
 
 - item definitions under `items/`;
 - `item_grants.json` for the concrete in-game effect of every received item;
 - `locations.json` and the technology locations generated from `regions.json`;
 - `quest_reward_triggers.json` for client-side location checks.
 
-Do not edit `client_contract.json` or the client copy by hand. Regenerate both
-copies from the repository root with:
+Do not edit the generated contract by hand. Initialize the submodule and
+regenerate its contract from the repository root with:
 
 ```powershell
-.venv\Scripts\python.exe worlds/graveyard_keeper/tools/build_client_contract.py `
-  --client-output C:/Users/Kai/RiderProjects/GraveyardKeepelago/GraveyardKeepelago/Data/graveyard_keeper_contract.json
+git submodule update --init --recursive
+.venv\Scripts\python.exe worlds/graveyard_keeper/tools/build_client_contract.py
+.venv\Scripts\python.exe external/graveyard_keeper_data/validate_contract.py
 ```
+
+Commit the generated change inside the data submodule first. Then update both
+consumer repositories to that exact data commit. The client consumes the
+contract directly from its own checkout of the same submodule.
 
 Changing `schema_version` requires coordinated loader changes in the client.
 Changing an item or location `name` changes the Archipelago network contract

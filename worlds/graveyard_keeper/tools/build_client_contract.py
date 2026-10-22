@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from collections import Counter
 from pathlib import Path
@@ -9,7 +10,9 @@ from typing import Any
 
 WORLD_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = WORLD_ROOT / "data"
-DEFAULT_OUTPUT = DATA_ROOT / "client_contract.json"
+REPOSITORY_ROOT = WORLD_ROOT.parents[1]
+SHARED_DATA_ROOT = REPOSITORY_ROOT / "external" / "graveyard_keeper_data"
+DEFAULT_OUTPUT = SHARED_DATA_ROOT / "contract" / "graveyard_keeper_contract.json"
 
 
 def _load_json(path: Path) -> Any:
@@ -104,11 +107,24 @@ def build_client_contract(data_root: Path = DATA_ROOT) -> dict[str, Any]:
         for location_key, location in locations.items()
     }
 
-    return {
+    contract = {
         "schema_version": 1,
         "game": "Graveyard Keeper",
         "items": contract_items,
         "locations": contract_locations,
+    }
+    canonical_content = json.dumps(
+        contract,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return {
+        "schema_version": contract["schema_version"],
+        "content_hash": f"sha256:{hashlib.sha256(canonical_content).hexdigest()}",
+        "game": contract["game"],
+        "items": contract["items"],
+        "locations": contract["locations"],
     }
 
 
@@ -121,16 +137,9 @@ def write_client_contract(output: Path, data_root: Path = DATA_ROOT) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build the Graveyard Keeper APWorld/client data contract")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument(
-        "--client-output",
-        type=Path,
-        help="Optional second generated copy for the companion client repository",
-    )
     args = parser.parse_args()
 
     write_client_contract(args.output)
-    if args.client_output is not None:
-        write_client_contract(args.client_output)
 
 
 if __name__ == "__main__":
