@@ -55,7 +55,9 @@ def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]
 
 
 def create_location_name_to_id_dict() -> Dict[str, int]:
-    index: int = 0
+    # Archipelago reserves 0 for event locations and filters false-y IDs from
+    # the public data package.  Runtime Location objects also start at 1.
+    index: int = 1
     label_to_id_dict: Dict[str, int] = {}
 
     for region_key, region_data in data.regions.items():

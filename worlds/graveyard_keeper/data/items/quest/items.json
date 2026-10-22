@@ -87,7 +87,7 @@
     "classification": "PROGRESSION"
   },
   "ITEM_GARDEN_CERTIFICATE": {
-    "label": "Active key",
+    "label": "Garden certificate",
     "dlc": "BASE_GAME",
     "classification": "PROGRESSION"
   },
@@ -291,7 +291,7 @@
 
 
   "ITEM_BANK_CHECKS": {
-    "label": "Memory powder",
+    "label": "Bank checks",
     "dlc": "GAME_OF_CRONE",
     "classification": "PROGRESSION"
   },
@@ -346,7 +346,7 @@
     "classification": "PROGRESSION"
   },
   "ITEM_MEMORY_TINCTURE": {
-    "label": "Memory powder",
+    "label": "Memory tincture",
     "dlc": "GAME_OF_CRONE",
     "classification": "PROGRESSION"
   },
