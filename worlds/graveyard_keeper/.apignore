@@ -2,3 +2,11 @@ dumps/
 tools/
 NOTES
 TODO
+data/shared/.git/
+data/shared/.github/
+data/shared/.gitignore
+data/shared/*.md
+data/shared/*.py
+data/shared/LICENSE.md
+data/shared/schemas/
+data/shared/tests/
