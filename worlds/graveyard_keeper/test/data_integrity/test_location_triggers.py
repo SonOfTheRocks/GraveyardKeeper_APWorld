@@ -68,8 +68,8 @@ class TestQuestLocationTriggers(unittest.TestCase):
 
     def test_raw_location_trigger_schema_uses_only_supported_type_specific_fields(self):
         required_fields = {
-            "flow_quest_reward": {"graph", "node_id"},
-            "flow_relation_reward": {"graph", "node_id"},
+            "flow_quest_reward": {"graph", "node_id", "runtime_node_id"},
+            "flow_relation_reward": {"graph", "node_id", "runtime_node_id"},
             "craft_reward": {"craft_id"},
             "world_item_reward": {"item_id"},
             "technology_reward": {"technology_id"},
@@ -85,9 +85,13 @@ class TestQuestLocationTriggers(unittest.TestCase):
                         allowed.add("answer_index")
                     self.assertFalse(required_fields[trigger["type"]] - trigger.keys())
                     self.assertFalse(trigger.keys() - allowed)
-                    for field_name in required_fields[trigger["type"]]:
+                    string_fields = required_fields[trigger["type"]] - {"runtime_node_id"}
+                    for field_name in string_fields:
                         self.assertIsInstance(trigger[field_name], str)
                         self.assertTrue(trigger[field_name].strip())
+                    if "runtime_node_id" in trigger:
+                        self.assertIs(type(trigger["runtime_node_id"]), int)
+                        self.assertGreater(trigger["runtime_node_id"], 0)
                     if "answer_index" in trigger:
                         self.assertIs(type(trigger["answer_index"]), int)
                         self.assertGreaterEqual(trigger["answer_index"], 0)
@@ -124,6 +128,7 @@ class TestQuestLocationTriggers(unittest.TestCase):
                 "type": "flow_relation_reward",
                 "graph": "farmer_comes_to_pl_house",
                 "node_id": "21",
+                "runtime_node_id": 10,
             },
             farmer_triggers,
         )
@@ -132,6 +137,7 @@ class TestQuestLocationTriggers(unittest.TestCase):
                 "type": "flow_relation_reward",
                 "graph": "npc_farmer",
                 "node_id": "15",
+                "runtime_node_id": 6,
                 "answer_index": 3,
             },
             farmer_triggers,
@@ -158,18 +164,26 @@ class TestQuestLocationTriggers(unittest.TestCase):
                 if not trigger["type"].startswith("flow_"):
                     continue
                 graph_name = trigger["graph"]
-                graph_nodes = graphs.get(graph_name)
-                if graph_nodes is None:
+                graph_data = graphs.get(graph_name)
+                if graph_data is None:
                     graph_path = FLOW_DUMP_ROOT / f"{graph_name}.json"
                     self.assertTrue(graph_path.exists(), f"Missing graph for {location_key}: {graph_path}")
                     graph = json.loads(graph_path.read_text(encoding="utf-8-sig"))
                     graph_nodes = {
                         node.get("$id"): node for node in graph["nodes"] if node.get("$id") is not None
                     }
-                    graphs[graph_name] = graph_nodes
+                    runtime_ids = {
+                        node.get("$id"): index
+                        for index, node in enumerate(graph["nodes"], start=1)
+                        if node.get("$id") is not None
+                    }
+                    graph_data = graph_nodes, runtime_ids
+                    graphs[graph_name] = graph_data
+                graph_nodes, runtime_ids = graph_data
                 node_id = trigger["node_id"]
                 with self.subTest(location=location_key, graph=graph_name, node=node_id):
                     self.assertIn(node_id, graph_nodes)
+                    self.assertEqual(runtime_ids[node_id], trigger["runtime_node_id"])
                     node = graph_nodes[node_id]
                     answer_index = trigger.get("answer_index")
                     if "MultiAnswer" in node["$type"]:
