@@ -1,10 +1,23 @@
+import pkgutil
 from typing import Dict
+
+import orjson
 
 from BaseClasses import Region
 from rule_builder.cached_world import CachedRuleBuilderWorld
 from . import items, locations, regions, rules, web_world
 from .data import load_json_data
 from . import options as graveyard_keeper_options
+
+
+def _load_world_version() -> str:
+    raw_metadata = pkgutil.get_data(__package__, "archipelago.json")
+    if raw_metadata is None:
+        raise FileNotFoundError("Could not load Graveyard Keeper archipelago.json")
+    return orjson.loads(raw_metadata)["world_version"]
+
+
+WORLD_VERSION = _load_world_version()
 
 
 class GraveyardKeeperWorld(CachedRuleBuilderWorld):
@@ -40,7 +53,8 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
-            "stranger_sins", "game_of_crone", "better_save_soul"
+            "goal", "stranger_sins", "game_of_crone", "better_save_soul"
         )
+        slot_data["client_version"] = WORLD_VERSION
         slot_data["graveyard_keeper_data_version"] = load_json_data("manifest.json")["data_version"]
         return slot_data

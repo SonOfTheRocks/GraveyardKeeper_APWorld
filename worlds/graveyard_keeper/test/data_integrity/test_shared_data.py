@@ -3,7 +3,7 @@ from types import SimpleNamespace
 from unittest.mock import MagicMock
 
 from ...data import data, load_json_data
-from ...world import GraveyardKeeperWorld
+from ...world import GraveyardKeeperWorld, WORLD_VERSION
 
 
 class TestSharedData(unittest.TestCase):
@@ -24,10 +24,21 @@ class TestSharedData(unittest.TestCase):
     def test_slot_data_advertises_shared_data_version(self):
         fake_world = SimpleNamespace(options=MagicMock())
         fake_world.options.as_dict.return_value = {
-            "stranger_sins": 0, "game_of_crone": 0, "better_save_soul": 0,
+            "goal": 0, "stranger_sins": 0, "game_of_crone": 0, "better_save_soul": 0,
         }
         slot_data = GraveyardKeeperWorld.fill_slot_data(fake_world)
         self.assertEqual(load_json_data("manifest.json")["data_version"], slot_data["graveyard_keeper_data_version"])
+
+    def test_slot_data_advertises_goal_and_world_version(self):
+        fake_world = SimpleNamespace(options=MagicMock())
+        fake_world.options.as_dict.return_value = {
+            "goal": 0, "stranger_sins": 0, "game_of_crone": 0, "better_save_soul": 0,
+        }
+
+        slot_data = GraveyardKeeperWorld.fill_slot_data(fake_world)
+
+        self.assertEqual(0, slot_data["goal"])
+        self.assertEqual(WORLD_VERSION, slot_data["client_version"])
 
     def test_public_location_ids_are_nonzero_and_contiguous(self):
         location_ids = sorted(GraveyardKeeperWorld.location_name_to_id.values())
