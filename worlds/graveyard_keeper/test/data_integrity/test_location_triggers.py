@@ -43,17 +43,11 @@ class TestQuestLocationTriggers(unittest.TestCase):
         }
         self.assertFalse(todos, f"Resolve empty trigger mappings before adding new ones: {todos}")
 
-    def test_trigger_metadata_is_only_attached_to_quest_reward_locations(self):
-        reward_locations = {
-            location
-            for event in data.events.values()
-            if isinstance(event, QuestEventData)
-            for location in event.rewards
-        }
+    def test_trigger_metadata_is_only_attached_to_known_locations(self):
         unexpected = {
             location_key
             for location_key in self.raw_triggers
-            if location_key not in reward_locations
+            if location_key not in data.locations
         }
         self.assertFalse(unexpected)
 
@@ -70,7 +64,8 @@ class TestQuestLocationTriggers(unittest.TestCase):
         required_fields = {
             "flow_quest_reward": {"graph", "node_id", "runtime_node_id"},
             "flow_relation_reward": {"graph", "node_id", "runtime_node_id"},
-            "craft_reward": {"craft_id"},
+            "craft_completion_reward": {"craft_id"},
+            "craft_unlock_reward": {"craft_id"},
             "world_item_reward": {"item_id"},
             "technology_reward": {"technology_id"},
         }
@@ -197,7 +192,8 @@ class TestQuestLocationTriggers(unittest.TestCase):
 
     def test_non_flow_trigger_ids_exist_in_game_data_when_dumps_are_available(self):
         dump_files = {
-            "craft_reward": ("craft_data.json", "craft_id"),
+            "craft_completion_reward": ("craft_data.json", "craft_id"),
+            "craft_unlock_reward": ("craft_data.json", "craft_id"),
             "world_item_reward": ("items_data.json", "item_id"),
             "technology_reward": ("techs_data.json", "technology_id"),
         }
@@ -211,10 +207,12 @@ class TestQuestLocationTriggers(unittest.TestCase):
         }
         craft_objects_path = GAME_DATA_ROOT / "craft_obj_data.json"
         if craft_objects_path.exists():
-            ids["craft_reward"].update({
+            craft_ids = {
                 row["id"]
                 for row in json.loads(craft_objects_path.read_text(encoding="utf-8-sig"))
-            })
+            }
+            ids["craft_completion_reward"].update(craft_ids)
+            ids["craft_unlock_reward"].update(craft_ids)
         for location_key, triggers in self.raw_triggers.items():
             for trigger in triggers:
                 trigger_type = trigger["type"]
