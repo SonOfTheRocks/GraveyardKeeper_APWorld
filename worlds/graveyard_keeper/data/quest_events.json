@@ -1,6 +1,6 @@
 {
   "EVENT_TUTORIAL_ENTER_MORGUE_WITH_CORPSE": {
-    "comment": "Flow: entering the morgue runs autopsi_enter once while demo_enter is 0; its node 18 drops the tutorial sandwich",
+    "comment": "Runtime evidence: entering the morgue with the first corpse opens the forced 'First slice' technology unlock; accepting it normally teaches the meat-extraction recipes",
     "location_label": "Enter the morgue with the first corpse",
     "item_label": "Entered the morgue with the first corpse",
     "dlc": "BASE_GAME",
