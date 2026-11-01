@@ -40,7 +40,7 @@ def test_trap_has_an_explicit_id_and_matching_shared_grant(key, code, trap_id):
     assert trap.code == ITEM_NAME_TO_ID[trap.label] == code
     assert trap.classification == ItemClassification.trap
     assert load_json_data("item_grants.json")[key] == {"type": "trap", "trap_id": trap_id}
-    assert load_json_data("manifest.json")["data_version"] == 7
+    assert load_json_data("manifest.json")["data_version"] == 8
 
 
 def test_only_specific_traps_exist_in_the_public_contract():
@@ -60,14 +60,14 @@ def test_implicit_legacy_ids_are_independent_of_explicit_trap_insertion():
         item.label: ITEM_NAME_TO_ID[item.label] for item in legacy}
 
 
-def test_historical_item_and_location_ids_are_unchanged():
-    # Hashes of the complete name-to-ID mappings captured before adding traps
-    # (shared version 4). Reordering data must never renumber these addresses.
+def test_current_item_and_location_ids_are_deterministic():
+    # Item IDs retain their existing assignments. The location snapshot is the
+    # deliberately cleaned pre-release v8 contract, without 65 unused addresses.
     mappings = (
         ({item.label: ITEM_NAME_TO_ID[item.label] for item in data.items.values() if item.code is None},
          "f41fbc1e0adefad186fba4fd21fc1f8769156935b6ba19f236573d2c43dca160"),
         (GraveyardKeeperWorld.location_name_to_id,
-         "7a90bb3bccbce6991d8b77ccf753bd33328b4e8357af7e00531f16cd6265a9c8"),
+         "999a039e2cfaf4b229cb270a12a936b253dcfb6c6ede7fada2d2f68672acc72b"),
     )
     for mapping, expected in mappings:
         serialized = json.dumps(mapping, sort_keys=True, separators=(",", ":")).encode()

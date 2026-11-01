@@ -18,19 +18,17 @@ class TestTechnologyMapping(unittest.TestCase):
                 region = regions[technology["region"]]
                 expected = [data.locations[key].label for key in region.locations]
                 self.assertEqual(expected, technology["locations"])
-                self.assertEqual(3, len(expected))
+                count = 0 if "quest_reward" in technology else 1 if "recipe_item" in technology else 3
+                self.assertEqual(count, len(expected))
                 self.assertEqual(region.dlc.name, technology["dlc"])
                 all_locations.extend(expected)
         self.assertEqual(len(all_locations), len(set(all_locations)))
+        self.assertEqual(487, len(all_locations))
 
-    def test_quest_technologies_reserve_old_ids_without_extra_research_checks(self):
-        technology = load_json_data("technologies.json")["First slice"]
-        self.assertEqual([f"First Slice - Unlock {index}" for index in range(1, 4)],
-                         technology["locations"])
-        active = active_research_locations()
+    def test_quest_technologies_have_no_extra_research_definitions(self):
         for game_id in ("First slice", "Grave plate", "Iron"):
             technology = load_json_data("technologies.json")[game_id]
-            self.assertTrue(set(technology["locations"]).isdisjoint(active))
+            self.assertEqual([], technology["locations"])
             self.assertIn(technology["quest_reward"], {value.label for value in data.locations.values()})
 
     def test_one_check_per_recipe_item_including_bags_and_gravestones(self):
@@ -45,6 +43,12 @@ class TestTechnologyMapping(unittest.TestCase):
         self.assertEqual("recipe_2min", books["2min"]["recipe_item"])
         self.assertIn("Advanced gravestones", books)
         self.assertIn("tech_bag_alchemy", books)
+
+    def test_self_researched_technologies_keep_three_checks(self):
+        ordinary = [technology for technology in load_json_data("technologies.json").values()
+                    if "recipe_item" not in technology and "quest_reward" not in technology]
+        self.assertEqual(153, len(ordinary))
+        self.assertTrue(all(len(technology["locations"]) == 3 for technology in ordinary))
 
     def test_native_parent_ids_exist_and_do_not_form_a_cycle(self):
         technologies = load_json_data("technologies.json")

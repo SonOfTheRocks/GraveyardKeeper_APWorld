@@ -106,18 +106,16 @@ def load_locations(regions: Dict[str, RegionData]) -> Dict[str, LocationData]:
     ''' disabled for now
     '''
 
-    # tech unlock locations automatically created from regions
-    for (tech_region_name, tech_region_label) in [(key, value.label) for key,value in regions.items()
-                                 if key.startswith("REGION_TECH_TREE") and '/' in key]:
+    # Shared metadata contains exactly the authored checks: three for ordinary
+    # research, one for recipe books, and none for existing quest rewards.
+    for technology in load_json_data("technologies.json").values():
+        tech_region_name = technology["region"]
         tech_region_subname = tech_region_name.split('/')[-1]
-        # 3 Unlocks per Tech
-        for i in range(1, 4):
+        for i, location_label in enumerate(technology["locations"], 1):
             if "SPIRITUALISM" in tech_region_name and tech_region_name.endswith("_GRAVESTONES"):
                 location_name = f"LOCATION_{tech_region_subname}_SPIRITUALISM_UNLOCK_{i}"
-                location_label = f"{tech_region_label} - Unlock {i} (Spiritualism)"
             else:
                 location_name = f"LOCATION_{tech_region_subname}_UNLOCK_{i}"
-                location_label = f"{tech_region_label} - Unlock {i}"
             locations[location_name] = LocationData(
                 location_label,
                 tech_region_name
@@ -127,14 +125,9 @@ def load_locations(regions: Dict[str, RegionData]) -> Dict[str, LocationData]:
 
 
 def active_research_locations() -> Set[str]:
-    """Keep retired addresses reserved, but generate only independently claimable checks."""
-    result: Set[str] = set()
-    for technology in load_json_data("technologies.json").values():
-        if "quest_reward" in technology:
-            continue
-        locations = technology["locations"]
-        result.update(locations[:1] if "recipe_item" in technology else locations)
-    return result
+    """Return the research checks authored in shared metadata."""
+    return {location for technology in load_json_data("technologies.json").values()
+            for location in technology["locations"]}
 
 def load_quest_events() -> Dict[str, EventData]:
     quest_events = {}

@@ -20,7 +20,6 @@ class GraveyardKeeperLocation(Location):
 
 def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]) -> None:
 
-    active_research = active_research_locations()
     allowed_dlcs = enabled_dlcs(world)
     disabled_rewards = {
         reward for event in data.events.values()
@@ -41,14 +40,10 @@ def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]
             #    continue
             location_data = data.locations[location_key]
 
-            # Advance across retired slots too: surviving locations retain their IDs.
             address = location_index
             LOCATION_NAME_TO_ID[location_key] = address
             location_index += 1
             if region is None or location_key in disabled_rewards:
-                continue
-            if region_data_name.startswith("REGION_TECH_TREE") and "/" in region_data_name and \
-                    location_data.label not in active_research:
                 continue
 
             location = GraveyardKeeperLocation(

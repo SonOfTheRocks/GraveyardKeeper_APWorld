@@ -23,21 +23,23 @@ class TestResearchSources(GraveyardKeeperTestBase):
             self.assertEqual(expected, set(technology['locations']) & names)
         self.assertEqual(28, sum('recipe_item' in value for value in load_json_data('technologies.json').values()))
 
-    def test_every_surviving_location_uses_its_reserved_id(self):
+    def test_public_location_definitions_match_the_actual_checks(self):
+        generated = {location.name for location in self.multiworld.get_locations(self.player)
+                     if location.address is not None}
+        self.assertEqual(generated, set(self.world.location_name_to_id))
         for location in self.multiworld.get_locations(self.player):
             if location.address is not None:
                 self.assertEqual(self.world.location_name_to_id[location.name], location.address)
-        for name, address in {
-            'First Slice - Unlock 1': 287,
-            'Big Universal Bag - Unlock 3': 379,
-            'Faith - Unlock 1': 380,
-            'Humble Marker - Unlock 1': 383,
-            'Iron - Unlock 1': 578,
-            'Simple and Tasty - Unlock 1': 722,
-            'Simple and Tasty - Unlock 2': 723,
-            'Simple and Tasty - Unlock 3': 724,
-        }.items():
-            self.assertEqual(address, self.world.location_name_to_id[name])
+        for technology in load_json_data('technologies.json').values():
+            if 'recipe_item' in technology:
+                for index in (2, 3):
+                    removed = technology['locations'][0].replace(' - Unlock 1', f' - Unlock {index}')
+                    self.assertNotIn(removed, self.world.location_name_to_id)
+                    self.assertNotIn(removed, {location.label for location in data.locations.values()})
+            elif 'quest_reward' in technology:
+                label = data.regions[technology['region']].label
+                for index in (1, 2, 3):
+                    self.assertNotIn(f'{label} - Unlock {index}', self.world.location_name_to_id)
 
     def test_quest_roots_and_descendants_require_the_native_quest_source(self):
         technologies = load_json_data('technologies.json')
