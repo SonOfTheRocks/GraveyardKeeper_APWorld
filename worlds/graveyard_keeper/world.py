@@ -4,6 +4,7 @@ from typing import Dict, TYPE_CHECKING
 import orjson
 
 from BaseClasses import Region
+from Options import OptionError
 from rule_builder.cached_world import CachedRuleBuilderWorld
 from . import items, locations, regions, rules, web_world
 from .data import load_json_data
@@ -65,6 +66,29 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
     def create_items(self):
         items.create_all_items(self)
 
+    def generate_basic(self):
+        # All players' pools and rules now exist, and entrances are connected.
+        # Sweep reachable events instead of assuming every declared event is free.
+        if self.options.goal.value != graveyard_keeper_options.Goal.option_graveyard or \
+                self.options.graveyard_goal_rating.value == 0:
+            return
+
+        state = self.multiworld.get_all_state()
+        if self.multiworld.completion_condition[self.player](state):
+            return
+
+        from .data import data
+        from .logic.graveyard_calculator import GraveyardPointCalculator
+        maximum = (GraveyardPointCalculator(state, self).calculate()
+                   if state.can_reach_region(data.regions["REGION_OLD_GRAVEYARD"].label, self.player) else 0)
+        dlcs = ", ".join(f"{name}={getattr(self.options, name).value}"
+                         for name in ("stranger_sins", "game_of_crone", "better_save_soul"))
+        raise OptionError(
+            f"graveyard_goal_rating={self.options.graveyard_goal_rating.value} is unreachable for "
+            f"{self.multiworld.get_player_name(self.player)}: the modeled reachable maximum with all "
+            f"available items is {maximum} ({dlcs}). Lower graveyard_goal_rating or change the DLC options."
+        )
+
     def create_item(self, name: str) -> items.GraveyardKeeperItem:
         return items.create_item_with_correct_classification(self, name)
 
@@ -73,7 +97,7 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
-            "goal", "stranger_sins", "game_of_crone", "better_save_soul", "trap_percentage",
+            "goal", "graveyard_goal_rating", "stranger_sins", "game_of_crone", "better_save_soul", "trap_percentage",
             "bats_trap_weight", "green_slime_trap_weight"
         )
         slot_data["client_version"] = WORLD_VERSION

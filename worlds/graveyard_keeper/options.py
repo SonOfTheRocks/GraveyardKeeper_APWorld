@@ -7,8 +7,8 @@ class Goal(Choice):
     """
     Goal for this playthrough
 
-    Portal: Enter the portal on Witch Hill (Not yet implemented)
-    Graveyard: Reach a certain graveyard rating (specified in ...)
+    Portal: Restore the portal on Witch Hill.
+    Graveyard: Reach the rating specified by Graveyard Goal Rating.
     """
     display_name = "Goal"
 
@@ -24,7 +24,9 @@ class GraveyardGoalRating(Range):
     Increasing this value will require more progress in improving your graveyard,
     including better corpse preparation, decorations, upgrading the church and buying the graveyard extension.
 
-    Note: This option only has an effect if the goal is set to "Graveyard".
+    Generation rejects a target that the selected DLCs and available items
+    cannot reach under the modeled graveyard layouts. Zero completes immediately.
+    This option only has an effect if the goal is set to "Graveyard".
     """
     display_name = "Graveyard Goal Rating"
     range_start = 0

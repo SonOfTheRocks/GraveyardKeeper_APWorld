@@ -77,10 +77,32 @@ engineering, grave decoration materials, or every possible layout.
 
 ## Compatibility and validation
 
-No item/location names, network IDs, options, client grants or slot-data keys
-change. The companion client continues observing the same Bishop dialogue checks;
-the APWorld now enforces their existing numeric requirements during generation.
+The quest-rating logic preserves the existing item/location names, network IDs,
+options and client grants. The companion client continues observing the same Bishop
+dialogue checks; the APWorld enforces their existing numeric requirements during generation.
 Generate a new seed to use the corrected logic.
+
+### Graveyard completion goal
+
+The APWorld serializes both `goal` and the integer `graveyard_goal_rating` into
+slot data. The client must use that exact target when `goal` is Graveyard; zero
+means immediate completion. The Portal goal ignores the graveyard target.
+An older Graveyard seed without `graveyard_goal_rating` must be regenerated;
+the client must not silently choose its own target, even when the shared-data
+version matches. Older Portal slots do not require this key.
+
+The option's accepted input range remains 0–2484. Not every value is reachable
+with every DLC combination under the current authored layouts and corpse model.
+After every player's item pool, rules and entrances exist, `generate_basic`
+collects all available items and sweeps only reachable events. An unreachable
+Graveyard target raises an option error naming the target, modeled reachable
+maximum and selected DLCs, before item placement or output. This does not grant
+free events or weaken the completion rule. The diagnostic maximum describes
+the implemented model, not an exhaustive proof of the native game's maximum.
+
+The supported Archipelago core starts at 0.6.9, the version against which the
+Rule Builder behavior and generation tests are verified. Older cores are not
+advertised as compatible merely because they contain an earlier Rule Builder.
 
 `test_graveyard_rating.py` covers the three authored quest thresholds, positive
 and negative access, the first five points before church opening, received versus
