@@ -86,7 +86,7 @@ class TestDataIntegrity(unittest.TestCase):
         for blueprint_filename in blueprint_filenames:
             relative_name = str(blueprint_filename.relative_to(item_root))
             for blueprint_name, blueprint_json in load_json_data(f"items/{relative_name}").items():
-                with self.subTest(file=blueprint_filename, blueprint=blueprint_name):
+                with self.subTest(file=str(blueprint_filename), blueprint=blueprint_name):
                     if blueprint_name in decorative_items:
                         self.assertEqual(
                             blueprint_json["classification"],

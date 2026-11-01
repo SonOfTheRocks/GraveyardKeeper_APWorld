@@ -25,7 +25,7 @@ class TestChurchRating(TestCase):
 
     def test_initial_church_and_no_free_upgrade_bonus(self):
         for level in (ChurchLevel.OPEN, ChurchLevel.BIG, ChurchLevel.CATHEDRAL):
-            with self.subTest(level=level):
+            with self.subTest(level=level.name):
                 self.assertEqual(5, self.rating(level=level))
 
     def test_benches_replace_originals_instead_of_stacking(self):
