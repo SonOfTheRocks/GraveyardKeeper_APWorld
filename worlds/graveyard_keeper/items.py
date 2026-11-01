@@ -3,9 +3,10 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification
-from .data import data
+from .data import data, load_json_data
 
 if TYPE_CHECKING:
+    from .models import ItemData
     from .world import GraveyardKeeperWorld
 
 
@@ -22,16 +23,37 @@ TRAP_WEIGHT_OPTIONS = {
 }
 
 
-ITEM_NAME_TO_ID: dict[str, int] = {}
-DEFAULT_ITEM_CLASSIFICATIONS: dict[str, ItemClassification] = {}
-legacy_item_id = 0
-for item_data in data.items.values():
-    if item_data.code is None:
-        legacy_item_id += 1
-    ITEM_NAME_TO_ID[item_data.label] = item_data.code if item_data.code is not None else legacy_item_id
-    DEFAULT_ITEM_CLASSIFICATIONS[item_data.label] = item_data.classification
-if len(set(ITEM_NAME_TO_ID.values())) != len(ITEM_NAME_TO_ID):
-    raise ValueError("Graveyard Keeper item IDs must be unique")
+def _build_item_name_to_id(item_definitions: dict[str, ItemData],
+                           stable_ids: dict[str, int]) -> dict[str, int]:
+    if not isinstance(stable_ids, dict):
+        raise ValueError("Graveyard Keeper item IDs must be an object")
+    missing = item_definitions.keys() - stable_ids.keys()
+    unknown = stable_ids.keys() - item_definitions.keys()
+    if missing or unknown:
+        raise ValueError(f"Graveyard Keeper item IDs do not match definitions: "
+                         f"missing={sorted(missing)}, unknown={sorted(unknown)}")
+
+    result: dict[str, int] = {}
+    used_ids: set[int] = set()
+    for key, item in item_definitions.items():
+        code = stable_ids[key]
+        if type(code) is not int or code <= 0:
+            raise ValueError(f"Graveyard Keeper item ID for {key} must be a positive integer")
+        if code in used_ids:
+            raise ValueError(f"Graveyard Keeper item IDs must be unique: {key} reuses {code}")
+        if item.label in result:
+            raise ValueError(f"Graveyard Keeper item names must be unique: {item.label!r}")
+        if item.code is not None and (type(item.code) is not int or item.code != code):
+            raise ValueError(f"Graveyard Keeper item ID for {key} conflicts with shared explicit ID {item.code}")
+        used_ids.add(code)
+        result[item.label] = code
+    return result
+
+
+# Preserve the established network IDs independently of resource/file ordering.
+# New definitions require an explicit, unused ID in this APWorld-owned table.
+ITEM_NAME_TO_ID = _build_item_name_to_id(data.items, load_json_data("item_ids.json"))
+DEFAULT_ITEM_CLASSIFICATIONS = {item.label: item.classification for item in data.items.values()}
 
 
 class GraveyardKeeperItem(Item):

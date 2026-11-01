@@ -51,7 +51,7 @@ def _str_to_item_classification(string: str) -> ItemClassification:
 #        raise ValueError(f"'{value}' is not a valid {enum_cls.__name__}")
 
 def iter_json_files(base):
-    for entry in base.iterdir():
+    for entry in sorted(base.iterdir(), key=lambda entry: entry.name):
         if entry.is_dir():
             if entry.name == "unused":
                 continue
