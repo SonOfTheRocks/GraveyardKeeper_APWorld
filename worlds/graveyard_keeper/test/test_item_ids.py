@@ -51,12 +51,11 @@ class TestStableItemIds(unittest.TestCase):
                     item = module.create_item_with_correct_classification(world, name)
                     self.assertEqual(code, item.code)
 
-    def test_existing_network_ids_and_reserved_traps_are_preserved(self):
+    def test_existing_network_ids_and_specific_traps_are_preserved(self):
         expected = {
             "Blueprint: Burning Witch": 1,
             "Blueprint: Bishop's Choice": 2,
             "Ms. Charm Monroe": 4,
-            "Monsters Trap": 487,
             "Bats Trap": 488,
             "Green Slime Trap": 489,
         }

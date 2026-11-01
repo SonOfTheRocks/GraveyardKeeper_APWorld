@@ -32,7 +32,6 @@ def test_traps_replace_only_filler_and_preserve_pool_size(percentage, dlcs):
 
 
 @pytest.mark.parametrize("key,code,trap_id", (
-    ("ITEM_MONSTERS_TRAP", 487, "monsters"),
     ("ITEM_BATS_TRAP", 488, "bats"),
     ("ITEM_GREEN_SLIME_TRAP", 489, "green_slimes"),
 ))
@@ -41,7 +40,15 @@ def test_trap_has_an_explicit_id_and_matching_shared_grant(key, code, trap_id):
     assert trap.code == ITEM_NAME_TO_ID[trap.label] == code
     assert trap.classification == ItemClassification.trap
     assert load_json_data("item_grants.json")[key] == {"type": "trap", "trap_id": trap_id}
-    assert load_json_data("manifest.json")["data_version"] == 6
+    assert load_json_data("manifest.json")["data_version"] == 7
+
+
+def test_only_specific_traps_exist_in_the_public_contract():
+    expected = {"ITEM_BATS_TRAP", "ITEM_GREEN_SLIME_TRAP"}
+    assert {key for key, item in data.items.items() if item.classification == ItemClassification.trap} == expected
+    assert "ITEM_MONSTERS_TRAP" not in data.items
+    assert "Monsters Trap" not in GraveyardKeeperWorld.item_name_to_id
+    assert "ITEM_MONSTERS_TRAP" not in load_json_data("item_grants.json")
 
 
 def test_implicit_legacy_ids_are_independent_of_explicit_trap_insertion():
@@ -65,7 +72,6 @@ def test_historical_item_and_location_ids_are_unchanged():
     for mapping, expected in mappings:
         serialized = json.dumps(mapping, sort_keys=True, separators=(",", ":")).encode()
         assert hashlib.sha256(serialized).hexdigest() == expected
-    assert ITEM_NAME_TO_ID["Monsters Trap"] == 487  # v5 address stays reserved
 
 
 @pytest.mark.parametrize("dlcs", list(product((False, True), repeat=3)))

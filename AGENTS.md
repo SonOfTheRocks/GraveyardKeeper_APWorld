@@ -47,6 +47,8 @@ Treat this boundary as a versioned public API. It includes:
 
 Until a shared manifest exists, every contract change must be checked manually in both repositories and tested where practical. Never silently rename or renumber an existing item or location. If compatibility must break, say so explicitly and update both sides together.
 
+This project has not had a release or external users yet. User-approved pre-release cleanup may remove obsolete definitions and compatibility code without reserving their IDs. After release, protect published contracts or explicitly plan migration/version breaks; do not add compatibility paths for development-only states by default.
+
 IDs must be deterministic and stable across file ordering, refactors, and releases. IDs advertised by `item_name_to_id` and `location_name_to_id` must exactly match the generated Item and Location objects.
 
 `fill_slot_data()` must serialize every setting the client needs at runtime. Adding an option is incomplete until client behavior, serialization, defaults, and compatibility are addressed.

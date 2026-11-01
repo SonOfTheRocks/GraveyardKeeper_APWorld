@@ -16,7 +16,7 @@ FILLER_ITEM_NAMES = [
     "Blue Research Points",
 ]
 
-# The former random Monsters Trap remains reserved, but is not generated.
+# Each generated trap selects a specific monster type.
 TRAP_WEIGHT_OPTIONS = {
     "ITEM_BATS_TRAP": "bats_trap_weight",
     "ITEM_GREEN_SLIME_TRAP": "green_slime_trap_weight",

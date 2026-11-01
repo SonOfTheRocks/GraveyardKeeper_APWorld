@@ -29,13 +29,14 @@ received again. Technology previews show each monster as the main icon, with a
 skull in the native quality/star corner. Foreign-game rewards keep the AP main
 icon and use the same skull badge when their server flags classify them as traps.
 
-Shared data version 6 is required by both APWorld and client. The new items use
-explicit IDs 488 (bats) and 489 (green slimes). The former random `Monsters Trap`
-keeps reserved ID 487 but is never generated. All earlier IDs remain unchanged.
+Shared data version 7 is required by both APWorld and client. The two items use
+explicit IDs 488 (bats) and 489 (green slimes). There is no general random trap
+or compatibility path; its pre-release definition was removed. ID 487 is unused
+and has no reservation. Other item IDs remain unchanged.
 Older seeds must be regenerated for this client, even if traps are disabled.
 
 The queue commits consumption before spawning, so a partially failing spawn
 cannot repeatedly create monsters. A failed spawn is logged as an error and
 consumed; it does not block subsequent items or traps. Native in-game spawning
 and monster persistence still need a manual gameplay check with the updated
-client and a version 6 seed.
+client and a version 7 seed.
