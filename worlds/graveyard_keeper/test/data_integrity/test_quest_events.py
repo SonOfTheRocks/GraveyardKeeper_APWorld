@@ -23,13 +23,14 @@ class TestAllQuestEvents(unittest.TestCase):
         "required_craft_items",
         "rewards",
     }
-    optional_fields = {"comment", "required_area_points"}
+    optional_fields = {"comment", "required_area_points", "required_technologies"}
     list_fields = {
         "required_quests",
         "required_happiness",
         "required_quest_items",
         "required_craft_items",
         "required_area_points",
+        "required_technologies",
         "rewards",
     }
 
@@ -78,6 +79,14 @@ class TestAllQuestEvents(unittest.TestCase):
             if len(regions) != 1
         }
         self.assertFalse(invalid, f"Quest events must belong to exactly one region: {invalid}")
+
+    def test_technology_requirements_exist_and_never_use_dormant_group_items(self):
+        technologies = load_json_data("technologies.json")
+        for event_key, event in data.events.items():
+            if isinstance(event, QuestEventData):
+                with self.subTest(event=event_key):
+                    self.assertLessEqual(set(event.required_technologies), set(technologies))
+                    self.assertTrue(set(event.required_quest_items).isdisjoint(data.unlocks))
 
     def test_reward_location_keys_follow_reward_naming_convention(self):
         invalid = {
@@ -1155,9 +1164,10 @@ class TestAllQuestEvents(unittest.TestCase):
             list(unlock_healing.required_quests),
         )
         self.assertEqual(
-            ["ITEM_UNLOCK_SPIRITUALISM"],
+            [],
             list(unlock_healing.required_quest_items),
         )
+        self.assertEqual({"soul_sins_2"}, set(unlock_healing.required_technologies))
         self.assertEqual([], list(unlock_healing.required_craft_items))
         self.assertEqual(
             ["LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING"],
@@ -1538,7 +1548,7 @@ class TestAllQuestEvents(unittest.TestCase):
             {
                 "ITEM_FLITCH",
                 "ITEM_SILK",
-                "ITEM_A_POLISHED_BRICK_OF_STONE",
+                "ITEM_A_PIECE_OF_STONE",
                 "ITEM_WOODEN_STICK",
             },
             set(first_stage.required_craft_items),
@@ -2033,7 +2043,6 @@ class TestAllQuestEvents(unittest.TestCase):
         self.assertEqual(
             {
                 "ITEM_FLITCH",
-                "ITEM_WOOD_BILLET",
                 "ITEM_NAILS",
             },
             set(kitchen.required_craft_items),
@@ -2078,7 +2087,8 @@ class TestAllQuestEvents(unittest.TestCase):
         livestock = data.events["EVENT_REFUGEE_TANNER_ARRANGE_LIVESTOCK"]
 
         self.assertEqual(
-            ["EVENT_CHURCH_OPEN"],
+            # The final tent's unlock is needed to recruit the eleventh resident.
+            ["EVENT_TEODORO_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT"],
             list(workplace.required_quests),
         )
         self.assertEqual(
@@ -2145,7 +2155,8 @@ class TestAllQuestEvents(unittest.TestCase):
         ):
             with self.subTest(event=request.item_label):
                 self.assertEqual(
-                    ["EVENT_CHURCH_OPEN"],
+                    # Happiness 8 alone can be reached before resident nine.
+                    ["EVENT_ALARICH_REVIVE_WITH_BLOOD", "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"],
                     list(request.required_quests),
                 )
                 self.assertEqual(
@@ -2534,9 +2545,10 @@ class TestAllQuestEvents(unittest.TestCase):
             ["EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"],
             list(tavern_approval.required_quests),
         )
-        self.assertEqual({AreaPointData("TAVERN", 40)}, set(tavern_approval.required_area_points))
+        # The original asset switches on tavern_table_2; no quality threshold is checked.
+        self.assertEqual(set(), set(tavern_approval.required_area_points))
         self.assertEqual(
-            [],
+            ["BUILDABLE_TAVERN_TABLE_2"],
             list(tavern_approval.required_craft_items),
         )
 

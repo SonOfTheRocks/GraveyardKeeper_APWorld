@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING
 from BaseClasses import Location, Region
 from .data import *
 from .items import GraveyardKeeperItem
+from .regions import enabled_dlcs
 
 if TYPE_CHECKING:
     from .world import GraveyardKeeperWorld
@@ -19,12 +20,19 @@ class GraveyardKeeperLocation(Location):
 
 def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]) -> None:
 
+    active_research = active_research_locations()
+    allowed_dlcs = enabled_dlcs(world)
+    disabled_rewards = {
+        reward for event in data.events.values()
+        if isinstance(event, QuestEventData) and event.dlc not in allowed_dlcs
+        for reward in event.rewards
+    }
     location_index: int = 1
     for region_data_name, region_data in data.regions.items():
         #if region_data_name not in regions.keys():
         #    continue
 
-        region: Region = regions[region_data_name]
+        region: Region | None = regions.get(region_data_name)
         location_keys: List[str] = region_data.locations
         event_keys: List[str] = region_data.events
 
@@ -33,19 +41,34 @@ def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]
             #    continue
             location_data = data.locations[location_key]
 
+            # Advance across retired slots too: surviving locations retain their IDs.
+            address = location_index
+            LOCATION_NAME_TO_ID[location_key] = address
+            location_index += 1
+            if region is None or location_key in disabled_rewards:
+                continue
+            if region_data_name.startswith("REGION_TECH_TREE") and "/" in region_data_name and \
+                    location_data.label not in active_research:
+                continue
+
             location = GraveyardKeeperLocation(
                 world.player,
                 location_data.label,
-                location_index,
+                address,
                 region,
             )
             region.locations.append(location)
 
-            LOCATION_NAME_TO_ID[location_key] = location_index
-            location_index += 1
 
         for event_key in event_keys:
+            if region is None:
+                continue
+            if event_key.startswith(CRAFTING_EVENT_PREFIX):
+                # Instantiated on demand by the per-world progression analysis.
+                continue
             event_data = data.events[event_key]
+            if isinstance(event_data, QuestEventData) and event_data.dlc not in allowed_dlcs:
+                continue
             region.add_event(
                 event_data.location_label,
                 event_data.item_label,

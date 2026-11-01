@@ -1,0 +1,35 @@
+{
+  "furniture": {
+    "BUILDABLE_SACRIFICE_BLOOD_FOUNTAIN": {
+      "native_id": "blood_fountain",
+      "points": 2,
+      "count": 2,
+      "required_event": "EVENT_SNAKE_OFFER_TO_PREPARE_RITUAL_SITE",
+      "activation_material": "ITEM_BLOOD",
+      "activated_native_id": "blood_fountain_activated",
+      "activated_points": 5
+    },
+    "BUILDABLE_SACRIFICE_CRUCIFIED_SKELETON": {
+      "native_id": "skeleton_crucified",
+      "points": 2,
+      "count": 2,
+      "required_event": "EVENT_SNAKE_OFFER_TO_PREPARE_RITUAL_SITE"
+    },
+    "BUILDABLE_SACRIFICE_WALL_SKELETON": {
+      "native_id": "skeleton_crucified_on_wall",
+      "points": 1,
+      "count": 2,
+      "required_event": "EVENT_SNAKE_OFFER_TO_PREPARE_RITUAL_SITE"
+    },
+    "BUILDABLE_SACRIFICE_WALL_SKULLS": {
+      "native_id": "skulls_in_wall",
+      "points": 1,
+      "count": 2
+    },
+    "BUILDABLE_SACRIFICE_COLUMN_SKULLS": {
+      "native_id": "skulls_on_column",
+      "points": 1,
+      "count": 2
+    }
+  }
+}

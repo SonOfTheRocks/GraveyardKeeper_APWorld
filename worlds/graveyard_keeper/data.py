@@ -14,7 +14,7 @@ CRAFTING_REGION_KEY = "REGION_CRAFTING"
 CRAFTING_EVENT_PREFIX = "EVENT_CAN_GET_"
 CRAFTING_EVENT_LABEL_PREFIX = "Can obtain "
 SHARED_DATA_PREFIX = "shared/"
-SHARED_ROOT_FILES = {"item_grants.json", "locations.json", "manifest.json", "quest_reward_triggers.json"}
+SHARED_ROOT_FILES = {"item_grants.json", "locations.json", "manifest.json", "quest_reward_triggers.json", "technologies.json"}
 
 def load_json_data(data_name: Union[str, Any]) -> Union[List[Any], Dict[str, Any]]:
     if isinstance(data_name, str) and (data_name.startswith("items/") or data_name in SHARED_ROOT_FILES):
@@ -125,6 +125,17 @@ def load_locations(regions: Dict[str, RegionData]) -> Dict[str, LocationData]:
 
     return locations
 
+
+def active_research_locations() -> Set[str]:
+    """Keep retired addresses reserved, but generate only independently claimable checks."""
+    result: Set[str] = set()
+    for technology in load_json_data("technologies.json").values():
+        if "quest_reward" in technology:
+            continue
+        locations = technology["locations"]
+        result.update(locations[:1] if "recipe_item" in technology else locations)
+    return result
+
 def load_quest_events() -> Dict[str, EventData]:
     quest_events = {}
     required_fields = {
@@ -137,7 +148,8 @@ def load_quest_events() -> Dict[str, EventData]:
         "required_craft_items",
         "rewards",
     }
-    optional_fields = {"comment", "required_area_points"}
+    optional_fields = {"comment", "required_area_points", "required_technologies"}
+    technologies = load_json_data("technologies.json")
     for event_key, event_json in load_json_data("quest_events.json").items():
         missing_fields = required_fields - event_json.keys()
         if missing_fields:
@@ -146,6 +158,11 @@ def load_quest_events() -> Dict[str, EventData]:
         unknown_fields = event_json.keys() - required_fields - optional_fields
         if unknown_fields:
             raise ValueError(f"Unknown quest event fields for '{event_key}': {sorted(unknown_fields)}")
+        required_technologies = event_json.get("required_technologies", [])
+        if not isinstance(required_technologies, list) or any(
+                not isinstance(technology, str) or technology not in technologies
+                for technology in required_technologies):
+            raise ValueError(f"Invalid technology requirement for '{event_key}'")
 
         quest_events[event_key] = QuestEventData(
                 event_json["location_label"],
@@ -156,7 +173,8 @@ def load_quest_events() -> Dict[str, EventData]:
                 event_json["required_quest_items"],
                 event_json["required_craft_items"],
                 [AreaPointData.from_string(requirement) for requirement in event_json.get("required_area_points", [])],
-                event_json["rewards"]
+                event_json["rewards"],
+                frozenset(required_technologies),
             )
 
     return quest_events
@@ -182,6 +200,8 @@ def load_items() -> Dict[str, ItemData]:
                 item_json["label"],
                 _str_to_item_classification(item_json["classification"]),
                 item_json.get("amount", 1),
+                DLCType.from_string(item_json["dlc"]),
+                item_json.get("id"),
             )
     return items
 

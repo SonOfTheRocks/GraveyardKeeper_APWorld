@@ -18,7 +18,7 @@ class TestSolvabilityLogic(GraveyardKeeperTestBase):
     #run_default_tests = False
     options = option_presets["default"]
 
-    def test_all_workstation_blueprints_must_be_progression_items(self):
+    def test_active_workstation_blueprints_are_progression_items(self):
         # find all workstations mentioned in recipes
         crafting_station_names: list[str] = []
         for recipes_data in data.recipes.values():
@@ -36,11 +36,8 @@ class TestSolvabilityLogic(GraveyardKeeperTestBase):
                     blueprint_name = data.progressive_items_reverse[blueprint_name].key
                 if blueprint_name: # None if no blueprint is required
                     blueprint_item_data = data.items[blueprint_name]
-                    self.assertEqual(
-                        blueprint_item_data.classification,
-                        ItemClassification.progression,
-                        f"blueprint {blueprint_name} not progression item"
-                    )
+                    if blueprint_item_data.label in self.world.progression_plan.required_items:
+                        self.assertTrue(self.world.create_item(blueprint_item_data.label).advancement)
 
 class TestResolveItemLabels(unittest.TestCase):
     def test_resolves_item(self):
@@ -217,7 +214,7 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
     @patch.object(GraveyardPointCalculator, "_can_build")
     def test_stone_fence_bonus(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
         def can_build_side_effect(item):
-            return item == "STONE_GRAVEYARD_FENCE"
+            return item in {"WOODEN_GRAVEYARD_FENCE", "STONE_GRAVEYARD_FENCE"}
 
         mock_can_build.side_effect = can_build_side_effect
         mock_church_level.return_value = ChurchLevel.BIG
@@ -237,7 +234,8 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
             return item == "WOODEN_GRAVEYARD_FENCE"
 
         mock_can_build.side_effect = can_build_side_effect
-        mock_church_level.return_value = ChurchLevel.OPEN
+        # Native npc_bishop unlocks this recipe only after the big-church upgrade.
+        mock_church_level.return_value = ChurchLevel.BIG
         mock_has_graveyard_extension.return_value = False
 
         world = FakeWorld()
@@ -282,7 +280,7 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
     @patch.object(GraveyardPointCalculator, "_can_build")
-    def test_cathedral_bonus(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
+    def test_cathedral_does_not_grant_a_free_statue(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
         mock_can_build.return_value = False
         mock_church_level.return_value = ChurchLevel.CATHEDRAL
         mock_has_graveyard_extension.return_value = False
@@ -292,21 +290,21 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
         state = FakeState([])
         result = get_max_possible_graveyard_points(state, world)
 
-        self.assertEqual(5, result, "With only Cathedral accessible, only the bishop statue should be calculated")
+        self.assertEqual(0, result, "Cathedral status does not replace the actual statue-building event")
 
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
     @patch.object(GraveyardPointCalculator, "_can_build")
     def test_all_bonuses_stack(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
         def can_build_side_effect(item):
-            return item == "STONE_GRAVEYARD_FENCE"
+            return item in {"WOODEN_GRAVEYARD_FENCE", "STONE_GRAVEYARD_FENCE"}
 
         mock_can_build.side_effect = can_build_side_effect
         mock_church_level.return_value = ChurchLevel.CATHEDRAL
         mock_has_graveyard_extension.return_value = False
 
         world = FakeWorld()
-        state = FakeState(["STONE_GRAVEYARD_FENCE"])
+        state = FakeState([data.events["EVENT_BISHOP_BUILD_STATUE"].item_label])
         result = get_max_possible_graveyard_points(state, world)
 
         self.assertEqual(25, result, "Cathedral (bishop statue): 5 + Stone fence: 20")

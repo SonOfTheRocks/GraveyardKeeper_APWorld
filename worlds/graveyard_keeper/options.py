@@ -66,6 +66,44 @@ class StrangerSins(Toggle):
     """
     display_name = "Stranger Sins"
 
+
+class TrapPercentage(Range):
+    """Percentage of filler items replaced with monster traps.
+
+    Useful and progression items are never replaced. A trap spawns a small group
+    of easy monsters near the player once normal gameplay resumes. Zero disables
+    generated traps. The percentage is rounded down to a whole item count.
+    """
+    display_name = "Trap Percentage"
+    range_start = 0
+    range_end = 100
+    default = 0
+
+
+class BatsTrapWeight(Range):
+    """Relative weight of Bats Trap when generating traps. Each spawns four bats.
+
+    Zero disables this trap type. 50/50 gives both types equal chances; 100/0
+    generates only bats. At least one weight must be positive when traps are enabled.
+    """
+    display_name = "Bats Trap Weight"
+    range_start = 0
+    range_end = 100
+    default = 50
+
+
+class GreenSlimeTrapWeight(Range):
+    """Relative weight of Green Slime Trap. Each spawns four green slimes.
+
+    Zero disables this trap type. Weights are relative and do not need to add up
+    to 100. At least one weight must be positive when traps are enabled.
+    """
+    display_name = "Green Slime Trap Weight"
+    range_start = 0
+    range_end = 100
+    default = 50
+
+
 class GameOfCrone(Toggle):
     """
     Add Game Of Crone's quest rewards and technology unlocks to the pool.
@@ -87,6 +125,9 @@ class GraveyardKeeperOptions(PerGameCommonOptions):
     goal: Goal
     graveyard_goal_rating: GraveyardGoalRating
     vendor_logic: VendorLogic
+    trap_percentage: TrapPercentage
+    bats_trap_weight: BatsTrapWeight
+    green_slime_trap_weight: GreenSlimeTrapWeight
     stranger_sins: StrangerSins
     game_of_crone: GameOfCrone
     better_save_soul: BetterSaveSoul
@@ -94,6 +135,7 @@ class GraveyardKeeperOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup("Goal Options", [Goal, GraveyardGoalRating]),
     OptionGroup("Logic Options", [VendorLogic]),
+    OptionGroup("Trap Options", [TrapPercentage, BatsTrapWeight, GreenSlimeTrapWeight]),
     OptionGroup("DLCs", [StrangerSins, GameOfCrone, BetterSaveSoul])
 ]
 

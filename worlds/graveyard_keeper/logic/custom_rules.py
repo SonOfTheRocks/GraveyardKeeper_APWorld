@@ -7,8 +7,9 @@ from typing import TYPE_CHECKING, Iterable, override
 from BaseClasses import CollectionState, ItemClassification
 from rule_builder.options import OptionFilter
 from rule_builder.rules import Rule, Has, And, Or, False_, CanReachRegion, True_, HasAllCounts
-from ..data import data, CRAFTING_EVENT_PREFIX
+from ..data import data, CRAFTING_EVENT_PREFIX, load_json_data
 from ..options import VendorLogic
+from ..regions import enabled_dlcs
 from ..models import (
     RecipeData,
     QualityRecipeData,
@@ -41,6 +42,11 @@ class CanCraftRecipe(GKRule, game="Graveyard Keeper"):
     @override
     def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
         requirements: list[Rule] = []
+
+        if self.recipe.required_recipe_item:
+            recipe_key, _ = resolve_item_key(self.recipe.required_recipe_item)
+            if data.items[recipe_key].dlc not in enabled_dlcs(world):
+                return False_().resolve(world)
 
         if self.recipe.workstations:
             workstation_requirement = Or(*(
@@ -79,10 +85,8 @@ class CanCraft(GKRule, game="Graveyard Keeper"):
         resolved_item_key, resolved_required_count = resolve_item_key(self.item_key)
         if resolved_item_key in data.items:
             item = data.items[resolved_item_key]
-            assert item.classification == ItemClassification.progression, (
-                f"item '{resolved_item_key}' is used in a rule and therefore "
-                f"must have PROGRESSION classification"
-            )
+            # Recipe classifications are determined from the active rule closure,
+            # after rule resolution and before the item pool is constructed.
             return Has(item.label, count=resolved_required_count).resolve(world)
 
         return Or(*(
@@ -107,9 +111,11 @@ class HasCraftingQuality(GKRule, game="Graveyard Keeper"):
 
     @override
     def _instantiate(self, world: "Graveyard Keeper") -> Rule.Resolved:
+        disabled_labels = {item.label for item in data.items.values()
+                           if item.dlc not in enabled_dlcs(world)}
         return self.Resolved(
             self.base_modifier,
-            self.modifiers,
+            tuple((label, modifier) for label, modifier in self.modifiers if label not in disabled_labels),
             player=world.player,
             caching_enabled=getattr(world, "rule_build_caching_enabled", False),
         )
@@ -187,6 +193,7 @@ class CanBuy(GKRule, game="Graveyard Keeper"):
             data.regions[vendor.region].label
             for vendor in data.vendors.values()
             if self.item_key in vendor.sells_all
+            and data.regions[vendor.region].dlc in enabled_dlcs(world)
         ]
 
         if not vendor_regions:
@@ -282,8 +289,30 @@ class CanComplete(GKRule, game="Graveyard Keeper"):
         for craft_item_key in quest_data.required_craft_items:
             requirements.append(CanGet(craft_item_key))
 
-        # Area-point requirements are loaded and validated now, but intentionally
-        # remain unenforced until each upgradeable area has its own point calculator.
+        for technology_id in quest_data.required_technologies:
+            technology = load_json_data("technologies.json")[technology_id]
+            requirements.append(CanReachRegion(data.regions[technology["region"]].label))
+
+        for area_points in quest_data.required_area_points:
+            if area_points.area == "CHURCH":
+                # Import here: the calculator uses CanGet for its input dependencies.
+                from .church_calculator import HasChurchRating
+                requirements.append(HasChurchRating(area_points.value))
+            elif area_points.area == "TAVERN":
+                from .tavern_calculator import HasTavernRating
+                requirements.append(HasTavernRating(area_points.value))
+            elif area_points.area == "OLD_GRAVEYARD":
+                from .goal_rules import HasGraveyardRating
+                requirements.append(HasGraveyardRating(area_points.value))
+            elif area_points.area == "TRADE_OFFICE":
+                from .trade_office_calculator import HasTradeOfficeRating
+                requirements.append(HasTradeOfficeRating(area_points.value))
+            elif area_points.area == "SACRIFICE_ZONE":
+                from .sacrifice_calculator import HasSacrificeRating
+                requirements.append(HasSacrificeRating(area_points.value))
+            elif area_points.area == "REFUGEE_CAMP":
+                from .refugee_camp_calculator import HasRefugeeCampRating
+                requirements.append(HasRefugeeCampRating(area_points.value))
 
         if not requirements:
             return True_().resolve(world)

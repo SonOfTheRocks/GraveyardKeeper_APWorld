@@ -41,6 +41,7 @@ class TestItemGrants(unittest.TestCase):
             "research_points": ({"color", "amount"}, set()),
             "technology_unlock": ({"technology_ids"}, set()),
             "flow_script": ({"script_id"}, set()),
+            "trap": ({"trap_id"}, set()),
             "TODO": ({"reason"}, set()),
         }
         for item_key, grant in self.raw_grants.items():
@@ -53,7 +54,7 @@ class TestItemGrants(unittest.TestCase):
 
     def test_scalar_grant_fields_have_valid_values(self):
         string_fields = {
-            "item_id", "perk_id", "buff_id", "npc_id", "color", "reason", "script_id",
+            "item_id", "perk_id", "buff_id", "npc_id", "color", "reason", "script_id", "trap_id",
         }
         for item_key, grant in self.raw_grants.items():
             for field in string_fields & grant.keys():

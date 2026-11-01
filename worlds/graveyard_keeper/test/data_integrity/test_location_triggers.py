@@ -241,7 +241,8 @@ class TestLocationTriggersStayOutOfAPWorldRuntime(unittest.TestCase):
         slot_data = GraveyardKeeperWorld.fill_slot_data(fake_world)
 
         fake_world.options.as_dict.assert_called_once_with(
-            "goal", "stranger_sins", "game_of_crone", "better_save_soul",
+            "goal", "stranger_sins", "game_of_crone", "better_save_soul", "trap_percentage",
+            "bats_trap_weight", "green_slime_trap_weight",
         )
         self.assertNotIn("quest_location_triggers", slot_data)
         self.assertIn("graveyard_keeper_data_version", slot_data)

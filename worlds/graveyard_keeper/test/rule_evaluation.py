@@ -6,7 +6,7 @@ from typing import Iterable
 from BaseClasses import ItemClassification
 from rule_builder.rules import Rule
 
-from ..data import data
+from ..data import data, load_json_data
 from ..logic.acquisition import (
     get_higher_quality_substitutes,
     get_structurally_acquirable_item_keys,
@@ -273,8 +273,8 @@ def make_all_items_state() -> FakeState:
     counts: dict[str, int] = {}
 
     for item_key, item in data.items.items():
-        if not item.classification & ItemClassification.progression:
-            continue
+        # This fixture exercises every catalogue recipe, including recipes that
+        # are filler/useful in worlds whose checks do not need their outputs.
         # Individual stages are replaced by their progressive item in the pool.
         if item_key in data.progressive_items_reverse:
             continue
@@ -380,6 +380,15 @@ class QuestRuleEvaluator:
                 detail=f"{item.label}: {actual}/1",
             ))
 
+        for technology_id in sorted(quest.required_technologies):
+            technology = load_json_data("technologies.json")[technology_id]
+            region = data.regions[technology["region"]].label
+            children.append(RuleEvaluation(
+                f"research {technology_id}",
+                self.state.can_reach_region(region, self.world.player),
+                detail=f"Research access in {region}",
+            ))
+
         for item_key in sorted(quest.required_craft_items):
             try:
                 rule = CanGet(item_key).resolve(self.world)
@@ -400,8 +409,43 @@ class QuestRuleEvaluator:
                     self.state,
                 ))
 
-        # Area-point requirements are data-only until the corresponding area
-        # calculators are implemented in production logic.
+        from ..logic.church_calculator import HasChurchRating
+        from ..logic.tavern_calculator import HasTavernRating
+        from ..logic.goal_rules import HasGraveyardRating
+        from ..logic.trade_office_calculator import HasTradeOfficeRating
+        from ..logic.sacrifice_calculator import HasSacrificeRating
+        from ..logic.refugee_camp_calculator import HasRefugeeCampRating
+        for area_points in sorted(quest.required_area_points, key=lambda requirement: requirement.area):
+            if area_points.area == "CHURCH":
+                children.append(evaluate_resolved_rule(
+                    f"church rating {area_points.value}",
+                    HasChurchRating(area_points.value).resolve(self.world), self.state,
+                ))
+            elif area_points.area == "TAVERN":
+                children.append(evaluate_resolved_rule(
+                    f"tavern rating {area_points.value}",
+                    HasTavernRating(area_points.value).resolve(self.world), self.state,
+                ))
+            elif area_points.area == "OLD_GRAVEYARD":
+                children.append(evaluate_resolved_rule(
+                    f"graveyard rating {area_points.value}",
+                    HasGraveyardRating(area_points.value).resolve(self.world), self.state,
+                ))
+            elif area_points.area == "TRADE_OFFICE":
+                children.append(evaluate_resolved_rule(
+                    f"trade office rating {area_points.value}",
+                    HasTradeOfficeRating(area_points.value).resolve(self.world), self.state,
+                ))
+            elif area_points.area == "SACRIFICE_ZONE":
+                children.append(evaluate_resolved_rule(
+                    f"sacrifice rating {area_points.value}",
+                    HasSacrificeRating(area_points.value).resolve(self.world), self.state,
+                ))
+            elif area_points.area == "REFUGEE_CAMP":
+                children.append(evaluate_resolved_rule(
+                    f"refugee camp rating {area_points.value}",
+                    HasRefugeeCampRating(area_points.value).resolve(self.world), self.state,
+                ))
 
         evaluation = RuleEvaluation(
             f"quest {event_key}",

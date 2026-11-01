@@ -1,5 +1,5 @@
 import pkgutil
-from typing import Dict
+from typing import Dict, TYPE_CHECKING
 
 import orjson
 
@@ -8,6 +8,9 @@ from rule_builder.cached_world import CachedRuleBuilderWorld
 from . import items, locations, regions, rules, web_world
 from .data import load_json_data
 from . import options as graveyard_keeper_options
+
+if TYPE_CHECKING:
+    from .logic.progression import ProgressionPlan
 
 
 def _load_world_version() -> str:
@@ -27,6 +30,7 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
 
     options_dataclass = graveyard_keeper_options.GraveyardKeeperOptions
     options: graveyard_keeper_options.GraveyardKeeperOptions
+    progression_plan: "ProgressionPlan"
 
     location_name_to_id = locations.create_location_name_to_id_dict()
     item_name_to_id = items.ITEM_NAME_TO_ID
@@ -39,8 +43,24 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
 
         self.multiworld.regions.extend(all_regions.values())
 
-    def set_rules(self):
+        # AP creates items before calling set_rules. Resolve the logic now so
+        # every item is created with its final, player-specific classification.
         rules.set_all_rules(self)
+        from .logic.progression import build_progression_plan
+        self.progression_plan = build_progression_plan(self)
+        self._update_precollected_classifications()
+
+    def set_rules(self):
+        # Core registers cross-rule cache dependencies after this hook.
+        pass
+
+    def _update_precollected_classifications(self):
+        for item in self.multiworld.precollected_items[self.player]:
+            classification = items.get_item_classification(self, item.name)
+            if item.classification != classification:
+                self.multiworld.state.remove(item)
+                item.classification = classification
+                self.multiworld.state.collect(item, prevent_sweep=True)
 
     def create_items(self):
         items.create_all_items(self)
@@ -53,7 +73,8 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
 
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
-            "goal", "stranger_sins", "game_of_crone", "better_save_soul"
+            "goal", "stranger_sins", "game_of_crone", "better_save_soul", "trap_percentage",
+            "bats_trap_weight", "green_slime_trap_weight"
         )
         slot_data["client_version"] = WORLD_VERSION
         slot_data["graveyard_keeper_data_version"] = load_json_data("manifest.json")["data_version"]

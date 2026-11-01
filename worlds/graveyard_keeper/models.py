@@ -76,6 +76,7 @@ class QuestEventData(EventData):
     required_craft_items: FrozenSet[str]
     required_area_points: FrozenSet[AreaPointData]
     rewards: FrozenSet[str]
+    required_technologies: FrozenSet[str] = field(default_factory=frozenset)
 
 
 
@@ -99,6 +100,8 @@ class ItemData:
     label: str
     classification: ItemClassification
     amount: int
+    dlc: DLCType = DLCType.BASE_GAME
+    code: int | None = None
 
 @dataclass
 class ReverseItemData:

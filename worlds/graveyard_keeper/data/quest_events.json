@@ -2674,7 +2674,7 @@
     "rewards": []
   },
   "EVENT_ADAM_EXPLAIN_GHOSTLY_POTTERY": {
-    "comment": "Flow: npc_potter:13:option:3; normally grants 20 Adam happiness and the Clay Shards",
+    "comment": "Flow: npc_potter first writes the current players_tavern zone quality to players_tavern_quality. SmartRes node 145 requires 40 and feeds option 2's lock; completing that dialogue starts Adam's ghost sequence, required before option 3 grants +20 Adam relation and the Clay Shards. Original locale task_dlc_stories_tavern_enhance explicitly requires 40 tavern quality. The rewardless quality-report step is folded into this event.",
     "location_label": "Help Adam with his ghostly pottery problem",
     "item_label": "Helped Adam with his ghostly pottery problem",
     "dlc": "STRANGER_SINS",
@@ -2685,6 +2685,7 @@
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [],
+    "required_area_points": ["TAVERN_40"],
     "rewards": [
       "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_1",
       "LOCATION_ADAM_REWARD_EXPLAIN_GHOSTLY_POTTERY_2"
@@ -2782,15 +2783,14 @@
     "rewards": ["LOCATION_KOUKOL_REWARD_RETURN_WITH_DARK_ORGAN"]
   },
   "EVENT_KOUKOL_APPROVE_TAVERN_UPGRADE": {
-    "comment": "Flow: npc_hunchback:90:option:4; available after on_tavern_table_built unlocks tr_quest_14_after_tavern_improve_1 at 40 tavern quality; normally grants 20 Koukol happiness and the Ancient Pickaxe",
+    "comment": "Native resources.assets on_tavern_table_built:11 switches on the completed object's ID. Its tavern_table_2 branch runs the once-only Koukol flag and unlocks @tr_quest_14_after_tavern_improve_1; there is no quality comparison. npc_hunchback:90:option:3 unlocks Table II after returning for the dark organ. Table II requires wooden beams, wooden planks and silk. Option 4 then grants +20 Koukol relation and the Ancient Pickaxe. The former TAVERN_40 requirement was an incorrect assumption.",
     "location_label": "Show Koukol the upgraded tavern",
     "item_label": "Showed Koukol the upgraded tavern",
     "dlc": "STRANGER_SINS",
     "required_quests": ["EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"],
     "required_happiness": [],
     "required_quest_items": [],
-    "required_craft_items": [],
-    "required_area_points": ["TAVERN_40"],
+    "required_craft_items": ["BUILDABLE_TAVERN_TABLE_2"],
     "rewards": [
       "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_1",
       "LOCATION_KOUKOL_REWARD_APPROVE_TAVERN_UPGRADE_2"
@@ -3210,7 +3210,8 @@
     "dlc": "BETTER_SAVE_SOUL",
     "required_quests": ["EVENT_SMILER_GIVE_BERRY_PIE"],
     "required_happiness": [],
-    "required_quest_items": ["ITEM_UNLOCK_SPIRITUALISM"],
+    "required_quest_items": [],
+    "required_technologies": ["soul_sins_2"],
     "required_craft_items": [],
     "rewards": ["LOCATION_SMILER_REWARD_ASK_ABOUT_HUMAN_HEALING"]
   },
@@ -3572,7 +3573,7 @@
     "rewards": ["LOCATION_ALARICH_REWARD_REVIVE_WITH_BLOOD"]
   },
   "EVENT_TEODORO_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT": {
-    "comment": "Flow: Alarich's refugees_s14 conversation and Teodoro's event_city_1_fin each add one to beatrice_should_come_count. sleep starts refugee_ev_s15_1 only at a count of two, so both EVENT_ALARICH_REVIVE_WITH_BLOOD and EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS are mandatory before @refugees_city_2_1 is unlocked. That rewardless conversation unlocks the depot upgrade, campfire upgrade, and sixth Residential Tent. Their completion scripts each call macro__check_city_2_2_start; only its third call adds event_city_2_2, which grants +10 Teodoro relation. GameData requires flitch and silk for the depot, flitch and polished stone for the campfire, wooden sticks and silk for the tent, and at most 8 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
+    "comment": "Flow: Alarich's refugees_s14 conversation and Teodoro's event_city_1_fin each add one to beatrice_should_come_count. sleep starts refugee_ev_s15_1 only at a count of two, so both EVENT_ALARICH_REVIVE_WITH_BLOOD and EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS are mandatory before @refugees_city_2_1 is unlocked. That rewardless conversation unlocks the depot upgrade, campfire upgrade, and sixth Residential Tent. Their completion scripts each call macro__check_city_2_2_start; only its third call adds event_city_2_2, which grants +10 Teodoro relation. GameData requires flitch and silk for the depot, flitch and ordinary stone (stone_plate_1, not polished stone) for the campfire, wooden sticks and silk for the tent, and at most 8 current Refugee Camp happiness. Renewable quantities are intentionally not modeled.",
     "location_label": "Upgrade the depot and campfire and build the sixth tent for Teodoro",
     "item_label": "Upgraded the depot and campfire and built the sixth tent for Teodoro",
     "dlc": "GAME_OF_CRONE",
@@ -3585,7 +3586,7 @@
     "required_craft_items": [
       "ITEM_FLITCH",
       "ITEM_SILK",
-      "ITEM_A_POLISHED_BRICK_OF_STONE",
+      "ITEM_A_PIECE_OF_STONE",
       "ITEM_WOODEN_STICK"
     ],
     "required_area_points": ["REFUGEE_CAMP_8"],
@@ -3961,7 +3962,7 @@
     ]
   },
   "EVENT_REFUGEE_COOK_BUILD_KITCHEN": {
-    "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. The mandatory garden fence then unlocks the cooking table. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The garden and kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Cook the fifth camp resident after the four residents spawned by spawn_init_refugees_in_camp. EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT provides the first additional tent; one New refugee action recruits her. Her introductory conversation directly runs refugee_unlock_cooking_table (npc_refugee_cook serialized ref 256); the garden fence can independently run the same script, so garden completion is not mandatory. Flow: npc_refugee_cook grants the same +30 relation either through node 282 when has_refugee_cooking_table is already set or through option 0 after on_refugee_cooking_table_placed unlocks @refugee_cook_2. The kitchen craft requirements are folded into this first rewarded event; renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Cook's kitchen",
     "item_label": "Built the Refugee Cook's kitchen",
     "dlc": "GAME_OF_CRONE",
@@ -3970,7 +3971,6 @@
     "required_quest_items": [],
     "required_craft_items": [
       "ITEM_FLITCH",
-      "ITEM_WOOD_BILLET",
       "ITEM_NAILS"
     ],
     "required_area_points": ["REFUGEE_CAMP_6"],
@@ -4001,11 +4001,11 @@
     "rewards": ["LOCATION_REFUGEE_COOK_REWARD_BUILD_BEEHIVES"]
   },
   "EVENT_REFUGEE_TANNER_BUILD_WORKPLACE": {
-    "comment": "Source: RefugeeCampData makes the Tanner the eleventh and final camp resident. The four additional tents hold 2, 2, 2, and 1 residents, so reaching her requires building the fourth additional tent and repeatedly using the New refugee craft; those rewardless steps are folded into this first rewarded event. Flow: place_tanner_workplace unlocks npc_refugee_tanner:15:option:0 (@refugee_tanner_2), which grants +30 Tanner relation and unlocks the first vendor inventory. Renewable quantities are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Tanner the eleventh and final camp resident. The four additional tents hold 2, 2, 2, and 1 residents, so reaching her requires building the fourth additional tent and repeatedly using the New refugee craft; those rewardless steps are folded into this first rewarded event. The fourth additional tent unlocks only after Teodoro's depot/campfire/sixth-tent milestone, which is an explicit prerequisite; reporting eleven residents is not required. Flow: place_tanner_workplace unlocks npc_refugee_tanner:15:option:0 (@refugee_tanner_2), which grants +30 Tanner relation and unlocks the first vendor inventory. Renewable quantities are intentionally not modeled.",
     "location_label": "Build the Refugee Tanner's workplace",
     "item_label": "Built the Refugee Tanner's workplace",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_quests": ["EVENT_TEODORO_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": [
@@ -4041,11 +4041,11 @@
     "rewards": ["LOCATION_REFUGEE_TANNER_REWARD_ARRANGE_LIVESTOCK"]
   },
   "EVENT_REFUGEE_COFFIN_MAKER_GIVE_IRON_CHISELS": {
-    "comment": "Source: RefugeeCampData makes the Coffin Maker the ninth camp resident. The initial four residents plus two residents in each of the first two additional tents mean reaching her requires building the third additional tent and repeatedly using the New refugee craft; those shared rewardless steps are folded into both first rewarded supply events. Flow: giving five chisel:chisel_1 at npc_refugee_coffin_maker:15:option:0 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Coffin Maker the ninth camp resident. The initial four residents plus two residents in each of the first two additional tents mean reaching her requires building the third additional tent and repeatedly using the New refugee craft; those shared rewardless steps are folded into both first rewarded supply events. The third additional tent unlocks only after Alarich is revived and the seven-resident milestone; these milestones are explicit prerequisites, without requiring the parallel depot/campfire upgrade. Flow: giving five chisel:chisel_1 at npc_refugee_coffin_maker:15:option:0 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
     "location_label": "Give iron chisels to the Refugee Coffin Maker",
     "item_label": "Gave iron chisels to the Refugee Coffin Maker",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_quests": ["EVENT_ALARICH_REVIVE_WITH_BLOOD", "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_WOODEN_STICK", "ITEM_SILK", "ITEM_IRON_CHISEL"],
@@ -4053,11 +4053,11 @@
     "rewards": ["LOCATION_REFUGEE_COFFIN_MAKER_REWARD_GIVE_IRON_CHISELS"]
   },
   "EVENT_REFUGEE_COFFIN_MAKER_GIVE_WOOD_WEDGES": {
-    "comment": "Source: RefugeeCampData makes the Coffin Maker the ninth camp resident. The initial four residents plus two residents in each of the first two additional tents mean reaching her requires building the third additional tent and repeatedly using the New refugee craft; those shared rewardless steps are folded into both first rewarded supply events. Flow: giving ten spike_1 wood wedges at npc_refugee_coffin_maker:15:option:1 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
+    "comment": "Source: RefugeeCampData makes the Coffin Maker the ninth camp resident. The initial four residents plus two residents in each of the first two additional tents mean reaching her requires building the third additional tent and repeatedly using the New refugee craft; those shared rewardless steps are folded into both first rewarded supply events. The third additional tent unlocks only after Alarich is revived and the seven-resident milestone; these milestones are explicit prerequisites, without requiring the parallel depot/campfire upgrade. Flow: giving ten spike_1 wood wedges at npc_refugee_coffin_maker:15:option:1 grants +30 relation and increments undertaker_event_1_count. Quantities of craftable items are intentionally not modeled.",
     "location_label": "Give wood wedges to the Refugee Coffin Maker",
     "item_label": "Gave wood wedges to the Refugee Coffin Maker",
     "dlc": "GAME_OF_CRONE",
-    "required_quests": ["EVENT_CHURCH_OPEN"],
+    "required_quests": ["EVENT_ALARICH_REVIVE_WITH_BLOOD", "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"],
     "required_happiness": [],
     "required_quest_items": [],
     "required_craft_items": ["ITEM_WOODEN_STICK", "ITEM_SILK", "ITEM_WOOD_WEDGE"],

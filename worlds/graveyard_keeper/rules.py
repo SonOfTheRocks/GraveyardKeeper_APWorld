@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 from BaseClasses import CollectionState
-from rule_builder.rules import Has, Rule, False_
+from rule_builder.rules import Has, Rule, False_, And, CanReachRegion, CanReachLocation
 from . import logic
 from .locations import *
 from .logic.custom_rules import build_collection_rule, build_crafting_event_rule, CanGet, HasPerk, CanComplete, CanCraft
 from .models import QuestEventData
 from .logic.graveyard_calculator import GraveyardPointCalculator
+from .logic.goal_rules import HasGraveyardRating
 
 if TYPE_CHECKING:
     from .world import GraveyardKeeperWorld
@@ -14,12 +15,12 @@ if TYPE_CHECKING:
 
 def set_all_rules(world: GraveyardKeeperWorld) -> None:
     set_all_entrance_rules(world)
-    set_all_crafting_event_location_rules(world)
     set_all_location_rules(world)
     set_completion_condition(world)
 
 
 def set_all_entrance_rules(world: GraveyardKeeperWorld) -> None:
+    active_regions = {region.name for region in world.get_regions()}
 
     def debug_rule(state, mats):
         results = [(m, logic.is_accessible(m, state, world.player)) for m in mats]
@@ -31,6 +32,8 @@ def set_all_entrance_rules(world: GraveyardKeeperWorld) -> None:
         assert dest_key in data.regions.keys()
         source = data.regions[source_key].label
         dest = data.regions[dest_key].label
+        if source not in active_regions or dest not in active_regions:
+            return
         world.set_rule(world.get_entrance(f"{source} -> {dest}"), rule)
         world.set_rule(world.get_entrance(f"{dest} -> {source}"), rule)
 
@@ -74,38 +77,36 @@ def set_all_entrance_rules(world: GraveyardKeeperWorld) -> None:
         build_collection_rule("EVENT_HATCH_REPAIRED")
     )
 
-    # rules for unlocking technologies (not researching them, just unlock)
-    for (unlock_name, unlock_data) in data.unlocks.items():
-        unlock_item_label = unlock_data.label
-        for tech_name in unlock_data.unlocks:
-            tech_region_data = data.regions[tech_name]
-            assert len(tech_region_data.connections) == 1
-            tech_tree_name = tech_region_data.connections[0]
-
-            _set_entrance_rule(
-                tech_tree_name, tech_name,
-                Has(unlock_item_label),
-            )
-
-def set_all_crafting_event_location_rules(world: GraveyardKeeperWorld) -> None:
-    for event_key, event_data in data.events.items():
-        if not event_key.startswith(CRAFTING_EVENT_PREFIX):
+    # Research follows native parent technologies, rather than obsolete AP group items.
+    # Forced quest technologies use their existing quest check as their source.
+    technologies = load_json_data("technologies.json")
+    for technology in technologies.values():
+        tech_region = data.regions[technology["region"]]
+        if tech_region.label not in active_regions:
             continue
-        world.set_rule(
-            world.get_location(event_data.location_label),
-            build_crafting_event_rule(event_key.replace(CRAFTING_EVENT_PREFIX, ""))
-        )
+        tree_region = data.regions[tech_region.connections[0]]
+        requirements = [CanReachRegion(data.regions[technologies[parent]["region"]].label)
+                        for parent in technology["parents"]]
+        if "quest_reward" in technology:
+            requirements.append(CanReachLocation(technology["quest_reward"]))
+        world.set_rule(world.get_entrance(f"{tree_region.label} -> {tech_region.label}"),
+                       And(*requirements))
 
 def set_all_location_rules(world: GraveyardKeeperWorld) -> None:
+    active_locations = {location.name for location in world.get_locations()}
 
     # quest event rules
     for quest_key, quest_data in data.events.items():
         if not isinstance(quest_data, QuestEventData):
             continue
+        if quest_data.location_label not in active_locations:
+            continue
         loc = world.get_location(quest_data.location_label)
         world.set_rule(loc, CanComplete(quest_key))
         # make all quest rewards dependent on completion of their quest
         for location_key in quest_data.rewards:
+            if data.locations[location_key].label not in active_locations:
+                continue
             loc = world.get_location(data.locations[location_key].label)
             world.set_rule(loc, Has(quest_data.item_label))
 
@@ -278,9 +279,7 @@ def set_completion_condition(world: GraveyardKeeperWorld) -> None:
         world.set_completion_rule(Has(data.events["EVENT_ENTER_PORTAL"].item_label))
 
     if world.options.goal.value == world.options.goal.option_graveyard:
-        world.multiworld.completion_condition[world.player] = (
-            lambda state: get_max_possible_graveyard_points(state, world) >= world.options.graveyard_goal_rating.value
-        )
+        world.set_completion_rule(HasGraveyardRating(world.options.graveyard_goal_rating.value))
     return
 
 def get_max_possible_graveyard_points(state, world) -> int:

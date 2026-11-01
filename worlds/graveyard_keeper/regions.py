@@ -9,8 +9,7 @@ if TYPE_CHECKING:
     from .world import GraveyardKeeperWorld
 
 
-def create_and_connect_regions(world: GraveyardKeeperWorld) -> Dict[str, Region]:
-
+def enabled_dlcs(world: GraveyardKeeperWorld) -> set[DLCType]:
     allowed_dlcs = [DLCType.BASE_GAME]
     if world.options.stranger_sins:
         allowed_dlcs.append(DLCType.STRANGER_SINS)
@@ -19,6 +18,11 @@ def create_and_connect_regions(world: GraveyardKeeperWorld) -> Dict[str, Region]
     if world.options.better_save_soul:
         allowed_dlcs.append(DLCType.BETTER_SAVE_SOUL)
 
+    return set(allowed_dlcs)
+
+
+def create_and_connect_regions(world: GraveyardKeeperWorld) -> Dict[str, Region]:
+    allowed_dlcs = enabled_dlcs(world)
     regions: Dict[str, Region] = {}
     connections: List[Tuple[str, str]] = []
     for region_key, region_data in data.regions.items():

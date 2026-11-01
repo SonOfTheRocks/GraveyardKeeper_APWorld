@@ -72,7 +72,7 @@ class TestDataIntegrity(unittest.TestCase):
                             f"workstation '{crafting_station}' does not exist! (found in craft '{craft_name}')"
                         )
 
-    def test_all_blueprints_progression_or_useful_except_paintings(self):
+    def test_blueprint_defaults_are_filler_or_useful(self):
         decorative_items = [
             "ITEM_BP_BURNING_WITCH",
             "ITEM_BP_BISHOPS_CHOICE",
@@ -96,7 +96,7 @@ class TestDataIntegrity(unittest.TestCase):
                     else:
                         self.assertIn(
                             blueprint_json["classification"],
-                            ["PROGRESSION", "USEFUL"],
+                            ["FILLER", "USEFUL"],
                             f"blueprint '{blueprint_name}' has invalid classification!"
                         )
 
@@ -169,29 +169,13 @@ class TestDataIntegrity(unittest.TestCase):
                         ["BASE_GAME", "GAME_OF_CRONE", "STRANGER_SINS", "BETTER_SAVE_SOUL"]
                     )
 
-    def test_ap_items_used_by_recipes_are_progression(self):
-        dependencies: set[str] = set()
-        for recipes in data.recipes.values():
-            for recipe in recipes:
-                dependencies.update(recipe.workstations)
-                dependencies.update(recipe.ingredients)
-                if recipe.required_recipe_item:
-                    dependencies.add(recipe.required_recipe_item)
+    def test_recipe_defaults_never_claim_progression(self):
+        # Progression belongs to the generated world's active rule closure,
+        # not to every recipe in the complete data catalogue.
+        from ...logic.progression import RECIPE_ITEM_NAMES
 
-        resolved_dependencies = {
-            data.progressive_items_reverse[item_key].key
-            if item_key in data.progressive_items_reverse
-            else item_key
-            for item_key in dependencies
-        }
-        non_progression_items = {
-            item_key: data.items[item_key].classification
-            for item_key in resolved_dependencies & data.items.keys()
-            if data.items[item_key].classification != ItemClassification.progression
-        }
-
-        self.assertFalse(
-            non_progression_items,
-            "AP items used by crafting logic must be progression items: "
-            f"{non_progression_items}",
-        )
+        for item in data.items.values():
+            if item.label in RECIPE_ITEM_NAMES:
+                with self.subTest(item=item.label):
+                    self.assertIn(item.classification,
+                                  (ItemClassification.filler, ItemClassification.useful))
