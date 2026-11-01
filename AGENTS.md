@@ -8,6 +8,10 @@ The APWorld owns seed-generation behavior: stable item/location definitions, reg
 
 The companion client lives in `C:\Users\Kai\RiderProjects\GraveyardKeepelago`. Names, IDs, slot data, goals, and other client-facing behavior form a shared contract and must be checked against that repository.
 
+## Media policy
+
+Do not create or add AI-generated icons, images, textures, audio, video, or other media to this project, including procedurally generated visual assets. AI-generated code, documentation, and data files are allowed. Reuse existing game assets or human-authored assets with known provenance. UI code may arrange and tint existing native widgets/assets; do not generate new artwork.
+
 ## Source-of-truth order
 
 When sources conflict, use this order:
