@@ -110,7 +110,7 @@ class HasCraftingQuality(GKRule, game="Graveyard Keeper"):
     modifiers: tuple[tuple[str, float], ...]
 
     @override
-    def _instantiate(self, world: "Graveyard Keeper") -> Rule.Resolved:
+    def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
         disabled_labels = {item.label for item in data.items.values()
                            if item.dlc not in enabled_dlcs(world)}
         return self.Resolved(
