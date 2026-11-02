@@ -1,11 +1,11 @@
 import unittest
 from typing import FrozenSet, Set
 
-import importlib_resources
+from importlib.resources import files
 
 from BaseClasses import ItemClassification
 from ..bases import GraveyardKeeperTestBase
-from data import data, load_json_data
+from ...data import data, load_json_data, iter_json_files
 from worlds import graveyard_keeper
 
 
@@ -86,10 +86,11 @@ class TestDataIntegrity(unittest.TestCase):
     def test_workstations_exist(self):
         crafting_stations = load_json_data("logic/workstations.json").keys()
 
-        crafts_filenames = importlib_resources.files(graveyard_keeper.__name__).glob("data/logic/recipes/*.json")
+        crafts_filenames = (entry for entry in files(graveyard_keeper).joinpath("data", "logic", "recipes").iterdir()
+                            if entry.is_file() and entry.name.endswith(".json"))
         crafts = {}
         for crafts_filename in crafts_filenames:
-            for craft_name, crafts_data_list in load_json_data(f"logic/recipes/{crafts_filename}").items():
+            for craft_name, crafts_data_list in load_json_data(crafts_filename).items():
                 for craft_data in crafts_data_list:
                     for crafting_station in craft_data["crafting_stations"]:
                         self.assertTrue(
@@ -106,12 +107,12 @@ class TestDataIntegrity(unittest.TestCase):
             "ITEM_BP_DONKEYS_OF_THE_WORLD_UNITE",
             "ITEM_BP_SPICY_ORANGE"
         ]
-        blueprint_filenames = importlib_resources.files(graveyard_keeper.__name__).glob("data/items/**/blueprints.json")
+        blueprint_filenames = (entry for entry in iter_json_files(files(graveyard_keeper).joinpath("data", "items"))
+                               if entry.name == "blueprints.json")
         for blueprint_filename in blueprint_filenames:
-            blueprint_filename = str(blueprint_filename)
 
-            for blueprint_name, blueprint_json in load_json_data(f"items/{blueprint_filename}").items():
-                with self.subTest(file=blueprint_filename, blueprint=blueprint_name):
+            for blueprint_name, blueprint_json in load_json_data(blueprint_filename).items():
+                with self.subTest(file=str(blueprint_filename), blueprint=blueprint_name):
                     if blueprint_name in decorative_items:
                         self.assertEqual(
                             blueprint_json["classification"],
@@ -182,12 +183,9 @@ class TestDataIntegrity(unittest.TestCase):
         return
 
     def test_all_items_have_dlc_classification(self):
-        found = importlib_resources.files(graveyard_keeper.__name__).glob("data/items/*.json")
-        item_filenames = set(found)
-        found = importlib_resources.files(graveyard_keeper.__name__).glob("data/items/**/*.json")
-        item_filenames.update(set(found))
+        item_filenames = iter_json_files(files(graveyard_keeper).joinpath("data", "items"))
         for item_filename in item_filenames:
-            for item_key, item_data in load_json_data(f"data/items/{item_filename}").items():
+            for item_key, item_data in load_json_data(item_filename).items():
                 with self.subTest(file=str(item_filename), item=item_key):
                     self.assertIn("dlc", item_data)
                     self.assertIn(

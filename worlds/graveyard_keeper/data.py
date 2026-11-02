@@ -1,7 +1,5 @@
-import pkgutil
-from pathlib import Path
-
-import importlib_resources
+from importlib.resources import files
+from importlib.resources.abc import Traversable
 import orjson
 from typing import List, Dict, Union, Any, Tuple, Set
 
@@ -15,8 +13,9 @@ CRAFTING_REGION_KEY = "REGION_CRAFTING"
 CRAFTING_EVENT_PREFIX = "EVENT_CAN_GET_"
 CRAFTING_EVENT_LABEL_PREFIX = "Can obtain "
 
-def load_json_data(data_name: str) -> Union[List[Any], Dict[str, Any]]:
-    raw = pkgutil.get_data(__name__, f"data/{data_name}")
+def load_json_data(data_name: Union[str, Traversable]) -> Union[List[Any], Dict[str, Any]]:
+    resource = files(__package__).joinpath("data", data_name) if isinstance(data_name, str) else data_name
+    raw = resource.read_bytes()
 
     if raw is None:
         raise FileNotFoundError(f"Could not find data file: data/{data_name}")
@@ -60,10 +59,10 @@ def _str_to_item_classification(string: str) -> ItemClassification:
 #    except KeyError:
 #        raise ValueError(f"'{value}' is not a valid {enum_cls.__name__}")
 
-def iter_json_files(base):
-    for entry in base.iterdir():
+def iter_json_files(base, recursive=True):
+    for entry in sorted(base.iterdir(), key=lambda entry: entry.name):
         if entry.is_dir():
-            if entry.name == "unused":
+            if not recursive or entry.name == "unused":
                 continue
             yield from iter_json_files(entry)
         elif entry.name.endswith(".json"):
@@ -139,18 +138,8 @@ def load_events() -> Dict[str, EventData]:
 
 def load_items() -> Dict[str, ItemData]:
     items: Dict[str, ItemData] = {}
-    #item_files_data = (load_json_data(filename) for filename in importlib_resources.files(__name__).glob("data/items/*.json"))
-    #item_files_data = (
-    #    load_json_data(f"data/items/{filename}")
-    #    for filename
-    #    in importlib_resources.files(__name__).glob("data/items/*.json")
-    #    if "unused" not in str(filename)
-    #)
-    root = importlib_resources.files(__name__) / "data/items"
-    item_files_data = (
-        load_json_data("items/" + str(p.relative_to(root)))
-        for p in iter_json_files(root)
-    )
+    root = files(__package__).joinpath("data", "items")
+    item_files_data = (load_json_data(resource) for resource in iter_json_files(root))
     for item_file_data in item_files_data:
         for item_name, item_json in item_file_data.items():
             assert item_name not in items.keys(), f"Item '{item_name}' was defined multiple times"
@@ -182,7 +171,7 @@ def load_recipes() -> Dict[str, List[RecipeData]]:
 
     recipe_files_data = [
         load_json_data(filename) for filename
-        in importlib_resources.files(__name__).glob("data/logic/recipes/*.json")
+        in iter_json_files(files(__package__).joinpath("data", "logic", "recipes"), recursive=False)
     ]
     for recipe_file_data in recipe_files_data:
         for output_name, recipes in recipe_file_data.items():
@@ -345,7 +334,7 @@ def _init() -> None:
 
     # Load/merge item json files
     item_json_list = []
-    for file in importlib_resources.files(__name__).glob("data/items/*.json"):
+    for file in iter_json_files(files(__package__).joinpath("data", "items"), recursive=False):
         item_json_list.append(load_json_data(file))
 
     items_json = {}
@@ -404,10 +393,10 @@ def _init() -> None:
         )
 
     # Create recipes data
-    recipes_filenames = importlib_resources.files(__name__).glob("data/logic/recipes/*.json")
+    recipes_filenames = iter_json_files(files(__package__).joinpath("data", "logic", "recipes"), recursive=False)
     recipes_json = {}
     for recipe_filename in recipes_filenames:
-        json_data = load_json_data(f"logic/recipes/{recipe_filename}")
+        json_data = load_json_data(recipe_filename)
         for item, recipes in json_data.items():
             recipes_json[item] = recipes
     for result_name, recipes in recipes_json.items():
