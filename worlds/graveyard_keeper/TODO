@@ -10,7 +10,6 @@ Important before First Release:
 * Crafting Stories in Confessional
     * Or maybe not, because its too slow
 * Recipes for extracts, powders and solutions and https://graveyardkeeper.fandom.com/wiki/Alchemy#Other_Ingredients in Zombie alchemy decomposer
-* replace pkg_resources by importlib_resources
 * Morgue already has a preparation place, so building one should not be required
     * But repairing the mortuary desk needs to be considered
 * Cooking should not require Goldfish (Catch chance too low)

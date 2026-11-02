@@ -5,7 +5,7 @@ from dataclasses import replace
 from types import SimpleNamespace
 from unittest.mock import patch
 
-import importlib_resources
+from importlib.resources import files
 
 from .. import items
 from ..world import GraveyardKeeperWorld
@@ -26,7 +26,7 @@ def load_items_module_with_definitions(definitions):
 
 class TestStableItemIds(unittest.TestCase):
     def test_shared_file_enumeration_cannot_change_item_pool_order(self):
-        root = importlib_resources.files(data_module.__name__) / "data/shared/items"
+        root = files(data_module.__package__).joinpath("data", "shared", "items")
         expected = list(data_module.load_items())
         original_iterdir = type(root).iterdir
 
@@ -37,7 +37,7 @@ class TestStableItemIds(unittest.TestCase):
             self.assertEqual(expected, list(data_module.load_items()))
 
     def test_reordered_shared_files_and_definitions_preserve_public_and_created_ids(self):
-        root = importlib_resources.files(data_module.__name__) / "data/shared/items"
+        root = files(data_module.__package__).joinpath("data", "shared", "items")
         paths = list(data_module.iter_json_files(root))
         with patch.object(data_module, "iter_json_files", return_value=iter(reversed(paths))):
             reordered = data_module.load_items()

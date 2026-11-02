@@ -2,9 +2,9 @@ import json
 import unittest
 from pathlib import Path
 
-import importlib_resources
+from importlib.resources import files
 
-from ...data import load_json_data
+from ...data import load_json_data, iter_json_files
 
 
 GAME_DATA_ROOT = Path(__file__).parents[2] / "dumps" / "raw"
@@ -14,11 +14,9 @@ class TestItemGrants(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.raw_items = {}
-        item_root = importlib_resources.files("worlds.graveyard_keeper") / "data" / "shared" / "items"
-        for item_file in sorted(item_root.rglob("*.json"), key=str):
-            if "unused" in item_file.parts:
-                continue
-            file_items = load_json_data("items/" + str(item_file.relative_to(item_root)))
+        item_root = files("worlds.graveyard_keeper").joinpath("data", "shared", "items")
+        for item_file in iter_json_files(item_root):
+            file_items = load_json_data(item_file)
             overlap = cls.raw_items.keys() & file_items.keys()
             if overlap:
                 raise AssertionError(f"Duplicate item definitions: {sorted(overlap)}")
