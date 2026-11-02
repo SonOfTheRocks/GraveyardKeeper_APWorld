@@ -32,6 +32,7 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
     options_dataclass = graveyard_keeper_options.GraveyardKeeperOptions
     options: graveyard_keeper_options.GraveyardKeeperOptions
     progression_plan: "ProgressionPlan"
+    acquirable_item_keys: frozenset[str]
 
     location_name_to_id = locations.create_location_name_to_id_dict()
     item_name_to_id = items.ITEM_NAME_TO_ID
@@ -46,6 +47,8 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
 
         # AP creates items before calling set_rules. Resolve the logic now so
         # every item is created with its final, player-specific classification.
+        from .logic.acquisition import get_option_acquirable_item_keys
+        self.acquirable_item_keys = get_option_acquirable_item_keys(self)
         rules.set_all_rules(self)
         from .logic.progression import build_progression_plan
         self.progression_plan = build_progression_plan(self)

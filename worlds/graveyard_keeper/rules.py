@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from BaseClasses import CollectionState
-from rule_builder.rules import Has, Rule, False_, And, CanReachRegion, CanReachLocation
+from rule_builder.rules import Has, Rule, And, CanReachRegion, CanReachLocation
 from . import logic
 from .locations import *
 from .logic.custom_rules import build_collection_rule, build_crafting_event_rule, CanGet, HasPerk, CanComplete, CanCraft
@@ -36,12 +36,6 @@ def set_all_entrance_rules(world: GraveyardKeeperWorld) -> None:
             return
         world.set_rule(world.get_entrance(f"{source} -> {dest}"), rule)
         world.set_rule(world.get_entrance(f"{dest} -> {source}"), rule)
-
-    # block off unreachable region
-    _set_entrance_rule(
-        "REGION_SWEET_HOME", UNREACHABLE_REGION_KEY,
-        False_()
-    )
 
     # rules for blockages
     blockage_rule_1 = CanCraft("BUILDABLE_REMOVE_BLOCKAGE_BASEMENT")

@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from types import SimpleNamespace
 from typing import TYPE_CHECKING, override
 
+from .dependencies import optional_dependency_names
 from BaseClasses import CollectionState
 from rule_builder.rules import And, CanReachRegion, Rule, True_
 from ..data import data
@@ -21,10 +22,10 @@ class HasGraveyardRating(GKRule, game="Graveyard Keeper"):
     def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
         if self.rating == 0:
             return True_().resolve(world)
-        dependencies = GraveyardPointCalculator.dependency_rule().resolve(world)
+        dependencies = optional_dependency_names(GraveyardPointCalculator.dependency_rule(), world)
         crafting_rules = tuple((key, CanCraft(key).resolve(world)) for key in GravePointCalculator.CRAFTING_INPUTS)
         rating_rule = self.Resolved(self.rating, bool(world.options.game_of_crone), bool(world.options.better_save_soul),
-                             crafting_rules, tuple(sorted(dependencies.item_dependencies())),
+                             crafting_rules, dependencies,
                              player=world.player, caching_enabled=getattr(world, "rule_caching_enabled", False))
         return And.from_resolved(world, [
             CanReachRegion(data.regions["REGION_OLD_GRAVEYARD"].label).resolve(world), rating_rule,

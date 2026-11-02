@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import override
 
+from .dependencies import optional_dependency_names
 from BaseClasses import CollectionState
 from rule_builder.rules import And, CanReachRegion, Has, Rule
 from ..data import CRAFTING_EVENT_PREFIX, data, load_json_data
@@ -50,11 +51,11 @@ class HasTradeOfficeRating(GKRule, game="Graveyard Keeper"):
 
     @override
     def _instantiate(self, world) -> Rule.Resolved:
-        dependencies = TradeOfficePointCalculator.dependency_rule().resolve(world)
+        dependencies = optional_dependency_names(TradeOfficePointCalculator.dependency_rule(), world)
         return And.from_resolved(world, [
             CanReachRegion(data.regions["REGION_TRADE_OFFICE"].label).resolve(world),
             Has(data.events[TRADE_OFFICE_RATING["open_event"]].item_label).resolve(world),
-            self.Resolved(self.rating, tuple(sorted(dependencies.item_dependencies())),
+            self.Resolved(self.rating, dependencies,
                           player=world.player, caching_enabled=getattr(world, "rule_caching_enabled", False)),
         ])
 

@@ -8,7 +8,6 @@ from worlds.graveyard_keeper.models import DLCType, EventData, RegionData, Locat
     RecipeData, UnlockData, GraveyardKeeperData, ReverseItemData, QualityRecipeData, SimpleRecipeData, QuestEventData, \
     HappinessData, AreaPointData
 
-UNREACHABLE_REGION_KEY = "REGION_UNREACHABLE"
 CRAFTING_REGION_KEY = "REGION_CRAFTING"
 CRAFTING_EVENT_PREFIX = "EVENT_CAN_GET_"
 CRAFTING_EVENT_LABEL_PREFIX = "Can obtain "
@@ -77,16 +76,8 @@ def load_regions() -> Dict[str, RegionData]:
         [], # CAN_CRAFT events will be added in generate_crafting_events
         ["REGION_SWEET_HOME"]
     )
-    regions[UNREACHABLE_REGION_KEY] = RegionData(
-        "Unreachable Region",
-        DLCType.BASE_GAME,
-        [],
-        [],
-        ["REGION_SWEET_HOME"]
-    )
     regions["REGION_SWEET_HOME"].connections += [
         CRAFTING_REGION_KEY,
-        UNREACHABLE_REGION_KEY
     ]
     return regions
 

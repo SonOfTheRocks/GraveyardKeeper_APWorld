@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import override
 
+from .dependencies import optional_dependency_names
 from BaseClasses import CollectionState
 from rule_builder.rules import And, CanReachRegion, False_, Has, Rule
 from ..data import CRAFTING_EVENT_PREFIX, data, load_json_data
@@ -80,11 +81,11 @@ class HasRefugeeCampRating(GKRule, game="Graveyard Keeper"):
     def _instantiate(self, world) -> Rule.Resolved:
         if not world.options.game_of_crone:
             return False_().resolve(world)
-        dependencies = RefugeeCampPointCalculator.dependency_rule().resolve(world)
+        dependencies = optional_dependency_names(RefugeeCampPointCalculator.dependency_rule(), world)
         return And.from_resolved(world, [
             CanReachRegion(data.regions["REGION_REFUGEE_CAMP"].label).resolve(world),
             Has(data.events[REFUGEE_CAMP_RATING["open_event"]].item_label).resolve(world),
-            self.Resolved(self.rating, tuple(sorted(dependencies.item_dependencies())),
+            self.Resolved(self.rating, dependencies,
                           player=world.player, caching_enabled=getattr(world, "rule_caching_enabled", False)),
         ])
 

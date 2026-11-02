@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import override
 
+from .dependencies import optional_dependency_names
 from BaseClasses import CollectionState
 from rule_builder.rules import And, CanReachRegion, False_, Has, Rule
 from ..data import CRAFTING_EVENT_PREFIX, data, load_json_data
@@ -67,11 +68,11 @@ class HasTavernRating(GKRule, game="Graveyard Keeper"):
     def _instantiate(self, world) -> Rule.Resolved:
         if not world.options.stranger_sins:
             return False_().resolve(world)
-        dependencies = TavernPointCalculator.dependency_rule().resolve(world)
+        dependencies = optional_dependency_names(TavernPointCalculator.dependency_rule(), world)
         return And.from_resolved(world, [
             CanReachRegion(data.regions["REGION_TAVERN"].label).resolve(world),
             Has(data.events[TAVERN_RATING["open_event"]].item_label).resolve(world),
-            self.Resolved(self.rating, tuple(sorted(dependencies.item_dependencies())),
+            self.Resolved(self.rating, dependencies,
                           player=world.player, caching_enabled=getattr(world, "rule_caching_enabled", False)),
         ])
 

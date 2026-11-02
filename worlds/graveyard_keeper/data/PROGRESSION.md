@@ -8,7 +8,12 @@ definitions: it is calculated separately for every generated player world.
 Active addressed checks, entrance rules and the selected completion rule are
 the roots of the analysis. Their Rule Builder dependencies are followed through
 quest, crafting and purchase events until no new dependency is found. All
-alternatives retained by the active rules are included. Crafting events are
+alternatives retained by the active rules are included. Acquisition alternatives
+excluded by DLC or vendor options, including cycles without a source, resolve
+to false before the closure is built. This structural check never grants access:
+the normal quest, quality, money and region rules still apply. Rating calculators
+declare their optional inputs independently, so excluding one input does not
+erase the remaining dependencies. Crafting events are
 created on demand; unused internal quest events are removed as well.
 
 An item needed by this closure is progression. Other recipe ownership items
