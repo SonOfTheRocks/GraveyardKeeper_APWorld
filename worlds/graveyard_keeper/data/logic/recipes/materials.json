@@ -9,15 +9,6 @@
       "crafting_stations": [],
       "recipe_required": "ITEM_LEARN_GATHERING_BIG_TREE_FELLING",
       "materials_required": []
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_ZOMBIE_SAWMILL"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_ZOMBIE"
-      ]
     }
   ],
   "ITEM_CARVED_WOOD_COPPER": [
@@ -100,33 +91,6 @@
       "materials_required": [
         "ITEM_WOOD_BILLET"
       ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_CHOPPING_SPOT"
-      ],
-      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
-      "materials_required": [
-        "ITEM_WOODEN_CROSS"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_CHOPPING_SPOT"
-      ],
-      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
-      "materials_required": [
-        "ITEM_WOODEN_MARKER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_CHOPPING_SPOT"
-      ],
-      "recipe_required": "ITEM_LEARN_CREATE_FIREWOOD",
-      "materials_required": [
-        "ITEM_WOODEN_GRAVE_FENCE"
-      ]
     }
   ],
   "ITEM_FLITCH": [
@@ -149,6 +113,13 @@
       "materials_required": [
         "ITEM_LOG"
       ]
+    }
+  ],
+  "ITEM_STONE_REPAIR_KIT": [
+    {
+      "crafting_stations": ["CRAFTING_STATION_STONE_CUTTER", "CRAFTING_STATION_STONE_CUTTER_2"],
+      "recipe_required": "ITEM_LEARN_CREATE_STONE_REPAIR_KIT",
+      "materials_required": ["ITEM_A_PIECE_OF_STONE", "ITEM_SIMPLE_IRON_PARTS", "ITEM_CLAY"]
     }
   ],
   "ITEM_WOOD_REPAIR_KIT": [
@@ -225,15 +196,6 @@
       "crafting_stations": [],
       "recipe_required": "ITEM_LEARN_GATHERING_STONE_ROCK",
       "materials_required": []
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_ZOMBIE_STONE_QUARRY"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_ZOMBIE"
-      ]
     }
   ],
   "ITEM_A_PIECE_OF_STONE": [
@@ -417,15 +379,6 @@
       "crafting_stations": [],
       "recipe_required": "ITEM_LEARN_GATHERING_IRON_ORE",
       "materials_required": []
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_ZOMBIE_ORE_MINE"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_ZOMBIE"
-      ]
     }
   ],
   "ITEM_IRON_ORE": [
@@ -447,9 +400,7 @@
   "ITEM_IRON_INGOT": [
     {
       "crafting_stations": [
-        "CRAFTING_STATION_FURNACE",
-        "CRAFTING_STATION_FURNACE_2",
-        "CRAFTING_STATION_FURNACE_3"
+        "CRAFTING_STATION_FURNACE"
       ],
       "recipe_required": "ITEM_LEARN_CREATE_IRON_INGOT",
       "materials_required": [
@@ -660,15 +611,6 @@
       ],
       "recipe_required": "ITEM_LEARN_GATHERING_COAL",
       "materials_required": []
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_ZOMBIE_ORE_MINE"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_ZOMBIE"
-      ]
     }
   ],
   "ITEM_RIVER_SAND": [

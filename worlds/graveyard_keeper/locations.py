@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING
 from BaseClasses import Location, Region
 from .data import *
 from .items import GraveyardKeeperItem
+from .regions import enabled_dlcs
 
 if TYPE_CHECKING:
     from .world import GraveyardKeeperWorld
@@ -19,33 +20,50 @@ class GraveyardKeeperLocation(Location):
 
 def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]) -> None:
 
+    allowed_dlcs = enabled_dlcs(world)
+    disabled_rewards = {
+        reward for event in data.events.values()
+        if isinstance(event, QuestEventData) and event.dlc not in allowed_dlcs
+        for reward in event.rewards
+    }
     location_index: int = 1
     for region_data_name, region_data in data.regions.items():
-        if region_data_name not in regions.keys():
-            continue
+        #if region_data_name not in regions.keys():
+        #    continue
 
-        region: Region = regions[region_data_name]
+        region: Region | None = regions.get(region_data_name)
         location_keys: List[str] = region_data.locations
         event_keys: List[str] = region_data.events
 
         for location_key in location_keys:
-            if location_key not in data.locations:
-                continue
+            #if location_key not in data.locations:
+            #    continue
             location_data = data.locations[location_key]
+
+            address = location_index
+            LOCATION_NAME_TO_ID[location_key] = address
+            location_index += 1
+            if region is None or location_key in disabled_rewards:
+                continue
 
             location = GraveyardKeeperLocation(
                 world.player,
                 location_data.label,
-                location_index,
+                address,
                 region,
             )
             region.locations.append(location)
 
-            LOCATION_NAME_TO_ID[location_key] = location_index
-            location_index += 1
 
         for event_key in event_keys:
+            if region is None:
+                continue
+            if event_key.startswith(CRAFTING_EVENT_PREFIX):
+                # Instantiated on demand by the per-world progression analysis.
+                continue
             event_data = data.events[event_key]
+            if isinstance(event_data, QuestEventData) and event_data.dlc not in allowed_dlcs:
+                continue
             region.add_event(
                 event_data.location_label,
                 event_data.item_label,
@@ -55,7 +73,9 @@ def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]
 
 
 def create_location_name_to_id_dict() -> Dict[str, int]:
-    index: int = 0
+    # Archipelago reserves 0 for event locations and filters false-y IDs from
+    # the public data package.  Runtime Location objects also start at 1.
+    index: int = 1
     label_to_id_dict: Dict[str, int] = {}
 
     for region_key, region_data in data.regions.items():
