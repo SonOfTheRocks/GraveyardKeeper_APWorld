@@ -1,0 +1,24 @@
+Clothos first quest has 2 ways of solving it. One has one +20 reward, the other has one +10 and two +5.
+
+Starting Recipes:
+* Berry juice (Cooking table)
+* Fuel from sticks (Oven)
+* Fuel from firewood (Oven)
+* Fuel from coal (Oven)
+
+Requirements/Chain of events:
+* Gerry 20 for Talking to Astrologer
+* Opening the church:
+  * Donkey demands carrots for bodies
+  * Gerry tells you about Gunter
+* Infinite Blue Points available when Stone + Stone Cutter
+* Keepers Journal needs 5 Faith at Snake
+* Stone and Sand (Build Cost) for entrances between plains and stone garden
+* Better Save Soul Repair Order: Soul extractor, Soul healer, Soul portal
+
+
+* Smiler
+    * "Find out more about him", "Bring him a berry pie to make him talkative"
+    * Learn_remote_control -> "Learn more about technology" -> "Ask Euric about the insert in the Book" -> "Ask Smiler about Human Healing" -> Human Soul Handling Blueprint
+* Gerry
+    * Ask about lost tooth

@@ -1,0 +1,77 @@
+(Horse/Circular) Saw needs stockpile to cut down logs
+Stone Cutter (II) needs stockpile to cut down big stone/marble blocks
+Solution for 1+2: recipe with stockpile "crafting station" to create "stored" big stone/marble blocks/logs
+
+Important before First Release:
+* merge data/logic/crafts/crafts.json and data/logic/crafts/items.json
+* Create as many progression items as needed (not only 1)
+* Flatten access rules for every item before adding them as rules
+    * Access rules should be a list of AP items needed
+* Crafting Stories in Confessional
+    * Or maybe not, because its too slow
+* Recipes for extracts, powders and solutions and https://graveyardkeeper.fandom.com/wiki/Alchemy#Other_Ingredients in Zombie alchemy decomposer
+* replace pkg_resources by importlib_resources
+* Morgue already has a preparation place, so building one should not be required
+    * But repairing the mortuary desk needs to be considered
+* Cooking should not require Goldfish (Catch chance too low)
+* Deal with secondary ore crafting
+    * MATERIAL_LIMESTONE requires ITEM_LEARN_GATHERING_LIMESTONE and ITEM_LEARN_GATHERING_COAL
+    * MATERIAL_SULFUR requires ITEM_LEARN_GATHERING_SULFUR and ITEM_LEARN_GATHERING_COAL
+    * MATERIAL_SILVER_NUGGET requires ITEM_LEARN_GATHERING_SILVER_ORE and ITEM_LEARN_GATHERING_IRON_ORE
+* Split up Fuel for Bonfire as it cannot use Coal... (or fix bonfire/professional oven to also use coal)
+* Split up Foraging workstations as some require access to a certain region (eg: swamp)
+* Region Dungeon level where we can find quest items (eg: Bucket of blood, ...) and access rules for them
+* Check requirements for stockpiles as we start with 2 of them, but zombie quarry/mines still might need them craftable...
+* Mapping for/Handling of Progressive Items
+* Deal with Recipes handed out by Quests (Acceptance and Rewards)
+* Star Items
+    * Recipe for Dinner Item
+    * Set up categories for recipes (Needed to know which Perks can be applied)
+    * Add base quality reduction for recipes
+    * Steel Chisel upgrade recipe
+    * Hardcover Upgrade recipes
+* Deal with Recycling Recipes
+* Remove Washing of Bloody Nails or make Dungeon Enemies respawn
+* Tech Tree: Better Save Soul
+* Game of Crone DLC has 3 Endings with 3 different Rewards (Perks). Make all 3 obtainable somehow
+
+Fix bugs of Graveyard Keeper:
+* Study of Keepers Key returns Keepers Key (additionally to the now active one)
+* Capitalization of various labels (Techs, Unlocks, Items, ...)
+
+Nice Features (Later Releases):
+* Death Link
+* Fix Cheese Pie Handyman Buff/Effect (if it isn't fixed yet)
+* Fix Candle(6) to be usable and craftable
+* Add Cook Perk (Icon already exists, maybe even the whole perk)
+* Add Smithing/Jewelery Recipes for both Lures (maybe re-add the gold lure?)
+* Add Recipes for all 3 fishing rods
+* Events for Quest progression and/or Happiness
+* Events for Materials and Workstations (for Visualization of crafting chains in Tracker)
+* Randomize Fishing - Fishing can get you access to a certain item/material (with option)
+* Skip Intro (Button)
+* Make Stone Garden faster (10x maybe?) (Maybe in form of a perk?)
+* Science points multiplier (10% to 1000%)
+* Make Science need items instead of science points
+* Add Runner/Sprinter (Progressive?) Perk(s) for QoL
+* Researchsanity ("Studysanity")
+* Add Option to add Quality for all Foods/Materials/Recipes/Items?
+* New Perks can use unimplemented perks/perk icons (https://graveyardkeeper.fandom.com/wiki/Perks#Unimplemented)
+
+Data Integrity Tests:
+- Check for duplicates
+- all oven/smelting recipes need fuel
+- all references exists (regions, locations, items, ...)
+- Check for non-valid entrances (exception: Missing DLC)
+- location amount should be greater than unique item amount
+- every location is is exactly once in all regions
+- check the sum of the happiness items of each character
+- and much more
+- all items required for goal needs to be classification 'progression'
+
+missing quests:
+- EVENT_SNAKE_HELP_WITH_THE_RITUAL
+- EVENT_MS_CHARM_ASK_ABOUT_FATHER
+- EVENT_GYPSY_BARON_ASK_ABOUT_ESMERALDA
+- EVENT_SNAKE_MET
+
