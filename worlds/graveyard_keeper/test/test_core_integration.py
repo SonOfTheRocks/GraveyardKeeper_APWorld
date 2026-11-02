@@ -56,3 +56,10 @@ def test_excluded_calculator_input_does_not_erase_other_dependencies():
     world.acquirable_item_keys = frozenset()
     declaration = And(CanGet("CRAFTING_STATION_ORGAN_WORKBENCH"), Has("Other rating input"))
     assert optional_dependency_names(declaration, world) == ("Other rating input",)
+
+
+def test_unknown_crafting_reference_still_raises_instead_of_becoming_false():
+    world = FakeWorld()
+    world.acquirable_item_keys = frozenset()
+    with pytest.raises(ValueError, match="Unknown item or event key"):
+        CanGet("EVENT_CAN_GET_MISSING_TEST_ITEM").resolve(world)

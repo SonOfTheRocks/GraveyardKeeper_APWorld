@@ -247,10 +247,9 @@ class CanGet(GKRule, game="Graveyard Keeper"):
         if available is not None:
             for key in self.item_keys:
                 acquisition_key = key.removeprefix(CRAFTING_EVENT_PREFIX)
-                if (key.startswith(CRAFTING_EVENT_PREFIX) or acquisition_key in data.items
-                        or CRAFTING_EVENT_PREFIX + acquisition_key in data.events):
-                    if acquisition_key not in available:
-                        return False_().resolve(world)
+                if acquisition_key not in available and (
+                        acquisition_key in data.items or CRAFTING_EVENT_PREFIX + acquisition_key in data.events):
+                    return False_().resolve(world)
         return build_collection_rule(self.item_keys).resolve(world)
 
 
