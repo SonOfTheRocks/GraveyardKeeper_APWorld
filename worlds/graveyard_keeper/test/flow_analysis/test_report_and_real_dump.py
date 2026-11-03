@@ -13,13 +13,12 @@ from ...tools.flow_analysis.parser import parse_graph
 from ...tools.flow_analysis.report import render_graph, render_readme
 from ...tools.flow_analysis.summaries import build_phrase_unlock_index, build_quest_summaries
 from ...tools.flow_analysis.values import ValueResolver, extract_options
+from ..flow_dump import FLOW_DUMP_ROOT
 
 from .helpers import FlowAnalysisTestCase, edge, node, stored, wrapper
 
 
-COMPANION_DUMP = Path(
-    r"C:\Users\Kai\RiderProjects\GraveyardKeepelago\GraveyardKeepelago\Dumps\FlowGraphExports\npc_astrologer.json"
-)
+COMPANION_DUMP = FLOW_DUMP_ROOT / "npc_astrologer.json"
 ACTRESS_DUMP = COMPANION_DUMP.with_name("npc_actress.json")
 CULTIST_DUMP = COMPANION_DUMP.with_name("npc_cultist.json")
 TAVERN_SKULL_DUMP = COMPANION_DUMP.with_name("tavern_skull.json")

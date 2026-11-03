@@ -7,11 +7,9 @@ from unittest.mock import MagicMock
 from ...data import data, load_json_data
 from ...models import QuestEventData
 from ...world import GraveyardKeeperWorld
+from ..flow_dump import FLOW_DUMP_ROOT
 
 
-FLOW_DUMP_ROOT = Path(
-    r"C:\Users\Kai\RiderProjects\GraveyardKeepelago\GraveyardKeepelago\Dumps\FlowGraphExports"
-)
 GAME_DATA_ROOT = Path(__file__).parents[2] / "dumps" / "raw"
 
 

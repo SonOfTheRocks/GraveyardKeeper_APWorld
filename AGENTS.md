@@ -6,7 +6,7 @@ This is an Archipelago core fork used to develop the **Graveyard Keeper APWorld*
 
 The APWorld owns seed-generation behavior: stable item/location definitions, regions, reachability and placement logic, options, goals, DLC filtering, slot data, WebHost metadata, and player documentation.
 
-The companion client lives in `C:\Users\Kai\RiderProjects\GraveyardKeepelago`. Names, IDs, slot data, goals, and other client-facing behavior form a shared contract and must be checked against that repository.
+The companion client lives in the separate `GraveyardKeepelago` repository. Names, IDs, slot data, goals, and other client-facing behavior form a shared contract and must be checked against that repository.
 
 ## Media policy
 
@@ -90,6 +90,8 @@ After setup, the focused suite is:
 ```bash
 python -m pytest worlds/graveyard_keeper/test
 ```
+
+The shared Graveyard Keeper Unittests (Multi) profile requires pytest-xdist.
 
 Run the narrowest relevant tests while iterating. At completion, report exact commands/results and any pre-existing failures.
 

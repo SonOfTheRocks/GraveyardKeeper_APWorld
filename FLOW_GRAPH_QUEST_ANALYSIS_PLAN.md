@@ -95,14 +95,6 @@ Nicht Bestandteil dieses Auftrags:
 
 ## 2. Repositories, Quellen und Arbeitsregeln
 
-APWorld-Root:
-
-`C:\Users\Kai\PycharmProjects\Archipelago_GraveyardKeeper`
-
-Client-Root:
-
-`C:\Users\Kai\RiderProjects\GraveyardKeepelago`
-
 Die Dump-Verzeichnisse liegen im **Unterprojekt** des Clients, nicht direkt im Repository-Root:
 
 - `GraveyardKeepelago/Dumps/FlowGraphExports/*.json`
@@ -121,9 +113,7 @@ Relevante APWorld-Dateien:
 
 Vor Umsetzung die AGENTS.md beider Repositories und gegebenenfalls zusätzliche Regeln im Zielverzeichnis lesen. Unrelated Änderungen erhalten. Keine IDs, Spielsemantik oder NPC-Zuordnung erraten.
 
-Vor Python-Skripten und Tests gemäß APWorld-Regeln Setup prüfen und vom Root `python ModuleUpdate.py` ausführen. Unterstütztes Python: mindestens 3.11.9, unter 3.14, kein Windows-Store-Python. Das Setup und die Tests wurden mit der Repository-`.venv` ausgeführt; die konkreten Resultate werden bei der Übergabe berichtet.
-
-`git status --short` wurde in der Sandbox wegen unterschiedlicher Repository-Eigentümer blockiert. Bei Bedarf den eng begrenzten Aufruf `git -c safe.directory=C:/Users/Kai/PycharmProjects/Archipelago_GraveyardKeeper status --short` verwenden; keine globale Git-Konfiguration ändern.
+Vor Python-Skripten und Tests gemäß APWorld-Regeln Setup prüfen und vom Root `python ModuleUpdate.py` ausführen. Unterstütztes Python: mindestens 3.11.9, unter 3.14, kein Windows-Store-Python.
 
 ## 3. Bereits belegte Struktur und Referenzfälle
 
@@ -168,10 +158,7 @@ Weitere Befunde aus demselben Dump:
 
 Das alte Visualisierungsskript kennt bereits die Zuordnung `out_i -> answers[i]`, UID-basierte Funktionsverweise und eine vereinfachte Eventdarstellung. Es ist eine Strukturhilfe, keine verbindliche Ausführungssemantik. Seine pauschale Entfernung von Steuerzeichen aus JSON nicht ungeprüft übernehmen.
 
-Im Client-Verzeichnis `GraveyardKeepelago/Dumps/Decompiled` ist lokal nur
-`Assembly-CSharp-firstpass` vorhanden. Der vollständige dekompilierte Haupt-Quellbaum wurde inzwischen unter
-`C:\Users\Kai\RiderProjects\Graveyard Keeper Asset Export\Scripts\Assembly-CSharp` gefunden. Dort sind
-insbesondere `GameSave.cs`, `MultiAnswerGUI.cs`, `TechDefinition.cs` und die FlowCanvas-Node-Klassen belegt.
+Im dekompilierten Haupt-Quellbaum `Scripts/Assembly-CSharp` sind insbesondere `GameSave.cs`, `MultiAnswerGUI.cs`, `TechDefinition.cs` und die FlowCanvas-Node-Klassen belegt.
 Die HTML-Indexdatei enthält sehr große eingebettete Datenzeilen: bei Suche keine vollständigen Trefferzeilen
 ausgeben.
 
@@ -622,7 +609,3 @@ Ein Offline-Export ohne Spielstart ist grundsätzlich möglich, da die Unity-Dat
 sind. Dafür muss ein Werkzeug wie AssetRipper/AssetStudio jedoch die exakt passenden Managed Assemblies
 verwenden, die benutzerdefinierten `MonoBehaviour`-/`ScriptableObject`-Layouts deserialisieren und
 PPtr-/Unity-Objektreferenzen erhalten. Der vorhandene reine Ressourcen-/Namensexport genügt dafür nicht.
-
-## 9. Einstieg für den umsetzenden Chat
-
-Dieses Dokument und die geltenden AGENTS.md lesen, Arbeitsstand prüfen, Setup durchführen. Anschließend die belegten Astrologen-Ausschnitte selbst nachvollziehen, Node-Inventar erstellen und offene Semantik gezielt prüfen. Mit Meilenstein 1 beginnen und bis zur Gesamtauswertung fortfahren. Nicht erneut grundsätzlich nach dem Ausgabeformat fragen: Markdown zur manuellen Übertragung ist ausdrücklich gewünscht.

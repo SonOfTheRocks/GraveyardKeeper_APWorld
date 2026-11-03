@@ -69,10 +69,10 @@ python -m unittest discover -s tests -t .
 Verified: all 12 shared-data tests passed.
 
 From the companion client repository, with `DOTNET_CLI_HOME` set to a writable
-local directory, the exact focused test invocation was:
+local directory, run the focused tests with:
 
 ```powershell
-dotnet test GraveyardKeepelago.Tests/GraveyardKeepelago.Tests.csproj --no-restore --filter 'FullyQualifiedName~ClientContractTests|FullyQualifiedName~ApItemColorTests' -p:PluginsPath=C:/Users/Kai/RiderProjects/GraveyardKeepelago/out/codex-progression-validation/ --verbosity quiet
+dotnet test GraveyardKeepelago.Tests/GraveyardKeepelago.Tests.csproj --no-restore --filter 'FullyQualifiedName~ClientContractTests|FullyQualifiedName~ApItemColorTests' -p:PluginsPath="$PWD/out/codex-progression-validation/" --verbosity quiet
 ```
 
 Verified: all 32 client tests passed. `PluginsPath` redirects the project's

@@ -2,6 +2,10 @@
 
 This developer tool reads Graveyard Keeper FlowGraph JSON exports and writes deterministic Markdown reports. It does not modify quest data or generate production IDs.
 
+The optional tests against real exports use the directory set in GK_FLOWGRAPH_DUMP_DIR.
+The default is worlds/graveyard_keeper/dumps/FlowGraphExports.
+Tests requiring absent exports are skipped.
+
 From the repository root:
 
 ```powershell
