@@ -175,7 +175,6 @@ def load_items() -> Dict[str, ItemData]:
                 _str_to_item_classification(item_json["classification"]),
                 item_json.get("amount", 1),
                 DLCType.from_string(item_json["dlc"]),
-                item_json.get("id"),
             )
     return items
 

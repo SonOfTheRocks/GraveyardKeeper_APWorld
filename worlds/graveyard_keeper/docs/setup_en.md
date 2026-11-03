@@ -36,9 +36,9 @@ The seed selects either the Portal goal or a required graveyard rating. A gravey
 rating of zero completes immediately once the Archipelago save is ready. Completion
 is checked again after loading a save or reconnecting.
 
-Keep the client version compatible with your seed and save. Data version 8 changes
-research-check IDs from earlier development versions, so those earlier seeds must be
-regenerated when moving to this version.
+Keep the client data version compatible with your seed and save. The current
+APWorld generates data version 9 seeds. Use a matching client for existing
+seeds, or generate a new seed and start a new save.
 
 For further installation and troubleshooting details, see the
 [client player guide](https://github.com/SonOfTheRocks/GraveyardKeepelago/blob/main/docs/player-guide.md).

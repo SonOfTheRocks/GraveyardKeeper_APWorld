@@ -1,4 +1,4 @@
-from BaseClasses import CollectionState
+from BaseClasses import CollectionState, MultiWorld, Region
 from unittest.mock import patch
 
 from .bases import GraveyardKeeperTestBase
@@ -6,11 +6,25 @@ from .fakes import FakeWorld
 from .rule_evaluation import make_all_items_state
 from ..data import data, load_json_data, active_research_locations
 from ..logic.custom_rules import CanComplete
+from ..locations import create_all_locations
 
 
 class TestResearchSources(GraveyardKeeperTestBase):
     run_default_tests = False
     options = {'stranger_sins': True, 'game_of_crone': True, 'better_save_soul': True}
+
+    def test_created_checks_use_the_public_address_map(self):
+        region_key, region_data = next(
+            (key, region) for key, region in data.regions.items() if region.locations
+        )
+        region = Region(region_data.label, self.player, MultiWorld(1))
+        addresses = {name: code + 1000 for name, code in self.world.location_name_to_id.items()}
+        with patch.object(self.world, "location_name_to_id", addresses):
+            create_all_locations(self.world, {region_key: region})
+
+        checks = {location.name: location.address for location in region.locations if location.address is not None}
+        self.assertEqual({data.locations[key].label: addresses[data.locations[key].label]
+                          for key in region_data.locations}, checks)
 
     def test_only_active_checks_are_generated_and_pool_still_fits(self):
         locations = [location for location in self.multiworld.get_locations(self.player)

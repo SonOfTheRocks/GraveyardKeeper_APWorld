@@ -37,10 +37,9 @@ def test_traps_replace_only_filler_and_preserve_pool_size(percentage, dlcs):
 ))
 def test_trap_has_an_explicit_id_and_matching_shared_grant(key, code, trap_id):
     trap = data.items[key]
-    assert trap.code == ITEM_NAME_TO_ID[trap.label] == code
+    assert ITEM_NAME_TO_ID[trap.label] == code
     assert trap.classification == ItemClassification.trap
     assert load_json_data("item_grants.json")[key] == {"type": "trap", "trap_id": trap_id}
-    assert load_json_data("manifest.json")["data_version"] == 8
 
 
 def test_only_specific_traps_exist_in_the_public_contract():
@@ -51,20 +50,11 @@ def test_only_specific_traps_exist_in_the_public_contract():
     assert "ITEM_MONSTERS_TRAP" not in load_json_data("item_grants.json")
 
 
-def test_implicit_legacy_ids_are_independent_of_explicit_trap_insertion():
-    # The new item may be enumerated anywhere in the directory without moving
-    # the historical IDs (which did not include an explicit-ID item).
-    legacy = [item for item in data.items.values() if item.code is None]
-    assert len(legacy) == 486
-    assert {item.label: index for index, item in enumerate(legacy, 1)} == {
-        item.label: ITEM_NAME_TO_ID[item.label] for item in legacy}
-
-
 def test_current_item_and_location_ids_are_deterministic():
     # Item IDs retain their existing assignments. The location snapshot is the
     # deliberately cleaned pre-release v8 contract, without 65 unused addresses.
     mappings = (
-        ({item.label: ITEM_NAME_TO_ID[item.label] for item in data.items.values() if item.code is None},
+        ({item.label: ITEM_NAME_TO_ID[item.label] for item in data.items.values() if item.classification != ItemClassification.trap},
          "f41fbc1e0adefad186fba4fd21fc1f8769156935b6ba19f236573d2c43dca160"),
         (GraveyardKeeperWorld.location_name_to_id,
          "999a039e2cfaf4b229cb270a12a936b253dcfb6c6ede7fada2d2f68672acc72b"),

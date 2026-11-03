@@ -89,15 +89,3 @@ class TestStableItemIds(unittest.TestCase):
         for invalid in (True, False, 0, -1, 1.0, "1", None):
             with self.subTest(value=invalid), self.assertRaisesRegex(ValueError, "positive integer"):
                 items._build_item_name_to_id(data_module.data.items, stable_ids | {key: invalid})
-
-    def test_shared_explicit_ids_cannot_disagree_with_the_network_table(self):
-        stable_ids = data_module.load_json_data("item_ids.json")
-        key = "ITEM_BATS_TRAP"
-        with self.assertRaisesRegex(ValueError, "conflicts with shared explicit ID"):
-            items._build_item_name_to_id(data_module.data.items, stable_ids | {key: 490})
-        definitions = dict(data_module.data.items)
-        key = "ITEM_BP_BURNING_WITCH"
-        definitions[key] = replace(definitions[key], code=True)
-        with self.assertRaisesRegex(ValueError, "conflicts with shared explicit ID"):
-            items._build_item_name_to_id(definitions, stable_ids)
-

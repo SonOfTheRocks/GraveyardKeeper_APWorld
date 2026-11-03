@@ -101,7 +101,6 @@ class ItemData:
     classification: ItemClassification
     amount: int
     dlc: DLCType = DLCType.BASE_GAME
-    code: int | None = None
 
 @dataclass
 class ReverseItemData:

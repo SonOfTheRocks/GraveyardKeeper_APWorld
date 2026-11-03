@@ -43,8 +43,6 @@ def _build_item_name_to_id(item_definitions: dict[str, ItemData],
             raise ValueError(f"Graveyard Keeper item IDs must be unique: {key} reuses {code}")
         if item.label in result:
             raise ValueError(f"Graveyard Keeper item names must be unique: {item.label!r}")
-        if item.code is not None and (type(item.code) is not int or item.code != code):
-            raise ValueError(f"Graveyard Keeper item ID for {key} conflicts with shared explicit ID {item.code}")
         used_ids.add(code)
         result[item.label] = code
     return result
