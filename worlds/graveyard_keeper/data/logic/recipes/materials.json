@@ -117,7 +117,7 @@
   ],
   "ITEM_STONE_REPAIR_KIT": [
     {
-      "crafting_stations": ["CRAFTING_STATION_STONE_CUTTER", "CRAFTING_STATION_STONE_CUTTER_2"],
+      "crafting_stations": ["CRAFTING_STATION_STONE_CUTTER"],
       "recipe_required": "ITEM_LEARN_CREATE_STONE_REPAIR_KIT",
       "materials_required": ["ITEM_A_PIECE_OF_STONE", "ITEM_SIMPLE_IRON_PARTS", "ITEM_CLAY"]
     }

@@ -108,13 +108,12 @@ class TestSacrificeRating(TestCase):
                 for missing in labels:
                     self.assertFalse(rule(FakeState([label for label in labels if label != missing])))
 
-    def test_stone_repair_kit_requires_recipe_materials_and_either_stonecutter(self):
+    def test_stone_repair_kit_requires_recipe_materials_and_first_stonecutter(self):
         recipe, = data.recipes["ITEM_STONE_REPAIR_KIT"]
         self.assertEqual("ITEM_LEARN_CREATE_STONE_REPAIR_KIT", recipe.required_recipe_item)
         self.assertEqual(frozenset({"ITEM_A_PIECE_OF_STONE", "ITEM_SIMPLE_IRON_PARTS", "ITEM_CLAY"}),
                          recipe.ingredients)
-        self.assertEqual(frozenset({"CRAFTING_STATION_STONE_CUTTER", "CRAFTING_STATION_STONE_CUTTER_2"}),
-                         recipe.workstations)
+        self.assertEqual(frozenset({"CRAFTING_STATION_STONE_CUTTER"}), recipe.workstations)
         rule = CanCraftRecipe(recipe).resolve(FakeWorld())
         labels = [data.events[CRAFTING_EVENT_PREFIX + key].item_label for key in recipe.ingredients]
         labels.append(data.items[recipe.required_recipe_item].label)
