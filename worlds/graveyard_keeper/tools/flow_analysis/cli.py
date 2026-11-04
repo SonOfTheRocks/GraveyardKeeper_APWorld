@@ -61,7 +61,7 @@ def main(argv: list[str] | None = None) -> int:
                             phrase_unlocks=build_phrase_unlock_index(all_analyses),
                             game_data_scripts=build_game_data_script_index(args.game_data),
                             node_names=load_quest_node_names(
-                                args.apworld_data / "quest_node_names.json" if args.apworld_data else None))
+                                Path(__file__).parent / "data" / "quest_node_names.json"))
     if previously_owned:
         for path in [*args.output.glob("*.md"), *args.output.glob("*.html")]:
             if path.name not in written:

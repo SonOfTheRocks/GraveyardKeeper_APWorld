@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from unittest.mock import patch
 
+from ...tools.flow_analysis.cli import main
 from ...tools.flow_analysis.analysis import analyze_graph
 from ...tools.flow_analysis.graph_report import (
     build_game_data_script_index, build_quest_graph_data, load_quest_node_names,
@@ -27,10 +29,22 @@ INQUISITOR_DUMP = COMPANION_DUMP.with_name("npc_inquisitor.json")
 GYPSY_DUMP = COMPANION_DUMP.with_name("npc_gypsy.json")
 BISHOP_DUMP = COMPANION_DUMP.with_name("npc_bishop.json")
 CRAFTING_SKULL_DUMP = COMPANION_DUMP.with_name("crafting_skull_3.json")
-QUEST_NODE_NAMES = Path(__file__).parents[2] / "data" / "quest_node_names.json"
+QUEST_NODE_NAMES = Path(__file__).parents[2] / "tools" / "flow_analysis" / "data" / "quest_node_names.json"
 
 
 class TestFlowGraphReports(FlowAnalysisTestCase):
+    def test_cli_loads_curated_names_without_apworld_data(self) -> None:
+        input_dir = self.temporary_path / "input"
+        output_dir = self.temporary_path / "output"
+        input_dir.mkdir()
+        output_dir.mkdir()
+        with patch("worlds.graveyard_keeper.tools.flow_analysis.cli.write_reports",
+                   return_value=set()) as write:
+            self.assertEqual(0, main([str(input_dir), str(output_dir)]))
+        expected = load_quest_node_names(QUEST_NODE_NAMES)
+        self.assertTrue(expected)
+        self.assertEqual(expected, write.call_args.kwargs["node_names"])
+
     def test_real_curated_node_names_are_valid_analyzer_data(self) -> None:
         raw_names = json.loads(QUEST_NODE_NAMES.read_text(encoding="utf-8-sig"))
         loaded_names = load_quest_node_names(QUEST_NODE_NAMES)
