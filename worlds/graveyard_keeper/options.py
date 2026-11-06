@@ -75,7 +75,7 @@ class TrapPercentage(Range):
     """Percentage of filler items replaced with monster traps.
 
     Useful and progression items are never replaced. A trap spawns a small group
-    of easy monsters near the player once normal gameplay resumes. Zero disables
+    of monsters near the player once normal gameplay resumes. Zero disables
     generated traps. The percentage is rounded down to a whole item count.
     """
     display_name = "Trap Percentage"
