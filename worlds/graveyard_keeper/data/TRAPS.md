@@ -5,8 +5,9 @@ Set the player option `trap_percentage` to an integer from 0 to 100:
 ```yaml
 Graveyard Keeper:
   trap_percentage: 25
-  bats_trap_weight: 50
-  green_slime_trap_weight: 50
+  trap_weights:
+    Bats Trap: 1
+    Green Slime Trap: 1
 ```
 
 The default is 0 (disabled). The percentage applies to filler copies after the
@@ -17,10 +18,12 @@ Recipes classified as filler may be replaced. Pool size is unchanged.
 
 `Bats Trap` spawns four bats, and `Green Slime Trap` spawns four green slimes near
 the receiving player. The seed chooses the item type using relative weights
-`bats_trap_weight` and `green_slime_trap_weight` (0–100, default 50 each). A zero
-weight disables that type. Weights 1/3 and 25/75 are equivalent. If traps are
-enabled, at least one weight must be positive; both zero produces a generation
-error. When `trap_percentage` is 0, both weights may be zero.
+`trap_weights` (nonnegative integers, default 1 for each type). A zero weight
+or an omitted entry disables that type. Weights 1/3 and 25/75 are equivalent.
+If traps are enabled, at least one weight must be positive; an empty mapping
+or all-zero weights produce a generation error. When `trap_percentage` is 0,
+all weights may be zero. The former separate `bats_trap_weight` and
+`green_slime_trap_weight` YAML options have been replaced by this mapping.
 
 The client queues traps while normal gameplay
 is unavailable and spaces activations by at least ten seconds. Pending traps

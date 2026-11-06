@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Toggle, OptionGroup, PerGameCommonOptions, Choice, Range
+from Options import Toggle, OptionGroup, PerGameCommonOptions, Choice, Range, OptionCounter
 
 
 class Goal(Choice):
@@ -84,28 +84,18 @@ class TrapPercentage(Range):
     default = 0
 
 
-class BatsTrapWeight(Range):
-    """Relative weight of Bats Trap when generating traps. Each spawns four bats.
+class TrapWeights(OptionCounter):
+    """Relative weights of the trap types added to the item pool.
 
-    Zero disables this trap type. 50/50 gives both types equal chances; 100/0
-    generates only bats. At least one weight must be positive when traps are enabled.
+    Bats Trap spawns four bats. Green Slime Trap spawns four green slimes.
+    Set a weight to 0 to disable that type. Omitted types also have weight 0.
+    Weights do not need to add up to 100. At least one weight must be positive
+    when Trap Percentage is above 0.
     """
-    display_name = "Bats Trap Weight"
-    range_start = 0
-    range_end = 100
-    default = 50
-
-
-class GreenSlimeTrapWeight(Range):
-    """Relative weight of Green Slime Trap. Each spawns four green slimes.
-
-    Zero disables this trap type. Weights are relative and do not need to add up
-    to 100. At least one weight must be positive when traps are enabled.
-    """
-    display_name = "Green Slime Trap Weight"
-    range_start = 0
-    range_end = 100
-    default = 50
+    display_name = "Trap Weights"
+    valid_keys = ("Bats Trap", "Green Slime Trap")
+    min = 0
+    default = {"Bats Trap": 1, "Green Slime Trap": 1}
 
 
 class GameOfCrone(Toggle):
@@ -130,8 +120,7 @@ class GraveyardKeeperOptions(PerGameCommonOptions):
     graveyard_goal_rating: GraveyardGoalRating
     vendor_logic: VendorLogic
     trap_percentage: TrapPercentage
-    bats_trap_weight: BatsTrapWeight
-    green_slime_trap_weight: GreenSlimeTrapWeight
+    trap_weights: TrapWeights
     stranger_sins: StrangerSins
     game_of_crone: GameOfCrone
     better_save_soul: BetterSaveSoul
@@ -139,7 +128,7 @@ class GraveyardKeeperOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup("Goal Options", [Goal, GraveyardGoalRating]),
     OptionGroup("Logic Options", [VendorLogic]),
-    OptionGroup("Trap Options", [TrapPercentage, BatsTrapWeight, GreenSlimeTrapWeight]),
+    OptionGroup("Trap Options", [TrapPercentage, TrapWeights]),
     OptionGroup("DLCs", [StrangerSins, GameOfCrone, BetterSaveSoul])
 ]
 

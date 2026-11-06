@@ -105,7 +105,7 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
     def fill_slot_data(self):
         slot_data = self.options.as_dict(
             "goal", "graveyard_goal_rating", "stranger_sins", "game_of_crone", "better_save_soul", "trap_percentage",
-            "bats_trap_weight", "green_slime_trap_weight"
+            "trap_weights"
         )
         slot_data["client_version"] = WORLD_VERSION
         slot_data["graveyard_keeper_data_version"] = load_json_data("manifest.json")["data_version"]

@@ -4,11 +4,13 @@ import json
 from itertools import product
 import pytest
 
-from BaseClasses import ItemClassification
+from BaseClasses import ItemClassification, PlandoOptions
 from Fill import distribute_items_restrictive
 from .test_progression import generate_worlds, ALL_DLCS
 from ..data import data, load_json_data
 from ..items import ITEM_NAME_TO_ID
+from ..options import TrapWeights
+from Options import OptionError
 from ..world import GraveyardKeeperWorld
 
 
@@ -68,19 +70,18 @@ def test_current_item_and_location_ids_are_deterministic():
 @pytest.mark.parametrize("bats,slimes,expected", ((100, 0, "Bats Trap"), (0, 100, "Green Slime Trap")))
 def test_zero_weight_excludes_that_trap_type(bats, slimes, expected, dlcs):
     multiworld = generate_worlds(dict(zip(ALL_DLCS, dlcs)) | {
-        "trap_percentage": 100, "bats_trap_weight": bats, "green_slime_trap_weight": slimes})
+        "trap_percentage": 100, "trap_weights": {"Bats Trap": bats, "Green Slime Trap": slimes}})
     traps = [item.name for item in multiworld.itempool if item.trap]
     assert traps and set(traps) == {expected}
     slot = multiworld.worlds[1].fill_slot_data()
-    assert slot["bats_trap_weight"] == bats
-    assert slot["green_slime_trap_weight"] == slimes
+    assert slot["trap_weights"] == {"Bats Trap": bats, "Green Slime Trap": slimes}
 
 
 def test_relative_weights_change_the_mix_without_changing_total_traps():
     pools = []
     for bats, slimes in ((90, 10), (10, 90)):
         world = generate_worlds(ALL_DLCS | {
-            "trap_percentage": 100, "bats_trap_weight": bats, "green_slime_trap_weight": slimes})
+            "trap_percentage": 100, "trap_weights": {"Bats Trap": bats, "Green Slime Trap": slimes}})
         pools.append(Counter(item.name for item in world.itempool if item.trap))
     assert pools[0]["Bats Trap"] > pools[0]["Green Slime Trap"] > 0
     assert pools[1]["Green Slime Trap"] > pools[1]["Bats Trap"] > 0
@@ -88,18 +89,43 @@ def test_relative_weights_change_the_mix_without_changing_total_traps():
 
 
 def test_enabled_traps_require_a_positive_weight_but_disabled_traps_do_not():
-    options = ALL_DLCS | {"bats_trap_weight": 0, "green_slime_trap_weight": 0}
-    with pytest.raises(ValueError, match="both 0"):
+    options = ALL_DLCS | {"trap_weights": {"Bats Trap": 0, "Green Slime Trap": 0}}
+    with pytest.raises(ValueError, match="no positive weights"):
         generate_worlds(options | {"trap_percentage": 25})
     disabled = generate_worlds(options | {"trap_percentage": 0})
     assert not any(item.trap for item in disabled.itempool)
+
+
+@pytest.mark.parametrize("weights", ({}, {"Bats Trap": 0}))
+def test_empty_or_zero_weights_require_traps_to_be_disabled(weights):
+    with pytest.raises(ValueError, match="no positive weights"):
+        generate_worlds(ALL_DLCS | {"trap_percentage": 25, "trap_weights": weights})
+    disabled = generate_worlds(ALL_DLCS | {"trap_weights": weights})
+    assert not any(item.trap for item in disabled.itempool)
+
+
+def test_omitted_trap_type_is_disabled_and_weights_can_exceed_one_hundred():
+    world = generate_worlds(ALL_DLCS | {
+        "trap_percentage": 100, "trap_weights": {"Bats Trap": 200},
+    })
+    assert {item.name for item in world.itempool if item.trap} == {"Bats Trap"}
+    assert world.worlds[1].fill_slot_data()["trap_weights"] == {"Bats Trap": 200}
+
+
+@pytest.mark.parametrize("weights", (
+    {"Unknown Trap": 1}, {"Bats Trap": -1},
+))
+def test_trap_weight_validation_rejects_unknown_types_and_negative_weights(weights):
+    option = TrapWeights.from_any(weights)
+    with pytest.raises(OptionError):
+        option.verify(GraveyardKeeperWorld, "Player 1", PlandoOptions(0))
 
 
 def test_weights_are_relative_and_do_not_need_to_sum_to_one_hundred():
     pools = []
     for bats, slimes in ((1, 3), (25, 75)):
         world = generate_worlds(ALL_DLCS | {
-            "trap_percentage": 100, "bats_trap_weight": bats, "green_slime_trap_weight": slimes})
+            "trap_percentage": 100, "trap_weights": {"Bats Trap": bats, "Green Slime Trap": slimes}})
         pools.append([item.name for item in world.itempool])
     assert pools[0] == pools[1]
 

@@ -16,13 +16,6 @@ FILLER_ITEM_NAMES = [
     "Blue Research Points",
 ]
 
-# Each generated trap selects a specific monster type.
-TRAP_WEIGHT_OPTIONS = {
-    "ITEM_BATS_TRAP": "bats_trap_weight",
-    "ITEM_GREEN_SLIME_TRAP": "green_slime_trap_weight",
-}
-
-
 def _build_item_name_to_id(item_definitions: dict[str, ItemData],
                            stable_ids: dict[str, int]) -> dict[str, int]:
     if not isinstance(stable_ids, dict):
@@ -174,11 +167,13 @@ def create_all_items(world: GraveyardKeeperWorld) -> None:
     if percentage:
         from .regions import enabled_dlcs
         allowed_dlcs = enabled_dlcs(world)
-        weighted_traps = [(data.items[key].label, getattr(world.options, option).value)
-                          for key, option in TRAP_WEIGHT_OPTIONS.items()
-                          if data.items[key].dlc in allowed_dlcs and getattr(world.options, option).value > 0]
+        trap_weights = world.options.trap_weights.value
+        weighted_traps = [(item.label, trap_weights.get(item.label, 0))
+                          for item in data.items.values()
+                          if item.classification == ItemClassification.trap
+                          and item.dlc in allowed_dlcs and trap_weights.get(item.label, 0) > 0]
         if not weighted_traps:
-            raise ValueError("trap_percentage is enabled, but bats_trap_weight and green_slime_trap_weight are both 0. "
+            raise ValueError("trap_percentage is enabled, but trap_weights has no positive weights. "
                              "Set at least one trap weight above 0, or disable traps with trap_percentage: 0.")
         trap_names, weights = zip(*weighted_traps)
         filler_indexes = [index for index, item in enumerate(item_pool)
