@@ -1,0 +1,407 @@
+{
+  "extension_item": "ITEM_GRAVEYARD_SCROLL",
+  "church_events": {
+    "OPEN": "EVENT_CHURCH_OPEN",
+    "BIG": "EVENT_BISHOP_UPGRADE_TO_BIG_CHURCH",
+    "CATHEDRAL": "EVENT_BISHOP_REPORT_CATHEDRAL_UPGRADE"
+  },
+  "statue_event": "EVENT_BISHOP_BUILD_STATUE",
+  "statue_points": 5,
+  "fences": {
+    "WOODEN_GRAVEYARD_FENCE": 10,
+    "STONE_GRAVEYARD_FENCE": 20
+  },
+  "decorations": {
+    "LAWN": {
+      "lawn 2x3": 2,
+      "lawn 2x4": 3,
+      "lawn 2x6": 4
+    },
+    "MARBLE_FLAGSTONES": {
+      "lawn 2x4": 3
+    },
+    "FLOWERBED": {
+      "lantern": 2
+    },
+    "LANTERN": {
+      "lantern": 4
+    },
+    "WOODEN_PRAYER_STATION": {
+      "lantern": 2
+    },
+    "STONE_PRAYER_STATION": {
+      "lantern": 4
+    },
+    "STONE_COLUMBARIUM": {
+      "columbarium": 12
+    },
+    "MARBLE_COLUMBARIUM": {
+      "columbarium": 20
+    }
+  },
+  "patches": {
+    "l_top_left": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 2,
+          "grave": 4,
+          "lawn 2x4": 1,
+          "lantern": 1
+        },
+        {
+          "columbarium": 2,
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "columbarium": 4
+        },
+        {
+          "grave": 6,
+          "lawn 2x6": 1,
+          "lantern": 1
+        },
+        {
+          "grave": 6,
+          "lawn 2x6": 1,
+          "lawn 2x4": 1
+        },
+        {
+          "lawn 2x6": 4,
+          "lawn 2x4": 4
+        }
+      ]
+    },
+    "l_top_middle": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 2,
+          "grave": 4
+        },
+        {
+          "columbarium": 2,
+          "lawn 2x6": 1,
+          "lawn 2x4": 1
+        },
+        {
+          "grave": 6
+        },
+        {
+          "lawn 2x6": 3,
+          "lawn 2x4": 3
+        }
+      ]
+    },
+    "l_center_left": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 2
+        },
+        {
+          "grave": 4,
+          "lawn 2x4": 1,
+          "lantern": 1
+        },
+        {
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "lawn 2x6": 4
+        }
+      ]
+    },
+    "l_center_middle": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 1,
+          "lawn 2x6": 1
+        },
+        {
+          "columbarium": 1,
+          "grave": 2
+        },
+        {
+          "grave": 4
+        },
+        {
+          "lawn 2x6": 3
+        }
+      ]
+    },
+    "l_bot_left": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 2
+        },
+        {
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "lawn 2x6": 4
+        }
+      ]
+    },
+    "l_bot_right": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 3,
+          "lawn 2x6": 1
+        },
+        {
+          "grave": 10
+        },
+        {
+          "lawn 2x6": 7
+        }
+      ]
+    },
+    "r_top_left": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "grave": 6,
+          "lantern": 2,
+          "lawn 2x4": 1
+        },
+        {
+          "columbarium": 2,
+          "grave": 2,
+          "lantern": 1
+        },
+        {
+          "lawn 2x3": 2,
+          "lantern": 2,
+          "lawn 2x6": 2,
+          "lawn 2x4": 1
+        },
+        {
+          "lawn 2x3": 2,
+          "lantern": 1,
+          "lawn 2x6": 4
+        }
+      ]
+    },
+    "r_top_right": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "grave": 2,
+          "lantern": 1
+        },
+        {
+          "lawn 2x3": 2,
+          "lantern": 1
+        }
+      ]
+    },
+    "l_top_right": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 2,
+          "grave": 4,
+          "lawn 2x4": 1,
+          "lantern": 1
+        },
+        {
+          "columbarium": 2,
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "columbarium": 4
+        },
+        {
+          "grave": 6,
+          "lawn 2x6": 1,
+          "lantern": 1
+        },
+        {
+          "grave": 6,
+          "lawn 2x6": 1,
+          "lawn 2x4": 1
+        },
+        {
+          "lawn 2x6": 4,
+          "lawn 2x4": 4
+        }
+      ]
+    },
+    "l_center_right": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 2
+        },
+        {
+          "grave": 4,
+          "lawn 2x4": 1,
+          "lantern": 1
+        },
+        {
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "lawn 2x6": 4
+        }
+      ]
+    },
+    "l_bot_middle": {
+      "requires_extension": true,
+      "configurations": [
+        {
+          "columbarium": 1,
+          "lawn 2x6": 1
+        },
+        {
+          "columbarium": 1,
+          "grave": 2
+        },
+        {
+          "grave": 4
+        },
+        {
+          "lawn 2x6": 3
+        }
+      ]
+    },
+    "r_top_middle": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 2,
+          "grave": 4
+        },
+        {
+          "columbarium": 2,
+          "lawn 2x6": 1,
+          "lawn 2x4": 1
+        },
+        {
+          "grave": 6
+        },
+        {
+          "lawn 2x6": 3,
+          "lawn 2x4": 3
+        }
+      ]
+    },
+    "r_center_left": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 2
+        },
+        {
+          "grave": 4,
+          "lawn 2x4": 1,
+          "lantern": 1
+        },
+        {
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "lawn 2x6": 4
+        }
+      ]
+    },
+    "r_center_middle": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 1,
+          "lawn 2x6": 1
+        },
+        {
+          "columbarium": 1,
+          "grave": 2
+        },
+        {
+          "grave": 4
+        },
+        {
+          "lawn 2x6": 3
+        }
+      ]
+    },
+    "r_center_right": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 2
+        },
+        {
+          "grave": 4,
+          "lawn 2x4": 1,
+          "lantern": 1
+        },
+        {
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "lawn 2x6": 4
+        }
+      ]
+    },
+    "r_bot_left": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 3,
+          "lawn 2x6": 1
+        },
+        {
+          "grave": 10
+        },
+        {
+          "lawn 2x6": 7
+        }
+      ]
+    },
+    "r_bot_middle": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 1,
+          "lawn 2x6": 1
+        },
+        {
+          "columbarium": 1,
+          "grave": 2
+        },
+        {
+          "grave": 4
+        },
+        {
+          "lawn 2x6": 3
+        }
+      ]
+    },
+    "r_bot_right": {
+      "requires_extension": false,
+      "configurations": [
+        {
+          "columbarium": 2
+        },
+        {
+          "grave": 4,
+          "lawn 2x6": 1
+        },
+        {
+          "lawn 2x6": 4
+        }
+      ]
+    }
+  }
+}
