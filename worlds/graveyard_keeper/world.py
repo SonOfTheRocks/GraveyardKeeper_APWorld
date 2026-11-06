@@ -1,10 +1,10 @@
+import logging
 import pkgutil
 from typing import Dict, TYPE_CHECKING
 
 import orjson
 
 from BaseClasses import Region
-from Options import OptionError
 from rule_builder.cached_world import CachedRuleBuilderWorld
 from . import items, locations, regions, rules, web_world
 from .data import load_json_data
@@ -86,10 +86,14 @@ class GraveyardKeeperWorld(CachedRuleBuilderWorld):
                    if state.can_reach_region(data.regions["REGION_OLD_GRAVEYARD"].label, self.player) else 0)
         dlcs = ", ".join(f"{name}={getattr(self.options, name).value}"
                          for name in ("stranger_sins", "game_of_crone", "better_save_soul"))
-        raise OptionError(
-            f"graveyard_goal_rating={self.options.graveyard_goal_rating.value} is unreachable for "
-            f"{self.multiworld.get_player_name(self.player)}: the modeled reachable maximum with all "
-            f"available items is {maximum} ({dlcs}). Lower graveyard_goal_rating or change the DLC options."
+        requested = self.options.graveyard_goal_rating.value
+        self.options.graveyard_goal_rating.value = maximum
+        from .logic.goal_rules import HasGraveyardRating
+        self.set_completion_rule(HasGraveyardRating(maximum))
+        logging.warning(
+            "Graveyard Keeper: reducing graveyard_goal_rating from %s to the modeled reachable "
+            "maximum %s for %s (%s).",
+            requested, maximum, self.multiworld.get_player_name(self.player), dlcs,
         )
 
     def create_item(self, name: str) -> items.GraveyardKeeperItem:

@@ -95,9 +95,10 @@ The option's accepted input range remains 0–2484. Not every value is reachable
 with every DLC combination under the current authored layouts and corpse model.
 After every player's item pool, rules and entrances exist, `generate_basic`
 collects all available items and sweeps only reachable events. An unreachable
-Graveyard target raises an option error naming the target, modeled reachable
-maximum and selected DLCs, before item placement or output. This does not grant
-free events or weaken the completion rule. The diagnostic maximum describes
+Graveyard target is reduced to the modeled reachable maximum before item placement
+or output. A warning logs the requested and effective targets, player and selected
+DLCs. Both the completion rule and the rating serialized to the client use the
+effective target. The modeled maximum describes
 the implemented model, not an exhaustive proof of the native game's maximum.
 
 The supported Archipelago core starts at 0.6.9, the version against which the

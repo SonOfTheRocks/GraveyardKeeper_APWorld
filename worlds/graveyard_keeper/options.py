@@ -24,8 +24,9 @@ class GraveyardGoalRating(Range):
     Increasing this value will require more progress in improving your graveyard,
     including better corpse preparation, decorations, upgrading the church and buying the graveyard extension.
 
-    Generation rejects a target that the selected DLCs and available items
-    cannot reach under the modeled graveyard layouts. Zero completes immediately.
+    Targets above the reachable maximum for the selected DLCs and available items
+    are automatically reduced to that maximum under the modeled graveyard layouts.
+    The adjustment is logged. Zero completes immediately.
     This option only has an effect if the goal is set to "Graveyard".
     """
     display_name = "Graveyard Goal Rating"
