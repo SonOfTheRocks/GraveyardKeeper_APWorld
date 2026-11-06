@@ -37,20 +37,21 @@ class GraveyardGoalRating(Range):
 
 class VendorLogic(Choice):
     """
-    Determines whether buying items from vendors is considered in logic.
+    Determines when the randomizer may require purchasing items from vendors.
 
-    Out of Logic: Buying optional vendor items is never required. If buying a
-    particular vendor item is mandatory for game progression, the purchase is
-    considered in logic once that item's vendor is reachable and the church is
-    open.
+    Out of Logic: Purchases are only required for items whose only modeled
+    source is a vendor, such as Silk or a Whetstone. These purchases require
+    access to the vendor and a reliable source of income.
 
-    Require Money Source: Buying vendor items is considered in logic once their
-    vendor is reachable and the church is open. The open church is currently
-    used to represent access to a reliable source of money.
+    Require Money Source: Purchases may be required once the vendor is
+    accessible and a reliable source of income is available.
 
-    Always Available: Buying vendor items is considered in logic as soon as
-    their vendor is reachable. The player still needs enough money to make the
-    purchase, but access to a money source is not required by logic.
+    Always Available: Purchases may be required as soon as the vendor is
+    accessible, without requiring a source of income.
+
+    A reliable source of income currently means having the church open.
+    Individual prices and your current money are not tracked by logic.
+    You will still need to earn enough money to make required purchases.
     """
     display_name = "Vendor Logic"
 
