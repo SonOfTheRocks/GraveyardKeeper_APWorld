@@ -1,0 +1,62 @@
+# FlowGraph quest analysis
+
+This developer tool reads Graveyard Keeper FlowGraph JSON exports and writes deterministic Markdown reports. It does not modify quest data or generate production IDs.
+
+The optional tests against real exports use the directory set in GK_FLOWGRAPH_DUMP_DIR.
+The default is worlds/graveyard_keeper/dumps/FlowGraphExports.
+Tests requiring absent exports are skipped.
+
+From the repository root:
+
+```powershell
+python worlds/graveyard_keeper/tools/analyze_flow_graphs.py `
+  C:/path/to/GraveyardKeepelago/GraveyardKeepelago/Dumps/FlowGraphExports `
+  worlds/graveyard_keeper/dumps/quest_analysis `
+  --apworld-data worlds/graveyard_keeper/data `
+  --game-data worlds/graveyard_keeper/dumps/raw
+```
+
+The companion client's `Dump` build exports the required source material directly during
+`Plugin.Awake()`, so reaching the main menu is sufficient; loading a save is not required.
+`BepInEx/FlowGraphExports` contains both ordinary `FlowCanvas` scripts and files named
+`macro__*.json` for `FlowMacros`. Every graph also contains `_unityObjectReferences`, which
+maps serialized numeric references such as `MacroNodeWrapper._macro` back to their Unity
+object type and name. `BepInEx/VanillaGameDataExports` is written before the APWorld client
+can replace technology unlock lists. A failure while serializing one heterogeneous
+`GameBalance` field is logged per field and does not abort the remaining exports.
+
+The Unity data are not encrypted and can in principle also be exported offline from
+`resources.assets`/asset bundles. Such an exporter must load the matching managed assemblies
+to reconstruct custom `MonoBehaviour`/`ScriptableObject` layouts and must retain Unity object
+references. A resource-name-only AssetRipper export is insufficient for FlowMacro analysis.
+
+Useful filters are `--graph`/`--npc` (both filter graph filenames only), `--item`, `--node`, and `--target-type item|relation`. Analysis bounds can be changed with `--max-paths`, `--max-depth`, and `--max-states`. Add `--details` only when technical references, evidence paths, and uncertainties are needed.
+
+The parser first uses strict standard JSON. For the known Unity-exporter defect of literal control characters inside strings, it retries with Python's string-preserving `strict=False` decoder and records the involved code points as a parser diagnostic. It never strips control characters globally; all other malformed JSON is reported in the generated overview. Connected data inputs take precedence over serialized local/default values. Identical connections are deduplicated. `CustomFunctionCall._sourceOutputUID` is matched to `CustomFunctionEvent._UID`. Option traversal keeps each call's ordinary continuation on a call stack, enters the function, and resumes that exact caller when a `Return` is reached; shared functions therefore do not mix their callers.
+
+The output contains a summary, a parser/coverage inventory, a cross-graph setter index, compact reports only for graphs with matching rewards, and `QUEST_GRAPH.html`. The interactive directed graph connects phrase-unlocking findings to findings which require or blacklist that phrase. It also joins delayed NPC chains of the form `Flow_SetWGOParam` → matching `Flow_ParamFlag` branch → `Flow_AddInteractionEvent` → same-name `CustomEvent` → `Flow_UnlockPhrase`; these inferred state/event links are dashed and retain every intermediate node in their tooltip and detail view. Standalone `StartEvent` unlock paths retain their task states, PlayerParam changes, and selected condition branches. Matching `Flow_SetPlayerParam` and `Flow_PlayerFlag`/`Flow_PlayerParamCompare`/`Flow_PlayerParamCompareInt` uses are connected across graph files. Float and integer comparisons read their threshold from the node and their operator from the selected output (`<`, `==`, `!=`, or `>`); additive changes are marked as directional contributions rather than treated as proof of an absolute threshold. When one option reaches a genuinely downstream `Flow_MultiAnswer`, all converging predecessors enter one shared choice-menu node and every progression outcome leaves that menu only once. This avoids a Cartesian product of predecessor/answer paths and reflects that conversation menus are normally revisitable. Returns from a submenu to an upstream conversation menu are navigation and do not create choice links. Answers with the same rewards, task states, and phrase effects share one result node; their distinct phrases, requirements, costs, dialogue, and calls remain visible as answer variants in the detail view. If several MultiAnswer menus offer the same phrase with the same complete executable finding, the HTML also renders that finding only once and lists every source menu in its details. Nodes are classified as Base Game, Better Call Soul (`souls` identifiers), Game of Crone (`refugee` identifiers), or Stranger Sins (`tr_` and numbered `cs` identifiers). Narrow graph-ownership overrides cover neutral subsystem scripts such as `contraband_box` and `soul_extractor`, whose individual findings contain no DLC identifier. A reward in another neutral shared script also inherits a DLC classification from a proven PlayerParam requirement setter; this covers outcomes such as Game of Crone's ending letters being delivered by the Base Game donation box without broadly inheriting the content pack of arbitrary graph neighbors. The HTML places these sections in horizontal lanes and assigns left-to-right columns from dependency depth after collapsing cycles. It recomputes compact coordinates for the current visible subset, removing gaps from hidden depth columns and content lanes while preserving the dependency order; node colors continue to describe node semantics rather than DLC ownership. Content, graph, and matching-node controls are checkbox multi-selects with select-all support; the first two filter by any selected combination and the last highlights several nodes at once. When only part of the graph set is visible, every real cross-graph transition ends in a `+ graph` boundary node. Clicking it includes that graph; prominent `− Collapse graph` chips hide included graphs again, allowing progressive tree-like navigation without concealing dangling connections. Conservatively proven initial Base Game answers are linked from a `START` node. Rewards whose execution entry is still unknown remain visible and are marked as unresolved rather than filtered out. Item rewards are connected to matching GameData craft requirements, including the six Base Game portal items feeding `craft_emitter` and `craft_barrel`, followed by `check_portal` and `portal_activate_cutscene`. Function calls and their resolved target events are listed in node details. Hover shows a summary and selecting a node opens all extracted details. Each entry groups item drops and relation gains under `rewards`, its MultiAnswer option, phrase-derived `required_quests`, conversations, task-state changes, and phrase blacklist changes. Conversation lines are listed reward-nearest first to support backward quest analysis. The reports are evidence for manual quest modeling, not an executable reconstruction of all game state.
+
+When several answers call the same `CustomFunctionEvent` reward path, the shared
+function result is rendered once and every calling answer remains listed as a
+variant. Known developer/test dialogue graphs such as `body_spawn` and
+`priest_speak` remain in the HTML payload for diagnostics, but the **Show
+debug/test nodes** toggle hides them by default and persists the chosen setting.
+The same toggle covers specifically verified detached legacy fragments, such as
+the duplicate first-sermon Faith drops in `on_start_preaching`; their live
+counterparts in `pray` remain ordinary visible reward nodes.
+
+The tool loads `data/quest_node_names.json` from its own directory as a manually curated map from stable end-graph node IDs to English display names, including when `--apworld-data` is omitted. A mapped name becomes the graph-node title and is searchable; the generated detail view retains both the original technical name and the stable ID. Missing mappings safely fall back to the original generated label. Quest source data remains in the APWorld's `quest_events.json`.
+
+Rewardless dispatcher scripts are retained as compact bridge nodes when they call another FlowGraph. Explicit `Flow_FireEvent`, `Flow_AddInteractionEvent`, and `Flow_GoTo.finished_event` transitions connect to matching `CustomEvent` entries. Cross-file event names are accepted only when unique or when their WGO data input resolves the target graph through `Flow_FindWGO`, object IDs, or a constructed object-ID prefix. With `--game-data`, script fields in the vanilla quest, object, item, craft, cutscene, and scheduled-logic dumps become external entry nodes, so world interactions and engine-driven script starts are visible instead of looking like unexplained quest roots.
+
+Phrase availability follows the decompiled runtime behavior. A new `GameSave` starts with an empty `unlocked_phrases` list. `MultiAnswerGUI` consults that list only for answer IDs beginning with `@`; a plain answer ID is initially visible unless blacklisted. Such plain IDs remain listed as `required_quests`, but absence of a `Flow_UnlockPhrase` is not an uncertainty. Both `Flow_UnlockPhrase` and `Flow_AddPhraseToBlacklist(remove=true)` are visibility sources and create graph edges. Technology unlocks are only added when the `phrases` list in `techs_data.json` actually contains them. A pristine pre-randomization runtime dump confirmed that every vanilla technology currently has an empty `phrases` list, so the analyzer does not invent technology links. Phrase sources hidden in `FlowMacros` are included through the companion client's expanded dump instead.
+
+`Flow_HasItemInInventory` is interpreted as an inventory prerequisite. Its `Yes` output contributes the resolved item and amount to `required_items`; its `No` output contributes no quest requirement because the player can make that route available by putting the item away. Items supplied through connected item-producing nodes such as `Flow_CreateItem` are resolved as well as inline values. `AnswerData.price` and `Flow_RemoveItemFromInventory` are likewise presented only as item prerequisites—the report deliberately does not distinguish possession from consumption. If either operation is followed by a drop of the same item, the paid quantity is treated as a return (semantically a “show” interaction) and is not listed as a reward; only a returned excess remains a reward. Mere inventory checks never cancel an item reward. A price attached to the answer that enters a nested `Flow_MultiAnswer` is inherited by that menu's result summaries. If several answers enter the same nested menu, only requirements common to every entry answer are inherited, so a free alternative is not incorrectly reported as paid. An item is only promoted to a compact summary requirement when it is required by every alternative path to that finding.
+
+`Split` is an ordered fan-out, not a choice: its decompiled implementation calls every output. `Flow_GoTo` only controls movement to a world target, so both are known pass-through flow nodes and do not create uncertainties. `Flow_RendomFlow` is a genuine random branch; its `true`/`false` route and configured chance are retained as a requirement instead of being reported as an unknown node type.
+
+`Flow_CreateItem` is a data-producing `SimplexNodeWrapper` without a flow input. It constructs an `Item` value but does not by itself give anything to the player. When its `Value` output feeds `Flow_DropItem.Item`, the analyzer treats the created item's ID and amount as the drop reward (and ignores the drop node's unused inline defaults). The same value node may instead feed inventory checks, removals, or `Flow_AddItemToWGO`; those uses are not rewards merely because an item object was constructed.
+
+`Flow_DropItem.Amount` defaults to `1` in the decompiled node implementation. When an export omits the unchanged port value and no connected item supplies another amount, the report therefore uses `1` rather than `unknown`.
+
+Dialogue-only phrase relays between a choice menu and a later reward are projected onto the eventual outcome. If the projected outcomes have identical rewards, task states, and phrase effects, they share one result node; the skipped dialogue phrases and conversations remain visible in the answer-variant details.

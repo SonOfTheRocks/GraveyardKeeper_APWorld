@@ -1,7 +1,7 @@
 from typing import Set
 
 from test.bases import WorldTestBase
-from worlds.graveyard_keeper.world import GraveyardKeeperWorld
+from ..world import GraveyardKeeperWorld
 from ..data import data
 
 

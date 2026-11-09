@@ -1,51 +1,54 @@
 from __future__ import annotations
 
-import pprint
 from typing import TYPE_CHECKING
 
 from BaseClasses import Location, Region
 from .data import *
 from .items import GraveyardKeeperItem
+from .regions import enabled_dlcs
 
 if TYPE_CHECKING:
     from .world import GraveyardKeeperWorld
-
-LOCATION_NAME_TO_ID = {}
-
 
 class GraveyardKeeperLocation(Location):
     game: str = "Graveyard Keeper"
 
 
-def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]) -> None:
+def create_all_locations(world: GraveyardKeeperWorld, regions: dict[str, Region]) -> None:
 
-    location_index: int = 1
+    allowed_dlcs = enabled_dlcs(world)
+    disabled_rewards = {
+        reward for event in data.events.values()
+        if isinstance(event, QuestEventData) and event.dlc not in allowed_dlcs
+        for reward in event.rewards
+    }
     for region_data_name, region_data in data.regions.items():
-        if region_data_name not in regions.keys():
-            continue
+        region: Region | None = regions.get(region_data_name)
 
-        region: Region = regions[region_data_name]
-        location_keys: List[str] = region_data.locations
-        event_keys: List[str] = region_data.events
-
-        for location_key in location_keys:
-            if location_key not in data.locations:
-                continue
+        for location_key in region_data.locations:
             location_data = data.locations[location_key]
+
+            if region is None or location_key in disabled_rewards:
+                continue
 
             location = GraveyardKeeperLocation(
                 world.player,
                 location_data.label,
-                location_index,
+                world.location_name_to_id[location_data.label],
                 region,
             )
             region.locations.append(location)
 
-            LOCATION_NAME_TO_ID[location_key] = location_index
-            location_index += 1
 
-        for event_key in event_keys:
+        for event_key in region_data.events:
+            if region is None:
+                continue
+            if event_key.startswith(CRAFTING_EVENT_PREFIX):
+                # Instantiated on demand by the per-world progression analysis.
+                continue
             event_data = data.events[event_key]
+            if isinstance(event_data, QuestEventData) and event_data.dlc not in allowed_dlcs:
+                continue
             region.add_event(
                 event_data.location_label,
                 event_data.item_label,
@@ -54,9 +57,10 @@ def create_all_locations(world: GraveyardKeeperWorld, regions: Dict[str, Region]
             )
 
 
-def create_location_name_to_id_dict() -> Dict[str, int]:
-    index: int = 0
-    label_to_id_dict: Dict[str, int] = {}
+def create_location_name_to_id_dict() -> dict[str, int]:
+    # Preserve the established ordering. Events have no network address.
+    index: int = 1
+    label_to_id_dict: dict[str, int] = {}
 
     for region_key, region_data in data.regions.items():
         if not region_key.startswith("REGION_TECH_TREE"):
@@ -66,7 +70,6 @@ def create_location_name_to_id_dict() -> Dict[str, int]:
                 label_to_id_dict[data.locations[location_key].label] = index
                 index += 1
 
-    tech_tree_index = 0
     for tech_tree_name in [
         "REGION_TECH_TREE_ANATOMY_AND_ALCHEMY",
         "REGION_TECH_TREE_THEOLOGY",
@@ -82,7 +85,6 @@ def create_location_name_to_id_dict() -> Dict[str, int]:
                 for location_key in region_data.locations:
                     label = data.locations[location_key].label
                     label_to_id_dict[label] = index
-                    index+=1
+                    index += 1
 
-    #pprint.pprint(label_to_id_dict, sort_dicts=False)
     return label_to_id_dict
