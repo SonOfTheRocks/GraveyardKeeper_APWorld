@@ -45,7 +45,7 @@ Treat this boundary as a versioned public API. It includes:
 - DLC identifiers and filtering;
 - Data Package expectations and compatibility/version fields.
 
-Until a shared manifest exists, every contract change must be checked manually in both repositories and tested where practical. Never silently rename or renumber an existing item or location. If compatibility must break, say so explicitly and update both sides together.
+The shared manifest declares the data version used by the APWorld and client. For changes to the APWorld–client contract, check both repositories and test the affected behavior where practical. Never silently rename or renumber an existing item or location. If compatibility must break, document the impact and coordinate any required changes across the affected repositories.
 
 This project has not had a release or external users yet. User-approved pre-release cleanup may remove obsolete definitions and compatibility code without reserving their IDs. After release, protect published contracts or explicitly plan migration/version breaks; do not add compatibility paths for development-only states by default.
 
