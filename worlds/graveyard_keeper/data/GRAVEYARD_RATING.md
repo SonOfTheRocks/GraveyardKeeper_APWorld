@@ -2,9 +2,10 @@
 
 The quest requirements `OLD_GRAVEYARD_5`, `OLD_GRAVEYARD_30` and
 `OLD_GRAVEYARD_200` now use the existing `HasGraveyardRating` rule, also used by
-the graveyard completion goal. Positive thresholds require access to the Old
-Graveyard. A goal rating of zero retains its existing immediate-completion
-behavior and has no input dependencies.
+the graveyard completion goal. All thresholds require access to the Old
+Graveyard and the modeled attainable rating, including zero. This models
+capability, not the current save's rating: the client checks the native rating
+and must not complete a zero target while the starting graveyard is negative.
 
 `logic/graveyard_rating.json` owns the decoration values, alternative patch
 occupancies, fence scores and state prerequisites. The calculator scores each
@@ -86,7 +87,7 @@ Generate a new seed to use the corrected logic.
 
 The APWorld serializes both `goal` and the integer `graveyard_goal_rating` into
 slot data. The client must use that exact target when `goal` is Graveyard; zero
-means immediate completion. The Portal goal ignores the graveyard target.
+requires a native rating of at least zero. The Portal goal ignores the graveyard target.
 An older Graveyard seed without `graveyard_goal_rating` must be regenerated;
 the client must not silently choose its own target, even when the shared-data
 version matches. Older Portal slots do not require this key.

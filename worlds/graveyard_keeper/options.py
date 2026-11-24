@@ -26,7 +26,8 @@ class GraveyardGoalRating(Range):
 
     Targets above the reachable maximum for the selected DLCs and available items
     are automatically reduced to that maximum under the modeled graveyard layouts.
-    The adjustment is logged. Zero completes immediately.
+    The adjustment is logged. Zero requires raising the actual graveyard rating
+    to at least zero; the graveyard starts with a negative rating.
     This option only has an effect if the goal is set to "Graveyard".
     """
     display_name = "Graveyard Goal Rating"

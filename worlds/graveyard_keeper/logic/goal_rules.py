@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING, override
 
 from .dependencies import optional_dependency_names
 from BaseClasses import CollectionState
-from rule_builder.rules import And, CanReachRegion, Rule, True_
+from rule_builder.rules import And, CanReachRegion, Rule
 from ..data import data
 from .custom_rules import CanCraft, GKRule
 from .grave_calculator import GravePointCalculator
@@ -20,8 +20,6 @@ class HasGraveyardRating(GKRule, game="Graveyard Keeper"):
 
     @override
     def _instantiate(self, world: "GraveyardKeeperWorld") -> Rule.Resolved:
-        if self.rating == 0:
-            return True_().resolve(world)
         dependencies = optional_dependency_names(GraveyardPointCalculator.dependency_rule(), world)
         crafting_rules = tuple((key, CanCraft(key).resolve(world)) for key in GravePointCalculator.CRAFTING_INPUTS)
         rating_rule = self.Resolved(self.rating, bool(world.options.game_of_crone), bool(world.options.better_save_soul),

@@ -69,7 +69,7 @@ class TestGraveyardRating(TestCase):
                 self.assertTrue(rule(graveyard_state(*above)))
 
     def test_thresholds_are_inclusive_and_region_access_is_required(self):
-        for threshold in (5, 30, 200):
+        for threshold in (0, 5, 30, 200):
             with self.subTest(threshold=threshold):
                 rule = HasGraveyardRating(threshold).resolve(FakeWorld())
                 state = FakeState()

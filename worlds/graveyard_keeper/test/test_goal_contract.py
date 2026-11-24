@@ -60,12 +60,13 @@ def test_graveyard_goal_accepts_boundary_and_clamps_larger_targets(dlcs, caplog)
 
 
 @pytest.mark.parametrize("dlcs", DLC_COMBINATIONS)
-def test_zero_graveyard_goal_is_valid_without_goal_progression(dlcs):
+def test_zero_graveyard_goal_preserves_rating_check_for_every_dlc_combination(dlcs):
     world = generate_worlds(dict(zip(ALL_DLCS, dlcs)) | {
         "goal": 1, "graveyard_goal_rating": 0,
     }).worlds[1]
     world.generate_basic()
     assert world.fill_slot_data()["graveyard_goal_rating"] == 0
+    assert world.multiworld.completion_condition[1].item_dependencies()
 
 
 @pytest.mark.parametrize("dlcs", DLC_COMBINATIONS)
