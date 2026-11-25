@@ -9,8 +9,7 @@ if TYPE_CHECKING:
     from .world import GraveyardKeeperWorld
 
 
-def create_and_connect_regions(world: GraveyardKeeperWorld) -> Dict[str, Region]:
-
+def enabled_dlcs(world: GraveyardKeeperWorld) -> set[DLCType]:
     allowed_dlcs = [DLCType.BASE_GAME]
     if world.options.stranger_sins:
         allowed_dlcs.append(DLCType.STRANGER_SINS)
@@ -19,17 +18,22 @@ def create_and_connect_regions(world: GraveyardKeeperWorld) -> Dict[str, Region]
     if world.options.better_save_soul:
         allowed_dlcs.append(DLCType.BETTER_SAVE_SOUL)
 
+    return set(allowed_dlcs)
+
+
+def create_and_connect_regions(world: GraveyardKeeperWorld) -> Dict[str, Region]:
+    allowed_dlcs = enabled_dlcs(world)
     regions: Dict[str, Region] = {}
     connections: List[Tuple[str, str]] = []
-    for region_name, region_data in data.regions.items():
+    for region_key, region_data in data.regions.items():
         if region_data.dlc in allowed_dlcs:
-            new_region = Region(region_name, world.player, world.multiworld)
+            new_region = Region(region_data.label, world.player, world.multiworld)
 
-            for region_exit_name in region_data.connections:
-                if data.regions[region_exit_name].dlc in allowed_dlcs:
-                    connections.append((region_name, region_exit_name))
+            for region_exit_key in region_data.connections:
+                if data.regions[region_exit_key].dlc in allowed_dlcs:
+                    connections.append((region_key, region_exit_key))
 
-            regions[region_name] = new_region
+            regions[region_key] = new_region
 
     for source_key, dest_key in connections:
         source = data.regions[source_key].label

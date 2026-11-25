@@ -1,0 +1,3 @@
+[submodule "worlds/graveyard_keeper/data/shared"]
+	path = worlds/graveyard_keeper/data/shared
+	url = https://github.com/SonOfTheRocks/GraveyardKeeperArchipelagoData.git

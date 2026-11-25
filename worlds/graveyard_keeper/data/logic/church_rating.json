@@ -1,0 +1,193 @@
+{
+  "base_points": 3,
+  "starting_benches": 2,
+  "bench_spaces": 6,
+  "furniture": {
+    "BUILDABLE_CHURCH_BENCH": {
+      "points": 1,
+      "group": "bench"
+    },
+    "BUILDABLE_SOFT_CHURCH_BENCH": {
+      "points": 3,
+      "group": "bench"
+    },
+    "BUILDABLE_CONFESSIONAL": {
+      "points": 5,
+      "group": "confessional"
+    },
+    "BUILDABLE_CONFESSIONAL_2": {
+      "points": 7,
+      "group": "confessional"
+    },
+    "BUILDABLE_WOODEN_CHURCH_SHRINE": {
+      "points": 5,
+      "group": "shrine"
+    },
+    "BUILDABLE_STONE_CHURCH_SHRINE": {
+      "points": 8,
+      "group": "shrine"
+    },
+    "BUILDABLE_INCENSE_BURNER": {
+      "points": 1,
+      "group": "incense"
+    },
+    "BUILDABLE_INCENSE_BURNER_2": {
+      "points": 3,
+      "group": "incense"
+    },
+    "BUILDABLE_STAINED_GLASS_WINDOW": {
+      "points": 5,
+      "group": "window"
+    },
+    "BUILDABLE_CANDELABRA_1": {
+      "points": 1,
+      "group": "candelabra",
+      "candle_slots": 1
+    },
+    "BUILDABLE_WALL_CANDELABRA_1": {
+      "points": 1,
+      "group": "wall_candelabra",
+      "candle_slots": 1
+    },
+    "BUILDABLE_CANDELABRA_2": {
+      "points": 2,
+      "group": "candelabra",
+      "candle_slots": 2
+    },
+    "BUILDABLE_WALL_CANDELABRA_2": {
+      "points": 2,
+      "group": "wall_candelabra",
+      "candle_slots": 2
+    },
+    "BUILDABLE_CANDELABRA_3": {
+      "points": 3,
+      "group": "candelabra",
+      "candle_slots": 3
+    },
+    "BUILDABLE_WALL_CANDELABRA_3": {
+      "points": 3,
+      "group": "wall_candelabra",
+      "candle_slots": 3
+    }
+  },
+  "consumables": {
+    "ITEM_CANDLE_1": 1,
+    "ITEM_CANDLE_3": 2,
+    "ITEM_CANDLE_4": 3,
+    "ITEM_INCENSE": 2,
+    "ITEM_INCENSE_2": 4
+  },
+  "patches": [
+    {
+      "minimum_level": "OPEN",
+      "count": 2,
+      "size": [
+        2,
+        3
+      ],
+      "configurations": [
+        {
+          "candelabra": 1
+        }
+      ]
+    },
+    {
+      "minimum_level": "OPEN",
+      "count": 2,
+      "size": [
+        2,
+        4
+      ],
+      "configurations": [
+        {
+          "candelabra": 1
+        },
+        {
+          "incense": 1
+        }
+      ]
+    },
+    {
+      "minimum_level": "OPEN",
+      "count": 2,
+      "size": [
+        4,
+        4
+      ],
+      "configurations": [
+        {
+          "confessional": 1
+        },
+        {
+          "shrine": 1
+        },
+        {
+          "candelabra": 2
+        },
+        {
+          "incense": 2
+        },
+        {
+          "candelabra": 1,
+          "incense": 1
+        }
+      ]
+    },
+    {
+      "minimum_level": "BIG",
+      "count": 2,
+      "size": [
+        2,
+        4
+      ],
+      "configurations": [
+        {
+          "candelabra": 1
+        },
+        {
+          "incense": 1
+        }
+      ]
+    },
+    {
+      "minimum_level": "BIG",
+      "count": 2,
+      "size": [
+        3,
+        6
+      ],
+      "configurations": [
+        {
+          "candelabra": 2
+        },
+        {
+          "incense": 1
+        },
+        {
+          "shrine": 1
+        }
+      ]
+    },
+    {
+      "minimum_level": "BIG",
+      "count": 4,
+      "configurations": [
+        {
+          "wall_candelabra": 1
+        }
+      ]
+    },
+    {
+      "minimum_level": "CATHEDRAL",
+      "count": 1,
+      "configurations": [
+        {
+          "window": 1
+        },
+        {
+          "wall_candelabra": 1
+        }
+      ]
+    }
+  ]
+}

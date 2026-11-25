@@ -1,0 +1,60 @@
+{
+  "open_event": "EVENT_CHURCH_OPEN",
+  "initial_quality": 3,
+  "initial_residents": 4,
+  "recruit_cost": 2,
+  "buildings": {
+    "BUILDABLE_REFUGEE_WELL": {
+      "native_id": "refugee_camp_well", "cost": 3, "points": 1
+    },
+    "BUILDABLE_REFUGEE_TENT_4": {
+      "native_id": "refugee_camp_tent_4", "cost": 2, "points": 1, "residents": 2
+    },
+    "BUILDABLE_REFUGEE_TENT_5": {
+      "native_id": "refugee_camp_tent_5", "cost": 5, "points": 1, "residents": 2,
+      "required_events": ["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"]
+    },
+    "BUILDABLE_REFUGEE_GARDEN_FENCE": {
+      "native_id": "refugee_camp_garden_fence", "cost": 2, "points": 1,
+      "required_events": ["EVENT_TEODORO_BUILD_FIRST_WELL_AND_TENT"]
+    },
+    "BUILDABLE_REFUGEE_KITCHEN": {
+      "native_id": "refugee_camp_cooking_table", "cost": 6, "points": 1,
+      "required_residents": 5
+    },
+    "BUILDABLE_REFUGEE_KITCHEN_2": {
+      "native_id": "refugee_camp_cooking_table_2", "cost": 8, "points": 1,
+      "required_buildings": ["BUILDABLE_REFUGEE_KITCHEN"],
+      "required_events": ["EVENT_REFUGEE_COOK_BUILD_KITCHEN"]
+    },
+    "BUILDABLE_REFUGEE_TENT_6": {
+      "native_id": "refugee_camp_tent_6", "cost": 8, "points": 1, "residents": 2,
+      "required_events": ["EVENT_ALARICH_REVIVE_WITH_BLOOD", "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"]
+    },
+    "BUILDABLE_REFUGEE_CAMPFIRE_2": {
+      "native_id": "refugee_camp_campfire_2", "cost": 8, "points": 1,
+      "required_events": ["EVENT_ALARICH_REVIVE_WITH_BLOOD", "EVENT_TEODORO_GROW_CAMP_TO_SEVEN_RESIDENTS"]
+    },
+    "BUILDABLE_REFUGEE_TENT_7": {
+      "native_id": "refugee_camp_tent_7", "cost": 10, "points": 1, "residents": 1,
+      "required_events": ["EVENT_TEODORO_UPGRADE_DEPOT_CAMPFIRE_AND_BUILD_SIXTH_TENT"]
+    },
+    "BUILDABLE_REFUGEE_FARM_FENCE": {
+      "native_id": "refugee_camp_farm_fence", "cost": 12, "points": 1,
+      "required_events": ["EVENT_REFUGEE_TANNER_BUILD_WORKPLACE"], "required_residents": 11
+    },
+    "BUILDABLE_REFUGEE_DEFENSIVE_STAKES": {
+      "native_id": "refugee_camp_fence", "cost": 11, "points": 1,
+      "required_items": ["ITEM_PAGAN_AMULET_OF_SPIRIT_SUMMONING"],
+      "required_events": ["EVENT_DONKEY_TAKE_HAIR", "EVENT_TEODORO_GROW_CAMP_TO_ELEVEN_RESIDENTS"]
+    },
+    "BUILDABLE_REFUGEE_SWORD_RACK": {
+      "native_id": "refugee_camp_sword_rack", "cost": 12, "points": 1,
+      "required_events": ["EVENT_TEODORO_BUILD_DEFENSIVE_STAKES"]
+    },
+    "BUILDABLE_REFUGEE_OBSERVATION_TOWER": {
+      "native_id": "refugee_camp_observation_tower", "cost": 13, "points": 1,
+      "required_events": ["EVENT_TEODORO_BUILD_SWORD_RACK"]
+    }
+  }
+}

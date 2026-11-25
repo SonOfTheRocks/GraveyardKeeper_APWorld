@@ -1,0 +1,11 @@
+{
+  "open_event": "EVENT_MERCHANT_SHOW_TRADE_LICENSE",
+  "initial_pallets": 1,
+  "pallet_spaces": 10,
+  "pallet_points": 1,
+  "pallet_buildable": "BUILDABLE_TRADE_OFFICE_PALLET",
+  "marketing_material": "ITEM_FLYER",
+  "marketing_point_quality": 1,
+  "marketing_inventory_slots": 5,
+  "marketing_stack_size": 99999
+}

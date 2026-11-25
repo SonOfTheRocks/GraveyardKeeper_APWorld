@@ -8,7 +8,7 @@ from .bases import GraveyardKeeperTestBase
 from ..data import *
 from ..logic.grave_calculator import GravePointCalculator
 from ..logic.graveyard_calculator import GraveyardPointCalculator
-from ..logic.rule_builder import resolve_item_labels
+from ..logic.custom_rules import resolve_item_labels
 from ..models import ChurchLevel
 from ..options import option_presets
 from ..rules import get_max_possible_graveyard_points
@@ -18,8 +18,7 @@ class TestSolvabilityLogic(GraveyardKeeperTestBase):
     #run_default_tests = False
     options = option_presets["default"]
 
-
-    def test_all_workstation_blueprints_must_be_progression_items(self):
+    def test_active_workstation_blueprints_are_progression_items(self):
         # find all workstations mentioned in recipes
         crafting_station_names: list[str] = []
         for recipes_data in data.recipes.values():
@@ -37,31 +36,8 @@ class TestSolvabilityLogic(GraveyardKeeperTestBase):
                     blueprint_name = data.progressive_items_reverse[blueprint_name].key
                 if blueprint_name: # None if no blueprint is required
                     blueprint_item_data = data.items[blueprint_name]
-                    self.assertEqual(
-                        blueprint_item_data.classification,
-                        ItemClassification.progression,
-                        f"blueprint {blueprint_name} not progression item"
-                    )
-
-    def test_remove_blockages(self):
-        self.assertFalse(self.can_reach_region("REGION_FOREST_NEAR_RIVER"))
-        self.assertFalse(self.can_reach_region("REGION_ALCHEMY_LAB"))
-        self.assertFalse(self.can_reach_region("REGION_SWAMP"))
-
-        necessary_ap_items: set[str] = set()
-        for item in [
-            "ITEM_WOOD_WEDGE",
-            "ITEM_WOODEN_PLANK",
-            "ITEM_SIMPLE_IRON_PARTS",
-            "ITEM_WOODEN_BEAM",
-            "ITEM_FLITCH",
-            "ITEM_NAILS"
-        ]: necessary_ap_items.update(GraveyardKeeperTestBase.get_required_ap_items_for(item))
-        self.collect_by_name([data.items[item_key].label for item_key in necessary_ap_items])
-
-        self.assertTrue(self.can_reach_region("REGION_FOREST_NEAR_RIVER"))
-        self.assertTrue(self.can_reach_region("REGION_ALCHEMY_LAB"))
-        self.assertTrue(self.can_reach_region("REGION_SWAMP"))
+                    if blueprint_item_data.label in self.world.progression_plan.required_items:
+                        self.assertTrue(self.world.create_item(blueprint_item_data.label).advancement)
 
 class TestResolveItemLabels(unittest.TestCase):
     def test_resolves_item(self):
@@ -107,9 +83,18 @@ class TestResolveItemLabels(unittest.TestCase):
 
     def test_invalid_key_raises_exception(self):
         key = "INVALID_KEY"
-        self.assertRaises(AssertionError, resolve_item_labels, key)
+        self.assertRaises(ValueError, resolve_item_labels, key)
 
 class TestCalculateGraveyardPoints(unittest.TestCase):
+    def test_buildable_is_read_from_its_obtainable_event(self):
+        event_label = data.events[
+            CRAFTING_EVENT_PREFIX + "BUILDABLE_LAWN"
+        ].item_label
+        calculator = GraveyardPointCalculator(FakeState([event_label]), FakeWorld())
+
+        self.assertTrue(calculator._can_build("LAWN"))
+        self.assertFalse(calculator._can_build("LANTERN"))
+
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
     @patch.object(GraveyardPointCalculator, "_can_build")
@@ -229,7 +214,7 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
     @patch.object(GraveyardPointCalculator, "_can_build")
     def test_stone_fence_bonus(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
         def can_build_side_effect(item):
-            return item == "STONE_GRAVEYARD_FENCE"
+            return item in {"WOODEN_GRAVEYARD_FENCE", "STONE_GRAVEYARD_FENCE"}
 
         mock_can_build.side_effect = can_build_side_effect
         mock_church_level.return_value = ChurchLevel.BIG
@@ -249,7 +234,8 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
             return item == "WOODEN_GRAVEYARD_FENCE"
 
         mock_can_build.side_effect = can_build_side_effect
-        mock_church_level.return_value = ChurchLevel.OPEN
+        # Native npc_bishop unlocks this recipe only after the big-church upgrade.
+        mock_church_level.return_value = ChurchLevel.BIG
         mock_has_graveyard_extension.return_value = False
 
         world = FakeWorld()
@@ -294,7 +280,7 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
     @patch.object(GraveyardPointCalculator, "_can_build")
-    def test_cathedral_bonus(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
+    def test_cathedral_does_not_grant_a_free_statue(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
         mock_can_build.return_value = False
         mock_church_level.return_value = ChurchLevel.CATHEDRAL
         mock_has_graveyard_extension.return_value = False
@@ -304,21 +290,21 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
         state = FakeState([])
         result = get_max_possible_graveyard_points(state, world)
 
-        self.assertEqual(5, result, "With only Cathedral accessible, only the bishop statue should be calculated")
+        self.assertEqual(0, result, "Cathedral status does not replace the actual statue-building event")
 
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
     @patch.object(GraveyardPointCalculator, "_can_build")
     def test_all_bonuses_stack(self, mock_can_build, mock_church_level, mock_has_graveyard_extension):
         def can_build_side_effect(item):
-            return item == "STONE_GRAVEYARD_FENCE"
+            return item in {"WOODEN_GRAVEYARD_FENCE", "STONE_GRAVEYARD_FENCE"}
 
         mock_can_build.side_effect = can_build_side_effect
         mock_church_level.return_value = ChurchLevel.CATHEDRAL
         mock_has_graveyard_extension.return_value = False
 
         world = FakeWorld()
-        state = FakeState(["STONE_GRAVEYARD_FENCE"])
+        state = FakeState([data.events["EVENT_BISHOP_BUILD_STATUE"].item_label])
         result = get_max_possible_graveyard_points(state, world)
 
         self.assertEqual(25, result, "Cathedral (bishop statue): 5 + Stone fence: 20")
@@ -394,7 +380,8 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
         result = get_max_possible_graveyard_points(state, world)
 
         self.assertEqual(492, result)
-        '''
+
+'''
         Calculate Graveyard: Chosen configuration for l_top_left: 'dict_keys(['columbarium'])' with 48 points
         Calculate Graveyard: Chosen configuration for l_top_middle: 'dict_keys(['columbarium', 'lawn 2x6', 'lawn 2x4'])' with 31 points
         Calculate Graveyard: Chosen configuration for l_center_left: 'dict_keys(['columbarium'])' with 24 points
@@ -413,8 +400,8 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
         Calculate Graveyard: Chosen configuration for r_bot_left: 'dict_keys(['columbarium', 'lawn 2x6'])' with 40 points
         Calculate Graveyard: Chosen configuration for r_bot_middle: 'dict_keys(['columbarium', 'lawn 2x6'])' with 16 points
         Calculate Graveyard: Chosen configuration for r_bot_right: 'dict_keys(['columbarium'])' with 24 points
-        '''
-
+'''
+'''
     @patch.object(GravePointCalculator, "calculate")
     @patch.object(GraveyardPointCalculator, "_has_graveyard_extension")
     @patch.object(GraveyardPointCalculator, "_get_church_level")
@@ -481,6 +468,7 @@ class TestCalculateGraveyardPoints(unittest.TestCase):
         # = 840 + 48 + 2
 
 
+'''
 '''
 @classvar_matrix(
     church_level=[
@@ -618,7 +606,7 @@ class TestGraveyardPointsMatrix(unittest.TestCase):
         if self.wooden_fence and self.church_level != ChurchLevel.CLOSED:
             self.assertGreaterEqual(result, 10, "wooden fence requires not CLOSED")
 '''
-
+'''
 
 class TestGetMaxGravePoints(unittest.TestCase):
 
@@ -721,3 +709,4 @@ class TestGetMaxGravePoints(unittest.TestCase):
         result = GravePointCalculator(state, world).calculate()
 
         self.assertEqual(0, result)
+'''

@@ -1,0 +1,107 @@
+{
+  "open_event": "EVENT_TAVERN_OPEN",
+  "upgrade_event": "EVENT_TAVERN_UPGRADE_TAVERN",
+  "table_spaces": 2,
+  "upgraded_table_spaces": 4,
+  "upgrade_points": 8,
+  "furniture": {
+    "BUILDABLE_TAVERN_TABLE_1": {
+      "native_id": "tavern_table_1",
+      "points": 5,
+      "group": "table"
+    },
+    "BUILDABLE_TAVERN_TABLE_2": {
+      "native_id": "tavern_table_2",
+      "points": 10,
+      "group": "table",
+      "required_event": "EVENT_KOUKOL_RETURN_WITH_DARK_ORGAN"
+    },
+    "BUILDABLE_TAVERN_BARREL": {
+      "native_id": "tavern_barrel",
+      "points": 3,
+      "count": 2,
+      "required_event": "EVENT_TAVERN_UPGRADE_TAVERN"
+    },
+    "BUILDABLE_TAVERN_ARTIFACTS_SHELVES": {
+      "native_id": "tavern_artifacts_shelves",
+      "points": 5,
+      "count": 1
+    },
+    "BUILDABLE_RAT_RACE_TABLE": {
+      "native_id": "rat_race_table",
+      "points": 5,
+      "count": 1,
+      "required_event": "EVENT_SNAKE_PERSUADE_TO_STEAL_ANCIENT_AMULET"
+    }
+  },
+  "artifacts": {
+    "EVENT_TAVERN_USE_STATUETTE_IN_TIME_MACHINE": {
+      "item": "ITEM_STATUETTE",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_FLASK_IN_TIME_MACHINE": {
+      "item": "ITEM_FLASK",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_DOOR_HINGE_IN_TIME_MACHINE": {
+      "item": "ITEM_DOOR_HINGE",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_LEGIONARY_HELM_IN_TIME_MACHINE": {
+      "item": "ITEM_LEGIONARY_HELM",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_ANCIENT_LOCKPICKS_IN_TIME_MACHINE": {
+      "item": "ITEM_ANCIENT_LOCKPICKS",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_PRIESTS_MEDALLION_IN_TIME_MACHINE": {
+      "item": "ITEM_PRIESTS_MEDALLION",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_LEGIONARY_DAGGER_IN_TIME_MACHINE": {
+      "item": "ITEM_THE_LEGIONARY_DAGGER",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_BELT_BUCKLE_IN_TIME_MACHINE": {
+      "item": "ITEM_BELT_BUCKLE",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_CLAY_SHARDS_IN_TIME_MACHINE": {
+      "item": "ITEM_CLAY_SHARDS",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_ANCIENT_GOD_AMULET_IN_TIME_MACHINE": {
+      "item": "ITEM_AMULET_OF_THE_ANCIENT_GOD",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_ANCIENT_SHACKLES_IN_TIME_MACHINE": {
+      "item": "ITEM_ANCIENT_SHACKLES",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_ANCIENT_PICKAXE_IN_TIME_MACHINE": {
+      "item": "ITEM_ANCIENT_PICKAXE",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_ANCIENT_KEYS_IN_TIME_MACHINE": {
+      "item": "ITEM_ANCIENT_KEYS",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_CLAY_POT_OF_TAR_IN_TIME_MACHINE": {
+      "item": "ITEM_CLAY_POT_OF_TAR",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_PRIESTS_SIGNET_IN_TIME_MACHINE": {
+      "item": "ITEM_PRIESTS_SIGNET",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_PRIESTESS_RING_IN_TIME_MACHINE": {
+      "item": "ITEM_PRIESTESS_RING",
+      "points": 1
+    },
+    "EVENT_TAVERN_USE_CHURCH_BRICK_IN_TIME_MACHINE": {
+      "item": "ITEM_A_BRICK_FROM_THE_CHURCH",
+      "points": 1
+    }
+  }
+}

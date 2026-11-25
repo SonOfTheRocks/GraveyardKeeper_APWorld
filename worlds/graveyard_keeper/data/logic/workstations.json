@@ -180,8 +180,7 @@
     "crafting_stations": [],
     "recipe_required": "ITEM_BP_STONE_CUTTER",
     "materials_required": [
-      "ITEM_FLITCH",
-      "ITEM_NAILS"
+      "ITEM_FLITCH"
     ]
   },
   "CRAFTING_STATION_STONE_CUTTER_2": {
@@ -204,8 +203,7 @@
     "recipe_required": "ITEM_BP_FURNACE",
     "materials_required": [
       "ITEM_FLITCH",
-      "ITEM_A_PIECE_OF_STONE",
-      "ITEM_SIMPLE_IRON_PARTS"
+      "ITEM_A_PIECE_OF_STONE"
     ]
   },
   "CRAFTING_STATION_FURNACE_2": {
@@ -239,8 +237,7 @@
     "crafting_stations": [],
     "recipe_required": "ITEM_BP_WOODEN_ANVIL",
     "materials_required": [
-      "ITEM_WOOD_BILLET",
-      "ITEM_SIMPLE_IRON_PARTS"
+      "ITEM_WOOD_BILLET"
     ]
   },
   "CRAFTING_STATION_ANVIL": {

@@ -1,6 +1,6 @@
 {
 	"game": "Graveyard Keeper",
-	"minimum_ap_version": "0.6.6",
+	"minimum_ap_version": "0.6.9",
 	"world_version": "0.0.1",
 	"authors": ["SonOfTheRocks"]
 }

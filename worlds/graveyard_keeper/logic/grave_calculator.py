@@ -1,14 +1,41 @@
 from __future__ import annotations
 
 from BaseClasses import CollectionState
+from rule_builder.rules import And, Has, Rule
+from .custom_rules import CanCraft
 from ..data import data, CRAFTING_EVENT_PREFIX
 
 
 class GravePointCalculator:
-    def __init__(self, state: CollectionState, world):
+    CRAFTING_INPUTS = (
+        "ITEM_CORPSE", "ITEM_CERAMIC_BOWLS", "ITEM_MODIFIED_FLESH",
+        "ITEM_MODIFIED_SKIN", "ITEM_MODIFIED_FAT", "ITEM_MODIFIED_BRAIN",
+        "ITEM_MODIFIED_INTESTINE", "ITEM_MODIFIED_HEART", "ITEM_MODIFIED_BLOOD",
+        "ITEM_LYE_INJECTION", "ITEM_GLUE_INJECTION", "ITEM_SILVER_INJECTION",
+        "ITEM_GOLD_INJECTION",
+    )
+
+    @staticmethod
+    def dependency_rule() -> Rule:
+        """Declare every state input read by calculate, including alternatives."""
+        return And(
+            *(CanCraft(key) for key in GravePointCalculator.CRAFTING_INPUTS),
+            *(Has(data.items[key].label) for key in (
+                "ITEM_LEARN_CREATE_PROGRESSIVE_WOODEN_GRAVE_MARKER",
+                "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_MARKER",
+                "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_MARKER",
+                "ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE",
+                "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE",
+                "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_FENCE",
+                "ITEM_LEARN_EXTRACT_FAT", "ITEM_LEARN_EXTRACT_BLOOD",
+            )),
+        )
+
+    def __init__(self, state: CollectionState, world, crafting_rules=None):
         self.state = state
         self.world = world
         self.player = world.player
+        self.crafting_rules = crafting_rules
 
     def calculate(self) -> int:
         if not self._can_craft("ITEM_CORPSE"):
@@ -40,99 +67,49 @@ class GravePointCalculator:
 
         return max(values)
 
-    def _wood_tombstone(self) -> int:
-        n = self._count("ITEM_LEARN_CREATE_PROGRESSIVE_WOODEN_GRAVE_MARKER")
+    def _progressive_score(self, item_key, base, game_of_crone=None, better_save_soul=None) -> int:
+        # Earlier stages stay unlocked after later receipts, including stages
+        # belonging to a DLC that is disabled in this world.
+        scores = dict(base)
+        if self.world.options.game_of_crone:
+            scores.update(game_of_crone or {})
+        if self.world.options.better_save_soul:
+            scores.update(better_save_soul or {})
+        count = self._count(item_key)
+        return max((score for stage, score in scores.items() if stage <= count), default=0)
 
-        match n:
-            case 1 | 2: return n
-            case _: return 0
+    def _wood_tombstone(self) -> int:
+        return self._progressive_score("ITEM_LEARN_CREATE_PROGRESSIVE_WOODEN_GRAVE_MARKER", {1: 1, 2: 2})
 
     def _stone_tombstone(self) -> int:
-        n = self._count("ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_MARKER")
-        result = 0
-
-        match n:
-            case 1: result = 2
-            case 2 | 3: result = 3
-            case 5 | 6: result = 4
-            case 7 | 8: result = 5
-
-        if self.world.options.game_of_crone:
-            match n:
-                case 4: result = max(result, 4)
-                case 9 | 10: result = max(result, n-3)
-
-        if self.world.options.better_save_soul:
-            match n:
-                case 11: result = max(result, 10)
-                case 12: result = max(result, 12)
-
-        return result
+        return self._progressive_score(
+            "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_MARKER",
+            {1: 2, 2: 3, 3: 3, 5: 4, 6: 4, 7: 5, 8: 5},
+            {4: 4, 9: 6, 10: 7}, {11: 10, 12: 12},
+        )
 
     def _marble_tombstone(self) -> int:
-        n = self._count("ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_MARKER")
-
-        result = 0
-
-        match n:
-            case 1: result = 5
-            case 2 | 3 | 4: result = 6
-            case 5 | 6: result = 7
-
-        if self.world.options.game_of_crone:
-            match n:
-                case 7 | 8: result = max(result, n+1)
-
-        if self.world.options.better_save_soul:
-            match n:
-                case 9: result = max(result, 13)
-                case 10: result = max(result, 15)
-
-        return result
+        return self._progressive_score(
+            "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_MARKER",
+            {1: 5, 2: 6, 3: 6, 4: 6, 5: 7, 6: 7},
+            {7: 8, 8: 9}, {9: 13, 10: 15},
+        )
 
     def _get_fence_points(self) -> int:
-        values = []
-
-        if self._has("ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE"):
-            values.append(1)
-        values.append(self._stone_fence())
-        values.append(self._marble_fence())
-
-        return max(values)
+        return max(1 if self._has("ITEM_LEARN_CREATE_WOODEN_GRAVE_FENCE") else 0,
+                   self._stone_fence(), self._marble_fence())
 
     def _stone_fence(self) -> int:
-        n = self._count("ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE")
-        result = 0
+        return self._progressive_score(
+            "ITEM_LEARN_CREATE_PROGRESSIVE_STONE_GRAVE_FENCE",
+            {1: 2, 2: 3}, {3: 3, 4: 4, 5: 5}, {6: 6, 7: 7, 8: 8},
+        )
 
-        match n:
-            case 1 | 2: result = max(result, n+1)
-
-        if self.world.options.game_of_crone:
-            match n:
-                case 3 | 4 | 5: result = max(result, n)
-
-        if self.world.options.better_save_soul:
-            match n:
-                case 6 | 7 | 8: result = max(result, n)
-
-        return result
-
-    def _marble_fence(self):
-        n = self._count("ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_FENCE")
-        result = 0
-
-        match n:
-            case 1 | 2: result = max(result, n+3)
-
-        if self.world.options.game_of_crone:
-            match n:
-                case 3 | 4 | 5: result = max(result, n+2)
-
-        if self.world.options.better_save_soul:
-            match n:
-                case 6 | 7 | 8: result = max(result, n+3)
-
-        return result
+    def _marble_fence(self) -> int:
+        return self._progressive_score(
+            "ITEM_LEARN_CREATE_PROGRESSIVE_MARBLE_GRAVE_FENCE",
+            {1: 4, 2: 5}, {3: 5, 4: 6, 5: 7}, {6: 9, 7: 10, 8: 11},
+        )
 
     def _get_skulls(self) -> tuple[int, int]:
         def _organ(item, success_white, fallback_white, success_red = 0, fallback_red = 0, high_level_corpse = False):
@@ -187,6 +164,9 @@ class GravePointCalculator:
 
     def _has(self, item_key: str) -> bool:
         return self.state.has(data.items[item_key].label, self.player)
+        return Has(data.items[item_key].label, self.world).resolve(self.world)
 
     def _can_craft(self, item_key: str) -> bool:
-        return self.state.has(data.events[CRAFTING_EVENT_PREFIX + item_key].item_label, self.player)
+        if self.crafting_rules is not None:
+            return self.crafting_rules[item_key](self.state)
+        return CanCraft(item_key).resolve(self.world)(self.state)

@@ -704,26 +704,6 @@
     },
     {
       "crafting_stations": [
-        "CRAFTING_STATION_VINE_TRELLIS",
-        "CRAFTING_STATION_ZOMBIE_VINEYARD"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_GRAPE_SEED_SILVER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_VINE_TRELLIS",
-        "CRAFTING_STATION_ZOMBIE_VINEYARD"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_GRAPE_SEED_GOLD"
-      ]
-    },
-    {
-      "crafting_stations": [
         "CRAFTING_STATION_EMPTY_GARDEN_BED",
         "CRAFTING_STATION_ZOMBIE_FARM"
       ],
@@ -744,52 +724,12 @@
     },
     {
       "crafting_stations": [
-        "CRAFTING_STATION_VINE_TRELLIS",
-        "CRAFTING_STATION_ZOMBIE_VINEYARD"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_HOPS_SEED_SILVER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_VINE_TRELLIS",
-        "CRAFTING_STATION_ZOMBIE_VINEYARD"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_HOPS_SEED_GOLD"
-      ]
-    },
-    {
-      "crafting_stations": [
         "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
         "CRAFTING_STATION_ZOMBIE_FARM"
       ],
       "recipe_required": "",
       "materials_required": [
         "ITEM_LENTIL_SEED_COPPER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
-        "CRAFTING_STATION_ZOMBIE_FARM"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_LENTIL_SEED_SILVER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_GARDEN_BED_WITH_STICKS",
-        "CRAFTING_STATION_ZOMBIE_FARM"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_LENTIL_SEED_GOLD"
       ]
     },
     {
@@ -809,47 +749,7 @@
       ],
       "recipe_required": "",
       "materials_required": [
-        "ITEM_ONION_SEED_SILVER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_EMPTY_GARDEN_BED",
-        "CRAFTING_STATION_ZOMBIE_FARM"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_ONION_SEED_GOLD"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_EMPTY_GARDEN_BED",
-        "CRAFTING_STATION_ZOMBIE_FARM"
-      ],
-      "recipe_required": "",
-      "materials_required": [
         "ITEM_PUMPKIN_SEED_COPPER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_EMPTY_GARDEN_BED",
-        "CRAFTING_STATION_ZOMBIE_FARM"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_PUMPKIN_SEED_SILVER"
-      ]
-    },
-    {
-      "crafting_stations": [
-        "CRAFTING_STATION_EMPTY_GARDEN_BED",
-        "CRAFTING_STATION_ZOMBIE_FARM"
-      ],
-      "recipe_required": "",
-      "materials_required": [
-        "ITEM_PUMPKIN_SEED_GOLD"
       ]
     },
     {
