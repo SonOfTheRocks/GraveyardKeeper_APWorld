@@ -33,7 +33,7 @@ randomized rewards, which may belong to another player. Receive the correspondin
 multiworld item to unlock a randomized recipe or ability in your own game.
 
 The seed selects either the Portal goal or a required graveyard rating. A graveyard
-rating of zero completes immediately once the Archipelago save is ready. Completion
+rating of zero requires improving the initially negative graveyard to at least zero. Completion
 is checked again after loading a save or reconnecting.
 
 Keep the client data version compatible with your seed and save. The current

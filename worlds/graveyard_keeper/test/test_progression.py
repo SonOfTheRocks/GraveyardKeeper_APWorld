@@ -177,11 +177,17 @@ def test_grave_crafting_checks_evaluate_the_rule_in_the_current_state():
     assert GravePointCalculator(full, world)._can_craft("ITEM_GOLD_INJECTION")
 
 
-def test_zero_graveyard_goal_needs_no_goal_dependencies():
+def test_zero_graveyard_goal_checks_attainable_rating():
     world = generate_worlds(ALL_DLCS | {"goal": 1, "graveyard_goal_rating": 0}).worlds[1]
     rule = world.multiworld.completion_condition[1]
-    assert not rule.item_dependencies()
+    # The old unconditional True rule bypassed both the calculator and access.
+    assert rule.item_dependencies()
+    blocked = CollectionState(world.multiworld)
+    with patch.object(blocked, "can_reach_region", return_value=False):
+        assert not rule(blocked)
+    # Capability to clean/improve to zero does not represent current native quality.
     assert rule(CollectionState(world.multiworld))
+    assert rule(world.multiworld.get_all_state())
 
 
 def analysis_world():
